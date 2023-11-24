@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ycivofm1ia4x"]
+
+[ext_resource type="PackedScene" uid="uid://dxrum2s6coxra" path="res://Scene/Player_scene.tscn" id="1_rit4x"]
+[ext_resource type="PackedScene" uid="uid://csq3cbfgtn52c" path="res://Scene/tile_map.tscn" id="2_bappo"]
+
+[node name="Main" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("2_bappo")]
+position = Vector2(25, 1)
+
+[node name="Player_scene" parent="." instance=ExtResource("1_rit4x")]
+position = Vector2(500, 325)
+scale = Vector2(4, 4)
