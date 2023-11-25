@@ -1,13 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://ycivofm1ia4x"]
+[gd_scene load_steps=4 format=3 uid="uid://ycivofm1ia4x"]
 
 [ext_resource type="PackedScene" uid="uid://dxrum2s6coxra" path="res://Scene/Player_scene.tscn" id="1_rit4x"]
 [ext_resource type="PackedScene" uid="uid://csq3cbfgtn52c" path="res://Scene/tile_map.tscn" id="2_bappo"]
+[ext_resource type="Script" path="res://Scene/CameraBehaviour.gd" id="3_c3s6e"]
 
 [node name="Main" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource("2_bappo")]
-position = Vector2(25, 1)
 
 [node name="Player_scene" parent="." instance=ExtResource("1_rit4x")]
-position = Vector2(500, 325)
-scale = Vector2(4, 4)
+position = Vector2(336, 240)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0.39, 0)
+anchor_mode = 0
+limit_left = -50
+limit_top = -50
+limit_right = 680
+limit_bottom = 500
+limit_smoothed = true
+editor_draw_limits = true
+script = ExtResource("3_c3s6e")
