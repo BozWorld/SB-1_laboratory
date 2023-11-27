@@ -8,10 +8,6 @@ var friction: Vector2 = Vector2.ZERO
 var force : Vector2 = Vector2.ZERO
 var gravity : Vector2 = Vector2(0,10)
 var limit: Vector2 = Vector2.ZERO
-var l: Vector2 = Vector2.ZERO
-
-var f : Vector2 = Vector2.ZERO
-var g : Vector2 = Vector2.ZERO
 var maxSpeed : Vector2 = Vector2(0,-180)
 var minSpeed : Vector2 = Vector2(0,100)
 var mass : float = 1.5
@@ -23,16 +19,14 @@ var steer_direction
 var engine_power = -9700  # Forward acceleration force.
 
 func _ready() -> void:
-	f = force
-	g = gravity
-	l = limit
+	
 	frictionMag = friction_coef * up_direction.y
 
 func _physics_process(delta):
 	friction = ((velocity * -1).normalized()) * frictionMag
-	force = f/mass
-	gravity = g/mass
-	limit = l/mass
+#	force = f/mass
+#	gravity = g/mass
+#	limit = l/mass
 	acceleration += force + gravity + limit + friction
 	velocity += acceleration * delta
 	limit = Vector2(0,0)
@@ -47,10 +41,11 @@ func _physics_process(delta):
 func get_input():
 	var turn = Input.get_axis("rotate_left", "rotate_right")
 	steer_direction = turn * deg_to_rad(steering_angle)
-	if Input.is_action_pressed("fly"):
-		f = Vector2(0,-80)
-	if Input.is_action_just_released("fly"):
-		f = Vector2(0,0)
+#	if Input.is_action_pressed("fly"):
+#		f = Vector2(0,-80)
+#	if Input.is_action_just_released("fly"):
+#		f = Vector2(0,0)
+
 
 'func calculate_steering(delta):
 
