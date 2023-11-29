@@ -13,7 +13,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	randomValue= randf_range(0.4,0.8)
-	if StopTimer >= 10 :
+	if StopTimer >= 100 :
 		SpawnTimer.stop()
 	pass
 
@@ -21,7 +21,11 @@ func _physics_process(delta):
 
 func _on_spawntimer_timeout() -> void:
 	var objspawned = obj.instantiate()
-	objspawned.scale = Vector2(randomValue,randomValue)
+	var rand = randf_range(0.1,3)
+	
+	objspawned.scale = Vector2(rand,rand)
+	objspawned.mass = rand
+	print(rand)
 	spawn_location.progress_ratio = randf()
 	objspawned.position = spawn_location.position
 	StopTimer +=1

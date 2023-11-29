@@ -17,27 +17,26 @@ var dir: Vector2
 	
 
 func _physics_process(delta: float) -> void:
-		applyForces(force,delta)
-		applyForces(gravity,delta)
+		applyForces(force)
+		applyForces(gravity)
 		setVelocity(delta)
-		checkEdgesBounce()
 		acceleration = Vector2.ZERO
-#		print(str("acceleration :" + str(velocity)))
-#		print(str("velocity :" + str(velocity)))
-
+		print ( "velocity " + str(velocity))		
+		checkEdgesBounce()
+		
 func getDirection():
 	dir = get_global_mouse_position() - position
 	dir = dir.normalized()
 
 func setVelocity(delta):
 	velocity += acceleration * delta
-	limitVelocity(Vector2(-10,-10),Vector2(10,10))
-	position += velocity
+	limitVelocity(Vector2(-400,-400),Vector2(500,500))
+	position += velocity * delta
 
 	
-func applyForces(force: Vector2, delta):
+func applyForces(force: Vector2):
 	var f = Vector2(force/mass)
-	acceleration += f * delta
+	acceleration += f 
 	
 func limitVelocity(v1: Vector2,v2: Vector2):
 	velocity = velocity.clamp(v1,v2)
@@ -59,18 +58,11 @@ func checkEdges():
 
 func checkEdgesBounce():
 	if((position.y > get_viewport().get_visible_rect().size.y )):
-		velocity.y *= 1
-		position.y = get_viewport().get_visible_rect().size.y/2
-		
-	if((position.y > get_viewport().get_visible_rect().size.y )):
-		velocity.y *= 1
-		position.y = get_viewport().get_visible_rect().size.y/2
-	if ((position.x > get_viewport().get_visible_rect().size.x)):
-		velocity.x *= -1
-		position.x = get_viewport().get_visible_rect().size.x
-	elif position.x < 0:
-		velocity.x *= -1
-		position.x = position.x - (get_viewport().get_visible_rect().size.x/2)
+		velocity.y *= -1
+	if((position.y < get_viewport().get_visible_rect().size.y )):
+		velocity.y *= -1
+	if((position.x < get_viewport().get_visible_rect().size.x )):
+		velocity.x*= -1
 #func div(v1:Vector2,v2:Vector2):
 #	var v3 = Vector2((v1.x/v2.x),v1.y + v2.y)
 #		trine.set_point_position(1,dir.normalized()*50)
@@ -80,3 +72,7 @@ func checkEdgesBounce():
 #		if ((position.y > get_viewport().get_visible_rect().size.y)||(position.y<0)):
 #
 #			velocity.y = velocity.y*-1
+
+
+func _on_vel_timer_timeout():
+	print ( velocity )
