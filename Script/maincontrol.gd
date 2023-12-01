@@ -25,7 +25,7 @@ func _on_spawntimer_timeout() -> void:
 	
 	objspawned.scale = Vector2(rand,rand)
 	objspawned.mass = rand
-	print(rand)
+
 	spawn_location.progress_ratio = randf()
 	objspawned.position = spawn_location.position
 	StopTimer +=1

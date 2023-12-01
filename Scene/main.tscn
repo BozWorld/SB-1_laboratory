@@ -26,7 +26,7 @@ player = NodePath("Player_scene")
 [node name="TileMap" parent="." instance=ExtResource("2_bappo")]
 
 [node name="Player_scene" parent="." instance=ExtResource("1_rit4x")]
-position = Vector2(336, 250)
+position = Vector2(128, 320)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

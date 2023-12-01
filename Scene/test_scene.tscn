@@ -5,7 +5,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_2ys53"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 320, 0, 0, 0, 0, 640, 320)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 640, 0)
 }
 point_count = 2
 
@@ -28,7 +28,6 @@ width = 5.0
 curve = SubResource("Curve2D_2ys53")
 
 [node name="spawnpath" type="PathFollow2D" parent="spawnlocation"]
-position = Vector2(0, 320)
 
 [node name="spawntimer" type="Timer" parent="."]
 process_callback = 0

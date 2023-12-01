@@ -1,61 +1,58 @@
 extends CharacterBody2D
 
 var acceleration : Vector2 = Vector2.ZERO
-var friction_coef: float = 1
-var normal: float = -1
-var frictionMag: float = 0
+var frictionMag: float = 60
 var friction: Vector2 = Vector2.ZERO
 var force : Vector2 = Vector2.ZERO
-var gravity : Vector2 = Vector2(0,10)
-var limit: Vector2 = Vector2.ZERO
-var maxSpeed : Vector2 = Vector2(0,-180)
-var minSpeed : Vector2 = Vector2(0,100)
-var mass : float = 1.5
+var gravity : Vector2 = Vector2(0,0)
+var maxSpeed : Vector2 = Vector2(-80,-80)
+var minSpeed : Vector2 = Vector2(80,80)
+var AngularAcceleration : float = 5
+var AngularVelocity: float = 0
+var minVAcceleration: float = -35
+var maxHAcceleration : float = 35
+var mass : float = 0.4
+var time : float = 0
+var engine_power = -60  # Forward acceleration force.
 
-var wheel_base = 70  # Distance from front to rear wheel
-var steering_angle = 15  # Amount that front wheel turns, in degrees
-
-var steer_direction
-var engine_power = -9700  # Forward acceleration force.
-
-func _ready() -> void:
-	
-	frictionMag = friction_coef * up_direction.y
 
 func _physics_process(delta):
-	friction = ((velocity * -1).normalized()) * frictionMag
-#	force = f/mass
-#	gravity = g/mass
-#	limit = l/mass
-	acceleration += force + gravity + limit + friction
-	velocity += acceleration * delta
-	limit = Vector2(0,0)
-	if velocity <= maxSpeed:
-		velocity = maxSpeed
-	if velocity >= minSpeed:
-		velocity = minSpeed
-	friction = ((velocity * -1).normalized()) * frictionMag
+	var turn = Input.get_axis("rotate_left", "rotate_right")
+	AngularVelocity += deg_to_rad(AngularAcceleration* delta)
+	var dir = (position - $Node2D.global_position).normalized()
+	clampf(AngularVelocity,minVAcceleration,maxHAcceleration)
+	rotation +=   turn * AngularVelocity * delta
 	get_input()
+	applyDrag()
+	applyForces(gravity)
+	if Input.is_action_pressed("fly"):
+		force = Vector2(engine_power,engine_power) *dir
+	if Input.is_action_just_released("fly"):
+		force = Vector2(0,0)
+	applyForces(force)
+	velocity += acceleration * delta
+	limitVelocity(maxSpeed,minSpeed)
+
+	acceleration = Vector2.ZERO
+	position += velocity * delta
 	move_and_slide()
 
+func limitVelocity(v1: Vector2,v2: Vector2):
+	velocity = velocity.clamp(v1,v2)
+
+func applyFriction():
+	friction = ((velocity * -1).normalized()) * frictionMag
+	applyForces(friction)
+
+func applyDrag():
+	var speed = velocity.length()
+	frictionMag  = frictionMag * speed * speed
+	var dragVector = (velocity*-1).normalized()
+	dragVector *= frictionMag
+	
+func applyForces(force: Vector2):
+	var f = Vector2(force/mass)
+	acceleration += f 
 func get_input():
+	
 	var turn = Input.get_axis("rotate_left", "rotate_right")
-	steer_direction = turn * deg_to_rad(steering_angle)
-#	if Input.is_action_pressed("fly"):
-#		f = Vector2(0,-80)
-#	if Input.is_action_just_released("fly"):
-#		f = Vector2(0,0)
-
-
-'func calculate_steering(delta):
-
-	var rear_wheel = position - transform.y * wheel_base / 2.0
-	var front_wheel = position + transform.y * wheel_base / 2.0
-
-	rear_wheel += velocity * delta
-	front_wheel += velocity.rotated(steer_direction) * delta
-
-	var new_heading = rear_wheel.direction_to(front_wheel)
-
-	velocity = new_heading * velocity.length()
-	rotation = new_heading.angle()'
