@@ -45,8 +45,8 @@ theme = SubResource("Theme_yr1nb")
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
 layout_mode = 0
-offset_right = 640.0
-offset_bottom = 360.0
+offset_right = 800.0
+offset_bottom = 808.0
 texture = SubResource("ViewportTexture_u3fd5")
 
 [connection signal="timeout" from="spawntimer" to="." method="_on_spawntimer_timeout"]
