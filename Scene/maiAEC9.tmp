@@ -13,15 +13,8 @@ modulate_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_ev5wu"]
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("masslabel", "frictionlabel", "pushforcelabel", "velocitylabel", "gravitylabel", "normallabel", "player")]
+[node name="Main" type="Node2D"]
 script = ExtResource("1_xjyd6")
-masslabel = NodePath("CanvasLayer/VBoxContainer/mass")
-frictionlabel = NodePath("CanvasLayer/VBoxContainer/friction")
-pushforcelabel = NodePath("CanvasLayer/VBoxContainer/pushforce")
-velocitylabel = NodePath("CanvasLayer/VBoxContainer/velocity")
-gravitylabel = NodePath("CanvasLayer/VBoxContainer/gravity")
-normallabel = NodePath("CanvasLayer/VBoxContainer/normal")
-player = NodePath("Player_scene")
 
 [node name="TileMap" parent="." instance=ExtResource("2_bappo")]
 
