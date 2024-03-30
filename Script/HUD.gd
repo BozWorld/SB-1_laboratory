@@ -21,10 +21,7 @@ extends Node2D
 
 func _physics_process(delta: float) -> void:
 	mass = player.mass
-	frictionCoef = player.friction_coef
-	pushforce = player.f
 	velocity = player.velocity
-	gravity = player.g
 	acceleration = player.acceleration
 
 	masslabel.text = "Mass : " + str(mass)

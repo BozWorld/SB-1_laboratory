@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3bk7m1t27by4"]
+
+[ext_resource type="Script" path="res://Script/BasicMath.gd" id="1_u6taf"]
+[ext_resource type="Texture2D" uid="uid://cq6kef65t1pjq" path="res://Asset/Visuel/physics_sprite.png" id="2_y0xk1"]
+
+[node name="obj" type="Node2D"]
+modulate = Color(0.721569, 0.760784, 0.72549, 1)
+self_modulate = Color(0.721569, 0.760784, 0.72549, 1)
+script = ExtResource("1_u6taf")
+force = Vector2(500, 0)
+gravity = Vector2(0, 500)
+mass = 1.0
+
+[node name="line1" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(0, 0, 0, 64)
+default_color = Color(0.721569, 0.760784, 0.72549, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(33, 49)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_y0xk1")
+
+[node name="VelTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="VelTimer" to="." method="_on_vel_timer_timeout"]

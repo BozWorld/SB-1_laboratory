@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://ceso6tw42o2na"]
+
+[ext_resource type="Script" path="res://Script/maincontrol.gd" id="1_8wxca"]
+[ext_resource type="PackedScene" uid="uid://c3bk7m1t27by4" path="res://Scene/obj.tscn" id="2_kbb7t"]
+
+[sub_resource type="Curve2D" id="Curve2D_2ys53"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 320, 0, 0, 0, 0, 640, 320)
+}
+point_count = 2
+
+[sub_resource type="Theme" id="Theme_yr1nb"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_u3fd5"]
+
+[node name="testScene" type="Node2D" node_paths=PackedStringArray("spawn_location", "SpawnTimer")]
+script = ExtResource("1_8wxca")
+obj = ExtResource("2_kbb7t")
+spawn_location = NodePath("spawnlocation/spawnpath")
+SpawnTimer = NodePath("spawntimer")
+
+[node name="line2" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(0, 0, 128, 0)
+width = 5.0
+
+[node name="spawnlocation" type="Path2D" parent="."]
+curve = SubResource("Curve2D_2ys53")
+
+[node name="spawnpath" type="PathFollow2D" parent="spawnlocation"]
+position = Vector2(0, 320)
+
+[node name="spawntimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.2
+autostart = true
+
+[node name="Control" type="Control" parent="."]
+modulate = Color(0.0823529, 0.0156863, 0.0745098, 1)
+self_modulate = Color(0.0823529, 0.0156863, 0.0745098, 1)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+theme = SubResource("Theme_yr1nb")
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = SubResource("ViewportTexture_u3fd5")
+
+[connection signal="timeout" from="spawntimer" to="." method="_on_spawntimer_timeout"]

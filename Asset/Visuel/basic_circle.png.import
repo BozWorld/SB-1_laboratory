@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bikfbabiej3gw"
-path="res://.godot/imported/avion2.png-27b44eccff6ce7f5532adf8d7f52c5b0.ctex"
+uid="uid://d3pnkpqycsb63"
+path="res://.godot/imported/basic_circle.png-b0efcff62bc521c52c7a72d8e41251f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/Visuel/avion2.png"
-dest_files=["res://.godot/imported/avion2.png-27b44eccff6ce7f5532adf8d7f52c5b0.ctex"]
+source_file="res://Asset/Visuel/basic_circle.png"
+dest_files=["res://.godot/imported/basic_circle.png-b0efcff62bc521c52c7a72d8e41251f3.ctex"]
 
 [params]
 
