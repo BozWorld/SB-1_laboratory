@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3pnkpqycsb63"
-path="res://.godot/imported/basic_circle.png-b0efcff62bc521c52c7a72d8e41251f3.ctex"
+uid="uid://c3yeiqkq7nvcs"
+path="res://.godot/imported/Objet dynamique vectoriel copie.png-f6bd75c08db5ae479329268226d9ff8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/Visuel/basic_circle.png"
-dest_files=["res://.godot/imported/basic_circle.png-b0efcff62bc521c52c7a72d8e41251f3.ctex"]
+source_file="res://Asset/Visuel/SB1_sprite/Objet dynamique vectoriel copie.png"
+dest_files=["res://.godot/imported/Objet dynamique vectoriel copie.png-f6bd75c08db5ae479329268226d9ff8d.ctex"]
 
 [params]
 

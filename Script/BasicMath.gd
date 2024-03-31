@@ -5,9 +5,6 @@ extends Node2D
 @export var force : Vector2
 @export var gravity : Vector2
 var accTo: float = 0.8
-@export var topspeed: Vector2
-@export var trine: Line2D
-@export var trine2: Line2D
 var dir: Vector2
 @export var mass: float
 @export var c: float
@@ -36,7 +33,7 @@ func setVelocity(delta):
 	limitVelocity(Vector2(-300,-300),Vector2(300,300))
 	position += velocity * delta
 
-	
+# permet de récupéré la force relative a l'objet
 func applyForces(force: Vector2):
 	var f = Vector2(force/mass)
 	acceleration += f 

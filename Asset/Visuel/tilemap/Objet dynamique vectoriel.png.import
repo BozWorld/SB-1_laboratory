@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgbqptoysgve2"
-path="res://.godot/imported/ship_0007.png-17149be8563bbacd9c020452c76ae778.ctex"
+uid="uid://bsiawnsrgs6ed"
+path="res://.godot/imported/Objet dynamique vectoriel.png-f70d554fb74f7a71c58fcd43d56116e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/Visuel/ship_0007.png"
-dest_files=["res://.godot/imported/ship_0007.png-17149be8563bbacd9c020452c76ae778.ctex"]
+source_file="res://Asset/Visuel/tilemap/Objet dynamique vectoriel.png"
+dest_files=["res://.godot/imported/Objet dynamique vectoriel.png-f70d554fb74f7a71c58fcd43d56116e7.ctex"]
 
 [params]
 

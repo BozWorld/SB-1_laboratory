@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ybjsskwvaom6"]
+
+[ext_resource type="PackedScene" uid="uid://dfs0botwnij1c" path="res://Scene/exemple_godot_character2D.tscn" id="1_68216"]
+
+[node name="Scene_exemple" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_68216")]
+position = Vector2(32, 160)
+speed = 0
+dir = Vector2(0, 0)
