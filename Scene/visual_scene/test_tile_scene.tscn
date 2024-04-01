@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://csq3cbfgtn52c"]
 
-[ext_resource type="Texture2D" uid="uid://bsiawnsrgs6ed" path="res://Asset/Visuel/tilemap/Objet dynamique vectoriel.png" id="1_tpgfl"]
-[ext_resource type="Texture2D" uid="uid://dppohij5v6scj" path="res://Asset/Visuel/tilemap/mesure.png" id="2_t7fo7"]
+[ext_resource type="Texture2D" uid="uid://bsiawnsrgs6ed" path="res://Asset/Visuel/tile_map/basics_texture_213_120.png" id="1_tpgfl"]
+[ext_resource type="Texture2D" uid="uid://dppohij5v6scj" path="res://Asset/Visuel/tile_map/raw_texture_100_100.png" id="2_t7fo7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xorwy"]
 texture = ExtResource("1_tpgfl")
