@@ -1,17 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://c3bk7m1t27by4"]
 
-[ext_resource type="Script" path="res://Script/BasicMath.gd" id="1_u6taf"]
-[ext_resource type="Texture2D" uid="uid://c3yeiqkq7nvcs" path="res://Asset/Visuel/SB1_sprite/Objet dynamique vectoriel copie.png" id="2_4m4bl"]
+[ext_resource type="Script" path="res://Script/basic_math/BasicsMathLib.gd" id="1_o8ndl"]
+[ext_resource type="Texture2D" uid="uid://c3yeiqkq7nvcs" path="res://Asset/Visuel/sb1_sprite/sb1_player.png" id="2_hjs85"]
 
 [node name="obj" type="Node2D"]
 self_modulate = Color(0.721569, 0.760784, 0.72549, 1)
-script = ExtResource("1_u6taf")
+script = ExtResource("1_o8ndl")
 gravity = Vector2(0, 40)
 mass = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_4m4bl")
+texture = ExtResource("2_hjs85")
 
 [node name="VelTimer" type="Timer" parent="."]
 wait_time = 0.5

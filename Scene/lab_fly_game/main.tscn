@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://ycivofm1ia4x"]
 
-[ext_resource type="Script" path="res://Script/HUD.gd" id="1_fb82j"]
-[ext_resource type="PackedScene" uid="uid://dxrum2s6coxra" path="res://Scene/Player_scene.tscn" id="1_rit4x"]
-[ext_resource type="PackedScene" uid="uid://csq3cbfgtn52c" path="res://Scene/tile_map.tscn" id="2_bappo"]
+[ext_resource type="Script" path="res://Script/debug_hud/DebugPhysicsHUD.gd" id="1_in3qo"]
+[ext_resource type="PackedScene" uid="uid://csq3cbfgtn52c" path="res://Scene/visual_scene/test_tile_scene.tscn" id="2_vbtia"]
+[ext_resource type="PackedScene" uid="uid://dxrum2s6coxra" path="res://Scene/lab_fly_game/Player_ship_scene.tscn" id="3_n6i5p"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_dp54r"]
 specular_color = Color(0, 0, 0, 1)
@@ -14,7 +14,7 @@ modulate_color = Color(0, 0, 0, 1)
 [sub_resource type="Theme" id="Theme_ev5wu"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("masslabel", "frictionlabel", "pushforcelabel", "velocitylabel", "gravitylabel", "normallabel", "player")]
-script = ExtResource("1_fb82j")
+script = ExtResource("1_in3qo")
 masslabel = NodePath("CanvasLayer/VBoxContainer/mass")
 frictionlabel = NodePath("CanvasLayer/VBoxContainer/friction")
 pushforcelabel = NodePath("CanvasLayer/VBoxContainer/pushforce")
@@ -23,43 +23,36 @@ gravitylabel = NodePath("CanvasLayer/VBoxContainer/gravity")
 normallabel = NodePath("CanvasLayer/VBoxContainer/normal")
 player = NodePath("Player_scene")
 
-[node name="TileMap" parent="." instance=ExtResource("2_bappo")]
+[node name="TileMap" parent="." instance=ExtResource("2_vbtia")]
 
-[node name="Player_scene" parent="." instance=ExtResource("1_rit4x")]
+[node name="Player_scene" parent="." instance=ExtResource("3_n6i5p")]
 position = Vector2(128, 320)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
-visible = false
 offset_right = 208.0
 offset_bottom = 184.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_q0s8o")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-visible = false
 offset_right = 40.0
 offset_bottom = 108.0
 theme = SubResource("Theme_ev5wu")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="mass" type="Label" parent="CanvasLayer/VBoxContainer"]
-visible = false
 layout_mode = 2
 text = "Mass :"
 
 [node name="friction" type="Label" parent="CanvasLayer/VBoxContainer"]
-visible = false
 layout_mode = 2
 text = "friction :"
 
 [node name="pushforce" type="Label" parent="CanvasLayer/VBoxContainer"]
-visible = false
 layout_mode = 2
 text = "push_Force :"
 

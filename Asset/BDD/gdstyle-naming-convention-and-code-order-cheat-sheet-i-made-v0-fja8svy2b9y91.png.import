@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3yeiqkq7nvcs"
-path="res://.godot/imported/Objet dynamique vectoriel copie.png-f6bd75c08db5ae479329268226d9ff8d.ctex"
+uid="uid://bsg6jleqka0rn"
+path="res://.godot/imported/gdstyle-naming-convention-and-code-order-cheat-sheet-i-made-v0-fja8svy2b9y91.png-49d077ce14811a17d9cdf50dcacad32f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/Visuel/SB1_sprite/Objet dynamique vectoriel copie.png"
-dest_files=["res://.godot/imported/Objet dynamique vectoriel copie.png-f6bd75c08db5ae479329268226d9ff8d.ctex"]
+source_file="res://Asset/BDD/gdstyle-naming-convention-and-code-order-cheat-sheet-i-made-v0-fja8svy2b9y91.png"
+dest_files=["res://.godot/imported/gdstyle-naming-convention-and-code-order-cheat-sheet-i-made-v0-fja8svy2b9y91.png-49d077ce14811a17d9cdf50dcacad32f.ctex"]
 
 [params]
 
