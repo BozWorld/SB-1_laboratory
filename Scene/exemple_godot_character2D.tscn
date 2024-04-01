@@ -1,18 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfs0botwnij1c"]
+[gd_scene load_steps=4 format=3 uid="uid://flr53y1honk3"]
 
-[ext_resource type="Script" path="res://Scene/player_godot_example.gd" id="1_kkla3"]
-[ext_resource type="Texture2D" uid="uid://i14cemb6miu1" path="res://Asset/Visuel/player.png" id="1_rao7s"]
+[ext_resource type="Texture2D" uid="uid://c3yeiqkq7nvcs" path="res://Asset/Visuel/sb1_sprite/sb1_player.png" id="1_bacli"]
+
+[sub_resource type="GDScript" id="GDScript_a5eqs"]
+script/source = "extends CharacterBody2D
+
+@export var speed: int
+@export var dir: Vector2
+
+
+
+func _physics_process(delta: float) -> void:
+	setVelocity(delta)
+	move_and_slide()
+
+
+func getDir():
+	var finalDir = dir.normalized()
+	
+func setVelocity(delta):
+	velocity += speed * dir * delta
+	limitVelocity(Vector2(-300,-300),Vector2(300,300))
+	position += velocity * delta
+	
+func limitVelocity(v1: Vector2,v2: Vector2):
+	velocity = velocity.clamp(v1,v2)
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qd77i"]
 size = Vector2(64, 72)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_kkla3")
+script = SubResource("GDScript_a5eqs")
 speed = 50
 dir = Vector2(2, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_rao7s")
+texture = ExtResource("1_bacli")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
