@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caff3uvsmmfkb"
-path="res://.godot/imported/sb-1_chroma_orchidee.svg-39ad3e204cda3aed19431715081ccefc.ctex"
+uid="uid://ci53jf88xrogd"
+path="res://.godot/imported/sb-1_chroma_fleur_doranger.svg-b7626e41c27c48df94954d29d292a5e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/Visuel/sb1_sprite/chromas_alt/sb-1_chroma_orchidee.svg"
-dest_files=["res://.godot/imported/sb-1_chroma_orchidee.svg-39ad3e204cda3aed19431715081ccefc.ctex"]
+source_file="res://Asset/Visuel/sb1_sprite/chromas_alt/sb-1_chroma_fleur_doranger.svg"
+dest_files=["res://.godot/imported/sb-1_chroma_fleur_doranger.svg-b7626e41c27c48df94954d29d292a5e5.ctex"]
 
 [params]
 
