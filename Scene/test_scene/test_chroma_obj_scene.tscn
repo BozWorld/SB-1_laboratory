@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://Script/basics_actor/BasicVarChroma.gd" id="1_vs4fl"]
 [ext_resource type="Texture2D" uid="uid://byrw4dkqghmpp" path="res://Asset/Visuel/sb1_sprite/chromas_alt/sb-1_chroma_amethyste.svg" id="2_63xhi"]
-[ext_resource type="Texture2D" uid="uid://bu4h37j2r5mg8" path="res://Asset/Visuel/sb1_sprite/chromas_alt/sb-1_chroma_citrus.svg" id="3_d0ylo"]
 [ext_resource type="Texture2D" uid="uid://cyqla5k0iaiiw" path="res://Asset/Visuel/sb1_sprite/chromas_alt/sb-1_chroma_corail.svg" id="3_iqngm"]
 [ext_resource type="Texture2D" uid="uid://wrg0u1mxtrlj" path="res://Asset/Visuel/sb1_sprite/chromas_alt/sb-1_chroma_meduse.svg" id="4_rgbg1"]
 [ext_resource type="Texture2D" uid="uid://ewrqbw6741bh" path="res://Asset/Visuel/sb1_sprite/chromas_alt/sb-1_chroma_ocre.svg" id="5_dyybr"]
-[ext_resource type="Texture2D" uid="uid://ci53jf88xrogd" path="res://Asset/Visuel/sb1_sprite/chromas_alt/sb-1_chroma_fleur_doranger.svg" id="5_yjbta"]
-[ext_resource type="Texture2D" uid="uid://8l2i0djbox7w" path="res://Asset/Visuel/sb1_sprite/chromas_alt/sb-1_chroma_guimauve.svg" id="6_aa7hm"]
 [ext_resource type="Texture2D" uid="uid://caff3uvsmmfkb" path="res://Asset/Visuel/sb1_sprite/chromas_alt/sb-1_chroma_orchidee.svg" id="6_b4y0i"]
-[ext_resource type="Texture2D" uid="uid://b0l5wb6haqlia" path="res://Asset/Visuel/sb1_sprite/chromas_alt/sb-1_chroma_houx.svg" id="7_0ne4t"]
+[ext_resource type="Texture2D" uid="uid://bu4h37j2r5mg8" path="res://Asset/Visuel/sb1_sprite/chromas_alt/sb-1_chroma_citrus.svg" id="7_n6qwp"]
+[ext_resource type="Texture2D" uid="uid://b0l5wb6haqlia" path="res://Asset/Visuel/sb1_sprite/chromas_alt/sb-1_chroma_houx.svg" id="8_s1i3h"]
+[ext_resource type="Texture2D" uid="uid://8l2i0djbox7w" path="res://Asset/Visuel/sb1_sprite/chromas_alt/sb-1_chroma_guimauve.svg" id="9_foex5"]
+[ext_resource type="Texture2D" uid="uid://73kdwy7kbte" path="res://Asset/Visuel/sb1_sprite/chromas_alt/sb-1_chroma_mandarinier.svg" id="10_q6k72"]
 
 [node name="obj" type="Node2D" node_paths=PackedStringArray("sprite")]
 self_modulate = Color(0.721569, 0.760784, 0.72549, 1)
@@ -17,7 +17,7 @@ script = ExtResource("1_vs4fl")
 gravity = Vector2(0, 40)
 mass = 1.0
 sprite = NodePath("Sprite2D")
-chromas = Array[Resource]([ExtResource("2_63xhi"), ExtResource("3_d0ylo"), ExtResource("3_iqngm"), ExtResource("5_yjbta"), ExtResource("6_aa7hm"), ExtResource("7_0ne4t"), ExtResource("4_rgbg1"), ExtResource("5_dyybr"), ExtResource("6_b4y0i")])
+chromas = Array[Resource]([ExtResource("2_63xhi"), ExtResource("3_iqngm"), ExtResource("4_rgbg1"), ExtResource("5_dyybr"), ExtResource("6_b4y0i"), ExtResource("7_n6qwp"), ExtResource("8_s1i3h"), ExtResource("9_foex5"), ExtResource("10_q6k72")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
