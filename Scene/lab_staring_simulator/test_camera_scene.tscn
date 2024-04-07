@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dtgsfrln8ecqh"]
 
-[ext_resource type="Texture2D" uid="uid://bwu70wa2usq67" path="res://Asset/Visuel/test_etoiles/test_ciel_etoile_non_libre_de_droit.jpeg" id="1_0eur3"]
+[ext_resource type="Texture2D" uid="uid://3mhb8xlp56ye" path="res://Asset/Visuel/test_etoiles/test_ciel_etoile_non_libre_de_droit.jpeg" id="1_0eur3"]
 [ext_resource type="Script" path="res://Script/lab_staring_simulator/test_focus_camera.gd" id="2_mcqho"]
 
 [node name="TestCameraScene" type="Node2D"]
@@ -10,7 +10,8 @@ texture = ExtResource("1_0eur3")
 
 [node name="FocusCamera" type="Node2D" parent="."]
 script = ExtResource("2_mcqho")
-facteur_velocite = 0.05
 
 [node name="Camera2D" type="Camera2D" parent="FocusCamera"]
+ignore_rotation = false
 position_smoothing_enabled = true
+rotation_smoothing_enabled = true

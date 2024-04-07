@@ -4,6 +4,9 @@ extends Node2D
 
 var velocite
 var arret : bool = false
+
+var tourner : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -14,14 +17,27 @@ func _process(delta):
 	pass
 
 func _input(event):
-	if event is InputEventMouseMotion && arret == false :
-		velocite = Input.get_last_mouse_velocity()
-		position += velocite * facteur_velocite
+	if event is InputEventMouseMotion:
+		velocite = event.relative * facteur_velocite
+		
+		if Input.mouse_mode == 2 && tourner == false:
+			position += velocite 
+		if tourner :
+			if event.position.x > 0 :
+				rotation += (velocite.x - velocite.y) * 0.005
+			
+			if event.position.x < 0 :
+				rotation += (velocite.x + velocite.y) * 0.005
 	
-	if Input.is_action_just_pressed("Fixer"):
+	
+	if Input.is_action_just_pressed("fixer"):
 		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
-		arret = true
 	
-	if Input.is_action_just_released("Fixer"):
+	if Input.is_action_just_released("fixer"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		arret = false
+	
+	if Input.is_action_just_pressed("tourner_objectif"):
+		tourner = true
+	
+	if Input.is_action_just_released("tourner_objectif"):
+		tourner = false
