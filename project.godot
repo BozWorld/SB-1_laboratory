@@ -19,6 +19,10 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ldtk.importer.1.2.1/1.2.1/ldtk-importer/plugin.cfg")
+
 [input]
 
 fly={
