@@ -19,6 +19,13 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+[file_customization]
+
+folder_colors={
+"res://Scene/mecanique_du_coeur/": "green",
+"res://Script/mecanique_du_coeur/": "purple"
+}
+
 [input]
 
 fly={
