@@ -1,5 +1,19 @@
-[gd_scene format=3 uid="uid://2lu1na20x4"]
+[gd_scene load_steps=2 format=3 uid="uid://2lu1na20x4"]
+
+[ext_resource type="Texture2D" uid="uid://dtypj28tubqmp" path="res://Asset/Visuel/mecanique_du_coeur/interface_bleue.svg" id="1_tx2hr"]
 
 [node name="Main" type="Node"]
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_tx2hr")
