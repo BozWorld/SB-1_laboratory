@@ -10,8 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Depth_Of_Heart"
-run/main_scene="res://Scene/lab_fly_game/main.tscn"
+config/name="S.B.E-Laboratory"
+config/description="https://bozotron.notion.site/SB-1-LABO-HUB-0f48613e54444e57a1b224d90cee3371?pvs=4"
+run/main_scene="res://NAMING_CONVENTION_SOURCE.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
 [display]
@@ -22,6 +23,13 @@ window/size/viewport_height=647
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://Scene/mecanique_du_coeur/": "green",
+"res://Script/mecanique_du_coeur/": "purple"
+}
 
 [input]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dppohij5v6scj"
-path="res://.godot/imported/raw_texture_100_100.png-893772d950e44c011d74ea1e47b4bf27.ctex"
+uid="uid://52sy1y3uyixw"
+path="res://.godot/imported/PriorityOverride.svg-e76e07f4bbd98169f119e17fe5f2f03f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/Visuel/tile_map/raw_texture_100_100.png"
-dest_files=["res://.godot/imported/raw_texture_100_100.png-893772d950e44c011d74ea1e47b4bf27.ctex"]
+source_file="res://addons/phantom_camera/icons/misc/PriorityOverride.svg"
+dest_files=["res://.godot/imported/PriorityOverride.svg-e76e07f4bbd98169f119e17fe5f2f03f.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
