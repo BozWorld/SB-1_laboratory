@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://t3i3nnes52nw"]
+
+[ext_resource type="Texture2D" uid="uid://cet8w25lupv5" path="res://Asset/Visuel/mecanique_du_coeur/boutons/slider_icon.svg" id="1_emio0"]
+[ext_resource type="Texture2D" uid="uid://v3fyehgdapkl" path="res://Asset/Visuel/mecanique_du_coeur/boutons/vslider.svg" id="2_oqtt4"]
+[ext_resource type="Texture2D" uid="uid://dsqjdxa7dlc64" path="res://Asset/Visuel/mecanique_du_coeur/boutons/vslider_grabbed_area.svg" id="3_fcc07"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ehxmh"]
+texture = ExtResource("2_oqtt4")
+texture_margin_left = 20.0
+texture_margin_top = 50.0
+texture_margin_right = 50.0
+texture_margin_bottom = 50.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s8fsc"]
+texture = ExtResource("3_fcc07")
+texture_margin_left = 20.0
+texture_margin_top = 50.0
+texture_margin_right = 50.0
+texture_margin_bottom = 50.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_itft7"]
+texture = ExtResource("3_fcc07")
+texture_margin_left = 20.0
+texture_margin_top = 50.0
+texture_margin_right = 50.0
+texture_margin_bottom = 50.0
+
+[node name="VSlider" type="VSlider"]
+offset_left = 24.0
+offset_top = 21.0
+offset_right = 94.0
+offset_bottom = 205.0
+theme_override_icons/grabber = ExtResource("1_emio0")
+theme_override_icons/grabber_highlight = ExtResource("1_emio0")
+theme_override_icons/grabber_disabled = ExtResource("1_emio0")
+theme_override_styles/slider = SubResource("StyleBoxTexture_ehxmh")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_s8fsc")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_itft7")

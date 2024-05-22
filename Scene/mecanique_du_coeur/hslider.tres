@@ -1,0 +1,46 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://chs53xhtoeiif"]
+
+[ext_resource type="Texture2D" uid="uid://cet8w25lupv5" path="res://Asset/Visuel/mecanique_du_coeur/boutons/slider_icon.svg" id="1_4oxtv"]
+[ext_resource type="Texture2D" uid="uid://bgbgydwpsiigj" path="res://Asset/Visuel/mecanique_du_coeur/boutons/hslider_grabbed_area.svg" id="2_pwdm3"]
+[ext_resource type="Texture2D" uid="uid://8qjl6qy0ulb5" path="res://Asset/Visuel/mecanique_du_coeur/boutons/hslider.svg" id="3_x8pcx"]
+
+[sub_resource type="Image" id="Image_kqb24"]
+data = {
+"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_dvnm4"]
+image = SubResource("Image_kqb24")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b84e6"]
+texture = ExtResource("2_pwdm3")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33iwc"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yuglx"]
+texture = ExtResource("3_x8pcx")
+
+[resource]
+HSlider/constants/center_grabber = 0
+HSlider/constants/grabber_offset = 0
+HSlider/icons/grabber = ExtResource("1_4oxtv")
+HSlider/icons/grabber_disabled = ExtResource("1_4oxtv")
+HSlider/icons/grabber_highlight = ExtResource("1_4oxtv")
+HSlider/icons/tick = SubResource("ImageTexture_dvnm4")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_b84e6")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_33iwc")
+HSlider/styles/slider = SubResource("StyleBoxTexture_yuglx")

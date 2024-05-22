@@ -1,19 +1,181 @@
-[gd_scene load_steps=2 format=3 uid="uid://2lu1na20x4"]
+[gd_scene load_steps=12 format=3 uid="uid://2lu1na20x4"]
 
+[ext_resource type="Script" path="res://Script/mecanique_du_coeur/main.gd" id="1_b818m"]
 [ext_resource type="Texture2D" uid="uid://dtypj28tubqmp" path="res://Asset/Visuel/mecanique_du_coeur/interface_bleue.svg" id="1_tx2hr"]
+[ext_resource type="Theme" uid="uid://6emhs1ot3bqd" path="res://Scene/mecanique_du_coeur/reset_button.tres" id="2_5x1sk"]
+[ext_resource type="PackedScene" uid="uid://cikjpbuykmgcp" path="res://Scene/mecanique_du_coeur/scene.tscn" id="2_gu5jp"]
+[ext_resource type="Theme" uid="uid://bx1g0rmi7qjqe" path="res://Scene/mecanique_du_coeur/valider_button.tres" id="3_lj2yk"]
+[ext_resource type="Script" path="res://Script/mecanique_du_coeur/scene.gd" id="3_lnlps"]
+[ext_resource type="Theme" uid="uid://cahmj0vkelolr" path="res://Scene/mecanique_du_coeur/historique_button.tres" id="4_87yyg"]
+[ext_resource type="PackedScene" uid="uid://duvx6saogfitq" path="res://Scene/mecanique_du_coeur/bouton_plus_moins.tscn" id="5_t8iqe"]
+[ext_resource type="PackedScene" uid="uid://t3i3nnes52nw" path="res://Scene/mecanique_du_coeur/vslider.tscn" id="6_0sq23"]
+[ext_resource type="PackedScene" uid="uid://0vjqv8w0hioe" path="res://Scene/mecanique_du_coeur/sliders.tscn" id="7_wm4l8"]
+[ext_resource type="Script" path="res://Script/mecanique_du_coeur/vslider.gd" id="8_snm8i"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_b818m")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Scene" parent="." instance=ExtResource("2_gu5jp")]
+position = Vector2(1068, 528)
+script = ExtResource("3_lnlps")
 
-[node name="Control" type="Control" parent="."]
+[node name="Perso2" parent="Scene" index="1"]
+visible = false
+
+[node name="Perso1" parent="Scene" index="3"]
+visible = false
+
+[node name="Perso3" parent="Scene" index="4"]
+visible = false
+
+[node name="Perso4" parent="Scene" index="5"]
+visible = false
+
+[node name="Perso5" parent="Scene" index="6"]
+visible = false
+
+[node name="FondHaut" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 88.0
+color = Color(0, 0, 0, 1)
+
+[node name="FondHaut2" type="ColorRect" parent="."]
+offset_top = 997.0
+offset_right = 1920.0
+offset_bottom = 1085.0
+color = Color(0, 0, 0, 1)
+
+[node name="FondHaut3" type="ColorRect" parent="."]
+offset_left = 102.0
+offset_top = -1.0
+offset_right = 1185.0
+offset_bottom = 105.0
+rotation = 1.5708
+color = Color(0, 0, 0, 1)
+
+[node name="FondHaut4" type="ColorRect" parent="."]
+offset_left = 1924.0
+offset_top = -1.0
+offset_right = 3007.0
+offset_bottom = 105.0
+rotation = 1.5708
+color = Color(0, 0, 0, 1)
+
+[node name="BandeDown" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.312
+anchor_top = 0.093
+anchor_right = 0.801
+anchor_bottom = 0.868
+offset_left = 14.96
+offset_top = 833.56
+offset_right = -28.9202
+offset_bottom = 19.5599
+color = Color(0, 0, 0, 1)
+
+[node name="BandeTop" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.312
+anchor_top = 0.093
+anchor_right = 0.801
+anchor_bottom = 0.868
+offset_left = 14.96
+offset_top = -14.44
+offset_right = -28.9202
+offset_bottom = -828.44
+color = Color(0, 0, 0, 1)
+
+[node name="BandeGauche" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.312
+anchor_top = 0.093
+anchor_right = 0.801
+anchor_bottom = 0.868
+offset_left = 14.96
+offset_top = -14.44
+offset_right = -28.9202
+offset_bottom = -828.44
+rotation = 1.5708
+color = Color(0, 0, 0, 1)
+
+[node name="BandeDroite" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.312
+anchor_top = 0.093
+anchor_right = 0.801
+anchor_bottom = 0.868
+offset_left = 931.96
+offset_top = -14.44
+offset_right = 888.08
+offset_bottom = -828.44
+rotation = 1.5708
+color = Color(0, 0, 0, 1)
+
+[node name="Interface" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="Interface"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_tx2hr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Interface"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 48.266
+anchor_bottom = 27.276
+offset_left = 1571.0
+offset_top = 224.0
+offset_right = -99.6401
+offset_bottom = -252.04
+
+[node name="Button3" type="Button" parent="Interface/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_5x1sk")
+
+[node name="Button" type="Button" parent="Interface/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_87yyg")
+
+[node name="Button2" type="Button" parent="Interface/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_lj2yk")
+
+[node name="NombrePersos" parent="." instance=ExtResource("5_t8iqe")]
+offset_left = 186.0
+offset_top = 237.0
+offset_right = -1540.0
+offset_bottom = -779.0
+scale = Vector2(1.75941, 1.75941)
+
+[node name="SliderFormat" parent="." instance=ExtResource("6_0sq23")]
+offset_left = 278.0
+offset_top = 566.0
+offset_right = 348.0
+offset_bottom = 738.0
+scale = Vector2(2.01438, 2.01438)
+script = ExtResource("8_snm8i")
+
+[node name="SliderZoom" parent="." instance=ExtResource("7_wm4l8")]
+offset_left = 149.0
+offset_top = 392.0
+offset_right = 364.0
+offset_bottom = 462.0
+scale = Vector2(1.86291, 1.86291)
+
+[connection signal="pressed" from="Interface/VBoxContainer/Button3" to="." method="reset"]
+[connection signal="pressed" from="Interface/VBoxContainer/Button3" to="NombrePersos" method="reset"]
+[connection signal="pressed" from="Interface/VBoxContainer/Button2" to="." method="fin_tour"]
+[connection signal="nombre_change" from="NombrePersos" to="Scene" method="_on_nombre_persos_nombre_change"]
+[connection signal="reset_gens" from="NombrePersos" to="Scene" method="_on_reset"]
+[connection signal="value_changed" from="SliderFormat" to="." method="_on_format_value_changed"]
+[connection signal="value_changed" from="SliderZoom" to="Scene" method="_on_slider_zoom_value_changed"]
+
+[editable path="Scene"]
