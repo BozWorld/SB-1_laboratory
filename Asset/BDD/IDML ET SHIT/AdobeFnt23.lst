@@ -1,0 +1,82 @@
+%!Adobe-FontList 1.23
+%Locale:0x40c
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:PPPangramSansRounded-Bold
+FamilyName:PP Pangram Sans Rounded
+StyleName:Bold
+FullName:PP Pangram Sans Rounded Bold
+MenuName:PP Pangram Sans Rounded Narrow
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:C:\Users\mondo\OneDrive\Documents\oral_mai_enjmin_2024\Dossier Présentation-Oral-2024-Un-doudou\Document fonts\PPPangramSansRounded-Bold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:99136
+FileModTime:1704476690
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,PP Pangram Sans Rounded Bold
+NameArray:0,Win,1,PP Pangram Sans Rounded Narrow
+NameArray:0,Win,16,PP Pangram Sans Rounded
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:PPPangramSansRounded-NarrowExtraboldItalic
+FamilyName:PP Pangram Sans Rounded
+StyleName:Narrow Extrabold Italic
+FullName:PP Pangram Sans Rounded Narrow Extrabold Italic
+MenuName:PP Pangram Sans Rounded Narrow ExBd
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:C:\Users\mondo\OneDrive\Documents\oral_mai_enjmin_2024\Dossier Présentation-Oral-2024-Un-doudou\Document fonts\PPPangramSansRounded-NarrowExtraboldItalic.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:106568
+FileModTime:1704476688
+WeightClass:400
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,18,PP Pangram Rounded Narrow Exbold It
+NameArray:0,Mac,4,PP Pangram Sans Rounded Narrow Extrabold Italic
+NameArray:0,Win,1,PP Pangram Sans Rounded Narrow ExBd
+NameArray:0,Win,16,PP Pangram Sans Rounded
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:PPPangramSansRounded-Semibold
+FamilyName:PP Pangram Sans Rounded
+StyleName:Semibold
+FullName:PP Pangram Sans Rounded Semibold
+MenuName:PP Pangram Sans Rounded Smbold
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\mondo\OneDrive\Documents\oral_mai_enjmin_2024\Dossier Présentation-Oral-2024-Un-doudou\Document fonts\PPPangramSansRounded-Semibold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:99136
+FileModTime:1704476690
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,PP Pangram Sans Rounded Semibold
+NameArray:0,Win,1,PP Pangram Sans Rounded Smbold
+NameArray:0,Win,16,PP Pangram Sans Rounded
+%EndFont
+
