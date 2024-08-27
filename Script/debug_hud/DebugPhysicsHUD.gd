@@ -35,15 +35,15 @@ func _physics_process(delta: float) -> void:
 	gravitylabel.text = "gravity : " +  str(gravity)
 	normallabel.text = "acceleration : " +  str(acceleration)
 	print($Player_scene.velocity_dir, " ",$Player_scene.velocity)
-	$PcamTween.set_follow_target_offset( $Player_scene.velocity_dir * 700.0 * ($Player_scene.velocity.length() / 500.0))
+	$PhantomCamera2D.set_follow_offset( $Player_scene.velocity_dir * 700.0 * ($Player_scene.velocity.length() / 500.0))
 	if  !Input.is_action_pressed("fly"):
-		#$PcamTween.set_follow_target_offset(Vector2(0,0))
-		$PcamTween.set_follow_damping_value(2.0)
+		#$PhantomCamera2D.set_follow_offset(Vector2(0,0))
+		$PhantomCamera2D.set_follow_damping_value(Vector2(2.0,0))
 
 	else:
-		#$PcamTween.set_follow_target_offset(Vector2(-1 * $Player_scene.dir.x, -1 * $Player_scene.dir.y) * 300.0)
-		$PcamTween.set_follow_damping_value(2.0)
-		#$PcamTween.set_follow_target_offset( $Player_scene.velocity_dir * 200.0)
+		#$PhantomCamera2D.set_follow_offset(Vector2(-1 * $Player_scene.dir.x, -1 * $Player_scene.dir.y) * 300.0)
+		$PhantomCamera2D.set_follow_offset(Vector2(2.0,0))
+		#$Pcam2D.set_follow_target_offset( $Player_scene.velocity_dir * 200.0)
 		
 	shake_strength = lerp(shake_strength,0.0,shake_decay_rate * delta)
 	

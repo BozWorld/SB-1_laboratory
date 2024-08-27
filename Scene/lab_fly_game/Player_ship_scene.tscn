@@ -8,6 +8,7 @@ radius = 8.0
 height = 32.0
 
 [node name="player_ship" type="CharacterBody2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_410xb")
 
 [node name="Line2D" type="Line2D" parent="."]
