@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://ycivofm1ia4x"]
+[gd_scene load_steps=10 format=3 uid="uid://ycivofm1ia4x"]
 
 [ext_resource type="Script" path="res://Script/debug_hud/DebugPhysicsHUD.gd" id="1_in3qo"]
-[ext_resource type="PackedScene" uid="uid://csq3cbfgtn52c" path="res://Scene/visual_scene/test_tile_scene.tscn" id="2_vbtia"]
 [ext_resource type="PackedScene" uid="uid://dxrum2s6coxra" path="res://Scene/lab_fly_game/Player_ship_scene.tscn" id="3_n6i5p"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_ll6qa"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="5_67v4y"]
@@ -31,8 +30,6 @@ velocitylabel = NodePath("CanvasLayer/VBoxContainer/velocity")
 gravitylabel = NodePath("CanvasLayer/VBoxContainer/gravity")
 normallabel = NodePath("CanvasLayer/VBoxContainer/normal")
 player = NodePath("Player_scene")
-
-[node name="TileMap" parent="." instance=ExtResource("2_vbtia")]
 
 [node name="Player_scene" parent="." instance=ExtResource("3_n6i5p")]
 position = Vector2(128, 320)
