@@ -23,56 +23,58 @@ ease = 2
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("masslabel", "frictionlabel", "pushforcelabel", "velocitylabel", "gravitylabel", "normallabel", "player")]
 script = ExtResource("1_in3qo")
-masslabel = NodePath("CanvasLayer/VBoxContainer/mass")
-frictionlabel = NodePath("CanvasLayer/VBoxContainer/friction")
-pushforcelabel = NodePath("CanvasLayer/VBoxContainer/pushforce")
-velocitylabel = NodePath("CanvasLayer/VBoxContainer/velocity")
-gravitylabel = NodePath("CanvasLayer/VBoxContainer/gravity")
-normallabel = NodePath("CanvasLayer/VBoxContainer/normal")
+masslabel = NodePath("[UI]/CanvasLayer/VBoxContainer/mass")
+frictionlabel = NodePath("[UI]/CanvasLayer/VBoxContainer/friction")
+pushforcelabel = NodePath("[UI]/CanvasLayer/VBoxContainer/pushforce")
+velocitylabel = NodePath("[UI]/CanvasLayer/VBoxContainer/velocity")
+gravitylabel = NodePath("[UI]/CanvasLayer/VBoxContainer/gravity")
+normallabel = NodePath("[UI]/CanvasLayer/VBoxContainer/normal")
 player = NodePath("Player_scene")
 
-[node name="Player_scene" parent="." instance=ExtResource("3_n6i5p")]
-position = Vector2(128, 320)
+[node name="[UI]" type="Node" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="[UI]"]
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="Panel" type="Panel" parent="[UI]/CanvasLayer"]
 offset_right = 208.0
 offset_bottom = 184.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_q0s8o")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="[UI]/CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 108.0
 theme = SubResource("Theme_ev5wu")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="[UI]/CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="mass" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="mass" type="Label" parent="[UI]/CanvasLayer/VBoxContainer"]
 layout_mode = 2
 text = "Mass :"
 
-[node name="friction" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="friction" type="Label" parent="[UI]/CanvasLayer/VBoxContainer"]
 layout_mode = 2
 text = "friction :"
 
-[node name="pushforce" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="pushforce" type="Label" parent="[UI]/CanvasLayer/VBoxContainer"]
 layout_mode = 2
 text = "push_Force :"
 
-[node name="velocity" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="velocity" type="Label" parent="[UI]/CanvasLayer/VBoxContainer"]
 layout_mode = 2
 text = "Velocity : "
 
-[node name="gravity" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="gravity" type="Label" parent="[UI]/CanvasLayer/VBoxContainer"]
 layout_mode = 2
 text = "gravity :"
 
-[node name="normal" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="normal" type="Label" parent="[UI]/CanvasLayer/VBoxContainer"]
 layout_mode = 2
 text = "normal :"
+
+[node name="Player_scene" parent="." instance=ExtResource("3_n6i5p")]
+position = Vector2(128, 320)
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 position = Vector2(128, 320)
@@ -82,8 +84,12 @@ follow_target = NodePath("../Player_scene")
 tween_resource = SubResource("Resource_smwsk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-physics_interpolation_mode = 2
+physics_interpolation_mode = 1
 position = Vector2(128, 320)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 script = ExtResource("4_ll6qa")
+
+[node name="[PLAYER]" type="Node" parent="."]
+
+[node name="[LD]" type="Node" parent="."]
