@@ -1,17 +1,17 @@
 extends Node2D
 
-@export var masslabel : Label
-@export var frictionlabel : Label
-@export var pushforcelabel : Label
-@export var velocitylabel : Label
-@export var gravitylabel : Label
-@export var normallabel : Label
+@export var mass_label : Label
+@export var friction_label : Label
+@export var push_force_label : Label
+@export var velocity_label : Label
+@export var gravity_label : Label
+@export var normal_label : Label
 
 @export var player : CharacterBody2D
 
 @export var mass : float
-@export var frictionCoef : float
-@export var pushforce : Vector2
+@export var friction_coef : float
+@export var push_force : Vector2
 @export var velocity : Vector2
 @export var gravity : Vector2
 @export var acceleration : Vector2
@@ -20,7 +20,7 @@ var shake_decay_rate:float =2.0
 var shake_strength: float = 0.0
 
 func _ready():
-	$Player_scene.sharp_turn_screen_shake.connect(_screen_shake.bind())
+	$PlayerScene.sharp_turn_screen_shake.connect(screen_shake.bind())
 
 func _physics_process(delta: float) -> void:
 	
@@ -28,14 +28,13 @@ func _physics_process(delta: float) -> void:
 	velocity = player.velocity
 	acceleration = player.acceleration
 	
-	masslabel.text = "Mass : " + str(mass)
-	frictionlabel.text = "friction : " + str(frictionCoef)
-	pushforcelabel.text = "push_Force : " +  str(pushforce)
-	velocitylabel.text = "Velocity :  " +  str(velocity)
-	gravitylabel.text = "gravity : " +  str(gravity)
-	normallabel.text = "acceleration : " +  str(acceleration)
-	print($Player_scene.velocity_dir, " ",$Player_scene.velocity)
-	$PhantomCamera2D.set_follow_offset( $Player_scene.velocity_dir * 700.0 * ($Player_scene.velocity.length() / 500.0))
+	mass_label.text = "Mass : " + str(mass)
+	friction_label.text = "friction : " + str(friction_coef)
+	push_force_label.text = "push_Force : " +  str(push_force)
+	velocity_label.text = "Velocity :  " +  str(velocity)
+	gravity_label.text = "gravity : " +  str(gravity)
+	normal_label.text = "acceleration : " +  str(acceleration)
+	$PhantomCamera2D.set_follow_offset( $PlayerScene.velocity_dir * 700.0 * ($PlayerScene.velocity.length() / 500.0))
 	if  !Input.is_action_pressed("fly"):
 		#$PhantomCamera2D.set_follow_offset(Vector2(0,0))
 		$PhantomCamera2D.set_follow_damping_value(Vector2(2.0,0))
@@ -49,7 +48,7 @@ func _physics_process(delta: float) -> void:
 	
 	$Camera2D.offset = get_random_offset()
 
-func _screen_shake(turn_angle: float):
+func screen_shake(turn_angle: float):
 	shake_strength = random_shake * (turn_angle / 7000)
 
 func get_random_offset():
