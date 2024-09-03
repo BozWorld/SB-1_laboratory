@@ -1,25 +1,26 @@
 extends CharacterBody2D
 
+signal sharp_turn_screen_shake(turn_angle)
 var acceleration : Vector2 = Vector2.ZERO
 ## Why was it set at 60 ? 
-var friction_mag: float = 0.002
-var friction: Vector2 = Vector2.ZERO
-var force : Vector2 = Vector2.ZERO
-var gravity : Vector2 = Vector2(0,200)
-var max_speed : Vector2 = Vector2(-400,-400)
-var min_speed : Vector2 = Vector2(400,700)
-var angular_acc : float = 700
-var angular_vel: float = 0
-var min_v_acc: float = -7.0
-var max_h_acc : float = 7.0
-var mass : float = 6.0
+@export_range(0.0,1.0) var friction_mag: float = 0.002
+@export var gravity : Vector2 = Vector2(0,200)
+@export var max_speed : Vector2 = Vector2(-400,-400)
+@export var min_speed : Vector2 = Vector2(400,700)
+@export var angular_acc : float = 700
+@export var angular_vel: float = 0
+@export var min_v_acc: float = -7.0
+@export var max_h_acc : float = 7.0
+@export var mass : float = 6.0
+@export var engine_power = -100  # Forward acceleration force.
+
 var time : float = 0
-var engine_power = -100  # Forward acceleration force.
 var dir = Vector2.ZERO
 var velocity_dir = Vector2.ZERO
-
-signal sharp_turn_screen_shake(turn_angle)
 var emit_once:bool = false
+var force : Vector2 = Vector2.ZERO
+var friction: Vector2 = Vector2.ZERO
+
 
 func _physics_process(delta):
 	var turn = Input.get_axis("rotate_left", "rotate_right")
@@ -82,7 +83,7 @@ func applyForces(force: Vector2):
 func applyForcesMass(force: Vector2, ownmass: float):
 	var f = Vector2(force/ownmass)
 	acceleration += f
-
+ 
 ## Permet de limiter les mouvements de l'avion 
 func checkEdgesBounce():
 	var limit = 2000
