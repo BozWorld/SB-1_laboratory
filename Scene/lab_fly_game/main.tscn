@@ -22,14 +22,11 @@ duration = 1.0
 transition = 0
 ease = 2
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("mass_label", "friction_label", "push_force_label", "velocity_label", "gravity_label", "normal_label", "player")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("friction_label", "push_force_label", "velocity_label", "player")]
 script = ExtResource("1_in3qo")
-mass_label = NodePath("[UI]/CanvasLayer/VBoxContainer/mass")
 friction_label = NodePath("[UI]/CanvasLayer/VBoxContainer/friction")
 push_force_label = NodePath("[UI]/CanvasLayer/VBoxContainer/pushforce")
 velocity_label = NodePath("[UI]/CanvasLayer/VBoxContainer/velocity")
-gravity_label = NodePath("[UI]/CanvasLayer/VBoxContainer/gravity")
-normal_label = NodePath("[UI]/CanvasLayer/VBoxContainer/normal")
 player = NodePath("PlayerScene")
 velocity = Vector2(1, 1)
 
@@ -98,3 +95,5 @@ scale = Vector2(2, 2)
 
 [node name="PlayerScene" parent="." instance=ExtResource("3_n6i5p")]
 position = Vector2(128, 320)
+gravity = Vector2(0, 150)
+mass = 8.0

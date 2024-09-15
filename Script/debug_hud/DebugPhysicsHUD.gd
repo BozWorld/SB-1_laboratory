@@ -1,19 +1,14 @@
 extends Node2D
 
-@export var mass_label : Label
 @export var friction_label : Label
 @export var push_force_label : Label
 @export var velocity_label : Label
-@export var gravity_label : Label
-@export var normal_label : Label
 
 @export var player : CharacterBody2D
 
-@export var mass : float
 @export var friction_coef : float
 @export var push_force : Vector2
 @export var velocity : Vector2
-@export var gravity : Vector2
 @export var acceleration : Vector2
 var random_shake: float = 8.0
 var shake_decay_rate:float =2.0
@@ -24,16 +19,11 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	
-	mass = player.mass
 	velocity = player.velocity
 	acceleration = player.acceleration
-	
-	mass_label.text = "Mass : " + str(mass)
 	friction_label.text = "friction : " + str(friction_coef)
 	push_force_label.text = "push_Force : " +  str(push_force)
 	velocity_label.text = "Velocity :  " +  str(velocity)
-	gravity_label.text = "gravity : " +  str(gravity)
-	normal_label.text = "acceleration : " +  str(acceleration)
 	$PhantomCamera2D.set_follow_offset( $PlayerScene.velocity_dir * 700.0 * ($PlayerScene.velocity.length() / 500.0))
 	if  !Input.is_action_pressed("fly"):
 		#$PhantomCamera2D.set_follow_offset(Vector2(0,0))
