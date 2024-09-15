@@ -16,10 +16,10 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	var friction = player.friction
-	friction_label.text = "Friction : " + str(friction)
-	force_label.text = "Force : " +  str(player.force)
-	velocity_label.text = "Velocity : " + str(player.velocity)
-	angular_vel.text = "Angular Velocity : " + str(player.angular_vel)
+	friction_label.text = "Friction : " + str(round(friction))
+	force_label.text = "Force : " +  str(round(player.force))
+	velocity_label.text = "Velocity : " + str(round(player.velocity))
+	angular_vel.text = "Angular Velocity : " + str(round(player.angular_vel))
 	
 	$PhantomCamera2D.set_follow_offset( $PlayerScene.velocity_dir * 700.0 * ($PlayerScene.velocity.length() / 500.0))
 	if  !Input.is_action_pressed("fly"):

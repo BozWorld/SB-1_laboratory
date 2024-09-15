@@ -8,12 +8,12 @@ var acceleration : Vector2 = Vector2.ZERO
 @export var max_speed : Vector2 = Vector2(-400,-400)
 @export var min_speed : Vector2 = Vector2(400,700)
 @export var angular_acc : float = 700
-@export var angular_vel: float = 0
 @export var min_v_acc: float = -7.0
 @export var max_h_acc : float = 7.0
 @export var mass : float = 6.0
 @export var engine_power = -100  # Forward acceleration force.
 
+var angular_vel: float = 0
 var time : float = 0
 var dir = Vector2.ZERO
 var velocity_dir = Vector2.ZERO

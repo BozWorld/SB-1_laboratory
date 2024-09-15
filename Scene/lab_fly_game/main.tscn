@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://ycivofm1ia4x"]
 
 [ext_resource type="Script" path="res://Script/debug_hud/DebugPhysicsHUD.gd" id="1_in3qo"]
-[ext_resource type="FontFile" uid="uid://bbbl3cg2pkxrv" path="res://Asset/UI/Font/Kenney Future.ttf" id="2_3jol3"]
 [ext_resource type="Texture2D" uid="uid://dt3e6qkmw3jfa" path="res://Asset/UI/PNG/Blue/Default/button_square_gradient.png" id="2_3v516"]
+[ext_resource type="FontFile" uid="uid://c4n0rcc8phte5" path="res://Asset/UI/Font/Silver.ttf" id="3_8x4jk"]
 [ext_resource type="PackedScene" uid="uid://dxrum2s6coxra" path="res://Scene/lab_fly_game/player_ship.tscn" id="3_n6i5p"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_fl0p7"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_ll6qa"]
@@ -33,15 +33,15 @@ player = NodePath("PlayerScene")
 [node name="CanvasLayer" type="CanvasLayer" parent="[UI]"]
 
 [node name="Panel" type="Panel" parent="[UI]/CanvasLayer"]
-offset_right = 477.0
-offset_bottom = 217.0
+offset_right = 200.0
+offset_bottom = 156.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_q0s8o")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="[UI]/CanvasLayer"]
-offset_left = 21.72
-offset_top = 13.235
-offset_right = 242.72
-offset_bottom = 145.235
+offset_left = 49.0
+offset_top = 21.0
+offset_right = 627.0
+offset_bottom = 197.0
 theme = SubResource("Theme_ev5wu")
 
 [node name="MarginContainer" type="MarginContainer" parent="[UI]/CanvasLayer/VBoxContainer"]
@@ -50,27 +50,27 @@ size_flags_horizontal = 4
 
 [node name="velocity" type="Label" parent="[UI]/CanvasLayer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_3jol3")
-theme_override_font_sizes/font_size = 35
+theme_override_fonts/font = ExtResource("3_8x4jk")
+theme_override_font_sizes/font_size = 20
 text = "Velocity : 
 "
 
 [node name="friction" type="Label" parent="[UI]/CanvasLayer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_3jol3")
-theme_override_font_sizes/font_size = 35
+theme_override_fonts/font = ExtResource("3_8x4jk")
+theme_override_font_sizes/font_size = 20
 text = "friction :"
 
 [node name="force" type="Label" parent="[UI]/CanvasLayer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_3jol3")
-theme_override_font_sizes/font_size = 35
+theme_override_fonts/font = ExtResource("3_8x4jk")
+theme_override_font_sizes/font_size = 20
 text = "force :"
 
 [node name="Angular Vel" type="Label" parent="[UI]/CanvasLayer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_3jol3")
-theme_override_font_sizes/font_size = 35
+theme_override_fonts/font = ExtResource("3_8x4jk")
+theme_override_font_sizes/font_size = 20
 text = "angular vel : "
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
@@ -96,5 +96,11 @@ scale = Vector2(2, 2)
 
 [node name="PlayerScene" parent="." instance=ExtResource("3_n6i5p")]
 position = Vector2(128, 320)
-gravity = Vector2(0, 150)
-mass = 8.0
+friction_mag = 0.01
+gravity = Vector2(0, 120)
+max_speed = Vector2(-600, -400)
+angular_acc = 400.0
+min_v_acc = -6.0
+max_h_acc = 6.0
+mass = 1.0
+engine_power = -120
