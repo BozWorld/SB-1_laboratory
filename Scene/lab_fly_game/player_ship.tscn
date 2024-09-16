@@ -11,11 +11,11 @@ height = 32.0
 scale = Vector2(2, 2)
 script = ExtResource("1_410xb")
 
-[node name="Line2D" type="Line2D" parent="."]
+[node name="Dir" type="Line2D" parent="."]
 position = Vector2(3.5, -12.4513)
 scale = Vector2(4.5, 0.17434)
 points = PackedVector2Array(-0.777778, 25.5323, -0.777778, -66.2424)
-width = 1.0
+width = 0.205
 default_color = Color(0.815686, 0.223529, 0, 1)
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
@@ -24,5 +24,5 @@ texture = ExtResource("2_ghll1")
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_oy6yj")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="FrontPos" type="Node2D" parent="."]
 position = Vector2(0, -20)

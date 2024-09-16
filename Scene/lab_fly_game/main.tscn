@@ -96,11 +96,7 @@ scale = Vector2(2, 2)
 
 [node name="PlayerScene" parent="." instance=ExtResource("3_n6i5p")]
 position = Vector2(128, 320)
-friction_mag = 0.01
+friction_mag = 0.003
 gravity = Vector2(0, 120)
-max_speed = Vector2(-600, -400)
-angular_acc = 400.0
-min_v_acc = -6.0
-max_h_acc = 6.0
-mass = 1.0
-engine_power = -120
+angular_acc = 300.0
+mass = 2.0
