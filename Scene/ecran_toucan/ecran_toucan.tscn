@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://chwjvvehcplb5"]
+
+[ext_resource type="Script" path="res://Scene/ecran_toucan/EcranToucan.gd" id="1_xwbu0"]
+[ext_resource type="PackedScene" uid="uid://cqc0eq4spfgs1" path="res://Scene/test_scene/test_chroma_obj_scene.tscn" id="2_akxi8"]
+
+[sub_resource type="Curve2D" id="Curve2D_2ys53"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1920, 0)
+}
+point_count = 2
+
+[node name="testScene" type="Node2D" node_paths=PackedStringArray("spawn_location", "spawn_timer")]
+script = ExtResource("1_xwbu0")
+obj = ExtResource("2_akxi8")
+spawn_location = NodePath("spawnlocation/spawnpath")
+spawn_timer = NodePath("spawntimer")
+_incertitude = 0.3
+_formule_evolution = "x*0.9"
+
+[node name="spawnlocation" type="Path2D" parent="."]
+curve = SubResource("Curve2D_2ys53")
+
+[node name="spawnpath" type="PathFollow2D" parent="spawnlocation"]
+
+[node name="spawntimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.2
+one_shot = true
+autostart = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.192157, 0.0862745, 0.270588, 1)
