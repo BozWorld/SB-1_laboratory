@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0v54ap7wyvlw"]
+
+[ext_resource type="Script" path="res://Script/basics_actor/Randonneureuse.gd" id="1_fj4i6"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_i5ye5"]
+
+[node name="Gymnase" type="Node3D"]
+
+[node name="Randonneureuse" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_i5ye5")
+script = ExtResource("1_fj4i6")
