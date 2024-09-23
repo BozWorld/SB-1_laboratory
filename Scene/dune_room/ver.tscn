@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3mwa70w1j2x7"]
+
+[ext_resource type="Texture2D" uid="uid://fnb2sq6bnd5j" path="res://Asset/Visuel/dune_room/vers/ver.png" id="1_ypwd4"]
+[ext_resource type="Script" path="res://Script/dune_room/ver_sprite.gd" id="2_rw2qv"]
+[ext_resource type="Script" path="res://Script/dune_room/ver_deplacements.gd" id="3_8e5xa"]
+
+[node name="Ver" type="Node2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+scale = Vector2(1.61842, 1.61842)
+texture = ExtResource("1_ypwd4")
+script = ExtResource("2_rw2qv")
+
+[node name="deplacements" type="Node" parent="."]
+script = ExtResource("3_8e5xa")

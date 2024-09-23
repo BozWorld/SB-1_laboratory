@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvc32bmo5mjr0"]
+[gd_scene load_steps=11 format=3 uid="uid://cvc32bmo5mjr0"]
 
+[ext_resource type="Script" path="res://Script/dune_room/random_tick.gd" id="1_7bnd8"]
 [ext_resource type="Texture2D" uid="uid://cnqu0686bxsjp" path="res://Asset/Visuel/dune_room/fond/Fond.png" id="1_xp4aa"]
 [ext_resource type="Script" path="res://Script/dune_room/paul.gd" id="2_tgb8w"]
+[ext_resource type="Script" path="res://Script/dune_room/spawner_ver.gd" id="3_jfhmx"]
 [ext_resource type="Script" path="res://Script/dune_room/paul_deplacements.gd" id="3_pan20"]
 [ext_resource type="Texture2D" uid="uid://cx3xw2isneh0p" path="res://Asset/Visuel/dune_room/paul/paul_idle.png" id="4_27hsn"]
 [ext_resource type="Texture2D" uid="uid://babf1qd5ugi3h" path="res://Asset/Visuel/dune_room/paul/walk/paul_walk1.png" id="5_ixo01"]
@@ -32,13 +34,23 @@ animations = [{
 
 [node name="Main" type="Node2D"]
 
+[node name="RandomTickGenerator" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+script = ExtResource("1_7bnd8")
+
 [node name="Fond" type="Sprite2D" parent="."]
 position = Vector2(575, 323)
 scale = Vector2(1.34889, 1.34889)
 texture = ExtResource("1_xp4aa")
 
+[node name="SpawnerVer" type="Node2D" parent="." node_paths=PackedStringArray("random_tick_generator")]
+position = Vector2(580, 313)
+script = ExtResource("3_jfhmx")
+random_tick_generator = NodePath("../RandomTickGenerator")
+
 [node name="Paul" type="Node2D" parent="."]
-position = Vector2(578, 335)
+position = Vector2(374, 117)
 script = ExtResource("2_tgb8w")
 
 [node name="deplacements" type="Node" parent="Paul"]
@@ -50,5 +62,3 @@ sprite_frames = SubResource("SpriteFrames_nyr1s")
 animation = &"move"
 autoplay = "idle"
 script = ExtResource("7_wkgrx")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Paul"]
