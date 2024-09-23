@@ -1,9 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvc32bmo5mjr0"]
+[gd_scene load_steps=9 format=3 uid="uid://cvc32bmo5mjr0"]
 
 [ext_resource type="Texture2D" uid="uid://cnqu0686bxsjp" path="res://Asset/Visuel/dune_room/fond/Fond.png" id="1_xp4aa"]
 [ext_resource type="Script" path="res://Script/dune_room/paul.gd" id="2_tgb8w"]
 [ext_resource type="Script" path="res://Script/dune_room/paul_deplacements.gd" id="3_pan20"]
 [ext_resource type="Texture2D" uid="uid://cx3xw2isneh0p" path="res://Asset/Visuel/dune_room/paul/paul_idle.png" id="4_27hsn"]
+[ext_resource type="Texture2D" uid="uid://babf1qd5ugi3h" path="res://Asset/Visuel/dune_room/paul/walk/paul_walk1.png" id="5_ixo01"]
+[ext_resource type="Texture2D" uid="uid://cbj1od6aan0tq" path="res://Asset/Visuel/dune_room/paul/walk/paul_walk3.png" id="7_ba5av"]
+[ext_resource type="Script" path="res://Script/dune_room/paul_anim.gd" id="7_wkgrx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nyr1s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_27hsn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ixo01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ba5av")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
 
 [node name="Main" type="Node2D"]
 
@@ -16,9 +41,14 @@ texture = ExtResource("1_xp4aa")
 position = Vector2(578, 335)
 script = ExtResource("2_tgb8w")
 
-[node name="bouge" type="Node" parent="Paul"]
+[node name="deplacements" type="Node" parent="Paul"]
 script = ExtResource("3_pan20")
 
-[node name="Sprite2D" type="Sprite2D" parent="Paul"]
+[node name="sprite" type="AnimatedSprite2D" parent="Paul"]
 scale = Vector2(2, 2)
-texture = ExtResource("4_27hsn")
+sprite_frames = SubResource("SpriteFrames_nyr1s")
+animation = &"move"
+autoplay = "idle"
+script = ExtResource("7_wkgrx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Paul"]

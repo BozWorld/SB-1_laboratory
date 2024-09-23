@@ -6,7 +6,12 @@ var currentState = States.IDLE
 var velocite : Vector2
 var acceleration : Vector2
 
+@onready var anim_sprite = $sprite
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+signal etat_change
+
+
+func _set_state(etat):
+	if not currentState == etat :
+		currentState = etat
+		etat_change.emit(etat)
