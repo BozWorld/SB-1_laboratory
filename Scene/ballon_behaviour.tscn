@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://ch8y2b7wr17gr"]
+
+[ext_resource type="Script" path="res://Scene/BallPhysics.gd" id="1_k7tf3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1r6v4"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_o62nu"]
+sky_material = SubResource("ProceduralSkyMaterial_1r6v4")
+
+[sub_resource type="Environment" id="Environment_t58bx"]
+background_mode = 2
+sky = SubResource("Sky_o62nu")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2x2kw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_c1kyv"]
+radius = 0.205
+height = 0.51
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dtcu0"]
+transparency = 1
+albedo_color = Color(0.0705882, 0.458824, 0.513726, 0.94902)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t58bx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="sol" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_2x2kw")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.919135, 0.393942, 0, -0.393942, 0.919135, 0, 1.655, 2.03)
+
+[node name="ballon" type="Node3D" parent="."]
+script = ExtResource("1_k7tf3")
+gravity = Vector3(0, -0.5, 0)
+hittingPoint = Vector3(0, 0.5, 0)
+hittingForce = Vector3(0, -7, 0)
+helium = Vector3(0, 0.7, 0)
+
+[node name="ballmesh" type="MeshInstance3D" parent="ballon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.682069, 0)
+mesh = SubResource("SphereMesh_c1kyv")
+surface_material_override/0 = SubResource("StandardMaterial3D_dtcu0")
