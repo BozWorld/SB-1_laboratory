@@ -1,0 +1,146 @@
+[gd_scene load_steps=11 format=3 uid="uid://cgwh6fof1jvfd"]
+
+[ext_resource type="Script" path="res://Lab_NoC/ballon_helium.gd" id="1_wc8no"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_voog5"]
+sky_top_color = Color(0.544476, 0.308885, 0.775765, 1)
+sky_horizon_color = Color(0.666142, 0.577233, 0.733104, 1)
+ground_bottom_color = Color(0.120091, 4.82451e-05, 0.156651, 1)
+ground_horizon_color = Color(0.666142, 0.577233, 0.733104, 1)
+
+[sub_resource type="Sky" id="Sky_0fdq7"]
+sky_material = SubResource("ProceduralSkyMaterial_voog5")
+
+[sub_resource type="Environment" id="Environment_t6cmn"]
+background_mode = 2
+sky = SubResource("Sky_0fdq7")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r4hcs"]
+albedo_color = Color(0.803922, 0, 0, 1)
+metallic = 0.24
+backlight_enabled = true
+backlight = Color(0.629675, 0.629675, 0.629675, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_8rlix"]
+material = SubResource("StandardMaterial3D_r4hcs")
+radius = 0.15
+height = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ub263"]
+transparency = 1
+albedo_color = Color(0.486275, 1, 0.454902, 0.760784)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t4xde"]
+material = SubResource("StandardMaterial3D_ub263")
+size = Vector3(100, 1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x60f4"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qfjj2"]
+material = SubResource("StandardMaterial3D_x60f4")
+
+[node name="BalloonLab" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t6cmn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_color = Color(0.58261, 1, 0.551536, 1)
+shadow_enabled = true
+
+[node name="Ballon" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.03056, 0)
+mesh = SubResource("SphereMesh_8rlix")
+script = ExtResource("1_wc8no")
+legerete_helium = 0.2
+puissance_vent = 1.3
+
+[node name="Camera3D" type="Camera3D" parent="Ballon"]
+transform = Transform3D(1, 0, 0, 0, 0.660723, -0.75063, 0, 0.75063, 0.660723, 0, -1.5867, 2.58055)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.318274, 0)
+visible = false
+omni_range = 29.0202
+omni_attenuation = -0.01
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9408, -0.318274, -22.3518)
+light_color = Color(1.92523e-06, 0.685105, 0.866221, 1)
+omni_range = 14.905
+omni_attenuation = -0.01
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.1982, -0.318274, -2.37096)
+light_color = Color(1, 1, 0.247059, 1)
+light_energy = 1.97
+omni_range = 14.905
+omni_attenuation = -0.01
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7558, -0.318274, 27.734)
+light_color = Color(0, 0.780703, 0.780702, 1)
+omni_range = 14.905
+omni_attenuation = -0.01
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.3992, -0.318274, 5.49682)
+omni_range = 14.905
+omni_attenuation = -0.01
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1986, -0.318274, 32.6857)
+omni_range = 14.905
+omni_attenuation = -0.01
+
+[node name="Plafond" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_t4xde")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.49404, 0)
+mesh = SubResource("BoxMesh_qfjj2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.4443, 8.49404, -14.9636)
+mesh = SubResource("BoxMesh_qfjj2")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.86438, 8.49404, 22.4832)
+mesh = SubResource("BoxMesh_qfjj2")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4014, 8.49404, 7.22202)
+mesh = SubResource("BoxMesh_qfjj2")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.68657, 8.49404, -27.4582)
+mesh = SubResource("BoxMesh_qfjj2")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.3011, 8.49404, 3.02828)
+mesh = SubResource("BoxMesh_qfjj2")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7436, 8.49404, 21.7837)
+mesh = SubResource("BoxMesh_qfjj2")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.4219, 8.49404, -26.6374)
+mesh = SubResource("BoxMesh_qfjj2")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0413, 8.49404, 30.5072)
+mesh = SubResource("BoxMesh_qfjj2")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3625, 8.49404, 16.6534)
+mesh = SubResource("BoxMesh_qfjj2")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.4309, 8.49404, -37.1613)
+mesh = SubResource("BoxMesh_qfjj2")
