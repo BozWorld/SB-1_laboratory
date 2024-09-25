@@ -17,3 +17,8 @@ func _physics_process(delta: float) -> void:
 	if velocite :
 		velocite = velocite.limit_length(VITESSE_MAX)
 		ver.position += velocite
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.wall :
+		area

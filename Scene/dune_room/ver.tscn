@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3mwa70w1j2x7"]
+[gd_scene load_steps=5 format=3 uid="uid://c3mwa70w1j2x7"]
 
 [ext_resource type="Texture2D" uid="uid://fnb2sq6bnd5j" path="res://Asset/Visuel/dune_room/vers/ver.png" id="1_ypwd4"]
 [ext_resource type="Script" path="res://Script/dune_room/ver_sprite.gd" id="2_rw2qv"]
 [ext_resource type="Script" path="res://Script/dune_room/ver_deplacements.gd" id="3_8e5xa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uybel"]
+size = Vector2(30.1469, 31.0207)
 
 [node name="Ver" type="Node2D"]
 
@@ -11,5 +14,15 @@ scale = Vector2(1.61842, 1.61842)
 texture = ExtResource("1_ypwd4")
 script = ExtResource("2_rw2qv")
 
+[node name="Area2D" type="Area2D" parent="sprite"]
+position = Vector2(-0.308943, 1.23577)
+rotation = 0.785398
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sprite/Area2D"]
+shape = SubResource("RectangleShape2D_uybel")
+
 [node name="deplacements" type="Node" parent="."]
 script = ExtResource("3_8e5xa")
+
+[connection signal="area_entered" from="sprite/Area2D" to="deplacements" method="_on_area_2d_area_entered"]

@@ -48,6 +48,7 @@ texture = ExtResource("1_xp4aa")
 position = Vector2(580, 313)
 script = ExtResource("3_jfhmx")
 random_tick_generator = NodePath("../RandomTickGenerator")
+max_vers = 50
 
 [node name="Paul" type="Node2D" parent="."]
 position = Vector2(374, 117)
