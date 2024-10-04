@@ -1,3 +1,79 @@
-[gd_scene format=3 uid="uid://in7c14sa3eu8"]
+[gd_scene load_steps=12 format=3 uid="uid://in7c14sa3eu8"]
+
+[ext_resource type="Script" path="res://ScriptEtScenes/CycleJourNuit.gd" id="1_x6mxa"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8xcm"]
+sky_top_color = Color(0.703314, 0.45815, 1, 1)
+sky_horizon_color = Color(0.725829, 0.656788, 0.78325, 1)
+ground_horizon_color = Color(0.725829, 0.656788, 0.78325, 1)
+
+[sub_resource type="Sky" id="Sky_y7do0"]
+sky_material = SubResource("ProceduralSkyMaterial_y8xcm")
+
+[sub_resource type="Environment" id="Environment_0d32p"]
+background_mode = 2
+sky = SubResource("Sky_y7do0")
+ambient_light_source = 1
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7so7"]
+albedo_color = Color(0.340339, 0.340339, 0.340339, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4ucpp"]
+material = SubResource("StandardMaterial3D_a7so7")
+size = Vector2(50, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6x3g"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_i5khn"]
+material = SubResource("StandardMaterial3D_l6x3g")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_051rp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lg86d"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2wmll"]
+material = SubResource("StandardMaterial3D_lg86d")
 
 [node name="Gymnase" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0.047932, 0.425798, 0.903548, -0.4977, 0.794477, -0.347996, 0, 0, 0)
+light_color = Color(1, 0.443137, 0, 1)
+shadow_enabled = true
+script = ExtResource("1_x6mxa")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0d32p")
+
+[node name="Sol" type="CSGMesh3D" parent="."]
+mesh = SubResource("PlaneMesh_4ucpp")
+
+[node name="Ambient" type="Node" parent="."]
+
+[node name="Perso" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16795, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Perso"]
+mesh = SubResource("CapsuleMesh_i5khn")
+
+[node name="Area3D" type="Area3D" parent="Perso"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Perso/Area3D"]
+shape = SubResource("CapsuleShape3D_051rp")
+
+[node name="Camera3D" type="Camera3D" parent="Perso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.593865, 0)
+
+[node name="Pnj" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16795, -4.63099)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pnj"]
+mesh = SubResource("CapsuleMesh_2wmll")
+
+[node name="Area3D" type="Area3D" parent="Pnj"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pnj/Area3D"]
+shape = SubResource("CapsuleShape3D_051rp")
