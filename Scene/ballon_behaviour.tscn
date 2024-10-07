@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ch8y2b7wr17gr"]
+[gd_scene load_steps=8 format=3 uid="uid://bchnsifsd1n1e"]
 
 [ext_resource type="Script" path="res://Scene/BallPhysics.gd" id="1_k7tf3"]
 
@@ -35,10 +35,8 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="sol" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 mesh = SubResource("PlaneMesh_2x2kw")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.919135, 0.393942, 0, -0.393942, 0.919135, 0, 1.655, 2.03)
 
 [node name="ballon" type="Node3D" parent="."]
 script = ExtResource("1_k7tf3")
@@ -51,3 +49,6 @@ helium = Vector3(0, 0.7, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.682069, 0)
 mesh = SubResource("SphereMesh_c1kyv")
 surface_material_override/0 = SubResource("StandardMaterial3D_dtcu0")
+
+[node name="Camera3D" type="Camera3D" parent="ballon"]
+transform = Transform3D(1, 0, 0, 0, 0.919135, 0.393942, 0, -0.393942, 0.919135, 0, 1.655, 2.03)
