@@ -1,8 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://in7c14sa3eu8"]
+[gd_scene load_steps=26 format=3 uid="uid://in7c14sa3eu8"]
 
 [ext_resource type="Script" path="res://ScriptEtScenes/CycleJourNuit.gd" id="1_x6mxa"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso.gd" id="3_vfk10"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/saut.gd" id="4_3j17j"]
+[ext_resource type="Script" path="res://ScriptEtScenes/gestionnaire_planetes.gd" id="6_28p61"]
+[ext_resource type="Script" path="res://ScriptEtScenes/planet.gd" id="6_rsbke"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/deplacements.gd" id="7_p50mk"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/regarder.gd" id="9_3tdo0"]
 
@@ -20,13 +22,6 @@ sky = SubResource("Sky_y7do0")
 ambient_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7so7"]
-albedo_color = Color(0.340339, 0.340339, 0.340339, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_4ucpp"]
-material = SubResource("StandardMaterial3D_a7so7")
-size = Vector2(50, 50)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6x3g"]
 
@@ -47,6 +42,34 @@ albedo_color = Color(1, 0, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_hunbm"]
 material = SubResource("StandardMaterial3D_m4fif")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_pfsi0"]
+radius = 20.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_og3yb"]
+radius = 20.0
+height = 40.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tujxt"]
+radius = 40.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_nf2mg"]
+radius = 40.0
+height = 80.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_c37jp"]
+radius = 30.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_o3v8j"]
+radius = 30.0
+height = 60.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rlte4"]
+radius = 35.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_5w32s"]
+radius = 35.0
+height = 70.0
+
 [node name="Gymnase" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -58,22 +81,18 @@ script = ExtResource("1_x6mxa")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0d32p")
 
-[node name="Sol" type="CSGMesh3D" parent="."]
-mesh = SubResource("PlaneMesh_4ucpp")
-
 [node name="Ambient" type="Node" parent="."]
 
-[node name="Perso" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
+[node name="Perso" type="CharacterBody3D" parent="." node_paths=PackedStringArray("gestionnaire_gravite", "camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16795, 0)
 script = ExtResource("3_vfk10")
+gestionnaire_gravite = NodePath("../GestionnairePlanetes")
 camera = NodePath("Regarder/HPivot/VPivot/Camera3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Perso"]
 mesh = SubResource("CapsuleMesh_i5khn")
 
-[node name="Area3D" type="Area3D" parent="Perso"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Perso/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Perso"]
 shape = SubResource("CapsuleShape3D_051rp")
 
 [node name="Deplacements" type="Node3D" parent="Perso"]
@@ -107,3 +126,54 @@ shape = SubResource("CapsuleShape3D_051rp")
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28144, 0.509458, -5.65983)
 mesh = SubResource("BoxMesh_hunbm")
+
+[node name="GestionnairePlanetes" type="Node" parent="." node_paths=PackedStringArray("planetes")]
+script = ExtResource("6_28p61")
+planetes = [NodePath("Planete1"), NodePath("Planete2"), NodePath("Planete3"), NodePath("Planete4")]
+
+[node name="Planete1" type="StaticBody3D" parent="GestionnairePlanetes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -21.8859, 0)
+script = ExtResource("6_rsbke")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GestionnairePlanetes/Planete1"]
+shape = SubResource("SphereShape3D_pfsi0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GestionnairePlanetes/Planete1"]
+mesh = SubResource("SphereMesh_og3yb")
+skeleton = NodePath("../../..")
+
+[node name="Planete2" type="StaticBody3D" parent="GestionnairePlanetes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.2019, 24.031, -73.2082)
+script = ExtResource("6_rsbke")
+poids = 1000
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GestionnairePlanetes/Planete2"]
+shape = SubResource("SphereShape3D_tujxt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GestionnairePlanetes/Planete2"]
+mesh = SubResource("SphereMesh_nf2mg")
+skeleton = NodePath("../../..")
+
+[node name="Planete3" type="StaticBody3D" parent="GestionnairePlanetes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -153.608, -93.1532, 156.514)
+script = ExtResource("6_rsbke")
+poids = 750
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GestionnairePlanetes/Planete3"]
+shape = SubResource("SphereShape3D_c37jp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GestionnairePlanetes/Planete3"]
+mesh = SubResource("SphereMesh_o3v8j")
+skeleton = NodePath("../../..")
+
+[node name="Planete4" type="StaticBody3D" parent="GestionnairePlanetes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.9824, 34.7225, -126.454)
+script = ExtResource("6_rsbke")
+poids = 1500
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GestionnairePlanetes/Planete4"]
+shape = SubResource("SphereShape3D_rlte4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GestionnairePlanetes/Planete4"]
+mesh = SubResource("SphereMesh_5w32s")
+skeleton = NodePath("../../..")

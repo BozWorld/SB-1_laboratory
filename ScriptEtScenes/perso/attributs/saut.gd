@@ -11,8 +11,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		parent.scale.y = 0.8
 		
 	elif Input.is_action_just_released("saut"):
-		var saut = Vector3(0,1,0)
-		saut.y += flexion
+		var saut : Vector3
+		if parent.is_on_floor() :
+			saut.y = 20
+		else :
+			saut.y = 0
+			
+		saut.y += flexion * 10
 		parent.apply_force(saut)
 		
 		genoux_flechis = false

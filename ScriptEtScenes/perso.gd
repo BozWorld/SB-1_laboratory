@@ -1,10 +1,12 @@
-extends Node3D
+extends CharacterBody3D
 
 var masse = 1.0
-var poids = masse * 1.0 # Le 1 c'est la gravité
+var poids = masse * 9.8 # Le 1 c'est la gravité
 
 var velocite : Vector3
 var acceleration : Vector3
+
+@export var gestionnaire_gravite : Node
 
 @export var camera : Camera3D
 
@@ -24,11 +26,11 @@ func apply_force(force : Vector3):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	
-
+	print("gravite :" + str(get_gravity()))
 		
 		
 		
-		
+	# Add the gravity.
 	
 	
 	#var gravite = Vector3(0, -poids, 0)
@@ -36,6 +38,19 @@ func _physics_process(delta: float) -> void:
 	
 	#print("velocite :" + str(velocite))
 	#print("position :" + str(position))
+	
 	velocite += acceleration
-	position += velocite * delta
+	
+	#position += velocite * delta
+	
+	velocity = velocite
+	
+	
+	velocity += gestionnaire_gravite._chopper_gravite(position)
+	
+	move_and_slide()
+	
 	acceleration = Vector3(0.0,0.0,0.0)
+	
+#func choper_gravite():
+	
