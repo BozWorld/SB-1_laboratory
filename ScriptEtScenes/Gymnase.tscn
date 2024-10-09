@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://in7c14sa3eu8"]
+[gd_scene load_steps=23 format=3 uid="uid://in7c14sa3eu8"]
 
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_ubp1u"]
 [ext_resource type="Script" path="res://ScriptEtScenes/CycleJourNuit.gd" id="1_x6mxa"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://ScriptEtScenes/perso.gd" id="3_vfk10"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_jvvy1"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_dj8j4"]
+[ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/deplacements.gd" id="7_p50mk"]
+[ext_resource type="Script" path="res://ScriptEtScenes/class/attribut.gd" id="8_tgwwi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8xcm"]
 sky_top_color = Color(0.703314, 0.45815, 1, 1)
@@ -103,12 +105,15 @@ shape = SubResource("CapsuleShape3D_051rp")
 [node name="PhantomCamera3D" type="Node3D" parent="Perso"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.38868, 0)
 script = ExtResource("3_l7hrk")
+priority = 7
 tween_resource = SubResource("Resource_wh7ja")
 camera_3d_resource = SubResource("Resource_4yv8i")
 
 [node name="Deplacements" type="Node" parent="Perso"]
+script = ExtResource("7_p50mk")
 
 [node name="Saut" type="Node" parent="Perso"]
+script = ExtResource("8_tgwwi")
 
 [node name="Pnj" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16795, -4.63099)

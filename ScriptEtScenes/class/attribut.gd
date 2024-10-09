@@ -1,8 +1,9 @@
-extends DirectionalLight3D
+extends Node
+class_name Attribut
 
-var doDaylightCycle = true
+@onready var parent : Node = get_parent()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if doDaylightCycle :
-		rotation.x += 0.001 * delta
+	pass
