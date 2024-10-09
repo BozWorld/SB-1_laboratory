@@ -1,17 +1,24 @@
-extends Attribut
+extends Attribut3D
 
 
 func get_input():
-	var impulse : Vector2
+	var impulse : Vector3
 	impulse.x = Input.get_axis("bougerDROITE", "bougerGAUCHE") * 0.1
-	impulse.y = Input.get_axis("bougerARRIERE","bougerAVANT") * 0.1
+	impulse.y = 0
+	impulse.z = Input.get_axis("bougerARRIERE","bougerAVANT") * 0.1
+	
+	
+	var orientation_cam = parent.camera.global_rotation.y
+		
+	impulse = -impulse.rotated(Vector3.UP, orientation_cam)
+	
 	return impulse
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_pressed("bougerDROITE") or Input.is_action_pressed("bougerGAUCHE") or Input.is_action_pressed("bougerAVANT") or Input.is_action_pressed("bougerARRIERE") :
-		parent.apply_force(Vector3(get_input().x, 0.0, get_input().y))
+		parent.apply_force(Vector3(get_input().x, 0.0, get_input().z))
 		
 	else :
 		var arret : Vector2
