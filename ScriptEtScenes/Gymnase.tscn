@@ -1,13 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://in7c14sa3eu8"]
+[gd_scene load_steps=18 format=3 uid="uid://in7c14sa3eu8"]
 
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_ubp1u"]
 [ext_resource type="Script" path="res://ScriptEtScenes/CycleJourNuit.gd" id="1_x6mxa"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_l7hrk"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso.gd" id="3_vfk10"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_jvvy1"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_dj8j4"]
+[ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/saut.gd" id="4_3j17j"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/deplacements.gd" id="7_p50mk"]
-[ext_resource type="Script" path="res://ScriptEtScenes/class/attribut.gd" id="8_tgwwi"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/regarder.gd" id="9_3tdo0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8xcm"]
@@ -39,24 +35,6 @@ material = SubResource("StandardMaterial3D_l6x3g")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_051rp"]
 
-[sub_resource type="Resource" id="Resource_wh7ja"]
-script = ExtResource("4_jvvy1")
-duration = 1.0
-transition = 0
-ease = 2
-
-[sub_resource type="Resource" id="Resource_4yv8i"]
-script = ExtResource("5_dj8j4")
-cull_mask = 1048575
-h_offset = 0.0
-v_offset = 0.0
-projection = 0
-fov = 75.0
-size = 1.0
-frustum_offset = Vector2(0, 0)
-near = 0.05
-far = 4000.0
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lg86d"]
 albedo_color = Color(0, 1, 0, 1)
 
@@ -70,12 +48,6 @@ albedo_color = Color(1, 0, 0, 1)
 material = SubResource("StandardMaterial3D_m4fif")
 
 [node name="Gymnase" type="Node3D"]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.55663, 0)
-
-[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
-script = ExtResource("1_ubp1u")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0.047932, 0.425798, 0.903548, -0.4977, 0.794477, -0.347996, 0, 0, 0)
@@ -91,9 +63,10 @@ mesh = SubResource("PlaneMesh_4ucpp")
 
 [node name="Ambient" type="Node" parent="."]
 
-[node name="Perso" type="Node3D" parent="."]
+[node name="Perso" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16795, 0)
 script = ExtResource("3_vfk10")
+camera = NodePath("Regarder/HPivot/VPivot/Camera3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Perso"]
 mesh = SubResource("CapsuleMesh_i5khn")
@@ -103,21 +76,22 @@ mesh = SubResource("CapsuleMesh_i5khn")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Perso/Area3D"]
 shape = SubResource("CapsuleShape3D_051rp")
 
-[node name="PhantomCamera3D" type="Node3D" parent="Perso"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.38868, 0)
-script = ExtResource("3_l7hrk")
-priority = 7
-tween_resource = SubResource("Resource_wh7ja")
-camera_3d_resource = SubResource("Resource_4yv8i")
-
-[node name="Deplacements" type="Node" parent="Perso"]
+[node name="Deplacements" type="Node3D" parent="Perso"]
 script = ExtResource("7_p50mk")
 
-[node name="Saut" type="Node" parent="Perso"]
-script = ExtResource("8_tgwwi")
+[node name="Saut" type="Node3D" parent="Perso"]
+script = ExtResource("4_3j17j")
 
-[node name="Regarder" type="Node" parent="Perso"]
+[node name="Regarder" type="Node3D" parent="Perso"]
 script = ExtResource("9_3tdo0")
+sensibilite = 0.005
+
+[node name="HPivot" type="Node3D" parent="Perso/Regarder"]
+
+[node name="VPivot" type="Node3D" parent="Perso/Regarder/HPivot"]
+
+[node name="Camera3D" type="Camera3D" parent="Perso/Regarder/HPivot/VPivot"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.646196, 0)
 
 [node name="Pnj" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16795, -4.63099)
