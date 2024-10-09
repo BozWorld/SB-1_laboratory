@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8jmrou3lrf42"]
+
+[ext_resource type="PackedScene" uid="uid://lusuxqaoklf" path="res://visuel/export_3d/avion.tscn" id="1_0ejtm"]
+[ext_resource type="Script" path="res://Scene/player/player.gd" id="1_l1kis"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2xu3f"]
+radius = 1.69832
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_l1kis")
+
+[node name="Aile_Basse" parent="." instance=ExtResource("1_0ejtm")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_2xu3f")

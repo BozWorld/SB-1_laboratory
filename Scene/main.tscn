@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdsbcaxpntyxi"]
+
+[ext_resource type="PackedScene" uid="uid://c8jmrou3lrf42" path="res://Scene/player/player.tscn" id="1_n5g6i"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ij82h"]
+size = Vector2(8.33, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ec8o"]
+albedo_color = Color(0.179011, 0.10792, 0.272809, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ec6t5"]
+size = Vector2(1.675, 11.97)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l1bka"]
+albedo_color = Color(0.292722, 0.0346195, 0.0904669, 1)
+
+[node name="main" type="Node3D"]
+
+[node name="sol" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_ij82h")
+surface_material_override/0 = SubResource("StandardMaterial3D_0ec8o")
+
+[node name="sol2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.17)
+mesh = SubResource("PlaneMesh_ec6t5")
+surface_material_override/0 = SubResource("StandardMaterial3D_l1bka")
+
+[node name="player" parent="." instance=ExtResource("1_n5g6i")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.15, 0)
+
+[node name="Camera3D" type="Camera3D" parent="player"]
+transform = Transform3D(-10, -8.21505e-07, 2.99004e-07, 0, 3.4202, 9.39693, -8.74228e-07, 9.39693, -3.4202, 0, 24, -5.35)
