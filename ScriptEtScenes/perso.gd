@@ -1,4 +1,4 @@
-extends Node3D
+extends CharacterBody3D
 
 var masse = 1.0
 var poids = masse * 1.0 # Le 1 c'est la gravité
@@ -15,8 +15,14 @@ func get_input():
 	return impulse
 	
 
+func appliquer_force_verticale(force : float):
+	acceleration.y += force
 
-func apply_force(force : Vector3):
+func appliquer_force_horizontale(force : Vector2):
+	acceleration.x += force.x
+	acceleration.z += force.y
+
+func appliquer_force(force : Vector3):
 	acceleration += force
 
 
@@ -24,18 +30,13 @@ func apply_force(force : Vector3):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	
-
-		
-		
-		
-		
-	
-	
-	#var gravite = Vector3(0, -poids, 0)
-	#apply_force(gravite)
+	if not is_on_floor() :
+		var gravite = Vector3(0, -poids, 0)
+		appliquer_force(gravite)
 	
 	#print("velocite :" + str(velocite))
 	#print("position :" + str(position))
 	velocite += acceleration
-	position += velocite * delta
+	velocity = velocite
+	move_and_slide()
 	acceleration = Vector3(0.0,0.0,0.0)

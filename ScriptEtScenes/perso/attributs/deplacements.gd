@@ -18,7 +18,7 @@ func get_input():
 func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_pressed("bougerDROITE") or Input.is_action_pressed("bougerGAUCHE") or Input.is_action_pressed("bougerAVANT") or Input.is_action_pressed("bougerARRIERE") :
-		parent.apply_force(Vector3(get_input().x, 0.0, get_input().z))
+		parent.appliquer_force(Vector3(get_input().x, 0.0, get_input().z))
 		
 	else :
 		var arret : Vector2
@@ -34,4 +34,4 @@ func _physics_process(delta: float) -> void:
 		else :
 			arret.y = 1.0/abs(parent.velocite.z)  * -parent.velocite.z * 0.2
 		
-		parent.apply_force(Vector3(arret.x, 0, arret.y))
+		parent.appliquer_force(Vector3(arret.x, 0, arret.y))

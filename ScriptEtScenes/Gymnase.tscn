@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://in7c14sa3eu8"]
+[gd_scene load_steps=17 format=3 uid="uid://in7c14sa3eu8"]
 
 [ext_resource type="Script" path="res://ScriptEtScenes/CycleJourNuit.gd" id="1_x6mxa"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso.gd" id="3_vfk10"]
@@ -21,14 +21,18 @@ ambient_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7so7"]
-albedo_color = Color(0.340339, 0.340339, 0.340339, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qv82l"]
+albedo_color = Color(0.215686, 0.227451, 0.227451, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_4ucpp"]
-material = SubResource("StandardMaterial3D_a7so7")
-size = Vector2(50, 50)
+[sub_resource type="PlaneMesh" id="PlaneMesh_7jd3x"]
+material = SubResource("StandardMaterial3D_qv82l")
+size = Vector2(25, 25)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1k0rv"]
+data = PackedVector3Array(12.5, 0, 12.5, -12.5, 0, 12.5, 12.5, 0, -12.5, -12.5, 0, 12.5, -12.5, 0, -12.5, 12.5, 0, -12.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6x3g"]
+albedo_color = Color(0.6, 0.258824, 1, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_i5khn"]
 material = SubResource("StandardMaterial3D_l6x3g")
@@ -41,29 +45,29 @@ albedo_color = Color(0, 1, 0, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_2wmll"]
 material = SubResource("StandardMaterial3D_lg86d")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m4fif"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_hunbm"]
-material = SubResource("StandardMaterial3D_m4fif")
-
 [node name="Gymnase" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0.047932, 0.425798, 0.903548, -0.4977, 0.794477, -0.347996, 0, 0, 0)
-light_color = Color(1, 0.443137, 0, 1)
+light_color = Color(1, 0.886331, 0.832077, 1)
 shadow_enabled = true
 script = ExtResource("1_x6mxa")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0d32p")
 
-[node name="Sol" type="CSGMesh3D" parent="."]
-mesh = SubResource("PlaneMesh_4ucpp")
+[node name="Sol" type="StaticBody3D" parent="."]
+
+[node name="Mesh" type="MeshInstance3D" parent="Sol"]
+mesh = SubResource("PlaneMesh_7jd3x")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Sol"]
+shape = SubResource("ConcavePolygonShape3D_1k0rv")
 
 [node name="Ambient" type="Node" parent="."]
 
-[node name="Perso" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
+[node name="Perso" type="CharacterBody3D" parent="." node_paths=PackedStringArray("camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16795, 0)
 script = ExtResource("3_vfk10")
 camera = NodePath("Regarder/HPivot/VPivot/Camera3D")
@@ -71,9 +75,7 @@ camera = NodePath("Regarder/HPivot/VPivot/Camera3D")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Perso"]
 mesh = SubResource("CapsuleMesh_i5khn")
 
-[node name="Area3D" type="Area3D" parent="Perso"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Perso/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Perso"]
 shape = SubResource("CapsuleShape3D_051rp")
 
 [node name="Deplacements" type="Node3D" parent="Perso"]
@@ -93,17 +95,11 @@ sensibilite = 0.005
 [node name="Camera3D" type="Camera3D" parent="Perso/Regarder/HPivot/VPivot"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.646196, 0)
 
-[node name="Pnj" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16795, -4.63099)
+[node name="Pnj" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16795, 5.53554)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pnj"]
 mesh = SubResource("CapsuleMesh_2wmll")
 
-[node name="Area3D" type="Area3D" parent="Pnj"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pnj/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pnj"]
 shape = SubResource("CapsuleShape3D_051rp")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28144, 0.509458, -5.65983)
-mesh = SubResource("BoxMesh_hunbm")
