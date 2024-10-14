@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="S.B.E-Laboratory"
-run/main_scene="res://Scene/lab_fly_game/main.tscn"
+run/main_scene="res://Scene/testing_rotation.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
 [display]
 
-window/size/viewport_width=1167
-window/size/viewport_height=647
+window/size/viewport_width=500
+window/size/viewport_height=500
 
 [editor_plugins]
 
