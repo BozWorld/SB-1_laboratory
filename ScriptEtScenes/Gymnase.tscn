@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://in7c14sa3eu8"]
+[gd_scene load_steps=19 format=3 uid="uid://in7c14sa3eu8"]
 
 [ext_resource type="Script" path="res://ScriptEtScenes/CycleJourNuit.gd" id="1_x6mxa"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso.gd" id="3_vfk10"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/saut.gd" id="4_3j17j"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/etats.gd" id="6_885ur"]
+[ext_resource type="Script" path="res://ScriptEtScenes/DebugStates.gd" id="7_h2lxa"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/deplacements.gd" id="7_p50mk"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/regarder.gd" id="9_3tdo0"]
 
@@ -73,10 +74,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16795, 0)
 script = ExtResource("3_vfk10")
 camera = NodePath("Regarder/HPivot/VPivot/Camera3D")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Perso"]
+[node name="Mesh" type="MeshInstance3D" parent="Perso"]
 mesh = SubResource("CapsuleMesh_i5khn")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Perso"]
+[node name="Collision" type="CollisionShape3D" parent="Perso"]
 shape = SubResource("CapsuleShape3D_051rp")
 
 [node name="Deplacements" type="Node3D" parent="Perso"]
@@ -98,6 +99,28 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.6
 
 [node name="Etats" type="Node" parent="Perso"]
 script = ExtResource("6_885ur")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Perso/Etats"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -58.0
+offset_right = 487.0
+grow_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Perso/Etats/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=40][color=purple]Etat :"
+
+[node name="DebugStates" type="RichTextLabel" parent="Perso/Etats/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=40][color=purple]<etat>"
+scroll_active = false
+script = ExtResource("7_h2lxa")
 
 [node name="Pnj" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16795, 5.53554)

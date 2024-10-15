@@ -12,7 +12,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("saut"):
 		flexion = 0
 		genoux_flechis = true
-		parent.scale.y = 0.8
+		parent.mesh.scale.y = 0.8
 		
 	elif Input.is_action_just_released("saut"):
 		var saut = Vector3(0,20,0)
@@ -21,7 +21,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		#print("saut :" + str(saut.y))
 		
 		genoux_flechis = false
-		parent.scale.y = 1.0
+		parent.mesh.scale.y = 1.0
 		flexion = 0
 
 func _physics_process(delta: float) -> void:

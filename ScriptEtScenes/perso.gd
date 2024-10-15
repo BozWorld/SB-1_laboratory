@@ -6,6 +6,7 @@ var poids = masse * 1.0 # Le 1 c'est la gravité
 var velocite : Vector3
 var acceleration : Vector3
 
+@onready var mesh = $Mesh
 @onready var machine_etats = $Etats
 @onready var deplacements = $Deplacements
 
