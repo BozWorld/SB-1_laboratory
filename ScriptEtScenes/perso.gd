@@ -6,6 +6,9 @@ var poids = masse * 1.0 # Le 1 c'est la gravité
 var velocite : Vector3
 var acceleration : Vector3
 
+@onready var machine_etats = $Etats
+@onready var deplacements = $Deplacements
+
 @export var camera : Camera3D
 
 func get_input():
@@ -25,14 +28,17 @@ func appliquer_force_horizontale(force : Vector2):
 func appliquer_force(force : Vector3):
 	acceleration += force
 
-
+func _appliquer_gravite():
+	if not is_on_floor() :
+		var gravite = Vector3(0, -poids, 0)
+		appliquer_force(gravite)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	
-	if not is_on_floor() :
-		var gravite = Vector3(0, -poids, 0)
-		appliquer_force(gravite)
+	deplacements._deplacement_process()
+	_appliquer_gravite()
+	
 	
 	#print("velocite :" + str(velocite))
 	#print("position :" + str(position))

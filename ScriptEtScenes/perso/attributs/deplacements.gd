@@ -1,6 +1,9 @@
 extends Attribut3D
 
 
+func _ready() -> void:
+	pass
+
 func get_input():
 	var impulse : Vector3
 	impulse.x = Input.get_axis("bougerDROITE", "bougerGAUCHE") * 0.1
@@ -15,7 +18,7 @@ func get_input():
 	return impulse
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
+func _deplacement_process():
 	
 	if Input.is_action_pressed("bougerDROITE") or Input.is_action_pressed("bougerGAUCHE") or Input.is_action_pressed("bougerAVANT") or Input.is_action_pressed("bougerARRIERE") :
 		parent.appliquer_force(Vector3(get_input().x, 0.0, get_input().z))

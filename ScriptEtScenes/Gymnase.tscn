@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://in7c14sa3eu8"]
+[gd_scene load_steps=18 format=3 uid="uid://in7c14sa3eu8"]
 
 [ext_resource type="Script" path="res://ScriptEtScenes/CycleJourNuit.gd" id="1_x6mxa"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso.gd" id="3_vfk10"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/saut.gd" id="4_3j17j"]
+[ext_resource type="Script" path="res://ScriptEtScenes/perso/etats.gd" id="6_885ur"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/deplacements.gd" id="7_p50mk"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/regarder.gd" id="9_3tdo0"]
 
@@ -94,6 +95,9 @@ sensibilite = 0.005
 
 [node name="Camera3D" type="Camera3D" parent="Perso/Regarder/HPivot/VPivot"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.646196, 0)
+
+[node name="Etats" type="Node" parent="Perso"]
+script = ExtResource("6_885ur")
 
 [node name="Pnj" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16795, 5.53554)
