@@ -26,16 +26,11 @@ func _process(delta: float) -> void:
 	print("ma force" + str(acceleration))
 	setVelocity(delta)
 	acceleration = Vector3.ZERO
-	var test = FastNoiseLite.new()
-
-	#test.set_noise_type(FastNoiseLite.TYPE_PERLIN)
-	#test.set_offset(Vector3(delta,delta,delta))
-	#print(test.offset)
 	pass
 
 func setVelocity(delta):
 	velocity += acceleration * delta
 	position += velocity * delta
 	
-func applyForce(force: Vector3):
-	acceleration += force
+func applyForce(f: Vector3):
+	acceleration += f

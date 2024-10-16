@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bchnsifsd1n1e"]
+[gd_scene load_steps=8 format=3 uid="uid://dakdqyl57q7dm"]
 
 [ext_resource type="Script" path="res://Scene/BallPhysics.gd" id="1_k7tf3"]
 
