@@ -10,6 +10,7 @@
 position = Vector2(521, 327)
 scale = Vector2(5, 2.179)
 script = ExtResource("1_545x8")
+rot_acc = 100.0
 
 [node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
 texture = ExtResource("1_xu3as")
