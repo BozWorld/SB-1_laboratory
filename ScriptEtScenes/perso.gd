@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name SeshBody
 
 var masse = 1.0
 var poids = masse * 1.0 # Le 1 c'est la gravité
