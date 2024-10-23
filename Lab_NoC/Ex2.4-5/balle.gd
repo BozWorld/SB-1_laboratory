@@ -6,6 +6,7 @@ extends NoCObjet
 func _ready() -> void:
 	mesh.material.albedo_color = Color(randi_range(0,255),randi_range(0,255),randi_range(0,255))
 	position = Vector3(randf_range(-10,10),randf_range(-10,10),randf_range(-10,10))
+	masse = randf_range(0.1,5)
 
 func check_collision():
 	if position.x >= parent.taille or position.x <= -parent.taille :
