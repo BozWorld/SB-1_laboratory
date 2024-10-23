@@ -73,5 +73,165 @@ script = ExtResource("1_d0x4q")
 mesh = SubResource("SphereMesh_q5q0x")
 script = ExtResource("1_d0x4q")
 
+[node name="Nucleon11" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon12" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon13" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon14" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon15" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon16" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon17" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon18" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon19" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon20" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon21" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon22" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon23" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon24" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon25" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon26" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon27" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon28" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon29" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon30" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon31" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon32" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon33" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon34" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon35" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon36" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon37" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon38" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon39" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon40" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon41" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon42" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon43" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon44" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon45" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon46" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon47" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon48" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon49" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
+[node name="Nucleon50" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_q5q0x")
+script = ExtResource("1_d0x4q")
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.767557, -0.330475, 0.54922, 0, 0.856844, 0.515576, -0.640981, -0.395734, 0.657676, 20.2211, 13.3042, 16.4684)
