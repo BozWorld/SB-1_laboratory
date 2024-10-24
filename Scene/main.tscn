@@ -1,6 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdsbcaxpntyxi"]
+[gd_scene load_steps=9 format=3 uid="uid://bv36048gk4o1c"]
 
 [ext_resource type="PackedScene" uid="uid://c8jmrou3lrf42" path="res://Scene/player/player.tscn" id="1_n5g6i"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i34o4"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_b5f8e"]
+sky_material = SubResource("ProceduralSkyMaterial_i34o4")
+
+[sub_resource type="Environment" id="Environment_catbj"]
+background_mode = 2
+sky = SubResource("Sky_b5f8e")
+tonemap_mode = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ij82h"]
 size = Vector2(8.33, 2)
@@ -16,6 +28,13 @@ albedo_color = Color(0.292722, 0.0346195, 0.0904669, 1)
 
 [node name="main" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_catbj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
 [node name="sol" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_ij82h")
 surface_material_override/0 = SubResource("StandardMaterial3D_0ec8o")
@@ -27,6 +46,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_l1bka")
 
 [node name="player" parent="." instance=ExtResource("1_n5g6i")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.15, 0)
+speed = 2000.0
 
 [node name="Camera3D" type="Camera3D" parent="player"]
 transform = Transform3D(-10, -8.21505e-07, 2.99004e-07, 0, 3.4202, 9.39693, -8.74228e-07, 9.39693, -3.4202, 0, 24, -5.35)
