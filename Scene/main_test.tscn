@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7gxbb2n1dig7"]
+
+[ext_resource type="Script" path="res://3DObj.gd" id="1_ol4dp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ddfsq"]
+sky_top_color = Color(0.642672, 0.242907, 0.714199, 1)
+sky_horizon_color = Color(0.722542, 0.594538, 0.722286, 1)
+ground_bottom_color = Color(0.247497, 0.135246, 0.174945, 1)
+ground_horizon_color = Color(0.722542, 0.594538, 0.722286, 1)
+
+[sub_resource type="Sky" id="Sky_qf4e7"]
+sky_material = SubResource("ProceduralSkyMaterial_ddfsq")
+
+[sub_resource type="Environment" id="Environment_5n2ps"]
+background_mode = 2
+sky = SubResource("Sky_qf4e7")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_34mtr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_la72t"]
+size = Vector3(10, 10, 10)
+
+[node name="main_test" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5n2ps")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(0.753799, 0.190924, 0.451944, 1)
+light_energy = 2.25
+shadow_enabled = true
+directional_shadow_max_distance = 535.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_34mtr")
+script = ExtResource("1_ol4dp")
+velocity = null
+acceleration = null
+force = null
+gravity = Vector3(0, 1, 0)
+coll = SubResource("BoxShape3D_la72t")
+mass = null
+c = null

@@ -50,12 +50,12 @@ func add(v1:Vector2,v2:Vector2):
 
 func checkEdgesBounce():
 	if((position.y > get_viewport().get_visible_rect().size.y )):
+		applyForces(Vector2(0,(get_viewport().get_visible_rect().size.y-position.y)))
 		velocity.y *= -1
 		position.y = get_viewport().get_visible_rect().size.y
 	if((position.x > get_viewport().get_visible_rect().size.x )):
 		position.x = get_viewport().get_visible_rect().size.x
 		velocity.x*= -1
-
 func _on_vel_timer_timeout():
 	print ( velocity )
 
