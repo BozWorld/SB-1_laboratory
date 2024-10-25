@@ -46,7 +46,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_l1bka")
 
 [node name="player" parent="." instance=ExtResource("1_n5g6i")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.15, 0)
-speed = 1300.0
+speed = 900.0
+rot_speed = 1.0
 
 [node name="Camera3D" type="Camera3D" parent="player"]
-transform = Transform3D(-9.39693, 2.49322, -2.34129, 0, 6.84547, 7.28969, 3.4202, 6.85007, -6.43264, -4.825, 18.265, -18)
+transform = Transform3D(-10, -3.42992e-07, 8.04134e-07, 0, 9.19822, 3.92337, -8.74228e-07, 3.92337, -9.19822, 0, 3, -8)
