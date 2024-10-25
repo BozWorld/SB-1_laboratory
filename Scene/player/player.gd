@@ -16,5 +16,4 @@ func _physics_process(delta: float) -> void:
 		velocity = speed * forward_dir * delta
 	else:
 		velocity = lerp(velocity,Vector3.ZERO,0.7)
-	print(velocity)
 	move_and_slide()
