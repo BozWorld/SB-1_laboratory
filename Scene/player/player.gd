@@ -9,6 +9,7 @@ extends CharacterBody3D
 
 func _physics_process(delta: float) -> void:
 	var input = Input.get_axis("right","left")
+	var input2 = Input.get_vector("up","down","left","right")
 	var forward_dir = transform.basis.z 
 	if input != 0:
 		rotation.y += deg_to_rad(input * rot_speed)

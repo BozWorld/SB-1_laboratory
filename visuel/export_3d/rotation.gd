@@ -8,6 +8,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var rot = Input.get_axis("left","right")
+	if rot != 0:
+		rotation.z += deg_to_rad(rot * 0.4)
+	else :
+		rotation.z = lerp(rotation.z,0.0,0.04)
 	if Input.is_action_pressed("left"):
 		rotation.z += deg_to_rad(-0.4)
 	if Input.is_action_pressed("right"):
