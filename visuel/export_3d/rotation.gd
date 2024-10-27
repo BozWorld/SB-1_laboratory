@@ -17,5 +17,9 @@ func _process(delta: float) -> void:
 		rotation.z += deg_to_rad(-0.4)
 	if Input.is_action_pressed("right"):
 		rotation.z += deg_to_rad(0.4)
+	if Input.is_action_pressed("up"):
+		rotation.x -= deg_to_rad(0.2)
+	if Input.is_action_pressed("down"):
+		rotation.x += deg_to_rad(0.2)
 	rotation.z = clamp(rotation.z,deg_to_rad(-12),deg_to_rad(12))
 	pass
