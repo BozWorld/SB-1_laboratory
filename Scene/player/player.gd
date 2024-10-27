@@ -1,26 +1,39 @@
 extends CharacterBody3D
 
 
-@export var speed: float = 0
-@export var max_speed: float = 0
-@export var h_acceleration: float = 0
-@export var v_acceleration: float = 0
-@export var rot_speed: float = 2
+var speed: float = 0
+@export var acceleration: float = 0
+@export var max_acc: float = 1000
+@export var rot_speed: float = 0.5
 @export var max_rot: float = 0 
+@export var acc_temp: float = 0
 
 func _physics_process(delta: float) -> void:
-	var input = Input.get_axis("right","left")
+	speed = acceleration
 	var input2 = Input.get_vector("up","down","left","right")
 	var forward_dir = transform.basis.z 
 	var right_dir = transform.basis.x
-	if input != 0:
-		rotation.y += deg_to_rad(input * rot_speed)
+	_apply_forces()
+	if input2.y != 0:
+		rotation.y += deg_to_rad(-input2.y * rot_speed)
+	
 	if Input.is_action_pressed("push"):
-		velocity = speed * forward_dir * delta
+		acc_temp = lerp(acc_temp,max_acc,0.005)
+		print(acc_temp)
 	else:
-		velocity = lerp(velocity,Vector3.ZERO,0.7)
-	if Input.is_action_pressed("up"):
-		velocity.y = speed/15 * delta
-	if Input.is_action_pressed("down"):
-			velocity.y = -speed/20 * delta
+		acc_temp = lerp(acc_temp,0.0,0.7)
+	
+	if input2.x != 0:
+		velocity.y = speed * input2.x * delta
+		print(velocity.y)
+	
+
+	acceleration = 0
 	move_and_slide()
+
+func _apply_forces() -> void:
+	acceleration += acc_temp
+	return
+
+func get_input() -> void:
+	return
