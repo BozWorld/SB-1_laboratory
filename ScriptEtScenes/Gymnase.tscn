@@ -85,7 +85,6 @@ script = ExtResource("7_p50mk")
 
 [node name="Saut" type="Node3D" parent="Perso"]
 script = ExtResource("4_3j17j")
-max_flexion = null
 
 [node name="Regarder" type="Node3D" parent="Perso"]
 script = ExtResource("9_3tdo0")

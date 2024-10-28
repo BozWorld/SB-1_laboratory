@@ -10,6 +10,7 @@ var acceleration : Vector3
 @onready var mesh = $Mesh
 @onready var machine_etats = $Etats
 @onready var deplacements = $Deplacements
+@onready var saut = $Saut
 
 @export var camera : Camera3D
 
@@ -38,6 +39,7 @@ func _appliquer_gravite():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	
+	saut._saut_process(delta)
 	deplacements._deplacement_process()
 	_appliquer_gravite()
 	

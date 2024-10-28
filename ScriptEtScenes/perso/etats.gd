@@ -1,10 +1,11 @@
 extends StateMachine
 
+
 func _ready() -> void:
 	add_state("attend")
 	add_state("cours")
-	add_state("saute")
 	add_state("tombe")
+	add_state("saute")
 	
 	call_deferred("set_state", states.attend)
 
