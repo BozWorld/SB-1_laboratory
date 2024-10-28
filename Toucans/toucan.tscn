@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c405yelfcfogx"]
+
+[ext_resource type="Texture2D" uid="uid://d1g5opeeuwud2" path="res://Asset/toucan-bird-isolated-illustration-ai-generative-free-png.png" id="1_cmskx"]
+[ext_resource type="Script" path="res://Toucans/toucan.gd" id="2_pgo01"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(-92, 222.5)
+scale = Vector2(0.164286, 0.164286)
+texture = ExtResource("1_cmskx")
+script = ExtResource("2_pgo01")
