@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://sq4xj07wwxo2"]
+
+[ext_resource type="Script" path="res://Script/Sephiroth.gd" id="1_7k24a"]
+[ext_resource type="Texture2D" uid="uid://b0h3312y2gqe8" path="res://Assets/megaman_pitie_couleur_Megaman.png" id="2_4v0gt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_86qrx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7oijb"]
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("2_4v0gt")
+
+[sub_resource type="PrismMesh" id="PrismMesh_5pak4"]
+material = SubResource("StandardMaterial3D_7oijb")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_7k24a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("BoxShape3D_86qrx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("PrismMesh_5pak4")

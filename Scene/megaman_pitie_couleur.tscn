@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1rx583rnkssm"]
+
+[ext_resource type="PackedScene" uid="uid://csk51ke31m7ka" path="res://Assets/megaman_pitie_couleur.glb" id="1_vucv0"]
+
+[node name="megaman_pitie_couleur" instance=ExtResource("1_vucv0")]
+
+[node name="Cube" parent="." index="0"]
+visible = false
+
+[node name="Mesh" parent="." index="1"]
+transform = Transform3D(0.05, 0, 0, 0, -2.18557e-09, -0.05, 0, 0.05, -2.18557e-09, 0, 1.14439, 0)

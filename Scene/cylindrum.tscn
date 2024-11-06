@@ -1,0 +1,171 @@
+[gd_scene load_steps=15 format=3 uid="uid://tsll0reu0bx3"]
+
+[ext_resource type="Script" path="res://Script/cylindrum.gd" id="1_7eva2"]
+[ext_resource type="PackedScene" uid="uid://dcvyr6jcsyklb" path="res://Scene/pointfaible.tscn" id="2_k7e5f"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8f44c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qbhs"]
+albedo_color = Color(1, 0.239216, 0.176471, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ft64u"]
+material = SubResource("StandardMaterial3D_8qbhs")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wtdry"]
+size = Vector3(5, 0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dumvd"]
+albedo_color = Color(1, 1, 0.168627, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k7lr1"]
+material = SubResource("StandardMaterial3D_dumvd")
+size = Vector3(5, 0.5, 0.5)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ndr7s"]
+height = 30.0
+radius = 3.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_io2s8"]
+top_radius = 3.0
+bottom_radius = 3.0
+height = 30.0
+
+[sub_resource type="Animation" id="Animation_xt56h"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cylindrum_Boss/Body/Forward")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 3.80327)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cylindrum_Boss/Body/Swipe:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cylindrum_Boss/Body/Swipe")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0.112622, 0, 0.993638)
+
+[sub_resource type="Animation" id="Animation_xj7sv"]
+resource_name = "attack_boss"
+loop_mode = 2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cylindrum_Boss/Body/Forward")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 3.80327, 1, 1, 0, 0, 5.34784)
+
+[sub_resource type="Animation" id="Animation_t587r"]
+resource_name = "swipe"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cylindrum_Boss/Body/Swipe:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cylindrum_Boss/Body/Swipe")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.112622, 0, 0.993638, 0.166667, 1, 0, -0.103695, 0, 0.994609, 0.366667, 1, 0, 0.978318, 0, -0.207109, 0.6, 1, 0, 0.99332, 0, 0.115397)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p3pcw"]
+_data = {
+"RESET": SubResource("Animation_xt56h"),
+"attack_boss": SubResource("Animation_xj7sv"),
+"swipe": SubResource("Animation_t587r")
+}
+
+[node name="Cylindrum" type="Node3D"]
+
+[node name="Cylindrum_Boss" type="CharacterBody3D" parent="." node_paths=PackedStringArray("anim_boss")]
+process_mode = 1
+script = ExtResource("1_7eva2")
+anim_boss = NodePath("../AnimationPlayer")
+
+[node name="Body" type="Node3D" parent="Cylindrum_Boss"]
+
+[node name="Forward" type="Area3D" parent="Cylindrum_Boss/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.80327)
+
+[node name="Attack" type="CollisionShape3D" parent="Cylindrum_Boss/Body/Forward"]
+shape = SubResource("SphereShape3D_8f44c")
+
+[node name="Attack_Mesh" type="MeshInstance3D" parent="Cylindrum_Boss/Body/Forward"]
+mesh = SubResource("SphereMesh_ft64u")
+
+[node name="Swipe" type="Area3D" parent="Cylindrum_Boss/Body"]
+transform = Transform3D(0.974632, 0, 0.223811, 0, 1, 0, -0.223811, 0, 0.974632, 0, 0, 3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cylindrum_Boss/Body/Swipe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+shape = SubResource("BoxShape3D_wtdry")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylindrum_Boss/Body/Swipe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+mesh = SubResource("BoxMesh_k7lr1")
+
+[node name="Hitbox_body" type="CollisionShape3D" parent="Cylindrum_Boss"]
+shape = SubResource("CylinderShape3D_ndr7s")
+
+[node name="Main_Body" type="MeshInstance3D" parent="Cylindrum_Boss"]
+mesh = SubResource("CylinderMesh_io2s8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylindrum_Boss"]
+
+[node name="Pointfaible" parent="Cylindrum_Boss" instance=ExtResource("2_k7e5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.9633, 3.0199)
+
+[node name="Pointfaible2" parent="Cylindrum_Boss" instance=ExtResource("2_k7e5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.07754, -7.33853, 0)
+
+[node name="Pointfaible3" parent="Cylindrum_Boss" instance=ExtResource("2_k7e5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.83433, -3.0664)
+
+[node name="Pointfaible4" parent="Cylindrum_Boss" instance=ExtResource("2_k7e5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.04691, 0, 0)
+
+[node name="Pointfaible5" parent="Cylindrum_Boss" instance=ExtResource("2_k7e5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.21414, 2.94442)
+
+[node name="Pointfaible6" parent="Cylindrum_Boss" instance=ExtResource("2_k7e5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7787, 5.0872, 0)
+
+[node name="Pointfaible7" parent="Cylindrum_Boss" instance=ExtResource("2_k7e5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.3749, -2.75804)
+
+[node name="Pointfaible8" parent="Cylindrum_Boss" instance=ExtResource("2_k7e5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.93963, 12.6211, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_p3pcw")
+}
+
+[connection signal="body_entered" from="Cylindrum_Boss/Body/Forward" to="Cylindrum_Boss" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Cylindrum_Boss/Body/Swipe" to="Cylindrum_Boss" method="_on_swipe_body_entered"]

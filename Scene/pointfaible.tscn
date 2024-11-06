@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcvyr6jcsyklb"]
+
+[ext_resource type="Script" path="res://Script/point_faible.gd" id="1_4h5pa"]
+[ext_resource type="Texture2D" uid="uid://dlslfw0l2nyny" path="res://Assets/GAP_EasyExplosions_Textures/Circle03.png" id="2_cf0ei"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dp326"]
+albedo_color = Color(1, 0.231373, 0.054902, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_1uogb"]
+material = SubResource("StandardMaterial3D_dp326")
+radius = 1.5
+height = 3.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qucfh"]
+radius = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3cxuy"]
+transparency = 1
+albedo_texture = ExtResource("2_cf0ei")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tw0y4"]
+material = SubResource("StandardMaterial3D_3cxuy")
+size = Vector2(6, 6)
+orientation = 2
+
+[node name="Pointfaible" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_4h5pa")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("SphereMesh_1uogb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_qucfh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_tw0y4")

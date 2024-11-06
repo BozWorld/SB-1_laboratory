@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0nxocw1evu2s"]
+
+[ext_resource type="Script" path="res://Script/damage_zone.gd" id="1_jvh0l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tt83j"]
+size = Vector3(5, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pt35e"]
+albedo_color = Color(0.513726, 0, 0.388235, 0.415686)
+
+[sub_resource type="BoxMesh" id="BoxMesh_us0wo"]
+material = SubResource("StandardMaterial3D_pt35e")
+size = Vector3(5, 1, 1)
+
+[node name="Damage_zone" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("1_jvh0l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_tt83j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("BoxMesh_us0wo")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

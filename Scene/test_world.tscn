@@ -1,0 +1,81 @@
+[gd_scene load_steps=16 format=3 uid="uid://b2c2x2x47qd6q"]
+
+[ext_resource type="PackedScene" uid="uid://bibruools7bs5" path="res://Scene/su_player.tscn" id="1_g1bvd"]
+[ext_resource type="Script" path="res://Script/testworld_script.gd" id="1_ws0of"]
+[ext_resource type="PackedScene" uid="uid://tsll0reu0bx3" path="res://Scene/cylindrum.tscn" id="2_mxrjt"]
+[ext_resource type="PackedScene" uid="uid://b0nxocw1evu2s" path="res://Scene/damage_zone.tscn" id="3_j3yrx"]
+[ext_resource type="PackedScene" uid="uid://dcvyr6jcsyklb" path="res://Scene/pointfaible.tscn" id="4_2cdxh"]
+[ext_resource type="PackedScene" uid="uid://sq4xj07wwxo2" path="res://Scene/sephiroth.tscn" id="6_o0ici"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bbpu2"]
+sky_top_color = Color(0.315166, 0.40267, 0.82733, 1)
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_curve = 0.369343
+ground_bottom_color = Color(0.62334, 0.124254, 0.218546, 1)
+ground_horizon_color = Color(0.785645, 0.629603, 0.325605, 1)
+use_debanding = false
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_nxe8b"]
+sky_material = SubResource("ProceduralSkyMaterial_bbpu2")
+
+[sub_resource type="Environment" id="Environment_p24nd"]
+background_mode = 2
+sky = SubResource("Sky_nxe8b")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_n5pgo"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_d4pyq"]
+noise_type = 2
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_myjwt"]
+color_ramp = SubResource("Gradient_n5pgo")
+noise = SubResource("FastNoiseLite_d4pyq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oppoj"]
+albedo_color = Color(0.403922, 1, 1, 1)
+albedo_texture = SubResource("NoiseTexture2D_myjwt")
+
+[sub_resource type="BoxMesh" id="BoxMesh_stmpa"]
+material = SubResource("StandardMaterial3D_oppoj")
+size = Vector3(50, 0.5, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0kru5"]
+size = Vector3(50, 0.5, 50)
+
+[node name="TestWorld" type="Node3D" node_paths=PackedStringArray("lock", "player")]
+script = ExtResource("1_ws0of")
+lock = NodePath("Pointfaible")
+player = NodePath("SUPlayer")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_p24nd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Area3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("BoxMesh_stmpa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_0kru5")
+
+[node name="SUPlayer" parent="." instance=ExtResource("1_g1bvd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08474, 0)
+
+[node name="Cylindrum" parent="." instance=ExtResource("2_mxrjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.950109, 12.6907, -7.6978)
+
+[node name="Damage_zone" parent="." instance=ExtResource("3_j3yrx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.31017, 2.25065, -0.775167)
+
+[node name="Pointfaible" parent="." instance=ExtResource("4_2cdxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.27536, 1.03227, 0)
+
+[node name="Node3D" parent="." instance=ExtResource("6_o0ici")]
