@@ -39,6 +39,7 @@ var direction  = Vector3.ZERO
 var magie_de_l_angle = Vector3.ZERO
 
 func _unhandled_input(event: InputEvent) -> void:
+	print(event)
 	if event.is_action_pressed("attaque_devant"):
 		ref.rotation.y = magie_de_l_angle * -1  
 		ref.rotate_y(deg_to_rad(-90))
@@ -76,11 +77,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		launch_floattimer()
 
 	if event.is_action_pressed("lock_on"):
+		var cam_tween = get_tree().create_tween()
+		
 		if object_locked != null and !locked_on:
-			locked_on
-		if !locked_on:
+			locked_on = true
+			cam_tween.tween_property(springarm,"spring_length",4.0,0.2)
+		elif locked_on:
 			camera.rotation.x = deg_to_rad(-39.1)
 			camera.rotation.y = 0.0
+			cam_tween.tween_property(springarm,"spring_length",5.0,0.2)
+			locked_on = false
+
 		
 func _ready() -> void:
 	DamageHandler.joueureuse = self
@@ -99,6 +106,13 @@ func _process(delta: float) -> void:
 	cam_velocity = clampf(cam_velocity,-2.0,2.0)
 	if locked_on:
 		camera.look_at(object_locked.global_position)
+		var cam_bien = self.global_position - object_locked.global_position
+		var cam_magie = atan2(cam_bien.normalized().z,cam_bien.normalized().x)
+		facing.position = cam_bien.normalized()
+		springarm.rotation.y = cam_magie * -1.0
+		springarm.rotate_y(deg_to_rad(90.0))
+
+		
 	springarm.rotate_y(deg_to_rad(cam_velocity))
 	#attack.look_at(self.global_position)
 	meshplayer.look_at(direc_move.global_position)
@@ -190,3 +204,4 @@ func _on_epai_body_area_entered(area: Area3D) -> void:
 
 func new_locked_target(object : Node3D):
 	object_locked = object
+	print(object_locked, "T'ES GRAND")
