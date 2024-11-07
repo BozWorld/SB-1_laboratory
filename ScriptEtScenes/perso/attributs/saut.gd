@@ -18,7 +18,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if Input.is_action_just_pressed("saut"):
 			genoux_flechis = true
 		
-		elif Input.is_action_just_released("saut"):
+		if Input.is_action_just_released("saut"):
 			genoux_flechis = false
 		
 
@@ -26,15 +26,15 @@ func _unhandled_input(event: InputEvent) -> void:
 func _saut_process(delta):
 	if !genoux_flechis:
 		if flexion :
-			parent.mesh.mesh.height = 2
-			var saut = Vector3(0,20,0)
-			saut.y += flexion
+			#parent.mesh.mesh.height = 2
+			var saut = 15.0
+			saut += flexion
+			parent.appliquer_force_verticale(saut)
 			flexion = 0.0
-			parent.appliquer_force(saut)
 	
 	elif flexion < max_flexion :
-		flexion += 2.0 * delta
-		parent.mesh.mesh.height *= 0.9
+		flexion += 5.0 * delta
+		#parent.mesh.mesh.height *= 0.9
 	
 	elif !parent.is_on_floor():
 		genoux_flechis = false

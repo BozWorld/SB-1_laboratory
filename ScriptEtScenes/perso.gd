@@ -14,12 +14,6 @@ var acceleration : Vector3
 
 @export var camera : Camera3D
 
-func get_input():
-	var impulse : Vector2
-	impulse.x = Input.get_axis("bougerDROITE", "bougerGAUCHE") * 0.1
-	impulse.y = Input.get_axis("bougerARRIERE","bougerAVANT") * 0.1
-	return impulse
-	
 
 func appliquer_force_verticale(force : float):
 	acceleration.y += force
@@ -39,9 +33,9 @@ func _appliquer_gravite():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	
-	saut._saut_process(delta)
 	deplacements._deplacement_process()
 	_appliquer_gravite()
+	saut._saut_process(delta)
 	
 	
 	#print("velocite :" + str(velocite))
