@@ -358,19 +358,15 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_16a21"]
 switch_mode = 2
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vn6e0"]
 switch_mode = 2
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p331p"]
 switch_mode = 2
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uss4g"]
 switch_mode = 2
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_edlsi"]
 switch_mode = 2
@@ -416,7 +412,7 @@ node_connections = [&"output", 0, &"Player_state_machine"]
 [node name="SUPlayer" type="Node3D"]
 process_mode = 3
 
-[node name="Player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("anim_player", "anim_tree", "camera", "springarm", "attack", "facing", "meshplayer", "ref", "direc_move", "vie_ui", "freezeframe", "floattimer", "jumpbar", "particle")]
+[node name="Player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("anim_player", "anim_tree", "camera", "springarm", "attack", "facing", "meshplayer", "ref", "direc_move", "vie_ui", "freezeframe", "floattimer", "jumpbar", "attacktimer", "particle")]
 process_mode = 1
 script = ExtResource("1_4hp0x")
 anim_player = NodePath("../AnimationPlayer")
@@ -435,6 +431,7 @@ freezeframe = NodePath("../FreezeFrame")
 floattimer = NodePath("../FloatTimer")
 gravity = -7.0
 jumpbar = NodePath("../Control/JumpBar")
+attacktimer = NodePath("../AttackTimer")
 particle = NodePath("Reference/megaman_pitie_couleur/Epai/GPUParticles3D")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Player"]
@@ -467,7 +464,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 0.779305, 0.626645, 0, -0.626645, 0.779305, 0, 0, 0)
 
 [node name="Epai" parent="Player/Reference/megaman_pitie_couleur" instance=ExtResource("3_2evvi")]
-transform = Transform3D(-0.005, 0, -0.00866025, 0, 0.01, 0, 0.00866025, 0, -0.005, 0, 0, 0)
+transform = Transform3D(0.01, 0, 0, 0, -0.01, -1.50996e-09, 0, 1.50996e-09, -0.01, 0, 0, 0)
 
 [node name="CollisionShape3D" parent="Player/Reference/megaman_pitie_couleur/Epai/Epai_body" index="0"]
 disabled = false
@@ -544,6 +541,9 @@ one_shot = true
 wait_time = 0.3
 one_shot = true
 
+[node name="AttackTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="area_entered" from="Player/Reference/megaman_pitie_couleur/Epai/Epai_body" to="Player" method="_on_epai_body_area_entered"]
 [connection signal="body_entered" from="Player/Reference/megaman_pitie_couleur/Epai/Epai_body" to="Player" method="_on_epai_body_body_entered"]
 [connection signal="body_entered" from="Player/Area3D" to="Player" method="_on_area_3d_body_entered"]
@@ -551,5 +551,6 @@ one_shot = true
 [connection signal="animation_finished" from="AnimationTree" to="Player" method="_on_animation_tree_animation_finished"]
 [connection signal="timeout" from="FreezeFrame" to="Player" method="_on_freeze_frame_timeout"]
 [connection signal="timeout" from="FloatTimer" to="Player" method="_on_float_timer_timeout"]
+[connection signal="timeout" from="AttackTimer" to="Player" method="_on_attack_timer_timeout"]
 
 [editable path="Player/Reference/megaman_pitie_couleur/Epai"]

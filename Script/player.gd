@@ -22,6 +22,7 @@ var anim_state_travel
 @export var gravity : float
 
 @export var jumpbar : ProgressBar
+@export var attacktimer : Timer
 
 @export var particle : GPUParticles3D
 var jump_boost : float
@@ -35,23 +36,22 @@ var incr_cam_rotation = 0.0
 var cam_velocity = 0.0
 var dir_move = Vector3.ZERO
 var direction  = Vector3.ZERO
+var attack_dash = Vector3.ZERO
 
 var magie_de_l_angle = Vector3.ZERO
 
+enum chara_state {NEUTRAL, ATT1, ATT2, ATT3}
+var state = chara_state.NEUTRAL
 func _unhandled_input(event: InputEvent) -> void:
-	print(event)
 	if event.is_action_pressed("attaque_devant"):
 		ref.rotation.y = magie_de_l_angle * -1  
 		ref.rotate_y(deg_to_rad(-90))
 		
-		if anim_state_travel.get_current_node() == "attaque_1" :
-			anim_state_travel.travel("attaque_2")
-		elif anim_state_travel.get_current_node() == "attaque_2" :
-			anim_state_travel.travel("attaque_3")
+		if anim_state_travel.get_current_node() == "attaque_3":
+			pass
 		else :
-			anim_state_travel.travel("sword_in")
-			anim_state_travel.travel("attaque_1")
-			
+			attack_combo()
+		
 		
 	if event.is_action_released("camera_droite") or event.is_action_released("camera_gauche"):
 		incr_cam_rotation = 0.0
@@ -81,8 +81,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		if object_locked != null and !locked_on:
 			locked_on = true
+			springarm.position.y = 1
 			cam_tween.tween_property(springarm,"spring_length",4.0,0.2)
 		elif locked_on:
+			springarm.position.y = 4
 			camera.rotation.x = deg_to_rad(-39.1)
 			camera.rotation.y = 0.0
 			cam_tween.tween_property(springarm,"spring_length",5.0,0.2)
@@ -124,7 +126,14 @@ func _process(delta: float) -> void:
 		#print(courbe_dodge.point_count)
 	else :
 		deplacement()
-		velocity.y += gravity + 3.0 * (jump_boost + hit_boost)
+		hit_boost = 0.0
+		var force_y = 0.0
+		if attacktimer.time_left != 0.0 and locked_on:
+			var force = object_locked.global_position - global_position
+			force_y = force.y * 3.0
+		velocity.y += gravity + 3.0 * (jump_boost + hit_boost) + force_y
+		velocity = velocity + attack_dash
+		attack_dash = attack_dash * 0.9
 
 	if is_on_floor():
 		hit = false
@@ -146,7 +155,7 @@ func deplacement():
 	dir_move = Vector3(dir.x,0,dir.y).rotated(Vector3.UP,springarm.rotation.y)
 	if dir_move != Vector3.ZERO:
 		direction = Vector3(dir_move.x, 0.0, dir_move.z )
-	velocity =+ dir_move * 10
+	velocity =+ dir_move * 10 
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
@@ -172,7 +181,7 @@ func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
 
 
 func _on_freeze_frame_timeout() -> void:
-	get_tree().paused = false
+	#get_tree().paused = false
 	launch_floattimer()
 	
 
@@ -192,7 +201,7 @@ func attaque() -> void:
 	var tweeen = get_tree().create_tween()
 	tweeen.tween_property(self,"hit_boost",0.0,0.4)
 	
-	get_tree().paused = true
+	#get_tree().paused = true
 	freezeframe.start()
 	if jumpbar.value == 0.0:
 			
@@ -205,3 +214,31 @@ func _on_epai_body_area_entered(area: Area3D) -> void:
 func new_locked_target(object : Node3D):
 	object_locked = object
 	print(object_locked, "T'ES GRAND")
+
+func attack_combo():
+	if !locked_on :
+		attack_dash = direction * 60.0 
+	else :
+		var push_player = object_locked.global_position - global_position
+		var pull_player = global_position - object_locked.global_position
+		attack_dash = ((push_player.normalized() *50.0 )* (pull_player.length() / 10.0)) + pull_player.normalized() * 20.0
+	if anim_state_travel.get_current_node() == "attaque_3":
+		pass
+	else:
+		if attacktimer.time_left == 0.0:
+			anim_state_travel.travel("sword_in")
+			anim_state_travel.travel("attaque_1")
+			state = chara_state.ATT1
+		else:
+			if chara_state.keys()[state] == "ATT1":
+				anim_state_travel.travel("attaque_2")
+				state = chara_state.ATT2
+			elif chara_state.keys()[state] == "ATT2":
+				anim_state_travel.travel("attaque_3")
+				state = chara_state.ATT3
+		attacktimer.start()
+
+
+func _on_attack_timer_timeout() -> void:
+	state = chara_state.NEUTRAL
+	anim_state_travel.travel("sword_out")
