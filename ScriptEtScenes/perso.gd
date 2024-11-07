@@ -29,13 +29,15 @@ func _appliquer_gravite():
 	if not is_on_floor() :
 		var gravite = Vector3(0, -poids, 0)
 		appliquer_force(gravite)
+	else :
+		velocite.y = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	
-	deplacements._deplacement_process()
 	_appliquer_gravite()
 	saut._saut_process(delta)
+	deplacements._deplacement_process()
 	
 	
 	#print("velocite :" + str(velocite))
