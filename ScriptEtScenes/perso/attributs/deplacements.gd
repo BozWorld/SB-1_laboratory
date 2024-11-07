@@ -38,3 +38,7 @@ func _deplacement_process():
 			arret.y = 1.0/abs(parent.velocite.z)  * -parent.velocite.z * 0.2
 		
 		parent.appliquer_force(Vector3(arret.x, 0, arret.y))
+	
+	var vitesse = parent.velocite
+	vitesse.y = 0
+	$HBoxContainer/CompteurVitesse._actualisation_compteur(vitesse.length())

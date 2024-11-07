@@ -3,7 +3,7 @@ extends Attribut3D
 var genoux_flechis := false
 
 var flexion := 0.0
-var max_flexion := 10.0
+var max_flexion := 7.0
 var machine_etats
 
 func _ready() -> void:
@@ -31,9 +31,11 @@ func _saut_process(delta):
 			saut += flexion
 			parent.appliquer_force_verticale(saut)
 			flexion = 0.0
+			$HBoxContainer/DebugFlexion._actualisation_compteur(flexion)
 	
 	elif flexion < max_flexion :
-		flexion += 5.0 * delta
+		flexion += 10.0 * delta
+		$HBoxContainer/DebugFlexion._actualisation_compteur(flexion)
 		parent.mesh.scale *= 0.995
 	
 	elif !parent.is_on_floor():
