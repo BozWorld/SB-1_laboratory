@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://in7c14sa3eu8"]
+[gd_scene load_steps=24 format=3 uid="uid://in7c14sa3eu8"]
 
 [ext_resource type="Script" path="res://ScriptEtScenes/CycleJourNuit.gd" id="1_x6mxa"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso.gd" id="3_vfk10"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://ScriptEtScenes/DebugVitesse.gd" id="4_ur1ov"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/etats.gd" id="6_885ur"]
 [ext_resource type="Script" path="res://ScriptEtScenes/debug_flexion.gd" id="6_dc8wv"]
+[ext_resource type="Script" path="res://ScriptEtScenes/debug_v_push.gd" id="7_bhlbf"]
 [ext_resource type="Script" path="res://ScriptEtScenes/DebugStates.gd" id="7_h2lxa"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/deplacements.gd" id="7_p50mk"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/regarder.gd" id="9_3tdo0"]
@@ -296,7 +297,7 @@ offset_bottom = 58.0
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[font_size=40][color=yellow]Vitesse"
+text = "[font_size=40][color=yellow]Vitesse :"
 
 [node name="CompteurVitesse" type="RichTextLabel" parent="Perso/Deplacements/HBoxContainer"]
 layout_mode = 2
@@ -321,7 +322,7 @@ grow_horizontal = 0
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[font_size=40][color=red]Flexion"
+text = "[font_size=40][color=red]Flexion :"
 
 [node name="DebugFlexion" type="RichTextLabel" parent="Perso/Saut/HBoxContainer"]
 layout_mode = 2
@@ -330,6 +331,32 @@ bbcode_enabled = true
 text = "[font_size=40][color=red]<flexion>"
 scroll_active = false
 script = ExtResource("6_dc8wv")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Perso/Saut"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -552.0
+offset_top = -58.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Perso/Saut/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=30][color=green]Derniere VForce :"
+
+[node name="DebugVPush" type="RichTextLabel" parent="Perso/Saut/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=40][color=green]<VPush>"
+scroll_active = false
+autowrap_mode = 2
+script = ExtResource("7_bhlbf")
 
 [node name="Regarder" type="Node3D" parent="Perso"]
 script = ExtResource("9_3tdo0")

@@ -30,6 +30,7 @@ func _saut_process(delta):
 			var saut = 10.0
 			saut += flexion
 			parent.appliquer_force_verticale(saut)
+			$HBoxContainer2/DebugVPush._actualisation_compteur(saut)
 			flexion = 0.0
 			$HBoxContainer/DebugFlexion._actualisation_compteur(flexion)
 	
