@@ -6,6 +6,7 @@ func _ready() -> void:
 	add_state("cours")
 	add_state("tombe")
 	add_state("saute")
+	add_state("prepare_saut")
 	
 	call_deferred("set_state", states.attend)
 
@@ -20,6 +21,8 @@ func _get_transition(delta):
 					return states.saute
 				elif parent.velocite.y < 0:
 					return states.tombe
+			elif parent.saut.genoux_flechis :
+				return states.prepare_saut
 			elif parent.velocite.x + parent.velocite.z != 0 :
 				return states.cours
 		
@@ -29,8 +32,17 @@ func _get_transition(delta):
 					return states.saute
 				elif parent.velocite.y < 0:
 					return states.tombe
+			elif parent.saut.genoux_flechis :
+				return states.prepare_saut
 			elif parent.velocite.x + parent.velocite.z == 0 :
 				return states.attend
+		
+		states.prepare_saut:
+			if !parent.is_on_floor():
+				if parent.velocite.y >= 0:
+					return states.saute
+				else :
+					return states.tombe
 		
 		states.saute:
 			if parent.is_on_floor():

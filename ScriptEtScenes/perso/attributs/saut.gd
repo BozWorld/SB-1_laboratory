@@ -11,7 +11,6 @@ func _ready() -> void:
 
 func init_machine_etat():
 	machine_etats = parent.machine_etats
-	machine_etats.add_state("prepare_saut")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if parent.is_on_floor() :

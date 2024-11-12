@@ -1,8 +1,7 @@
 extends Attribut3D
 
 
-func _ready() -> void:
-	pass
+
 
 func get_input():
 	var impulse : Vector3
