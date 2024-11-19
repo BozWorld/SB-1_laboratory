@@ -6,7 +6,6 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 z_index = -1
 position = Vector2(584, 325)
 scale = Vector2(1.33842, -1.13548)
@@ -16,36 +15,36 @@ texture = ExtResource("1_s4pgq")
 position = Vector2(62, 151)
 frequence = 8.0
 octave = 2.0
-couleur = Color(1, 0.439216, 1, 1)
+couleur = Color(0.298039, 0.756863, 0.956863, 1)
 
 [node name="Node2D2" parent="." instance=ExtResource("2_wmpbo")]
 position = Vector2(291, 171)
 frequence = 12.0
-couleur = Color(1, 0.439216, 1, 1)
+couleur = Color(0.643137, 0.0627451, 0.890196, 1)
 
 [node name="Node2D3" parent="." instance=ExtResource("2_wmpbo")]
 position = Vector2(404, 235)
 frequence = 12.0
 octave = 2.0
-couleur = Color(1, 0.439216, 1, 1)
+couleur = Color(0.890196, 0.0627451, 0.352941, 1)
 
 [node name="Node2D4" parent="." instance=ExtResource("2_wmpbo")]
 position = Vector2(571, 266)
 frequence = 12.0
-couleur = Color(1, 0.439216, 1, 1)
+couleur = Color(0.717647, 0.494118, 0.729412, 1)
 
 [node name="Node2D5" parent="." instance=ExtResource("2_wmpbo")]
 position = Vector2(664, 463)
 frequence = 12.0
-couleur = Color(1, 0.439216, 1, 1)
+couleur = Color(0.94902, 0.764706, 0.027451, 1)
 
 [node name="Node2D6" parent="." instance=ExtResource("2_wmpbo")]
 position = Vector2(1018, 383)
 frequence = 12.0
-couleur = Color(1, 0.439216, 1, 1)
+couleur = Color(0.960784, 0.454902, 0.14902, 1)
 
 [node name="Node2D7" parent="." instance=ExtResource("2_wmpbo")]
 position = Vector2(997, 164)
 frequence = 12.0
 octave = 2.0
-couleur = Color(1, 0.439216, 1, 1)
+couleur = Color(0.0745098, 0.721569, 0.243137, 1)

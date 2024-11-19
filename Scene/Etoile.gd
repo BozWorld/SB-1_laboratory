@@ -3,11 +3,11 @@ extends Node2D
 
 @export var frequence : float = 6.0:
 	set(nouvelle_frequence): 
-		taille = 1.0 + (1.0/(octave*12.0 + nouvelle_frequence))*100
+		taille = 0.7 + (1.0/(octave*12.0 + nouvelle_frequence))*200
 		frequence = nouvelle_frequence
 @export var octave : float = 3.0:
 	set(nouvelle_octave): 
-		taille = 1.0 + (1.0/(nouvelle_octave*12.0 + frequence))*100
+		taille = 0.7 + (1.0/(nouvelle_octave*12.0 + frequence))*200
 		octave = nouvelle_octave
 		
 
