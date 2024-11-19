@@ -13,5 +13,39 @@ scale = Vector2(1.33842, -1.13548)
 texture = ExtResource("1_s4pgq")
 
 [node name="Node2D" parent="." instance=ExtResource("2_wmpbo")]
-frequence = 1.0
-octave = 1.0
+position = Vector2(62, 151)
+frequence = 8.0
+octave = 2.0
+couleur = Color(1, 0.439216, 1, 1)
+
+[node name="Node2D2" parent="." instance=ExtResource("2_wmpbo")]
+position = Vector2(291, 171)
+frequence = 12.0
+couleur = Color(1, 0.439216, 1, 1)
+
+[node name="Node2D3" parent="." instance=ExtResource("2_wmpbo")]
+position = Vector2(404, 235)
+frequence = 12.0
+octave = 2.0
+couleur = Color(1, 0.439216, 1, 1)
+
+[node name="Node2D4" parent="." instance=ExtResource("2_wmpbo")]
+position = Vector2(571, 266)
+frequence = 12.0
+couleur = Color(1, 0.439216, 1, 1)
+
+[node name="Node2D5" parent="." instance=ExtResource("2_wmpbo")]
+position = Vector2(664, 463)
+frequence = 12.0
+couleur = Color(1, 0.439216, 1, 1)
+
+[node name="Node2D6" parent="." instance=ExtResource("2_wmpbo")]
+position = Vector2(1018, 383)
+frequence = 12.0
+couleur = Color(1, 0.439216, 1, 1)
+
+[node name="Node2D7" parent="." instance=ExtResource("2_wmpbo")]
+position = Vector2(997, 164)
+frequence = 12.0
+octave = 2.0
+couleur = Color(1, 0.439216, 1, 1)
