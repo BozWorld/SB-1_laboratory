@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://rdsvkcktx2le"]
+
+[ext_resource type="Script" path="res://Scene/Etoile.gd" id="1_cf153"]
+[ext_resource type="Texture2D" uid="uid://2enhr28gokvu" path="res://Asset/etoile.png" id="1_khmvk"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_cf153")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_khmvk")

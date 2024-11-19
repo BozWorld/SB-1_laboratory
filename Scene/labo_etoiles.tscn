@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqy73d0nvetc3"]
+
+[ext_resource type="Texture2D" uid="uid://7tpft551r558" path="res://Asset/fond noir.png" id="1_s4pgq"]
+[ext_resource type="PackedScene" uid="uid://rdsvkcktx2le" path="res://Scene/etoile.tscn" id="2_wmpbo"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(584, 325)
+scale = Vector2(1.33842, -1.13548)
+texture = ExtResource("1_s4pgq")
+
+[node name="Node2D" parent="." instance=ExtResource("2_wmpbo")]
+frequence = 1.0
+octave = 1.0
