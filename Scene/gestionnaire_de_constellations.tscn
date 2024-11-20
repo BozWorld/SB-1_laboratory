@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cskyo3i7703xc"]
+
+[ext_resource type="Script" path="res://Scene/gestionnaire_de_constellations.gd" id="1_7hx1m"]
+
+[node name="GestionnaireDeConstellations" type="Node2D"]
+script = ExtResource("1_7hx1m")

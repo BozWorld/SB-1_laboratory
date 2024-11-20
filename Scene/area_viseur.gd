@@ -2,6 +2,7 @@ extends Area2D
 
 var selection : Array[Node2D]
 
+@onready var parent = get_parent()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is CorpsEtoile :
@@ -13,7 +14,10 @@ func _on_body_exited(body: Node2D) -> void:
 		selection.erase(body.parent)
 		body.parent.brille = false
 
-func retour_selection():
+func _process(delta: float) -> void:
+	queue_redraw()
+
+func retour_viseur():
 	if selection.size() < 1 :
 		return
 	if selection.size() == 1 :
@@ -29,3 +33,7 @@ func retour_selection():
 		
 		if etoile_plus_proche :
 			return etoile_plus_proche
+
+func _draw() -> void:
+	if !parent.bloquee :
+		draw_circle(Vector2(0,0), 30, Color(255,255,255), false, 3)

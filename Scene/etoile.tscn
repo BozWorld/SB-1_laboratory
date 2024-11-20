@@ -10,6 +10,8 @@
 
 [node name="Etoile" type="Node2D"]
 script = ExtResource("1_cf153")
+frequence = 6.0
+octave = 3.0
 
 [node name="SyntheMeep" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_hxnea")
@@ -21,8 +23,11 @@ stream = ExtResource("3_vjao3")
 stream = ExtResource("4_bqcd1")
 
 [node name="CorpsEtoile" type="StaticBody2D" parent="."]
+input_pickable = true
 script = ExtResource("5_hag4f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CorpsEtoile"]
 shape = SubResource("CircleShape2D_50otv")
 debug_color = Color(0.472479, 0.518819, 0.495673, 0.282353)
+
+[connection signal="mouse_entered" from="CorpsEtoile" to="." method="_on_corps_etoile_mouse_entered"]

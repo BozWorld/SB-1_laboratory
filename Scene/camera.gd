@@ -8,6 +8,8 @@ var bloquee = false
 
 @onready var viseur = $Area2D
 
+var pointe_constelleur
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -16,14 +18,27 @@ func _unhandled_input(event: InputEvent) -> void:
 		velocite += event.relative * sensibilite
 	
 	if Input.is_action_just_pressed("lock"):
-		if viseur.retour_selection() :
+		if viseur.retour_viseur() :
+			viseur.retour_viseur().faire_sonner()
+			GestionnaireDeConstellations.debut_ajout_constellation(viseur.retour_viseur())
 			bloquee = true
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			
+			pointe_constelleur = PointeConstelleur.new()
+			add_child(pointe_constelleur)
 	
 	if Input.is_action_just_released("lock"):
+		GestionnaireDeConstellations.fin_ajout_constellation()
 		bloquee = false
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		velocite *= 0
+		if pointe_constelleur :
+			pointe_constelleur.queue_free()
+			pointe_constelleur = null
+	
+	if Input.is_action_just_pressed("sonner"):
+		if viseur.retour_viseur() :
+			viseur.retour_viseur().faire_sonner()
 
 func _physics_process(delta: float) -> void:
 	if !bloquee :
