@@ -12,22 +12,42 @@ extends Node2D
 		
 
 @export var couleur : Color = Color(1.0,1.0,1.0)
-@onready var sprite = $Sprite2D
+
+@onready var synth_meep : AudioStreamPlayer2D = $SyntheMeep
+@onready var synth_vibre : AudioStreamPlayer2D = $SyntheVibre
+@onready var synth_clope : AudioStreamPlayer2D = $SyntheClope
+
+var brille = false
 
 var taille : float
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	var volume_meep = couleur.r8
+	var volume_vibre = couleur.g8
+	var volume_clope = couleur.b8
+	
+	var mod_meep = (255.0 - volume_meep)/10.0
+	var mod_vibre = (255.0 - volume_vibre)/10.0
+	var mod_clope = (255.0 - volume_clope)/10.0
+	
+	synth_meep.volume_db -= mod_meep
+	synth_vibre.volume_db -= mod_vibre
+	synth_clope.volume_db -= mod_clope
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		editor_process(delta)
-		queue_redraw()
+	
+	queue_redraw()
 
 func _draw():
 	draw_circle(Vector2(0,0), taille, couleur, true)
+	
+	if brille :
+		draw_circle(Vector2(0,0), taille*2, Color(255,255,255), false, 3)
 
 func editor_process(delta):
 	pass
