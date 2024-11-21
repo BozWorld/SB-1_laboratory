@@ -16,6 +16,8 @@ func _process(delta: float) -> void:
 	epaisseur -= delta*0.8
 	if rayon > 50 :
 		modulate.a -= delta*0.3
+	if modulate.a == 0:
+		queue_free()
 	queue_redraw()
 
 func _draw():
