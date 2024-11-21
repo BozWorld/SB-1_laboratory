@@ -17,4 +17,4 @@ func _process(delta: float) -> void:
 	queue_redraw()
 
 func _draw() -> void:
-	draw_line(Vector2(0,0),pointe,Color(255,255,255,130), 3)
+	draw_line(Vector2(0,0),pointe-position,Color(255,255,255,130), 3)

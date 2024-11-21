@@ -1,0 +1,31 @@
+extends Node2D
+class_name Liaison
+
+var etoile1 : Etoile
+var etoile2 : Etoile
+
+var active = false
+
+var duree : float
+
+func _ready():
+	etoile1.liaisons.append(self)
+	etoile2.liaisons.append(self)
+
+func _process(delta: float) -> void:
+	if active :
+		queue_redraw()
+
+func _draw() -> void:
+	draw_line(Vector2(0,0), etoile2.position - etoile1.position, etoile1.couleur.blend(etoile2.couleur), 2)
+
+func propagation(etoile : Etoile):
+	var timer = Timer.new()
+	timer.wait_time = duree
+	add_child(timer)
+	timer.start()
+	await timer.timeout
+	if etoile == etoile1:
+		etoile2.reception_propagation(self)
+	elif etoile == etoile2:
+		etoile1.reception_propagation(self)

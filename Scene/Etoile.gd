@@ -23,6 +23,9 @@ var brille = false
 var selectionnee = false
 
 var taille : float
+
+var liaisons : Array[Liaison]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var volume_meep = couleur.b8
@@ -53,8 +56,8 @@ func _process(delta: float) -> void:
 func _draw():
 	draw_circle(Vector2(0,0), taille, couleur, true)
 	
-	if brille :
-		draw_circle(Vector2(0,0), taille*2, Color(255,255,255), false, 3)
+	#if brille :
+		#draw_circle(Vector2(0,0), taille*2, Color(255,255,255), false, 3)
 
 func editor_process(delta):
 	pass
@@ -74,3 +77,17 @@ func faire_sonner():
 func _on_corps_etoile_mouse_entered() -> void:
 	if !selectionnee :
 		GestionnaireDeConstellations.ajout_etoile(self)
+		faire_sonner()
+
+func clic_sonner():
+	faire_sonner()
+	if liaisons.size():
+		for liaison in liaisons :
+			liaison.propagation(self)
+
+func reception_propagation(liaison_emettrice : Liaison):
+	faire_sonner()
+	if liaisons.size() > 1:
+		for liaison in liaisons:
+			if liaison != liaison_emettrice:
+				liaison.propagation(self)
