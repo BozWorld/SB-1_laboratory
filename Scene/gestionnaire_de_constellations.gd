@@ -12,13 +12,13 @@ func _ready() -> void:
 	main = get_tree().root.get_child(0)
 
 func ajout_etoile(etoile : Etoile):
-	etoile.selectionnee = true
+	#etoile.selectionnee = true
 	constellation_en_creation.ajout_etoile(etoile)
 	camera._deplacement_constelleur(etoile.global_position)
 
 
 func debut_ajout_constellation(etoile : Etoile):
-	etoile.selectionnee = true
+	#etoile.selectionnee = true
 	
 	decompte_constellation += 1
 	var nouvelle_constellation = Constellation.new()
@@ -33,3 +33,17 @@ func debut_ajout_constellation(etoile : Etoile):
 
 func fin_ajout_constellation():
 	constellation_en_creation = null
+
+func reselection_etoile(etoile : Etoile):
+	if constellation_en_creation.etoiles.size() > 1 :
+		if constellation_en_creation.etoiles[constellation_en_creation.etoiles.size()-1] == etoile :
+			etoile.deselection(constellation_en_creation.liaisons[constellation_en_creation.liaisons.size()-1])
+			constellation_en_creation.ctrlz()
+			camera._deplacement_constelleur(constellation_en_creation.etoiles[constellation_en_creation.etoiles.size()-1].global_position)
+			return
+			
+	#etoile.selectionnee = true
+	constellation_en_creation.ajout_etoile(etoile)
+	camera._deplacement_constelleur(etoile.global_position)
+			
+		

@@ -23,7 +23,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			viseur.retour_viseur().faire_sonner()
 			GestionnaireDeConstellations.debut_ajout_constellation(viseur.retour_viseur())
 			bloquee = true
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 			
 			pointe_constelleur = PointeConstelleur.new()
 			add_child(pointe_constelleur)

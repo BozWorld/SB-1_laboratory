@@ -22,6 +22,7 @@ var brille = false
 
 var selectionnee = false
 
+
 var taille : float
 
 var liaisons : Array[Liaison]
@@ -75,9 +76,11 @@ func faire_sonner():
 
 
 func _on_corps_etoile_mouse_entered() -> void:
-	if !selectionnee :
-		GestionnaireDeConstellations.ajout_etoile(self)
-		faire_sonner()
+	#if !selectionnee :
+		#GestionnaireDeConstellations.ajout_etoile(self)
+		#faire_sonner()
+	#elif selectionnee :
+	GestionnaireDeConstellations.reselection_etoile(self)
 
 func clic_sonner():
 	faire_sonner()
@@ -91,3 +94,7 @@ func reception_propagation(liaison_emettrice : Liaison):
 		for liaison in liaisons:
 			if liaison != liaison_emettrice:
 				liaison.propagation(self)
+
+func deselection(liaison_quittee : Liaison):
+	liaisons.erase(liaison_quittee)
+			
