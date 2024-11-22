@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqy73d0nvetc3"]
+[gd_scene load_steps=7 format=3 uid="uid://dqy73d0nvetc3"]
 
 [ext_resource type="Script" path="res://Scene/labo_etoiles.gd" id="1_0ndg8"]
 [ext_resource type="Texture2D" uid="uid://7tpft551r558" path="res://Asset/fond noir.png" id="1_s4pgq"]
 [ext_resource type="Script" path="res://Scene/camera.gd" id="2_rk2oi"]
 [ext_resource type="PackedScene" uid="uid://rdsvkcktx2le" path="res://Scene/etoile.tscn" id="2_wmpbo"]
 [ext_resource type="Script" path="res://Scene/area_viseur.gd" id="3_qjf2j"]
-[ext_resource type="Script" path="res://Scene/TimerUnique.gd" id="6_r2hr0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mmupj"]
 radius = 30.0
@@ -16,11 +15,14 @@ script = ExtResource("1_0ndg8")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(586, 325)
 script = ExtResource("2_rk2oi")
+sensibilite = null
 
-[node name="Area2D" type="Area2D" parent="Camera2D"]
+[node name="ViseurCreation" type="Area2D" parent="Camera2D"]
+collision_layer = 0
+collision_mask = 8
 script = ExtResource("3_qjf2j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/ViseurCreation"]
 shape = SubResource("CircleShape2D_mmupj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
@@ -69,8 +71,5 @@ frequence = 3.0
 octave = 2.0
 couleur = Color(0.0745098, 0.721569, 0.243137, 1)
 
-[node name="Timer" type="Timer" parent="Etoile7"]
-script = ExtResource("6_r2hr0")
-
-[connection signal="body_entered" from="Camera2D/Area2D" to="Camera2D/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Camera2D/Area2D" to="Camera2D/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Camera2D/ViseurCreation" to="Camera2D/ViseurCreation" method="_on_body_entered"]
+[connection signal="body_exited" from="Camera2D/ViseurCreation" to="Camera2D/ViseurCreation" method="_on_body_exited"]

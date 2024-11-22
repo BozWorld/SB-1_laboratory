@@ -6,11 +6,21 @@ var etoile2 : Etoile
 
 var active = false
 
+var collision_box := Area2D.new()
+var hit_box : CollisionPolygon2D
+
 var duree : float
 
 func _ready():
 	etoile1.liaisons.append(self)
 	etoile2.liaisons.append(self)
+	
+	collision_box.name = "collision_box"
+	hit_box = CollisionPolygon2D.new()
+	hit_box.polygon = [Vector2(0,0),etoile2.position - etoile1.position]
+	collision_box.add_child(hit_box)
+	
+	
 
 func _process(delta: float) -> void:
 	if active :

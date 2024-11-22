@@ -52,5 +52,6 @@ func reselection_etoile(etoile : Etoile):
 	
 	constellation_en_creation.ajout_etoile(etoile)
 	camera._deplacement_constelleur(etoile.global_position)
+	etoile.faire_sonner()
 			
 		
