@@ -9,7 +9,7 @@ var constellation_en_creation : Constellation
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	main = get_tree().root.get_child(0)
+	main = get_tree().root.find_child("Main")
 
 func ajout_etoile(etoile : Etoile):
 	#etoile.selectionnee = true
