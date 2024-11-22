@@ -10,6 +10,7 @@ var premiere_etoile : Etoile
 var temps_dernier_ajout : int
 var temps_nouvel_ajout : int
 
+var decompte_liaison = 0
 
 func _ready():
 	temps_dernier_ajout = Time.get_ticks_msec()
@@ -36,7 +37,9 @@ func ajout_etoile(etoile : Etoile):
 	# passage en seconde
 	duree_liaison /= 1000.0
 	
+	decompte_liaison += 1
 	var nouvelle_liaison = Liaison.new()
+	nouvelle_liaison.name = "Liaison n°" + str(decompte_liaison)
 	liaisons.append(nouvelle_liaison)
 	nouvelle_liaison.etoile1 = etoiles[etoiles.size() - 2]
 	nouvelle_liaison.etoile2 = etoiles[etoiles.size() - 1]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://rdsvkcktx2le"]
+[gd_scene load_steps=8 format=3 uid="uid://rdsvkcktx2le"]
 
 [ext_resource type="Script" path="res://Scene/Etoile.gd" id="1_cf153"]
 [ext_resource type="AudioStream" uid="uid://biy4m51oxoexf" path="res://Asset/instuments/synth_meep.wav" id="2_hxnea"]
 [ext_resource type="AudioStream" uid="uid://bht6rbx5n7psv" path="res://Asset/instuments/synth_vibre.wav" id="3_vjao3"]
 [ext_resource type="AudioStream" uid="uid://bcas1f0wwv75p" path="res://Asset/instuments/synth_clope.wav" id="4_bqcd1"]
 [ext_resource type="Script" path="res://Scene/corps_etoile.gd" id="5_hag4f"]
+[ext_resource type="Script" path="res://Scene/etoiles_particules.gd" id="6_gp8cn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_50otv"]
 
@@ -32,5 +33,8 @@ script = ExtResource("5_hag4f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CorpsEtoile"]
 shape = SubResource("CircleShape2D_50otv")
 debug_color = Color(0.472479, 0.518819, 0.495673, 0.282353)
+
+[node name="Particules" type="Node2D" parent="."]
+script = ExtResource("6_gp8cn")
 
 [connection signal="mouse_entered" from="CorpsEtoile" to="." method="_on_corps_etoile_mouse_entered"]

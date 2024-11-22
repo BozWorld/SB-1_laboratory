@@ -20,6 +20,8 @@ func _draw() -> void:
 	draw_line(Vector2(0,0), etoile2.position - etoile1.position, etoile1.couleur.blend(etoile2.couleur), 2)
 
 func propagation(etoile : Etoile):
+	print("
+	[" + name + "]" + "Reception de la part de " + etoile.name)
 	var timer = Timer.new()
 	timer.wait_time = duree
 	add_child(timer)
@@ -27,5 +29,10 @@ func propagation(etoile : Etoile):
 	await timer.timeout
 	if etoile == etoile1:
 		etoile2.reception_propagation(self)
+		print("
+	[" + name + "]" + "Envoi à " + etoile2.name)
 	elif etoile == etoile2:
 		etoile1.reception_propagation(self)
+		print("
+	[" + name + "]" + "Envoi à " + etoile1.name)
+	

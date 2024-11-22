@@ -25,6 +25,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			bloquee = true
 			Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 			
+			if pointe_constelleur :
+				pointe_constelleur.queue_free()
+				pointe_constelleur = null
+			
 			pointe_constelleur = PointeConstelleur.new()
 			add_child(pointe_constelleur)
 	

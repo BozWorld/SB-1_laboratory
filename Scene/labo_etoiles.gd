@@ -2,6 +2,7 @@ extends Node2D
 
 var menu_ouvert = false
 @onready var camera = $Camera2D
+var min_fps := 30
 
 var ancien_mouse_mode
 

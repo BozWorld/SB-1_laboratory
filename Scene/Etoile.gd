@@ -18,6 +18,8 @@ class_name Etoile
 @onready var synth_vibre : AudioStreamPlayer2D = $SyntheVibre
 @onready var synth_clope : AudioStreamPlayer2D = $SyntheClope
 
+@onready var gest_particules = $Particules
+
 var brille = false
 
 var selectionnee = false
@@ -63,16 +65,22 @@ func _draw():
 func editor_process(delta):
 	pass
 	
+func clean_array_liaisons():
+	for liaison in liaisons:
+		if !is_instance_valid(liaison):
+			liaisons.erase(liaison)
 
 
 func faire_sonner():
+	
+	clean_array_liaisons()
+	
 	synth_clope.play()
 	synth_meep.play()
 	synth_vibre.play()
 	
-	var onde = ParticuleCercle.new()
-	onde.couleur = self.couleur
-	add_child(onde)
+	gest_particules._nouvelle_particule(couleur)
+
 
 
 func _on_corps_etoile_mouse_entered() -> void:
@@ -84,17 +92,23 @@ func _on_corps_etoile_mouse_entered() -> void:
 
 func clic_sonner():
 	faire_sonner()
+	print("
+["+ name + "] :" +"Sonne par clic")
 	if liaisons.size():
 		for liaison in liaisons :
-			liaison.propagation(self)
+			if liaison != null:
+				liaison.propagation(self)
 
 func reception_propagation(liaison_emettrice : Liaison):
 	faire_sonner()
+	print("
+[" + name + "]" + "Reception de la part de " + liaison_emettrice.name)
 	if liaisons.size() > 1:
 		for liaison in liaisons:
-			if liaison != liaison_emettrice:
+			if liaison != null and liaison != liaison_emettrice:
 				liaison.propagation(self)
 
 func deselection(liaison_quittee : Liaison):
-	liaisons.erase(liaison_quittee)
+	liaisons.remove_at(liaisons.find(liaison_quittee))
+	clean_array_liaisons()
 			
