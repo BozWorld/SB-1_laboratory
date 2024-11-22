@@ -7,7 +7,7 @@ var epaisseur : float = 4.20
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	add_to_group("ParticulesCercle")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,7 +16,8 @@ func _process(delta: float) -> void:
 	epaisseur -= delta*0.8
 	if rayon > 50 :
 		modulate.a -= delta*0.3
-	if modulate.a == 0:
+	if modulate.a < 0.01:
+		remove_from_group("ParticulesCercle")
 		queue_free()
 	queue_redraw()
 

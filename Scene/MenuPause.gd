@@ -23,7 +23,7 @@ func _ready() -> void:
 	ancien_mouse_mode = Input.mouse_mode
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
-	
+	$PanelContainer/VBoxContainer/MinFPS.set_value(GestionnaireDeConstellations.min_fps)
 
 func continuer():
 	if FAIT_PAUSE :
@@ -60,3 +60,7 @@ func _on_recommencer_button_up() -> void:
 
 func _on_quitter_button_up() -> void:
 	get_tree().quit()
+
+
+func _on_min_fps_value_changed(value: float) -> void:
+	GestionnaireDeConstellations.min_fps = value

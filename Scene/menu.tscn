@@ -7,34 +7,6 @@
 shader = ExtResource("1_ljj8i")
 shader_parameter/lod = 0.0
 
-[sub_resource type="Animation" id="Animation_52lgv"]
-resource_name = "blur_on"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:shader_parameter/lod")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.8]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../PanelContainer:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_7hchu"]
 length = 0.001
 tracks/0/type = "value"
@@ -88,6 +60,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_52lgv"]
+resource_name = "blur_on"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pkp2s"]
@@ -152,6 +152,13 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "Quitter"
 
+[node name="MinFPS" type="HSlider" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+max_value = 60.0
+tick_count = 3
+ticks_on_borders = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../ColorRect")
 libraries = {
@@ -161,3 +168,4 @@ libraries = {
 [connection signal="button_up" from="PanelContainer/VBoxContainer/Continuer" to="." method="_on_continuer_button_up"]
 [connection signal="button_up" from="PanelContainer/VBoxContainer/Recommencer" to="." method="_on_recommencer_button_up"]
 [connection signal="button_up" from="PanelContainer/VBoxContainer/Quitter" to="." method="_on_quitter_button_up"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/MinFPS" to="." method="_on_min_fps_value_changed"]

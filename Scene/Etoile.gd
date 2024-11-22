@@ -92,8 +92,10 @@ func _on_corps_etoile_mouse_entered() -> void:
 
 func clic_sonner():
 	faire_sonner()
-	print("
-["+ name + "] :" +"Sonne par clic")
+	
+	#print("
+#["+ name + "] :" +"Sonne par clic")
+
 	if liaisons.size():
 		for liaison in liaisons :
 			if liaison != null:
@@ -101,8 +103,10 @@ func clic_sonner():
 
 func reception_propagation(liaison_emettrice : Liaison):
 	faire_sonner()
-	print("
-[" + name + "]" + "Reception de la part de " + liaison_emettrice.name)
+	
+	#print("
+#[" + name + "]" + "Reception de la part de " + liaison_emettrice.name)
+
 	if liaisons.size() > 1:
 		for liaison in liaisons:
 			if liaison != null and liaison != liaison_emettrice:

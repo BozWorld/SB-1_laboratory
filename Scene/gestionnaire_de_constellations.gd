@@ -3,13 +3,11 @@ extends Node2D
 var main : Node2D
 var camera : Camera2D
 
+var min_fps := 30.0
+
 var decompte_constellation := 0
 
 var constellation_en_creation : Constellation
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	main = get_tree().root.find_child("Main")
 
 func ajout_etoile(etoile : Etoile):
 	#etoile.selectionnee = true
