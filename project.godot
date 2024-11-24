@@ -23,6 +23,10 @@ PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_came
 window/size/viewport_width=1167
 window/size/viewport_height=647
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
