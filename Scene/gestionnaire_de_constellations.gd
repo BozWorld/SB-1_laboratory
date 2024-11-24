@@ -31,6 +31,9 @@ func debut_ajout_constellation(etoile : Etoile):
 
 
 func fin_ajout_constellation():
+	if constellation_en_creation.liaisons.size() == 0:
+		constellation_en_creation.queue_free()
+		decompte_constellation -= 1
 	constellation_en_creation = null
 
 func reselection_etoile(etoile : Etoile):
