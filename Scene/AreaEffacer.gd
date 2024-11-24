@@ -1,7 +1,7 @@
 extends Area2D
 class_name AreaEffacer
 
-var liaisons : Array[Liaison]
+var etoiles : Array[Etoile]
 var hitbox : CollisionCercleVisible
 
 var finie = false
@@ -11,27 +11,23 @@ var finie = false
 func _ready() -> void:
 	hitbox = CollisionCercleVisible.new()
 	add_child(hitbox)
-	area_entered.connect(on_area_entered)
-	area_exited.connect(on_area_exited)
 	body_entered.connect(on_body_entered)
-
-func on_area_entered(area : Area2D):
-	if area == Liaison :
-		ajout_liaison(area)
-
-func on_area_exited(area : Area2D):
-	if area == Liaison and liaisons.has(area):
-		enlever_liaison(area)
+	body_exited.connect(on_body_exited)
 
 func on_body_entered(body : Node2D):
-	pass
+	if body is Etoile :
+		ajout_etoile(body)
 
-func ajout_liaison(liaison):
-	liaisons.append(liaison)
+func on_body_exited(body : Node2D):
+	if body is Etoile and etoiles.has(body):
+		enlever_etoile(body)
 
-func enlever_liaison(liaison):
-	if liaison == Liaison :
-		liaisons.erase(liaison)
+func ajout_etoile(etoile):
+	etoiles.append(etoile)
+
+func enlever_etoile(etoile):
+	if etoile == Etoile :
+		etoiles.erase(etoile)
 
 func fin():
 	finie = true
