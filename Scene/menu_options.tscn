@@ -1,0 +1,256 @@
+[gd_scene load_steps=6 format=3 uid="uid://copy8pcc2op1r"]
+
+[ext_resource type="Script" path="res://Scene/menu_options.gd" id="1_p0c2s"]
+
+[sub_resource type="Animation" id="Animation_6apyc"]
+resource_name = "menu_on"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cwv8f"]
+resource_name = "menu_off"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sd7vc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qrxts"]
+_data = {
+"RESET": SubResource("Animation_sd7vc"),
+"menu_off": SubResource("Animation_cwv8f"),
+"menu_on": SubResource("Animation_6apyc")
+}
+
+[node name="MenuOptions" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_p0c2s")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 259.0
+offset_top = 76.0
+offset_right = -254.0
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="OptionsTitre" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+bbcode_enabled = true
+text = "[center][font_size=25]Options"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Volume" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Volume"]
+layout_mode = 2
+
+[node name="VolumeTitre" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Volume/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center] Volume"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="VolumeSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Volume/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.0
+
+[node name="MinFPS" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/MinFPS"]
+layout_mode = 2
+
+[node name="MinFPSTitre" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/MinFPS/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center] Min FPS"
+fit_content = true
+
+[node name="MinFPSSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/MinFPS/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.0
+max_value = 60.0
+tick_count = 3
+ticks_on_borders = true
+
+[node name="MaxFPS" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/MaxFPS"]
+layout_mode = 2
+
+[node name="MaxFPSTitre" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/MaxFPS/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center] Min FPS"
+fit_content = true
+
+[node name="MaxFPSSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/MaxFPS/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.0
+max_value = 120.0
+allow_greater = true
+
+[node name="Resolution" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Resolution"]
+layout_mode = 2
+
+[node name="ResolutionTitre" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Resolution/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center] Résolution"
+fit_content = true
+
+[node name="ResolutionOption" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Resolution/VBoxContainer"]
+layout_mode = 2
+item_count = 6
+popup/item_0/text = "1920x1080"
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+popup/item_3/text = "1152x648"
+popup/item_3/id = 3
+popup/item_4/text = "854x480"
+popup/item_4/id = 4
+popup/item_5/text = "640x360"
+popup/item_5/id = 5
+
+[node name="ModeAffichage" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ModeAffichage"]
+layout_mode = 2
+
+[node name="ModeAffichageTitre" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ModeAffichage/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center] Mode d'affichage"
+fit_content = true
+
+[node name="ModeAffichageOption" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ModeAffichage/VBoxContainer"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "Plein écran"
+popup/item_1/text = "Fenêtré"
+popup/item_1/id = 1
+popup/item_2/text = "Plein écran fenêtré"
+popup/item_2/id = 2
+
+[node name="RetourButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Retour"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qrxts")
+}
+
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Volume/VBoxContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/MinFPS/VBoxContainer/MinFPSSlider" to="." method="_on_min_fps_value_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/MaxFPS/VBoxContainer/MaxFPSSlider" to="." method="_on_max_fps_slider_value_changed"]
+[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Resolution/VBoxContainer/ResolutionOption" to="." method="_on_resolution_option_item_selected"]
+[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ModeAffichage/VBoxContainer/ModeAffichageOption" to="." method="_on_mode_affichage_option_item_selected"]
+[connection signal="button_up" from="PanelContainer/MarginContainer/VBoxContainer/RetourButton" to="." method="_on_retour_button_button_up"]

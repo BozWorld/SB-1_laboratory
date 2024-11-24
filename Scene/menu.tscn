@@ -24,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../PanelContainer:modulate")
+tracks/1/path = NodePath("../MenuCentral:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -52,7 +52,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../PanelContainer:modulate")
+tracks/1/path = NodePath("../MenuCentral:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -80,7 +80,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../PanelContainer:modulate")
+tracks/1/path = NodePath("../MenuCentral:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -117,7 +117,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="MenuCentral" type="PanelContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -130,34 +130,40 @@ offset_bottom = -310.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MenuCentral"]
 layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuCentral/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Continuer" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Continuer" type="Button" parent="MenuCentral/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "Continuer"
 
-[node name="Recommencer" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Recommencer" type="Button" parent="MenuCentral/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "Recommencer"
 
-[node name="Quitter" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Options" type="Button" parent="MenuCentral/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Options"
+
+[node name="Quitter" type="Button" parent="MenuCentral/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "Quitter"
-
-[node name="MinFPS" type="HSlider" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 6
-max_value = 60.0
-tick_count = 3
-ticks_on_borders = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../ColorRect")
@@ -165,7 +171,7 @@ libraries = {
 "": SubResource("AnimationLibrary_pkp2s")
 }
 
-[connection signal="button_up" from="PanelContainer/VBoxContainer/Continuer" to="." method="_on_continuer_button_up"]
-[connection signal="button_up" from="PanelContainer/VBoxContainer/Recommencer" to="." method="_on_recommencer_button_up"]
-[connection signal="button_up" from="PanelContainer/VBoxContainer/Quitter" to="." method="_on_quitter_button_up"]
-[connection signal="value_changed" from="PanelContainer/VBoxContainer/MinFPS" to="." method="_on_min_fps_value_changed"]
+[connection signal="button_up" from="MenuCentral/MarginContainer/VBoxContainer/Continuer" to="." method="_on_continuer_button_up"]
+[connection signal="button_up" from="MenuCentral/MarginContainer/VBoxContainer/Recommencer" to="." method="_on_recommencer_button_up"]
+[connection signal="button_up" from="MenuCentral/MarginContainer/VBoxContainer/Options" to="." method="_on_options_button_up"]
+[connection signal="button_up" from="MenuCentral/MarginContainer/VBoxContainer/Quitter" to="." method="_on_quitter_button_up"]
