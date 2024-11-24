@@ -11,7 +11,6 @@ var frame_threshold_effacer : int = 20
 var bloquee = false
 
 var area_effacer : AreaEffacer 
-var hitbox_effacer : CollisionCercleVisible
 
 @onready var viseur = $ViseurCreation
 
@@ -54,18 +53,20 @@ func _unhandled_input(event: InputEvent) -> void:
 		gclic_tenu = true
 	
 	if Input.is_action_just_released("sonner"):
+		
+		if decompte_gclic > frame_threshold_effacer:
+			area_effacer.fin()
+			area_effacer = null
+		
 		gclic_tenu = false
 		decompte_gclic = 0
-		area_effacer.fin()
-		hitbox_effacer = null
-		area_effacer = null
 
 func _physics_process(delta: float) -> void:
 	if !bloquee :
 		position += velocite * delta
 		velocite *= 0.8
 	
-	if gclic_tenu :
+	if gclic_tenu and not area_effacer :
 		decompte_gclic += 1
 		if decompte_gclic > frame_threshold_effacer:
 			

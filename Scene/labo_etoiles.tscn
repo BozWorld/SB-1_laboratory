@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqy73d0nvetc3"]
+[gd_scene load_steps=8 format=3 uid="uid://dqy73d0nvetc3"]
 
 [ext_resource type="Script" path="res://Scene/labo_etoiles.gd" id="1_0ndg8"]
 [ext_resource type="Texture2D" uid="uid://7tpft551r558" path="res://Asset/fond noir.png" id="1_s4pgq"]
@@ -9,13 +9,14 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_mmupj"]
 radius = 30.0
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1tmrw"]
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_0ndg8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(586, 325)
 script = ExtResource("2_rk2oi")
-sensibilite = null
 
 [node name="ViseurCreation" type="Area2D" parent="Camera2D"]
 collision_layer = 0
@@ -70,6 +71,9 @@ position = Vector2(997, 164)
 frequence = 3.0
 octave = 2.0
 couleur = Color(0.0745098, 0.721569, 0.243137, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Etoile7"]
+shape = SubResource("SegmentShape2D_1tmrw")
 
 [connection signal="body_entered" from="Camera2D/ViseurCreation" to="Camera2D/ViseurCreation" method="_on_body_entered"]
 [connection signal="body_exited" from="Camera2D/ViseurCreation" to="Camera2D/ViseurCreation" method="_on_body_exited"]

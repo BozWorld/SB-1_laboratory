@@ -11,12 +11,23 @@ var finie = false
 func _ready() -> void:
 	hitbox = CollisionCercleVisible.new()
 	add_child(hitbox)
-	area_entered.connect(ajout_liaison)
-	area_exited.connect(enlever_liaison)
+	area_entered.connect(on_area_entered)
+	area_exited.connect(on_area_exited)
+	body_entered.connect(on_body_entered)
+
+func on_area_entered(area : Area2D):
+	if area == Liaison :
+		ajout_liaison(area)
+
+func on_area_exited(area : Area2D):
+	if area == Liaison and liaisons.has(area):
+		enlever_liaison(area)
+
+func on_body_entered(body : Node2D):
+	pass
 
 func ajout_liaison(liaison):
-	if liaison == Liaison :
-		liaisons.append(liaison)
+	liaisons.append(liaison)
 
 func enlever_liaison(liaison):
 	if liaison == Liaison :

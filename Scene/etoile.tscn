@@ -27,7 +27,7 @@ stream = ExtResource("4_bqcd1")
 pitch_scale = 0.5
 
 [node name="CorpsEtoile" type="StaticBody2D" parent="."]
-collision_layer = 8
+collision_layer = 9
 collision_mask = 0
 input_pickable = true
 script = ExtResource("5_hag4f")
@@ -38,9 +38,5 @@ debug_color = Color(0.472479, 0.518819, 0.495673, 0.282353)
 
 [node name="Particules" type="Node2D" parent="."]
 script = ExtResource("6_gp8cn")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-build_mode = 1
-polygon = PackedVector2Array(0, 0)
 
 [connection signal="mouse_entered" from="CorpsEtoile" to="." method="_on_corps_etoile_mouse_entered"]
