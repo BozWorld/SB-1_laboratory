@@ -61,5 +61,4 @@ func ctrlz():
 	liaisons.remove_at(liaisons.size()-1)
 	liaison_supprimmee.queue_free()
 	etoiles.remove_at(etoiles.size()-1)
-	if etoiles.is_empty() :
-		queue_free()
+	decompte_liaison -= 1
