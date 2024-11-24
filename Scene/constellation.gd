@@ -62,3 +62,17 @@ func ctrlz():
 	liaison_supprimmee.queue_free()
 	etoiles.remove_at(etoiles.size()-1)
 	decompte_liaison -= 1
+
+func enlever_etoile(etoile_enlevee : Etoile):
+	if etoile_enlevee == etoiles[0]:
+		etoiles.remove_at(0)
+		liaisons.remove_at(0)
+	if etoile_enlevee == etoiles[etoiles.size()-1]:
+		etoiles.remove_at(etoiles.size()-1)
+		liaisons.remove_at(liaisons.size()-1)
+	
+	while etoiles.find(etoile_enlevee) != -1:
+		liaisons.remove_at(etoiles.find(etoile_enlevee))
+		liaisons[etoiles.find(etoile_enlevee)-1].etoile2 = etoiles[etoiles.find(etoile_enlevee)+1]
+		etoiles.erase(etoile_enlevee)
+	

@@ -9,6 +9,8 @@ var active = false
 var collision_box := Area2D.new()
 var hit_box : CollisionShape2D
 
+@onready var parent = get_parent()
+
 var duree : float
 
 func _ready():

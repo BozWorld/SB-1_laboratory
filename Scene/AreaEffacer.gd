@@ -15,21 +15,25 @@ func _ready() -> void:
 	body_exited.connect(on_body_exited)
 
 func on_body_entered(body : Node2D):
-	if body is Etoile :
-		ajout_etoile(body)
+	if body is CorpsEtoile :
+		ajout_etoile(body.parent)
 
 func on_body_exited(body : Node2D):
-	if body is Etoile and etoiles.has(body):
-		enlever_etoile(body)
+	if body is CorpsEtoile :
+		enlever_etoile(body.parent)
 
 func ajout_etoile(etoile):
 	etoiles.append(etoile)
 
 func enlever_etoile(etoile):
-	if etoile == Etoile :
+	if etoiles.has(etoile):
 		etoiles.erase(etoile)
 
 func fin():
+	
+	for etoile in etoiles :
+		etoile.effacer()
+	
 	finie = true
 	hitbox.finie = true
 
