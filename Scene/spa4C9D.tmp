@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://crislcuscwdp1"]
+
+[ext_resource type="Script" path="res://spawn_testing.gd" id="1_c7il2"]
+[ext_resource type="PackedScene" uid="uid://k5obwfk7y5nl" path="res://visuel/3d_glb/terrain.glb" id="2_avgps"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yfo1h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_du65y"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_0k3xt"]
+sky_material = SubResource("ProceduralSkyMaterial_du65y")
+
+[sub_resource type="Environment" id="Environment_qhrr1"]
+background_mode = 2
+sky = SubResource("Sky_0k3xt")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="spawn_testing" type="Node3D"]
+script = ExtResource("1_c7il2")
+array = SubResource("ArrayMesh_yfo1h")
+color = Color(1.64, 0, 0, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qhrr1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 90.405, 0)
+
+[node name="terrain" parent="." instance=ExtResource("2_avgps")]
+visible = false
+
+[editable path="terrain"]
