@@ -64,6 +64,10 @@ func ctrlz():
 	decompte_liaison -= 1
 
 func enlever_etoile(etoile_enlevee : Etoile):
+	if check_etoile_unique():
+		queue_free()
+		return
+	
 	if etoile_enlevee == etoiles[0]:
 		etoiles.remove_at(0)
 		var liaison_enlevee = liaisons[0]
