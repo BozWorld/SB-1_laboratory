@@ -67,12 +67,29 @@ func enlever_etoile(etoile_enlevee : Etoile):
 	if etoile_enlevee == etoiles[0]:
 		etoiles.remove_at(0)
 		liaisons.remove_at(0)
+	if !check_nombre_etoiles():
+		queue_free()
+		return
+	
 	if etoile_enlevee == etoiles[etoiles.size()-1]:
 		etoiles.remove_at(etoiles.size()-1)
 		liaisons.remove_at(liaisons.size()-1)
+	if !check_nombre_etoiles():
+		queue_free()
+		return
 	
 	while etoiles.find(etoile_enlevee) != -1:
 		liaisons.remove_at(etoiles.find(etoile_enlevee))
 		liaisons[etoiles.find(etoile_enlevee)-1].etoile2 = etoiles[etoiles.find(etoile_enlevee)+1]
 		etoiles.erase(etoile_enlevee)
 	
+	if !check_nombre_etoiles():
+		queue_free()
+		return
+
+#Verifie que la constellation aie assez d'étoiles (+ d'1 quoi)
+func check_nombre_etoiles():
+	if etoiles.size() <= 1 :
+		return false
+	else:
+		return true

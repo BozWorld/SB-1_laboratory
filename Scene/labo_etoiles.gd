@@ -33,7 +33,7 @@ func fermer_menu():
 	camera.bloquee = false
 
 func _process(delta: float) -> void:
-	print(Engine.get_frames_per_second())
+	#print(Engine.get_frames_per_second())
 	if Engine.get_frames_per_second() < GestionnaireDeConstellations.min_fps:
 		if get_tree().get_nodes_in_group("ParticulesCercle").size() > 20:
 			get_tree().call_group("TimersPropagation","queue_free")

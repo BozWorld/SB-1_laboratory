@@ -118,5 +118,8 @@ func deselection(liaison_quittee : Liaison):
 
 func effacer():
 	for liaison in liaisons:
-		liaison.parent.enlever_etoile(self)
+		if is_instance_valid(liaison):
+			liaison.parent.enlever_etoile(self)
+		else :
+			liaisons.erase(liaison)
 	liaisons.clear()
