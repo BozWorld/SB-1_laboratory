@@ -66,30 +66,36 @@ func ctrlz():
 func enlever_etoile(etoile_enlevee : Etoile):
 	if etoile_enlevee == etoiles[0]:
 		etoiles.remove_at(0)
+		var liaison_enlevee = liaisons[0]
 		liaisons.remove_at(0)
-	if !check_nombre_etoiles():
+		liaison_enlevee.queue_free()
+	if check_etoile_unique():
 		queue_free()
 		return
 	
 	if etoile_enlevee == etoiles[etoiles.size()-1]:
 		etoiles.remove_at(etoiles.size()-1)
+		var liaison_enlevee = liaisons[liaisons.size()-1]
 		liaisons.remove_at(liaisons.size()-1)
-	if !check_nombre_etoiles():
+		liaison_enlevee.queue_free()
+	if check_etoile_unique():
 		queue_free()
 		return
 	
 	while etoiles.find(etoile_enlevee) != -1:
+		var liaison_enlevee = liaisons[etoiles.find(etoile_enlevee)]
 		liaisons.remove_at(etoiles.find(etoile_enlevee))
+		liaison_enlevee.queue_free()
 		liaisons[etoiles.find(etoile_enlevee)-1].etoile2 = etoiles[etoiles.find(etoile_enlevee)+1]
 		etoiles.erase(etoile_enlevee)
 	
-	if !check_nombre_etoiles():
+	if check_etoile_unique():
 		queue_free()
 		return
 
 #Verifie que la constellation aie assez d'étoiles (+ d'1 quoi)
-func check_nombre_etoiles():
+func check_etoile_unique():
 	if etoiles.size() <= 1 :
-		return false
-	else:
 		return true
+	else:
+		return false

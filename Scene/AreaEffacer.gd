@@ -32,7 +32,7 @@ func enlever_etoile(etoile):
 func fin():
 	
 	for etoile in etoiles :
-		etoile.effacer()
+		etoile.deselection_totale()
 	
 	finie = true
 	hitbox.finie = true

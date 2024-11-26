@@ -113,10 +113,11 @@ func reception_propagation(liaison_emettrice : Liaison):
 				liaison.propagation(self)
 
 func deselection(liaison_quittee : Liaison):
-	liaisons.remove_at(liaisons.find(liaison_quittee))
+	liaisons.erase(liaison_quittee)
 	clean_array_liaisons()
 
-func effacer():
+func deselection_totale():
+	clean_array_liaisons()
 	for liaison in liaisons:
 		if is_instance_valid(liaison):
 			liaison.parent.enlever_etoile(self)
