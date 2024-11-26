@@ -2,7 +2,7 @@ extends Node3D
 
 var base_island_scene = preload("res://Scene/terrain.tscn")
 
-@export var cube_size: Vector3 = Vector3(75,0,75)
+@export var cube_size: Vector3 = Vector3(300,0,300)
 @export var island_count = 5
 @export var min_dist: Vector3 = Vector3(10,0,30)
 @export var array: ArrayMesh
@@ -35,10 +35,10 @@ func spawn_island():
 			new_pos.z = clamp(new_pos.z, -cube_size.z/2, cube_size.z/2)
 			position_is_valid = is_position_valid(new_pos)
 		while not scale_is_valid:
-			new_scale.x = randf_range(1,4)
-			new_scale.z = randf_range(1,4)
+			new_scale.x = randf_range(1,3)
+			new_scale.z = randf_range(1,2)
 			new_scale.y = randf_range(1,3)
-			#new_scale.x = clamp(new_scale.x,1,2)
+			#new_scale.x = clamp(new_scale.x,1,2)set_
 			#new_scale.z = clamp(new_scale.z,1,2)
 			print(new_scale)
 			scale_is_valid = is_scale_valid(new_scale)		
@@ -46,11 +46,10 @@ func spawn_island():
 		island_instance.scale = new_scale
 		var mesh = island_instance.get_child(0).mesh
 		var texture: Material = mesh.surface_get_material(0)
-		var new_material = Material.new()
-		texture.albedo_color = Color.from_hsv(randf_range(0.0, 1.0),  # Teinte (Hue), couverture complète du spectre.
-			randf_range(0.6, 1.0),  # Saturation, gamme plus large pour plus de couleurs saturées.
-			randf_range(0.3, 1.0))  # Luminosité, plus de variation de la lumière à sombre.
+		texture.albedo_color = Color.from_hsv(randf_range(0.0, 1.0),randf_range(0.0, 1.0),randf_range(0.0, 1.0))# Teinte (Hue), couverture complète du spectre.
 			#print("voici le nouveau scale" +  str(island_instance.scale))
+		island_instance.get_child(0).mesh.surface_set_material(0,texture)
+		print(island_instance.get_child(0).mesh.surface_get_material(0))
 		add_child(island_instance)
 		#var texture = mesh.get_surface_override_material(0)
 		#.set_surface_override(0).albedo_color = Color(randf_range(0,1),randf_range(0,1),randf_range(0,1))

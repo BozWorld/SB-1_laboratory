@@ -23,6 +23,7 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_i5she"]
+resource_local_to_scene = true
 resource_name = "terrain_Sphere"
 _surfaces = [{
 "aabb": AABB(-1.07591, -1.20886, -1, 2.07591, 1.20886, 2),
