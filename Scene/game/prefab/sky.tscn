@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://domk2ccvnlllu"]
+
+[ext_resource type="Shader" path="res://visuel/material and texture/shader_script/sky.gdshader" id="1_ib8j5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cpo44"]
+shader = ExtResource("1_ib8j5")
+shader_parameter/color_top = Color(1, 1, 0.862745, 1)
+shader_parameter/color_horizon = Color(0.329412, 0.862745, 0.576471, 1)
+shader_parameter/color_bottom = Color(1, 0.2, 0.411765, 1)
+shader_parameter/exponent_factor_top = 2.134
+shader_parameter/exponent_factor_bottom = 5.225
+shader_parameter/intensity_amp = 0.65
+
+[sub_resource type="Sky" id="Sky_hkp4g"]
+sky_material = SubResource("ShaderMaterial_cpo44")
+
+[sub_resource type="Environment" id="Environment_2kj7u"]
+background_mode = 2
+sky = SubResource("Sky_hkp4g")
+tonemap_mode = 2
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2kj7u")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+visible = false
+shadow_enabled = true

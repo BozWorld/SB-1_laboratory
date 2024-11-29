@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=4 uid="uid://c8jmrou3lrf42"]
+[gd_scene load_steps=9 format=4 uid="uid://c8jmrou3lrf42"]
 
-[ext_resource type="Script" path="res://Scene/player/player.gd" id="1_l1kis"]
-[ext_resource type="Script" path="res://visuel/export_3d/rotation.gd" id="3_nm3j2"]
-[ext_resource type="Shader" path="res://Scene/player/player.gdshader" id="3_ri34j"]
+[ext_resource type="Script" path="res://Script/basics_actor/actor_controller/player.gd" id="1_l1kis"]
+[ext_resource type="Script" path="res://Script/basics_actor/actor_controller/rotation.gd" id="3_nm3j2"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2xu3f"]
 radius = 1.69832
@@ -107,12 +106,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rtw2i")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jc6ia"]
-render_priority = 0
-shader = ExtResource("3_ri34j")
-
-[sub_resource type="QuadMesh" id="QuadMesh_kcfqq"]
-
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_l1kis")
 
@@ -126,9 +119,3 @@ script = ExtResource("3_nm3j2")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("ArrayMesh_y4ky4")
 skeleton = NodePath("")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.56136, 0)
-material_override = SubResource("ShaderMaterial_jc6ia")
-extra_cull_margin = 16384.0
-mesh = SubResource("QuadMesh_kcfqq")
