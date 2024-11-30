@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdvipfemrtu18"]
+
+[ext_resource type="PackedScene" uid="uid://b7mpk21hm1lok" path="res://code/utils/character_body_2d.tscn" id="1_tttb2"]
+
+[node name="proto-scene" type="Node2D"]
+
+[node name="ppp" parent="." instance=ExtResource("1_tttb2")]
+position = Vector2(470, 234)
+direction_angle = 180.0

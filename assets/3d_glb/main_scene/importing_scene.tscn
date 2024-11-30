@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://t4t5f4m35fel"]
+
+[ext_resource type="PackedScene" uid="uid://2aq8v0pu8v0p" path="res://assets/3d_glb/hangar_island.glb" id="1_n2rst"]
+[ext_resource type="PackedScene" uid="uid://xax8sl4yuieh" path="res://scenes/prefab/post_processing_testing/Water.tscn" id="2_dpn3s"]
+[ext_resource type="Shader" path="res://assets/materials_textures/shader_script/sky.gdshader" id="3_ujy5y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cpo44"]
+shader = ExtResource("3_ujy5y")
+shader_parameter/color_top = Color(1, 1, 0.862745, 1)
+shader_parameter/color_horizon = Color(0.329412, 0.862745, 0.576471, 1)
+shader_parameter/color_bottom = Color(1, 0.2, 0.411765, 1)
+shader_parameter/exponent_factor_top = 2.134
+shader_parameter/exponent_factor_bottom = 5.225
+shader_parameter/intensity_amp = 0.65
+
+[sub_resource type="Sky" id="Sky_hkp4g"]
+sky_material = SubResource("ShaderMaterial_cpo44")
+
+[sub_resource type="Environment" id="Environment_2kj7u"]
+background_mode = 2
+sky = SubResource("Sky_hkp4g")
+tonemap_mode = 2
+
+[node name="importing_scene" type="Node3D"]
+
+[node name="hangar_island" parent="." instance=ExtResource("1_n2rst")]
+
+[node name="water_plane" parent="." instance=ExtResource("2_dpn3s")]
+transform = Transform3D(975, 0, 0, 0, 7.8, 0, 0, 0, 975, 0, -5.26684, 0)
+
+[node name="ambiant" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="ambiant"]
+environment = SubResource("Environment_2kj7u")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="ambiant"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.760991, 0.484814, 0.216402, 1)
+shadow_enabled = true
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="ambiant"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.95589, 0.551563, 0.59604, 1)
+light_energy = 0.65
+shadow_enabled = true
