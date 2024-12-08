@@ -1,16 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqy73d0nvetc3"]
+[gd_scene load_steps=9 format=3 uid="uid://dqy73d0nvetc3"]
 
 [ext_resource type="Script" path="res://Scene/labo_etoiles.gd" id="1_0ndg8"]
 [ext_resource type="Texture2D" uid="uid://7tpft551r558" path="res://Asset/fond noir.png" id="1_s4pgq"]
 [ext_resource type="Script" path="res://Scene/camera.gd" id="2_rk2oi"]
+[ext_resource type="Texture2D" uid="uid://bc5pm08ybs4sd" path="res://Asset/CarteEtoile.png" id="2_subm1"]
 [ext_resource type="PackedScene" uid="uid://rdsvkcktx2le" path="res://Scene/etoile.tscn" id="2_wmpbo"]
 [ext_resource type="Script" path="res://Scene/area_viseur.gd" id="3_qjf2j"]
+[ext_resource type="Script" path="res://Scene/Etoile.gd" id="7_213y0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mmupj"]
 radius = 30.0
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_0ndg8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(10.8861, 10.8861)
+texture = ExtResource("2_subm1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(586, 325)
@@ -33,42 +39,105 @@ position = Vector2(584, 325)
 scale = Vector2(1.33842, -1.13548)
 texture = ExtResource("1_s4pgq")
 
-[node name="Etoile1" parent="." instance=ExtResource("2_wmpbo")]
-position = Vector2(62, 151)
+[node name="RangementEtoiles" type="Node2D" parent="."]
+
+[node name="Etoile1" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1251, -428)
+scale = Vector2(1, 1)
 frequence = 3.0
 octave = 2.0
 couleur = Color(0.298039, 0.756863, 0.956863, 1)
 
-[node name="Etoile2" parent="." instance=ExtResource("2_wmpbo")]
-position = Vector2(291, 171)
+[node name="Etoile2" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1206, -715)
+scale = Vector2(1, 1)
 frequence = 10.0
 couleur = Color(0.643137, 0.0627451, 0.890196, 1)
 
-[node name="Etoile3" parent="." instance=ExtResource("2_wmpbo")]
-position = Vector2(404, 235)
+[node name="Etoile3" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1291, -882)
+scale = Vector2(1, 1)
 frequence = 3.0
 octave = 6.0
 couleur = Color(0.210803, 0.542685, 0.586291, 1)
 
-[node name="Etoile4" parent="." instance=ExtResource("2_wmpbo")]
-position = Vector2(571, 266)
+[node name="Etoile4" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1384, -1101)
+scale = Vector2(1, 1)
 frequence = 10.0
 couleur = Color(0.732706, 0.522533, 0.532484, 1)
 
-[node name="Etoile5" parent="." instance=ExtResource("2_wmpbo")]
-position = Vector2(664, 463)
+[node name="Etoile5" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1571, -1148)
+scale = Vector2(1, 1)
 octave = 2.0
 couleur = Color(0.94902, 0.764706, 0.027451, 1)
 
-[node name="Etoile6" parent="." instance=ExtResource("2_wmpbo")]
-position = Vector2(1023, 377)
+[node name="Etoile6" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1561, -1502)
+scale = Vector2(1, 1)
 couleur = Color(0.909644, 0.457197, 1.92523e-07, 1)
 
-[node name="Etoile7" parent="." instance=ExtResource("2_wmpbo")]
-position = Vector2(997, 164)
+[node name="Etoile7" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1305, -1559)
+scale = Vector2(1, 1)
 frequence = 3.0
 octave = 2.0
 couleur = Color(0.0745098, 0.721569, 0.243137, 1)
+
+[node name="Etoile8" type="Node2D" parent="RangementEtoiles"]
+script = ExtResource("7_213y0")
+
+[node name="Etoile9" type="Node2D" parent="RangementEtoiles"]
+script = ExtResource("7_213y0")
+
+[node name="Etoile10" type="Node2D" parent="RangementEtoiles"]
+script = ExtResource("7_213y0")
+
+[node name="Etoile11" type="Node2D" parent="RangementEtoiles"]
+script = ExtResource("7_213y0")
+
+[node name="Etoile12" type="Node2D" parent="RangementEtoiles"]
+script = ExtResource("7_213y0")
+
+[node name="Etoile13" type="Node2D" parent="RangementEtoiles"]
+script = ExtResource("7_213y0")
+
+[node name="Etoile14" type="Node2D" parent="RangementEtoiles"]
+script = ExtResource("7_213y0")
+
+[node name="Etoile15" type="Node2D" parent="RangementEtoiles"]
+script = ExtResource("7_213y0")
+
+[node name="Etoile16" type="Node2D" parent="RangementEtoiles"]
+script = ExtResource("7_213y0")
+
+[node name="Etoile17" type="Node2D" parent="RangementEtoiles"]
+script = ExtResource("7_213y0")
+
+[node name="Etoile18" type="Node2D" parent="RangementEtoiles"]
+script = ExtResource("7_213y0")
+
+[node name="Etoile19" type="Node2D" parent="RangementEtoiles"]
+script = ExtResource("7_213y0")
+
+[node name="Etoile20" type="Node2D" parent="RangementEtoiles"]
+script = ExtResource("7_213y0")
+
+[node name="Etoile21" type="Node2D" parent="RangementEtoiles"]
+script = ExtResource("7_213y0")
+
+[node name="Etoile22" type="Node2D" parent="RangementEtoiles"]
+script = ExtResource("7_213y0")
+
+[node name="Etoile23" type="Node2D" parent="RangementEtoiles"]
+script = ExtResource("7_213y0")
+
+[node name="Etoile24" type="Node2D" parent="RangementEtoiles"]
+script = ExtResource("7_213y0")
+
+[node name="Etoile25" type="Node2D" parent="RangementEtoiles"]
+script = ExtResource("7_213y0")
 
 [connection signal="body_entered" from="Camera2D/ViseurCreation" to="Camera2D/ViseurCreation" method="_on_body_entered"]
 [connection signal="body_exited" from="Camera2D/ViseurCreation" to="Camera2D/ViseurCreation" method="_on_body_exited"]
