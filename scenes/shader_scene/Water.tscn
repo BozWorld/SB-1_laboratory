@@ -3,6 +3,7 @@
 [ext_resource type="Material" uid="uid://dd4wgdjgidqgg" path="res://assets/materials_textures/tres/water.tres" id="1_45xg1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_wn1pp"]
+size = Vector3(2000, 0.5, 2000)
 subdivide_width = 200
 subdivide_height = 200
 subdivide_depth = 500

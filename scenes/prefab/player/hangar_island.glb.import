@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dhetjdb807kbq"
-path="res://.godot/imported/avion_with_join.glb-af56c28790f586bd89ec2143ac2332b0.scn"
+uid="uid://dmdynkj5p280n"
+path="res://.godot/imported/hangar_island.glb-abc5ed034862545ec5f7ae4252b1c9ad.scn"
 
 [deps]
 
-source_file="res://assets/3d_glb/avion_with_join.glb"
-dest_files=["res://.godot/imported/avion_with_join.glb-af56c28790f586bd89ec2143ac2332b0.scn"]
+source_file="res://scenes/prefab/player/hangar_island.glb"
+dest_files=["res://.godot/imported/hangar_island.glb-abc5ed034862545ec5f7ae4252b1c9ad.scn"]
 
 [params]
 

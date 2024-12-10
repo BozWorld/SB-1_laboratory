@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu5bpfol8vxis"]
+
+[ext_resource type="PackedScene" uid="uid://bxepohx1mumkt" path="res://assets/export_3d/avion.tscn" id="1_sq1e1"]
+
+[node name="avion2" type="Node3D"]
+
+[node name="avion" parent="." instance=ExtResource("1_sq1e1")]

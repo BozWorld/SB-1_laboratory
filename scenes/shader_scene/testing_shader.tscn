@@ -1,7 +1,32 @@
-[gd_scene load_steps=500 format=4 uid="uid://cumecpt86pmsv"]
+[gd_scene load_steps=511 format=4 uid="uid://caold8bj2wf77"]
 
-[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="1_5dlge"]
-[ext_resource type="Material" uid="uid://bb43ngplsfis2" path="res://addons/flexible_toon_shader/FlexibleToonMaterial.tres" id="2_mbp8p"]
+[ext_resource type="PackedScene" uid="uid://xax8sl4yuieh" path="res://scenes/shader_scene/Water.tscn" id="1_ycitl"]
+[ext_resource type="Shader" path="res://assets/materials_textures/shader_script/sky.gdshader" id="2_suo3e"]
+[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="3_x8rlw"]
+[ext_resource type="Material" uid="uid://bb43ngplsfis2" path="res://addons/flexible_toon_shader/FlexibleToonMaterial.tres" id="4_igt68"]
+[ext_resource type="PackedScene" uid="uid://c8jmrou3lrf42" path="res://scenes/prefab/player/Player.tscn" id="5_0w74w"]
+[ext_resource type="Script" path="res://scenes/main_game/camera_behaviour.gd" id="6_phhuw"]
+[ext_resource type="Shader" path="res://assets/materials_textures/shader_script/outline.gdshader" id="7_5ered"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ada6a"]
+size = Vector3(2000, 0.44, 2000)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cpo44"]
+shader = ExtResource("2_suo3e")
+shader_parameter/color_top = Color(1, 1, 0.862745, 1)
+shader_parameter/color_horizon = Color(0.329412, 0.862745, 0.576471, 1)
+shader_parameter/color_bottom = Color(1, 0.2, 0.411765, 1)
+shader_parameter/exponent_factor_top = 2.134
+shader_parameter/exponent_factor_bottom = 5.225
+shader_parameter/intensity_amp = 0.65
+
+[sub_resource type="Sky" id="Sky_hkp4g"]
+sky_material = SubResource("ShaderMaterial_cpo44")
+
+[sub_resource type="Environment" id="Environment_2kj7u"]
+background_mode = 2
+sky = SubResource("Sky_hkp4g")
+tonemap_mode = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fp1r6"]
 resource_name = "tree_trunc_tres.002"
@@ -103,7 +128,7 @@ shadow_mesh = SubResource("ArrayMesh_bcw0i")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ekslu"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.658824, 0.376471, 0.364706, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -122,7 +147,7 @@ shader_parameter/border_width = 0.01
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xa4iq"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.376471, 0.682353, 0.482353, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -141,7 +166,7 @@ shader_parameter/border_width = 0.01
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8bjf5"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.713726, 0.811765, 0.556863, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -316,7 +341,7 @@ shadow_mesh = SubResource("ArrayMesh_4qh58")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sog8e"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.235294, 0.419608, 0.392157, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -335,7 +360,7 @@ shader_parameter/border_width = 0.01
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rtfg5"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.658824, 0.376471, 0.364706, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -354,7 +379,7 @@ shader_parameter/border_width = 0.01
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ad1jh"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.658824, 0.870588, 0.290196, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -437,7 +462,7 @@ shadow_mesh = SubResource("ArrayMesh_fm258")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e0x07"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.376471, 0.682353, 0.482353, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -456,7 +481,7 @@ shader_parameter/border_width = 0.01
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jjb7v"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.623529, 0.419608, 0.305882, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -539,7 +564,7 @@ shadow_mesh = SubResource("ArrayMesh_1sr1l")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rrynj"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.658824, 0.870588, 0.290196, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -558,7 +583,7 @@ shader_parameter/border_width = 0.01
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rjss2"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.396078, 0.25098, 0.32549, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -635,7 +660,7 @@ shadow_mesh = SubResource("ArrayMesh_vomug")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gch8i"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.658824, 0.870588, 0.290196, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -654,7 +679,7 @@ shader_parameter/border_width = 0.01
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4h404"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.623529, 0.419608, 0.305882, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -711,7 +736,7 @@ shadow_mesh = SubResource("ArrayMesh_lusj4")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2hrg8"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.546208, 0.433382, 0.183679, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -768,7 +793,7 @@ shadow_mesh = SubResource("ArrayMesh_v03vq")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f8ww5"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.388235, 0.341176, 0.239216, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -827,7 +852,7 @@ shadow_mesh = SubResource("ArrayMesh_ip43e")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dqf6s"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.639216, 0.45098, 0.329412, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -918,7 +943,7 @@ shadow_mesh = SubResource("ArrayMesh_afqrq")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qsq45"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.639216, 0.517647, 0.501961, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -975,7 +1000,7 @@ shadow_mesh = SubResource("ArrayMesh_oa8a0")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w76pw"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.639216, 0.392157, 0.305882, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -1028,7 +1053,7 @@ shadow_mesh = SubResource("ArrayMesh_klytm")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lxikh"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.639216, 0.45098, 0.329412, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -1079,7 +1104,7 @@ shadow_mesh = SubResource("ArrayMesh_xfh17")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l7j5o"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.639216, 0.517647, 0.501961, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -1130,7 +1155,7 @@ shadow_mesh = SubResource("ArrayMesh_cacix")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oy1u7"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.639216, 0.392157, 0.305882, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -1183,7 +1208,7 @@ shadow_mesh = SubResource("ArrayMesh_egyyl")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0by4j"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.36583, 0.359274, 0.291541, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -1270,7 +1295,7 @@ shadow_mesh = SubResource("ArrayMesh_xij61")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ldpfl"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.388235, 0.341176, 0.239216, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -3775,7 +3800,7 @@ shadow_mesh = SubResource("ArrayMesh_4bpr5")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_svcdr"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.0980392, 0.521569, 0.317647, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -3828,7 +3853,7 @@ shadow_mesh = SubResource("ArrayMesh_dui7t")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ru3qq"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.277375, 0.71967, 0.63522, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -3879,7 +3904,7 @@ shadow_mesh = SubResource("ArrayMesh_jeql7")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mohr8"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.733333, 0.631373, 0.564706, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -3932,7 +3957,7 @@ shadow_mesh = SubResource("ArrayMesh_n62sv")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t5ibg"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.712276, 0.557411, 0.377742, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -3985,7 +4010,7 @@ shadow_mesh = SubResource("ArrayMesh_mug81")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ukt7u"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.549827, 0.697303, 0.184369, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -4036,7 +4061,7 @@ shadow_mesh = SubResource("ArrayMesh_e8ngd")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x8sc3"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.2896, 0.607743, 0.310347, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -4089,7 +4114,7 @@ shadow_mesh = SubResource("ArrayMesh_f4f5e")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_spp4t"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.196943, 0.341114, 0.0993095, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -4142,7 +4167,7 @@ shadow_mesh = SubResource("ArrayMesh_gwqkh")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_esfa2"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.38208, 0.413756, 0.142146, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -4193,7 +4218,7 @@ shadow_mesh = SubResource("ArrayMesh_8xr8g")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pr0mb"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.121569, 0.388235, 0.4, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -4346,7 +4371,7 @@ shadow_mesh = SubResource("ArrayMesh_lw77p")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rc0gb"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.296426, 0.778566, 0.557325, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -4399,7 +4424,7 @@ shadow_mesh = SubResource("ArrayMesh_3yb5v")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3xso0"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.836518, 0.954679, 0.50539, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -4450,7 +4475,7 @@ shadow_mesh = SubResource("ArrayMesh_pk4c4")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r17j2"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.764323, 0.886784, 0.658916, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -4503,7 +4528,7 @@ shadow_mesh = SubResource("ArrayMesh_8v5wq")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_11cl2"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.537571, 0.448037, 0.0573008, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -4556,7 +4581,7 @@ shadow_mesh = SubResource("ArrayMesh_mgxb5")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x163b"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.473074, 0.695747, 0.319746, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -4607,7 +4632,7 @@ shadow_mesh = SubResource("ArrayMesh_pq6n5")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6p8g6"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.502505, 0.575768, 0.34503, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -4726,7 +4751,7 @@ shadow_mesh = SubResource("ArrayMesh_t8t05")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uxm0h"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.0980392, 0.521569, 0.317647, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -4845,7 +4870,7 @@ shadow_mesh = SubResource("ArrayMesh_7b4l3")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v16ne"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.415686, 0.8, 0.584314, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -5632,7 +5657,7 @@ shadow_mesh = SubResource("ArrayMesh_unkb7")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wx4pl"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.658824, 0.870588, 0.290196, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -5717,7 +5742,7 @@ shadow_mesh = SubResource("ArrayMesh_mqwd4")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v061l"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.431992, 0.526515, 0.336321, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -5770,7 +5795,7 @@ shadow_mesh = SubResource("ArrayMesh_uwonf")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bk3oi"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.211603, 0.481623, 0.539514, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -5821,7 +5846,7 @@ shadow_mesh = SubResource("ArrayMesh_epygy")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_850gd"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.145098, 0.501961, 0.454902, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -5874,7 +5899,7 @@ shadow_mesh = SubResource("ArrayMesh_srtve")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c1jis"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.415686, 0.8, 0.584314, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -5927,7 +5952,7 @@ shadow_mesh = SubResource("ArrayMesh_i6vlm")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4lvg5"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.411605, 0.803821, 0.42564, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -5978,7 +6003,7 @@ shadow_mesh = SubResource("ArrayMesh_r1v7e")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i3xlb"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.121569, 0.388235, 0.4, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -6031,7 +6056,7 @@ shadow_mesh = SubResource("ArrayMesh_ehlri")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wfto2"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.0980392, 0.521569, 0.317647, 1)
 shader_parameter/clamp_diffuse_to_max = true
 shader_parameter/cuts = 3
@@ -6084,7 +6109,7 @@ shadow_mesh = SubResource("ArrayMesh_3m8kg")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xdmur"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.352442, 0.582637, 0.418899, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -6135,7 +6160,7 @@ shadow_mesh = SubResource("ArrayMesh_yb85m")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mdt71"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.0980392, 0.521569, 0.317647, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -6222,7 +6247,7 @@ shadow_mesh = SubResource("ArrayMesh_55b5n")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_15jci"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.662673, 0.749102, 0.402349, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -6273,7 +6298,7 @@ shadow_mesh = SubResource("ArrayMesh_ok3g3")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bpvtn"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.320903, 0.786246, 0.706426, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -6326,7 +6351,7 @@ shadow_mesh = SubResource("ArrayMesh_bbhna")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kcaa2"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.658824, 0.870588, 0.290196, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -6411,7 +6436,7 @@ shadow_mesh = SubResource("ArrayMesh_od2ju")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ljuf2"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.267083, 0.536996, 0.461221, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -6794,7 +6819,7 @@ shadow_mesh = SubResource("ArrayMesh_38glg")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jc7xw"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.937255, 0.141176, 0.227451, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -6813,7 +6838,7 @@ shader_parameter/border_width = 0.01
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_krk8u"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -6872,7 +6897,7 @@ shadow_mesh = SubResource("ArrayMesh_ves40")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f5524"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.721569, 0.94902, 0.678431, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -6931,7 +6956,7 @@ shadow_mesh = SubResource("ArrayMesh_bnwvt")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tyite"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.662745, 0.839216, 0.858824, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -6990,7 +7015,7 @@ shadow_mesh = SubResource("ArrayMesh_j3y5s")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ct37q"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.964706, 0.721569, 0.6, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -7043,7 +7068,7 @@ shadow_mesh = SubResource("ArrayMesh_q3ysp")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m654u"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.721569, 0.94902, 0.678431, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -7094,7 +7119,7 @@ shadow_mesh = SubResource("ArrayMesh_jgxsj")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fl67b"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.639216, 0.45098, 0.329412, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -7145,7 +7170,7 @@ shadow_mesh = SubResource("ArrayMesh_tpoys")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5cvqc"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.658824, 0.376471, 0.364706, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -7232,7 +7257,7 @@ shadow_mesh = SubResource("ArrayMesh_y02b0")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w5cqq"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.541176, 0.247059, 0.32549, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -7251,7 +7276,7 @@ shader_parameter/border_width = 0.01
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8affo"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.733333, 0.631373, 0.564706, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -7308,7 +7333,7 @@ shadow_mesh = SubResource("ArrayMesh_ikw8j")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5ahl2"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.835294, 0.960784, 0.858824, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -7365,7 +7390,7 @@ shadow_mesh = SubResource("ArrayMesh_fkf84")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h8o8l"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.486276, 0.230181, 0.21464, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -7416,7 +7441,7 @@ shadow_mesh = SubResource("ArrayMesh_fb3xo")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u51fj"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.437844, 0.234246, 0.130141, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -7467,7 +7492,7 @@ shadow_mesh = SubResource("ArrayMesh_oofkp")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rnjll"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.383236, 0.253148, 0.118413, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -7550,7 +7575,7 @@ shadow_mesh = SubResource("ArrayMesh_ayqrw")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1bs7u"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.945098, 0.803922, 0.670588, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -7569,7 +7594,7 @@ shader_parameter/border_width = 0.01
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0um01"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.803922, 0.372549, 0.164706, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -7704,7 +7729,7 @@ shadow_mesh = SubResource("ArrayMesh_rxxpe")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yt4sl"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.94902, 0.670588, 0.215686, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -7723,7 +7748,7 @@ shader_parameter/border_width = 0.01
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lxmdf"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.803922, 0.372549, 0.164706, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -7858,7 +7883,7 @@ shadow_mesh = SubResource("ArrayMesh_spaqq")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ftgdb"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.94902, 0.670588, 0.215686, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -7877,7 +7902,7 @@ shader_parameter/border_width = 0.01
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xmycw"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.803922, 0.372549, 0.164706, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -7948,7 +7973,7 @@ shadow_mesh = SubResource("ArrayMesh_sdjuh")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tabi5"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.945098, 0.803922, 0.670588, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -7967,7 +7992,7 @@ shader_parameter/border_width = 0.01
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1b8xo"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.654902, 0.52549, 0.407843, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -8026,7 +8051,7 @@ shadow_mesh = SubResource("ArrayMesh_6ayix")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x6ru8"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.337255, 0.678431, 0.584314, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -8085,7 +8110,7 @@ shadow_mesh = SubResource("ArrayMesh_bpvrv")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6e76k"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.769961, 0, 0.135384, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -8144,7 +8169,7 @@ shadow_mesh = SubResource("ArrayMesh_4752x")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_86tm7"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.870588, 0.639216, 0.0980392, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -8259,7 +8284,7 @@ shadow_mesh = SubResource("ArrayMesh_3jfmf")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wsg5y"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
+shader = ExtResource("3_x8rlw")
 shader_parameter/albedo = Color(0.6, 0.160784, 0.137255, 1)
 shader_parameter/clamp_diffuse_to_max = false
 shader_parameter/cuts = 3
@@ -8316,11 +8341,71 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8x33c")
 
-[node name="hangar_island" type="Node3D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h4qaa"]
+render_priority = 0
+shader = ExtResource("7_5ered")
+shader_parameter/depth_threshold = 0.05
+shader_parameter/reverse_depth_threshold = 0.25
+shader_parameter/normal_threshold = 0.6
+shader_parameter/darken_amount = 0.2
+shader_parameter/lighten_amount = 1.5
+shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
+shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
-[node name="tree_group" type="Node3D" parent="."]
+[sub_resource type="QuadMesh" id="QuadMesh_flmjp"]
+material = SubResource("ShaderMaterial_h4qaa")
+size = Vector2(2, 2)
 
-[node name="tree" type="MeshInstance3D" parent="tree_group"]
+[node name="testing_shader" type="Node3D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 5
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(160, 160)
+render_target_update_mode = 4
+
+[node name="importing_scene" type="Node3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="water_plane" parent="SubViewportContainer/SubViewport/importing_scene" instance=ExtResource("1_ycitl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.19544, 0)
+
+[node name="Area3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/importing_scene/water_plane"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.214489, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/importing_scene/water_plane/Area3D"]
+shape = SubResource("BoxShape3D_ada6a")
+
+[node name="ambiant" type="Node3D" parent="SubViewportContainer/SubViewport/importing_scene"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/importing_scene/ambiant"]
+environment = SubResource("Environment_2kj7u")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/importing_scene/ambiant"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.760991, 0.484814, 0.216402, 1)
+shadow_enabled = true
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/importing_scene/ambiant"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.95589, 0.551563, 0.59604, 1)
+light_energy = 0.65
+shadow_enabled = true
+
+[node name="hangar_island" type="Node3D" parent="SubViewportContainer/SubViewport/importing_scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.96502, 0, 0.150883)
+
+[node name="tree_group" type="Node" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island"]
+
+[node name="tree" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/tree_group"]
 transform = Transform3D(0.518183, -1.16415e-09, 0.258719, -0.002417, 0.999956, 0.00484097, -0.258707, -0.0093422, 0.51816, 7.21724, 0.718499, 10.0374)
 mesh = SubResource("ArrayMesh_qu66i")
 skeleton = NodePath("")
@@ -8328,12 +8413,12 @@ surface_material_override/0 = SubResource("ShaderMaterial_ekslu")
 surface_material_override/1 = SubResource("ShaderMaterial_xa4iq")
 surface_material_override/2 = SubResource("ShaderMaterial_8bjf5")
 
-[node name="tree_001" type="MeshInstance3D" parent="tree_group"]
+[node name="tree_001" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/tree_group"]
 transform = Transform3D(-0.0251738, 0, 0.578632, 0, 1, 0, -0.578632, 0, -0.0251738, -1.97321, 1.06965, 6.95906)
 mesh = SubResource("ArrayMesh_7jnoy")
 skeleton = NodePath("")
 
-[node name="tree_002" type="MeshInstance3D" parent="tree_group"]
+[node name="tree_002" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/tree_group"]
 transform = Transform3D(-0.233481, 0, 0.530033, 0, 1, 0, -0.530033, 0, -0.233481, -8.71622, 0.911121, -7.55308)
 mesh = SubResource("ArrayMesh_ul5ei")
 skeleton = NodePath("")
@@ -8341,997 +8426,1012 @@ surface_material_override/0 = SubResource("ShaderMaterial_sog8e")
 surface_material_override/1 = SubResource("ShaderMaterial_rtfg5")
 surface_material_override/2 = SubResource("ShaderMaterial_ad1jh")
 
-[node name="tree_003" type="MeshInstance3D" parent="tree_group"]
+[node name="tree_003" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/tree_group"]
 transform = Transform3D(-0.524384, 0, 0.197072, 0, 0.813179, 0, -0.218573, 0, -0.4728, -10.4753, 0.826572, 0.509221)
 mesh = SubResource("ArrayMesh_m6mal")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_e0x07")
 surface_material_override/1 = SubResource("ShaderMaterial_jjb7v")
 
-[node name="tree_004" type="MeshInstance3D" parent="tree_group"]
+[node name="tree_004" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/tree_group"]
 transform = Transform3D(-0.098101, 0, 0.512629, 0, 0.813179, 0, -0.819578, 0, -0.0613601, 11.1674, 0.622599, 3.61402)
 mesh = SubResource("ArrayMesh_yy3kx")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_rrynj")
 surface_material_override/1 = SubResource("ShaderMaterial_rjss2")
 
-[node name="tree_005" type="MeshInstance3D" parent="tree_group"]
+[node name="tree_005" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/tree_group"]
 transform = Transform3D(0.826973, -0.10937, 0.551501, 0.0909921, 0.994001, 0.0606818, -0.554829, -1.86265e-09, 0.831964, -8.76795, -0.0935639, 7.74586)
 mesh = SubResource("ArrayMesh_313k0")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_gch8i")
 surface_material_override/1 = SubResource("ShaderMaterial_4h404")
 
-[node name="rock_ground" type="Node3D" parent="."]
+[node name="rock_ground" type="Node" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island"]
 
-[node name="rock" type="MeshInstance3D" parent="rock_ground"]
+[node name="rock" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/rock_ground"]
 transform = Transform3D(0.525785, 0, 0, 0, 0.525785, 0, 0, 0, 0.525785, 0, 0.240928, 9.88605)
 mesh = SubResource("ArrayMesh_ooji5")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_2hrg8")
 
-[node name="rock_001" type="MeshInstance3D" parent="rock_ground"]
+[node name="rock_001" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/rock_ground"]
 transform = Transform3D(0.350444, -1.62837e-09, 0.387036, 0.0817469, 0.325338, -0.0742242, -0.377755, 0.0704038, 0.342992, 1.51269, -0.0690612, 10.0794)
 mesh = SubResource("ArrayMesh_ptp7u")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_f8ww5")
 
-[node name="rock_002" type="MeshInstance3D" parent="rock_ground"]
+[node name="rock_002" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/rock_ground"]
 transform = Transform3D(0.500291, 0, 0, 0, 0.202779, 0, 0, 0, 0.336694, 0, 0.0693291, 6.47832)
 mesh = SubResource("ArrayMesh_2ka1p")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_dqf6s")
 
-[node name="rock_003" type="MeshInstance3D" parent="rock_ground"]
+[node name="rock_003" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/rock_ground"]
 transform = Transform3D(-1.00873, 0, 0, 0, 0.560462, 0, 0, 0, 0.661978, -7.81965, -0.127454, 3.13387)
 mesh = SubResource("ArrayMesh_ymbdk")
 skeleton = NodePath("")
 
-[node name="rock_004" type="MeshInstance3D" parent="rock_ground"]
+[node name="rock_004" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/rock_ground"]
 transform = Transform3D(0.2045, 0, 0.484386, 0, 0.525785, 0, -0.484386, 0, 0.2045, -7.07839, 0.240928, 4.80528)
 mesh = SubResource("ArrayMesh_ius8a")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_qsq45")
 
-[node name="rock_005" type="MeshInstance3D" parent="rock_ground"]
+[node name="rock_005" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/rock_ground"]
 transform = Transform3D(0.525785, 0, 0, 0, 0.525785, 0, 0, 0, 0.525785, -8.55883, 0.240928, 4.43936)
 mesh = SubResource("ArrayMesh_qln5d")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_w76pw")
 
-[node name="rock_006" type="MeshInstance3D" parent="rock_ground"]
+[node name="rock_006" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/rock_ground"]
 transform = Transform3D(-0.70469, 0, 0.473658, 0, 0.560462, 0, 0.721763, 0, 0.462453, 7.91228, -0.127454, 4.58498)
 mesh = SubResource("ArrayMesh_436le")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_lxikh")
 
-[node name="rock_007" type="MeshInstance3D" parent="rock_ground"]
+[node name="rock_007" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/rock_ground"]
 transform = Transform3D(-0.203725, 0, 0.484712, 0, 0.525785, 0, -0.484712, 0, -0.203725, 9.62605, 0.240928, 5.22224)
 mesh = SubResource("ArrayMesh_3v268")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_l7j5o")
 
-[node name="rock_008" type="MeshInstance3D" parent="rock_ground"]
+[node name="rock_008" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/rock_ground"]
 transform = Transform3D(0.36731, 0, 0.376209, 0, 0.525785, 0, -0.376209, 0, 0.36731, 8.33, 0.240928, 6.02589)
 mesh = SubResource("ArrayMesh_msdpi")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_oy1u7")
 
-[node name="rock_009" type="MeshInstance3D" parent="rock_ground"]
+[node name="rock_009" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/rock_ground"]
 transform = Transform3D(0.298497, 0, -0.653612, 0, 0.667062, 0, 0.564801, 0, 0.345433, -8.36298, 0.0954836, -2.08329)
 mesh = SubResource("ArrayMesh_6wdn6")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_0by4j")
 
-[node name="large_rock_4" type="MeshInstance3D" parent="rock_ground"]
+[node name="large_rock_4" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/rock_ground"]
 transform = Transform3D(0.285113, 0, 0.705924, 0, 0.334535, 0, -0.257358, 0, 0.782055, -1.63027, -0.0385713, 0)
 mesh = SubResource("ArrayMesh_m8h3v")
 skeleton = NodePath("")
 
-[node name="large_rock_3" type="MeshInstance3D" parent="rock_ground"]
+[node name="large_rock_3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/rock_ground"]
 transform = Transform3D(1, 0, 0, 0, 0.789904, 0, 0, 0, 1.86372, 0, 0.240928, 0)
 mesh = SubResource("ArrayMesh_xp6n2")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_ldpfl")
 
-[node name="large_rock_2" type="MeshInstance3D" parent="rock_ground"]
+[node name="large_rock_2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/rock_ground"]
 transform = Transform3D(-0.700928, 0, 0, 0, 0.243585, 0, 0, 0, 0.448444, -1.24944, -0.100284, 1.01879)
 mesh = SubResource("ArrayMesh_c0jih")
 skeleton = NodePath("")
 
-[node name="large_rock" type="MeshInstance3D" parent="rock_ground"]
+[node name="large_rock" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/rock_ground"]
 transform = Transform3D(1.01078, 0, 0.111102, 0, 0.425762, 0, -0.403559, 0, 0.278274, 2.65614, 0.0925669, -4.1567)
 mesh = SubResource("ArrayMesh_rknwn")
 skeleton = NodePath("")
 
-[node name="herb_group" type="Node3D" parent="."]
+[node name="herb_group" type="Node" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island"]
 
-[node name="herb_variant_001" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_001" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00952851, 0, 0, 0, 0.0165484, 0, 0, 0, 0.00952851, 0, 0.240928, -3.13192)
 mesh = SubResource("ArrayMesh_twpy0")
 skeleton = NodePath("")
 
-[node name="herb_variant_002" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_002" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00490658, 0, 0.00229113, 0, 0.00958289, 0, -0.00229113, 0, -0.00490658, 0, 0.240928, -3.4317)
 mesh = SubResource("ArrayMesh_jxwtd")
 skeleton = NodePath("")
 
-[node name="herb_variant_003" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_003" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00380621, 0, -0.00241, 0, 0.00730776, 0, 0.00241, 0, -0.00380621, -0.104032, 0.157329, -3.27356)
 mesh = SubResource("ArrayMesh_wcjw2")
 skeleton = NodePath("")
 
-[node name="herb_variant_004" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_004" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00393741, 0, 0.00218909, 0, 0.0127044, 0, -0.00218909, 0, -0.00393741, -0.255754, 0.214494, -3.38273)
 mesh = SubResource("ArrayMesh_5wy08")
 skeleton = NodePath("")
 
-[node name="herb_variant_005" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_005" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00810713, 0, 0.00533213, 0, 0.00781695, 0, -0.00533213, 0, 0.00810713, 0.396039, 0.240928, -3.35912)
 mesh = SubResource("ArrayMesh_o3dgf")
 skeleton = NodePath("")
 
-[node name="herb_variant" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.0203592, 0, 0, 0, 0.0448616, 0, 0, 0, 0.0203592, 0, 0.240928, -3.74835)
 mesh = SubResource("ArrayMesh_77jvw")
 skeleton = NodePath("")
 
-[node name="herb_variant_006" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_006" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.0052769, 0, 0.0079339, 0, 0.0222561, 0, -0.0079339, 0, 0.0052769, -1.29529, 0.243967, -1.69377)
 mesh = SubResource("ArrayMesh_ayym2")
 skeleton = NodePath("")
 
-[node name="herb_variant_007" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_007" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00462497, 0, -0.00281663, 0, 0.0128881, 0, 0.00281663, 0, -0.00462497, -1.5449, 0.243967, -1.85978)
 mesh = SubResource("ArrayMesh_0eex5")
 skeleton = NodePath("")
 
-[node name="herb_variant_008" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_008" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.000101192, 0, -0.0045039, 0, 0.00982824, 0, 0.0045039, 0, -0.000101192, -1.47084, 0.208416, -1.68559)
 mesh = SubResource("ArrayMesh_f3det")
 skeleton = NodePath("")
 
-[node name="herb_variant_009" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_009" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00400328, 0, -0.00206616, 0, 0.0170862, 0, 0.00206616, 0, -0.00400328, -1.64576, 0.208416, -1.61971)
 mesh = SubResource("ArrayMesh_n11gi")
 skeleton = NodePath("")
 
-[node name="herb_variant_010" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_010" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(4.99447e-05, 0, 0.00970333, 0, 0.0105131, 0, -0.00970333, 0, 4.99447e-05, -1.26514, 0.243967, -2.14935)
 mesh = SubResource("ArrayMesh_261yh")
 skeleton = NodePath("")
 
-[node name="herb_variant_011" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_011" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.011275, 0, 0.0169521, 0, 0.0603345, 0, -0.0169521, 0, 0.011275, -1.80856, 0.243967, -2.03515)
 mesh = SubResource("ArrayMesh_xs05m")
 skeleton = NodePath("")
 
-[node name="herb_variant_012" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_012" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00709114, 0, 0.0063646, 0, 0.0314664, 0, -0.0063646, 0, 0.00709114, 2.36086, 0.248871, -3.14668)
 mesh = SubResource("ArrayMesh_vgb2i")
 skeleton = NodePath("")
 
-[node name="herb_variant_013" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_013" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00518186, 0, -0.0015723, 0, 0.0182216, 0, 0.0015723, 0, -0.00518186, 2.16062, 0.248871, -3.36977)
 mesh = SubResource("ArrayMesh_plqoe")
 skeleton = NodePath("")
 
-[node name="herb_variant_014" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_014" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00122282, 0, -0.0043359, 0, 0.0138955, 0, 0.0043359, 0, -0.00122282, 2.18883, 0.198608, -3.1826)
 mesh = SubResource("ArrayMesh_22cec")
 skeleton = NodePath("")
 
-[node name="herb_variant_015" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_015" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00439244, 0, -0.00100089, 0, 0.024157, 0, 0.00100089, 0, -0.00439244, 2.00299, 0.198608, -3.1625)
 mesh = SubResource("ArrayMesh_a12pp")
 skeleton = NodePath("")
 
-[node name="herb_variant_016" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_016" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00247173, 0, 0.00938337, 0, 0.0148637, 0, -0.00938337, 0, 0.00247173, 2.50383, 0.248871, -3.5803)
 mesh = SubResource("ArrayMesh_eolp8")
 skeleton = NodePath("")
 
-[node name="herb_variant_017" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_017" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.0151514, 0, 0.013599, 0, 0.085303, 0, -0.013599, 0, 0.0151514, 1.94911, 0.248871, -3.60543)
 mesh = SubResource("ArrayMesh_yvk8b")
 skeleton = NodePath("")
 
-[node name="herb_variant_018" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_018" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0013724, 0, 0.00942916, 0, 0.0423193, 0, -0.00942916, 0, -0.0013724, 2.35752, 0.25465, -1.21121)
 mesh = SubResource("ArrayMesh_v652b")
 skeleton = NodePath("")
 
-[node name="herb_variant_019" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_019" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00156054, 0, -0.00518541, 0, 0.0245063, 0, 0.00518541, 0, -0.00156054, 2.06087, 0.25465, -1.16803)
 mesh = SubResource("ArrayMesh_aonxn")
 skeleton = NodePath("")
 
-[node name="herb_variant_020" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_020" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00293309, 0, -0.0034194, 0, 0.0186881, 0, 0.0034194, 0, 0.00293309, 2.23234, 0.187051, -1.08786)
 mesh = SubResource("ArrayMesh_pk8qu")
 skeleton = NodePath("")
 
-[node name="herb_variant_021" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_021" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00159915, 0, -0.00421165, 0, 0.0324889, 0, 0.00421165, 0, -0.00159915, 2.14616, 0.187051, -0.921998)
 mesh = SubResource("ArrayMesh_6lf0x")
 skeleton = NodePath("")
 
-[node name="herb_variant_022" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_022" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00644421, 0, 0.00725461, 0, 0.0199903, 0, -0.00725461, 0, -0.00644421, 2.07564, 0.25465, -1.57039)
 mesh = SubResource("ArrayMesh_7dwd7")
 skeleton = NodePath("")
 
-[node name="herb_variant_023" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_023" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00293235, 0, 0.020147, 0, 0.114725, 0, -0.020147, 0, -0.00293235, 1.74751, 0.25465, -1.12242)
 mesh = SubResource("ArrayMesh_os10g")
 skeleton = NodePath("")
 
-[node name="herb_variant_024" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_024" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0013724, 0, 0.00942916, 0, 0.0423193, 0, -0.00942916, 0, -0.0013724, 3.59463, 0.25465, -2.09486)
 mesh = SubResource("ArrayMesh_06eq7")
 skeleton = NodePath("")
 
-[node name="herb_variant_025" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_025" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00156054, 0, -0.00518541, 0, 0.0245063, 0, 0.00518541, 0, -0.00156054, 3.29798, 0.25465, -2.05168)
 mesh = SubResource("ArrayMesh_0hn6y")
 skeleton = NodePath("")
 
-[node name="herb_variant_026" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_026" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00293309, 0, -0.0034194, 0, 0.0186881, 0, 0.0034194, 0, 0.00293309, 3.46945, 0.187051, -1.97151)
 mesh = SubResource("ArrayMesh_aehc5")
 skeleton = NodePath("")
 
-[node name="herb_variant_027" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_027" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00159915, 0, -0.00421165, 0, 0.0324889, 0, 0.00421165, 0, -0.00159915, 3.38327, 0.187051, -1.80565)
 mesh = SubResource("ArrayMesh_k1knt")
 skeleton = NodePath("")
 
-[node name="herb_variant_028" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_028" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00644421, 0, 0.00725461, 0, 0.0199903, 0, -0.00725461, 0, -0.00644421, 3.31276, 0.25465, -2.45405)
 mesh = SubResource("ArrayMesh_bjid7")
 skeleton = NodePath("")
 
-[node name="herb_variant_029" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_029" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00293235, 0, 0.020147, 0, 0.114725, 0, -0.020147, 0, -0.00293235, 2.98462, 0.25465, -2.00608)
 mesh = SubResource("ArrayMesh_t6yur")
 skeleton = NodePath("")
 
-[node name="herb_variant_030" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_030" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0013724, 0, 0.00942916, 0, 0.0423193, 0, -0.00942916, 0, -0.0013724, 5.07916, 0.25465, -0.0730665)
 mesh = SubResource("ArrayMesh_ykuwi")
 skeleton = NodePath("")
 
-[node name="herb_variant_031" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_031" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00156054, 0, -0.00518541, 0, 0.0245063, 0, 0.00518541, 0, -0.00156054, 4.78251, 0.25465, -0.0298893)
 mesh = SubResource("ArrayMesh_7t8ox")
 skeleton = NodePath("")
 
-[node name="herb_variant_032" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_032" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00293309, 0, -0.0034194, 0, 0.0186881, 0, 0.0034194, 0, 0.00293309, 4.95398, 0.187051, 0.0502815)
 mesh = SubResource("ArrayMesh_qmxqb")
 skeleton = NodePath("")
 
-[node name="herb_variant_033" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_033" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00159915, 0, -0.00421165, 0, 0.0324889, 0, 0.00421165, 0, -0.00159915, 4.8678, 0.187051, 0.216145)
 mesh = SubResource("ArrayMesh_nxth8")
 skeleton = NodePath("")
 
-[node name="herb_variant_034" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_034" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00644421, 0, 0.00725461, 0, 0.0199903, 0, -0.00725461, 0, -0.00644421, 4.79729, 0.25465, -0.432252)
 mesh = SubResource("ArrayMesh_m34nc")
 skeleton = NodePath("")
 
-[node name="herb_variant_035" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_035" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00293235, 0, 0.020147, 0, 0.114725, 0, -0.020147, 0, -0.00293235, 4.46916, 0.25465, 0.0157189)
 mesh = SubResource("ArrayMesh_ay3l7")
 skeleton = NodePath("")
 
-[node name="herb_variant_036" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_036" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0013724, 0, 0.00942916, 0, 0.0423193, 0, -0.00942916, 0, -0.0013724, 5.1852, 0.25465, -2.40591)
 mesh = SubResource("ArrayMesh_lse8l")
 skeleton = NodePath("")
 
-[node name="herb_variant_037" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_037" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00156054, 0, -0.00518541, 0, 0.0245063, 0, 0.00518541, 0, -0.00156054, 4.88855, 0.25465, -2.36273)
 mesh = SubResource("ArrayMesh_s0665")
 skeleton = NodePath("")
 
-[node name="herb_variant_038" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_038" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00293309, 0, -0.0034194, 0, 0.0186881, 0, 0.0034194, 0, 0.00293309, 5.06002, 0.187051, -2.28256)
 mesh = SubResource("ArrayMesh_04ufd")
 skeleton = NodePath("")
 
-[node name="herb_variant_039" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_039" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00159915, 0, -0.00421165, 0, 0.0324889, 0, 0.00421165, 0, -0.00159915, 4.97384, 0.187051, -2.11669)
 mesh = SubResource("ArrayMesh_aqb88")
 skeleton = NodePath("")
 
-[node name="herb_variant_040" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_040" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00644421, 0, 0.00725461, 0, 0.0199903, 0, -0.00725461, 0, -0.00644421, 4.90333, 0.25465, -2.76509)
 mesh = SubResource("ArrayMesh_y8i66")
 skeleton = NodePath("")
 
-[node name="herb_variant_041" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_041" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00293235, 0, 0.020147, 0, 0.114725, 0, -0.020147, 0, -0.00293235, 4.57519, 0.25465, -2.31712)
 mesh = SubResource("ArrayMesh_d4s23")
 skeleton = NodePath("")
 
-[node name="herb_variant_042" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_042" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00904724, 0, -0.00298997, 0, 0.0423193, 0, 0.00298997, 0, -0.00904724, 4.96248, 0.25465, -4.66455)
 mesh = SubResource("ArrayMesh_c6g04")
 skeleton = NodePath("")
 
-[node name="herb_variant_043" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_043" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00537769, 0, -0.000635763, 0, 0.0245063, 0, 0.000635763, 0, 0.00537769, 5.05654, 0.25465, -4.66816)
 mesh = SubResource("ArrayMesh_2t4pd")
 skeleton = NodePath("")
 
-[node name="herb_variant_044" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_044" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00285772, 0, 0.00348264, 0, 0.0186881, 0, -0.00348264, 0, 0.00285772, 5.1057, 0.187051, -4.56271)
 mesh = SubResource("ArrayMesh_4jrmq")
 skeleton = NodePath("")
 
-[node name="herb_variant_045" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_045" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00442546, 0, -0.000842989, 0, 0.0324889, 0, 0.000842989, 0, 0.00442546, 5.28401, 0.187051, -4.79491)
 mesh = SubResource("ArrayMesh_k7lky")
 skeleton = NodePath("")
 
-[node name="herb_variant_046" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_046" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00602447, 0, -0.00760677, 0, 0.0199903, 0, 0.00760677, 0, -0.00602447, 4.65773, 0.25465, -4.6128)
 mesh = SubResource("ArrayMesh_i8rpj")
 skeleton = NodePath("")
 
-[node name="herb_variant_047" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_047" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0193309, 0, -0.00638857, 0, 0.114725, 0, 0.00638857, 0, -0.0193309, 5.15591, 0.25465, -4.3675)
 mesh = SubResource("ArrayMesh_0gk1y")
 skeleton = NodePath("")
 
-[node name="herb_variant_048" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_048" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00904724, 0, -0.00298997, 0, 0.0423193, 0, 0.00298997, 0, -0.00904724, 7.50739, -0.416467, -3.645)
 mesh = SubResource("ArrayMesh_mw4cd")
 skeleton = NodePath("")
 
-[node name="herb_variant_049" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_049" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00537769, 0, -0.000635763, 0, 0.0245063, 0, 0.000635763, 0, 0.00537769, 7.60146, -0.416467, -3.36036)
 mesh = SubResource("ArrayMesh_7myox")
 skeleton = NodePath("")
 
-[node name="herb_variant_050" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_050" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00285772, 0, 0.00348264, 0, 0.0186881, 0, -0.00348264, 0, 0.00285772, 7.65061, -0.0348195, -3.54315)
 mesh = SubResource("ArrayMesh_0fxb2")
 skeleton = NodePath("")
 
-[node name="herb_variant_051" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_051" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00442546, 0, -0.000842989, 0, 0.0324889, 0, 0.000842989, 0, 0.00442546, 7.82893, -0.484066, -3.48711)
 mesh = SubResource("ArrayMesh_hmnxl")
 skeleton = NodePath("")
 
-[node name="herb_variant_052" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_052" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00602447, 0, -0.00760677, 0, 0.0199903, 0, 0.00760677, 0, -0.00602447, 7.20265, -0.0244693, -3.305)
 mesh = SubResource("ArrayMesh_fe3ry")
 skeleton = NodePath("")
 
-[node name="herb_variant_053" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_053" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0193309, 0, -0.00638857, 0, 0.114725, 0, 0.00638857, 0, -0.0193309, 7.70082, -0.416467, -3.0597)
 mesh = SubResource("ArrayMesh_edbe7")
 skeleton = NodePath("")
 
-[node name="herb_variant_054" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_054" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00904724, 0, -0.00298997, 0, 0.0423193, 0, 0.00298997, 0, -0.00904724, 6.63337, -0.416467, -5.40114)
 mesh = SubResource("ArrayMesh_70o8d")
 skeleton = NodePath("")
 
-[node name="herb_variant_055" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_055" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00537769, 0, -0.000635763, 0, 0.0245063, 0, 0.000635763, 0, 0.00537769, 6.72744, -0.416467, -5.11651)
 mesh = SubResource("ArrayMesh_ncusp")
 skeleton = NodePath("")
 
-[node name="herb_variant_056" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_056" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00285772, 0, 0.00348264, 0, 0.0186881, 0, -0.00348264, 0, 0.00285772, 6.7766, -0.241454, -5.2993)
 mesh = SubResource("ArrayMesh_3vi5v")
 skeleton = NodePath("")
 
-[node name="herb_variant_057" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_057" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00442546, 0, -0.000842989, 0, 0.0324889, 0, 0.000842989, 0, 0.00442546, 6.95491, -0.484066, -5.24325)
 mesh = SubResource("ArrayMesh_wljl5")
 skeleton = NodePath("")
 
-[node name="herb_variant_058" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_058" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00602447, 0, -0.00760677, 0, 0.0199903, 0, 0.00760677, 0, -0.00602447, 6.32863, 0.00313705, -5.06114)
 mesh = SubResource("ArrayMesh_osidy")
 skeleton = NodePath("")
 
-[node name="herb_variant_059" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_059" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0193309, 0, -0.00638857, 0, 0.114725, 0, 0.00638857, 0, -0.0193309, 6.82681, -0.113708, -4.81584)
 mesh = SubResource("ArrayMesh_5cy7a")
 skeleton = NodePath("")
 
-[node name="herb_variant_060" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_060" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00904724, 0, -0.00298997, 0, 0.0423193, 0, 0.00298997, 0, -0.00904724, 8.70357, -0.416467, -7.49017)
 mesh = SubResource("ArrayMesh_nydia")
 skeleton = NodePath("")
 
-[node name="herb_variant_061" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_061" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00537769, 0, -0.000635763, 0, 0.0245063, 0, 0.000635763, 0, 0.00537769, 8.79764, -0.416467, -7.20553)
 mesh = SubResource("ArrayMesh_qjgns")
 skeleton = NodePath("")
 
-[node name="herb_variant_062" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_062" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00285772, 0, 0.00348264, 0, 0.0186881, 0, -0.00348264, 0, 0.00285772, 8.8468, -0.115167, -7.38833)
 mesh = SubResource("ArrayMesh_snh8e")
 skeleton = NodePath("")
 
-[node name="herb_variant_063" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_063" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00442546, 0, -0.000842989, 0, 0.0324889, 0, 0.000842989, 0, 0.00442546, 9.02511, -0.484066, -7.33228)
 mesh = SubResource("ArrayMesh_uecwg")
 skeleton = NodePath("")
 
-[node name="herb_variant_064" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_064" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00602447, 0, -0.00760677, 0, 0.0199903, 0, 0.00760677, 0, -0.00602447, 8.39883, -0.0177224, -7.15017)
 mesh = SubResource("ArrayMesh_v53by")
 skeleton = NodePath("")
 
-[node name="herb_variant_065" type="MeshInstance3D" parent="herb_group"]
+[node name="herb_variant_065" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0193309, 0, -0.00638857, 0, 0.114725, 0, 0.00638857, 0, -0.0193309, 8.897, -0.0401575, -6.90487)
 mesh = SubResource("ArrayMesh_1u1c6")
 skeleton = NodePath("")
 
-[node name="herbs" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.0104312, 0, 0, 0, 0.0104312, 0, 0, 0, 0.0104312, 0.0465916, 0.168377, 0)
 mesh = SubResource("ArrayMesh_2uhyk")
 skeleton = NodePath("")
 
-[node name="herbs_001" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_001" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.0219149, 0, 0, 0, 0.0296151, 0, 0, 0, 0.0219149, 0.532222, -0.254617, 0)
 mesh = SubResource("ArrayMesh_wrqrf")
 skeleton = NodePath("")
 
-[node name="herbs_002" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_002" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.0132424, 0, 0, 0, 0.0132424, 0, 0, 0, 0.0132424, -0.25864, -0.186285, -0.00456994)
 mesh = SubResource("ArrayMesh_fo5hb")
 skeleton = NodePath("")
 
-[node name="herbs_003" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_003" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.0104312, 0, 0, 0, 0.0104312, 0, 0, 0, 0.0104312, -9.68007, 0.168377, 7.00666)
 mesh = SubResource("ArrayMesh_k3rn4")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_svcdr")
 
-[node name="herbs_004" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_004" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.0219149, 0, 0, 0, 0.0296151, 0, 0, 0, 0.0219149, -9.19444, -0.195872, 5.87447)
 mesh = SubResource("ArrayMesh_2hdhb")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_ru3qq")
 
-[node name="herbs_005" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_005" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.0132424, 0, 0, 0, 0.0132424, 0, 0, 0, 0.0132424, -9.9853, -0.186285, 7.00209)
 mesh = SubResource("ArrayMesh_d4eeo")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_mohr8")
 
-[node name="herbs_006" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_006" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00658474, 0, 0.00809013, 0, 0.0154927, 0, -0.00809013, 0, 0.00658474, -8.53695, -0.0961102, 10.3275)
 mesh = SubResource("ArrayMesh_wdx25")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_t5ibg")
 
-[node name="herbs_007" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_007" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.0138339, 0, 0.0169966, 0, 0.0439853, 0, -0.0169966, 0, 0.0138339, -8.2304, -0.637641, 9.95089)
 mesh = SubResource("ArrayMesh_nfpso")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_ukt7u")
 
-[node name="herbs_008" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_008" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00835934, 0, 0.0102704, 0, 0.019668, 0, -0.0102704, 0, 0.00835934, -8.73318, -0.387321, 9.86901)
 mesh = SubResource("ArrayMesh_kmxs0")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_x8sc3")
 
-[node name="herbs_009" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_009" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00658474, 0, 0.00809013, 0, 0.0154927, 0, -0.00809013, 0, 0.00658474, -9.77922, -0.31306, 9.6944)
 mesh = SubResource("ArrayMesh_xyt4r")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_spp4t")
 
-[node name="herbs_010" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_010" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.0138339, 0, 0.0169966, 0, 0.0439853, 0, -0.0169966, 0, 0.0138339, -9.84218, -0.334086, 8.80568)
 mesh = SubResource("ArrayMesh_0fgh3")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_esfa2")
 
-[node name="herbs_011" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_011" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00835934, 0, 0.0102704, 0, 0.019668, 0, -0.0102704, 0, 0.00835934, -10.345, -0.861871, 8.96899)
 mesh = SubResource("ArrayMesh_1tfqn")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_pr0mb")
 
-[node name="herbs_012" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_012" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00658474, 0, 0.00809013, 0, 0.0154927, 0, -0.00809013, 0, 0.00658474, -6.73431, 0.294157, 6.77313)
 mesh = SubResource("ArrayMesh_fpknt")
 skeleton = NodePath("")
 
-[node name="herbs_013" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_013" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.0138339, 0, 0.0169966, 0, 0.0439853, 0, -0.0169966, 0, 0.0138339, -6.42775, -0.334086, 6.39649)
 mesh = SubResource("ArrayMesh_nit5r")
 skeleton = NodePath("")
 
-[node name="herbs_014" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_014" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00835934, 0, 0.0102704, 0, 0.019668, 0, -0.0102704, 0, 0.00835934, -6.93053, -0.232596, 7.00698)
 mesh = SubResource("ArrayMesh_03tqx")
 skeleton = NodePath("")
 
-[node name="herbs_015" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_015" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00658474, 0, 0.00809013, 0, 0.010377, 0, -0.00809013, 0, 0.00658474, -10.4668, 0.167031, 4.10097)
 mesh = SubResource("ArrayMesh_0ykk5")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_rc0gb")
 
-[node name="herbs_016" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_016" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.0138339, 0, 0.0169966, 0, 0.0294614, 0, -0.0169966, 0, 0.0138339, -10.1603, -0.253767, 3.72433)
 mesh = SubResource("ArrayMesh_uwanv")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_3xso0")
 
-[node name="herbs_017" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_017" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00835933, 0, 0.0102704, 0, 0.0131736, 0, -0.0102704, 0, 0.00835933, -10.6631, -0.185789, 4.33482)
 mesh = SubResource("ArrayMesh_g5rof")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_r17j2")
 
-[node name="herbs_018" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_018" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00658474, 0, 0.00809013, 0, 0.0145726, 0, -0.00809013, 0, 0.00658474, -7.58261, 0.271294, 1.85296)
 mesh = SubResource("ArrayMesh_5o61y")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_11cl2")
 
-[node name="herbs_019" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_019" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.0138339, 0, 0.0169966, 0, 0.0413732, 0, -0.0169966, 0, 0.0138339, -7.27605, -0.31964, 1.47632)
 mesh = SubResource("ArrayMesh_tj1ln")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_x163b")
 
-[node name="herbs_020" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_020" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00835933, 0, 0.0102704, 0, 0.0185, 0, -0.0102704, 0, 0.00835933, -7.77884, -0.224178, 2.08681)
 mesh = SubResource("ArrayMesh_42bom")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_6p8g6")
 
-[node name="herbs_021" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_021" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00822237, 0, 0.00641884, 0, 0.0135713, 0, -0.00641884, 0, 0.00822237, -2.96254, 0.24641, 10.5337)
 mesh = SubResource("ArrayMesh_10p7b")
 skeleton = NodePath("")
 
-[node name="herbs_022" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_022" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.0172744, 0, 0.0134854, 0, 0.0385302, 0, -0.0134854, 0, 0.0172744, -2.57974, -0.303919, 10.2349)
 mesh = SubResource("ArrayMesh_2lbt2")
 skeleton = NodePath("")
 
-[node name="herbs_023" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_023" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.0104383, 0, 0.00814874, 0, 0.0172287, 0, -0.00814874, 0, 0.0104383, -3.20595, -0.215016, 10.718)
 mesh = SubResource("ArrayMesh_twhoi")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_uxm0h")
 
-[node name="herbs_024" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_024" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.000212138, 0, 0.010429, 0, 0.0201564, 0, -0.010429, 0, 0.000212138, -2.72217, 0.410054, 8.98398)
 mesh = SubResource("ArrayMesh_ot1h4")
 skeleton = NodePath("")
 
-[node name="herbs_025" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_025" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.000445679, 0, 0.0219103, 0, 0.0572262, 0, -0.0219103, 0, 0.000445679, -2.7123, -0.40731, 8.49845)
 mesh = SubResource("ArrayMesh_jqw6u")
 skeleton = NodePath("")
 
-[node name="herbs_026" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_026" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00026931, 0, 0.0132396, 0, 0.0255886, 0, -0.0132396, 0, 0.00026931, -2.73295, -0.275269, 9.28906)
 mesh = SubResource("ArrayMesh_51ghv")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_v16ne")
 
-[node name="herbs_027" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_027" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.000212138, 0, 0.010429, 0, 0.0201564, 0, -0.010429, 0, 0.000212138, -4.69737, 0.410054, 9.07308)
 mesh = SubResource("ArrayMesh_gf568")
 skeleton = NodePath("")
 
-[node name="herbs_028" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_028" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.000445679, 0, 0.0219103, 0, 0.0572262, 0, -0.0219103, 0, 0.000445679, -4.6875, -0.40731, 8.58755)
 mesh = SubResource("ArrayMesh_6ne7s")
 skeleton = NodePath("")
 
-[node name="herbs_029" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_029" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00026931, 0, 0.0132396, 0, 0.0255886, 0, -0.0132396, 0, 0.00026931, -4.70815, -0.275269, 9.37816)
 mesh = SubResource("ArrayMesh_t4bjd")
 skeleton = NodePath("")
 
-[node name="herbs_030" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_030" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00146575, 0, 0.0103277, 0, 0.0135713, 0, -0.0103277, 0, 0.00146575, 4.16346, 0.263096, 6.59479)
 mesh = SubResource("ArrayMesh_me6em")
 skeleton = NodePath("")
 
-[node name="herbs_031" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_031" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00307941, 0, 0.0216974, 0, 0.0385302, 0, -0.0216974, 0, 0.00307941, 4.37631, -0.0789471, 6.11369)
 mesh = SubResource("ArrayMesh_h8jnp")
 skeleton = NodePath("")
 
-[node name="herbs_032" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_032" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00186077, 0, 0.013111, 0, 0.0172287, 0, -0.013111, 0, 0.00186077, 4.26065, -0.215016, 6.89606)
 mesh = SubResource("ArrayMesh_ymphx")
 skeleton = NodePath("")
 
-[node name="herbs_033" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_033" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0070846, 0, 0.0076562, 0, 0.0201564, 0, -0.0076562, 0, -0.0070846, 3.40566, 0.641326, 5.31186)
 mesh = SubResource("ArrayMesh_nj2o1")
 skeleton = NodePath("")
 
-[node name="herbs_034" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_034" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0148841, 0, 0.016085, 0, 0.0572262, 0, -0.016085, 0, -0.0148841, 3.07583, -0.251886, 4.95542)
 mesh = SubResource("ArrayMesh_jg6j0")
 skeleton = NodePath("")
 
-[node name="herbs_035" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_035" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00899391, 0, 0.00971956, 0, 0.0143816, 0, -0.00971956, 0, -0.00899391, 3.60961, -0.0661431, 5.53899)
 mesh = SubResource("ArrayMesh_k0uiv")
 skeleton = NodePath("")
 
-[node name="herbs_036" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_036" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0070846, 0, 0.0076562, 0, 0.0201564, 0, -0.0076562, 0, -0.0070846, 1.70512, 0.410054, 6.89802)
 mesh = SubResource("ArrayMesh_1h4dw")
 skeleton = NodePath("")
 
-[node name="herbs_037" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_037" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0148841, 0, 0.016085, 0, 0.0572262, 0, -0.016085, 0, -0.0148841, 1.7155, -0.40731, 6.39028)
 mesh = SubResource("ArrayMesh_si60v")
 skeleton = NodePath("")
 
-[node name="herbs_038" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_038" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00899391, 0, 0.00971956, 0, 0.0255886, 0, -0.00971956, 0, -0.00899391, 2.24928, -0.275269, 6.97386)
 mesh = SubResource("ArrayMesh_ta7oy")
 skeleton = NodePath("")
 
-[node name="herbs_039" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_039" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00983173, 0, 0.00348511, 0, 0.0135713, 0, -0.00348511, 0, -0.00983173, -2.35087, 0.495083, 3.51455)
 mesh = SubResource("ArrayMesh_fjmhf")
 skeleton = NodePath("")
 
-[node name="herbs_040" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_040" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0206555, 0, 0.00732189, 0, 0.0385302, 0, -0.00732189, 0, -0.0206555, -2.80859, -0.303919, 3.3523)
 mesh = SubResource("ArrayMesh_fl666")
 skeleton = NodePath("")
 
-[node name="herbs_041" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_041" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0124814, 0, 0.00442436, 0, 0.0172287, 0, -0.00442436, 0, -0.0124814, -2.06471, -0.215016, 3.62084)
 mesh = SubResource("ArrayMesh_ii4lr")
 skeleton = NodePath("")
 
-[node name="herbs_042" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_042" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00890931, 0, -0.00542523, 0, 0.0201564, 0, 0.00542523, 0, -0.00890931, -3.78702, 0.410054, 4.14462)
 mesh = SubResource("ArrayMesh_h4qel")
 skeleton = NodePath("")
 
-[node name="herbs_043" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_043" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0187176, 0, -0.0113979, 0, 0.0572262, 0, 0.0113979, 0, -0.0187176, -4.2018, -0.40731, 4.3972)
 mesh = SubResource("ArrayMesh_s54nr")
 skeleton = NodePath("")
 
-[node name="herbs_044" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_044" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0113104, 0, -0.00688735, 0, 0.0255886, 0, 0.00688735, 0, -0.0113104, -3.52395, -0.275269, 3.98977)
 mesh = SubResource("ArrayMesh_0u3po")
 skeleton = NodePath("")
 
-[node name="herbs_045" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_045" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00890931, 0, -0.00542523, 0, 0.0201564, 0, 0.00542523, 0, -0.00890931, -2.55844, 0.433378, 5.87406)
 mesh = SubResource("ArrayMesh_cheiu")
 skeleton = NodePath("")
 
-[node name="herbs_046" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_046" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0187176, 0, -0.0113979, 0, 0.0572262, 0, 0.0113979, 0, -0.0187176, -3.06527, -0.40731, 6.0151)
 mesh = SubResource("ArrayMesh_45c0i")
 skeleton = NodePath("")
 
-[node name="herbs_047" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_047" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0113104, 0, -0.00688735, 0, 0.0255886, 0, 0.00688735, 0, -0.0113104, -2.38741, -0.275269, 5.60768)
 mesh = SubResource("ArrayMesh_662dg")
 skeleton = NodePath("")
 
-[node name="herbs_048" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_048" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00983173, 0, 0.00348511, 0, 0.0135713, 0, -0.00348511, 0, -0.00983173, -9.06945, 0.24641, -2.23695)
 mesh = SubResource("ArrayMesh_nrlcr")
 skeleton = NodePath("")
 
-[node name="herbs_049" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_049" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0206555, 0, 0.00732189, 0, 0.0385302, 0, -0.00732189, 0, -0.0206555, -9.52717, -0.303919, -2.39921)
 mesh = SubResource("ArrayMesh_j3o47")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_wx4pl")
 
-[node name="herbs_050" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_050" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0124814, 0, 0.00442436, 0, 0.0172287, 0, -0.00442436, 0, -0.0124814, -8.78328, -0.215016, -2.13067)
 mesh = SubResource("ArrayMesh_03u2u")
 skeleton = NodePath("")
 
-[node name="herbs_051" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_051" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00890931, 0, -0.00542523, 0, 0.0201564, 0, 0.00542523, 0, -0.00890931, -10.5056, 0.410054, -1.60689)
 mesh = SubResource("ArrayMesh_7o5g4")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_v061l")
 
-[node name="herbs_052" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_052" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0187176, 0, -0.0113979, 0, 0.0572262, 0, 0.0113979, 0, -0.0187176, -10.9204, -0.40731, -1.35431)
 mesh = SubResource("ArrayMesh_hq7o6")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_bk3oi")
 
-[node name="herbs_053" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_053" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0113104, 0, -0.00688735, 0, 0.0255886, 0, 0.00688735, 0, -0.0113104, -10.2425, -0.275269, -1.76174)
 mesh = SubResource("ArrayMesh_sc15l")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_850gd")
 
-[node name="herbs_054" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_054" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00890931, 0, -0.00542523, 0, 0.0201564, 0, 0.00542523, 0, -0.00890931, -9.36906, 0.269311, 0.0110188)
 mesh = SubResource("ArrayMesh_gjc4g")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_c1jis")
 
-[node name="herbs_055" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_055" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0187176, 0, -0.0113979, 0, 0.0572262, 0, 0.0113979, 0, -0.0187176, -9.78384, -0.40731, 0.263595)
 mesh = SubResource("ArrayMesh_vhkoa")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_4lvg5")
 
-[node name="herbs_056" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_056" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.0113104, 0, -0.00688735, 0, 0.0255886, 0, 0.00688735, 0, -0.0113104, -9.10599, -0.275269, -0.143829)
 mesh = SubResource("ArrayMesh_e0k0e")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_i3xlb")
 
-[node name="herbs_057" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_057" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00667476, 0, -0.00801602, 0, 0.0208621, 0, 0.00801602, 0, -0.00667476, -10.3966, 0.42759, -8.45254)
 mesh = SubResource("ArrayMesh_66x7w")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_wfto2")
 
-[node name="herbs_058" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_058" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.014023, 0, -0.0168409, 0, 0.0592297, 0, 0.0168409, 0, -0.014023, -10.7074, -0.819338, -8.07934)
 mesh = SubResource("ArrayMesh_nd5ol")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_xdmur")
 
-[node name="herbs_059" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_059" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00847362, 0, -0.0101763, 0, 0.0264845, 0, 0.0101763, 0, -0.00847362, -10.1978, -0.593464, -8.68417)
 mesh = SubResource("ArrayMesh_7351a")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_mdt71")
 
-[node name="herbs_060" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_060" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00200354, 0, -0.0102369, 0, 0.030985, 0, 0.0102369, 0, 0.00200354, -10.303, 0.679149, -6.88705)
 mesh = SubResource("ArrayMesh_3g2fb")
 skeleton = NodePath("")
 
-[node name="herbs_061" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_061" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00420924, 0, -0.0215068, 0, 0.0879697, 0, 0.0215068, 0, 0.00420924, -10.2097, -0.577325, -6.41046)
 mesh = SubResource("ArrayMesh_8pqdc")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_15jci")
 
-[node name="herbs_062" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_062" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00254349, 0, -0.0129958, 0, 0.0393356, 0, 0.0129958, 0, 0.00254349, -10.3571, -0.374348, -7.18747)
 mesh = SubResource("ArrayMesh_nbqcb")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_bpvtn")
 
-[node name="herbs_063" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_063" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00200354, 0, -0.0102369, 0, 0.030985, 0, 0.0102369, 0, 0.00200354, -8.39158, 0.679149, -7.39284)
 mesh = SubResource("ArrayMesh_xg8a5")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_kcaa2")
 
-[node name="herbs_064" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_064" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00420924, 0, -0.0215068, 0, 0.0879697, 0, 0.0215068, 0, 0.00420924, -8.29831, -0.577325, -6.91626)
 mesh = SubResource("ArrayMesh_i0rip")
 skeleton = NodePath("")
 
-[node name="herbs_065" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_065" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(0.00254349, 0, -0.0129958, 0, 0.0393356, 0, 0.0129958, 0, 0.00254349, -8.44573, -0.374348, -7.69327)
 mesh = SubResource("ArrayMesh_cdgk6")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_ljuf2")
 
-[node name="herbs_066" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_066" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00118859, 0, 0.0103632, 0, 0.0145726, 0, -0.0103632, 0, -0.00118859, 7.16137, 0.271294, 3.52055)
 mesh = SubResource("ArrayMesh_bk8um")
 skeleton = NodePath("")
 
-[node name="herbs_067" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_067" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00249711, 0, 0.0217721, 0, 0.0413732, 0, -0.0217721, 0, -0.00249711, 7.10603, -0.31964, 3.03808)
 mesh = SubResource("ArrayMesh_svje8")
 skeleton = NodePath("")
 
-[node name="herbs_068" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_068" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00150892, 0, 0.0131561, 0, 0.0185, 0, -0.0131561, 0, -0.00150892, 7.19161, -0.224178, 3.82432)
 mesh = SubResource("ArrayMesh_euleg")
 skeleton = NodePath("")
 
-[node name="herbs_069" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_069" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00118859, 0, 0.0103632, 0, 0.0145726, 0, -0.0103632, 0, -0.00118859, 6.58309, 0.0791475, 4.30519)
 mesh = SubResource("ArrayMesh_ir0p1")
 skeleton = NodePath("")
 
-[node name="herbs_070" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_070" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00150892, 0, 0.0131561, 0, 0.0185, 0, -0.0131561, 0, -0.00150892, 6.75319, -0.224178, 4.57218)
 mesh = SubResource("ArrayMesh_73dlx")
 skeleton = NodePath("")
 
-[node name="herbs_071" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_071" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00118859, 0, 0.0103632, 0, 0.0145726, 0, -0.0103632, 0, -0.00118859, 6.88494, 0.312876, 5.49856)
 mesh = SubResource("ArrayMesh_5s8ng")
 skeleton = NodePath("")
 
-[node name="herbs_072" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_072" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00150892, 0, 0.0131561, 0, 0.0185, 0, -0.0131561, 0, -0.00150892, 7.73833, -0.224178, 5.76554)
 mesh = SubResource("ArrayMesh_3qt4j")
 skeleton = NodePath("")
 
-[node name="herbs_073" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_073" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00118859, 0, 0.0103632, 0, 0.0145726, 0, -0.0103632, 0, -0.00118859, 9.39938, 0.271294, 3.48743)
 mesh = SubResource("ArrayMesh_c75gw")
 skeleton = NodePath("")
 
-[node name="herbs_074" type="MeshInstance3D" parent="herb_group"]
+[node name="herbs_074" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/herb_group"]
 transform = Transform3D(-0.00150892, 0, 0.0131561, 0, 0.0185, 0, -0.0131561, 0, -0.00150892, 9.42962, -0.224178, 3.7912)
 mesh = SubResource("ArrayMesh_qfels")
 skeleton = NodePath("")
 
-[node name="radio_tower_group" type="Node3D" parent="."]
+[node name="radio_tower_group" type="Node" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island"]
 
-[node name="radio_tower" type="MeshInstance3D" parent="radio_tower_group"]
+[node name="radio_tower" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/radio_tower_group"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.97866, 0.965417, 0)
 mesh = SubResource("ArrayMesh_6teu5")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_jc7xw")
 surface_material_override/1 = SubResource("ShaderMaterial_krk8u")
 
-[node name="recepteur" type="MeshInstance3D" parent="radio_tower_group"]
+[node name="recepteur" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/radio_tower_group"]
 transform = Transform3D(0.488959, 0, 0, 0, 0.0560173, -0.485739, 0, 0.485739, 0.0560173, 8.99785, 9.20526, 0.443767)
 mesh = SubResource("ArrayMesh_c3jye")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_f5524")
 
-[node name="recepteur_001" type="MeshInstance3D" parent="radio_tower_group"]
+[node name="recepteur_001" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/radio_tower_group"]
 transform = Transform3D(0, 0.406841, 0.0469184, 0, 0.0469184, -0.406841, -0.409537, 0, 0, 9.68124, 6.6759, -0.108547)
 mesh = SubResource("ArrayMesh_wrojs")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_tyite")
 
-[node name="recepteur_002" type="MeshInstance3D" parent="radio_tower_group"]
+[node name="recepteur_002" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/radio_tower_group"]
 transform = Transform3D(-0.488959, -1.23624e-07, -1.63098e-07, 1.23624e-07, 0.132131, -0.470767, 1.63098e-07, -0.470767, -0.132131, 8.99785, 8.43035, -0.539395)
 mesh = SubResource("ArrayMesh_lthlr")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_ct37q")
 
-[node name="recepteur_003" type="MeshInstance3D" parent="radio_tower_group"]
+[node name="recepteur_003" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/radio_tower_group"]
 transform = Transform3D(-2.44103e-07, -0.407033, -0.0452227, 0, 0.0452227, -0.407033, 0.409537, -2.4261e-07, -2.69548e-08, 8.24345, 5.02945, -0.108547)
 mesh = SubResource("ArrayMesh_rmwg4")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_m654u")
 
-[node name="hangar_group" type="Node3D" parent="."]
+[node name="hangar_group" type="Node" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island"]
 
-[node name="support_hangar" type="MeshInstance3D" parent="hangar_group"]
+[node name="support_hangar" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/hangar_group"]
 transform = Transform3D(0.253229, 0, 0, 0, 0.253229, 0, 0, 0, 0.253229, 0, 0, 0)
 mesh = SubResource("ArrayMesh_vnj1q")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_fl67b")
 
-[node name="support_hanger_2" type="MeshInstance3D" parent="hangar_group"]
+[node name="support_hanger_2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/hangar_group"]
 transform = Transform3D(0.29667, 0, 0, 0, 0.29667, 0, 0, 0, 0.29667, 0, 0, 0)
 mesh = SubResource("ArrayMesh_0ewkj")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_5cvqc")
 
-[node name="hangar" type="MeshInstance3D" parent="hangar_group"]
+[node name="hangar" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/hangar_group"]
 transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2547, -12.2891)
 mesh = SubResource("ArrayMesh_eocgw")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_w5cqq")
 surface_material_override/1 = SubResource("ShaderMaterial_8affo")
 
-[node name="hangar_support" type="MeshInstance3D" parent="hangar_group"]
+[node name="hangar_support" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/hangar_group"]
 transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2547, -12.2891)
 mesh = SubResource("ArrayMesh_5ebi6")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_5ahl2")
 
-[node name="poutre_hangar_1" type="MeshInstance3D" parent="hangar_group"]
+[node name="poutre_hangar_1" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/hangar_group"]
 transform = Transform3D(0.243611, 0, 0, 0, 0.243611, 0, 0, 0, 0.423884, 0, 0.240928, 1)
 mesh = SubResource("ArrayMesh_bduqq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_h8o8l")
 
-[node name="poutre_hangar_2" type="MeshInstance3D" parent="hangar_group"]
+[node name="poutre_hangar_2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/hangar_group"]
 transform = Transform3D(0.243611, 0, 0, 0, 0.243611, 0, 0, 0, 0.423884, 0, 0.240928, 3)
 mesh = SubResource("ArrayMesh_vnt7m")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_u51fj")
 
-[node name="poutre_hangar_2_001" type="MeshInstance3D" parent="hangar_group"]
+[node name="poutre_hangar_2_001" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/hangar_group"]
 transform = Transform3D(0.243611, 0, 0, 0, 0.243611, 0, 0, 0, 0.423884, 0, 0.240928, 5)
 mesh = SubResource("ArrayMesh_d6l0f")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_rnjll")
 
-[node name="hangar_help" type="Node3D" parent="."]
+[node name="hangar_help" type="Node" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island"]
 
-[node name="colis_002" type="MeshInstance3D" parent="hangar_help"]
+[node name="colis_002" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/hangar_help"]
 transform = Transform3D(1.26386, 0, 0, 0, 1, 0, 0, 0, 2.61245, 5.28961, 0.465207, -6.24388)
 mesh = SubResource("ArrayMesh_kgh7d")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_1bs7u")
 surface_material_override/1 = SubResource("ShaderMaterial_0um01")
 
-[node name="colis_003" type="MeshInstance3D" parent="hangar_help"]
+[node name="colis_003" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/hangar_help"]
 transform = Transform3D(0.581527, 0, 0, 0, 0.501061, 0, 0, 0, 0.523818, 5.28961, 0.834078, -6.65098)
 mesh = SubResource("ArrayMesh_5plog")
 skeleton = NodePath("")
 
-[node name="colis_004" type="MeshInstance3D" parent="hangar_help"]
+[node name="colis_004" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/hangar_help"]
 transform = Transform3D(-1.42584, 0, -0.563959, 0, 0.501061, 0, 0.907753, 0, -0.885832, 5.06179, 0.834078, -5.98106)
 mesh = SubResource("ArrayMesh_0qphn")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_yt4sl")
 surface_material_override/1 = SubResource("ShaderMaterial_lxmdf")
 
-[node name="palette" type="MeshInstance3D" parent="hangar_help"]
+[node name="palette" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/hangar_help"]
 transform = Transform3D(2.44904, 0, 0, 0, 0.540202, 0, 0, 0, 2.65326, -2.95641, 1.52071, -3.89061)
 mesh = SubResource("ArrayMesh_ue0qj")
 skeleton = NodePath("")
 
-[node name="colis_005" type="MeshInstance3D" parent="hangar_help"]
+[node name="colis_005" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/hangar_help"]
 transform = Transform3D(0.108758, 0, 2.60275, 0, 1, 0, -1.25917, 0, 0.224807, -1.5999, 1.57649, -3.67236)
 mesh = SubResource("ArrayMesh_xevtm")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_ftgdb")
 surface_material_override/1 = SubResource("ShaderMaterial_xmycw")
 
-[node name="colis_006" type="MeshInstance3D" parent="hangar_help"]
+[node name="colis_006" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/hangar_help"]
 transform = Transform3D(0.108395, 0, 0.851083, 0, 0.661542, 0, -1.25497, 0, 0.0735104, -1.54083, 1.94183, -3.76256)
 mesh = SubResource("ArrayMesh_xnp20")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_tabi5")
 surface_material_override/1 = SubResource("ShaderMaterial_1b8xo")
 
-[node name="barrel" type="MeshInstance3D" parent="hangar_help"]
+[node name="barrel" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/hangar_help"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59952, 0.583703, -3.8293)
 mesh = SubResource("ArrayMesh_sxvj1")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_x6ru8")
 
-[node name="barrel_001" type="MeshInstance3D" parent="hangar_help"]
+[node name="barrel_001" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/hangar_help"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.15773, 1.00748, -5.97515)
 mesh = SubResource("ArrayMesh_bq3d2")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_6e76k")
 
-[node name="barrel_002" type="MeshInstance3D" parent="hangar_help"]
+[node name="barrel_002" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/hangar_help"]
 transform = Transform3D(0.685056, 0, 0, 0, 0.685056, 0, 0, 0, 1, -5.15773, 0.655935, -7.02639)
 mesh = SubResource("ArrayMesh_dl1k1")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_86tm7")
 
-[node name="barrel_003" type="MeshInstance3D" parent="hangar_help"]
+[node name="barrel_003" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/hangar_help"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.50272, 0.926863, -3.99493)
 mesh = SubResource("ArrayMesh_0xnjy")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("2_mbp8p")
+surface_material_override/0 = ExtResource("4_igt68")
 
-[node name="barrel_004" type="MeshInstance3D" parent="hangar_help"]
+[node name="barrel_004" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/hangar_help"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.15673, 0.647613, -3.93265)
 mesh = SubResource("ArrayMesh_mj1kt")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_wsg5y")
 
-[node name="Node" type="Node3D" parent="."]
+[node name="Node" type="Node" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island"]
 
-[node name="ground" type="MeshInstance3D" parent="Node"]
+[node name="ground" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/hangar_island/Node"]
 mesh = SubResource("ArrayMesh_fvkc4")
 skeleton = NodePath("")
+
+[node name="PlayerCamera" type="Node3D" parent="SubViewportContainer/SubViewport/importing_scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.559, 0.288, -17.99)
+
+[node name="player" parent="SubViewportContainer/SubViewport/importing_scene/PlayerCamera" instance=ExtResource("5_0w74w")]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/importing_scene/PlayerCamera"]
+transform = Transform3D(1, 0, 0, 0, 0.962218, 0.27228, 0, -0.27228, 0.962218, 1.165, 6.44654, 9)
+script = ExtResource("6_phhuw")
+target_path = NodePath("../player")
+offset = Vector3(0, 4, 8)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/importing_scene/PlayerCamera/Camera3D"]
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_flmjp")

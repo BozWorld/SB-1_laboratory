@@ -1,51 +1,42 @@
-[gd_scene load_steps=9 format=3 uid="uid://bv36048gk4o1c"]
+[gd_scene load_steps=7 format=3 uid="uid://bv36048gk4o1c"]
 
-[ext_resource type="PackedScene" uid="uid://c8jmrou3lrf42" path="res://scenes/prefab/player/Player.tscn" id="1_n5g6i"]
+[ext_resource type="PackedScene" uid="uid://dm5lhvqbrguch" path="res://scenes/prefab/player/player_camera.tscn" id="1_i4cwu"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i34o4"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w2whs"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_b5f8e"]
-sky_material = SubResource("ProceduralSkyMaterial_i34o4")
+[sub_resource type="Sky" id="Sky_6ej7p"]
+sky_material = SubResource("ProceduralSkyMaterial_w2whs")
 
-[sub_resource type="Environment" id="Environment_catbj"]
+[sub_resource type="Environment" id="Environment_m7q4c"]
 background_mode = 2
-sky = SubResource("Sky_b5f8e")
+sky = SubResource("Sky_6ej7p")
 tonemap_mode = 2
+glow_enabled = true
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ij82h"]
-size = Vector2(8.33, 2)
+[sub_resource type="PlaneMesh" id="PlaneMesh_8j72u"]
+size = Vector2(1000, 1000)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ec8o"]
-albedo_color = Color(0.179011, 0.10792, 0.272809, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_ec6t5"]
-size = Vector2(1.675, 11.97)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l1bka"]
-albedo_color = Color(0.292722, 0.0346195, 0.0904669, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_5mk3x"]
+size = Vector3(1000, 3.255, 1000)
 
 [node name="main" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_catbj")
+environment = SubResource("Environment_m7q4c")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="sol" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_ij82h")
-surface_material_override/0 = SubResource("StandardMaterial3D_0ec8o")
+[node name="SolMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_8j72u")
+skeleton = NodePath("Sol")
 
-[node name="sol2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.17)
-mesh = SubResource("PlaneMesh_ec6t5")
-surface_material_override/0 = SubResource("StandardMaterial3D_l1bka")
+[node name="Sol" type="StaticBody3D" parent="SolMesh"]
 
-[node name="player" parent="." instance=ExtResource("1_n5g6i")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.15, 0)
+[node name="SolCollision" type="CollisionShape3D" parent="SolMesh/Sol"]
+shape = SubResource("BoxShape3D_5mk3x")
 
-[node name="Camera3D" type="Camera3D" parent="player"]
-transform = Transform3D(-10, -3.42992e-07, 8.04134e-07, 0, 9.19822, 3.92337, -8.74228e-07, 3.92337, -9.19822, 0, 3, -8)
+[node name="PlayerCamera" parent="." instance=ExtResource("1_i4cwu")]
