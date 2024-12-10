@@ -1,15 +1,15 @@
 [gd_scene load_steps=9 format=3 uid="uid://t4t5f4m35fel"]
 
-[ext_resource type="PackedScene" uid="uid://xax8sl4yuieh" path="res://scenes/shader_scene/Water.tscn" id="2_dpn3s"]
-[ext_resource type="PackedScene" uid="uid://cumecpt86pmsv" path="res://assets/export_3d/hangar_island.tscn" id="3_ny3bn"]
-[ext_resource type="Shader" path="res://assets/materials_textures/shader_script/sky.gdshader" id="3_ujy5y"]
-[ext_resource type="PackedScene" uid="uid://bxepohx1mumkt" path="res://assets/export_3d/avion.tscn" id="5_qag5x"]
+[ext_resource type="PackedScene" uid="uid://xax8sl4yuieh" path="res://scenes/shader_scene/Water.tscn" id="1_5fsco"]
+[ext_resource type="Shader" path="res://assets/materials_textures/shader_script/sky.gdshader" id="2_w0ktn"]
+[ext_resource type="PackedScene" uid="uid://cumecpt86pmsv" path="res://scenes/export_3d/hangar_island.tscn" id="3_8p6rh"]
+[ext_resource type="PackedScene" uid="uid://bxepohx1mumkt" path="res://scenes/export_3d/avion.tscn" id="4_mjb6e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ada6a"]
 size = Vector3(2000, 0.44, 2000)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cpo44"]
-shader = ExtResource("3_ujy5y")
+shader = ExtResource("2_w0ktn")
 shader_parameter/color_top = Color(1, 1, 0.862745, 1)
 shader_parameter/color_horizon = Color(0.329412, 0.862745, 0.576471, 1)
 shader_parameter/color_bottom = Color(1, 0.2, 0.411765, 1)
@@ -27,13 +27,13 @@ tonemap_mode = 2
 
 [node name="importing_scene" type="Node3D"]
 
-[node name="water_plane" parent="." instance=ExtResource("2_dpn3s")]
+[node name="water_plane" parent="." instance=ExtResource("1_5fsco")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.19544, 0)
 
-[node name="Area3D" type="StaticBody3D" parent="water_plane"]
+[node name="water_body" type="StaticBody3D" parent="water_plane"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.214489, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="water_plane/Area3D"]
+[node name="water_coll" type="CollisionShape3D" parent="water_plane/water_body"]
 shape = SubResource("BoxShape3D_ada6a")
 
 [node name="ambiant" type="Node3D" parent="."]
@@ -52,11 +52,11 @@ light_color = Color(0.95589, 0.551563, 0.59604, 1)
 light_energy = 0.65
 shadow_enabled = true
 
-[node name="hangar_island" parent="." instance=ExtResource("3_ny3bn")]
+[node name="hangar_island" parent="." instance=ExtResource("3_8p6rh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.96502, 0, 0.150883)
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="test_camera" type="Camera3D" parent="."]
 transform = Transform3D(0.945519, -0.130861, 0.298111, 0, 0.915663, 0.401948, -0.325568, -0.380049, 0.865776, 0, 11.42, 19.615)
 
-[node name="avion" parent="." instance=ExtResource("5_qag5x")]
+[node name="avion" parent="." instance=ExtResource("4_mjb6e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.686, 1.084, 6.599)

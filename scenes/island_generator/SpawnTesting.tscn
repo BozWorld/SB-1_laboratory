@@ -59,9 +59,6 @@ shadow_mesh = SubResource("ArrayMesh_l1mf0")
 
 [node name="spawn_testing" type="Node3D"]
 script = ExtResource("1_6iyon")
-cube_size = null
-island_count = null
-min_dist = null
 array = SubResource("ArrayMesh_yfo1h")
 color = Color(1.64, 0, 0, 1)
 

@@ -1,6 +1,6 @@
 extends Node3D
 
-var base_island_scene = preload("res://scenes/prefab/post_processing_testing/Terrain.tscn")
+var base_island_scene = preload("res://assets/3d_glb/terrain.glb")
 
 @export var cube_size: Vector3 = Vector3(300,0,300)
 @export var island_count = 5

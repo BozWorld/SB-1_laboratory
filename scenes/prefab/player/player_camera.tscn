@@ -1,35 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm5lhvqbrguch"]
+[gd_scene load_steps=3 format=3 uid="uid://dm5lhvqbrguch"]
 
 [ext_resource type="PackedScene" uid="uid://c8jmrou3lrf42" path="res://scenes/prefab/player/Player.tscn" id="1_rbxbi"]
-[ext_resource type="Script" path="res://scenes/main_game/camera_behaviour.gd" id="2_cq8nt"]
-[ext_resource type="Shader" path="res://assets/materials_textures/shader_script/outline.gdshader" id="3_s5rak"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_h4qaa"]
-render_priority = 0
-shader = ExtResource("3_s5rak")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.2
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
-[sub_resource type="QuadMesh" id="QuadMesh_flmjp"]
-material = SubResource("ShaderMaterial_h4qaa")
-size = Vector2(2, 2)
+[ext_resource type="Script" path="res://code/camera/camera_behaviour.gd" id="2_cq8nt"]
 
 [node name="PlayerCamera" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32346, 0)
 
 [node name="player" parent="." instance=ExtResource("1_rbxbi")]
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.962218, 0.27228, 0, -0.27228, 0.962218, 1.165, 6.44654, 9)
 script = ExtResource("2_cq8nt")
 target_path = NodePath("../player")
 offset = Vector3(0, 4, 8)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
-extra_cull_margin = 16384.0
-mesh = SubResource("QuadMesh_flmjp")
