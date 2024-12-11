@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scene/Etoile.gd" id="1_cf153"]
 [ext_resource type="AudioStream" uid="uid://biy4m51oxoexf" path="res://Asset/instuments/synth_meep.wav" id="2_hxnea"]
 [ext_resource type="AudioStream" uid="uid://bht6rbx5n7psv" path="res://Asset/instuments/synth_vibre.wav" id="3_vjao3"]
-[ext_resource type="AudioStream" uid="uid://bcas1f0wwv75p" path="res://Asset/instuments/synth_clope.wav" id="4_bqcd1"]
+[ext_resource type="AudioStream" uid="uid://of6pblkafqi5" path="res://Asset/instuments/synth_maownh.wav" id="4_0i23q"]
 [ext_resource type="Script" path="res://Scene/corps_etoile.gd" id="5_hag4f"]
 [ext_resource type="Script" path="res://Scene/etoiles_particules.gd" id="6_gp8cn"]
 
@@ -16,17 +16,17 @@ octave = 4.0
 
 [node name="SyntheMeep" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_hxnea")
-volume_db = -0.1
+volume_db = -0.3
 pitch_scale = 0.5
 
 [node name="SyntheVibre" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_vjao3")
-volume_db = -0.1
+volume_db = -0.3
 pitch_scale = 0.5
 
 [node name="SyntheClope" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_bqcd1")
-volume_db = -0.1
+stream = ExtResource("4_0i23q")
+volume_db = -0.3
 pitch_scale = 0.5
 
 [node name="CorpsEtoile" type="StaticBody2D" parent="."]
