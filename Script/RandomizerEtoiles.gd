@@ -5,7 +5,7 @@ extends EditorScript
 func _run():
 	for node in get_all_children(get_scene()):
 		if node is Etoile:
-			node.frequence = randi_range(0,12)
+			node.frequence = randi_range(1,12)
 			
 			#var capital_couleur = randi_range(0,600)
 			var rouge : float = randf()

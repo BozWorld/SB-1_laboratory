@@ -1,11 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://rdsvkcktx2le"]
+[gd_scene load_steps=12 format=3 uid="uid://rdsvkcktx2le"]
 
 [ext_resource type="Script" path="res://Scene/Etoile.gd" id="1_cf153"]
 [ext_resource type="AudioStream" uid="uid://biy4m51oxoexf" path="res://Asset/instuments/synth_meep.wav" id="2_hxnea"]
-[ext_resource type="AudioStream" uid="uid://bht6rbx5n7psv" path="res://Asset/instuments/synth_vibre.wav" id="3_vjao3"]
-[ext_resource type="AudioStream" uid="uid://of6pblkafqi5" path="res://Asset/instuments/synth_maownh.wav" id="4_0i23q"]
+[ext_resource type="Script" path="res://Script/PlayerRouge.gd" id="3_2jyhh"]
+[ext_resource type="Script" path="res://Script/PlayerBleu.gd" id="3_naklu"]
+[ext_resource type="Script" path="res://Script/PlayerVert.gd" id="4_04lse"]
+[ext_resource type="Resource" uid="uid://dcoddexxfvrhx" path="res://Asset/instuments/rouge/synth_rouge.tres" id="4_s2g3l"]
+[ext_resource type="Resource" uid="uid://kgwwlojfi41t" path="res://Asset/instuments/bleu/synth_bleu.tres" id="5_df7ch"]
 [ext_resource type="Script" path="res://Scene/corps_etoile.gd" id="5_hag4f"]
 [ext_resource type="Script" path="res://Scene/etoiles_particules.gd" id="6_gp8cn"]
+[ext_resource type="Resource" uid="uid://cj5vc350xs0k3" path="res://Asset/instuments/vert/synth_vert.tres" id="6_t8v7u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_50otv"]
 
@@ -14,20 +18,23 @@ script = ExtResource("1_cf153")
 frequence = 6.0
 octave = 4.0
 
-[node name="SyntheMeep" type="AudioStreamPlayer2D" parent="."]
+[node name="Rouge" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_hxnea")
-volume_db = -0.3
-pitch_scale = 0.5
+volume_db = -2.0
+script = ExtResource("3_2jyhh")
+synth = ExtResource("4_s2g3l")
 
-[node name="SyntheVibre" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_vjao3")
-volume_db = -0.3
-pitch_scale = 0.5
+[node name="Bleu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_hxnea")
+volume_db = -2.0
+script = ExtResource("3_naklu")
+synth = ExtResource("5_df7ch")
 
-[node name="SyntheClope" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_0i23q")
-volume_db = -0.3
-pitch_scale = 0.5
+[node name="Vert" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_hxnea")
+volume_db = -2.0
+script = ExtResource("4_04lse")
+synth = ExtResource("6_t8v7u")
 
 [node name="CorpsEtoile" type="StaticBody2D" parent="."]
 collision_layer = 9
