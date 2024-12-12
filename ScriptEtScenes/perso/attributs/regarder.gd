@@ -7,6 +7,8 @@ var vertical_input := 0.0
 @onready var horizontal_pivot = $HPivot
 @onready var vertical_pivot = $HPivot/VPivot
 
+var camera_bloquee = false
+
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 

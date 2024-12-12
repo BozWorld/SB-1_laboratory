@@ -12,6 +12,8 @@ var acceleration : Vector3
 @onready var deplacements = $Deplacements
 @onready var saut = $Saut
 
+@onready var nooting = $Regarder/HPivot/VPivot/Camera3D/Nooting
+
 @export var camera : Camera3D
 
 
@@ -38,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	_appliquer_gravite()
 	saut._saut_process(delta)
 	deplacements._deplacement_process()
+	nooting._nooting_process(delta)
 	
 	
 	#print("velocite :" + str(velocite))

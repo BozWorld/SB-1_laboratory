@@ -14,12 +14,8 @@ extends Control
 func _ready() -> void:
 	anim_player.play("menu_on")
 	volume_slider.value = AudioServer.get_bus_volume_db(0)
-	minfps_slider.value = GestionnaireDeConstellations.min_fps
 	maxfps_slider.value = Engine.max_fps
 
-
-func _on_min_fps_value_changed(value: float) -> void:
-	GestionnaireDeConstellations.min_fps = value
 
 
 func _on_volume_slider_value_changed(value: float) -> void:
