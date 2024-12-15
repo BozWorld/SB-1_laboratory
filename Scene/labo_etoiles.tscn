@@ -42,1020 +42,3084 @@ texture = ExtResource("1_s4pgq")
 
 [node name="Etoile1" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(1251, -428)
-frequence = 1
+frequence = 7
 octave = 2
-couleur = Color(0.699748, 0.20658, 0.248299, 1)
+couleur = Color(0.573296, 0.921541, 0.119444, 1)
 
 [node name="Rouge" parent="RangementEtoiles/Etoile1" index="0"]
-volume_db = -48.0
+volume_db = -55.8
 
 [node name="Bleu" parent="RangementEtoiles/Etoile1" index="1"]
-volume_db = -38.7
+volume_db = -58.0
 
 [node name="Vert" parent="RangementEtoiles/Etoile1" index="2"]
-volume_db = -51.7
+volume_db = -72.0
 
 [node name="Etoile2" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(1206, -715)
-frequence = 8
+frequence = 4
 octave = 4
-couleur = Color(0.49641, 0.670508, 0.113317, 1)
+couleur = Color(0.623945, 0.432203, 0.174048, 1)
 
 [node name="Etoile3" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(1291, -882)
-frequence = 2
+frequence = 12
 octave = 4
-couleur = Color(0.678955, 0.959099, 0.766488, 1)
+couleur = Color(0.403009, 0.550496, 0.647874, 1)
 
 [node name="Etoile4" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(1384, -1101)
 frequence = 4
 octave = 4
-couleur = Color(0.788706, 0.376446, 0.303127, 1)
+couleur = Color(0.460816, 0.296303, 0.0845317, 1)
 
 [node name="Etoile5" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(1571, -1148)
-frequence = 2
+frequence = 7
 octave = 2
-couleur = Color(0.985112, 0.818965, 0.476348, 1)
+couleur = Color(0.656659, 0.663533, 0.88738, 1)
 
 [node name="Etoile6" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(1561, -1502)
-frequence = 12
+frequence = 9
 octave = 4
-couleur = Color(0.0537669, 0.0912455, 0.602473, 1)
+couleur = Color(0.947367, 0.061685, 0.857737, 1)
 
 [node name="Etoile7" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(1305, -1559)
 frequence = 1
 octave = 2
-couleur = Color(0.150598, 0.0177865, 0.947662, 1)
+couleur = Color(0.138504, 0.303741, 0.290386, 1)
 
 [node name="Etoile8" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(400, 132)
-frequence = 7
+frequence = 10
 octave = 4
-couleur = Color(0.690097, 0.787287, 0.567274, 1)
+couleur = Color(0.276102, 0.397309, 0.132202, 1)
 
 [node name="Etoile9" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(317, 85)
-frequence = 5
+frequence = 9
 octave = 4
-couleur = Color(0.12072, 0.201115, 0.743351, 1)
+couleur = Color(0.586784, 0.197342, 0.451331, 1)
 
 [node name="Etoile10" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(227, 258)
 frequence = 1
 octave = 4
-couleur = Color(0.0424898, 0.953872, 0.202871, 1)
+couleur = Color(0.559857, 0.508247, 0.382508, 1)
 
 [node name="Etoile11" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(162, 413)
-frequence = 12
+frequence = 9
 octave = 4
-couleur = Color(0.434217, 0.82466, 0.991669, 1)
+couleur = Color(0.527995, 0.726892, 0.228709, 1)
 
 [node name="Etoile12" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-99, 514)
-frequence = 4
+frequence = 5
 octave = 4
-couleur = Color(0.0284026, 0.980803, 0.765712, 1)
+couleur = Color(0.207482, 0.462336, 0.777131, 1)
 
 [node name="Etoile13" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-451, 458)
 frequence = 1
 octave = 4
-couleur = Color(0.598139, 0.379661, 0.455447, 1)
+couleur = Color(0.143791, 0.7916, 0.251799, 1)
 
 [node name="Etoile14" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-254, 106)
-frequence = 5
+frequence = 11
 octave = 4
-couleur = Color(0.32444, 0.08496, 0.596011, 1)
+couleur = Color(0.646811, 0.600504, 0.0484037, 1)
 
 [node name="Etoile15" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(18, 757)
-frequence = 1
+frequence = 9
 octave = 4
-couleur = Color(0.147598, 0.272324, 0.490736, 1)
+couleur = Color(0.927448, 0.425379, 0.356471, 1)
 
 [node name="Etoile16" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-119, 1010)
-frequence = 8
+frequence = 7
 octave = 4
-couleur = Color(0.681746, 0.223121, 0.0570241, 1)
+couleur = Color(0.0513502, 0.0322028, 0.32447, 1)
 
 [node name="Etoile17" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-267, 952)
-frequence = 3
+frequence = 4
 octave = 4
-couleur = Color(0.113434, 0.109714, 0.66105, 1)
+couleur = Color(0.568464, 0.810914, 0.952784, 1)
 
 [node name="Etoile18" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-418, 858)
-frequence = 8
+frequence = 3
 octave = 4
-couleur = Color(0.509177, 0.100699, 0.215668, 1)
+couleur = Color(0.880651, 0.380603, 0.713235, 1)
 
 [node name="Etoile19" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(197, 719)
-frequence = 11
+frequence = 7
 octave = 3
-couleur = Color(0.927077, 0.593157, 0.721916, 1)
+couleur = Color(0.267838, 0.576969, 0.985849, 1)
 
 [node name="Etoile20" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(336, 1143)
-frequence = 12
+frequence = 1
 octave = 3
-couleur = Color(0.48357, 0.626431, 0.324662, 1)
+couleur = Color(0.621649, 0.887586, 0.102882, 1)
 
 [node name="Etoile21" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(431, 1232)
 frequence = 12
 octave = 4
-couleur = Color(0.377422, 0.240429, 0.640732, 1)
+couleur = Color(0.629973, 0.460358, 0.102577, 1)
 
 [node name="Etoile22" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(1896, 771)
-frequence = 7
+frequence = 5
 octave = 3
-couleur = Color(0.79565, 0.593544, 0.22625, 1)
+couleur = Color(0.903748, 0.435651, 0.962785, 1)
 
 [node name="Etoile23" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(1686, 849)
-frequence = 11
+frequence = 8
 octave = 1
-couleur = Color(0.695919, 0.105101, 0.54231, 1)
+couleur = Color(0.528488, 0.102752, 0.726099, 1)
 
 [node name="Etoile24" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(1296, 659)
-frequence = 8
+frequence = 3
 octave = 3
-couleur = Color(0.613002, 0.341069, 0.187458, 1)
+couleur = Color(0.152729, 0.92057, 0.91697, 1)
 
 [node name="Etoile25" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(947, 507)
-frequence = 7
+frequence = 1
 octave = 4
-couleur = Color(0.789117, 0.0818027, 0.387189, 1)
+couleur = Color(0.433347, 0.65365, 0.570928, 1)
 
 [node name="Etoile26" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(954, 186)
-frequence = 6
+frequence = 12
 octave = 4
-couleur = Color(0.504467, 0.0742062, 0.374864, 1)
+couleur = Color(0.886865, 0.902483, 0.545214, 1)
 
 [node name="Etoile27" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(1208, 159)
-frequence = 3
+frequence = 11
 octave = 4
-couleur = Color(0.78053, 0.427284, 0.799932, 1)
+couleur = Color(0.472833, 0.267525, 0.969568, 1)
 
 [node name="Etoile28" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(1353, 469)
-frequence = 8
+frequence = 3
 octave = 4
-couleur = Color(0.432909, 0.422115, 0.960877, 1)
+couleur = Color(0.863399, 0.704793, 0.482414, 1)
 
 [node name="Etoile29" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-172, -153)
-frequence = 9
+frequence = 11
 octave = 3
-couleur = Color(0.972062, 0.323637, 0.667755, 1)
+couleur = Color(0.809275, 0.555455, 0.911705, 1)
 
 [node name="Etoile30" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-349, -145)
-frequence = 12
+frequence = 8
 octave = 3
-couleur = Color(0.61075, 0.434585, 0.699479, 1)
+couleur = Color(0.0970402, 0.922273, 0.559597, 1)
 
 [node name="Etoile61" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-168, -272)
-frequence = 11
+frequence = 1
 octave = 5
-couleur = Color(0.150112, 0.103727, 0.737959, 1)
+couleur = Color(0.331156, 0.602266, 0.39658, 1)
 
 [node name="Etoile31" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-287, -357)
-frequence = 8
+frequence = 6
 octave = 4
-couleur = Color(0.92936, 0.849606, 0.483782, 1)
+couleur = Color(0.127134, 0.79752, 0.630102, 1)
 
 [node name="Etoile32" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-490, -918)
-frequence = 5
+frequence = 10
 octave = 4
-couleur = Color(0.799887, 0.893351, 0.123743, 1)
+couleur = Color(0.557298, 0.864942, 0.224565, 1)
 
 [node name="Etoile33" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-547, -1077)
-frequence = 9
+frequence = 4
 octave = 4
-couleur = Color(0.815755, 0.926756, 0.871973, 1)
+couleur = Color(0.645406, 0.181193, 0.467341, 1)
 
 [node name="Etoile34" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-228, -1035)
-frequence = 10
+frequence = 12
 octave = 4
-couleur = Color(0.61373, 0.125139, 0.383922, 1)
+couleur = Color(0.735871, 0.786464, 0.243742, 1)
 
 [node name="Etoile35" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-12, -709)
-frequence = 7
+frequence = 10
 octave = 4
-couleur = Color(0.0893034, 0.843792, 0.419561, 1)
+couleur = Color(0.337956, 0.298307, 0.669924, 1)
 
 [node name="Etoile36" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(207, -542)
-frequence = 11
+frequence = 12
 octave = 3
-couleur = Color(0.125207, 0.526148, 0.56412, 1)
+couleur = Color(0.758557, 0.759985, 0.657547, 1)
 
 [node name="Etoile37" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(340, -430)
 frequence = 12
 octave = 4
-couleur = Color(0.78535, 0.117758, 0.97689, 1)
+couleur = Color(0.652975, 0.0410463, 0.164215, 1)
 
 [node name="Etoile38" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(535, -516)
-frequence = 12
+frequence = 7
 octave = 4
-couleur = Color(0.164004, 0.167738, 0.910072, 1)
+couleur = Color(0.309088, 0.858348, 0.270692, 1)
 
 [node name="Etoile39" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(771, -894)
-frequence = 4
+frequence = 12
 octave = 4
-couleur = Color(0.159346, 0.914911, 0.280201, 1)
+couleur = Color(0.765615, 0.953111, 0.410176, 1)
 
 [node name="Etoile40" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(848, -1325)
-frequence = 9
+frequence = 2
 octave = 4
-couleur = Color(0.986958, 0.206234, 0.450747, 1)
+couleur = Color(0.306151, 0.0294814, 0.540351, 1)
 
 [node name="Etoile41" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(952, -1524)
-frequence = 5
+frequence = 9
 octave = 4
-couleur = Color(0.930895, 0.70458, 0.435888, 1)
+couleur = Color(0.947699, 0.523617, 0.97619, 1)
 
 [node name="Etoile42" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(14, -1753)
-frequence = 5
+frequence = 6
 octave = 3
-couleur = Color(0.990759, 0.666676, 0.551228, 1)
+couleur = Color(0.373088, 0.872463, 0.679715, 1)
 
 [node name="Etoile43" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-7, -1578)
-frequence = 5
+frequence = 3
 octave = 4
-couleur = Color(0.924236, 0.0360632, 0.670527, 1)
+couleur = Color(0.427551, 0.254866, 0.963333, 1)
 
 [node name="Etoile44" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(51, -1393)
-frequence = 10
+frequence = 4
 octave = 4
-couleur = Color(0.346021, 0.470952, 0.929905, 1)
+couleur = Color(0.670184, 0.798588, 0.679657, 1)
 
 [node name="Etoile45" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(202, -1241)
-frequence = 2
+frequence = 1
 octave = 4
-couleur = Color(0.722, 0.840623, 0.72252, 1)
+couleur = Color(0.141111, 0.193759, 0.782077, 1)
 
 [node name="Etoile46" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(141, -1134)
 frequence = 12
 octave = 5
-couleur = Color(0.360615, 0.279996, 0.330785, 1)
+couleur = Color(0.786373, 0.761044, 0.493472, 1)
 
 [node name="Etoile47" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(357, -1023)
-frequence = 10
+frequence = 8
 octave = 4
-couleur = Color(0.917051, 0.168409, 0.0287517, 1)
+couleur = Color(0.605178, 0.181415, 0.668774, 1)
 
 [node name="Etoile48" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(394, -1157)
-frequence = 10
+frequence = 1
 octave = 3
-couleur = Color(0.54022, 0.586307, 0.23908, 1)
+couleur = Color(0.329011, 0.315182, 0.108067, 1)
 
 [node name="Etoile49" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-757, 305)
-frequence = 9
+frequence = 10
 octave = 1
-couleur = Color(0.705108, 0.882626, 0.728118, 1)
+couleur = Color(0.532791, 0.731005, 0.0689892, 1)
 
 [node name="Etoile50" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-842, 343)
-frequence = 12
+frequence = 5
 octave = 4
-couleur = Color(0.563971, 0.110776, 0.310008, 1)
+couleur = Color(0.545936, 0.980765, 0.603089, 1)
 
 [node name="Etoile51" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-934, 339)
-frequence = 12
+frequence = 7
 octave = 4
-couleur = Color(0.187361, 0.763772, 0.607696, 1)
+couleur = Color(0.121752, 0.402722, 0.666687, 1)
 
 [node name="Etoile52" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-936, 496)
-frequence = 10
+frequence = 6
 octave = 4
-couleur = Color(0.457287, 0.298132, 0.811141, 1)
+couleur = Color(0.324018, 0.728551, 0.0673808, 1)
 
 [node name="Etoile53" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1019, 501)
-frequence = 1
+frequence = 9
 octave = 4
-couleur = Color(0.561698, 0.277661, 0.684443, 1)
+couleur = Color(0.469083, 0.460173, 0.15556, 1)
 
 [node name="Etoile54" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1361, 568)
-frequence = 10
+frequence = 4
 octave = 4
-couleur = Color(0.102619, 0.546165, 0.652471, 1)
+couleur = Color(0.746304, 0.444619, 0.386081, 1)
 
 [node name="Etoile55" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1437, 174)
-frequence = 8
+frequence = 7
 octave = 4
-couleur = Color(0.805214, 0.516211, 0.0800489, 1)
+couleur = Color(0.913287, 0.645476, 0.643284, 1)
 
 [node name="Etoile56" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1492, -141)
-frequence = 5
+frequence = 8
 octave = 3
-couleur = Color(0.374288, 0.81202, 0.202019, 1)
+couleur = Color(0.396793, 0.957947, 0.0532452, 1)
 
 [node name="Etoile57" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1142, -165)
-frequence = 9
+frequence = 3
 octave = 3
-couleur = Color(0.748428, 0.502898, 0.271938, 1)
+couleur = Color(0.0426814, 0.371779, 0.766281, 1)
 
 [node name="Etoile58" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-899, -360)
-frequence = 5
+frequence = 6
 octave = 4
-couleur = Color(0.11851, 0.701617, 0.925697, 1)
+couleur = Color(0.367717, 0.784958, 0.415644, 1)
 
 [node name="Etoile59" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1474, -432)
-frequence = 6
+frequence = 1
 octave = 3
-couleur = Color(0.75931, 0.0322201, 0.829399, 1)
+couleur = Color(0.0748407, 0.789362, 0.550643, 1)
 
 [node name="Etoile60" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1816, -51)
 frequence = 4
 octave = 3
-couleur = Color(0.563797, 0.0265101, 0.771472, 1)
+couleur = Color(0.449378, 0.446707, 0.982803, 1)
 
 [node name="Etoile62" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-2110, -93)
-frequence = 2
+frequence = 3
 octave = 4
-couleur = Color(0.0762355, 0.80779, 0.578832, 1)
+couleur = Color(0.353113, 0.379403, 0.278554, 1)
 
 [node name="Etoile63" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-2892, 410)
-frequence = 2
+frequence = 3
 octave = 3
-couleur = Color(0.830499, 0.148374, 0.632033, 1)
+couleur = Color(0.76978, 0.922365, 0.970012, 1)
 
 [node name="Etoile64" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-3209, 319)
 frequence = 12
 octave = 4
-couleur = Color(0.636344, 0.230075, 0.844045, 1)
+couleur = Color(0.493133, 0.270565, 0.617419, 1)
 
 [node name="Etoile65" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-3281, -202)
-frequence = 1
+frequence = 2
 octave = 4
-couleur = Color(0.864335, 0.347845, 0.276672, 1)
+couleur = Color(0.23103, 0.611895, 0.771596, 1)
 
 [node name="Etoile66" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-3266, -315)
-frequence = 1
+frequence = 10
 octave = 4
-couleur = Color(0.167853, 0.412672, 0.0139405, 1)
+couleur = Color(0.430014, 0.673633, 0.948248, 1)
 
 [node name="Etoile67" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-3251, -632)
-frequence = 1
+frequence = 12
 octave = 3
-couleur = Color(0.152078, 0.0898729, 0.838261, 1)
+couleur = Color(0.571752, 0.568805, 0.407104, 1)
 
 [node name="Etoile68" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-2733, -986)
 frequence = 4
 octave = 3
-couleur = Color(0.276485, 0.600666, 0.0585345, 1)
+couleur = Color(0.519868, 0.991132, 0.701013, 1)
 
 [node name="Etoile69" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-2579, -843)
-frequence = 8
+frequence = 12
 octave = 3
-couleur = Color(0.719366, 0.0382695, 0.534629, 1)
+couleur = Color(0.404675, 0.452468, 0.730515, 1)
 
 [node name="Etoile70" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-2782, -1733)
-frequence = 3
+frequence = 4
 octave = 3
-couleur = Color(0.0500452, 0.902259, 0.713054, 1)
+couleur = Color(0.234706, 0.228702, 0.908049, 1)
 
 [node name="Etoile71" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-2664, -2115)
 frequence = 4
 octave = 4
-couleur = Color(0.501771, 0.608316, 0.887695, 1)
+couleur = Color(0.46585, 0.728971, 0.344554, 1)
 
 [node name="Etoile72" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-2344, -2459)
-frequence = 4
+frequence = 3
 octave = 3
-couleur = Color(0.440251, 0.724262, 0.154635, 1)
+couleur = Color(0.348238, 0.650782, 0.899792, 1)
 
 [node name="Etoile73" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1735, -2907)
-frequence = 11
+frequence = 4
 octave = 3
-couleur = Color(0.891638, 0.668197, 0.634611, 1)
+couleur = Color(0.123435, 0.82595, 0.726758, 1)
 
 [node name="Etoile85" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1367, -1936)
-frequence = 4
+frequence = 3
 octave = 3
-couleur = Color(0.134185, 0.785484, 0.541529, 1)
+couleur = Color(0.526816, 0.249034, 0.938571, 1)
 
 [node name="Etoile74" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1446, -2133)
-frequence = 7
+frequence = 10
 octave = 3
-couleur = Color(0.162495, 0.734435, 0.186447, 1)
+couleur = Color(0.276882, 0.981602, 0.455975, 1)
 
 [node name="Etoile75" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1218, -2185)
-frequence = 8
+frequence = 9
 octave = 3
-couleur = Color(0.540562, 0.835352, 0.729957, 1)
+couleur = Color(0.812543, 0.261514, 0.811574, 1)
 
 [node name="Etoile76" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1154, -2350)
-frequence = 11
+frequence = 2
 octave = 3
-couleur = Color(0.292422, 0.341609, 0.0437789, 1)
+couleur = Color(0.931069, 0.658217, 0.660056, 1)
 
 [node name="Etoile77" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-913, -2417)
-frequence = 11
+frequence = 5
 octave = 4
-couleur = Color(0.0851527, 0.821609, 0.711381, 1)
+couleur = Color(0.625778, 0.282999, 0.419028, 1)
 
 [node name="Etoile78" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1405, -1263)
-frequence = 12
+frequence = 4
 octave = 4
-couleur = Color(0.926033, 0.991602, 0.418051, 1)
+couleur = Color(0.682822, 0.220513, 0.12467, 1)
 
 [node name="Etoile79" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1350, -1263)
-frequence = 1
+frequence = 7
 octave = 4
-couleur = Color(0.0190212, 0.312286, 0.0883077, 1)
+couleur = Color(0.76081, 0.308539, 0.499111, 1)
 
 [node name="Etoile80" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1369, -1360)
-frequence = 4
+frequence = 12
 octave = 4
-couleur = Color(0.919096, 0.348642, 0.0361871, 1)
+couleur = Color(0.308405, 0.365234, 0.565622, 1)
 
 [node name="Etoile81" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1053, -1579)
-frequence = 11
+frequence = 5
 octave = 4
-couleur = Color(0.50648, 0.537208, 0.180343, 1)
+couleur = Color(0.534043, 0.515047, 0.456656, 1)
 
 [node name="Etoile82" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-535, -1781)
-frequence = 3
+frequence = 11
 octave = 4
-couleur = Color(0.18244, 0.404579, 0.71815, 1)
+couleur = Color(0.672108, 0.0966365, 0.442071, 1)
 
 [node name="Etoile83" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-770, -1351)
-frequence = 7
+frequence = 4
 octave = 4
-couleur = Color(0.83677, 0.253938, 0.0644975, 1)
+couleur = Color(0.627652, 0.789265, 0.390129, 1)
 
 [node name="Etoile84" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1055, -1115)
 frequence = 7
 octave = 3
-couleur = Color(0.989702, 0.795815, 0.805617, 1)
+couleur = Color(0.877499, 0.388423, 0.521143, 1)
 
 [node name="Etoile86" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-888, -3004)
-frequence = 8
+frequence = 12
 octave = 3
-couleur = Color(0.393368, 0.172095, 0.0269593, 1)
+couleur = Color(0.547827, 0.899321, 0.163482, 1)
 
 [node name="Etoile87" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-847, -3208)
-frequence = 11
+frequence = 3
 octave = 2
-couleur = Color(0.0152546, 0.864033, 0.232255, 1)
+couleur = Color(0.122204, 0.609926, 0.557296, 1)
 
 [node name="Etoile88" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-727, -3352)
 frequence = 3
 octave = 4
-couleur = Color(0.456474, 0.793359, 0.994373, 1)
+couleur = Color(0.0586406, 0.0314153, 0.270651, 1)
 
 [node name="Etoile89" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1247, -3416)
 frequence = 9
 octave = 3
-couleur = Color(0.62413, 0.876408, 0.00908058, 1)
+couleur = Color(0.172113, 0.408457, 0.117995, 1)
 
 [node name="Etoile90" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(697, -3515)
-frequence = 9
+frequence = 7
 octave = 2
-couleur = Color(0.877752, 0.965323, 0.44803, 1)
+couleur = Color(0.2599, 0.883812, 0.0520087, 1)
 
 [node name="Etoile91" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(231, -3564)
-frequence = 3
+frequence = 6
 octave = 1
-couleur = Color(0.434905, 0.852402, 0.574335, 1)
+couleur = Color(0.519903, 0.621244, 0.432661, 1)
 
 [node name="Etoile92" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(64, -3670)
-frequence = 6
+frequence = 11
 octave = 3
-couleur = Color(0.517423, 0.0874844, 0.369198, 1)
+couleur = Color(0.360933, 0.652494, 0.484732, 1)
 
 [node name="Etoile93" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(130, -3770)
-frequence = 12
+frequence = 8
 octave = 4
-couleur = Color(0.857895, 0.330887, 0.726858, 1)
+couleur = Color(0.714379, 0.904777, 0.417356, 1)
 
 [node name="Etoile94" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(3093, -1714)
-frequence = 11
+frequence = 3
 octave = 3
-couleur = Color(0.688266, 0.949552, 0.288393, 1)
+couleur = Color(0.444289, 0.0162205, 0.90956, 1)
 
 [node name="Etoile95" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(2983, -1650)
-frequence = 12
+frequence = 1
 octave = 4
-couleur = Color(0.359805, 0.500032, 0.563456, 1)
+couleur = Color(0.683557, 0.670761, 0.147166, 1)
 
 [node name="Etoile96" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(3082, -1333)
-frequence = 1
+frequence = 6
 octave = 4
-couleur = Color(0.659698, 0.444048, 0.736915, 1)
+couleur = Color(0.0729243, 0.563369, 0.634309, 1)
 
 [node name="Etoile97" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(3234, -1196)
-frequence = 5
+frequence = 6
 octave = 3
-couleur = Color(0.499767, 0.917101, 0.694126, 1)
+couleur = Color(0.956149, 0.386561, 0.841705, 1)
 
 [node name="Etoile98" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(3400, -1274)
 frequence = 7
 octave = 4
-couleur = Color(0.588784, 0.861877, 0.61443, 1)
+couleur = Color(0.0390096, 0.610167, 0.097156, 1)
 
 [node name="Etoile99" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(3604, -1119)
-frequence = 6
+frequence = 11
 octave = 2
-couleur = Color(0.948696, 0.789967, 0.679198, 1)
+couleur = Color(0.107864, 0.750178, 0.820244, 1)
 
 [node name="Etoile100" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(3205, -438)
-frequence = 11
+frequence = 7
 octave = 4
-couleur = Color(0.196913, 0.78895, 0.136524, 1)
+couleur = Color(0.370199, 0.154025, 0.285186, 1)
 
 [node name="Etoile101" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(3023, -41)
-frequence = 11
+frequence = 7
 octave = 3
-couleur = Color(0.248811, 0.0956646, 0.114234, 1)
+couleur = Color(0.351323, 0.330071, 0.130573, 1)
 
 [node name="Etoile102" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(3005, -596)
-frequence = 9
+frequence = 4
 octave = 3
-couleur = Color(0.898041, 0.450827, 0.196875, 1)
+couleur = Color(0.391845, 0.0705827, 0.892048, 1)
 
 [node name="Etoile103" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(3274, 237)
-frequence = 4
+frequence = 6
 octave = 4
-couleur = Color(0.356916, 0.557561, 0.843869, 1)
+couleur = Color(0.149527, 0.846907, 0.890557, 1)
 
 [node name="Etoile104" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(3363, 491)
-frequence = 5
+frequence = 8
 octave = 4
-couleur = Color(0.473633, 0.437991, 0.646039, 1)
+couleur = Color(0.115033, 0.0865328, 0.335043, 1)
 
 [node name="Etoile105" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(3168, 875)
-frequence = 8
+frequence = 4
 octave = 4
-couleur = Color(0.737476, 0.573513, 0.176538, 1)
+couleur = Color(0.166095, 0.861948, 0.128915, 1)
 
 [node name="Etoile106" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(2968, 1100)
-frequence = 8
+frequence = 11
 octave = 4
-couleur = Color(0.555484, 0.301917, 0.0865667, 1)
+couleur = Color(0.127121, 0.560128, 0.682973, 1)
 
 [node name="Etoile107" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(2741, 987)
-frequence = 11
+frequence = 2
 octave = 4
-couleur = Color(0.837842, 0.868646, 0.215883, 1)
+couleur = Color(0.0648918, 0.318478, 0.939034, 1)
 
 [node name="Etoile108" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(2519, 731)
-frequence = 6
+frequence = 11
 octave = 3
-couleur = Color(0.175952, 0.46435, 0.847825, 1)
+couleur = Color(0.0101821, 0.898633, 0.776883, 1)
 
 [node name="Etoile109" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(2746, 1487)
-frequence = 7
+frequence = 1
 octave = 4
-couleur = Color(0.85974, 0.880427, 0.899509, 1)
+couleur = Color(0.432646, 0.336102, 0.643648, 1)
 
 [node name="Etoile110" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(2402, 1441)
 frequence = 8
 octave = 4
-couleur = Color(0.605933, 0.452963, 0.55096, 1)
+couleur = Color(0.503648, 0.737568, 0.622962, 1)
 
 [node name="Etoile111" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(2647, 1850)
-frequence = 10
+frequence = 6
 octave = 1
-couleur = Color(0.355157, 0.997844, 0.735452, 1)
+couleur = Color(0.915514, 0.79166, 0.325511, 1)
 
 [node name="Etoile112" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(1534, 2945)
-frequence = 4
+frequence = 1
 octave = 4
-couleur = Color(0.0141028, 0.929745, 0.305041, 1)
+couleur = Color(0.834783, 0.209041, 0.552621, 1)
 
 [node name="Etoile113" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(1668, 2495)
-frequence = 9
+frequence = 3
 octave = 3
-couleur = Color(0.657172, 0.572016, 0.0972384, 1)
+couleur = Color(0.706822, 0.223857, 0.894494, 1)
 
 [node name="Etoile114" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(1318, 2295)
-frequence = 11
+frequence = 7
 octave = 3
-couleur = Color(0.305683, 0.854936, 0.393591, 1)
+couleur = Color(0.31805, 0.319037, 0.771102, 1)
 
 [node name="Etoile115" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(1111, 2567)
-frequence = 10
+frequence = 8
 octave = 4
-couleur = Color(0.303907, 0.242864, 0.886035, 1)
+couleur = Color(0.65933, 0.262164, 0.616744, 1)
 
 [node name="Etoile116" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(171, 3664)
-frequence = 10
+frequence = 3
 octave = 3
-couleur = Color(0.282333, 0.235676, 0.842648, 1)
+couleur = Color(0.881042, 0.972487, 0.361014, 1)
 
 [node name="Etoile117" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(193, 3491)
-frequence = 12
+frequence = 3
 octave = 3
-couleur = Color(0.664736, 0.373444, 0.578242, 1)
+couleur = Color(0.360195, 0.267894, 0.127284, 1)
 
 [node name="Etoile118" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(369, 3238)
-frequence = 8
+frequence = 10
 octave = 3
-couleur = Color(0.30651, 0.779718, 0.448041, 1)
+couleur = Color(0.585002, 0.381268, 0.387435, 1)
 
 [node name="Etoile119" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(448, 3159)
 frequence = 10
 octave = 1
-couleur = Color(0.0975089, 0.98225, 0.712471, 1)
+couleur = Color(0.656202, 0.8021, 0.844141, 1)
 
 [node name="Etoile120" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(558, 3119)
-frequence = 8
+frequence = 6
 octave = 3
-couleur = Color(0.602415, 0.699341, 0.0208474, 1)
+couleur = Color(0.124103, 0.356678, 0.46505, 1)
 
 [node name="Etoile121" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(841, 3102)
-frequence = 12
+frequence = 6
 octave = 3
-couleur = Color(0.916446, 0.376057, 0.0472944, 1)
+couleur = Color(0.557623, 0.801873, 0.238575, 1)
 
 [node name="Etoile122" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(818, 2961)
-frequence = 3
+frequence = 5
 octave = 3
-couleur = Color(0.794649, 0.521602, 0.575911, 1)
+couleur = Color(0.635041, 0.652705, 0.612908, 1)
 
 [node name="Etoile124" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(728, 2893)
-frequence = 4
+frequence = 12
 octave = 4
-couleur = Color(0.917627, 0.502431, 0.196906, 1)
+couleur = Color(0.271705, 0.691432, 0.0460862, 1)
 
 [node name="Etoile123" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(745, 2843)
-frequence = 12
+frequence = 7
 octave = 3
-couleur = Color(0.319031, 0.413736, 0.215568, 1)
+couleur = Color(0.610528, 0.275089, 0.734751, 1)
 
 [node name="Etoile125" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-223, 3106)
 frequence = 10
 octave = 4
-couleur = Color(0.191629, 0.798321, 0.465835, 1)
+couleur = Color(0.0742121, 0.744341, 0.353115, 1)
 
 [node name="Etoile126" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-75, 2723)
-frequence = 9
+frequence = 4
 octave = 3
-couleur = Color(0.873424, 0.0700511, 0.00847464, 1)
+couleur = Color(0.454975, 0.634505, 0.361507, 1)
 
 [node name="Etoile127" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(329, 2492)
-frequence = 5
+frequence = 8
 octave = 3
-couleur = Color(0.730874, 0.0040572, 0.0349433, 1)
+couleur = Color(0.796501, 0.208085, 0.728424, 1)
 
 [node name="Etoile128" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(546, 2220)
-frequence = 2
+frequence = 10
 octave = 4
-couleur = Color(0.884412, 0.530373, 0.55728, 1)
+couleur = Color(0.961333, 0.227766, 0.34984, 1)
 
 [node name="Etoile129" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(602, 2177)
-frequence = 8
+frequence = 9
 octave = 3
-couleur = Color(0.210674, 0.655677, 0.556359, 1)
+couleur = Color(0.652666, 0.538401, 0.962696, 1)
 
 [node name="Etoile130" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(380, 1958)
-frequence = 10
+frequence = 12
 octave = 4
-couleur = Color(0.77256, 0.295047, 0.328102, 1)
+couleur = Color(0.378472, 0.593749, 0.324006, 1)
 
 [node name="Etoile131" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(65, 1662)
-frequence = 5
+frequence = 7
 octave = 4
-couleur = Color(0.847992, 0.617472, 0.543499, 1)
+couleur = Color(0.379869, 0.245883, 0.990862, 1)
 
 [node name="Etoile132" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-354, 1515)
-frequence = 3
+frequence = 4
 octave = 3
-couleur = Color(0.789184, 0.6489, 0.785754, 1)
+couleur = Color(0.501992, 0.696814, 0.412844, 1)
 
 [node name="Etoile133" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-469, 1841)
-frequence = 10
+frequence = 4
 octave = 3
-couleur = Color(0.0136756, 0.456289, 0.715684, 1)
+couleur = Color(0.133681, 0.785985, 0.720531, 1)
 
 [node name="Etoile134" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(2817, 2370)
-frequence = 10
+frequence = 2
 octave = 4
-couleur = Color(0.926086, 0.207043, 0.831307, 1)
+couleur = Color(0.846683, 0.836905, 0.0858455, 1)
 
 [node name="Etoile135" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(2253, 2801)
-frequence = 12
+frequence = 11
 octave = 4
-couleur = Color(0.560072, 0.52746, 0.705175, 1)
+couleur = Color(0.172683, 0.870364, 0.0220976, 1)
 
 [node name="Etoile136" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-361, 3607)
-frequence = 11
+frequence = 8
 octave = 2
-couleur = Color(0.956715, 0.794168, 0.573732, 1)
+couleur = Color(0.894233, 0.235276, 0.89721, 1)
 
 [node name="Etoile137" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-314, 3623)
-frequence = 12
+frequence = 10
 octave = 3
-couleur = Color(0.160849, 0.676447, 0.017146, 1)
+couleur = Color(0.903127, 0.16238, 0.108667, 1)
 
 [node name="Etoile138" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-391, 3668)
-frequence = 2
+frequence = 10
 octave = 4
-couleur = Color(0.969084, 0.583246, 0.393809, 1)
+couleur = Color(0.372862, 0.448288, 0.220124, 1)
 
 [node name="Etoile139" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-460, 3696)
-frequence = 9
+frequence = 1
 octave = 3
-couleur = Color(0.517361, 0.494344, 0.145238, 1)
+couleur = Color(0.148718, 0.658101, 0.710618, 1)
 
 [node name="Etoile140" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-520, 3732)
-frequence = 9
+frequence = 1
 octave = 3
-couleur = Color(0.674307, 0.566609, 0.726294, 1)
+couleur = Color(0.138633, 0.828255, 0.0508353, 1)
 
 [node name="Etoile141" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-916, 3549)
-frequence = 6
+frequence = 2
 octave = 4
-couleur = Color(0.493641, 0.0962408, 0.748634, 1)
+couleur = Color(0.481889, 0.571203, 0.985944, 1)
 
 [node name="Etoile142" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-999, 3441)
-frequence = 10
+frequence = 6
 octave = 2
-couleur = Color(0.519017, 0.591926, 0.25832, 1)
+couleur = Color(0.596872, 0.481864, 0.801112, 1)
 
 [node name="Etoile143" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-969, 3246)
 frequence = 10
 octave = 3
-couleur = Color(0.607783, 0.809649, 0.118552, 1)
+couleur = Color(0.430691, 0.0879737, 0.0468064, 1)
 
 [node name="Etoile144" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1062, 3045)
-frequence = 2
+frequence = 7
 octave = 3
-couleur = Color(0.361961, 0.134076, 0.00060383, 1)
+couleur = Color(0.868731, 0.951795, 0.974278, 1)
 
 [node name="Etoile145" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1285, 3070)
-frequence = 11
+frequence = 6
 octave = 4
-couleur = Color(0.954625, 0.80933, 0.924637, 1)
+couleur = Color(0.608861, 0.178332, 0.602657, 1)
 
 [node name="Etoile146" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1414, 3017)
-frequence = 10
+frequence = 6
 octave = 3
-couleur = Color(0.544313, 0.341113, 0.704066, 1)
+couleur = Color(0.493714, 0.975085, 0.343933, 1)
 
 [node name="Etoile147" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1590, 2742)
-frequence = 10
+frequence = 5
 octave = 3
-couleur = Color(0.237851, 0.535818, 0.539214, 1)
+couleur = Color(0.800071, 0.235349, 0.21995, 1)
 
 [node name="Etoile148" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1556, 3049)
-frequence = 9
+frequence = 3
 octave = 4
-couleur = Color(0.296443, 0.345645, 0.764687, 1)
+couleur = Color(0.0916556, 0.916643, 0.080772, 1)
 
 [node name="Etoile149" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1505, 3155)
-frequence = 3
+frequence = 6
 octave = 3
-couleur = Color(0.415095, 0.764153, 0.812163, 1)
+couleur = Color(0.688473, 0.573288, 0.973951, 1)
 
 [node name="Etoile150" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(2559, -2124)
-frequence = 10
+frequence = 5
 octave = 4
-couleur = Color(0.87962, 0.662378, 0.324384, 1)
+couleur = Color(0.0761253, 0.980178, 0.434248, 1)
 
 [node name="Etoile151" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(2429, -2156)
-frequence = 11
+frequence = 7
 octave = 4
-couleur = Color(0.773798, 0.258489, 0.723653, 1)
+couleur = Color(0.173223, 0.0225209, 0.741225, 1)
 
 [node name="Etoile152" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(1912, -2657)
-frequence = 9
+frequence = 3
 octave = 4
-couleur = Color(0.0531973, 0.580024, 0.0777831, 1)
+couleur = Color(0.514644, 0.74406, 0.071357, 1)
 
 [node name="Etoile153" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1434, 2105)
-frequence = 3
+frequence = 2
 octave = 4
-couleur = Color(0.748222, 0.330578, 0.713385, 1)
+couleur = Color(0.96275, 0.726733, 0.709274, 1)
 
 [node name="Etoile154" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1478, 2049)
-frequence = 12
+frequence = 9
 octave = 4
-couleur = Color(0.223832, 0.450031, 0.458227, 1)
+couleur = Color(0.146544, 0.995627, 0.612783, 1)
 
 [node name="Etoile155" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1630, 1621)
-frequence = 8
+frequence = 12
 octave = 4
-couleur = Color(0.674938, 0.699469, 0.441826, 1)
+couleur = Color(0.55122, 0.84615, 0.793525, 1)
 
 [node name="Etoile156" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1304, 1251)
-frequence = 3
+frequence = 7
 octave = 3
-couleur = Color(0.634111, 0.63835, 0.494874, 1)
+couleur = Color(0.513163, 0.595718, 0.747382, 1)
 
 [node name="Etoile157" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1836, 1257)
-frequence = 11
+frequence = 7
 octave = 1
-couleur = Color(0.876684, 0.220646, 0.762378, 1)
+couleur = Color(0.207109, 0.696423, 0.58562, 1)
 
 [node name="Etoile158" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1929, 1333)
-frequence = 9
+frequence = 11
 octave = 4
-couleur = Color(0.0876066, 0.52028, 0.2303, 1)
+couleur = Color(0.217125, 0.457713, 0.40074, 1)
 
 [node name="Etoile159" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-2192, 1565)
-frequence = 5
+frequence = 10
 octave = 4
-couleur = Color(0.559275, 0.975585, 0.00154015, 1)
+couleur = Color(0.544215, 0.655051, 0.699792, 1)
 
 [node name="Etoile160" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-1960, 1587)
-frequence = 7
+frequence = 1
 octave = 4
-couleur = Color(0.844639, 0.604931, 0.13418, 1)
+couleur = Color(0.971583, 0.292477, 0.256183, 1)
 
 [node name="Etoile161" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-2385, 2059)
-frequence = 3
+frequence = 1
 octave = 4
-couleur = Color(0.33964, 0.412324, 0.178551, 1)
+couleur = Color(0.25635, 0.194437, 0.932679, 1)
 
 [node name="Etoile162" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-2432, 2148)
-frequence = 6
+frequence = 4
 octave = 4
-couleur = Color(0.569091, 0.98253, 0.209336, 1)
+couleur = Color(0.597639, 0.318962, 0.19731, 1)
 
 [node name="Etoile163" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-2973, 1973)
-frequence = 6
+frequence = 9
 octave = 4
-couleur = Color(0.179851, 0.625994, 0.135737, 1)
+couleur = Color(0.770201, 0.358714, 0.816747, 1)
 
 [node name="Etoile164" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-2699, 1735)
-frequence = 7
+frequence = 6
 octave = 4
-couleur = Color(0.213268, 0.652038, 0.999732, 1)
+couleur = Color(0.280828, 0.00317161, 0.0278617, 1)
 
 [node name="Etoile165" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-2755, 1667)
-frequence = 11
+frequence = 7
 octave = 5
-couleur = Color(0.839289, 0.335175, 0.934164, 1)
+couleur = Color(0.630761, 0.879282, 0.0900719, 1)
 
 [node name="Etoile166" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-3114, 1203)
-frequence = 6
+frequence = 2
 octave = 3
-couleur = Color(0.732712, 0.341692, 0.157198, 1)
+couleur = Color(0.941557, 0.364085, 0.00858374, 1)
 
 [node name="Etoile167" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-3326, 640)
-frequence = 12
+frequence = 9
 octave = 3
-couleur = Color(0.442117, 0.894339, 0.463837, 1)
+couleur = Color(0.448571, 0.105002, 0.776734, 1)
 
 [node name="Etoile168" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
 position = Vector2(-3492, 531)
+frequence = 11
+octave = 4
+couleur = Color(0.656079, 0.347882, 0.258398, 1)
+
+[node name="Etoile169" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(545, 219)
+frequence = 6
+octave = 5
+couleur = Color(0.113916, 0.482418, 0.155584, 1)
+
+[node name="Etoile170" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(623, 490)
+frequence = 12
+octave = 5
+couleur = Color(0.586675, 0.147414, 0.258083, 1)
+
+[node name="Etoile171" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(458, 490)
+frequence = 3
+octave = 5
+couleur = Color(0.715508, 0.760025, 0.967069, 1)
+
+[node name="Etoile172" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(433, 87)
+frequence = 1
+octave = 5
+couleur = Color(0.709732, 0.790856, 0.384003, 1)
+
+[node name="Etoile173" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(111, 118)
+frequence = 11
+octave = 5
+couleur = Color(0.546487, 0.28109, 0.662275, 1)
+
+[node name="Etoile174" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(817, 356)
+frequence = 9
+octave = 4
+couleur = Color(0.874278, 0.674953, 0.272348, 1)
+
+[node name="Etoile175" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(818, 633)
+frequence = 10
+octave = 4
+couleur = Color(0.93174, 0.743909, 0.0654514, 1)
+
+[node name="Etoile176" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(881, 709)
+frequence = 8
+octave = 4
+couleur = Color(0.553166, 0.905632, 0.342353, 1)
+
+[node name="Etoile177" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1121, 728)
+frequence = 2
+octave = 5
+couleur = Color(0.074337, 0.518996, 0.717785, 1)
+
+[node name="Etoile178" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(564, 756)
+frequence = 12
+octave = 5
+couleur = Color(0.467206, 0.676852, 0.412412, 1)
+
+[node name="Etoile179" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(368, 741)
+frequence = 9
+octave = 5
+couleur = Color(0.954663, 0.0329902, 0.725409, 1)
+
+[node name="Etoile180" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1166, 804)
+frequence = 6
+octave = 5
+couleur = Color(0.920749, 0.13944, 0.185187, 1)
+
+[node name="Etoile181" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1119, 827)
+frequence = 10
+octave = 5
+couleur = Color(0.891353, 0.228633, 0.155429, 1)
+
+[node name="Etoile182" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(837, 830)
+frequence = 6
+octave = 3
+couleur = Color(0.0986463, 0.340169, 0.163816, 1)
+
+[node name="Etoile183" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(774, 859)
+frequence = 12
+octave = 4
+couleur = Color(0.740494, 0.533273, 0.272014, 1)
+
+[node name="Etoile184" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(706, 895)
+frequence = 3
+octave = 5
+couleur = Color(0.38202, 0.0273741, 0.57265, 1)
+
+[node name="Etoile185" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(631, 870)
+frequence = 3
+octave = 4
+couleur = Color(0.196475, 0.329033, 0.319661, 1)
+
+[node name="Etoile186" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(610, 915)
+frequence = 7
+octave = 3
+couleur = Color(0.437991, 0.21782, 0.186539, 1)
+
+[node name="Etoile187" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(611, 1044)
+frequence = 11
+octave = 5
+couleur = Color(0.940754, 0.688412, 0.744977, 1)
+
+[node name="Etoile188" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(731, 1100)
+frequence = 5
+octave = 5
+couleur = Color(0.36361, 0.308517, 0.25282, 1)
+
+[node name="Etoile189" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(838, 1132)
+frequence = 2
+octave = 5
+couleur = Color(0.496899, 0.774637, 0.0449774, 1)
+
+[node name="Etoile190" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(772, 1220)
+frequence = 5
+octave = 4
+couleur = Color(0.031502, 0.661704, 0.511101, 1)
+
+[node name="Etoile191" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(819, 1327)
+frequence = 6
+octave = 4
+couleur = Color(0.411397, 0.936953, 0.127596, 1)
+
+[node name="Etoile192" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(710, 1339)
+frequence = 5
+octave = 4
+couleur = Color(0.157075, 0.727694, 0.713008, 1)
+
+[node name="Etoile193" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(575, 1295)
+frequence = 1
+octave = 5
+couleur = Color(0.265367, 0.313307, 0.148357, 1)
+
+[node name="Etoile194" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(412, 1447)
+frequence = 3
+octave = 5
+couleur = Color(0.910357, 0.238821, 0.494189, 1)
+
+[node name="Etoile195" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(981, 1503)
+frequence = 12
+octave = 4
+couleur = Color(0.716132, 0.775612, 0.243123, 1)
+
+[node name="Etoile196" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(336, 1559)
+frequence = 12
+octave = 5
+couleur = Color(0.470139, 0.799105, 0.960969, 1)
+
+[node name="Etoile197" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1337, 1001)
+frequence = 10
+octave = 5
+couleur = Color(0.535005, 0.510366, 0.324474, 1)
+
+[node name="Etoile198" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1426, 1065)
+frequence = 2
+octave = 5
+couleur = Color(0.914866, 0.0354104, 0.388577, 1)
+
+[node name="Etoile199" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1479, 1078)
+frequence = 4
+octave = 5
+couleur = Color(0.116079, 0.939912, 0.0331345, 1)
+
+[node name="Etoile200" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1689, 991)
+frequence = 12
+octave = 5
+couleur = Color(0.524408, 0.0207105, 0.238829, 1)
+
+[node name="Etoile201" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1515, 1187)
+frequence = 3
+octave = 4
+couleur = Color(0.709442, 0.161378, 0.0220512, 1)
+
+[node name="Etoile202" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1578, 1426)
+frequence = 5
+octave = 5
+couleur = Color(0.765426, 0.284118, 0.181358, 1)
+
+[node name="Etoile203" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1838, 1806)
+frequence = 8
+octave = 5
+couleur = Color(0.31635, 0.668685, 0.304534, 1)
+
+[node name="Etoile204" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1578, 1906)
+frequence = 12
+octave = 5
+couleur = Color(0.833163, 0.555714, 0.58847, 1)
+
+[node name="Etoile205" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1589, 1714)
+frequence = 6
+octave = 4
+couleur = Color(0.380266, 0.514089, 0.446415, 1)
+
+[node name="Etoile206" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1403, 1767)
+frequence = 1
+octave = 4
+couleur = Color(0.0204122, 0.806328, 0.649873, 1)
+
+[node name="Etoile207" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1510, 2015)
+frequence = 4
+octave = 4
+couleur = Color(0.814201, 0.806872, 0.481126, 1)
+
+[node name="Etoile208" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(872, 1668)
+frequence = 4
+octave = 4
+couleur = Color(0.600428, 0.925468, 0.885618, 1)
+
+[node name="Etoile209" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(834, 1798)
 frequence = 2
 octave = 4
-couleur = Color(0.427931, 0.982685, 0.0843608, 1)
+couleur = Color(0.556903, 0.834179, 0.51241, 1)
+
+[node name="Etoile210" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(891, 2119)
+frequence = 8
+octave = 4
+couleur = Color(0.0397561, 0.594736, 0.0315235, 1)
+
+[node name="Etoile211" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1697, 2008)
+frequence = 5
+octave = 4
+couleur = Color(0.804623, 0.393844, 0.446275, 1)
+
+[node name="Etoile212" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2012, 1900)
+frequence = 3
+octave = 4
+couleur = Color(0.696009, 0.688063, 0.522779, 1)
+
+[node name="Etoile213" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2089, 2077)
+frequence = 10
+octave = 4
+couleur = Color(0.294942, 0.321344, 0.200433, 1)
+
+[node name="Etoile214" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2093, 1513)
+frequence = 2
+octave = 4
+couleur = Color(0.654522, 0.0234921, 0.49343, 1)
+
+[node name="Etoile215" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1231, 2353)
+frequence = 11
+octave = 5
+couleur = Color(0.989422, 0.58257, 0.290591, 1)
+
+[node name="Etoile216" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1501, 2196)
+frequence = 11
+octave = 5
+couleur = Color(0.41793, 0.631049, 0.826761, 1)
+
+[node name="Etoile217" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1110, 2375)
+frequence = 9
+octave = 5
+couleur = Color(0.495398, 0.000445453, 0.281601, 1)
+
+[node name="Etoile218" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(742, 2481)
+frequence = 9
+octave = 5
+couleur = Color(0.176664, 0.0972982, 0.0591095, 1)
+
+[node name="Etoile219" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(646, 2441)
+frequence = 1
+octave = 5
+couleur = Color(0.269076, 0.786937, 0.0224441, 1)
+
+[node name="Etoile220" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(489, 1992)
+frequence = 3
+octave = 5
+couleur = Color(0.184989, 0.229258, 0.09124, 1)
+
+[node name="Etoile221" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(34, 2228)
+frequence = 1
+octave = 5
+couleur = Color(0.571679, 0.772419, 0.168975, 1)
+
+[node name="Etoile222" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(172, 2504)
+frequence = 4
+octave = 5
+couleur = Color(0.851064, 0.440614, 0.365516, 1)
+
+[node name="Etoile223" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2037, 2243)
+frequence = 11
+octave = 5
+couleur = Color(0.452449, 0.611025, 0.615611, 1)
+
+[node name="Etoile224" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2152, 2341)
+frequence = 11
+octave = 5
+couleur = Color(0.761713, 0.826887, 0.0921317, 1)
+
+[node name="Etoile225" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2414, 2320)
+frequence = 8
+octave = 5
+couleur = Color(0.909307, 0.0861214, 0.060686, 1)
+
+[node name="Etoile226" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(832, 2603)
+frequence = 8
+octave = 5
+couleur = Color(0.0545318, 0.968757, 0.547743, 1)
+
+[node name="Etoile227" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1415, 2724)
+frequence = 6
+octave = 5
+couleur = Color(0.632919, 0.0949088, 0.817398, 1)
+
+[node name="Etoile228" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1753, 2901)
+frequence = 4
+octave = 5
+couleur = Color(0.965528, 0.642895, 0.168971, 1)
+
+[node name="Etoile229" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2047, 2905)
+frequence = 9
+octave = 5
+couleur = Color(0.869298, 0.138763, 0.669867, 1)
+
+[node name="Etoile230" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1985, 3018)
+frequence = 8
+octave = 5
+couleur = Color(0.113064, 0.302615, 0.14043, 1)
+
+[node name="Etoile231" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1069, 2975)
+frequence = 6
+octave = 5
+couleur = Color(0.525987, 0.405867, 0.869751, 1)
+
+[node name="Etoile232" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(941, 3073)
+frequence = 4
+octave = 5
+couleur = Color(0.434986, 0.727783, 0.975392, 1)
+
+[node name="Etoile233" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(905, 3058)
+frequence = 9
+octave = 5
+couleur = Color(0.722179, 0.513294, 0.625793, 1)
+
+[node name="Etoile234" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(786, 3100)
+frequence = 3
+octave = 5
+couleur = Color(0.493658, 0.507984, 0.218774, 1)
+
+[node name="Etoile235" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(556, 3049)
+frequence = 4
+octave = 5
+couleur = Color(0.238059, 0.822429, 0.472181, 1)
+
+[node name="Etoile236" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(513, 2873)
+frequence = 7
+octave = 5
+couleur = Color(0.48647, 0.613792, 0.552939, 1)
+
+[node name="Etoile237" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(283, 2801)
+frequence = 12
+octave = 5
+couleur = Color(0.936884, 0.943579, 0.0859483, 1)
+
+[node name="Etoile238" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(664, 3201)
+frequence = 11
+octave = 5
+couleur = Color(0.357716, 0.20334, 0.306475, 1)
+
+[node name="Etoile239" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(583, 3233)
+frequence = 12
+octave = 5
+couleur = Color(0.679147, 0.741042, 0.0588092, 1)
+
+[node name="Etoile240" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(776, 3639)
+frequence = 12
+octave = 5
+couleur = Color(0.685203, 0.414312, 0.650257, 1)
+
+[node name="Etoile241" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(0, 3492)
+frequence = 9
+octave = 5
+couleur = Color(0.29616, 0.623031, 0.601873, 1)
+
+[node name="Etoile242" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1042, 3441)
+frequence = 8
+octave = 5
+couleur = Color(0.572909, 0.430934, 0.485474, 1)
+
+[node name="Etoile243" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1080, 3432)
+frequence = 1
+octave = 5
+couleur = Color(0.267582, 0.0129095, 0.928026, 1)
+
+[node name="Etoile244" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1280, 3496)
+frequence = 6
+octave = 5
+couleur = Color(0.366278, 0.22571, 0.725774, 1)
+
+[node name="Etoile245" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1405, 3243)
+frequence = 9
+octave = 5
+couleur = Color(0.0328007, 0.0348587, 0.213533, 1)
+
+[node name="Etoile246" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1762, 3330)
+frequence = 8
+octave = 5
+couleur = Color(0.0455231, 0.741957, 0.578586, 1)
+
+[node name="Etoile247" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-560, 3728)
+frequence = 3
+octave = 5
+couleur = Color(0.749236, 0.983894, 0.252383, 1)
+
+[node name="Etoile248" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-568, 3377)
+frequence = 4
+octave = 5
+couleur = Color(0.785963, 0.323618, 0.344907, 1)
+
+[node name="Etoile249" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-542, 3213)
+frequence = 7
+octave = 5
+couleur = Color(0.894236, 0.678016, 0.636405, 1)
+
+[node name="Etoile250" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-804, 3213)
+frequence = 11
+octave = 5
+couleur = Color(0.865519, 0.0146347, 0.455765, 1)
+
+[node name="Etoile251" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-940, 3132)
+frequence = 4
+octave = 5
+couleur = Color(0.685263, 0.388449, 0.212518, 1)
+
+[node name="Etoile252" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1253, 3466)
+frequence = 5
+octave = 5
+couleur = Color(0.486257, 0.206347, 0.742725, 1)
+
+[node name="Etoile253" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-857, 2996)
+frequence = 9
+octave = 5
+couleur = Color(0.191854, 0.630056, 0.670954, 1)
+
+[node name="Etoile254" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-706, 3026)
+frequence = 5
+octave = 5
+couleur = Color(0.859093, 0.167341, 0.683874, 1)
+
+[node name="Etoile255" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-504, 2949)
+frequence = 3
+octave = 5
+couleur = Color(0.0577675, 0.713315, 0.0105979, 1)
+
+[node name="Etoile256" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-345, 3060)
+frequence = 8
+octave = 5
+couleur = Color(0.219062, 0.607156, 0.331948, 1)
+
+[node name="Etoile257" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1034, 2843)
+frequence = 1
+octave = 5
+couleur = Color(0.60104, 0.275253, 0.318641, 1)
+
+[node name="Etoile258" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1389, 2866)
+frequence = 8
+octave = 5
+couleur = Color(0.0468724, 0.547042, 0.00354911, 1)
+
+[node name="Etoile259" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1408, 2866)
+frequence = 4
+octave = 5
+couleur = Color(0.497834, 0.33746, 0.208099, 1)
+
+[node name="Etoile260" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1665, 2909)
+frequence = 9
+octave = 5
+couleur = Color(0.740617, 0.375357, 0.432001, 1)
+
+[node name="Etoile261" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1935, 2822)
+frequence = 6
+octave = 5
+couleur = Color(0.09509, 0.00417572, 0.0143616, 1)
+
+[node name="Etoile262" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2190, 2837)
+frequence = 10
+octave = 5
+couleur = Color(0.660485, 0.693885, 0.227063, 1)
+
+[node name="Etoile263" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2258, 2841)
+frequence = 12
+octave = 5
+couleur = Color(0.771722, 0.0562277, 0.407444, 1)
+
+[node name="Etoile264" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2177, 2811)
+frequence = 3
+octave = 5
+couleur = Color(0.422521, 0.751773, 0.280885, 1)
+
+[node name="Etoile265" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2213, 2786)
+frequence = 6
+octave = 5
+couleur = Color(0.986897, 0.957146, 0.40963, 1)
+
+[node name="Etoile266" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2047, 2548)
+frequence = 6
+octave = 5
+couleur = Color(0.213231, 0.566645, 0.879006, 1)
+
+[node name="Etoile267" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1690, 2624)
+frequence = 4
+octave = 5
+couleur = Color(0.816268, 0.135484, 0.718273, 1)
+
+[node name="Etoile268" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1732, 2467)
+frequence = 5
+octave = 5
+couleur = Color(0.428859, 0.224457, 0.736226, 1)
+
+[node name="Etoile269" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1068, 2571)
+frequence = 2
+octave = 5
+couleur = Color(0.524834, 0.0776359, 0.486339, 1)
+
+[node name="Etoile270" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1215, 2303)
+frequence = 12
+octave = 5
+couleur = Color(0.452202, 0.0123829, 0.79617, 1)
+
+[node name="Etoile271" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1230, 2260)
+frequence = 2
+octave = 5
+couleur = Color(0.860678, 0.791323, 0.0302865, 1)
+
+[node name="Etoile272" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-992, 2339)
+frequence = 7
+octave = 5
+couleur = Color(0.889393, 0.368146, 0.0663023, 1)
+
+[node name="Etoile273" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-688, 2165)
+frequence = 1
+octave = 5
+couleur = Color(0.0488047, 0.54044, 0.750065, 1)
+
+[node name="Etoile274" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-426, 2386)
+frequence = 10
+octave = 5
+couleur = Color(0.638037, 0.314064, 0.685722, 1)
+
+[node name="Etoile275" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-281, 2269)
+frequence = 3
+octave = 5
+couleur = Color(0.805133, 0.0698961, 0.695216, 1)
+
+[node name="Etoile276" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-664, 1827)
+frequence = 12
+octave = 5
+couleur = Color(0.734228, 0.95272, 0.513807, 1)
+
+[node name="Etoile277" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-900, 1831)
+frequence = 1
+octave = 5
+couleur = Color(0.668554, 0.827864, 0.213742, 1)
+
+[node name="Etoile278" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1296, 1689)
+frequence = 6
+octave = 5
+couleur = Color(0.485364, 0.954471, 0.618411, 1)
+
+[node name="Etoile279" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1672, 1742)
+frequence = 11
+octave = 5
+couleur = Color(0.696034, 0.931982, 0.651326, 1)
+
+[node name="Etoile280" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1861, 2014)
+frequence = 5
+octave = 5
+couleur = Color(0.174241, 0.335786, 0.996675, 1)
+
+[node name="Etoile281" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2416, 1546)
+frequence = 9
+octave = 5
+couleur = Color(0.104683, 0.292182, 0.570334, 1)
+
+[node name="Etoile282" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2558, 2249)
+frequence = 2
+octave = 5
+couleur = Color(0.449628, 0.965984, 0.213372, 1)
+
+[node name="Etoile283" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2996, 2117)
+frequence = 9
+octave = 5
+couleur = Color(0.732706, 0.288369, 0.684587, 1)
+
+[node name="Etoile284" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2975, 1655)
+frequence = 7
+octave = 5
+couleur = Color(0.420154, 0.50863, 0.977678, 1)
+
+[node name="Etoile285" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2494, 1481)
+frequence = 2
+octave = 5
+couleur = Color(0.0989771, 0.421432, 0.463175, 1)
+
+[node name="Etoile286" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-3223, 1264)
+frequence = 12
+octave = 5
+couleur = Color(0.415902, 0.345268, 0.709776, 1)
+
+[node name="Etoile287" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-3353, 754)
+frequence = 3
+octave = 5
+couleur = Color(0.564121, 0.222811, 0.683031, 1)
+
+[node name="Etoile288" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1970, 871)
+frequence = 3
+octave = 5
+couleur = Color(0.961407, 0.910878, 0.548357, 1)
+
+[node name="Etoile289" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1628, 695)
+frequence = 7
+octave = 5
+couleur = Color(0.959914, 0.386303, 0.857976, 1)
+
+[node name="Etoile290" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1524, 882)
+frequence = 1
+octave = 5
+couleur = Color(0.101877, 0.624713, 0.157353, 1)
+
+[node name="Etoile291" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-3199, 417)
+frequence = 7
+octave = 5
+couleur = Color(0.271613, 0.742637, 0.475858, 1)
+
+[node name="Etoile292" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-3454, 360)
+frequence = 9
+octave = 5
+couleur = Color(0.955149, 0.591068, 0.182022, 1)
+
+[node name="Etoile293" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-3386, 194)
+frequence = 9
+octave = 5
+couleur = Color(0.555046, 0.458993, 0.562797, 1)
+
+[node name="Etoile294" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2404, 11)
+frequence = 5
+octave = 5
+couleur = Color(0.656295, 0.454264, 0.205074, 1)
+
+[node name="Etoile295" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2034, 160)
+frequence = 3
+octave = 5
+couleur = Color(0.199521, 0.363327, 0.691566, 1)
+
+[node name="Etoile296" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2026, 283)
+frequence = 4
+octave = 5
+couleur = Color(0.996022, 0.475936, 0.115897, 1)
+
+[node name="Etoile297" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1782, 447)
+frequence = 9
+octave = 5
+couleur = Color(0.294588, 0.242092, 0.736856, 1)
+
+[node name="Etoile298" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1623, 438)
+frequence = 5
+octave = 5
+couleur = Color(0.600578, 0.127984, 0.823704, 1)
+
+[node name="Etoile299" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1625, 623)
+frequence = 9
+octave = 5
+couleur = Color(0.430093, 0.346771, 0.280185, 1)
+
+[node name="Etoile300" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2593, 702)
+frequence = 3
+octave = 5
+couleur = Color(0.0504199, 0.846764, 0.884989, 1)
+
+[node name="Etoile301" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1392, 447)
+frequence = 3
+octave = 5
+couleur = Color(0.454354, 0.0435936, 0.287781, 1)
+
+[node name="Etoile302" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1275, 532)
+frequence = 6
+octave = 5
+couleur = Color(0.765754, 0.231388, 0.348921, 1)
+
+[node name="Etoile303" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1258, 307)
+frequence = 4
+octave = 5
+couleur = Color(0.27773, 0.0842022, 0.964177, 1)
+
+[node name="Etoile304" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1330, 894)
+frequence = 5
+octave = 5
+couleur = Color(0.914468, 0.494318, 0.815587, 1)
+
+[node name="Etoile305" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1096, 928)
+frequence = 2
+octave = 5
+couleur = Color(0.0727907, 0.835668, 0.991606, 1)
+
+[node name="Etoile306" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-981, 785)
+frequence = 1
+octave = 5
+couleur = Color(0.846053, 0.727233, 0.114083, 1)
+
+[node name="Etoile307" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-617, 662)
+frequence = 6
+octave = 5
+couleur = Color(0.240569, 0.825099, 0.44772, 1)
+
+[node name="Etoile308" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-594, 1098)
+frequence = 7
+octave = 5
+couleur = Color(0.129914, 0.689438, 0.67403, 1)
+
+[node name="Etoile510" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-774, 1049)
+frequence = 9
+octave = 5
+couleur = Color(0.427558, 0.0950223, 0.462633, 1)
+
+[node name="Etoile511" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-175, 497)
+frequence = 5
+octave = 5
+couleur = Color(0.784756, 0.345031, 0.824561, 1)
+
+[node name="Etoile512" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-118, 494)
+frequence = 1
+octave = 5
+couleur = Color(0.912551, 0.025131, 0.111988, 1)
+
+[node name="Etoile309" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-598, 1308)
+frequence = 2
+octave = 5
+couleur = Color(0.0788542, 0.858816, 0.767782, 1)
+
+[node name="Etoile310" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-187, 1301)
+frequence = 3
+octave = 5
+couleur = Color(0.376171, 0.278428, 0.312711, 1)
+
+[node name="Etoile311" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(6, 1471)
+frequence = 6
+octave = 5
+couleur = Color(0.804017, 0.817411, 0.529099, 1)
+
+[node name="Etoile312" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-24, 1522)
+frequence = 11
+octave = 5
+couleur = Color(0.43759, 0.0146827, 0.164433, 1)
+
+[node name="Etoile313" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-132, 667)
+frequence = 1
+octave = 5
+couleur = Color(0.426092, 0.547333, 0.760248, 1)
+
+[node name="Etoile314" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-717, 1634)
+frequence = 3
+octave = 5
+couleur = Color(0.733873, 0.34718, 0.182825, 1)
+
+[node name="Etoile315" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-149, 2072)
+frequence = 2
+octave = 5
+couleur = Color(0.778218, 0.649013, 0.926535, 1)
+
+[node name="Etoile316" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2342, -283)
+frequence = 7
+octave = 5
+couleur = Color(0.634994, 0.493191, 0.930275, 1)
+
+[node name="Etoile317" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1751, -151)
+frequence = 9
+octave = 5
+couleur = Color(0.826374, 0.561573, 0.87736, 1)
+
+[node name="Etoile318" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1700, -23)
+frequence = 1
+octave = 5
+couleur = Color(0.996703, 0.150211, 0.527707, 1)
+
+[node name="Etoile319" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1524, -44)
+frequence = 3
+octave = 5
+couleur = Color(0.182318, 0.177048, 0.297918, 1)
+
+[node name="Etoile320" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1526, 15)
+frequence = 5
+octave = 5
+couleur = Color(0.828309, 0.030161, 0.0308068, 1)
+
+[node name="Etoile321" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1492, 47)
+frequence = 7
+octave = 5
+couleur = Color(0.770083, 0.57269, 0.742261, 1)
+
+[node name="Etoile322" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1366, 45)
+frequence = 9
+octave = 5
+couleur = Color(0.199624, 0.374075, 0.887514, 1)
+
+[node name="Etoile323" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1298, 141)
+frequence = 2
+octave = 5
+couleur = Color(0.424, 0.237135, 0.882583, 1)
+
+[node name="Etoile324" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-488, 181)
+frequence = 8
+octave = 5
+couleur = Color(0.722875, 0.84138, 0.804381, 1)
+
+[node name="Etoile325" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-705, -215)
+frequence = 7
+octave = 5
+couleur = Color(0.542729, 0.33165, 0.177881, 1)
+
+[node name="Etoile326" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-501, -423)
+frequence = 11
+octave = 5
+couleur = Color(0.327266, 0.150182, 0.984701, 1)
+
+[node name="Etoile327" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1031, -465)
+frequence = 7
+octave = 5
+couleur = Color(0.918294, 0.0578923, 0.298181, 1)
+
+[node name="Etoile328" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-3656, -192)
+frequence = 8
+octave = 5
+couleur = Color(0.634163, 0.137288, 0.868434, 1)
+
+[node name="Etoile329" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-3427, -283)
+frequence = 11
+octave = 5
+couleur = Color(0.844048, 0.164477, 0.378275, 1)
+
+[node name="Etoile330" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-3482, -442)
+frequence = 7
+octave = 5
+couleur = Color(0.0690008, 0.168533, 0.86235, 1)
+
+[node name="Etoile331" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1961, -520)
+frequence = 11
+octave = 5
+couleur = Color(0.296376, 0.713767, 0.953153, 1)
+
+[node name="Etoile332" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1302, -488)
+frequence = 1
+octave = 5
+couleur = Color(0.105583, 0.122201, 0.432255, 1)
+
+[node name="Etoile333" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-709, -545)
+frequence = 11
+octave = 5
+couleur = Color(0.533923, 0.135068, 0.767172, 1)
+
+[node name="Etoile334" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-559, -558)
+frequence = 9
+octave = 5
+couleur = Color(0.0546017, 0.745613, 0.301979, 1)
+
+[node name="Etoile335" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-421, -475)
+frequence = 2
+octave = 5
+couleur = Color(0.468121, 0.568316, 0.390807, 1)
+
+[node name="Etoile336" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(109, -327)
+frequence = 12
+octave = 5
+couleur = Color(0.515318, 0.377512, 0.1263, 1)
+
+[node name="Etoile337" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(175, 1)
+frequence = 12
+octave = 5
+couleur = Color(0.687202, 0.271441, 0.7228, 1)
+
+[node name="Etoile338" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(406, -283)
+frequence = 10
+octave = 5
+couleur = Color(0.62725, 0.408874, 0.431557, 1)
+
+[node name="Etoile339" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(830, -105)
+frequence = 5
+octave = 5
+couleur = Color(0.423456, 0.262381, 0.45356, 1)
+
+[node name="Etoile340" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1048, -387)
+frequence = 5
+octave = 5
+couleur = Color(0.0390562, 0.595062, 0.763489, 1)
+
+[node name="Etoile341" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1048, -423)
+frequence = 12
+octave = 5
+couleur = Color(0.934955, 0.0404599, 0.0135099, 1)
+
+[node name="Etoile342" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1330, -476)
+frequence = 2
+octave = 5
+couleur = Color(0.423452, 0.032883, 0.694569, 1)
+
+[node name="Etoile343" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1370, 211)
+frequence = 8
+octave = 5
+couleur = Color(0.989249, 0.358171, 0.408721, 1)
+
+[node name="Etoile344" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1584, 130)
+frequence = 1
+octave = 5
+couleur = Color(0.168314, 0.532841, 0.303711, 1)
+
+[node name="Etoile345" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1645, -8)
+frequence = 3
+octave = 5
+couleur = Color(0.766537, 0.0537392, 0.377092, 1)
+
+[node name="Etoile346" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1643, -59)
+frequence = 8
+octave = 5
+couleur = Color(0.256604, 0.724004, 0.738374, 1)
+
+[node name="Etoile347" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1668, -275)
+frequence = 9
+octave = 5
+couleur = Color(0.17402, 0.852073, 0.204518, 1)
+
+[node name="Etoile348" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1700, -288)
+frequence = 8
+octave = 5
+couleur = Color(0.255494, 0.8968, 0.482844, 1)
+
+[node name="Etoile349" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2048, -29)
+frequence = 8
+octave = 5
+couleur = Color(0.659226, 0.445217, 0.392424, 1)
+
+[node name="Etoile350" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2190, 20)
+frequence = 4
+octave = 5
+couleur = Color(0.547617, 0.169684, 0.587823, 1)
+
+[node name="Etoile351" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2078, 124)
+frequence = 8
+octave = 5
+couleur = Color(0.858188, 0.729015, 0.213534, 1)
+
+[node name="Etoile352" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2349, 262)
+frequence = 4
+octave = 5
+couleur = Color(0.0472183, 0.41241, 0.429471, 1)
+
+[node name="Etoile353" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2453, 80)
+frequence = 9
+octave = 5
+couleur = Color(0.613128, 0.539183, 0.12966, 1)
+
+[node name="Etoile354" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2402, 449)
+frequence = 9
+octave = 5
+couleur = Color(0.0183798, 0.586045, 0.776126, 1)
+
+[node name="Etoile355" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1881, 635)
+frequence = 8
+octave = 5
+couleur = Color(0.960363, 0.274795, 0.290285, 1)
+
+[node name="Etoile356" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1627, 591)
+frequence = 5
+octave = 5
+couleur = Color(0.248242, 0.771083, 0.959861, 1)
+
+[node name="Etoile357" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2725, 602)
+frequence = 8
+octave = 5
+couleur = Color(0.15112, 0.718539, 0.904311, 1)
+
+[node name="Etoile358" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(3157, 384)
+frequence = 5
+octave = 5
+couleur = Color(0.367402, 0.758053, 0.779202, 1)
+
+[node name="Etoile359" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(3233, 166)
+frequence = 12
+octave = 5
+couleur = Color(0.453315, 0.081123, 0.797398, 1)
+
+[node name="Etoile360" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(3519, 200)
+frequence = 4
+octave = 5
+couleur = Color(0.0450508, 0.741571, 0.851808, 1)
+
+[node name="Etoile361" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(3667, 475)
+frequence = 12
+octave = 5
+couleur = Color(0.134703, 0.295577, 0.928958, 1)
+
+[node name="Etoile362" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(3069, 710)
+frequence = 12
+octave = 5
+couleur = Color(0.271779, 0.905215, 0.153961, 1)
+
+[node name="Etoile363" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2224, 799)
+frequence = 5
+octave = 5
+couleur = Color(0.0584431, 0.055778, 0.9287, 1)
+
+[node name="Etoile364" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1982, 767)
+frequence = 3
+octave = 5
+couleur = Color(0.180729, 0.251665, 0.4086, 1)
+
+[node name="Etoile365" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2480, 1066)
+frequence = 8
+octave = 5
+couleur = Color(0.634605, 0.286698, 0.253161, 1)
+
+[node name="Etoile366" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2349, 1252)
+frequence = 3
+octave = 5
+couleur = Color(0.692282, 0.769975, 0.684367, 1)
+
+[node name="Etoile367" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(3118, 1374)
+frequence = 4
+octave = 5
+couleur = Color(0.954591, 0.614485, 0.0786951, 1)
+
+[node name="Etoile368" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2970, 1560)
+frequence = 3
+octave = 5
+couleur = Color(0.701127, 0.583667, 0.132631, 1)
+
+[node name="Etoile369" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2517, 1677)
+frequence = 4
+octave = 5
+couleur = Color(0.462492, 0.67458, 0.0831364, 1)
+
+[node name="Etoile370" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2670, 2088)
+frequence = 8
+octave = 5
+couleur = Color(0.512748, 0.924872, 0.760637, 1)
+
+[node name="Etoile371" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2799, 2143)
+frequence = 5
+octave = 5
+couleur = Color(0.172073, 0.644608, 0.712167, 1)
+
+[node name="Etoile372" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2943, 2321)
+frequence = 11
+octave = 5
+couleur = Color(0.715404, 0.751024, 0.653255, 1)
+
+[node name="Etoile373" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2695, 2452)
+frequence = 4
+octave = 5
+couleur = Color(0.633349, 0.796556, 0.187427, 1)
+
+[node name="Etoile374" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(3691, -153)
+frequence = 7
+octave = 5
+couleur = Color(0.664483, 0.56529, 0.0752501, 1)
+
+[node name="Etoile375" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(3602, -253)
+frequence = 8
+octave = 5
+couleur = Color(0.108298, 0.803867, 0.927871, 1)
+
+[node name="Etoile376" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(3538, -238)
+frequence = 10
+octave = 5
+couleur = Color(0.707885, 0.463749, 0.517534, 1)
+
+[node name="Etoile377" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2832, -249)
+frequence = 8
+octave = 5
+couleur = Color(0.293916, 0.182943, 0.318284, 1)
+
+[node name="Etoile378" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2537, -126)
+frequence = 8
+octave = 5
+couleur = Color(0.818759, 0.850581, 0.256759, 1)
+
+[node name="Etoile379" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2440, -137)
+frequence = 7
+octave = 5
+couleur = Color(0.150314, 0.160625, 0.846192, 1)
+
+[node name="Etoile380" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2383, -135)
+frequence = 10
+octave = 5
+couleur = Color(0.452591, 0.055346, 0.961224, 1)
+
+[node name="Etoile381" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2372, -165)
+frequence = 6
+octave = 5
+couleur = Color(0.136098, 0.693204, 0.390184, 1)
+
+[node name="Etoile382" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2910, -663)
+frequence = 11
+octave = 5
+couleur = Color(0.303727, 0.701846, 0.134026, 1)
+
+[node name="Etoile383" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2916, -915)
+frequence = 6
+octave = 5
+couleur = Color(0.796937, 0.367473, 0.7073, 1)
+
+[node name="Etoile384" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2295, -1032)
+frequence = 6
+octave = 5
+couleur = Color(0.0862415, 0.0652027, 0.292423, 1)
+
+[node name="Etoile385" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1687, -617)
+frequence = 9
+octave = 5
+couleur = Color(0.565927, 0.169704, 0.230785, 1)
+
+[node name="Etoile386" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1556, -914)
+frequence = 11
+octave = 5
+couleur = Color(0.349024, 0.517849, 0.12985, 1)
+
+[node name="Etoile387" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2298, -1476)
+frequence = 7
+octave = 5
+couleur = Color(0.728426, 0.0948983, 0.430692, 1)
+
+[node name="Etoile388" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2148, -1347)
+frequence = 1
+octave = 5
+couleur = Color(0.945345, 0.292185, 0.217401, 1)
+
+[node name="Etoile389" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2669, -1266)
+frequence = 8
+octave = 5
+couleur = Color(0.413256, 0.189862, 0.00768954, 1)
+
+[node name="Etoile390" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2601, -1436)
+frequence = 4
+octave = 5
+couleur = Color(0.551783, 0.238703, 0.600935, 1)
+
+[node name="Etoile391" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2480, -1991)
+frequence = 7
+octave = 5
+couleur = Color(0.661956, 0.448265, 0.492477, 1)
+
+[node name="Etoile392" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2332, -2016)
+frequence = 8
+octave = 5
+couleur = Color(0.0673467, 0.474021, 0.479313, 1)
+
+[node name="Etoile393" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1667, -1919)
+frequence = 5
+octave = 5
+couleur = Color(0.633957, 0.157888, 0.83064, 1)
+
+[node name="Etoile394" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1591, -1686)
+frequence = 12
+octave = 5
+couleur = Color(0.466751, 0.381438, 0.712711, 1)
+
+[node name="Etoile395" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1610, -2163)
+frequence = 5
+octave = 5
+couleur = Color(0.332372, 0.966968, 0.0559631, 1)
+
+[node name="Etoile396" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2326, -2288)
+frequence = 1
+octave = 5
+couleur = Color(0.289125, 0.613269, 0.816834, 1)
+
+[node name="Etoile397" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1481, -2646)
+frequence = 2
+octave = 5
+couleur = Color(0.668141, 0.461082, 0.118662, 1)
+
+[node name="Etoile398" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1165, -2125)
+frequence = 4
+octave = 5
+couleur = Color(0.587126, 0.599913, 0.270797, 1)
+
+[node name="Etoile399" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(2025, -3171)
+frequence = 11
+octave = 5
+couleur = Color(0.411879, 0.774343, 0.55106, 1)
+
+[node name="Etoile400" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1330, -2959)
+frequence = 1
+octave = 5
+couleur = Color(0.451518, 0.906272, 0.576391, 1)
+
+[node name="Etoile401" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1582, -3309)
+frequence = 11
+octave = 5
+couleur = Color(0.685075, 0.690231, 0.786279, 1)
+
+[node name="Etoile402" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1251, -3243)
+frequence = 1
+octave = 5
+couleur = Color(0.0126393, 0.758655, 0.660062, 1)
+
+[node name="Etoile403" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1164, -3425)
+frequence = 6
+octave = 5
+couleur = Color(0.614364, 0.447843, 0.522758, 1)
+
+[node name="Etoile404" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(846, -3260)
+frequence = 6
+octave = 5
+couleur = Color(0.714366, 0.588022, 0.563511, 1)
+
+[node name="Etoile405" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(467, -3107)
+frequence = 12
+octave = 5
+couleur = Color(0.82734, 0.761414, 0.99571, 1)
+
+[node name="Etoile406" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1077, -2622)
+frequence = 9
+octave = 5
+couleur = Color(0.568609, 0.42997, 0.329975, 1)
+
+[node name="Etoile407" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(744, -2830)
+frequence = 4
+octave = 5
+couleur = Color(0.841266, 0.779449, 0.233853, 1)
+
+[node name="Etoile408" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(524, -2832)
+frequence = 7
+octave = 5
+couleur = Color(0.447396, 0.642395, 0.14054, 1)
+
+[node name="Etoile409" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(380, -2535)
+frequence = 10
+octave = 5
+couleur = Color(0.239578, 0.0825237, 0.989609, 1)
+
+[node name="Etoile410" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-251, -2469)
+frequence = 1
+octave = 5
+couleur = Color(0.12324, 0.200564, 0.244035, 1)
+
+[node name="Etoile411" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-399, -2768)
+frequence = 4
+octave = 5
+couleur = Color(0.725809, 0.686365, 0.0798468, 1)
+
+[node name="Etoile412" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-369, -2889)
+frequence = 2
+octave = 5
+couleur = Color(0.41084, 0.249317, 0.921336, 1)
+
+[node name="Etoile413" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(97, -3338)
+frequence = 6
+octave = 5
+couleur = Color(0.649248, 0.923337, 0.905833, 1)
+
+[node name="Etoile414" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-585, -2902)
+frequence = 7
+octave = 5
+couleur = Color(0.0614495, 0.688874, 0.351395, 1)
+
+[node name="Etoile415" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-488, -2637)
+frequence = 2
+octave = 5
+couleur = Color(0.894854, 0.163318, 0.126148, 1)
+
+[node name="Etoile416" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-653, -2438)
+frequence = 5
+octave = 5
+couleur = Color(0.625104, 0.085928, 0.336951, 1)
+
+[node name="Etoile417" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-803, -2891)
+frequence = 2
+octave = 5
+couleur = Color(0.0310398, 0.129951, 0.827673, 1)
+
+[node name="Etoile418" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-364, -3351)
+frequence = 4
+octave = 5
+couleur = Color(0.0588539, 0.860923, 0.596999, 1)
+
+[node name="Etoile419" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-372, -3512)
+frequence = 12
+octave = 5
+couleur = Color(0.394431, 0.197898, 0.274721, 1)
+
+[node name="Etoile420" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1044, -3410)
+frequence = 6
+octave = 5
+couleur = Color(0.250838, 0.510713, 0.10624, 1)
+
+[node name="Etoile421" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1264, -3467)
+frequence = 4
+octave = 5
+couleur = Color(0.35996, 0.776284, 0.349289, 1)
+
+[node name="Etoile422" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1397, -3393)
+frequence = 5
+octave = 5
+couleur = Color(0.511888, 0.942414, 0.715719, 1)
+
+[node name="Etoile423" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1528, -3251)
+frequence = 12
+octave = 5
+couleur = Color(0.606755, 0.682343, 0.12012, 1)
+
+[node name="Etoile424" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1897, -3029)
+frequence = 3
+octave = 5
+couleur = Color(0.268657, 0.609076, 0.349809, 1)
+
+[node name="Etoile425" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1992, -3169)
+frequence = 6
+octave = 5
+couleur = Color(0.980591, 0.404893, 0.819023, 1)
+
+[node name="Etoile426" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1589, -2944)
+frequence = 3
+octave = 5
+couleur = Color(0.825224, 0.25663, 0.313814, 1)
+
+[node name="Etoile427" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1275, -2897)
+frequence = 3
+octave = 5
+couleur = Color(0.848824, 0.442982, 0.803707, 1)
+
+[node name="Etoile428" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1786, -2677)
+frequence = 11
+octave = 5
+couleur = Color(0.0852453, 0.884455, 0.574723, 1)
+
+[node name="Etoile429" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1860, -2721)
+frequence = 2
+octave = 5
+couleur = Color(0.603486, 0.863553, 0.832344, 1)
+
+[node name="Etoile430" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1970, -2734)
+frequence = 4
+octave = 5
+couleur = Color(0.316879, 0.660192, 0.390148, 1)
+
+[node name="Etoile431" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2604, -2478)
+frequence = 11
+octave = 5
+couleur = Color(0.823474, 0.043792, 0.256287, 1)
+
+[node name="Etoile432" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2142, -2253)
+frequence = 12
+octave = 5
+couleur = Color(0.594341, 0.78562, 0.615331, 1)
+
+[node name="Etoile433" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1883, -2194)
+frequence = 5
+octave = 5
+couleur = Color(0.349901, 0.939124, 0.381959, 1)
+
+[node name="Etoile434" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1815, -2202)
+frequence = 9
+octave = 5
+couleur = Color(0.889356, 0.25159, 0.906122, 1)
+
+[node name="Etoile435" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1720, -2177)
+frequence = 7
+octave = 5
+couleur = Color(0.119068, 0.424018, 0.898489, 1)
+
+[node name="Etoile436" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1673, -2217)
+frequence = 10
+octave = 5
+couleur = Color(0.711403, 0.276912, 0.451044, 1)
+
+[node name="Etoile437" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1260, -2361)
+frequence = 2
+octave = 5
+couleur = Color(0.985865, 0.268069, 0.341796, 1)
+
+[node name="Etoile438" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1792, -2571)
+frequence = 12
+octave = 5
+couleur = Color(0.894451, 0.511543, 0.221225, 1)
+
+[node name="Etoile439" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1811, -2524)
+frequence = 11
+octave = 5
+couleur = Color(0.980229, 0.858351, 0.245749, 1)
+
+[node name="Etoile440" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1277, -2215)
+frequence = 10
+octave = 5
+couleur = Color(0.00872344, 0.914804, 0.817496, 1)
+
+[node name="Etoile441" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1296, -2200)
+frequence = 3
+octave = 5
+couleur = Color(0.289861, 0.197869, 0.690231, 1)
+
+[node name="Etoile442" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-830, -2208)
+frequence = 12
+octave = 5
+couleur = Color(0.844693, 0.443572, 0.925354, 1)
+
+[node name="Etoile443" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1408, -1810)
+frequence = 4
+octave = 5
+couleur = Color(0.0241267, 0.482456, 0.0345455, 1)
+
+[node name="Etoile444" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1459, -1846)
+frequence = 3
+octave = 5
+couleur = Color(0.713413, 0.237892, 0.18242, 1)
+
+[node name="Etoile445" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1535, -1871)
+frequence = 9
+octave = 5
+couleur = Color(0.00716527, 0.482788, 0.824581, 1)
+
+[node name="Etoile446" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1738, -1850)
+frequence = 3
+octave = 5
+couleur = Color(0.900753, 0.963305, 0.698171, 1)
+
+[node name="Etoile447" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2333, -1924)
+frequence = 1
+octave = 5
+couleur = Color(0.83374, 0.618258, 0.306587, 1)
+
+[node name="Etoile448" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2418, -1924)
+frequence = 2
+octave = 5
+couleur = Color(0.0330487, 0.908192, 0.924286, 1)
+
+[node name="Etoile449" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-318, -2293)
+frequence = 4
+octave = 5
+couleur = Color(0.486079, 0.289763, 0.694993, 1)
+
+[node name="Etoile450" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-718, -2295)
+frequence = 1
+octave = 5
+couleur = Color(0.576126, 0.147825, 0.875468, 1)
+
+[node name="Etoile451" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-618, -2259)
+frequence = 3
+octave = 5
+couleur = Color(0.0926662, 0.284723, 0.449961, 1)
+
+[node name="Etoile452" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(253, -1973)
+frequence = 7
+octave = 5
+couleur = Color(0.318766, 0.156396, 0.41613, 1)
+
+[node name="Etoile453" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(340, -2185)
+frequence = 4
+octave = 5
+couleur = Color(0.694099, 0.447317, 0.465441, 1)
+
+[node name="Etoile454" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1058, -2253)
+frequence = 10
+octave = 5
+couleur = Color(0.665276, 0.86121, 0.850335, 1)
+
+[node name="Etoile455" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(969, -2107)
+frequence = 5
+octave = 5
+couleur = Color(0.499361, 0.734436, 0.510276, 1)
+
+[node name="Etoile456" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1003, -2079)
+frequence = 2
+octave = 5
+couleur = Color(0.0899516, 0.276333, 0.479881, 1)
+
+[node name="Etoile457" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(912, -1956)
+frequence = 11
+octave = 5
+couleur = Color(0.824553, 0.080108, 0.00527925, 1)
+
+[node name="Etoile458" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1141, -1776)
+frequence = 8
+octave = 5
+couleur = Color(0.495086, 0.782045, 0.15337, 1)
+
+[node name="Etoile459" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(688, -1753)
+frequence = 10
+octave = 5
+couleur = Color(0.3347, 0.525554, 0.472279, 1)
+
+[node name="Etoile460" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(989, -1706)
+frequence = 9
+octave = 5
+couleur = Color(0.533337, 0.864245, 0.0231874, 1)
+
+[node name="Etoile461" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(404, -1325)
+frequence = 1
+octave = 5
+couleur = Color(0.238601, 0.935062, 0.49036, 1)
+
+[node name="Etoile462" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(811, -950)
+frequence = 8
+octave = 5
+couleur = Color(0.308731, 0.622849, 0.749191, 1)
+
+[node name="Etoile463" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(536, -823)
+frequence = 3
+octave = 5
+couleur = Color(0.4193, 0.662037, 0.987309, 1)
+
+[node name="Etoile464" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-110, -986)
+frequence = 10
+octave = 5
+couleur = Color(0.269612, 0.326436, 0.360435, 1)
+
+[node name="Etoile465" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-364, -1020)
+frequence = 3
+octave = 5
+couleur = Color(0.0990746, 0.561736, 0.734433, 1)
+
+[node name="Etoile466" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-122, -838)
+frequence = 3
+octave = 5
+couleur = Color(0.240279, 0.341647, 0.228343, 1)
+
+[node name="Etoile467" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-514, -1020)
+frequence = 12
+octave = 5
+couleur = Color(0.760584, 0.694555, 0.905188, 1)
+
+[node name="Etoile468" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-654, -1028)
+frequence = 3
+octave = 5
+couleur = Color(0.0945352, 0.6946, 0.0193674, 1)
+
+[node name="Etoile469" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-285, -1695)
+frequence = 12
+octave = 5
+couleur = Color(0.33504, 0.0438066, 0.100896, 1)
+
+[node name="Etoile470" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-226, -1706)
+frequence = 3
+octave = 5
+couleur = Color(0.712713, 0.26667, 0.178615, 1)
+
+[node name="Etoile471" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-569, -861)
+frequence = 12
+octave = 5
+couleur = Color(0.139984, 0.308741, 0.0500576, 1)
+
+[node name="Etoile472" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1111, -833)
+frequence = 9
+octave = 5
+couleur = Color(0.70779, 0.289473, 0.271104, 1)
+
+[node name="Etoile473" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1547, -930)
+frequence = 11
+octave = 5
+couleur = Color(0.34269, 0.469736, 0.940839, 1)
+
+[node name="Etoile474" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1119, -1182)
+frequence = 7
+octave = 5
+couleur = Color(0.677699, 0.728544, 0.81222, 1)
+
+[node name="Etoile475" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1096, -1309)
+frequence = 12
+octave = 5
+couleur = Color(0.70344, 0.00655824, 0.792648, 1)
+
+[node name="Etoile476" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-765, -1402)
+frequence = 1
+octave = 5
+couleur = Color(0.850677, 0.811263, 0.937257, 1)
+
+[node name="Etoile477" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-748, -1514)
+frequence = 9
+octave = 5
+couleur = Color(0.839348, 0.375413, 0.548233, 1)
+
+[node name="Etoile478" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-981, -1703)
+frequence = 1
+octave = 5
+couleur = Color(0.438616, 0.474419, 0.973389, 1)
+
+[node name="Etoile479" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1250, -1709)
+frequence = 9
+octave = 5
+couleur = Color(0.708505, 0.13588, 0.848451, 1)
+
+[node name="Etoile480" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1415, -1711)
+frequence = 9
+octave = 5
+couleur = Color(0.484608, 0.323638, 0.482784, 1)
+
+[node name="Etoile481" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1375, -1580)
+frequence = 7
+octave = 5
+couleur = Color(0.843355, 0.892989, 0.330276, 1)
+
+[node name="Etoile482" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1477, -1510)
+frequence = 1
+octave = 5
+couleur = Color(0.677832, 0.698515, 0.442987, 1)
+
+[node name="Etoile483" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1846, -1535)
+frequence = 1
+octave = 5
+couleur = Color(0.742484, 0.536057, 0.604897, 1)
+
+[node name="Etoile484" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1831, -1499)
+frequence = 2
+octave = 5
+couleur = Color(0.046939, 0.224343, 0.759134, 1)
+
+[node name="Etoile485" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1784, -1442)
+frequence = 6
+octave = 5
+couleur = Color(0.707443, 0.68415, 0.381553, 1)
+
+[node name="Etoile486" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1797, -1393)
+frequence = 8
+octave = 5
+couleur = Color(0.326349, 0.622442, 0.406363, 1)
+
+[node name="Etoile487" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1693, -1283)
+frequence = 9
+octave = 5
+couleur = Color(0.717991, 0.871389, 0.757386, 1)
+
+[node name="Etoile488" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1981, -1717)
+frequence = 7
+octave = 5
+couleur = Color(0.316208, 0.537466, 0.443188, 1)
+
+[node name="Etoile489" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1739, -1162)
+frequence = 10
+octave = 5
+couleur = Color(0.864925, 0.793842, 0.396503, 1)
+
+[node name="Etoile490" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1851, -1075)
+frequence = 4
+octave = 5
+couleur = Color(0.934574, 0.806107, 0.529658, 1)
+
+[node name="Etoile491" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2016, -1064)
+frequence = 2
+octave = 5
+couleur = Color(0.972981, 0.75808, 0.0644939, 1)
+
+[node name="Etoile492" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2207, -1036)
+frequence = 8
+octave = 5
+couleur = Color(0.731567, 0.785383, 0.0150256, 1)
+
+[node name="Etoile493" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2067, -1242)
+frequence = 6
+octave = 5
+couleur = Color(0.196387, 0.930097, 0.705914, 1)
+
+[node name="Etoile494" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2669, -1386)
+frequence = 12
+octave = 5
+couleur = Color(0.934185, 0.42432, 0.0934552, 1)
+
+[node name="Etoile495" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2764, -1456)
+frequence = 12
+octave = 5
+couleur = Color(0.946919, 0.0932021, 0.791773, 1)
+
+[node name="Etoile496" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2974, -1537)
+frequence = 5
+octave = 5
+couleur = Color(0.782022, 0.693335, 0.901196, 1)
+
+[node name="Etoile497" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2853, -963)
+frequence = 5
+octave = 5
+couleur = Color(0.407359, 0.255374, 0.328179, 1)
+
+[node name="Etoile498" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2961, -1065)
+frequence = 9
+octave = 5
+couleur = Color(0.344474, 0.525219, 0.772539, 1)
+
+[node name="Etoile499" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-3209, -1637)
+frequence = 11
+octave = 5
+couleur = Color(0.321488, 0.844472, 0.381325, 1)
+
+[node name="Etoile500" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-3451, -851)
+frequence = 7
+octave = 5
+couleur = Color(0.121955, 0.860391, 0.435484, 1)
+
+[node name="Etoile501" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2561, -588)
+frequence = 6
+octave = 5
+couleur = Color(0.236393, 0.71055, 0.303365, 1)
+
+[node name="Etoile502" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-2605, -804)
+frequence = 10
+octave = 5
+couleur = Color(0.0717444, 0.0567604, 0.381732, 1)
+
+[node name="Etoile503" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1696, -582)
+frequence = 2
+octave = 5
+couleur = Color(0.125437, 0.0878494, 0.51292, 1)
+
+[node name="Etoile504" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1518, -633)
+frequence = 11
+octave = 5
+couleur = Color(0.855584, 0.448307, 0.479853, 1)
+
+[node name="Etoile505" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1505, -601)
+frequence = 6
+octave = 5
+couleur = Color(0.357785, 0.247196, 0.315256, 1)
+
+[node name="Etoile506" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-869, -696)
+frequence = 11
+octave = 5
+couleur = Color(0.562965, 0.242451, 0.362474, 1)
+
+[node name="Etoile507" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-350, -749)
+frequence = 7
+octave = 5
+couleur = Color(0.5243, 0.834763, 0.222094, 1)
+
+[node name="Etoile508" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(108, -662)
+frequence = 3
+octave = 5
+couleur = Color(0.673973, 0.32722, 0.161705, 1)
+
+[node name="Etoile509" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1142, -637)
+frequence = 5
+octave = 5
+couleur = Color(0.602545, 0.0562274, 0.124576, 1)
 
 [connection signal="body_entered" from="Camera2D/ViseurCreation" to="Camera2D/ViseurCreation" method="_on_body_entered"]
 [connection signal="body_exited" from="Camera2D/ViseurCreation" to="Camera2D/ViseurCreation" method="_on_body_exited"]
