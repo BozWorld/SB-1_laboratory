@@ -61,6 +61,7 @@ func _on_recommencer_button_up() -> void:
 	get_tree().reload_current_scene()
 	
 
+
 func _on_quitter_button_up() -> void:
 	get_tree().quit()
 

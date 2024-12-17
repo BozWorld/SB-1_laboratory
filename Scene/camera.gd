@@ -63,6 +63,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	if !bloquee :
+		if (position + velocite).length() > 4000 :
+			velocite = velocite * 20*(1/(position.length()-3000))
 		position += velocite * delta
 		velocite *= 0.8
 	

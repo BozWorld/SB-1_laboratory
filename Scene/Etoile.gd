@@ -29,6 +29,9 @@ var taille : float
 
 var liaisons : Array[Liaison]
 
+func _enter_tree() -> void:
+	add_to_group("Etoiles")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# On vient recupérer les valeurs de RGB, la présence de chacune des couleurs défini la présence d'un synth
