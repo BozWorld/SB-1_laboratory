@@ -4164,6 +4164,36 @@ frequence = 5
 octave = 4
 couleur = Color(0.602545, 0.0562274, 0.124576, 1)
 
+[node name="Etoile687" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-1780, 1214)
+frequence = 5
+octave = 3
+couleur = Color(0.602545, 0.0562274, 0.124576, 1)
+
+[node name="Etoile688" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(-773, 3296)
+frequence = 5
+octave = 3
+couleur = Color(0.602545, 0.0562274, 0.124576, 1)
+
+[node name="Etoile689" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(907, 1702)
+frequence = 5
+octave = 3
+couleur = Color(0.602545, 0.0562274, 0.124576, 1)
+
+[node name="Etoile690" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(3339, 1696)
+frequence = 5
+octave = 3
+couleur = Color(0.602545, 0.0562274, 0.124576, 1)
+
+[node name="Etoile691" parent="RangementEtoiles" instance=ExtResource("2_wmpbo")]
+position = Vector2(1843, -322)
+frequence = 5
+octave = 3
+couleur = Color(0.602545, 0.0562274, 0.124576, 1)
+
 [connection signal="body_entered" from="Camera2D/ViseurCreation" to="Camera2D/ViseurCreation" method="_on_body_entered"]
 [connection signal="body_exited" from="Camera2D/ViseurCreation" to="Camera2D/ViseurCreation" method="_on_body_exited"]
 
