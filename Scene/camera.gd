@@ -10,6 +10,8 @@ var frame_threshold_effacer : int = 20
 
 var bloquee = false
 
+var tourne = false
+
 var area_effacer : AreaEffacer 
 
 @onready var viseur = $ViseurCreation
@@ -60,9 +62,18 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		gclic_tenu = false
 		decompte_gclic = 0
+	
+	if Input.is_action_just_pressed("tourner"):
+		tourne = true
+	
+	if Input.is_action_just_released("tourner"):
+		tourne = false
 
 func _physics_process(delta: float) -> void:
-	if !bloquee :
+	if tourne :
+		rotate(velocite.x * delta)
+		
+	elif !bloquee :
 		if (position + velocite).length() > 4000 :
 			velocite = velocite * 20*(1/(position.length()-3000))
 		position += velocite * delta
