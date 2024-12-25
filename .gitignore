@@ -24,3 +24,4 @@ mono_crash.*.json
 .vscode/extensions.json
 .vscode/launch.json
 .vscode/settings.json
+.vscode/settings.json
