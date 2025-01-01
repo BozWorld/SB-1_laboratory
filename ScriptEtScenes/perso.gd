@@ -9,10 +9,12 @@ var acceleration : Vector3
 
 @onready var mesh = $Mesh
 @onready var machine_etats : StateMachine = $Etats
-@onready var deplacements = $Deplacements
+@onready var avancer = $Avancer
 @onready var saut = $Saut
-@onready var frottements = $FrottementsFluide
+@onready var frottement_fluide = $FrottementFluide
+@onready var frottement_statique = $FrottementStatique
 @onready var regarder = $Regarder
+@onready var frein = $Frein
 
 @export var camera : Camera3D
 
@@ -40,15 +42,19 @@ func _physics_process(delta: float) -> void:
 	_appliquer_gravite()
 	regarder._regarder_process(delta)
 	saut._saut_process(delta)
-	deplacements._deplacement_process(delta)
+	avancer._deplacement_process(delta)
+	frein._deplacement_process(delta)
 	
 	print("++++++++++++++++++++++++++++++++++++++++++
 	Acceleration : 
 	Direction = " + str(acceleration.normalized()) + "
 	Magnitude = " + str(acceleration.length()))
 	
-	if velocite.length() != 0.0 :
-		frottements._frottement_process(delta, velocite + acceleration)
+	if machine_etats.get_state() != machine_etats.states.attend :
+		frottement_fluide._frottement_process(delta, velocite + acceleration)
+		if machine_etats.get_state() != machine_etats.states.tombe && machine_etats.get_state() != machine_etats.states.saute :
+			frottement_statique._frottement_process(delta, velocite + acceleration)
+		
 	
 	velocite += acceleration
 	

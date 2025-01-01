@@ -1,6 +1,6 @@
 extends Attribut3D
 
-const VITESSE : float = 12.0
+const VITESSE : float = 6.0
 
 var mouvement : Vector2
 
