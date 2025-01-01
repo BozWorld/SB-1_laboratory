@@ -12,7 +12,7 @@ var acceleration : Vector3
 @onready var deplacements = $Deplacements
 @onready var saut = $Saut
 @onready var frottements = $FrottementsFluide
-
+@onready var regarder = $Regarder
 
 @export var camera : Camera3D
 
@@ -38,6 +38,7 @@ func _appliquer_gravite():
 func _physics_process(delta: float) -> void:
 	
 	_appliquer_gravite()
+	regarder._regarder_process(delta)
 	saut._saut_process(delta)
 	deplacements._deplacement_process(delta)
 	
