@@ -8,9 +8,11 @@ var velocite : Vector3
 var acceleration : Vector3
 
 @onready var mesh = $Mesh
-@onready var machine_etats = $Etats
+@onready var machine_etats : StateMachine = $Etats
 @onready var deplacements = $Deplacements
 @onready var saut = $Saut
+@onready var frottements = $FrottementsFluide
+
 
 @export var camera : Camera3D
 
@@ -37,12 +39,23 @@ func _physics_process(delta: float) -> void:
 	
 	_appliquer_gravite()
 	saut._saut_process(delta)
-	deplacements._deplacement_process()
+	deplacements._deplacement_process(delta)
 	
+	print("++++++++++++++++++++++++++++++++++++++++++
+	Acceleration : 
+	Direction = " + str(acceleration.normalized()) + "
+	Magnitude = " + str(acceleration.length()))
 	
-	#print("velocite :" + str(velocite))
-	#print("position :" + str(position))
+	if velocite.length() != 0.0 :
+		frottements._frottement_process(delta, velocite + acceleration)
+	
 	velocite += acceleration
+	
+	print("=============================================
+	Velocite : 
+	Direction = " + str(velocite.normalized()) + "
+	Magnitude = " + str(velocite.length()))
+	
 	velocity = velocite
 	move_and_slide()
 	acceleration = Vector3(0.0,0.0,0.0)

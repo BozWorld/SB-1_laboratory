@@ -1,7 +1,7 @@
 extends Attribut3D
 
-var coef : float = 0.1
-var aerodynamisme : float = 1.0
+var coef : float = 0.8
+var surface : float = 1.0
 var densite : float = 1.0
 
 
@@ -12,6 +12,12 @@ func _ready() -> void:
 
 func _frottement_process(delta, velocite : Vector3):
 	var frot_direction = -velocite.normalized()
-	var frot_mag = velocite.length()**2.0 * coef * aerodynamisme * densite
-	var frottement = frot_direction * frot_mag * delta
+	
+	var frot_mag = velocite.length() * velocite.length() * coef * surface * densite * delta
+	
+	var frottement = frot_direction * frot_mag
 	parent.appliquer_force(frottement)
+	print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+	Frottements : 
+	Direction = " + str(frot_direction) + "
+	Magnitude = " + str(frot_mag))

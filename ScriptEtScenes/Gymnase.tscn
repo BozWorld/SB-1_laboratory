@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://ScriptEtScenes/debug_flexion.gd" id="6_dc8wv"]
 [ext_resource type="Script" path="res://ScriptEtScenes/debug_v_push.gd" id="7_bhlbf"]
 [ext_resource type="Script" path="res://ScriptEtScenes/DebugStates.gd" id="7_h2lxa"]
-[ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/deplacements.gd" id="7_p50mk"]
+[ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/avancer.gd" id="7_p50mk"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/regarder.gd" id="9_3tdo0"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/frottement_fluide.gd" id="11_uxxqo"]
 
@@ -277,7 +277,7 @@ mesh = SubResource("BoxMesh_rwsqw")
 shape = SubResource("ConcavePolygonShape3D_eyeac")
 
 [node name="Perso" type="CharacterBody3D" parent="." node_paths=PackedStringArray("camera")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16795, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("3_vfk10")
 camera = NodePath("Regarder/HPivot/VPivot/Camera3D")
 
@@ -368,7 +368,7 @@ sensibilite = 0.005
 [node name="VPivot" type="Node3D" parent="Perso/Regarder/HPivot"]
 
 [node name="Camera3D" type="Camera3D" parent="Perso/Regarder/HPivot/VPivot"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.646196, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.646196, 0)
 
 [node name="Etats" type="Node" parent="Perso"]
 script = ExtResource("6_885ur")
@@ -395,7 +395,7 @@ text = "[font_size=40][color=purple]<etat>"
 scroll_active = false
 script = ExtResource("7_h2lxa")
 
-[node name="Attribut3D" type="Node3D" parent="Perso"]
+[node name="FrottementsFluide" type="Node3D" parent="Perso"]
 script = ExtResource("11_uxxqo")
 
 [node name="Pnj" type="RigidBody3D" parent="."]

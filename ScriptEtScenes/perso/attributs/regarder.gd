@@ -14,7 +14,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			horizontal_input = - event.relative.x * sensibilite
-			vertical_input = event.relative.y * sensibilite
+			vertical_input = - event.relative.y * sensibilite
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
