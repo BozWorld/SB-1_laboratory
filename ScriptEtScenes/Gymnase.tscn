@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://in7c14sa3eu8"]
+[gd_scene load_steps=32 format=3 uid="uid://in7c14sa3eu8"]
 
 [ext_resource type="Script" path="res://ScriptEtScenes/CycleJourNuit.gd" id="1_x6mxa"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso.gd" id="3_vfk10"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/frottement_fluide.gd" id="11_uxxqo"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/frottement_statique.gd" id="12_gpt6a"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/frein.gd" id="13_ah2y6"]
+[ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/nouveau_deplacement.gd" id="14_ic51s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8xcm"]
 sky_top_color = Color(0.703314, 0.45815, 1, 1)
@@ -428,6 +429,9 @@ script = ExtResource("12_gpt6a")
 
 [node name="Frein" type="Node3D" parent="Perso"]
 script = ExtResource("13_ah2y6")
+
+[node name="Deplacement" type="Node3D" parent="Perso"]
+script = ExtResource("14_ic51s")
 
 [node name="Pnj" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16795, 5.53554)
