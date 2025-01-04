@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://in7c14sa3eu8"]
+[gd_scene load_steps=30 format=3 uid="uid://in7c14sa3eu8"]
 
 [ext_resource type="Script" path="res://ScriptEtScenes/CycleJourNuit.gd" id="1_x6mxa"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso.gd" id="3_vfk10"]
@@ -8,11 +8,9 @@
 [ext_resource type="Script" path="res://ScriptEtScenes/debug_flexion.gd" id="6_dc8wv"]
 [ext_resource type="Script" path="res://ScriptEtScenes/debug_v_push.gd" id="7_bhlbf"]
 [ext_resource type="Script" path="res://ScriptEtScenes/DebugStates.gd" id="7_h2lxa"]
-[ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/avancer.gd" id="7_p50mk"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/regarder.gd" id="9_3tdo0"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/frottement_fluide.gd" id="11_uxxqo"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/frottement_statique.gd" id="12_gpt6a"]
-[ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/frein.gd" id="13_ah2y6"]
 [ext_resource type="Script" path="res://ScriptEtScenes/perso/attributs/nouveau_deplacement.gd" id="14_ic51s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8xcm"]
@@ -294,46 +292,25 @@ mesh = SubResource("BoxMesh_rwsqw")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LD/Bloc de Blocs5/Bloc 4"]
 shape = SubResource("ConcavePolygonShape3D_eyeac")
 
-[node name="Perso" type="CharacterBody3D" parent="." node_paths=PackedStringArray("camera")]
+[node name="PersoBody" type="CharacterBody3D" parent="." node_paths=PackedStringArray("camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("3_vfk10")
 camera = NodePath("Regarder/HPivot/VPivot/Camera3D")
 
-[node name="Avant" type="MeshInstance3D" parent="Perso"]
+[node name="Avant" type="MeshInstance3D" parent="PersoBody"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -3.65244)
 mesh = SubResource("BoxMesh_1n6wi")
 
-[node name="Mesh" type="MeshInstance3D" parent="Perso"]
+[node name="Mesh" type="MeshInstance3D" parent="PersoBody"]
 mesh = SubResource("CapsuleMesh_i5khn")
 
-[node name="Collision" type="CollisionShape3D" parent="Perso"]
+[node name="Collision" type="CollisionShape3D" parent="PersoBody"]
 shape = SubResource("CapsuleShape3D_051rp")
 
-[node name="Avancer" type="Node3D" parent="Perso"]
-script = ExtResource("7_p50mk")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Perso/Avancer"]
-offset_right = 487.0
-offset_bottom = 58.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Perso/Avancer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[font_size=40][color=yellow]Vitesse :"
-
-[node name="CompteurVitesse" type="RichTextLabel" parent="Perso/Avancer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[font_size=40][color=yellow]<vitesse>"
-scroll_active = false
-script = ExtResource("4_ur1ov")
-
-[node name="Saut" type="Node3D" parent="Perso"]
+[node name="Saut" type="Node3D" parent="PersoBody"]
 script = ExtResource("4_3j17j")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Perso/Saut"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PersoBody/Saut"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -341,13 +318,13 @@ offset_left = -487.0
 offset_bottom = 58.0
 grow_horizontal = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Perso/Saut/HBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PersoBody/Saut/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[font_size=40][color=red]Flexion :"
 
-[node name="DebugFlexion" type="RichTextLabel" parent="Perso/Saut/HBoxContainer"]
+[node name="DebugFlexion" type="RichTextLabel" parent="PersoBody/Saut/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
@@ -355,7 +332,7 @@ text = "[font_size=40][color=red]<flexion>"
 scroll_active = false
 script = ExtResource("6_dc8wv")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Perso/Saut"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="PersoBody/Saut"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -366,13 +343,13 @@ offset_top = -58.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Perso/Saut/HBoxContainer2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PersoBody/Saut/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[font_size=30][color=green]Derniere VForce :"
 
-[node name="DebugVPush" type="RichTextLabel" parent="Perso/Saut/HBoxContainer2"]
+[node name="DebugVPush" type="RichTextLabel" parent="PersoBody/Saut/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
@@ -381,25 +358,25 @@ scroll_active = false
 autowrap_mode = 2
 script = ExtResource("7_bhlbf")
 
-[node name="Regarder" type="Node3D" parent="Perso"]
+[node name="Regarder" type="Node3D" parent="PersoBody"]
 script = ExtResource("9_3tdo0")
 sensibilite = 0.005
 
-[node name="HPivot" type="Node3D" parent="Perso/Regarder"]
+[node name="HPivot" type="Node3D" parent="PersoBody/Regarder"]
 
-[node name="VPivot" type="Node3D" parent="Perso/Regarder/HPivot"]
+[node name="VPivot" type="Node3D" parent="PersoBody/Regarder/HPivot"]
 
-[node name="Camera3D" type="Camera3D" parent="Perso/Regarder/HPivot/VPivot"]
+[node name="Camera3D" type="Camera3D" parent="PersoBody/Regarder/HPivot/VPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.646196, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Perso/Regarder/HPivot/VPivot"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PersoBody/Regarder/HPivot/VPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.919504, -2.76532)
 mesh = SubResource("SphereMesh_8qewg")
 
-[node name="Etats" type="Node" parent="Perso"]
+[node name="Etats" type="Node" parent="PersoBody"]
 script = ExtResource("6_885ur")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Perso/Etats"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PersoBody/Etats"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -407,13 +384,13 @@ offset_top = -58.0
 offset_right = 487.0
 grow_vertical = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Perso/Etats/HBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PersoBody/Etats/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[font_size=40][color=purple]Etat :"
 
-[node name="DebugStates" type="RichTextLabel" parent="Perso/Etats/HBoxContainer"]
+[node name="DebugStates" type="RichTextLabel" parent="PersoBody/Etats/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
@@ -421,17 +398,32 @@ text = "[font_size=40][color=purple]<etat>"
 scroll_active = false
 script = ExtResource("7_h2lxa")
 
-[node name="FrottementFluide" type="Node3D" parent="Perso"]
+[node name="FrottementFluide" type="Node3D" parent="PersoBody"]
 script = ExtResource("11_uxxqo")
 
-[node name="FrottementStatique" type="Node3D" parent="Perso"]
-script = ExtResource("12_gpt6a")
-
-[node name="Frein" type="Node3D" parent="Perso"]
-script = ExtResource("13_ah2y6")
-
-[node name="Deplacement" type="Node3D" parent="Perso"]
+[node name="Deplacement" type="Node3D" parent="PersoBody"]
 script = ExtResource("14_ic51s")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PersoBody/Deplacement"]
+offset_right = 487.0
+offset_bottom = 58.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PersoBody/Deplacement/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=40][color=yellow]Vitesse :"
+
+[node name="CompteurVitesse" type="RichTextLabel" parent="PersoBody/Deplacement/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=40][color=yellow]<vitesse>"
+scroll_active = false
+script = ExtResource("4_ur1ov")
+
+[node name="FrottementStatique" type="Node3D" parent="PersoBody/Deplacement"]
+script = ExtResource("12_gpt6a")
 
 [node name="Pnj" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16795, 5.53554)
