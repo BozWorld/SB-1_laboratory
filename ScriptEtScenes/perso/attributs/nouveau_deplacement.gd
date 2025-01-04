@@ -1,10 +1,11 @@
 extends Attribut3D
 
 # seconde entre chaque pas
-var delai_pas : float = 0.15
+var delai_pas : float = 0.2
 # Puissance des impulsions
 var puissance_pas : float = 0.0
 
+var momentum_boost := 0.0
 
 var clicked := false
 
@@ -18,6 +19,11 @@ var sous_cd := false
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("bougerAVANT"):
 		clicked = true
+		if parent.momentum.h_momentum_stored and parent.machine_etats.get_state() != parent.machine_etats.states.cours :
+			momentum_boost = parent.momentum._liberer_h_momentum()
+			print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+			Momentum horizontal libéré !
+			Puissance : " + str(momentum_boost))
 	elif Input.is_action_just_released("bougerAVANT"):
 		clicked = false
 	
@@ -35,19 +41,25 @@ func _deplacement_process():
 	if !sous_cd :
 		if clicked :
 			puissance_pas = 1.0
-			delai_pas = 0.15
+			delai_pas = 0.2
 			if sprint :
 				puissance_pas = 2.0
-			elif marche :
+			if marche :
 				puissance_pas = 0.0
 				if parent.velocite.length() < 1.2 :
 					puissance_pas = 0.6
+			elif momentum_boost != 0.0 :
+				puissance_pas += momentum_boost
+				print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+				Momentum horizontal dépensé !
+				Puissance : " + str(momentum_boost))
+				momentum_boost = 0.0
 			
 			pas(orientation_avant(), puissance_pas)
 		
 		elif parent.machine_etats.get_state() == parent.machine_etats.states.cours :
 			if parent.velocite.length() > 0.5 :
-				delai_pas = 0.15
+				delai_pas = 0.2
 				puissance_pas = 1.0
 				pas(-parent.velocite.normalized(), puissance_pas)
 			else :

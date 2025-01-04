@@ -11,7 +11,7 @@ func _appliquer_frottement(velocite : Vector3 = parent.velocite + parent.acceler
 	
 	var frottement = frot_direction * frot_mag
 	parent.appliquer_force(frottement)
-	print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-	Frottement Statique : 
-	Direction = " + str(frot_direction) + "
-	Magnitude = " + str(frot_mag))
+	#print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+	#Frottement Statique : 
+	#Direction = " + str(frot_direction) + "
+	#Magnitude = " + str(frot_mag))

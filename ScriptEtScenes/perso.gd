@@ -14,6 +14,7 @@ var acceleration : Vector3
 @onready var frottement_fluide = $FrottementFluide
 @onready var frottement_statique = $FrottementStatique
 @onready var regarder = $Regarder
+@onready var momentum = $Momentum
 
 @export var camera : Camera3D
 
@@ -43,10 +44,10 @@ func _physics_process(delta: float) -> void:
 	saut._saut_process(delta)
 	deplacement._deplacement_process()
 	
-	print("++++++++++++++++++++++++++++++++++++++++++
-	Acceleration : 
-	Direction = " + str(acceleration.normalized()) + "
-	Magnitude = " + str(acceleration.length()))
+	#print("++++++++++++++++++++++++++++++++++++++++++
+	#Acceleration : 
+	#Direction = " + str(acceleration.normalized()) + "
+	#Magnitude = " + str(acceleration.length()))
 	
 	if machine_etats.get_state() != machine_etats.states.attend :
 		frottement_fluide._frottement_process(delta, velocite + acceleration)
@@ -54,11 +55,16 @@ func _physics_process(delta: float) -> void:
 	
 	velocite += acceleration
 	
-	print("=============================================
-	Velocite : 
-	Direction = " + str(velocite.normalized()) + "
-	Magnitude = " + str(velocite.length()))
+	#print("=============================================
+	#Velocite : 
+	#Direction = " + str(velocite.normalized()) + "
+	#Magnitude = " + str(velocite.length()))
 	
 	velocity = velocite
+	#move_and_slide()
 	move_and_slide()
+	
+	if velocite != velocity :
+		momentum.store_momentum(velocite - velocity)
+		velocite = velocity
 	acceleration = Vector3(0.0,0.0,0.0)

@@ -11,7 +11,7 @@ func _frottement_process(delta, velocite : Vector3):
 	
 	var frottement = frot_direction * frot_mag
 	parent.appliquer_force(frottement)
-	print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-	Frottement Fluide : 
-	Direction = " + str(frot_direction) + "
-	Magnitude = " + str(frot_mag))
+	#print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+	#Frottement Fluide : 
+	#Direction = " + str(frot_direction) + "
+	#Magnitude = " + str(frot_mag))
