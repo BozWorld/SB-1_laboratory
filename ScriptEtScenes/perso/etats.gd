@@ -114,7 +114,9 @@ func _get_transition(delta):
 				return states.attend
 			elif parent.velocite.y >= 0.0:
 				return states.saute
-
+		_ :
+			return states.attend
+			
 func _enter_state(new_state, old_state):
 	$HBoxContainer/DebugStates._changement_etat(states.find_key(new_state))
 
