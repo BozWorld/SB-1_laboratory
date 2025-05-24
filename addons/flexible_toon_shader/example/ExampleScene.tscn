@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://da74txwrsqa5p"]
 
 [ext_resource type="Material" uid="uid://konhnqnbl47a" path="res://addons/flexible_toon_shader/example/CupMaterial.tres" id="2_3wc78"]
-[ext_resource type="ArrayMesh" uid="uid://dseolga3h4nvk" path="res://addons/flexible_toon_shader/example/cup.obj" id="3"]
+[ext_resource type="ArrayMesh" uid="uid://cwqftb8djmn1g" path="res://addons/flexible_toon_shader/example/cup.obj" id="3"]
 [ext_resource type="Material" uid="uid://dgkqgl3vfek6v" path="res://addons/flexible_toon_shader/example/CupMaterialHatch.tres" id="3_l7y6w"]
 
 [sub_resource type="Environment" id="1"]

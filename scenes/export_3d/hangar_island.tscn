@@ -1,6 +1,6 @@
 [gd_scene load_steps=500 format=4 uid="uid://cumecpt86pmsv"]
 
-[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="1_5dlge"]
+[ext_resource type="Shader" uid="uid://bodf81uwqr0il" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="1_5dlge"]
 [ext_resource type="Material" uid="uid://bb43ngplsfis2" path="res://addons/flexible_toon_shader/FlexibleToonMaterial.tres" id="2_mbp8p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fp1r6"]

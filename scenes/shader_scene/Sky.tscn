@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://domk2ccvnlllu"]
 
-[ext_resource type="Shader" path="res://assets/materials_textures/shader_script/sky.gdshader" id="1_ib8j5"]
+[ext_resource type="Shader" uid="uid://bu2shn60caxsn" path="res://assets/materials_textures/shader_script/sky.gdshader" id="1_ib8j5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cpo44"]
 shader = ExtResource("1_ib8j5")

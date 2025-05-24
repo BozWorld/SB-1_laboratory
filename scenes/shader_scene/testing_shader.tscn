@@ -1,12 +1,12 @@
 [gd_scene load_steps=511 format=4 uid="uid://caold8bj2wf77"]
 
 [ext_resource type="PackedScene" uid="uid://xax8sl4yuieh" path="res://scenes/shader_scene/Water.tscn" id="1_ycitl"]
-[ext_resource type="Shader" path="res://assets/materials_textures/shader_script/sky.gdshader" id="2_suo3e"]
-[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="3_x8rlw"]
+[ext_resource type="Shader" uid="uid://bu2shn60caxsn" path="res://assets/materials_textures/shader_script/sky.gdshader" id="2_suo3e"]
+[ext_resource type="Shader" uid="uid://bodf81uwqr0il" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="3_x8rlw"]
 [ext_resource type="Material" uid="uid://bb43ngplsfis2" path="res://addons/flexible_toon_shader/FlexibleToonMaterial.tres" id="4_igt68"]
 [ext_resource type="PackedScene" uid="uid://c8jmrou3lrf42" path="res://scenes/prefab/player/Player.tscn" id="5_0w74w"]
-[ext_resource type="Script" path="res://code/camera/camera_behaviour.gd" id="6_phhuw"]
-[ext_resource type="Shader" path="res://assets/materials_textures/shader_script/outline.gdshader" id="7_5ered"]
+[ext_resource type="Script" uid="uid://bm66dal6tgpw" path="res://code/camera/camera_behaviour.gd" id="6_phhuw"]
+[ext_resource type="Shader" uid="uid://cr0pnif48osyv" path="res://assets/materials_textures/shader_script/outline.gdshader" id="7_5ered"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ada6a"]
 size = Vector3(2000, 0.44, 2000)

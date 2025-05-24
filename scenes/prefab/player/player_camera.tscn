@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dm5lhvqbrguch"]
 
 [ext_resource type="PackedScene" uid="uid://c8jmrou3lrf42" path="res://scenes/prefab/player/Player.tscn" id="1_rbxbi"]
-[ext_resource type="Script" path="res://code/camera/camera_behaviour.gd" id="2_cq8nt"]
+[ext_resource type="Script" uid="uid://bm66dal6tgpw" path="res://code/camera/camera_behaviour.gd" id="2_cq8nt"]
 
 [node name="PlayerCamera" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32346, 0)

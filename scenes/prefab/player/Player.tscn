@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c8jmrou3lrf42"]
 
-[ext_resource type="Script" path="res://code/game_objects/player.gd" id="1_l1kis"]
+[ext_resource type="Script" uid="uid://b0vdmhyuv25u3" path="res://code/game_objects/player.gd" id="1_l1kis"]
 [ext_resource type="PackedScene" uid="uid://cu5bpfol8vxis" path="res://scenes/prefab/player/avion.tscn" id="2_nggsg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ncr5"]

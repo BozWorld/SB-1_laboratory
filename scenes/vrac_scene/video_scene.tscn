@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cfvp4i8nb8756"]
 
 [ext_resource type="PackedScene" uid="uid://cumecpt86pmsv" path="res://scenes/export_3d/hangar_island.tscn" id="1_nd7tl"]
-[ext_resource type="Script" path="res://scenes/export_3d/rot_scrip.gd" id="2_x37p6"]
+[ext_resource type="Script" uid="uid://bq4o6v4li1xh4" path="res://scenes/export_3d/rot_scrip.gd" id="2_x37p6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6lp5s"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

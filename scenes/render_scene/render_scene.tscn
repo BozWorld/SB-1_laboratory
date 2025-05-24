@@ -1,6 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://crislcuscwdp1"]
+[gd_scene load_steps=13 format=4 uid="uid://clu8kufs86olu"]
 
-[ext_resource type="Script" uid="uid://mkudcjjn33u8" path="res://code/game_objects/spawn_testing.gd" id="1_6iyon"]
+[ext_resource type="Script" uid="uid://mkudcjjn33u8" path="res://code/game_objects/spawn_testing.gd" id="1_g07yy"]
+[ext_resource type="PackedScene" uid="uid://cumecpt86pmsv" path="res://scenes/export_3d/hangar_island.tscn" id="2_7u6o8"]
+[ext_resource type="PackedScene" uid="uid://xax8sl4yuieh" path="res://scenes/shader_scene/Water.tscn" id="3_jqma4"]
+[ext_resource type="PackedScene" uid="uid://c8jmrou3lrf42" path="res://scenes/prefab/player/Player.tscn" id="4_sj203"]
+[ext_resource type="Script" uid="uid://bm66dal6tgpw" path="res://code/camera/camera_behaviour.gd" id="5_dl64t"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yfo1h"]
 
@@ -57,24 +61,263 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_l1mf0")
 
-[node name="spawn_testing" type="Node3D"]
-script = ExtResource("1_6iyon")
+[node name="Node3D" type="Node3D"]
+
+[node name="spawn_testing" type="Node3D" parent="."]
+script = ExtResource("1_g07yy")
+island_count = 51
 array = SubResource("ArrayMesh_yfo1h")
 color = Color(1.64, 0, 0, 1)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="spawn_testing"]
 environment = SubResource("Environment_qhrr1")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="spawn_testing"]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 90.405, 0)
-
-[node name="terrain" type="Node3D" parent="."]
+[node name="terrain" type="Node3D" parent="spawn_testing"]
 visible = false
 
-[node name="basic_terrain" type="MeshInstance3D" parent="terrain"]
+[node name="basic_terrain" type="MeshInstance3D" parent="spawn_testing/terrain"]
 mesh = SubResource("ArrayMesh_wka36")
 skeleton = NodePath("")
+
+[node name="hangar_island" parent="." instance=ExtResource("2_7u6o8")]
+
+[node name="tree" parent="hangar_island/tree_group" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="tree_002" parent="hangar_island/tree_group" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="tree_003" parent="hangar_island/tree_group" index="3"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="tree_004" parent="hangar_island/tree_group" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="tree_005" parent="hangar_island/tree_group" index="5"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="rock" parent="hangar_island/rock_ground" index="0"]
+surface_material_override/0 = null
+
+[node name="rock_001" parent="hangar_island/rock_ground" index="1"]
+surface_material_override/0 = null
+
+[node name="rock_002" parent="hangar_island/rock_ground" index="2"]
+surface_material_override/0 = null
+
+[node name="rock_004" parent="hangar_island/rock_ground" index="4"]
+surface_material_override/0 = null
+
+[node name="rock_005" parent="hangar_island/rock_ground" index="5"]
+surface_material_override/0 = null
+
+[node name="rock_006" parent="hangar_island/rock_ground" index="6"]
+surface_material_override/0 = null
+
+[node name="rock_007" parent="hangar_island/rock_ground" index="7"]
+surface_material_override/0 = null
+
+[node name="rock_008" parent="hangar_island/rock_ground" index="8"]
+surface_material_override/0 = null
+
+[node name="rock_009" parent="hangar_island/rock_ground" index="9"]
+surface_material_override/0 = null
+
+[node name="large_rock_3" parent="hangar_island/rock_ground" index="11"]
+surface_material_override/0 = null
+
+[node name="herbs_003" parent="hangar_island/herb_group" index="69"]
+surface_material_override/0 = null
+
+[node name="herbs_004" parent="hangar_island/herb_group" index="70"]
+surface_material_override/0 = null
+
+[node name="herbs_005" parent="hangar_island/herb_group" index="71"]
+surface_material_override/0 = null
+
+[node name="herbs_006" parent="hangar_island/herb_group" index="72"]
+surface_material_override/0 = null
+
+[node name="herbs_007" parent="hangar_island/herb_group" index="73"]
+surface_material_override/0 = null
+
+[node name="herbs_008" parent="hangar_island/herb_group" index="74"]
+surface_material_override/0 = null
+
+[node name="herbs_009" parent="hangar_island/herb_group" index="75"]
+surface_material_override/0 = null
+
+[node name="herbs_010" parent="hangar_island/herb_group" index="76"]
+surface_material_override/0 = null
+
+[node name="herbs_011" parent="hangar_island/herb_group" index="77"]
+surface_material_override/0 = null
+
+[node name="herbs_015" parent="hangar_island/herb_group" index="81"]
+surface_material_override/0 = null
+
+[node name="herbs_016" parent="hangar_island/herb_group" index="82"]
+surface_material_override/0 = null
+
+[node name="herbs_017" parent="hangar_island/herb_group" index="83"]
+surface_material_override/0 = null
+
+[node name="herbs_018" parent="hangar_island/herb_group" index="84"]
+surface_material_override/0 = null
+
+[node name="herbs_019" parent="hangar_island/herb_group" index="85"]
+surface_material_override/0 = null
+
+[node name="herbs_020" parent="hangar_island/herb_group" index="86"]
+surface_material_override/0 = null
+
+[node name="herbs_023" parent="hangar_island/herb_group" index="89"]
+surface_material_override/0 = null
+
+[node name="herbs_026" parent="hangar_island/herb_group" index="92"]
+surface_material_override/0 = null
+
+[node name="herbs_049" parent="hangar_island/herb_group" index="115"]
+surface_material_override/0 = null
+
+[node name="herbs_051" parent="hangar_island/herb_group" index="117"]
+surface_material_override/0 = null
+
+[node name="herbs_052" parent="hangar_island/herb_group" index="118"]
+surface_material_override/0 = null
+
+[node name="herbs_053" parent="hangar_island/herb_group" index="119"]
+surface_material_override/0 = null
+
+[node name="herbs_054" parent="hangar_island/herb_group" index="120"]
+surface_material_override/0 = null
+
+[node name="herbs_055" parent="hangar_island/herb_group" index="121"]
+surface_material_override/0 = null
+
+[node name="herbs_056" parent="hangar_island/herb_group" index="122"]
+surface_material_override/0 = null
+
+[node name="herbs_057" parent="hangar_island/herb_group" index="123"]
+surface_material_override/0 = null
+
+[node name="herbs_058" parent="hangar_island/herb_group" index="124"]
+surface_material_override/0 = null
+
+[node name="herbs_059" parent="hangar_island/herb_group" index="125"]
+surface_material_override/0 = null
+
+[node name="herbs_061" parent="hangar_island/herb_group" index="127"]
+surface_material_override/0 = null
+
+[node name="herbs_062" parent="hangar_island/herb_group" index="128"]
+surface_material_override/0 = null
+
+[node name="herbs_063" parent="hangar_island/herb_group" index="129"]
+surface_material_override/0 = null
+
+[node name="herbs_065" parent="hangar_island/herb_group" index="131"]
+surface_material_override/0 = null
+
+[node name="radio_tower" parent="hangar_island/radio_tower_group" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="recepteur" parent="hangar_island/radio_tower_group" index="1"]
+surface_material_override/0 = null
+
+[node name="recepteur_001" parent="hangar_island/radio_tower_group" index="2"]
+surface_material_override/0 = null
+
+[node name="recepteur_002" parent="hangar_island/radio_tower_group" index="3"]
+surface_material_override/0 = null
+
+[node name="recepteur_003" parent="hangar_island/radio_tower_group" index="4"]
+surface_material_override/0 = null
+
+[node name="support_hangar" parent="hangar_island/hangar_group" index="0"]
+surface_material_override/0 = null
+
+[node name="support_hanger_2" parent="hangar_island/hangar_group" index="1"]
+surface_material_override/0 = null
+
+[node name="hangar" parent="hangar_island/hangar_group" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="hangar_support" parent="hangar_island/hangar_group" index="3"]
+surface_material_override/0 = null
+
+[node name="poutre_hangar_1" parent="hangar_island/hangar_group" index="4"]
+surface_material_override/0 = null
+
+[node name="poutre_hangar_2" parent="hangar_island/hangar_group" index="5"]
+surface_material_override/0 = null
+
+[node name="poutre_hangar_2_001" parent="hangar_island/hangar_group" index="6"]
+surface_material_override/0 = null
+
+[node name="colis_002" parent="hangar_island/hangar_help" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="colis_004" parent="hangar_island/hangar_help" index="2"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="colis_005" parent="hangar_island/hangar_help" index="4"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="colis_006" parent="hangar_island/hangar_help" index="5"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="barrel" parent="hangar_island/hangar_help" index="6"]
+surface_material_override/0 = null
+
+[node name="barrel_001" parent="hangar_island/hangar_help" index="7"]
+surface_material_override/0 = null
+
+[node name="barrel_002" parent="hangar_island/hangar_help" index="8"]
+surface_material_override/0 = null
+
+[node name="barrel_003" parent="hangar_island/hangar_help" index="9"]
+surface_material_override/0 = null
+
+[node name="barrel_004" parent="hangar_island/hangar_help" index="10"]
+surface_material_override/0 = null
+
+[node name="water_plane" parent="." instance=ExtResource("3_jqma4")]
+transform = Transform3D(20, 0, 0, 0, 0.16, 0, 0, 0, 20, 0, -0.957221, 0)
+
+[node name="PlayerCamera" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9095, 0.624499, 0.0468311)
+
+[node name="player" parent="PlayerCamera" instance=ExtResource("4_sj203")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28, 0)
+
+[node name="camera" type="Camera3D" parent="PlayerCamera"]
+transform = Transform3D(1, 0, 0, 0, 0.962218, 0.27228, 0, -0.27228, 0.962218, 1.165, 6.44654, 9)
+visible = false
+near = 0.001
+script = ExtResource("5_dl64t")
+target_path = NodePath("../player")
+offset = Vector3(0, 4, 8)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.366501, -0.469421, 0.803319, 0, 0.863396, 0.504528, -0.930418, 0.18491, -0.316435, 17.584, 9.654, -9.058)
+
+[editable path="hangar_island"]
+[editable path="water_plane"]

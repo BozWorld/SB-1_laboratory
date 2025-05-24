@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://t4t5f4m35fel"]
 
 [ext_resource type="PackedScene" uid="uid://xax8sl4yuieh" path="res://scenes/shader_scene/Water.tscn" id="1_5fsco"]
-[ext_resource type="Shader" path="res://assets/materials_textures/shader_script/sky.gdshader" id="2_w0ktn"]
+[ext_resource type="Shader" uid="uid://bu2shn60caxsn" path="res://assets/materials_textures/shader_script/sky.gdshader" id="2_w0ktn"]
 [ext_resource type="PackedScene" uid="uid://cumecpt86pmsv" path="res://scenes/export_3d/hangar_island.tscn" id="3_8p6rh"]
 [ext_resource type="PackedScene" uid="uid://bxepohx1mumkt" path="res://scenes/export_3d/avion.tscn" id="4_mjb6e"]
 
