@@ -3,13 +3,13 @@ class_name NoCObjet
 
 var acceleration : Vector3
 var velocite : Vector3
-var masse = 1.0
+@export var masse = 1.0
 
-func appliquer_force(force : Vector3):
+func appliquerForce(force : Vector3):
 	force = force/masse
 	acceleration += force
 
-func bouger():
+func _bouger():
 	velocite += acceleration
 	position += velocite
 	acceleration = acceleration * 0

@@ -10,5 +10,5 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var distance_centre = (Vector3(0,0,0)-position)
 	var attraction = distance_centre.normalized() * distance_centre.length() * delta
-	appliquer_force(attraction)
-	bouger()
+	appliquerForce(attraction)
+	_bouger()
