@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://3kl7ahlhcv5j"]
 
-[ext_resource type="Texture2D" uid="uid://deujwnkipmgeu" path="res://visual/vghfts919ka51.png" id="1_01g8r"]
+[ext_resource type="Texture2D" uid="uid://dyy1mxsni61eg" path="res://visual/gdstyle-naming-convention-and-code-order-cheat-sheet-i-made-v0-fja8svy2b9y91.webp" id="1_ov5n2"]
 
 [node name="NamingConventionSource" type="Control"]
 layout_mode = 3
@@ -14,4 +14,4 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 1080.0
 offset_bottom = 1443.0
-texture = ExtResource("1_01g8r")
+texture = ExtResource("1_ov5n2")

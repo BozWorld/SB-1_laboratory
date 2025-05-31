@@ -1,1 +1,0 @@
-SB-1 Laboratory compiles Godot prototypes, tools, and features for experimentation, learning, and knowledge-sharing. Our small team collaborates in a shared Git repository, with each branch focusing on specific research topics.
