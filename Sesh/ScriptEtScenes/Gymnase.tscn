@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=3 uid="uid://in7c14sa3eu8"]
 
-[ext_resource type="Script" uid="uid://bvui5ldvc4pe4" path="res://Sesh/ScriptEtScenes/CycleJourNuit.gd" id="1_x6mxa"]
+[ext_resource type="Script" uid="uid://bq15qbaawmuhx" path="res://Sesh/ScriptEtScenes/jour_nuit.gd" id="1_nhrhw"]
 [ext_resource type="Script" uid="uid://co4dm4cktxger" path="res://Sesh/ScriptEtScenes/perso.gd" id="3_vfk10"]
 [ext_resource type="Script" uid="uid://bxqpinlxgpi7h" path="res://Sesh/ScriptEtScenes/perso/attributs/saut.gd" id="4_3j17j"]
 [ext_resource type="Script" uid="uid://s3t1yqhricie" path="res://Sesh/ScriptEtScenes/DebugVitesse.gd" id="4_ur1ov"]
@@ -30,6 +30,8 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qv82l"]
+transparency = 1
+cull_mode = 2
 albedo_color = Color(0.215686, 0.227451, 0.227451, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7jd3x"]
@@ -76,13 +78,16 @@ material = SubResource("StandardMaterial3D_lg86d")
 
 [node name="Gymnase" type="Node3D"]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866024, -0.433016, 0.250001, 0.047932, 0.425798, 0.903548, -0.4977, 0.794477, -0.347996, 0, 0, 0)
+[node name="JourNuit" type="Node3D" parent="."]
+script = ExtResource("1_nhrhw")
+vitesse = 10.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="JourNuit"]
+transform = Transform3D(-0.866024, -0.433016, 0.25, 0.047932, 0.425798, 0.903548, -0.4977, 0.794477, -0.347996, 0, 0, 0)
 light_color = Color(1, 0.886331, 0.832077, 1)
 shadow_enabled = true
-script = ExtResource("1_x6mxa")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="JourNuit"]
 environment = SubResource("Environment_0d32p")
 
 [node name="LD" type="Node3D" parent="."]
