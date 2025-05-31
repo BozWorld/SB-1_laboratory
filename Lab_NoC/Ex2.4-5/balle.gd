@@ -19,7 +19,7 @@ func check_collision():
 func _coup_de_vent(origine_vent : Vector3):
 	var vent = position - origine_vent
 	vent = vent.normalized()
-	appliquer_force(vent)
+	appliquerForce(vent)
 
 
 
@@ -32,5 +32,5 @@ func _process(delta: float) -> void:
 	
 	_frottement()
 	check_collision()
-	bouger()
+	_bouger()
 	
