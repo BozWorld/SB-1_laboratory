@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ccm77b24gunoi"
-path="res://.godot/imported/orque fin rigg.glb-6def6e6b66560d7f9c1a893f36000e28.scn"
+path="res://.godot/imported/orque fin rigg.glb-9a9a8b186b8e18529fc8146ef407cdaa.scn"
 
 [deps]
 
-source_file="res://Asset/orque fin rigg.glb"
-dest_files=["res://.godot/imported/orque fin rigg.glb-6def6e6b66560d7f9c1a893f36000e28.scn"]
+source_file="res://Assets/orque fin rigg.glb"
+dest_files=["res://.godot/imported/orque fin rigg.glb-9a9a8b186b8e18529fc8146ef407cdaa.scn"]
 
 [params]
 

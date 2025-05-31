@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c30p6a5i6nimj"
-path.s3tc="res://.godot/imported/orque fin rigg_Diffuse Texture.png-1f125fb6dec92cc242bd4d26e0892085.s3tc.ctex"
+uid="uid://cjbys5j345q36"
+path.s3tc="res://.godot/imported/rigg 2 applati_Diffuse Texture.png-a626f68c771e6cc8d2ca66f0191d63c9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Asset/orque fin rigg_Diffuse Texture.png"
-dest_files=["res://.godot/imported/orque fin rigg_Diffuse Texture.png-1f125fb6dec92cc242bd4d26e0892085.s3tc.ctex"]
+source_file="res://Assets/rigg 2 applati_Diffuse Texture.png"
+dest_files=["res://.godot/imported/rigg 2 applati_Diffuse Texture.png-a626f68c771e6cc8d2ca66f0191d63c9.s3tc.ctex"]
 
 [params]
 

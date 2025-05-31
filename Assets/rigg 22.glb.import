@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b1u673l27fv46"
-path="res://.godot/imported/rigg 2 applati.glb-f45db33031d047966ec2dcfdcc7e06a0.scn"
+uid="uid://dr2wfrh0e41kx"
+path="res://.godot/imported/rigg 22.glb-c9f8e2200e2c3b901c5d5e1ae64b485f.scn"
 
 [deps]
 
-source_file="res://Asset/rigg 2 applati.glb"
-dest_files=["res://.godot/imported/rigg 2 applati.glb-f45db33031d047966ec2dcfdcc7e06a0.scn"]
+source_file="res://Assets/rigg 22.glb"
+dest_files=["res://.godot/imported/rigg 22.glb-c9f8e2200e2c3b901c5d5e1ae64b485f.scn"]
 
 [params]
 

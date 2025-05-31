@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8t2k1s0g61kh"
-path.s3tc="res://.godot/imported/rigg 22_Diffuse Texture.png-1e36a4c62e09ae7b0a2d0f795656cf04.s3tc.ctex"
+path.s3tc="res://.godot/imported/rigg 22_Diffuse Texture.png-c203531f44683927ee1b6c8f24f46d13.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Asset/rigg 22_Diffuse Texture.png"
-dest_files=["res://.godot/imported/rigg 22_Diffuse Texture.png-1e36a4c62e09ae7b0a2d0f795656cf04.s3tc.ctex"]
+source_file="res://Assets/rigg 22_Diffuse Texture.png"
+dest_files=["res://.godot/imported/rigg 22_Diffuse Texture.png-c203531f44683927ee1b6c8f24f46d13.s3tc.ctex"]
 
 [params]
 
