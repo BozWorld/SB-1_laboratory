@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c3bk7m1t27by4"]
 
-[ext_resource type="Script" path="res://Script/basic_math/BasicsMathLib.gd" id="1_o8ndl"]
+[ext_resource type="Script" uid="uid://c2poig57ug2m3" path="res://Script/basic_math/BasicsMathLib.gd" id="1_o8ndl"]
 [ext_resource type="Texture2D" uid="uid://c3yeiqkq7nvcs" path="res://Asset/Visuel/sb1_sprite/sb1_player.png" id="2_hjs85"]
 
 [node name="obj" type="Node2D"]

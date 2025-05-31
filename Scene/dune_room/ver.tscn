@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3mwa70w1j2x7"]
+[gd_scene load_steps=7 format=3 uid="uid://c3mwa70w1j2x7"]
 
+[ext_resource type="Script" uid="uid://dnn05jp20erck" path="res://Script/dune_room/vers/ver.gd" id="1_4ukpx"]
 [ext_resource type="Texture2D" uid="uid://fnb2sq6bnd5j" path="res://Asset/Visuel/dune_room/vers/ver.png" id="1_ypwd4"]
-[ext_resource type="Script" path="res://Script/dune_room/ver_sprite.gd" id="2_rw2qv"]
-[ext_resource type="Script" path="res://Script/dune_room/ver_deplacements.gd" id="3_8e5xa"]
+[ext_resource type="Script" uid="uid://dm3i8kiyq7kx5" path="res://Script/dune_room/vers/ver_sprite.gd" id="2_rw2qv"]
+[ext_resource type="Script" uid="uid://c4fsdwwevagln" path="res://Script/dune_room/vers/ver_deplacements.gd" id="3_8e5xa"]
+[ext_resource type="Script" uid="uid://ocqeexvtk120" path="res://Script/dune_room/vers/collision_ver.gd" id="4_8upki"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uybel"]
-size = Vector2(30.1469, 31.0207)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ogex7"]
+radius = 14.2248
 
 [node name="Ver" type="Node2D"]
+script = ExtResource("1_4ukpx")
 
 [node name="sprite" type="Sprite2D" parent="."]
 scale = Vector2(1.61842, 1.61842)
@@ -15,12 +18,11 @@ texture = ExtResource("1_ypwd4")
 script = ExtResource("2_rw2qv")
 
 [node name="Area2D" type="Area2D" parent="sprite"]
-position = Vector2(-0.308943, 1.23577)
-rotation = 0.785398
-scale = Vector2(1, 1)
+position = Vector2(0.617887, 0.617887)
+script = ExtResource("4_8upki")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sprite/Area2D"]
-shape = SubResource("RectangleShape2D_uybel")
+shape = SubResource("CircleShape2D_ogex7")
 
 [node name="deplacements" type="Node" parent="."]
 script = ExtResource("3_8e5xa")

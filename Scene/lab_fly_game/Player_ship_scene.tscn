@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxrum2s6coxra"]
 
-[ext_resource type="Script" path="res://Script/basics_actor/actor_controller/PlayerController.gd" id="1_410xb"]
+[ext_resource type="Script" uid="uid://ddhe1xa2tk15k" path="res://Script/basics_actor/actor_controller/PlayerController.gd" id="1_410xb"]
 [ext_resource type="Texture2D" uid="uid://u1cjw4kvrucd" path="res://Asset/Visuel/fly_game/ship_1.png" id="2_53rsl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oy6yj"]

@@ -1,6 +1,8 @@
 extends Node
 
-const VITESSE_MAX : float = 8
+const VITESSE_MAX : float = 12
+
+var libre = true
 
 var velocite : Vector2
 var impulsion : Vector2
@@ -12,12 +14,16 @@ func _ready():
 	changement_etat.connect(perso._set_state)
 
 func _unhandled_input(event: InputEvent) -> void:
-	impulsion.y = Input.get_action_strength("bougeBas") - Input.get_action_strength("bougeHaut")
-	impulsion.x = Input.get_action_strength("bougeDroite") - Input.get_action_strength("bougeGauche")
+	if libre :
+		impulsion.y = Input.get_action_strength("bougeBas") - Input.get_action_strength("bougeHaut")
+		impulsion.x = Input.get_action_strength("bougeDroite") - Input.get_action_strength("bougeGauche")
+	else:
+		velocite = Vector2.ZERO
+	
 
 func _physics_process(delta: float) -> void:
 	var acceleration = impulsion 
-	velocite = velocite*0.5 + acceleration * 2
+	velocite = velocite*0.5 + acceleration * 3.0
 	
 	if velocite :
 		changement_etat.emit(perso.States.MOVE)

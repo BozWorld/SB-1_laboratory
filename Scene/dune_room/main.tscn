@@ -1,65 +1,59 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvc32bmo5mjr0"]
+[gd_scene load_steps=2 format=3 uid="uid://c6611vp82qtyp"]
 
-[ext_resource type="Script" path="res://Script/dune_room/random_tick.gd" id="1_7bnd8"]
-[ext_resource type="Texture2D" uid="uid://cnqu0686bxsjp" path="res://Asset/Visuel/dune_room/fond/Fond.png" id="1_xp4aa"]
-[ext_resource type="Script" path="res://Script/dune_room/paul.gd" id="2_tgb8w"]
-[ext_resource type="Script" path="res://Script/dune_room/spawner_ver.gd" id="3_jfhmx"]
-[ext_resource type="Script" path="res://Script/dune_room/paul_deplacements.gd" id="3_pan20"]
-[ext_resource type="Texture2D" uid="uid://cx3xw2isneh0p" path="res://Asset/Visuel/dune_room/paul/paul_idle.png" id="4_27hsn"]
-[ext_resource type="Texture2D" uid="uid://babf1qd5ugi3h" path="res://Asset/Visuel/dune_room/paul/walk/paul_walk1.png" id="5_ixo01"]
-[ext_resource type="Texture2D" uid="uid://cbj1od6aan0tq" path="res://Asset/Visuel/dune_room/paul/walk/paul_walk3.png" id="7_ba5av"]
-[ext_resource type="Script" path="res://Script/dune_room/paul_anim.gd" id="7_wkgrx"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_nyr1s"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_27hsn")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_ixo01")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_ba5av")
-}],
-"loop": true,
-"name": &"move",
-"speed": 5.0
-}]
+[ext_resource type="PackedScene" uid="uid://cvc32bmo5mjr0" path="res://Scene/dune_room/niveau.tscn" id="1_uprpi"]
 
 [node name="Main" type="Node2D"]
 
-[node name="RandomTickGenerator" type="Timer" parent="."]
-wait_time = 0.5
-autostart = true
-script = ExtResource("1_7bnd8")
+[node name="Niveau" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(-130, -137)
 
-[node name="Fond" type="Sprite2D" parent="."]
-position = Vector2(575, 323)
-scale = Vector2(1.34889, 1.34889)
-texture = ExtResource("1_xp4aa")
+[node name="Niveau2" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(320, -137)
 
-[node name="SpawnerVer" type="Node2D" parent="." node_paths=PackedStringArray("random_tick_generator")]
-position = Vector2(580, 313)
-script = ExtResource("3_jfhmx")
-random_tick_generator = NodePath("../RandomTickGenerator")
-max_vers = 50
+[node name="Niveau3" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(770, -137)
 
-[node name="Paul" type="Node2D" parent="."]
-position = Vector2(374, 117)
-script = ExtResource("2_tgb8w")
+[node name="Niveau4" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(-130, 313)
 
-[node name="deplacements" type="Node" parent="Paul"]
-script = ExtResource("3_pan20")
+[node name="Niveau5" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(320, 313)
 
-[node name="sprite" type="AnimatedSprite2D" parent="Paul"]
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_nyr1s")
-animation = &"move"
-autoplay = "idle"
-script = ExtResource("7_wkgrx")
+[node name="Niveau6" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(770, 313)
+
+[node name="Niveau7" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(-130, 763)
+
+[node name="Niveau8" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(320, 763)
+
+[node name="Niveau9" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(770, 763)
+
+[node name="Niveau10" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(1220, -137)
+
+[node name="Niveau11" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(1670, -137)
+
+[node name="Niveau12" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(2120, -137)
+
+[node name="Niveau13" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(1220, 313)
+
+[node name="Niveau14" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(1670, 313)
+
+[node name="Niveau15" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(2120, 313)
+
+[node name="Niveau16" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(1220, 763)
+
+[node name="Niveau17" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(1670, 763)
+
+[node name="Niveau18" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(2120, 763)
