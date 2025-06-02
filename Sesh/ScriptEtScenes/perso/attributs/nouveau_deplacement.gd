@@ -24,6 +24,8 @@ var clicked := false
 var sprint := false
 var marche := false
 
+var index_delta := 0.0
+
 @onready var frottement_statique = %FrottementStatique
 
 var sous_cd := false
@@ -39,10 +41,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif Input.is_action_just_released("bougerAVANT"):
 		clicked = false
 
-func _deplacement_process():
+func _deplacement_process(delta):
 	puissance_pas = DICO_PUISSANCES_PAS["ZERO"]
-	if !sous_cd :
-		if Input.is_action_pressed("bougerAVANT") :
+	if index_delta < delai_pas :
+		index_delta += delta
+	if Input.is_action_pressed("bougerAVANT") :
+		if index_delta >= delai_pas :
+			index_delta -= delai_pas
+			
 			puissance_pas = DICO_PUISSANCES_PAS["COURSE"]
 			delai_pas = DICO_DELAIS_PAS["COURSE"]
 			if Input.is_action_pressed("sprint") :
@@ -60,7 +66,9 @@ func _deplacement_process():
 			
 			pas(orientation_avant(), puissance_pas)
 		
-		elif parent.velocite.length() > 0.0 :
+	elif parent.velocite.length() > 0.0 :
+		if index_delta >= delai_pas :
+			index_delta -= delai_pas
 			if parent.velocite.length() > 0.6 :
 				puissance_pas = DICO_PUISSANCES_PAS["RALENTI"]
 				delai_pas = DICO_DELAIS_PAS["RALENTI"]

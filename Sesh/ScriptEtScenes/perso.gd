@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 	_appliquer_gravite()
 	regarder._regarder_process(delta)
 	saut._saut_process(delta)
-	deplacement._deplacement_process()
+	deplacement._deplacement_process(delta)
 	
 	#print("++++++++++++++++++++++++++++++++++++++++++
 	#Acceleration : 

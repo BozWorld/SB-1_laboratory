@@ -15,9 +15,11 @@
 [ext_resource type="Script" uid="uid://cwcjmnmv1la8y" path="res://Sesh/ScriptEtScenes/perso/attributs/nouveau_deplacement.gd" id="14_ic51s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8xcm"]
-sky_top_color = Color(0.703314, 0.45815, 1, 1)
-sky_horizon_color = Color(0.725829, 0.656788, 0.78325, 1)
-ground_horizon_color = Color(0.725829, 0.656788, 0.78325, 1)
+sky_top_color = Color(0.553861, 0.389362, 0.735748, 1)
+sky_horizon_color = Color(0.93054, 0.497522, 0.529141, 1)
+sky_curve = 0.439226
+ground_bottom_color = Color(0.217355, 0.469805, 0.493411, 1)
+ground_horizon_color = Color(0.690096, 0.777211, 0.873588, 1)
 
 [sub_resource type="Sky" id="Sky_y7do0"]
 sky_material = SubResource("ProceduralSkyMaterial_y8xcm")
@@ -78,7 +80,8 @@ material = SubResource("StandardMaterial3D_lg86d")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0.047932, 0.425798, 0.903548, -0.4977, 0.794477, -0.347996, 0, 0, 0)
-light_color = Color(1, 0.886331, 0.832077, 1)
+light_color = Color(0.983053, 0.784772, 0.606148, 1)
+light_energy = 2.405
 shadow_enabled = true
 script = ExtResource("1_x6mxa")
 
