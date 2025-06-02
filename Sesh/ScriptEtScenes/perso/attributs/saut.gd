@@ -29,13 +29,13 @@ func _saut_process(delta):
 			var saut = 10.0
 			saut += flexion
 			parent.appliquer_force_verticale(saut)
-			$HBoxContainer2/DebugVPush._actualisation_compteur(saut)
+			%DebugVPush._actualisation_compteur(saut)
 			flexion = 0.0
-			$HBoxContainer/DebugFlexion._actualisation_compteur(flexion)
+			%DebugFlexion._actualisation_compteur(flexion)
 	
 	elif flexion < max_flexion :
 		flexion += 10.0 * delta
-		$HBoxContainer/DebugFlexion._actualisation_compteur(flexion)
+		%DebugFlexion._actualisation_compteur(flexion)
 		parent.mesh.scale *= 0.995
 	
 	elif !parent.is_on_floor():

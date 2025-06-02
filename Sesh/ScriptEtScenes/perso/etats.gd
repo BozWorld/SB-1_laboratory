@@ -122,7 +122,7 @@ func _get_transition(delta):
 			return states.attend
 			
 func _enter_state(new_state, old_state):
-	$HBoxContainer/DebugStates._changement_etat(states.find_key(new_state))
+	%DebugStates._changement_etat(states.find_key(new_state))
 
 func _exit_state(old_state, new_state):
 	pass

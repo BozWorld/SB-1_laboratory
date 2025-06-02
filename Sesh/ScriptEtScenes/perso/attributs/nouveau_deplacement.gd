@@ -24,7 +24,7 @@ var clicked := false
 var sprint := false
 var marche := false
 
-@onready var frottement_statique = $FrottementStatique
+@onready var frottement_statique = %FrottementStatique
 
 var sous_cd := false
 
@@ -105,4 +105,4 @@ func retour_pas():
 func _debugging():
 	var debug_vitesse = parent.velocite
 	debug_vitesse.y = 0
-	$HBoxContainer/CompteurVitesse._actualisation_compteur(debug_vitesse.length())
+	%CompteurVitesse._actualisation_compteur(debug_vitesse.length())

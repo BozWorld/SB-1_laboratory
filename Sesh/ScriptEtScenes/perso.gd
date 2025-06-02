@@ -7,14 +7,13 @@ var poids = masse * 1.0 # Le 1 c'est la gravité
 var velocite : Vector3
 var acceleration : Vector3
 
-@onready var mesh = $Mesh
-@onready var machine_etats : StateMachine = $Etats
-@onready var deplacement = $Deplacement
-@onready var saut = $Saut
-@onready var frottement_fluide = $FrottementFluide
-@onready var frottement_statique = $FrottementStatique
-@onready var regarder = $Regarder
-@onready var momentum = $Momentum
+@onready var mesh = %Mesh
+@onready var machine_etats : StateMachine = %Etats
+@onready var deplacement = %Deplacement
+@onready var saut = %Saut
+@onready var frottement_fluide = %FrottementFluide
+@onready var regarder = %Regarder
+@onready var momentum = %Momentum
 
 @export var camera : Camera3D
 

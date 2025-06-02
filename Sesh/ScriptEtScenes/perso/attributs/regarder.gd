@@ -7,8 +7,8 @@ var seuil_arret = 0.00005
 
 var delais_corps : float = 0.0
 
-@onready var horizontal_pivot = $HPivot
-@onready var vertical_pivot = $HPivot/VPivot
+@onready var horizontal_pivot = %HPivot
+@onready var vertical_pivot = %VPivot
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
