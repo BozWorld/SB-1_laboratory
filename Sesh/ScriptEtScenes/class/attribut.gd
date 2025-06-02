@@ -1,7 +1,7 @@
 extends Node
 class_name Attribut
 
-@onready var parent : SeshBody = get_parent()
+@onready var parent : SeshBody = find_parent("*Body")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

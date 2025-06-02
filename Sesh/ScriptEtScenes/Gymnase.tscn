@@ -1,18 +1,7 @@
-[gd_scene load_steps=31 format=3 uid="uid://in7c14sa3eu8"]
+[gd_scene load_steps=14 format=3 uid="uid://in7c14sa3eu8"]
 
 [ext_resource type="Script" uid="uid://bvui5ldvc4pe4" path="res://Sesh/ScriptEtScenes/CycleJourNuit.gd" id="1_x6mxa"]
-[ext_resource type="Script" uid="uid://co4dm4cktxger" path="res://Sesh/ScriptEtScenes/perso.gd" id="3_vfk10"]
-[ext_resource type="Script" uid="uid://bxqpinlxgpi7h" path="res://Sesh/ScriptEtScenes/perso/attributs/saut.gd" id="4_3j17j"]
-[ext_resource type="Script" uid="uid://s3t1yqhricie" path="res://Sesh/ScriptEtScenes/DebugVitesse.gd" id="4_ur1ov"]
-[ext_resource type="Script" uid="uid://b0ix8vphaivq2" path="res://Sesh/ScriptEtScenes/perso/etats.gd" id="6_885ur"]
-[ext_resource type="Script" uid="uid://dupa5bg51sixj" path="res://Sesh/ScriptEtScenes/debug_flexion.gd" id="6_dc8wv"]
-[ext_resource type="Script" uid="uid://dxd78o1fnou2" path="res://Sesh/ScriptEtScenes/debug_v_push.gd" id="7_bhlbf"]
-[ext_resource type="Script" uid="uid://b34gtpfnlakaf" path="res://Sesh/ScriptEtScenes/DebugStates.gd" id="7_h2lxa"]
-[ext_resource type="Script" uid="uid://cpfnyr0km45jh" path="res://Sesh/ScriptEtScenes/perso/attributs/regarder.gd" id="9_3tdo0"]
-[ext_resource type="Script" uid="uid://b4rm5qh88kofh" path="res://Sesh/ScriptEtScenes/perso/attributs/frottement_fluide.gd" id="11_uxxqo"]
-[ext_resource type="Script" uid="uid://dq3dxm6qms4do" path="res://Sesh/ScriptEtScenes/perso/attributs/frottement_statique.gd" id="12_gpt6a"]
-[ext_resource type="Script" uid="uid://26805jju720d" path="res://Sesh/ScriptEtScenes/perso/attributs/momentum.gd" id="13_hlijc"]
-[ext_resource type="Script" uid="uid://cwcjmnmv1la8y" path="res://Sesh/ScriptEtScenes/perso/attributs/nouveau_deplacement.gd" id="14_ic51s"]
+[ext_resource type="PackedScene" uid="uid://dl6grw73mfswo" path="res://Sesh/ScriptEtScenes/perso/perso.tscn" id="2_fb361"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y8xcm"]
 sky_top_color = Color(0.553861, 0.389362, 0.735748, 1)
@@ -47,34 +36,13 @@ size = Vector3(3, 5, 3)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_eyeac"]
 data = PackedVector3Array(-1.5, 2.5, 1.5, 1.5, 2.5, 1.5, -1.5, -2.5, 1.5, 1.5, 2.5, 1.5, 1.5, -2.5, 1.5, -1.5, -2.5, 1.5, 1.5, 2.5, -1.5, -1.5, 2.5, -1.5, 1.5, -2.5, -1.5, -1.5, 2.5, -1.5, -1.5, -2.5, -1.5, 1.5, -2.5, -1.5, 1.5, 2.5, 1.5, 1.5, 2.5, -1.5, 1.5, -2.5, 1.5, 1.5, 2.5, -1.5, 1.5, -2.5, -1.5, 1.5, -2.5, 1.5, -1.5, 2.5, -1.5, -1.5, 2.5, 1.5, -1.5, -2.5, -1.5, -1.5, 2.5, 1.5, -1.5, -2.5, 1.5, -1.5, -2.5, -1.5, 1.5, 2.5, 1.5, -1.5, 2.5, 1.5, 1.5, 2.5, -1.5, -1.5, 2.5, 1.5, -1.5, 2.5, -1.5, 1.5, 2.5, -1.5, -1.5, -2.5, 1.5, 1.5, -2.5, 1.5, -1.5, -2.5, -1.5, 1.5, -2.5, 1.5, 1.5, -2.5, -1.5, -1.5, -2.5, -1.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ncmtv"]
-albedo_color = Color(1, 0.517647, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_1n6wi"]
-material = SubResource("StandardMaterial3D_ncmtv")
-size = Vector3(0.2, 0.2, 0.2)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6x3g"]
-albedo_color = Color(0.6, 0.258824, 1, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_i5khn"]
-material = SubResource("StandardMaterial3D_l6x3g")
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_051rp"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdget"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_8qewg"]
-material = SubResource("StandardMaterial3D_xdget")
-radius = 0.1
-height = 0.2
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lg86d"]
 albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_2wmll"]
 material = SubResource("StandardMaterial3D_lg86d")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_051rp"]
 
 [node name="Gymnase" type="Node3D"]
 
@@ -296,174 +264,8 @@ mesh = SubResource("BoxMesh_rwsqw")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LD/Bloc de Blocs5/Bloc 4"]
 shape = SubResource("ConcavePolygonShape3D_eyeac")
 
-[node name="PersoBody" type="CharacterBody3D" parent="." node_paths=PackedStringArray("camera")]
+[node name="PersoBody" parent="." instance=ExtResource("2_fb361")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("3_vfk10")
-camera = NodePath("Regarder/HPivot/VPivot/Camera3D")
-
-[node name="Avant" type="MeshInstance3D" parent="PersoBody"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -3.65244)
-mesh = SubResource("BoxMesh_1n6wi")
-
-[node name="Mesh" type="MeshInstance3D" parent="PersoBody"]
-unique_name_in_owner = true
-mesh = SubResource("CapsuleMesh_i5khn")
-
-[node name="Collision" type="CollisionShape3D" parent="PersoBody"]
-shape = SubResource("CapsuleShape3D_051rp")
-
-[node name="Saut" type="Node3D" parent="PersoBody"]
-unique_name_in_owner = true
-script = ExtResource("4_3j17j")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PersoBody/Saut"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -487.0
-offset_bottom = 58.0
-grow_horizontal = 0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="PersoBody/Saut/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[font_size=40][color=red]Flexion :"
-
-[node name="DebugFlexion" type="RichTextLabel" parent="PersoBody/Saut/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[font_size=40][color=red]<flexion>"
-scroll_active = false
-script = ExtResource("6_dc8wv")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="PersoBody/Saut"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -552.0
-offset_top = -58.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="PersoBody/Saut/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[font_size=30][color=green]Derniere VForce :"
-
-[node name="DebugVPush" type="RichTextLabel" parent="PersoBody/Saut/HBoxContainer2"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[font_size=40][color=green]<VPush>"
-scroll_active = false
-autowrap_mode = 2
-script = ExtResource("7_bhlbf")
-
-[node name="Regarder" type="Node3D" parent="PersoBody"]
-unique_name_in_owner = true
-script = ExtResource("9_3tdo0")
-sensibilite = 0.005
-
-[node name="HPivot" type="Node3D" parent="PersoBody/Regarder"]
-unique_name_in_owner = true
-
-[node name="VPivot" type="Node3D" parent="PersoBody/Regarder/HPivot"]
-unique_name_in_owner = true
-
-[node name="Camera3D" type="Camera3D" parent="PersoBody/Regarder/HPivot/VPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.646196, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PersoBody/Regarder/HPivot/VPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.919504, -2.76532)
-mesh = SubResource("SphereMesh_8qewg")
-
-[node name="Etats" type="Node" parent="PersoBody"]
-unique_name_in_owner = true
-script = ExtResource("6_885ur")
-DICO_SEUILS_MIN_VITESSES = {
-"COURSE": 1.6,
-"MARCHE": 0.0,
-"SPRINT": 4.8
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PersoBody/Etats"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -58.0
-offset_right = 487.0
-grow_vertical = 0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="PersoBody/Etats/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[font_size=40][color=purple]Etat :"
-
-[node name="DebugStates" type="RichTextLabel" parent="PersoBody/Etats/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[font_size=40][color=purple]<etat>"
-scroll_active = false
-script = ExtResource("7_h2lxa")
-
-[node name="FrottementFluide" type="Node3D" parent="PersoBody"]
-unique_name_in_owner = true
-script = ExtResource("11_uxxqo")
-
-[node name="Deplacement" type="Node3D" parent="PersoBody"]
-unique_name_in_owner = true
-script = ExtResource("14_ic51s")
-DICO_PUISSANCES_PAS = {
-"COURSE": 1.0,
-"MARCHE": 0.65,
-"RALENTI": 0.2,
-"SPRINT": 1.3,
-"ZERO": 0.0
-}
-DICO_DELAIS_PAS = {
-"COURSE": 0.17,
-"MARCHE": 0.2,
-"RALENTI": 0.1,
-"SPRINT": 0.13
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PersoBody/Deplacement"]
-offset_right = 487.0
-offset_bottom = 58.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="PersoBody/Deplacement/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[font_size=40][color=yellow]Vitesse :"
-
-[node name="CompteurVitesse" type="RichTextLabel" parent="PersoBody/Deplacement/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[font_size=40][color=yellow]<vitesse>"
-scroll_active = false
-script = ExtResource("4_ur1ov")
-
-[node name="FrottementStatique" type="Node3D" parent="PersoBody/Deplacement"]
-unique_name_in_owner = true
-script = ExtResource("12_gpt6a")
-coef = 0.6
-
-[node name="Momentum" type="Node3D" parent="PersoBody"]
-unique_name_in_owner = true
-script = ExtResource("13_hlijc")
 
 [node name="Pnj" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16795, 5.53554)

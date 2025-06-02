@@ -75,6 +75,7 @@ func _deplacement_process(delta):
 				pas(orientation_avant(), puissance_pas)
 			else :
 				parent.velocite = Vector3(0,0,0)
+				pas(Vector3.ZERO, 0.0)
 		
 	_debugging()
 
@@ -88,6 +89,15 @@ func orientation_avant():
 
 
 func pas(orientation : Vector3, magnitude : float):
+	
+	var dico_saut = %PreparationSaut._saut_process()
+	
+	if dico_saut :
+		delai_pas *= dico_saut["delais"]
+		puissance_pas *= dico_saut["puissance"]
+		if dico_saut["v_force"] :
+			parent.appliquer_force_verticale(dico_saut["v_force"])
+	
 	sous_cd = true
 	var timer = TimerUnique.new()
 	add_child(timer)
@@ -101,7 +111,6 @@ func pas(orientation : Vector3, magnitude : float):
 	
 	if mouvement.length() > 0.0 :
 		parent.appliquer_force(mouvement)
-	
 	
 	
 	

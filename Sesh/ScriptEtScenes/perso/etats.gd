@@ -27,8 +27,8 @@ func _get_transition(delta):
 					return states.saute
 				elif parent.velocite.y < 0.0:
 					return states.tombe
-			elif parent.saut.genoux_flechis :
-				return states.prepare_saut
+			#elif parent.saut.genoux_flechis :
+				#return states.prepare_saut
 			elif abs(parent.velocite.x) + abs(parent.velocite.z) > 0.0 :
 				var h_velocity
 				h_velocity = parent.velocite
@@ -47,8 +47,8 @@ func _get_transition(delta):
 					return states.saute
 				elif parent.velocite.y < 0.0:
 					return states.tombe
-			elif parent.saut.genoux_flechis :
-				return states.prepare_saut
+			#elif parent.saut.genoux_flechis :
+				#return states.prepare_saut
 			elif abs(parent.velocite.x) + abs(parent.velocite.z) == 0.0 :
 				return states.attend
 			elif abs(parent.velocite.x) + abs(parent.velocite.z) > 0.0 :
@@ -67,8 +67,8 @@ func _get_transition(delta):
 					return states.saute
 				elif parent.velocite.y < 0.0:
 					return states.tombe
-			elif parent.saut.genoux_flechis :
-				return states.prepare_saut
+			#elif parent.saut.genoux_flechis :
+				#return states.prepare_saut
 			elif abs(parent.velocite.x) + abs(parent.velocite.z) == 0.0 :
 				return states.attend
 			elif abs(parent.velocite.x) + abs(parent.velocite.z) > 0.0 :
@@ -87,8 +87,8 @@ func _get_transition(delta):
 					return states.saute
 				elif parent.velocite.y < 0.0:
 					return states.tombe
-			elif parent.saut.genoux_flechis :
-				return states.prepare_saut
+			#elif parent.saut.genoux_flechis :
+				#return states.prepare_saut
 			elif abs(parent.velocite.x) + abs(parent.velocite.z) == 0.0 :
 				return states.attend
 			elif abs(parent.velocite.x) + abs(parent.velocite.z) > 0.0 :

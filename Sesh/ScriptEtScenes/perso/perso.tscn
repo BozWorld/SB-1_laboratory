@@ -1,0 +1,211 @@
+[gd_scene load_steps=21 format=3 uid="uid://dl6grw73mfswo"]
+
+[ext_resource type="Script" uid="uid://co4dm4cktxger" path="res://Sesh/ScriptEtScenes/perso.gd" id="1_juris"]
+[ext_resource type="Script" uid="uid://dupa5bg51sixj" path="res://Sesh/ScriptEtScenes/debug_flexion.gd" id="3_duqa8"]
+[ext_resource type="Script" uid="uid://dxd78o1fnou2" path="res://Sesh/ScriptEtScenes/debug_v_push.gd" id="4_vcqy2"]
+[ext_resource type="Script" uid="uid://cpfnyr0km45jh" path="res://Sesh/ScriptEtScenes/perso/attributs/regarder.gd" id="5_84gkg"]
+[ext_resource type="Script" uid="uid://b0ix8vphaivq2" path="res://Sesh/ScriptEtScenes/perso/etats.gd" id="6_rengy"]
+[ext_resource type="Script" uid="uid://b34gtpfnlakaf" path="res://Sesh/ScriptEtScenes/DebugStates.gd" id="7_7185p"]
+[ext_resource type="Script" uid="uid://b4rm5qh88kofh" path="res://Sesh/ScriptEtScenes/perso/attributs/frottement_fluide.gd" id="8_k4l8c"]
+[ext_resource type="Script" uid="uid://cwcjmnmv1la8y" path="res://Sesh/ScriptEtScenes/perso/attributs/nouveau_deplacement.gd" id="9_jj3mo"]
+[ext_resource type="Script" uid="uid://s3t1yqhricie" path="res://Sesh/ScriptEtScenes/DebugVitesse.gd" id="10_7e6ix"]
+[ext_resource type="Script" uid="uid://dq3dxm6qms4do" path="res://Sesh/ScriptEtScenes/perso/attributs/frottement_statique.gd" id="11_0sjaa"]
+[ext_resource type="Script" uid="uid://cwv4rahpn5mcl" path="res://Sesh/ScriptEtScenes/perso/attributs/preparation_saut.gd" id="12_duqa8"]
+[ext_resource type="Script" uid="uid://26805jju720d" path="res://Sesh/ScriptEtScenes/perso/attributs/momentum.gd" id="12_eskiu"]
+[ext_resource type="Script" uid="uid://duq6uvlg2cuum" path="res://Sesh/ScriptEtScenes/perso/attributs/nouveau_saut.gd" id="13_vcqy2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ncmtv"]
+albedo_color = Color(1, 0.517647, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1n6wi"]
+material = SubResource("StandardMaterial3D_ncmtv")
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6x3g"]
+albedo_color = Color(0.6, 0.258824, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_i5khn"]
+material = SubResource("StandardMaterial3D_l6x3g")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_051rp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdget"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_8qewg"]
+material = SubResource("StandardMaterial3D_xdget")
+radius = 0.1
+height = 0.2
+
+[node name="PersoBody" type="CharacterBody3D" node_paths=PackedStringArray("camera")]
+script = ExtResource("1_juris")
+camera = NodePath("Regarder/HPivot/VPivot/Camera3D")
+
+[node name="Avant" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -3.65244)
+mesh = SubResource("BoxMesh_1n6wi")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+mesh = SubResource("CapsuleMesh_i5khn")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_051rp")
+
+[node name="Regarder" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_84gkg")
+sensibilite = 0.005
+
+[node name="HPivot" type="Node3D" parent="Regarder"]
+unique_name_in_owner = true
+
+[node name="VPivot" type="Node3D" parent="Regarder/HPivot"]
+unique_name_in_owner = true
+
+[node name="Camera3D" type="Camera3D" parent="Regarder/HPivot/VPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.646196, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Regarder/HPivot/VPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.919504, -2.76532)
+mesh = SubResource("SphereMesh_8qewg")
+
+[node name="Etats" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("6_rengy")
+DICO_SEUILS_MIN_VITESSES = {
+"COURSE": 1.6,
+"MARCHE": 0.0,
+"SPRINT": 4.8
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Etats"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -58.0
+offset_right = 487.0
+grow_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Etats/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=40][color=purple]Etat :"
+
+[node name="DebugStates" type="RichTextLabel" parent="Etats/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=40][color=purple]<etat>"
+scroll_active = false
+script = ExtResource("7_7185p")
+
+[node name="FrottementFluide" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("8_k4l8c")
+
+[node name="Deplacement" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("9_jj3mo")
+DICO_PUISSANCES_PAS = {
+"COURSE": 1.0,
+"MARCHE": 0.65,
+"RALENTI": 0.2,
+"SPRINT": 1.3,
+"ZERO": 0.0
+}
+DICO_DELAIS_PAS = {
+"COURSE": 0.17,
+"MARCHE": 0.2,
+"RALENTI": 0.1,
+"SPRINT": 0.13
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Deplacement"]
+offset_right = 487.0
+offset_bottom = 58.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Deplacement/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=40][color=yellow]Vitesse :"
+
+[node name="CompteurVitesse" type="RichTextLabel" parent="Deplacement/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=40][color=yellow]<vitesse>"
+scroll_active = false
+script = ExtResource("10_7e6ix")
+
+[node name="FrottementStatique" type="Node3D" parent="Deplacement"]
+unique_name_in_owner = true
+script = ExtResource("11_0sjaa")
+coef = 0.6
+
+[node name="PreparationSaut" type="Node3D" parent="Deplacement"]
+unique_name_in_owner = true
+script = ExtResource("12_duqa8")
+metadata/_custom_type_script = "uid://brojgx8bcwa1m"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Deplacement/PreparationSaut"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -487.0
+offset_bottom = 58.0
+grow_horizontal = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Deplacement/PreparationSaut/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=40][color=red]Flexion :"
+
+[node name="DebugFlexion" type="RichTextLabel" parent="Deplacement/PreparationSaut/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=40][color=red]<flexion>"
+scroll_active = false
+script = ExtResource("3_duqa8")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Deplacement/PreparationSaut"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -552.0
+offset_top = -58.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Deplacement/PreparationSaut/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=30][color=green]Derniere VForce :"
+
+[node name="DebugVPush" type="RichTextLabel" parent="Deplacement/PreparationSaut/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=40][color=green]<VPush>"
+scroll_active = false
+autowrap_mode = 2
+script = ExtResource("4_vcqy2")
+
+[node name="Saut" type="Node3D" parent="Deplacement"]
+script = ExtResource("13_vcqy2")
+metadata/_custom_type_script = "uid://brojgx8bcwa1m"
+
+[node name="Momentum" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("12_eskiu")
