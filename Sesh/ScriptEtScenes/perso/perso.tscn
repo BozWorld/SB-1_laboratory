@@ -77,7 +77,7 @@ script = ExtResource("6_rengy")
 DICO_SEUILS_MIN_VITESSES = {
 "COURSE": 1.6,
 "MARCHE": 0.0,
-"SPRINT": 4.8
+"SPRINT": 5.5
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Etats"]
@@ -110,11 +110,18 @@ script = ExtResource("8_k4l8c")
 [node name="Deplacement" type="Node3D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("9_jj3mo")
+DICO_PUISSANCES_PAS = {
+"COURSE": 1.2,
+"MARCHE": 0.8,
+"RALENTI": 0.2,
+"SPRINT": 1.6,
+"ZERO": 0.0
+}
 DICO_DELAIS_PAS = {
-"COURSE": 0.13,
-"MARCHE": 0.1,
-"RALENTI": 0.05,
-"SPRINT": 0.09
+"COURSE": 0.2,
+"MARCHE": 0.44,
+"RALENTI": 0.07,
+"SPRINT": 0.13
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Deplacement"]
@@ -139,6 +146,7 @@ script = ExtResource("10_7e6ix")
 [node name="FrottementStatique" type="Node3D" parent="Deplacement"]
 unique_name_in_owner = true
 script = ExtResource("11_0sjaa")
+coef = 0.6
 
 [node name="PreparationSaut" type="Node3D" parent="Deplacement"]
 unique_name_in_owner = true

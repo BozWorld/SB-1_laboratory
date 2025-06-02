@@ -15,15 +15,6 @@ var flexion := 0.0
 func init_machine_etat():
 	machine_etats = parent.machine_etats
 
-func _unhandled_input(event: InputEvent) -> void:
-	if parent.is_on_floor() :
-		if Input.is_action_just_pressed("saut"):
-			cliqued = true
-		
-		if Input.is_action_just_released("saut"):
-			cliqued = false
-		
-
 
 func _saut_process():
 	var mod_puissance := 1.0
@@ -32,7 +23,20 @@ func _saut_process():
 	var retour
 
 	
-	if cliqued :
+	if !Input.is_action_pressed("saut"):
+		if flexion :
+			if parent.is_on_floor() :
+				#parent.mesh.scale = Vector3(1,1,1)
+				var saut = 10.0
+				saut += flexion
+				parent.appliquer_force_verticale(saut)
+				%DebugVPush._actualisation_compteur(saut)
+			
+			
+			flexion = 0.0
+			%DebugFlexion._actualisation_compteur(flexion)
+	
+	elif parent.is_on_floor() :
 		if flexion < detente_max :
 			flexion += coef_detente 
 			%DebugFlexion._actualisation_compteur(flexion)
@@ -48,34 +52,15 @@ func _saut_process():
 			"delais" : mod_delais,
 			"v_force" : v_force}
 		elif machine_etats.state == machine_etats.states["sprint"]:
-			mod_delais = 3.0
-			mod_puissance = 6.0
-			v_force = v_pas_de_geant + flexion * 0.3
+			mod_delais = 4.4
+			mod_puissance = 3.0
+			v_force = v_pas_de_geant + flexion * 0.1
 			retour = {"puissance" : mod_puissance,
 			"delais" : mod_delais,
 			"v_force" : v_force}
 		
-
 		
-	
-	
-	
-	if !cliqued:
-		if flexion :
-			#parent.mesh.scale = Vector3(1,1,1)
-			var saut = 10.0
-			saut += flexion
-			parent.appliquer_force_verticale(saut)
-			%DebugVPush._actualisation_compteur(saut)
-			flexion = 0.0
-			%DebugFlexion._actualisation_compteur(flexion)
-	
-	
-		%DebugFlexion._actualisation_compteur(flexion)
-		#parent.mesh.scale *= 0.995
-	
-	elif !parent.is_on_floor():
-		cliqued = false
+	#parent.mesh.scale *= 0.995
 	
 	if retour :
 		return(retour)
