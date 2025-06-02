@@ -1,5 +1,9 @@
 extends StateMachine
 
+@export var DICO_SEUILS_MIN_VITESSES = {"MARCHE" : 0.0,
+"COURSE" : 1.5,
+"SPRINT" : 5.0}
+
 
 func _ready() -> void:
 	add_state("attend")
@@ -25,16 +29,16 @@ func _get_transition(delta):
 					return states.tombe
 			elif parent.saut.genoux_flechis :
 				return states.prepare_saut
-			elif parent.velocite.x + parent.velocite.z < 0.0 :
+			elif abs(parent.velocite.x) + abs(parent.velocite.z) > 0.0 :
 				var h_velocity
 				h_velocity = parent.velocite
 				h_velocity.y = 0.0
 				h_velocity = h_velocity.length()
-				if h_velocity < 1.5:
+				if h_velocity < DICO_SEUILS_MIN_VITESSES["COURSE"] :
 					return states.marche
-				elif h_velocity < 5.0 :
+				elif h_velocity < DICO_SEUILS_MIN_VITESSES["SPRINT"] :
 					return states.cours
-				elif h_velocity >= 5.0 :
+				elif h_velocity >= DICO_SEUILS_MIN_VITESSES["SPRINT"] :
 					return states.sprint
 		
 		states.marche :
@@ -45,16 +49,16 @@ func _get_transition(delta):
 					return states.tombe
 			elif parent.saut.genoux_flechis :
 				return states.prepare_saut
-			elif parent.velocite.x + parent.velocite.z == 0.0 :
+			elif abs(parent.velocite.x) + abs(parent.velocite.z) == 0.0 :
 				return states.attend
-			elif parent.velocite.x + parent.velocite.z < 0.0 :
+			elif abs(parent.velocite.x) + abs(parent.velocite.z) > 0.0 :
 				var h_velocity
 				h_velocity = parent.velocite
 				h_velocity.y = 0.0
 				h_velocity = h_velocity.length()
-				if h_velocity < 5.0 :
+				if h_velocity < DICO_SEUILS_MIN_VITESSES["SPRINT"] and h_velocity > DICO_SEUILS_MIN_VITESSES["COURSE"]:
 					return states.cours
-				elif h_velocity >= 5.0 :
+				elif h_velocity >= DICO_SEUILS_MIN_VITESSES["SPRINT"] :
 					return states.sprint
 		
 		states.cours:
@@ -65,16 +69,16 @@ func _get_transition(delta):
 					return states.tombe
 			elif parent.saut.genoux_flechis :
 				return states.prepare_saut
-			elif parent.velocite.x + parent.velocite.z == 0.0 :
+			elif abs(parent.velocite.x) + abs(parent.velocite.z) == 0.0 :
 				return states.attend
-			elif parent.velocite.x + parent.velocite.z < 0.0 :
+			elif abs(parent.velocite.x) + abs(parent.velocite.z) > 0.0 :
 				var h_velocity
 				h_velocity = parent.velocite
 				h_velocity.y = 0.0
 				h_velocity = h_velocity.length()
-				if h_velocity < 1.5 :
+				if h_velocity < DICO_SEUILS_MIN_VITESSES["COURSE"] :
 					return states.marche
-				elif h_velocity >= 5.0 :
+				elif h_velocity >= DICO_SEUILS_MIN_VITESSES["SPRINT"] :
 					return states.sprint
 		
 		states.sprint:
@@ -85,16 +89,16 @@ func _get_transition(delta):
 					return states.tombe
 			elif parent.saut.genoux_flechis :
 				return states.prepare_saut
-			elif parent.velocite.x + parent.velocite.z == 0.0 :
+			elif abs(parent.velocite.x) + abs(parent.velocite.z) == 0.0 :
 				return states.attend
-			elif parent.velocite.x + parent.velocite.z < 0.0 :
+			elif abs(parent.velocite.x) + abs(parent.velocite.z) > 0.0 :
 				var h_velocity
 				h_velocity = parent.velocite
 				h_velocity.y = 0.0
 				h_velocity = h_velocity.length()
-				if h_velocity < 1.5 :
+				if h_velocity < DICO_SEUILS_MIN_VITESSES["COURSE"] :
 					return states.marche
-				elif h_velocity < 5.0 :
+				elif h_velocity < DICO_SEUILS_MIN_VITESSES["SPRINT"] :
 					return states.cours
 		
 		states.prepare_saut:

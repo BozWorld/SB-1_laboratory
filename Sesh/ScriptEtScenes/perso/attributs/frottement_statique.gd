@@ -1,6 +1,6 @@
 extends Attribut3D
 
-var coef : float = 0.5
+@export_range(0.0,1.0,0.01) var coef : float = 0.5
 var normal : float = 1.0
 var densite : float = 1.0
 

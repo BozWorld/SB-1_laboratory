@@ -49,7 +49,8 @@ func _physics_process(delta: float) -> void:
 	#Direction = " + str(acceleration.normalized()) + "
 	#Magnitude = " + str(acceleration.length()))
 	
-	if machine_etats.get_state() != machine_etats.states.attend :
+	#if machine_etats.get_state() != machine_etats.states.attend :
+	if velocite.length() != 0.0 :
 		frottement_fluide._frottement_process(delta, velocite + acceleration)
 		
 	

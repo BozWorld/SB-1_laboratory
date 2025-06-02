@@ -1,5 +1,17 @@
 extends Attribut3D
 
+@export var DICO_PUISSANCES_PAS = {"ZERO" : 0.0, 
+"RALENTI" : 0.2,
+"MARCHE" : 0.6,
+"COURSE" : 1.0,
+"SPRINT" : 2.0
+}
+
+@export var DICO_DELAIS_PAS = {"RALENTI" : 0.2,
+"MARCHE" : 0.2,
+"COURSE" : 0.2,
+"SPRINT" : 0.2}
+
 # seconde entre chaque pas
 var delai_pas : float = 0.2
 # Puissance des impulsions
@@ -26,28 +38,19 @@ func _unhandled_input(event: InputEvent) -> void:
 			Puissance : " + str(momentum_boost))
 	elif Input.is_action_just_released("bougerAVANT"):
 		clicked = false
-	
-	elif Input.is_action_just_pressed("sprint"):
-		sprint = true
-	elif Input.is_action_just_released("sprint"):
-		sprint = false
-	
-	elif Input.is_action_just_pressed("marcher"):
-		marche = true
-	elif Input.is_action_just_released("marcher"):
-		marche = false
 
 func _deplacement_process():
+	puissance_pas = DICO_PUISSANCES_PAS["ZERO"]
 	if !sous_cd :
-		if clicked :
-			puissance_pas = 1.0
-			delai_pas = 0.2
-			if sprint :
-				puissance_pas = 2.0
-			if marche :
-				puissance_pas = 0.0
-				if parent.velocite.length() < 1.2 :
-					puissance_pas = 0.6
+		if Input.is_action_pressed("bougerAVANT") :
+			puissance_pas = DICO_PUISSANCES_PAS["COURSE"]
+			delai_pas = DICO_DELAIS_PAS["COURSE"]
+			if Input.is_action_pressed("sprint") :
+				puissance_pas = DICO_PUISSANCES_PAS["SPRINT"]
+				delai_pas = DICO_DELAIS_PAS["SPRINT"]
+			elif Input.is_action_pressed("marcher") :
+				puissance_pas = DICO_PUISSANCES_PAS["MARCHE"]
+				delai_pas = DICO_DELAIS_PAS["MARCHE"]
 			elif momentum_boost != 0.0 :
 				puissance_pas += momentum_boost
 				print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -57,11 +60,11 @@ func _deplacement_process():
 			
 			pas(orientation_avant(), puissance_pas)
 		
-		elif parent.machine_etats.get_state() == parent.machine_etats.states.cours :
-			if parent.velocite.length() > 0.5 :
-				delai_pas = 0.2
-				puissance_pas = 1.0
-				pas(-parent.velocite.normalized(), puissance_pas)
+		elif parent.velocite.length() > 0.0 :
+			if parent.velocite.length() > 0.6 :
+				puissance_pas = DICO_PUISSANCES_PAS["RALENTI"]
+				delai_pas = DICO_DELAIS_PAS["RALENTI"]
+				pas(orientation_avant(), puissance_pas)
 			else :
 				parent.velocite = Vector3(0,0,0)
 		
@@ -84,6 +87,7 @@ func pas(orientation : Vector3, magnitude : float):
 	timer.timeout.connect(retour_pas)
 	timer.start()
 	
+	frottement_statique._appliquer_frottement()
 	
 	var mouvement : Vector3 = orientation * magnitude
 	
@@ -93,7 +97,7 @@ func pas(orientation : Vector3, magnitude : float):
 	
 	
 	
-	frottement_statique._appliquer_frottement()
+	
 
 func retour_pas():
 	sous_cd = false
