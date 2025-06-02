@@ -98,6 +98,13 @@ func pas(orientation : Vector3, magnitude : float):
 		if dico_saut["v_force"] :
 			parent.appliquer_force_verticale(dico_saut["v_force"])
 	
+	var frein_recul = %FreinRecul.logiquePas()
+	
+	if frein_recul == "freine" :
+		orientation = -orientation
+		magnitude = parent.velocite.length() * 0.6
+		delai_pas *= 0.8
+	
 	sous_cd = true
 	var timer = TimerUnique.new()
 	add_child(timer)

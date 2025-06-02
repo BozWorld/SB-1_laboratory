@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dl6grw73mfswo"]
+[gd_scene load_steps=22 format=3 uid="uid://dl6grw73mfswo"]
 
 [ext_resource type="Script" uid="uid://co4dm4cktxger" path="res://Sesh/ScriptEtScenes/perso.gd" id="1_juris"]
 [ext_resource type="Script" uid="uid://dupa5bg51sixj" path="res://Sesh/ScriptEtScenes/debug_flexion.gd" id="3_duqa8"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dq3dxm6qms4do" path="res://Sesh/ScriptEtScenes/perso/attributs/frottement_statique.gd" id="11_0sjaa"]
 [ext_resource type="Script" uid="uid://cwv4rahpn5mcl" path="res://Sesh/ScriptEtScenes/perso/attributs/preparation_saut.gd" id="12_duqa8"]
 [ext_resource type="Script" uid="uid://26805jju720d" path="res://Sesh/ScriptEtScenes/perso/attributs/momentum.gd" id="12_eskiu"]
+[ext_resource type="Script" uid="uid://cgl53sx5kl7qp" path="res://Sesh/ScriptEtScenes/perso/frein_recul.gd" id="13_duqa8"]
 [ext_resource type="Script" uid="uid://duq6uvlg2cuum" path="res://Sesh/ScriptEtScenes/perso/attributs/nouveau_saut.gd" id="13_vcqy2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ncmtv"]
@@ -109,18 +110,11 @@ script = ExtResource("8_k4l8c")
 [node name="Deplacement" type="Node3D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("9_jj3mo")
-DICO_PUISSANCES_PAS = {
-"COURSE": 1.0,
-"MARCHE": 0.65,
-"RALENTI": 0.2,
-"SPRINT": 1.3,
-"ZERO": 0.0
-}
 DICO_DELAIS_PAS = {
-"COURSE": 0.17,
-"MARCHE": 0.2,
-"RALENTI": 0.1,
-"SPRINT": 0.13
+"COURSE": 0.13,
+"MARCHE": 0.1,
+"RALENTI": 0.05,
+"SPRINT": 0.09
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Deplacement"]
@@ -145,7 +139,6 @@ script = ExtResource("10_7e6ix")
 [node name="FrottementStatique" type="Node3D" parent="Deplacement"]
 unique_name_in_owner = true
 script = ExtResource("11_0sjaa")
-coef = 0.6
 
 [node name="PreparationSaut" type="Node3D" parent="Deplacement"]
 unique_name_in_owner = true
@@ -204,6 +197,11 @@ script = ExtResource("4_vcqy2")
 
 [node name="Saut" type="Node3D" parent="Deplacement"]
 script = ExtResource("13_vcqy2")
+metadata/_custom_type_script = "uid://brojgx8bcwa1m"
+
+[node name="FreinRecul" type="Node3D" parent="Deplacement"]
+unique_name_in_owner = true
+script = ExtResource("13_duqa8")
 metadata/_custom_type_script = "uid://brojgx8bcwa1m"
 
 [node name="Momentum" type="Node3D" parent="."]
