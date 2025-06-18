@@ -275,3 +275,5 @@ mesh = SubResource("CapsuleMesh_2wmll")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pnj"]
 shape = SubResource("CapsuleShape3D_051rp")
+
+[editable path="PersoBody"]

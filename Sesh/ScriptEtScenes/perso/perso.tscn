@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://dl6grw73mfswo"]
+[gd_scene load_steps=23 format=3 uid="uid://dl6grw73mfswo"]
 
 [ext_resource type="Script" uid="uid://co4dm4cktxger" path="res://Sesh/ScriptEtScenes/perso.gd" id="1_juris"]
 [ext_resource type="Script" uid="uid://dupa5bg51sixj" path="res://Sesh/ScriptEtScenes/debug_flexion.gd" id="3_duqa8"]
+[ext_resource type="Script" uid="uid://7742vvfivvj7" path="res://Sesh/ScriptEtScenes/perso/fov_dynamique.gd" id="3_vcqy2"]
 [ext_resource type="Script" uid="uid://dxd78o1fnou2" path="res://Sesh/ScriptEtScenes/debug_v_push.gd" id="4_vcqy2"]
 [ext_resource type="Script" uid="uid://cpfnyr0km45jh" path="res://Sesh/ScriptEtScenes/perso/attributs/regarder.gd" id="5_84gkg"]
 [ext_resource type="Script" uid="uid://b0ix8vphaivq2" path="res://Sesh/ScriptEtScenes/perso/etats.gd" id="6_rengy"]
@@ -65,11 +66,15 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="Camera3D" type="Camera3D" parent="Regarder/HPivot/VPivot"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.646196, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Regarder/HPivot/VPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.919504, -2.76532)
 mesh = SubResource("SphereMesh_8qewg")
+
+[node name="Node3D" type="Node3D" parent="Regarder"]
+script = ExtResource("3_vcqy2")
 
 [node name="Etats" type="Node" parent="."]
 unique_name_in_owner = true
