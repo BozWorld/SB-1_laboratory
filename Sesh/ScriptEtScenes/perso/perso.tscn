@@ -119,6 +119,7 @@ DICO_PUISSANCES_PAS = {
 "COURSE": 1.2,
 "MARCHE": 0.8,
 "RALENTI": 0.2,
+"RECULE": 0.8,
 "SPRINT": 1.6,
 "ZERO": 0.0
 }
@@ -126,6 +127,7 @@ DICO_DELAIS_PAS = {
 "COURSE": 0.2,
 "MARCHE": 0.44,
 "RALENTI": 0.07,
+"RECULE": 0.44,
 "SPRINT": 0.13
 }
 
@@ -212,7 +214,7 @@ script = ExtResource("4_vcqy2")
 script = ExtResource("13_vcqy2")
 metadata/_custom_type_script = "uid://brojgx8bcwa1m"
 
-[node name="FreinRecul" type="Node3D" parent="Deplacement"]
+[node name="Frein" type="Node3D" parent="Deplacement"]
 unique_name_in_owner = true
 script = ExtResource("13_duqa8")
 metadata/_custom_type_script = "uid://brojgx8bcwa1m"

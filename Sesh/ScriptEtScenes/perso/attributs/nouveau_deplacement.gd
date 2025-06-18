@@ -4,13 +4,15 @@ extends Attribut3D
 "RALENTI" : 0.2,
 "MARCHE" : 0.6,
 "COURSE" : 1.0,
-"SPRINT" : 2.0
+"SPRINT" : 2.0,
+"RECUL" : 0.4
 }
 
 @export var DICO_DELAIS_PAS = {"RALENTI" : 0.2,
 "MARCHE" : 0.2,
 "COURSE" : 0.2,
-"SPRINT" : 0.2}
+"SPRINT" : 0.2,
+"RECUL" : 0.2}
 
 # seconde entre chaque pas
 var delai_pas : float = 0.2
@@ -23,6 +25,9 @@ var clicked := false
 
 var sprint := false
 var marche := false
+
+var freine := false
+var recule := false
 
 var index_delta := 0.0
 
@@ -65,17 +70,33 @@ func _deplacement_process(delta):
 				momentum_boost = 0.0
 			
 			pas(orientation_avant(), puissance_pas)
-		
-	elif parent.velocite.length() > 0.0 :
+	elif Input.is_action_pressed("bougerARRIERE") :
 		if index_delta >= delai_pas :
-			index_delta -= delai_pas
-			if parent.velocite.length() > 0.6 :
-				puissance_pas = DICO_PUISSANCES_PAS["RALENTI"]
-				delai_pas = DICO_DELAIS_PAS["RALENTI"]
-				pas(orientation_avant(), puissance_pas)
-			else :
-				parent.velocite = Vector3(0,0,0)
-				pas(Vector3.ZERO, 0.0)
+			if parent.velocite and !recule :
+				freine = true
+			elif !freine :
+				recule = true
+				index_delta -= delai_pas
+				
+				puissance_pas = DICO_PUISSANCES_PAS["RECULE"]
+				delai_pas = DICO_DELAIS_PAS["RECULE"]
+				pas(-orientation_avant(), puissance_pas)
+	
+	else :
+		freine = false
+		recule = false
+		
+		if parent.velocite.length() > 0.0 :
+			if index_delta >= delai_pas :
+				index_delta -= delai_pas
+				if parent.velocite.length() > 0.6 :
+					puissance_pas = DICO_PUISSANCES_PAS["RALENTI"]
+					delai_pas = DICO_DELAIS_PAS["RALENTI"]
+					pas(orientation_avant(), puissance_pas)
+				else :
+					parent.velocite = Vector3(0,0,0)
+					pas(Vector3.ZERO, 0.0)
+
 		
 	_debugging()
 
@@ -98,9 +119,8 @@ func pas(orientation : Vector3, magnitude : float):
 		if dico_saut["v_force"] :
 			parent.appliquer_force_verticale(dico_saut["v_force"])
 	
-	var frein_recul = %FreinRecul.logiquePas()
 	
-	if frein_recul == "freine" :
+	if freine :
 		orientation = -parent.velocite.normalized()
 		magnitude = parent.velocite.length() * 0.2
 		delai_pas *= 0.9

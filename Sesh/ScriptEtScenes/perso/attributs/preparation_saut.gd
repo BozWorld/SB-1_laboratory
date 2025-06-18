@@ -47,7 +47,7 @@ func _saut_process():
 			"delais" : mod_delais,
 			"v_force" : v_force}
 		elif machine_etats.state == machine_etats.states["cours"]:
-			mod_puissance = 1.0 - flexion * 0.1
+			#mod_puissance = 1.0 - flexion * 0.1
 			retour = {"puissance" : mod_puissance,
 			"delais" : mod_delais,
 			"v_force" : v_force}
