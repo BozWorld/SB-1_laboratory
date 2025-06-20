@@ -74,6 +74,12 @@ func _deplacement_process(delta):
 		if index_delta >= delai_pas :
 			if parent.velocite and !recule :
 				freine = true
+				index_delta -= delai_pas
+				
+				puissance_pas = parent.velocite.length() * 0.15
+				delai_pas = 0.1
+				pas(-orientation_avant(), puissance_pas)
+				
 			elif !freine :
 				recule = true
 				index_delta -= delai_pas

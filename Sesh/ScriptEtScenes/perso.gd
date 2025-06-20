@@ -29,11 +29,12 @@ func appliquer_force(force : Vector3):
 	acceleration += force
 
 func _appliquer_gravite():
-	if not is_on_floor() :
+	if not %Coyote.checkSol() :
 		var gravite = Vector3(0, -poids, 0)
 		appliquer_force(gravite)
 	else :
-		velocite.y = 0
+		#velocite.y = 0
+		pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

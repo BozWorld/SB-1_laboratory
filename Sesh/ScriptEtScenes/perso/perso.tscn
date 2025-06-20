@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dl6grw73mfswo"]
+[gd_scene load_steps=24 format=3 uid="uid://dl6grw73mfswo"]
 
 [ext_resource type="Script" uid="uid://co4dm4cktxger" path="res://Sesh/ScriptEtScenes/perso.gd" id="1_juris"]
 [ext_resource type="Script" uid="uid://dupa5bg51sixj" path="res://Sesh/ScriptEtScenes/debug_flexion.gd" id="3_duqa8"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://26805jju720d" path="res://Sesh/ScriptEtScenes/perso/attributs/momentum.gd" id="12_eskiu"]
 [ext_resource type="Script" uid="uid://cgl53sx5kl7qp" path="res://Sesh/ScriptEtScenes/perso/frein_recul.gd" id="13_duqa8"]
 [ext_resource type="Script" uid="uid://duq6uvlg2cuum" path="res://Sesh/ScriptEtScenes/perso/attributs/nouveau_saut.gd" id="13_vcqy2"]
+[ext_resource type="Script" uid="uid://bp0d22djf2jhj" path="res://Sesh/ScriptEtScenes/perso/coyote.gd" id="16_84gkg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ncmtv"]
 albedo_color = Color(1, 0.517647, 0, 1)
@@ -73,8 +74,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.646196, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.919504, -2.76532)
 mesh = SubResource("SphereMesh_8qewg")
 
-[node name="Node3D" type="Node3D" parent="Regarder"]
+[node name="Fov" type="Node3D" parent="Regarder"]
 script = ExtResource("3_vcqy2")
+puissance = 1.8
 
 [node name="Etats" type="Node" parent="."]
 unique_name_in_owner = true
@@ -158,6 +160,7 @@ coef = 0.6
 [node name="PreparationSaut" type="Node3D" parent="Deplacement"]
 unique_name_in_owner = true
 script = ExtResource("12_duqa8")
+v_pas_de_geant = 5.2
 metadata/_custom_type_script = "uid://brojgx8bcwa1m"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Deplacement/PreparationSaut"]
@@ -222,3 +225,8 @@ metadata/_custom_type_script = "uid://brojgx8bcwa1m"
 [node name="Momentum" type="Node3D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("12_eskiu")
+
+[node name="Coyote" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("16_84gkg")
+metadata/_custom_type_script = "uid://brojgx8bcwa1m"
