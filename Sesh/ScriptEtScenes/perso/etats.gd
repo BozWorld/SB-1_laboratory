@@ -4,9 +4,6 @@ extends StateMachine
 "COURSE" : 1.5,
 "SPRINT" : 5.0}
 
-var duree_foxtime := 0.44
-var foxtime := false
-var touche_sol := false
 
 func _ready() -> void:
 	add_state("attend")
@@ -25,7 +22,7 @@ func _state_logic(delta):
 func _get_transition(delta):
 	match state:
 		states.attend:
-			if _checkSol() :
+			if not parent.is_on_floor():
 				if parent.velocite.y >= 0.0 :
 					return states.saute
 				elif parent.velocite.y < 0.0:
@@ -45,7 +42,7 @@ func _get_transition(delta):
 					return states.sprint
 		
 		states.marche :
-			if not _checkSol():
+			if not parent.is_on_floor():
 				if parent.velocite.y >= 0.0 :
 					return states.saute
 				elif parent.velocite.y < 0.0:
@@ -65,7 +62,7 @@ func _get_transition(delta):
 					return states.sprint
 		
 		states.cours:
-			if not _checkSol():
+			if not parent.is_on_floor():
 				if parent.velocite.y >= 0.0 :
 					return states.saute
 				elif parent.velocite.y < 0.0:
@@ -85,7 +82,7 @@ func _get_transition(delta):
 					return states.sprint
 		
 		states.sprint:
-			if not _checkSol():
+			if not parent.is_on_floor():
 				if parent.velocite.y >= 0.0 :
 					return states.saute
 				elif parent.velocite.y < 0.0:
@@ -105,19 +102,19 @@ func _get_transition(delta):
 					return states.cours
 		
 		states.prepare_saut:
-			if !_checkSol():
+			if !parent.is_on_floor():
 				if parent.velocite.y >= 0.0:
 					return states.saute
 				else :
 					return states.tombe
 		
 		states.saute:
-			if _checkSol():
+			if parent.is_on_floor():
 				return states.attend
 			elif parent.velocite.y < 0.0:
 				return states.tombe
 		states.tombe:
-			if _checkSol():
+			if parent.is_on_floor():
 				return states.attend
 			elif parent.velocite.y >= 0.0:
 				return states.saute
@@ -129,24 +126,3 @@ func _enter_state(new_state, old_state):
 
 func _exit_state(old_state, new_state):
 	pass
-
-func _checkSol():
-	if !parent.is_on_floor() and touche_sol :
-		var fox_timer = TimerUnique.new()
-		fox_timer.wait_time = duree_foxtime
-		fox_timer.timeout.connect(retourFoxtime)
-		fox_timer.start()
-		touche_sol = false
-		foxtime = true
-		return true
-	elif parent.is_on_floor():
-		foxtime = false
-		touche_sol = true
-		return true
-	elif foxtime :
-		return true
-	else :
-		return false
-
-func retourFoxtime():
-	foxtime = false
