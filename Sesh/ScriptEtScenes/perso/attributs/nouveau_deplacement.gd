@@ -50,7 +50,27 @@ func _deplacement_process(delta):
 	puissance_pas = DICO_PUISSANCES_PAS["ZERO"]
 	if index_delta < delai_pas :
 		index_delta += delta
-	if Input.is_action_pressed("bougerAVANT") :
+
+	
+	if Input.is_action_pressed("bougerARRIERE") :
+		if index_delta >= delai_pas :
+			if parent.velocite and !recule :
+				freine = true
+				index_delta -= delai_pas
+				
+				puissance_pas = parent.velocite.length() * 0.15
+				delai_pas = 0.1
+				pas(-orientation_avant(), puissance_pas)
+				
+			elif !freine :
+				recule = true
+				index_delta -= delai_pas
+				
+				puissance_pas = DICO_PUISSANCES_PAS["RECULE"]
+				delai_pas = DICO_DELAIS_PAS["RECULE"]
+				pas(-orientation_avant(), puissance_pas)
+	
+	elif Input.is_action_pressed("bougerAVANT") :
 		if index_delta >= delai_pas :
 			index_delta -= delai_pas
 			
@@ -70,23 +90,20 @@ func _deplacement_process(delta):
 				momentum_boost = 0.0
 			
 			pas(orientation_avant(), puissance_pas)
-	elif Input.is_action_pressed("bougerARRIERE") :
+	
+	elif Input.is_action_pressed("bougerGAUCHE") :
 		if index_delta >= delai_pas :
-			if parent.velocite and !recule :
-				freine = true
-				index_delta -= delai_pas
-				
-				puissance_pas = parent.velocite.length() * 0.15
-				delai_pas = 0.1
-				pas(-orientation_avant(), puissance_pas)
-				
-			elif !freine :
-				recule = true
-				index_delta -= delai_pas
-				
-				puissance_pas = DICO_PUISSANCES_PAS["RECULE"]
-				delai_pas = DICO_DELAIS_PAS["RECULE"]
-				pas(-orientation_avant(), puissance_pas)
+			index_delta -= delai_pas
+			puissance_pas = DICO_PUISSANCES_PAS["CHASSE"]
+			delai_pas = DICO_DELAIS_PAS["CHASSE"]
+			pas(orientation_gauche(), puissance_pas)
+	
+	elif Input.is_action_pressed("bougerDROITE") :
+		if index_delta >= delai_pas :
+			index_delta -= delai_pas
+			puissance_pas = DICO_PUISSANCES_PAS["CHASSE"]
+			delai_pas = DICO_DELAIS_PAS["CHASSE"]
+			pas(-orientation_gauche(), puissance_pas)
 	
 	else :
 		freine = false
@@ -113,6 +130,15 @@ func orientation_avant():
 	
 	impulse = -impulse.rotated(Vector3.UP, orientation_corps)
 	return impulse
+
+func orientation_gauche():
+	var orientation_corps = parent.rotation.y
+	
+	var impulse = Vector3(1.0,0.0,0.0)
+	
+	impulse = -impulse.rotated(Vector3.UP, orientation_corps)
+	return impulse
+	
 
 
 func pas(orientation : Vector3, magnitude : float):

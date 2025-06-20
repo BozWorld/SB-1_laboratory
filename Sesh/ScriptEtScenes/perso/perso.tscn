@@ -118,6 +118,7 @@ script = ExtResource("8_k4l8c")
 unique_name_in_owner = true
 script = ExtResource("9_jj3mo")
 DICO_PUISSANCES_PAS = {
+"CHASSE": 1.4,
 "COURSE": 1.2,
 "MARCHE": 0.8,
 "RALENTI": 0.2,
@@ -126,6 +127,7 @@ DICO_PUISSANCES_PAS = {
 "ZERO": 0.0
 }
 DICO_DELAIS_PAS = {
+"CHASSE": 0.35,
 "COURSE": 0.2,
 "MARCHE": 0.44,
 "RALENTI": 0.07,
