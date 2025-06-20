@@ -4,6 +4,7 @@ extends StateMachine
 "COURSE" : 1.5,
 "SPRINT" : 5.0}
 
+@onready var coyote = %Coyote
 
 func _ready() -> void:
 	add_state("attend")
@@ -22,7 +23,7 @@ func _state_logic(delta):
 func _get_transition(delta):
 	match state:
 		states.attend:
-			if not parent.is_on_floor():
+			if not coyote.checkSol():
 				if parent.velocite.y >= 0.0 :
 					return states.saute
 				elif parent.velocite.y < 0.0:
@@ -42,7 +43,7 @@ func _get_transition(delta):
 					return states.sprint
 		
 		states.marche :
-			if not parent.is_on_floor():
+			if not coyote.checkSol():
 				if parent.velocite.y >= 0.0 :
 					return states.saute
 				elif parent.velocite.y < 0.0:
@@ -62,7 +63,7 @@ func _get_transition(delta):
 					return states.sprint
 		
 		states.cours:
-			if not parent.is_on_floor():
+			if not coyote.checkSol():
 				if parent.velocite.y >= 0.0 :
 					return states.saute
 				elif parent.velocite.y < 0.0:
@@ -82,7 +83,7 @@ func _get_transition(delta):
 					return states.sprint
 		
 		states.sprint:
-			if not parent.is_on_floor():
+			if not coyote.checkSol():
 				if parent.velocite.y >= 0.0 :
 					return states.saute
 				elif parent.velocite.y < 0.0:
@@ -102,19 +103,19 @@ func _get_transition(delta):
 					return states.cours
 		
 		states.prepare_saut:
-			if !parent.is_on_floor():
+			if !coyote.checkSol():
 				if parent.velocite.y >= 0.0:
 					return states.saute
 				else :
 					return states.tombe
 		
 		states.saute:
-			if parent.is_on_floor():
+			if coyote.checkSol():
 				return states.attend
 			elif parent.velocite.y < 0.0:
 				return states.tombe
 		states.tombe:
-			if parent.is_on_floor():
+			if coyote.checkSol():
 				return states.attend
 			elif parent.velocite.y >= 0.0:
 				return states.saute

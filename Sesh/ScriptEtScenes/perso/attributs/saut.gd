@@ -13,7 +13,7 @@ func init_machine_etat():
 	machine_etats = parent.machine_etats
 
 func _unhandled_input(event: InputEvent) -> void:
-	if parent.is_on_floor() :
+	if %Coyote.checkSol() :
 		if Input.is_action_just_pressed("saut"):
 			genoux_flechis = true
 		
@@ -38,5 +38,5 @@ func _saut_process(delta):
 		%DebugFlexion._actualisation_compteur(flexion)
 		parent.mesh.scale *= 0.995
 	
-	elif !parent.is_on_floor():
+	elif !%Coyote.checkSol():
 		genoux_flechis = false
