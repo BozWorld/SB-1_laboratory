@@ -1,4 +1,4 @@
-extends Attribut3D
+extends Attribut3DSesh
 
 # seconde entre chaque pas
 var delai_pas : float = 0.2

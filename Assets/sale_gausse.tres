@@ -1,0 +1,10 @@
+[gd_resource type="SphereMesh" load_steps=2 format=3 uid="uid://bbpadhb67vwej"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wpme6"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 0.513726)
+
+[resource]
+material = SubResource("StandardMaterial3D_wpme6")
+radius = 1.0
+height = 2.0

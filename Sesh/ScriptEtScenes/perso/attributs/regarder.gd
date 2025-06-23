@@ -1,4 +1,4 @@
-extends Attribut3D
+extends Attribut3DSesh
 
 @export_range(0,0.01,0.0001) var sensibilite : float = 0.001
 var horizontal_input := 0.0

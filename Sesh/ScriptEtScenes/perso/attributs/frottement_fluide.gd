@@ -1,4 +1,4 @@
-extends Attribut3D
+extends Attribut3DSesh
 
 var coef : float = 0.1
 var surface : float = 1.0

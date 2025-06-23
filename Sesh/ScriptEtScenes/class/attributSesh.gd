@@ -1,5 +1,5 @@
 extends Node3D
-class_name Attribut3D
+class_name Attribut3DSesh
 
 @onready var parent : SeshBody = find_parent("*Body")
 var attribut_parent : Attribut3D 

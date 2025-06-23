@@ -1,4 +1,4 @@
-extends Attribut3D
+extends Attribut3DSesh
 
 var h_momentum := 0.0
 var v_momentum := 0.0

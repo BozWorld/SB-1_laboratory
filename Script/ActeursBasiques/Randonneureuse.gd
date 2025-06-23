@@ -3,15 +3,18 @@ extends MeshInstance3D
 
 signal changement_bpm
 
+signal pas_effectue
+
 var index_delta = 0.0
 var seuil_delta = 0.5
+	
 @export_range(0.0,500.0, 1.0, "or_greater") var bpm = 120.0 :
 	set(value):
 		bpm = value
 		seuil_delta = 60.0 / value
 		changement_bpm.emit()
 
-@export_range(0.0,100.0,0.1, "or_greater") var puissance_deplacement := 1.0
+@export_range(0.0,100.0,0.001, "or_greater") var puissance_deplacement := 1.0
 
 
 func _physics_process(delta: float) -> void:
@@ -19,6 +22,7 @@ func _physics_process(delta: float) -> void:
 	if index_delta >= seuil_delta :
 		index_delta -= seuil_delta
 		_pas()
+		pas_effectue.emit()
 
 func _pas():
 	var choix = randi_range(0, 5)

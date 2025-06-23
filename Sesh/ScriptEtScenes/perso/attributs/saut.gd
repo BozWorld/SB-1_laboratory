@@ -1,4 +1,4 @@
-extends Attribut3D
+extends Attribut3DSesh
 
 var genoux_flechis := false
 

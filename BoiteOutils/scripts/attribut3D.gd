@@ -1,7 +1,7 @@
 extends Node3D
 class_name Attribut3D
 
-@onready var parent : SeshBody = find_parent("*Body")
+@export var parent : Node3D
 var attribut_parent : Attribut3D 
 
 func _ready() -> void:

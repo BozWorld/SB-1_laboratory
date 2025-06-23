@@ -1,0 +1,127 @@
+[gd_scene load_steps=7 format=3 uid="uid://bdnt1hmu56282"]
+
+[ext_resource type="Script" uid="uid://cvyharm6xl5qj" path="res://Scene/GenerateurRondGausses.gd" id="3_d414y"]
+[ext_resource type="PackedScene" uid="uid://bwtlb6e83t7rx" path="res://Scene/Drone.tscn" id="3_obdxv"]
+[ext_resource type="SphereMesh" uid="uid://bbpadhb67vwej" path="res://Assets/sale_gausse.tres" id="4_obdxv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0nxj"]
+sky_top_color = Color(0.552941, 0.298039, 0.654902, 1)
+sky_horizon_color = Color(0.622098, 0.576509, 0.685759, 1)
+ground_bottom_color = Color(0.107526, 0.180073, 0.260209, 1)
+ground_horizon_color = Color(0.622098, 0.576509, 0.685759, 1)
+energy_multiplier = 2.0
+
+[sub_resource type="Sky" id="Sky_0lnwn"]
+sky_material = SubResource("ProceduralSkyMaterial_b0nxj")
+
+[sub_resource type="Environment" id="Environment_t8oi0"]
+background_mode = 2
+sky = SubResource("Sky_0lnwn")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="SalleExtraRandonneureuse" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t8oi0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.906308, -0.00737571, -0.422554, 0, 0.999848, -0.0174524, 0.422618, -0.0158173, -0.90617, 0, 0, 0)
+light_color = Color(1, 0.709804, 0.733333, 1)
+light_energy = 20.0
+shadow_enabled = true
+
+[node name="DroneBody" parent="." instance=ExtResource("3_obdxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.87809)
+
+[node name="GenerateurGaussien" type="Node3D" parent="."]
+script = ExtResource("3_d414y")
+deviation = 4.44
+bpm = 10000.0
+
+[node name="SaleGausse" type="MeshInstance3D" parent="."]
+mesh = ExtResource("4_obdxv")
+
+[node name="DevG" type="HSlider" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -318.0
+offset_bottom = 42.0
+grow_horizontal = 2
+size_flags_vertical = 1
+step = 0.01
+value = 3.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -303.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="MoyR" type="VSlider" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.927552, 0.231906, 0.341197, 1)
+
+[node name="DevR" type="VSlider" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="MoyV" type="VSlider" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="ColorRect2" type="ColorRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.496649, 0.940681, 0.603716, 1)
+
+[node name="DevV" type="VSlider" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="MoyB" type="VSlider" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="ColorRect3" type="ColorRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.160442, 0.312239, 0.647576, 1)
+
+[node name="DevB" type="VSlider" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[connection signal="value_changed" from="DevG" to="GenerateurGaussien" method="_on_dev_g_value_changed"]
+[connection signal="value_changed" from="HBoxContainer/MoyR" to="GenerateurGaussien" method="_on_moy_r_value_changed"]
+[connection signal="value_changed" from="HBoxContainer/DevR" to="GenerateurGaussien" method="_on_dev_r_value_changed"]
+[connection signal="value_changed" from="HBoxContainer/MoyV" to="GenerateurGaussien" method="_on_moy_v_value_changed"]
+[connection signal="value_changed" from="HBoxContainer/DevV" to="GenerateurGaussien" method="_on_dev_v_value_changed"]
+[connection signal="value_changed" from="HBoxContainer/MoyB" to="GenerateurGaussien" method="_on_moy_b_value_changed"]
+[connection signal="value_changed" from="HBoxContainer/DevB" to="GenerateurGaussien" method="_on_dev_b_value_changed"]
