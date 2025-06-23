@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dkvisjqlyxqyi"]
+[gd_scene load_steps=9 format=3 uid="uid://ck6vv48hi0wxq"]
 
-[ext_resource type="Script" uid="uid://dcm6l5xykwte6" path="res://Script/ActeursBasiques/ScribeRando.gd" id="1_b0nxj"]
-[ext_resource type="Script" uid="uid://cwrx1d1ttp8vg" path="res://Script/ActeursBasiques/ExtraRandonneureuseGauss.gd" id="1_vduss"]
-[ext_resource type="PackedScene" uid="uid://bwtlb6e83t7rx" path="res://Scene/Drone.tscn" id="3_t8oi0"]
+[ext_resource type="Script" uid="uid://dcm6l5xykwte6" path="res://Script/ActeursBasiques/ScribeRando.gd" id="1_insfu"]
+[ext_resource type="Script" uid="uid://cubf4sn8hxlwo" path="res://Script/ActeursBasiques/ExtraRandonneureuseAcceptReject.gd" id="2_insfu"]
+[ext_resource type="PackedScene" uid="uid://bwtlb6e83t7rx" path="res://Scene/Drone.tscn" id="3_56vyr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0nxj"]
 sky_top_color = Color(0.552941, 0.298039, 0.654902, 1)
@@ -32,17 +32,15 @@ environment = SubResource("Environment_t8oi0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.906308, -0.00737571, -0.422554, 0, 0.999848, -0.0174524, 0.422618, -0.0158173, -0.90617, 0, 0, 0)
-light_color = Color(1, 0.709804, 0.733333, 1)
-light_energy = 20.0
 shadow_enabled = true
 
 [node name="ScribeRando" type="Node3D" parent="." node_paths=PackedStringArray("randonneureuse")]
-script = ExtResource("1_b0nxj")
+script = ExtResource("1_insfu")
 randonneureuse = NodePath("../Randonneureuse")
 
 [node name="Randonneureuse" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_wgpd1")
-script = ExtResource("1_vduss")
+script = ExtResource("2_insfu")
 
-[node name="DroneBody" parent="." instance=ExtResource("3_t8oi0")]
+[node name="DroneBody" parent="." instance=ExtResource("3_56vyr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.87809)
