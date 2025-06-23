@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6611vp82qtyp"]
+
+[ext_resource type="PackedScene" uid="uid://cvc32bmo5mjr0" path="res://Scene/dune_room/niveau.tscn" id="1_uprpi"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Niveau" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(-130, -137)
+
+[node name="Niveau2" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(320, -137)
+
+[node name="Niveau3" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(770, -137)
+
+[node name="Niveau4" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(-130, 313)
+
+[node name="Niveau5" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(320, 313)
+
+[node name="Niveau6" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(770, 313)
+
+[node name="Niveau7" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(-130, 763)
+
+[node name="Niveau8" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(320, 763)
+
+[node name="Niveau9" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(770, 763)
+
+[node name="Niveau10" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(1220, -137)
+
+[node name="Niveau11" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(1670, -137)
+
+[node name="Niveau12" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(2120, -137)
+
+[node name="Niveau13" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(1220, 313)
+
+[node name="Niveau14" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(1670, 313)
+
+[node name="Niveau15" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(2120, 313)
+
+[node name="Niveau16" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(1220, 763)
+
+[node name="Niveau17" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(1670, 763)
+
+[node name="Niveau18" parent="." instance=ExtResource("1_uprpi")]
+position = Vector2(2120, 763)

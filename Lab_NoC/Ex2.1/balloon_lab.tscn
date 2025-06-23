@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cgwh6fof1jvfd"]
 
-[ext_resource type="Script" path="res://Lab_NoC/Ex2.1/ballon_helium.gd" id="1_wc8no"]
+[ext_resource type="Script" uid="uid://cuyt1r71jtfy4" path="res://Lab_NoC/Ex2.1/ballon_helium.gd" id="1_wc8no"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_voog5"]
 sky_top_color = Color(0.544476, 0.308885, 0.775765, 1)

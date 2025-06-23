@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://di0iyvjt55gf6"]
 
-[ext_resource type="Script" path="res://Lab_NoC/Ex2.4-5/CubeABalles.gd" id="1_4j5s0"]
-[ext_resource type="Script" path="res://Lab_NoC/Ex2.4-5/balle.gd" id="2_dobho"]
-[ext_resource type="Script" path="res://Lab_NoC/Ex2.4-5/origine_vent.gd" id="2_grd0x"]
+[ext_resource type="Script" uid="uid://b45ljmhmtipuu" path="res://Lab_NoC/Ex2.4-5/CubeABalles.gd" id="1_4j5s0"]
+[ext_resource type="Script" uid="uid://bbp1ih2wkt02k" path="res://Lab_NoC/Ex2.4-5/balle.gd" id="2_dobho"]
+[ext_resource type="Script" uid="uid://brqden5pwnegk" path="res://Lab_NoC/Ex2.4-5/origine_vent.gd" id="2_grd0x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7mc3w"]
 sky_top_color = Color(0.544476, 0.308885, 0.775765, 1)

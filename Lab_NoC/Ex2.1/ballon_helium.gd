@@ -8,26 +8,26 @@ var velocite : Vector3
 var acceleration : Vector3
 
 
-func _appliquer_force(force : Vector3):
+func appliquerForce(force : Vector3):
 	acceleration += force
 
 func _rebond_plafond():
 	var force_plafond = Vector3(0.0,-velocite.y*1.5,0.0)
-	_appliquer_force(force_plafond)
+	appliquerForce(force_plafond)
 
 func _helium_process():
 	var force_helium = Vector3(0.0, 0.001*legerete_helium, 0.0)
-	_appliquer_force(force_helium)
+	appliquerForce(force_helium)
 
 func _coup_de_vent():
 	var force_vent = Vector3(randf_range(-0.05,0.05),0.0,randf_range(-0.05,0.05))*puissance_vent
-	_appliquer_force(force_vent)
+	appliquerForce(force_vent)
 
 func _frottement_horizontaux():
 	var frottement = Vector3(0,0,0)
 	frottement.x = -velocite.x*0.01
 	frottement.z = -velocite.z*0.01
-	_appliquer_force(frottement)
+	appliquerForce(frottement)
 
 func _process(delta: float) -> void:
 	if position.y + mesh.height/2 >= hauteur_toit:
