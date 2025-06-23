@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://blpccmrfm4m0b"]
 
 [ext_resource type="Texture2D" uid="uid://d35jjgilgtsol" path="res://visual/dg9g8fo-0d35c152-da40-426b-aa51-52c504aea849.png" id="1_f6udf"]
-[ext_resource type="Script" uid="uid://dsqlimwscjtk4" path="res://Scene/random_walk.gd" id="2_sblpm"]
-[ext_resource type="Script" uid="uid://cka5kd5pfvykv" path="res://Scene/basic_objet.gd" id="3_r34rm"]
-[ext_resource type="Script" uid="uid://e836ss4wcmcv" path="res://Scene/jauge.gd" id="4_2wwxx"]
-[ext_resource type="Script" uid="uid://bqnyujnj4aukq" path="res://Scene/baci_walker.gd" id="5_3amdw"]
-[ext_resource type="Script" uid="uid://dngmadqf64fix" path="res://Scene/basic_gaussian.gd" id="6_1xcnr"]
+[ext_resource type="Script" uid="uid://dsqlimwscjtk4" path="res://random_walk.gd" id="2_sblpm"]
+[ext_resource type="Script" uid="uid://cka5kd5pfvykv" path="res://Script/basic_objet.gd" id="3_r34rm"]
+[ext_resource type="Script" uid="uid://e836ss4wcmcv" path="res://Script/basic_jauge.gd" id="4_2wwxx"]
+[ext_resource type="Script" uid="uid://bqnyujnj4aukq" path="res://Script/basic_walker.gd" id="5_3amdw"]
+[ext_resource type="Script" uid="uid://dngmadqf64fix" path="res://Script/basic_gaussian.gd" id="6_1xcnr"]
 
 [node name="Node2D" type="Node2D"]
 
