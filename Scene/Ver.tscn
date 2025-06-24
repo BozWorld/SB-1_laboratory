@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dcm6l5xykwte6" path="res://Script/ActeursBasiques/ScribeRando.gd" id="1_riede"]
 [ext_resource type="PackedScene" uid="uid://bwtlb6e83t7rx" path="res://Scene/Drone.tscn" id="2_iyoht"]
-[ext_resource type="Script" uid="uid://dan7c14arngd7" path="res://Scene/Ver.gd" id="3_o07np"]
-[ext_resource type="Script" uid="uid://bh68w3coec26t" path="res://Scene/ancre.gd" id="4_iyoht"]
-[ext_resource type="Script" uid="uid://c76cgyxw4sls0" path="res://Scene/squelette_vers.gd" id="5_c5k3y"]
-[ext_resource type="Script" uid="uid://csuf0prsuawyl" path="res://Scene/Vertebre.gd" id="5_o07np"]
+[ext_resource type="Script" uid="uid://dan7c14arngd7" path="res://Script/ActeursBasiques/Ver.gd" id="3_o07np"]
+[ext_resource type="Script" uid="uid://bh68w3coec26t" path="res://Script/ObjetsBasiques/ancre.gd" id="4_iyoht"]
+[ext_resource type="Script" uid="uid://c76cgyxw4sls0" path="res://Script/ActeursBasiques/squelette_vers.gd" id="5_c5k3y"]
+[ext_resource type="Script" uid="uid://csuf0prsuawyl" path="res://Script/ObjetsBasiques/Vertebre.gd" id="5_o07np"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0nxj"]
 sky_top_color = Color(0.552941, 0.298039, 0.654902, 1)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwtlb6e83t7rx"]
 
-[ext_resource type="Script" uid="uid://b2cfartdwj4hk" path="res://Scene/Drone.gd" id="1_74o8j"]
+[ext_resource type="Script" uid="uid://b2cfartdwj4hk" path="res://Script/ActeursBasiques/Drone.gd" id="1_74o8j"]
 [ext_resource type="Script" uid="uid://cd0qa5ui1ojyq" path="res://Script/Attributs/FrottementFluide.gd" id="2_wsxxi"]
 
 [node name="DroneBody" type="Node3D"]

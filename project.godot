@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
 
-AutoloadSouris="*res://AutoloadSouris.gd"
+AutoloadSouris="*res://Script/Autoloads/AutoloadSouris.gd"
 
 [display]
 

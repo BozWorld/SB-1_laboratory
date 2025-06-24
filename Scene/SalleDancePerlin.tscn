@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://15o43ri7ig5i"]
 
 [ext_resource type="PackedScene" uid="uid://bwtlb6e83t7rx" path="res://Scene/Drone.tscn" id="1_8iu0e"]
-[ext_resource type="Script" uid="uid://bmvleyvkbf2t5" path="res://Scene/SolDancePerlin.gd" id="2_8iu0e"]
+[ext_resource type="Script" uid="uid://bmvleyvkbf2t5" path="res://Script/ActeursBasiques/SolDancePerlin.gd" id="2_8iu0e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0nxj"]
 sky_top_color = Color(0.552941, 0.298039, 0.654902, 1)

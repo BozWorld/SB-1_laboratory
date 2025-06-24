@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b72pfiih508p8"]
 
-[ext_resource type="Script" uid="uid://ctumkwv37m0y3" path="res://Scene/tableur.gd" id="2_cfv53"]
+[ext_resource type="Script" uid="uid://ctumkwv37m0y3" path="res://Script/ActeursBasiques/tableur.gd" id="2_cfv53"]
 [ext_resource type="PackedScene" uid="uid://bwtlb6e83t7rx" path="res://Scene/Drone.tscn" id="3_tw0ho"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0nxj"]
