@@ -5,7 +5,8 @@ extends Node3D
 var occurences : Array[MeshInstance3D]
 
 func _ready() -> void:
-	randonneureuse.pas_effectue.connect(pas)
+	if randonneureuse :
+		randonneureuse.pas_effectue.connect(pas)
 
 func pas():
 	var nouveau_mesh = MeshInstance3D.new()

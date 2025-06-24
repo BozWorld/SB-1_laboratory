@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://c1af7rqax8fyd"]
+
+[ext_resource type="Script" uid="uid://dcm6l5xykwte6" path="res://Script/ActeursBasiques/ScribeRando.gd" id="1_wm13t"]
+[ext_resource type="Script" uid="uid://dj2kp8f7pv7ql" path="res://Scene/RandonneureusePerlin.gd" id="2_wm13t"]
+[ext_resource type="PackedScene" uid="uid://bwtlb6e83t7rx" path="res://Scene/Drone.tscn" id="3_liun5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0nxj"]
+sky_top_color = Color(0.552941, 0.298039, 0.654902, 1)
+sky_horizon_color = Color(0.622098, 0.576509, 0.685759, 1)
+ground_bottom_color = Color(0.107526, 0.180073, 0.260209, 1)
+ground_horizon_color = Color(0.622098, 0.576509, 0.685759, 1)
+energy_multiplier = 2.0
+
+[sub_resource type="Sky" id="Sky_0lnwn"]
+sky_material = SubResource("ProceduralSkyMaterial_b0nxj")
+
+[sub_resource type="Environment" id="Environment_t8oi0"]
+background_mode = 2
+sky = SubResource("Sky_0lnwn")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0nxj"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_wgpd1"]
+material = SubResource("StandardMaterial3D_b0nxj")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wm13t"]
+seed = 1312
+fractal_type = 3
+fractal_ping_pong_strength = 3.28
+
+[node name="SalleExtraRandonneureuse" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t8oi0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.906308, -0.00737571, -0.422554, 0, 0.999848, -0.0174524, 0.422618, -0.0158173, -0.90617, 0, 0, 0)
+shadow_enabled = true
+
+[node name="ScribeRando" type="Node3D" parent="." node_paths=PackedStringArray("randonneureuse")]
+script = ExtResource("1_wm13t")
+randonneureuse = NodePath("../Randonneureuse")
+
+[node name="Randonneureuse" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_wgpd1")
+script = ExtResource("2_wm13t")
+perlin = SubResource("FastNoiseLite_wm13t")
+bpm = 10000.0
+puissance_deplacement = 0.05
+
+[node name="DroneBody" parent="." instance=ExtResource("3_liun5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.87809)

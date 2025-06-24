@@ -1,0 +1,678 @@
+[gd_scene load_steps=37 format=3 uid="uid://coj8r5bdk7m18"]
+
+[ext_resource type="Script" uid="uid://dcm6l5xykwte6" path="res://Script/ActeursBasiques/ScribeRando.gd" id="1_riede"]
+[ext_resource type="PackedScene" uid="uid://bwtlb6e83t7rx" path="res://Scene/Drone.tscn" id="2_iyoht"]
+[ext_resource type="Script" uid="uid://dan7c14arngd7" path="res://Scene/Ver.gd" id="3_o07np"]
+[ext_resource type="Script" uid="uid://bh68w3coec26t" path="res://Scene/ancre.gd" id="4_iyoht"]
+[ext_resource type="Script" uid="uid://c76cgyxw4sls0" path="res://Scene/squelette_vers.gd" id="5_c5k3y"]
+[ext_resource type="Script" uid="uid://csuf0prsuawyl" path="res://Scene/Vertebre.gd" id="5_o07np"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0nxj"]
+sky_top_color = Color(0.552941, 0.298039, 0.654902, 1)
+sky_horizon_color = Color(0.622098, 0.576509, 0.685759, 1)
+ground_bottom_color = Color(0.107526, 0.180073, 0.260209, 1)
+ground_horizon_color = Color(0.622098, 0.576509, 0.685759, 1)
+energy_multiplier = 2.0
+
+[sub_resource type="Sky" id="Sky_0lnwn"]
+sky_material = SubResource("ProceduralSkyMaterial_b0nxj")
+
+[sub_resource type="Environment" id="Environment_t8oi0"]
+background_mode = 2
+sky = SubResource("Sky_0lnwn")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_t4gfu"]
+noise_type = 0
+seed = 1312
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_liun5"]
+noise_type = 0
+seed = 1312
+fractal_type = 0
+fractal_gain = 0.44
+fractal_weighted_strength = 1.0
+fractal_ping_pong_strength = 4.4
+
+[sub_resource type="SphereMesh" id="SphereMesh_riede"]
+radius = 0.4
+height = 0.8
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_c5k3y"]
+seed = 1312
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bk63x"]
+noise_type = 0
+seed = 13
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_j1s7b"]
+noise_type = 0
+seed = 13
+fractal_type = 0
+fractal_gain = 0.44
+fractal_weighted_strength = 1.0
+fractal_ping_pong_strength = 4.4
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5xn5g"]
+seed = 13
+
+[sub_resource type="SphereMesh" id="SphereMesh_sbfrx"]
+radius = 0.38
+height = 0.76
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ouber"]
+noise_type = 0
+seed = 12
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7mp8g"]
+noise_type = 0
+seed = 12
+fractal_type = 0
+fractal_gain = 0.44
+fractal_weighted_strength = 1.0
+fractal_ping_pong_strength = 4.4
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_sbfrx"]
+seed = 12
+
+[sub_resource type="SphereMesh" id="SphereMesh_wuj0m"]
+radius = 0.4
+height = 0.8
+
+[sub_resource type="SphereMesh" id="SphereMesh_kvvhk"]
+radius = 0.54
+height = 1.08
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wuj0m"]
+noise_type = 0
+seed = 32
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kvvhk"]
+noise_type = 0
+seed = 32
+fractal_type = 0
+fractal_gain = 0.44
+fractal_weighted_strength = 1.0
+fractal_ping_pong_strength = 4.4
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hpq72"]
+seed = 33
+
+[sub_resource type="SphereMesh" id="SphereMesh_hpq72"]
+radius = 0.34
+height = 0.68
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mfeqc"]
+noise_type = 0
+seed = 11
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ldgm2"]
+noise_type = 0
+seed = 11
+fractal_type = 0
+fractal_gain = 0.44
+fractal_weighted_strength = 1.0
+fractal_ping_pong_strength = 4.4
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_t0f7i"]
+seed = 11
+
+[sub_resource type="SphereMesh" id="SphereMesh_c5k3y"]
+radius = 0.44
+height = 0.88
+
+[sub_resource type="SphereMesh" id="SphereMesh_bk63x"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_j1s7b"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_5xn5g"]
+radius = 0.54
+height = 1.08
+
+[sub_resource type="SphereMesh" id="SphereMesh_ouber"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_7mp8g"]
+radius = 0.44
+height = 0.88
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_riede"]
+
+[node name="SalleExtraRandonneureuse" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t8oi0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.906308, -0.00737571, -0.422554, 0, 0.999848, -0.0174524, 0.422618, -0.0158173, -0.90617, 0, 0, 0)
+shadow_enabled = true
+
+[node name="ScribeRando" type="Node3D" parent="."]
+script = ExtResource("1_riede")
+
+[node name="DroneBody" parent="." instance=ExtResource("2_iyoht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.87809)
+
+[node name="Ver" type="Node3D" parent="."]
+script = ExtResource("3_o07np")
+perlin_h = SubResource("FastNoiseLite_t4gfu")
+perlin_v = SubResource("FastNoiseLite_liun5")
+temps_seconde = 4.4
+echelle = 10.0
+
+[node name="Ancre" type="Node3D" parent="Ver"]
+script = ExtResource("4_iyoht")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ver/Ancre"]
+mesh = SubResource("SphereMesh_riede")
+skeleton = NodePath("../..")
+
+[node name="SqueletteVers" type="Node3D" parent="Ver" node_paths=PackedStringArray("ancre")]
+script = ExtResource("5_c5k3y")
+ancre = NodePath("../Ancre")
+frequence_bruit = 0.05
+pas_temps = 1.0
+bruit = SubResource("FastNoiseLite_c5k3y")
+distance_bruit = 1.312
+
+[node name="Vertebre1" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0734844, 4.76837e-07, -1.39961)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre2" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30446, 0, -2.9191)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre3" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0472188, 0, -4.53396)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre4" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08793, 0, -6.14129)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre5" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.445545, 0, -7.39794)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre6" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre7" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre8" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre9" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre10" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre11" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre12" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre13" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre14" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre15" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre16" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre17" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre18" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre19" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre20" type="Node3D" parent="Ver/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Ver2" type="Node3D" parent="."]
+script = ExtResource("3_o07np")
+perlin_h = SubResource("FastNoiseLite_bk63x")
+perlin_v = SubResource("FastNoiseLite_j1s7b")
+temps_seconde = 4.4
+echelle = 10.0
+
+[node name="Ancre" type="Node3D" parent="Ver2"]
+script = ExtResource("4_iyoht")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ver2/Ancre"]
+mesh = SubResource("SphereMesh_riede")
+skeleton = NodePath("../..")
+
+[node name="SqueletteVers" type="Node3D" parent="Ver2" node_paths=PackedStringArray("ancre")]
+script = ExtResource("5_c5k3y")
+ancre = NodePath("../Ancre")
+frequence_bruit = 0.05
+pas_temps = 1.0
+bruit = SubResource("FastNoiseLite_5xn5g")
+distance_bruit = 1.312
+
+[node name="Vertebre1" type="Node3D" parent="Ver2/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0734844, 4.76837e-07, -1.39961)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_sbfrx")
+
+[node name="Vertebre2" type="Node3D" parent="Ver2/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30446, 0, -2.9191)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_sbfrx")
+
+[node name="Vertebre3" type="Node3D" parent="Ver2/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0472188, 0, -4.53396)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_sbfrx")
+
+[node name="Vertebre4" type="Node3D" parent="Ver2/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08793, 0, -6.14129)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre5" type="Node3D" parent="Ver2/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.445545, 0, -7.39794)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre6" type="Node3D" parent="Ver2/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre7" type="Node3D" parent="Ver2/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre8" type="Node3D" parent="Ver2/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre9" type="Node3D" parent="Ver2/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre10" type="Node3D" parent="Ver2/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre11" type="Node3D" parent="Ver2/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_sbfrx")
+
+[node name="Vertebre12" type="Node3D" parent="Ver2/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_sbfrx")
+
+[node name="Vertebre13" type="Node3D" parent="Ver2/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_sbfrx")
+
+[node name="Ver3" type="Node3D" parent="."]
+script = ExtResource("3_o07np")
+perlin_h = SubResource("FastNoiseLite_ouber")
+perlin_v = SubResource("FastNoiseLite_7mp8g")
+temps_seconde = 4.4
+echelle = 10.0
+
+[node name="Ancre" type="Node3D" parent="Ver3"]
+script = ExtResource("4_iyoht")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ver3/Ancre"]
+mesh = SubResource("SphereMesh_riede")
+skeleton = NodePath("../..")
+
+[node name="SqueletteVers" type="Node3D" parent="Ver3" node_paths=PackedStringArray("ancre")]
+script = ExtResource("5_c5k3y")
+ancre = NodePath("../Ancre")
+frequence_bruit = 0.05
+pas_temps = 1.0
+bruit = SubResource("FastNoiseLite_sbfrx")
+distance_bruit = 1.312
+
+[node name="Vertebre1" type="Node3D" parent="Ver3/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0734844, 4.76837e-07, -1.39961)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre2" type="Node3D" parent="Ver3/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30446, 0, -2.9191)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_wuj0m")
+
+[node name="Vertebre3" type="Node3D" parent="Ver3/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0472188, 0, -4.53396)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_kvvhk")
+
+[node name="Vertebre4" type="Node3D" parent="Ver3/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08793, 0, -6.14129)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_wuj0m")
+
+[node name="Vertebre5" type="Node3D" parent="Ver3/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.445545, 0, -7.39794)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_kvvhk")
+
+[node name="Vertebre6" type="Node3D" parent="Ver3/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_wuj0m")
+
+[node name="Vertebre7" type="Node3D" parent="Ver3/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_kvvhk")
+
+[node name="Vertebre8" type="Node3D" parent="Ver3/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_wuj0m")
+
+[node name="Vertebre9" type="Node3D" parent="Ver3/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_kvvhk")
+
+[node name="Vertebre10" type="Node3D" parent="Ver3/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_wuj0m")
+
+[node name="Vertebre11" type="Node3D" parent="Ver3/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_kvvhk")
+
+[node name="Vertebre12" type="Node3D" parent="Ver3/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_wuj0m")
+
+[node name="Vertebre13" type="Node3D" parent="Ver3/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_kvvhk")
+
+[node name="Vertebre14" type="Node3D" parent="Ver3/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_kvvhk")
+
+[node name="Vertebre15" type="Node3D" parent="Ver3/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_kvvhk")
+
+[node name="Vertebre16" type="Node3D" parent="Ver3/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre17" type="Node3D" parent="Ver3/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Ver4" type="Node3D" parent="."]
+script = ExtResource("3_o07np")
+perlin_h = SubResource("FastNoiseLite_wuj0m")
+perlin_v = SubResource("FastNoiseLite_kvvhk")
+temps_seconde = 4.4
+echelle = 10.0
+
+[node name="Ancre" type="Node3D" parent="Ver4"]
+script = ExtResource("4_iyoht")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ver4/Ancre"]
+mesh = SubResource("SphereMesh_riede")
+skeleton = NodePath("../..")
+
+[node name="SqueletteVers" type="Node3D" parent="Ver4" node_paths=PackedStringArray("ancre")]
+script = ExtResource("5_c5k3y")
+ancre = NodePath("../Ancre")
+frequence_bruit = 0.05
+pas_temps = 1.0
+bruit = SubResource("FastNoiseLite_hpq72")
+distance_bruit = 1.312
+
+[node name="Vertebre1" type="Node3D" parent="Ver4/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0734844, 4.76837e-07, -1.39961)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre2" type="Node3D" parent="Ver4/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30446, 0, -2.9191)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre3" type="Node3D" parent="Ver4/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0472188, 0, -4.53396)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre4" type="Node3D" parent="Ver4/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08793, 0, -6.14129)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_hpq72")
+
+[node name="Vertebre5" type="Node3D" parent="Ver4/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.445545, 0, -7.39794)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_hpq72")
+
+[node name="Vertebre6" type="Node3D" parent="Ver4/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_hpq72")
+
+[node name="Vertebre7" type="Node3D" parent="Ver4/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre8" type="Node3D" parent="Ver4/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre9" type="Node3D" parent="Ver4/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre10" type="Node3D" parent="Ver4/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_hpq72")
+
+[node name="Vertebre11" type="Node3D" parent="Ver4/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_hpq72")
+
+[node name="Vertebre12" type="Node3D" parent="Ver4/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_hpq72")
+
+[node name="Vertebre13" type="Node3D" parent="Ver4/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre14" type="Node3D" parent="Ver4/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre15" type="Node3D" parent="Ver4/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Ver5" type="Node3D" parent="."]
+script = ExtResource("3_o07np")
+perlin_h = SubResource("FastNoiseLite_mfeqc")
+perlin_v = SubResource("FastNoiseLite_ldgm2")
+temps_seconde = 4.4
+echelle = 10.0
+
+[node name="Ancre" type="Node3D" parent="Ver5"]
+script = ExtResource("4_iyoht")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ver5/Ancre"]
+mesh = SubResource("SphereMesh_riede")
+skeleton = NodePath("../..")
+
+[node name="SqueletteVers" type="Node3D" parent="Ver5" node_paths=PackedStringArray("ancre")]
+script = ExtResource("5_c5k3y")
+ancre = NodePath("../Ancre")
+frequence_bruit = 0.05
+pas_temps = 1.0
+bruit = SubResource("FastNoiseLite_t0f7i")
+distance_bruit = 1.312
+
+[node name="Vertebre1" type="Node3D" parent="Ver5/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0734844, 4.76837e-07, -1.39961)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre2" type="Node3D" parent="Ver5/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30446, 0, -2.9191)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre3" type="Node3D" parent="Ver5/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0472188, 0, -4.53396)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_c5k3y")
+
+[node name="Vertebre4" type="Node3D" parent="Ver5/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08793, 0, -6.14129)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_bk63x")
+
+[node name="Vertebre5" type="Node3D" parent="Ver5/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.445545, 0, -7.39794)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_j1s7b")
+
+[node name="Vertebre6" type="Node3D" parent="Ver5/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_5xn5g")
+
+[node name="Vertebre7" type="Node3D" parent="Ver5/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+modele = SubResource("SphereMesh_ouber")
+
+[node name="Vertebre8" type="Node3D" parent="Ver5/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+modele = SubResource("SphereMesh_7mp8g")
+
+[node name="Vertebre9" type="Node3D" parent="Ver5/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre10" type="Node3D" parent="Ver5/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="Vertebre11" type="Node3D" parent="Ver5/SqueletteVers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
+script = ExtResource("5_o07np")
+post_distance = 0.44
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_riede")
