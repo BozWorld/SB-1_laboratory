@@ -1,8 +1,10 @@
 extends Node3D
 
-var vitesse := 1.0
+var vitesse := 3.0
 var acceleration := Vector3.ZERO
 var velocite := Vector3.ZERO
+
+var rotation_euler := Vector3.ZERO
 
 @onready var frottements := $FrottementsFluide
 
@@ -10,27 +12,52 @@ var rotacceleration := Vector3.ZERO
 var celerota := Vector3.ZERO
 var sensi_souris := Vector2(0.0004, 0.0004)
 var sensi_ae := 0.2
+var vitesse_rota := 0.44
 
 func prendInputDeplacement():
-	var deplacement := Vector3.ZERO
+	var deplacement : Vector3
+	var puissance_input : Vector3
 	
-	deplacement.z = Input.get_axis("avant","arriere")
-	deplacement.x = Input.get_axis("gauche","droite")
-	deplacement.y = Input.get_axis("bas","haut")
+	puissance_input.x = Input.get_axis("gauche","droite")
+	puissance_input.y = Input.get_axis("bas","haut")
+	puissance_input.z = Input.get_axis("avant","arriere")
 	
-	return deplacement.rotated(Vector3.UP, rotation.y).rotated(Vector3.RIGHT, rotation.x)
+	
+	
+	deplacement = global_transform.basis.z * puissance_input.z
+	deplacement += global_transform.basis.y * puissance_input.y
+	deplacement += global_transform.basis.x * puissance_input.x
+	
+	return deplacement.normalized() * vitesse
 
 
 func prendInputRotation():
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED :
-		var rota := Vector3.ZERO
-		var mod_souris = sensi_souris #.rotated(rotation.z)
+		#var rota : Vector3
+		#var puissance_input : Vector3
+		#
+		#puissance_input.x = -Input.get_last_mouse_velocity().y * sensi_souris.x
+		#puissance_input.y = -Input.get_last_mouse_velocity().x * sensi_souris.y
+		#puissance_input.z = Input.get_axis("rota_gauche","rota_droite") * sensi_ae
+		#
+		#
+		#rota = global_transform.basis.x * puissance_input.x
+		#rota += global_transform.basis.y * puissance_input.y
+		#
+		#rota.z = 0.0
+		#
+		#rota += global_transform.basis.z * puissance_input.z
+		##print(rotation)
+		#print(rota)
+		#return rota.normalized() * vitesse_rota
+		var input_rotation := Vector3.ZERO
+		input_rotation.x = - Input.get_last_mouse_velocity().y * sensi_souris.x
+		input_rotation.y = - Input.get_last_mouse_velocity().x * sensi_souris.y
+		input_rotation.z = Input.get_axis("rota_gauche","rota_droite") * sensi_ae
 		
-		rota.x = -Input.get_last_mouse_velocity().y * mod_souris.x
-		rota.y = -Input.get_last_mouse_velocity().x * mod_souris.y
-		rota.z = Input.get_axis("rota_gauche","rota_droite") * sensi_ae
+		return input_rotation * vitesse_rota
 		
-		return rota.rotated(Vector3.BACK, rotation.z)
+	else : return Vector3.ZERO
 
 func appliquer_force(force : Vector3):
 	acceleration += force
@@ -43,8 +70,7 @@ func _physics_process(delta: float) -> void:
 	if pivot :
 		appliquer_rotation(pivot * delta)
 	
-	if celerota :
-		celerota *= 0.9
+	
 	
 	#if rotation.z :
 		#appliquer_rotation(Vector3(0.0, 0.0, rotation.z) * -0.01)
@@ -54,15 +80,34 @@ func _physics_process(delta: float) -> void:
 		appliquer_rotation(-celerota * 0.2)
 	
 	celerota += rotacceleration
-	rotacceleration *= 0.0
-	rotation += celerota
-	
+	rotacceleration = Vector3.ZERO
+	if celerota :
+		var quaternion_actuel = transform.basis.get_rotation_quaternion()
+		
+		if celerota.y != 0.0 :
+			var quat_y = Quaternion(Vector3.UP, celerota.y)
+			quaternion_actuel *= quat_y
+		if celerota.x != 0.0 :
+			var quat_x = Quaternion(Vector3.RIGHT, celerota.x)
+			quaternion_actuel *= quat_x
+		
+		if celerota.z != 0.0 :
+			#var avant_local = transform.basis.z
+			#var quat_z = Quaternion(avant_local, celerota.z)
+			var quat_z = Quaternion(Vector3.FORWARD, celerota.z)
+			quaternion_actuel *= quat_z
+		
+		transform.basis = Basis(quaternion_actuel)
+		
+		#rotation_euler += celerota
+		#rotation = rotation_euler
+		celerota *= 0.9
 	
 	
 	
 	var impulse = prendInputDeplacement()
 	if impulse :
-		appliquer_force(impulse * vitesse * delta)
+		appliquer_force(impulse * delta)
 	
 	if velocite :
 		frottements._frottement_process(delta, velocite)

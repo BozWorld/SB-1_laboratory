@@ -28,7 +28,7 @@ environment = SubResource("Environment_t8oi0")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.906308, -0.00737571, -0.422554, 0, 0.999848, -0.0174524, 0.422618, -0.0158173, -0.90617, 0, 0, 0)
 light_color = Color(1, 0.709804, 0.733333, 1)
-light_energy = 20.0
+light_energy = 2.0
 shadow_enabled = true
 
 [node name="DroneBody" parent="." instance=ExtResource("3_obdxv")]
@@ -36,7 +36,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.87809)
 
 [node name="GenerateurGaussien" type="Node3D" parent="."]
 script = ExtResource("3_d414y")
-deviation = 4.44
+deviation = 30.0
+max_spheres = 50000
 bpm = 10000.0
 
 [node name="SaleGausse" type="MeshInstance3D" parent="."]
@@ -50,7 +51,7 @@ offset_bottom = 42.0
 grow_horizontal = 2
 size_flags_vertical = 1
 step = 0.01
-value = 3.0
+value = 30.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchors_preset = 11
