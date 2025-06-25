@@ -1,6 +1,10 @@
 extends Node3D
 
-var vitesse := 3.0
+const VITESSE_MIN := 0.1
+const VITESSE_MAX := 50.0
+
+@export var pas_vitesse := 0.1
+@export var vitesse := 3.0
 var acceleration := Vector3.ZERO
 var velocite := Vector3.ZERO
 
@@ -12,7 +16,15 @@ var rotacceleration := Vector3.ZERO
 var celerota := Vector3.ZERO
 var sensi_souris := Vector2(0.0004, 0.0004)
 var sensi_ae := 0.2
-var vitesse_rota := 0.44
+@export var vitesse_rota := 0.44
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton :
+		if event.button_index == 4 :
+			vitesse = clampf(vitesse + pas_vitesse, VITESSE_MIN, VITESSE_MAX)
+		if event.button_index == 5 :
+			vitesse = clampf(vitesse - pas_vitesse, VITESSE_MIN, VITESSE_MAX)
+			
 
 func prendInputDeplacement():
 	var deplacement : Vector3
