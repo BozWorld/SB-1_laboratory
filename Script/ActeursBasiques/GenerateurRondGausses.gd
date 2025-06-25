@@ -19,8 +19,10 @@ var dev_b = 0.5
 
 
 func pas():
-	var nouveau_rond = MeshInstance3D.new()
+	var nouveau_rond = SaleGausse.new()
 	nouveau_rond.mesh = mesh_sphere.duplicate()
+	
+	nouveau_rond.origine_orbite = self
 	
 	nouveau_rond.mesh.material = nouveau_rond.mesh.material.duplicate()
 	

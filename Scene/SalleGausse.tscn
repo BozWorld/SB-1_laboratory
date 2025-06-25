@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdnt1hmu56282"]
+[gd_scene load_steps=10 format=3 uid="uid://bdnt1hmu56282"]
 
 [ext_resource type="Script" uid="uid://btw5a78pi8r47" path="res://Scene/Satellite.gd" id="1_d414y"]
 [ext_resource type="Script" uid="uid://cvyharm6xl5qj" path="res://Script/ActeursBasiques/GenerateurRondGausses.gd" id="3_d414y"]
 [ext_resource type="PackedScene" uid="uid://bwtlb6e83t7rx" path="res://Scene/Drone.tscn" id="3_obdxv"]
 [ext_resource type="SphereMesh" uid="uid://bbpadhb67vwej" path="res://Assets/sale_gausse.tres" id="4_obdxv"]
+[ext_resource type="Script" uid="uid://0jl2fr3uhnlx" path="res://Scene/sale_gausse.gd" id="5_obdxv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0nxj"]
 sky_top_color = Color(0.552941, 0.298039, 0.654902, 1)
@@ -48,12 +49,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.87809)
 
 [node name="GenerateurGaussien" type="Node3D" parent="."]
 script = ExtResource("3_d414y")
-deviation = 66.0
-max_spheres = 50000
+deviation = 30.0
+max_spheres = 1000
 bpm = 10000.0
 
-[node name="SaleGausse" type="MeshInstance3D" parent="."]
+[node name="SaleGausse" type="MeshInstance3D" parent="." node_paths=PackedStringArray("origine_orbite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0276232, 0, 8.05698)
 mesh = ExtResource("4_obdxv")
+script = ExtResource("5_obdxv")
+origine_orbite = NodePath("../GenerateurGaussien")
 
 [node name="DevG" type="HSlider" parent="."]
 anchors_preset = 10
