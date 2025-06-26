@@ -39,7 +39,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97737, 0, 6.87809)
 script = ExtResource("1_d414y")
 origine_orbite = NodePath("../DroneBody")
-puissance_attraction = 0.44
+puissance_attraction = 1.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Satellite"]
 mesh = SubResource("BoxMesh_d414y")

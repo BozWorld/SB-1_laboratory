@@ -89,7 +89,7 @@ func _physics_process(delta: float) -> void:
 		#rotation.z *= 0.9
 	
 	if Input.is_action_pressed("normaliserRota"):
-		appliquer_rotation(-celerota * 0.2)
+		rotation = rotation.lerp(Vector3.ZERO, delta * 4.44)
 	
 	celerota += rotacceleration
 	rotacceleration = Vector3.ZERO

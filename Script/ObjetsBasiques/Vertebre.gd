@@ -5,7 +5,7 @@ class_name Vertebre
 var vertebre_precedente : Node3D
 var vertebre_suivante : Node3D
 
-@export var modele : Mesh
+@export var modele : Mesh = SphereMesh.new()
 var mesh : MeshInstance3D
 
 func _ready() -> void:

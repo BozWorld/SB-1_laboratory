@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnayy0546nslq"]
+
+[ext_resource type="PackedScene" uid="uid://bwtlb6e83t7rx" path="res://Scene/Drone.tscn" id="1_ik0w0"]
+[ext_resource type="Script" uid="uid://clfvf2vj25rb2" path="res://Script/ActeursBasiques/Corps.gd" id="1_tnxvh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ik0w0"]
+sky_top_color = Color(0.382198, 0.254673, 0.720304, 1)
+sky_horizon_color = Color(0.80632, 0.945567, 1.05719, 1)
+ground_bottom_color = Color(7.70092e-07, 0.684516, 0.66537, 1)
+ground_horizon_color = Color(0.80632, 0.945567, 1.05719, 1)
+
+[sub_resource type="Sky" id="Sky_70xrf"]
+sky_material = SubResource("ProceduralSkyMaterial_ik0w0")
+
+[sub_resource type="Environment" id="Environment_ce30c"]
+background_mode = 2
+sky = SubResource("Sky_70xrf")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.90631, -0.00737563, -0.422549, 0, 0.999848, -0.0174524, 0.422614, -0.0158173, -0.906172, 0, 0, 0)
+light_color = Color(1, 0.788235, 0.733333, 1)
+light_energy = 2.0
+shadow_enabled = true
+
+[node name="DroneBody" parent="." instance=ExtResource("1_ik0w0")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ce30c")
+
+[node name="Corps" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23442, 1.79591, 2.43565)
+script = ExtResource("1_tnxvh")
+vertebres_taille = [3.0, 3.0, 2.0, 1.5]
