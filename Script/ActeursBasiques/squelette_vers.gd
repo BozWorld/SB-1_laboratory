@@ -20,6 +20,9 @@ func _physics_process(delta: float) -> void:
 		index_bruit -= frequence_bruit
 		corpulenceBruitee()
 	
+	for vertebre in vertebres :
+		vertebre.actualisation(delta)
+	
 
 func _ready() -> void:
 	vertebres.append(ancre)

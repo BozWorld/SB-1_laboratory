@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://coj8r5bdk7m18"]
+[gd_scene load_steps=32 format=3 uid="uid://coj8r5bdk7m18"]
 
 [ext_resource type="Script" uid="uid://dcm6l5xykwte6" path="res://Script/ActeursBasiques/ScribeRando.gd" id="1_riede"]
 [ext_resource type="PackedScene" uid="uid://bwtlb6e83t7rx" path="res://Scene/Drone.tscn" id="2_iyoht"]
@@ -63,10 +63,6 @@ seed = 9
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_5xn5g"]
 seed = 13
 
-[sub_resource type="SphereMesh" id="SphereMesh_sbfrx"]
-radius = 0.38
-height = 0.76
-
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ouber"]
 noise_type = 0
 seed = 12
@@ -84,14 +80,6 @@ seed = 10
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_sbfrx"]
 seed = 12
-
-[sub_resource type="SphereMesh" id="SphereMesh_wuj0m"]
-radius = 0.4
-height = 0.8
-
-[sub_resource type="SphereMesh" id="SphereMesh_kvvhk"]
-radius = 0.54
-height = 1.08
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_wuj0m"]
 noise_type = 0
@@ -111,10 +99,6 @@ seed = 8
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_hpq72"]
 seed = 33
 
-[sub_resource type="SphereMesh" id="SphereMesh_hpq72"]
-radius = 0.34
-height = 0.68
-
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_mfeqc"]
 noise_type = 0
 seed = 11
@@ -132,24 +116,6 @@ seed = 7
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_t0f7i"]
 seed = 11
-
-[sub_resource type="SphereMesh" id="SphereMesh_c5k3y"]
-radius = 0.44
-height = 0.88
-
-[sub_resource type="SphereMesh" id="SphereMesh_bk63x"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_j1s7b"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_5xn5g"]
-radius = 0.54
-height = 1.08
-
-[sub_resource type="SphereMesh" id="SphereMesh_ouber"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_7mp8g"]
-radius = 0.44
-height = 0.88
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_riede"]
 
@@ -195,102 +161,82 @@ distance_bruit = 1.312
 [node name="Vertebre1" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0734844, 4.76837e-07, -1.39961)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre2" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30446, 0, -2.9191)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre3" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0472188, 0, -4.53396)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre4" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08793, 0, -6.14129)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre5" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.445545, 0, -7.39794)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre6" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre7" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre8" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre9" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre10" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre11" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre12" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre13" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre14" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre15" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre16" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre17" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre18" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre19" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre20" type="Node3D" parent="Ver/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Ver2" type="Node3D" parent="."]
 script = ExtResource("3_o07np")
@@ -319,73 +265,54 @@ distance_bruit = 1.312
 [node name="Vertebre1" type="Node3D" parent="Ver2/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0734844, 4.76837e-07, -1.39961)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_sbfrx")
 
 [node name="Vertebre2" type="Node3D" parent="Ver2/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30446, 0, -2.9191)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_sbfrx")
 
 [node name="Vertebre3" type="Node3D" parent="Ver2/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0472188, 0, -4.53396)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_sbfrx")
 
 [node name="Vertebre4" type="Node3D" parent="Ver2/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08793, 0, -6.14129)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre5" type="Node3D" parent="Ver2/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.445545, 0, -7.39794)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre6" type="Node3D" parent="Ver2/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre7" type="Node3D" parent="Ver2/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre8" type="Node3D" parent="Ver2/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre9" type="Node3D" parent="Ver2/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre10" type="Node3D" parent="Ver2/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre11" type="Node3D" parent="Ver2/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_sbfrx")
 
 [node name="Vertebre12" type="Node3D" parent="Ver2/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_sbfrx")
 
 [node name="Vertebre13" type="Node3D" parent="Ver2/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_sbfrx")
 
 [node name="Ver3" type="Node3D" parent="."]
 script = ExtResource("3_o07np")
@@ -414,101 +341,70 @@ distance_bruit = 1.312
 [node name="Vertebre1" type="Node3D" parent="Ver3/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0734844, 4.76837e-07, -1.39961)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre2" type="Node3D" parent="Ver3/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30446, 0, -2.9191)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_wuj0m")
 
 [node name="Vertebre3" type="Node3D" parent="Ver3/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0472188, 0, -4.53396)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_kvvhk")
 
 [node name="Vertebre4" type="Node3D" parent="Ver3/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08793, 0, -6.14129)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_wuj0m")
 
 [node name="Vertebre5" type="Node3D" parent="Ver3/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.445545, 0, -7.39794)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_kvvhk")
 
 [node name="Vertebre6" type="Node3D" parent="Ver3/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_wuj0m")
 
 [node name="Vertebre7" type="Node3D" parent="Ver3/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_kvvhk")
 
 [node name="Vertebre8" type="Node3D" parent="Ver3/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_wuj0m")
 
 [node name="Vertebre9" type="Node3D" parent="Ver3/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_kvvhk")
 
 [node name="Vertebre10" type="Node3D" parent="Ver3/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_wuj0m")
 
 [node name="Vertebre11" type="Node3D" parent="Ver3/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_kvvhk")
 
 [node name="Vertebre12" type="Node3D" parent="Ver3/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_wuj0m")
 
 [node name="Vertebre13" type="Node3D" parent="Ver3/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_kvvhk")
 
 [node name="Vertebre14" type="Node3D" parent="Ver3/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_kvvhk")
 
 [node name="Vertebre15" type="Node3D" parent="Ver3/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_kvvhk")
 
 [node name="Vertebre16" type="Node3D" parent="Ver3/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre17" type="Node3D" parent="Ver3/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Ver4" type="Node3D" parent="."]
 script = ExtResource("3_o07np")
@@ -537,83 +433,62 @@ distance_bruit = 1.312
 [node name="Vertebre1" type="Node3D" parent="Ver4/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0734844, 4.76837e-07, -1.39961)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre2" type="Node3D" parent="Ver4/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30446, 0, -2.9191)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre3" type="Node3D" parent="Ver4/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0472188, 0, -4.53396)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre4" type="Node3D" parent="Ver4/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08793, 0, -6.14129)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_hpq72")
 
 [node name="Vertebre5" type="Node3D" parent="Ver4/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.445545, 0, -7.39794)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_hpq72")
 
 [node name="Vertebre6" type="Node3D" parent="Ver4/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_hpq72")
 
 [node name="Vertebre7" type="Node3D" parent="Ver4/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre8" type="Node3D" parent="Ver4/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre9" type="Node3D" parent="Ver4/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre10" type="Node3D" parent="Ver4/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_hpq72")
 
 [node name="Vertebre11" type="Node3D" parent="Ver4/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_hpq72")
 
 [node name="Vertebre12" type="Node3D" parent="Ver4/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_hpq72")
 
 [node name="Vertebre13" type="Node3D" parent="Ver4/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre14" type="Node3D" parent="Ver4/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre15" type="Node3D" parent="Ver4/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Ver5" type="Node3D" parent="."]
 script = ExtResource("3_o07np")
@@ -642,62 +517,46 @@ distance_bruit = 1.312
 [node name="Vertebre1" type="Node3D" parent="Ver5/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0734844, 4.76837e-07, -1.39961)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre2" type="Node3D" parent="Ver5/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30446, 0, -2.9191)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre3" type="Node3D" parent="Ver5/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0472188, 0, -4.53396)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_c5k3y")
 
 [node name="Vertebre4" type="Node3D" parent="Ver5/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08793, 0, -6.14129)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_bk63x")
 
 [node name="Vertebre5" type="Node3D" parent="Ver5/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.445545, 0, -7.39794)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_j1s7b")
 
 [node name="Vertebre6" type="Node3D" parent="Ver5/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_5xn5g")
 
 [node name="Vertebre7" type="Node3D" parent="Ver5/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
-modele = SubResource("SphereMesh_ouber")
 
 [node name="Vertebre8" type="Node3D" parent="Ver5/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-modele = SubResource("SphereMesh_7mp8g")
 
 [node name="Vertebre9" type="Node3D" parent="Ver5/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre10" type="Node3D" parent="Ver5/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="Vertebre11" type="Node3D" parent="Ver5/SqueletteVers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441527, 0, -8.46612)
 script = ExtResource("5_o07np")
-post_distance = 0.44
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_riede")
