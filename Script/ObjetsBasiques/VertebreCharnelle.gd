@@ -13,7 +13,14 @@ var mesh_liaison = MeshInstance3D.new()
 
 @onready var corps = get_parent()
 
+@export_range(0, 10, 1,"or_greater") var nb_intersections := 1
+var points_centraux : Array[Vector3]
+var points_avant : Array[Vector3]
+var points_arriere : Array[Vector3]
 
+var genere_centre = false
+var genere_avant = false
+var genere_arriere = false
 
 func initialisation():
 	super()
@@ -34,7 +41,105 @@ func actualisationPoints():
 	droite = global_transform.basis.x
 	avant = -global_transform.basis.z
 	arriere = global_transform.basis.z
-#
+	
+	var index_intersections : int
+	var cran : Vector3
+	
+	if genere_centre :
+		points_centraux = []
+		
+		points_centraux.append(haut)
+		index_intersections = 0
+		while index_intersections < nb_intersections :
+			index_intersections += 1
+			cran = (gauche-haut) / nb_intersections
+			points_centraux.append((haut + cran * index_intersections).normalized()*post_distance)
+		
+		points_centraux.append(gauche)
+		index_intersections = 0
+		while index_intersections < nb_intersections :
+			index_intersections += 1
+			cran = (bas-gauche) / nb_intersections
+			points_centraux.append((gauche + cran * index_intersections).normalized()*post_distance)
+		
+		points_centraux.append(bas)
+		index_intersections = 0
+		while index_intersections < nb_intersections :
+			index_intersections += 1
+			cran = (droite-bas) / nb_intersections
+			points_centraux.append((bas + cran * index_intersections).normalized()*post_distance)
+		
+		points_centraux.append(droite)
+		index_intersections = 0
+		while index_intersections < nb_intersections :
+			index_intersections += 1
+			cran = (haut-droite) / nb_intersections
+			points_centraux.append((droite + cran * index_intersections).normalized()*post_distance)
+	
+	if genere_avant :
+		points_avant = []
+		points_avant.append(avant)
+		
+		points_avant.append(haut)
+		
+		index_intersections = 0
+		while index_intersections < nb_intersections :
+			index_intersections += 1
+			cran = (haut-avant) / nb_intersections
+			points_centraux.append((avant + cran * index_intersections).normalized()*post_distance)
+		
+		points_avant.append(gauche)
+		
+		index_intersections = 0
+		while index_intersections < nb_intersections :
+			index_intersections += 1
+			cran = (gauche-avant) / nb_intersections
+			points_centraux.append((avant + cran * index_intersections).normalized()*post_distance)
+		
+		points_avant.append(bas)
+		
+		index_intersections = 0
+		while index_intersections < nb_intersections :
+			index_intersections += 1
+			cran = (bas-avant) / nb_intersections
+			points_centraux.append((avant + cran * index_intersections).normalized()*post_distance)
+		
+		points_avant.append(droite)
+		
+		index_intersections = 0
+		while index_intersections < nb_intersections :
+			index_intersections += 1
+			cran = (droite-avant) / nb_intersections
+			points_centraux.append((avant + cran * index_intersections).normalized()*post_distance)
+	
+	if genere_arriere :
+		points_arriere = []
+		points_arriere.append(arriere)
+		
+		index_intersections = 0
+		while index_intersections < nb_intersections :
+			index_intersections += 1
+			cran = (haut-arriere) / nb_intersections
+			points_centraux.append((arriere + cran * index_intersections).normalized()*post_distance)
+		
+		index_intersections = 0
+		while index_intersections < nb_intersections :
+			index_intersections += 1
+			cran = (gauche-arriere) / nb_intersections
+			points_centraux.append((arriere + cran * index_intersections).normalized()*post_distance)
+		
+		index_intersections = 0
+		while index_intersections < nb_intersections :
+			index_intersections += 1
+			cran = (bas-arriere) / nb_intersections
+			points_centraux.append((arriere + cran * index_intersections).normalized()*post_distance)
+		
+		index_intersections = 0
+		while index_intersections < nb_intersections :
+			index_intersections += 1
+			cran = (droite-arriere) / nb_intersections
+			points_centraux.append((arriere + cran * index_intersections).normalized()*post_distance)
+
 #func actualisationMeshCorps():
 	#mesh_donnees[ArrayMesh.ARRAY_VERTEX].set(0, haut * post_distance)
 	#mesh_donnees[ArrayMesh.ARRAY_VERTEX].set(1, bas * post_distance)
@@ -189,3 +294,18 @@ func actualisationPoints():
 	#surface_tool.create_from(mesh, 0)
 	#surface_tool.generate_normals()
 	#mesh = surface_tool.commit()
+
+func prendrePointsCentraux():
+	actualisationPoints()
+	if genere_centre :
+		return points_centraux
+
+func prendrePointsAvant():
+	actualisationPoints()
+	if genere_avant :
+		return points_avant
+
+func prendrePointsArriere():
+	actualisationPoints()
+	if genere_arriere :
+		return points_arriere
