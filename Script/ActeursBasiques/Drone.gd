@@ -10,6 +10,8 @@ var velocite := Vector3.ZERO
 
 var rotation_euler := Vector3.ZERO
 
+var tel := false
+
 @onready var frottements := $FrottementsFluide
 
 var rotacceleration := Vector3.ZERO
@@ -18,6 +20,14 @@ var sensi_souris := Vector2(0.0004, 0.0004)
 var sensi_ae := 0.2
 @export var vitesse_rota := 0.44
 
+var rota_x := 0.0
+var rota_y := 0.0
+var rota_z := 0.0
+
+func _ready() -> void:
+	if OS.get_name() == "Android" :
+		tel = true
+ 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton :
 		if event.button_index == 4 :
@@ -34,7 +44,11 @@ func prendInputDeplacement():
 	puissance_input.y = Input.get_axis("bas","haut")
 	puissance_input.z = Input.get_axis("avant","arriere")
 	
-	
+	if puissance_input.length() == 0 and tel :
+		var input_haptique = %JoyGauche.prendreInput()
+		puissance_input.x = input_haptique.x
+		puissance_input.z = input_haptique.y
+		puissance_input.y = -%JoyGauche.prendreInputDeux()
 	
 	deplacement = global_transform.basis.z * puissance_input.z
 	deplacement += global_transform.basis.y * puissance_input.y
@@ -62,10 +76,23 @@ func prendInputRotation():
 		##print(rotation)
 		#print(rota)
 		#return rota.normalized() * vitesse_rota
+		
+		
+		
 		var input_rotation := Vector3.ZERO
 		input_rotation.x = - Input.get_last_mouse_velocity().y * sensi_souris.x
 		input_rotation.y = - Input.get_last_mouse_velocity().x * sensi_souris.y
 		input_rotation.z = Input.get_axis("rota_gauche","rota_droite") * sensi_ae
+		
+		return input_rotation * vitesse_rota
+		
+		
+	elif tel and %JoyDroite.actif :
+		var input_rotation := Vector3.ZERO
+		var input_haptique = %JoyDroite.prendreInput()
+		input_rotation.x = -input_haptique.y 
+		input_rotation.y = -input_haptique.x 
+		input_rotation.z = -%JoyDroite.prendreInputDeux()
 		
 		return input_rotation * vitesse_rota
 		
@@ -94,25 +121,37 @@ func _physics_process(delta: float) -> void:
 	celerota += rotacceleration
 	rotacceleration = Vector3.ZERO
 	if celerota :
-		var quaternion_actuel = transform.basis.get_rotation_quaternion()
+		rota_y += celerota.y
+		rota_x += celerota.x
+		rota_z += celerota.z
 		
-		if celerota.y != 0.0 :
-			var quat_y = Quaternion(Vector3.UP, celerota.y)
-			quaternion_actuel *= quat_y
-		if celerota.x != 0.0 :
-			var quat_x = Quaternion(Vector3.RIGHT, celerota.x)
-			quaternion_actuel *= quat_x
+		transform.basis = Basis()
 		
-		if celerota.z != 0.0 :
+		rotate_object_local(Vector3(0,1,0), rota_y)
+		rotate_object_local(Vector3(1,0,0), rota_x)
+		rotate_object_local(Vector3(0,0,1), rota_z)
+				
+		
+		
+		#var quaternion_actuel = transform.basis.get_rotation_quaternion()
+		
+		#if celerota.y != 0.0 :
+			#var quat_y = Quaternion(Vector3.UP, celerota.y)
+			#quaternion_actuel *= quat_y
+		#if celerota.x != 0.0 :
+			#var quat_x = Quaternion(Vector3.RIGHT, celerota.x)
+			#quaternion_actuel *= quat_x
+		
+		#if celerota.z != 0.0 :
 			#var avant_local = transform.basis.z
 			#var quat_z = Quaternion(avant_local, celerota.z)
-			var quat_z = Quaternion(Vector3.FORWARD, celerota.z)
-			quaternion_actuel *= quat_z
+			#var quat_z = Quaternion(Vector3.FORWARD, celerota.z)
+			#quaternion_actuel *= quat_z
 		
-		transform.basis = Basis(quaternion_actuel)
+		#transform.basis = Basis(quaternion_actuel)
 		
 		#rotation_euler += celerota
-		#rotation = rotation_euler
+		#rotation = rotationextends
 		celerota *= 0.9
 	
 	

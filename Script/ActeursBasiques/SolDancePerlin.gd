@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 func pas():
 	temps += pas_temps
 	for colonne in liste_colonnes:
-		print(perlin.get_noise_2d(colonne.position.x * espacement_perlin + temps, colonne.position.z * espacement_perlin))
+		#print(perlin.get_noise_2d(colonne.position.x * espacement_perlin + temps, colonne.position.z * espacement_perlin))
 		colonne.mesh.size.y = (1.0 + perlin.get_noise_2d(colonne.position.x * espacement_perlin + temps, colonne.position.z * espacement_perlin)) * puissance_croissance
 		var choix_rvb : Vector3
 		

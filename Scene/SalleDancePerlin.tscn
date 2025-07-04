@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://15o43ri7ig5i"]
+[gd_scene load_steps=10 format=3 uid="uid://15o43ri7ig5i"]
 
 [ext_resource type="PackedScene" uid="uid://bwtlb6e83t7rx" path="res://Scene/Drone.tscn" id="1_8iu0e"]
+[ext_resource type="Script" uid="uid://cvrq3psa4j44p" path="res://BoiteOutils/JoyeuxBaton.gd" id="1_owrwy"]
 [ext_resource type="Script" uid="uid://bmvleyvkbf2t5" path="res://Script/ActeursBasiques/SolDancePerlin.gd" id="2_8iu0e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b0nxj"]
@@ -40,6 +41,18 @@ transform = Transform3D(-0.906308, -0.00737571, -0.422554, 0, 0.999848, -0.01745
 light_color = Color(1, 0.709804, 0.733333, 1)
 light_energy = 20.0
 shadow_enabled = true
+
+[node name="JoyGauche" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_owrwy")
+petite_couleur = Color(0.745098, 0, 0, 1)
+
+[node name="JoyDroite" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_owrwy")
+grande_couleur = Color(0.682353, 0, 0, 1)
+gauche = false
+vertical_deux = false
 
 [node name="DroneBody" parent="." instance=ExtResource("1_8iu0e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.87809)
