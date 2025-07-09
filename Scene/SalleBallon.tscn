@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://iiq25k1ust0b"]
+
+[ext_resource type="Script" uid="uid://d2ef0oojyn6as" path="res://Script/balon_helium.gd" id="1_px5ko"]
+[ext_resource type="Script" uid="uid://0055x8kdgfwq" path="res://Script/vent.gd" id="2_8lydx"]
+[ext_resource type="PackedScene" uid="uid://bwtlb6e83t7rx" path="res://Scene/Drone.tscn" id="3_8lydx"]
+[ext_resource type="Script" uid="uid://cvrq3psa4j44p" path="res://BoiteOutils/JoyeuxBaton.gd" id="4_nup11"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nup11"]
+sky_top_color = Color(0.591802, 0.386062, 0.369268, 1)
+sky_horizon_color = Color(0.691304, 0.707101, 0.743571, 1)
+ground_bottom_color = Color(0, 0.268928, 0.431601, 1)
+ground_horizon_color = Color(0.691304, 0.707101, 0.743571, 1)
+
+[sub_resource type="Sky" id="Sky_pxgxf"]
+sky_material = SubResource("ProceduralSkyMaterial_nup11")
+
+[sub_resource type="Environment" id="Environment_rcg5i"]
+background_mode = 2
+sky = SubResource("Sky_pxgxf")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nup11"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.211765)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pxgxf"]
+material = SubResource("StandardMaterial3D_nup11")
+size = Vector3(5, 5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rcg5i"]
+albedo_color = Color(1, 0, 0, 1)
+metallic = 1.0
+roughness = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_6aal0"]
+material = SubResource("StandardMaterial3D_rcg5i")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nup11"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rcg5i")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.22466, 0.446686, 0, 0.893371, 0.449319, -0.5, 0.389122, -0.773682, 0, 0, 0)
+light_color = Color(1, 0.615686, 0, 1)
+shadow_enabled = true
+
+[node name="Boite" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+mesh = SubResource("BoxMesh_pxgxf")
+
+[node name="BallonHelium" type="Node3D" parent="."]
+script = ExtResource("1_px5ko")
+vitesse_archimede = 0.6
+masse = 3.0
+metadata/_custom_type_script = "uid://dl1eiegc8btxy"
+
+[node name="MeshBallon" type="MeshInstance3D" parent="BallonHelium"]
+unique_name_in_owner = true
+mesh = SubResource("SphereMesh_6aal0")
+
+[node name="Vent" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_8lydx")
+bruit = SubResource("FastNoiseLite_nup11")
+mod_temps = 20.0
+puissance_vent = 2.0
+
+[node name="DroneBody" parent="." instance=ExtResource("3_8lydx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.108038, 0, 6.34777)
+
+[node name="JoyGauche" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_nup11")
+petite_couleur = Color(0.745098, 0, 0, 1)
+
+[node name="JoyDroite" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_nup11")
+grande_couleur = Color(0.682353, 0, 0, 1)
+gauche = false
+vertical_deux = false

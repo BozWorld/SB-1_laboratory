@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c05guvf33o1rp"]
+
+[ext_resource type="Script" uid="uid://cvrq3psa4j44p" path="res://BoiteOutils/JoyeuxBaton.gd" id="1_qsjoa"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="JoyGauche" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_qsjoa")
+petite_couleur = Color(0.745098, 0, 0, 1)
+
+[node name="JoyDroite" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_qsjoa")
+grande_couleur = Color(0.682353, 0, 0, 1)
+gauche = false
+vertical_deux = false

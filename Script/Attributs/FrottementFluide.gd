@@ -1,6 +1,6 @@
 extends Attribut3D
 
-var coef : float = 45.0
+var coef : float = 95.0
 var surface : float = 1.0
 var densite : float = 1.0
 

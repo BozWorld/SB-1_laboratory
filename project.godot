@@ -27,6 +27,10 @@ window/size/viewport_height=647
 
 enabled=PackedStringArray()
 
+[global_group]
+
+boite=""
+
 [input]
 
 avant={

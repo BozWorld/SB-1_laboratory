@@ -44,7 +44,7 @@ func prendInputDeplacement():
 	puissance_input.y = Input.get_axis("bas","haut")
 	puissance_input.z = Input.get_axis("avant","arriere")
 	
-	if puissance_input.length() == 0 and tel :
+	if puissance_input.length() == 0 and tel and %JoyGauche :
 		var input_haptique = %JoyGauche.prendreInput()
 		puissance_input.x = input_haptique.x
 		puissance_input.z = input_haptique.y
@@ -87,14 +87,15 @@ func prendInputRotation():
 		return input_rotation * vitesse_rota
 		
 		
-	elif tel and %JoyDroite.actif :
-		var input_rotation := Vector3.ZERO
-		var input_haptique = %JoyDroite.prendreInput()
-		input_rotation.x = -input_haptique.y 
-		input_rotation.y = -input_haptique.x 
-		input_rotation.z = -%JoyDroite.prendreInputDeux()
+	elif tel and %JoyDroite :
+		if %JoyDroite.actif :
+			var input_rotation := Vector3.ZERO
+			var input_haptique = %JoyDroite.prendreInput()
+			input_rotation.x = -input_haptique.y 
+			input_rotation.y = -input_haptique.x 
+			input_rotation.z = -%JoyDroite.prendreInputDeux()
 		
-		return input_rotation * vitesse_rota
+			return input_rotation * vitesse_rota
 		
 	else : return Vector3.ZERO
 

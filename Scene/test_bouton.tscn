@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bi7c3rvna8u18"]
+
+[ext_resource type="PackedScene" uid="uid://bwtlb6e83t7rx" path="res://Scene/Drone.tscn" id="1_6p3mj"]
+[ext_resource type="Script" uid="uid://cygco654e0kre" path="res://Script/BoutonTel.gd" id="2_yobw2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_55qc7"]
+sky_top_color = Color(0.591802, 0.386062, 0.369268, 1)
+sky_horizon_color = Color(0.691304, 0.707101, 0.743571, 1)
+ground_bottom_color = Color(0, 0.268928, 0.431601, 1)
+ground_horizon_color = Color(0.691304, 0.707101, 0.743571, 1)
+
+[sub_resource type="Sky" id="Sky_pxgxf"]
+sky_material = SubResource("ProceduralSkyMaterial_55qc7")
+
+[sub_resource type="Environment" id="Environment_egsdi"]
+background_mode = 2
+sky = SubResource("Sky_pxgxf")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PrismMesh" id="PrismMesh_6p3mj"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.22466, 0.446686, 0, 0.893371, 0.449319, -0.5, 0.389122, -0.773682, 0, 0, 0)
+light_color = Color(1, 0.615686, 0, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_egsdi")
+
+[node name="DroneBody" parent="." instance=ExtResource("1_6p3mj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.108038, 0, 6.34777)
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("2_yobw2")
+input_bouton = &"avant"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PrismMesh_6p3mj")

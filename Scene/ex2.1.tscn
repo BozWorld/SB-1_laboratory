@@ -1,0 +1,170 @@
+[gd_scene load_steps=10 format=3 uid="uid://dds3txayd1xoi"]
+
+[ext_resource type="Script" uid="uid://bfgvtttnc7djp" path="res://Script/ressort.gd" id="1_4q6mx"]
+[ext_resource type="PackedScene" uid="uid://bwtlb6e83t7rx" path="res://Scene/Drone.tscn" id="2_23w1m"]
+[ext_resource type="Script" uid="uid://cvrq3psa4j44p" path="res://BoiteOutils/JoyeuxBaton.gd" id="3_a14md"]
+[ext_resource type="Script" uid="uid://cif01a8pfhhh5" path="res://Script/ventilo.gd" id="3_iaeni"]
+[ext_resource type="Script" uid="uid://cygco654e0kre" path="res://Script/BoutonTel.gd" id="5_gmb24"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4q6mx"]
+sky_top_color = Color(0.591802, 0.386062, 0.369268, 1)
+sky_horizon_color = Color(0.691303, 0.7071, 0.74357, 1)
+ground_bottom_color = Color(0, 0.268928, 0.431601, 1)
+ground_horizon_color = Color(0.691303, 0.7071, 0.74357, 1)
+
+[sub_resource type="Sky" id="Sky_23w1m"]
+sky_material = SubResource("ProceduralSkyMaterial_4q6mx")
+
+[sub_resource type="Environment" id="Environment_a14md"]
+background_mode = 2
+sky = SubResource("Sky_23w1m")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_iaeni"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_a14md")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.224661, 0.446689, 0, 0.893371, 0.449319, -0.500003, 0.389121, -0.773681, 0, 0, 0)
+light_color = Color(1, 0.615686, 0, 1)
+shadow_enabled = true
+
+[node name="Ressort" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.61355, 0, 4.82502)
+script = ExtResource("1_4q6mx")
+metadata/_custom_type_script = "uid://dl1eiegc8btxy"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ressort"]
+mesh = SubResource("SphereMesh_iaeni")
+skeleton = NodePath("../..")
+
+[node name="Ressort2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11112, -8.03124, 4.43761)
+script = ExtResource("1_4q6mx")
+masse = 1.8
+metadata/_custom_type_script = "uid://dl1eiegc8btxy"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ressort2"]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
+mesh = SubResource("SphereMesh_iaeni")
+skeleton = NodePath("../..")
+
+[node name="Ressort3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0687, 6.21819, -6.51502)
+script = ExtResource("1_4q6mx")
+masse = 4.4
+metadata/_custom_type_script = "uid://dl1eiegc8btxy"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ressort3"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("SphereMesh_iaeni")
+skeleton = NodePath("../..")
+
+[node name="Ressort4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0687, 6.21819, -6.51502)
+script = ExtResource("1_4q6mx")
+masse = 4.4
+metadata/_custom_type_script = "uid://dl1eiegc8btxy"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ressort4"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -8.35176, -17.8087, 6.04928)
+mesh = SubResource("SphereMesh_iaeni")
+skeleton = NodePath("../..")
+
+[node name="Ressort5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4506, 6.21819, -4.0753)
+script = ExtResource("1_4q6mx")
+masse = 4.4
+metadata/_custom_type_script = "uid://dl1eiegc8btxy"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ressort5"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("SphereMesh_iaeni")
+skeleton = NodePath("../..")
+
+[node name="Ressort6" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.45864, 1.05956, 10.0912)
+script = ExtResource("1_4q6mx")
+masse = 4.4
+metadata/_custom_type_script = "uid://dl1eiegc8btxy"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ressort6"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("SphereMesh_iaeni")
+skeleton = NodePath("../..")
+
+[node name="Ressort7" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91891, 1.05956, -4.41946)
+script = ExtResource("1_4q6mx")
+masse = 2.3
+metadata/_custom_type_script = "uid://dl1eiegc8btxy"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ressort7"]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
+mesh = SubResource("SphereMesh_iaeni")
+skeleton = NodePath("../..")
+
+[node name="Ressort8" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24029, -10.9904, -3.88676)
+script = ExtResource("1_4q6mx")
+masse = 2.3
+metadata/_custom_type_script = "uid://dl1eiegc8btxy"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ressort8"]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
+mesh = SubResource("SphereMesh_iaeni")
+skeleton = NodePath("../..")
+
+[node name="DroneBody" parent="." instance=ExtResource("2_23w1m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115775, 0, 9.4938)
+
+[node name="Ventilo" type="Node3D" parent="DroneBody"]
+script = ExtResource("3_iaeni")
+
+[node name="Ressort9" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4588, 2.56557, 2.29882)
+script = ExtResource("1_4q6mx")
+masse = 2.3
+metadata/_custom_type_script = "uid://dl1eiegc8btxy"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ressort9"]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
+mesh = SubResource("SphereMesh_iaeni")
+skeleton = NodePath("../..")
+
+[node name="Ressort10" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4788, 0, -15.6621)
+script = ExtResource("1_4q6mx")
+masse = 2.3
+metadata/_custom_type_script = "uid://dl1eiegc8btxy"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ressort10"]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
+mesh = SubResource("SphereMesh_iaeni")
+skeleton = NodePath("../..")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="JoyGauche" type="Node2D" parent="Node2D"]
+unique_name_in_owner = true
+visible = false
+script = ExtResource("3_a14md")
+petite_couleur = Color(0.745098, 0, 0, 1)
+
+[node name="JoyDroite" type="Node2D" parent="Node2D"]
+unique_name_in_owner = true
+visible = false
+script = ExtResource("3_a14md")
+grande_couleur = Color(0.682353, 0, 0, 1)
+gauche = false
+vertical_deux = false
+
+[node name="BoutonTel" type="Node2D" parent="Node2D"]
+position = Vector2(593, 500)
+script = ExtResource("5_gmb24")
+input_bouton = &"coupDeVent"
+metadata/_custom_type_script = "uid://cygco654e0kre"
