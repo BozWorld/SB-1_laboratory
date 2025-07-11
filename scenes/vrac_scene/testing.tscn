@@ -1,0 +1,189 @@
+[gd_scene load_steps=17 format=3 uid="uid://bvbkyhii58gmu"]
+
+[ext_resource type="Shader" uid="uid://bu2shn60caxsn" path="res://assets/materials_textures/shader_script/sky.gdshader" id="1_6fwm8"]
+[ext_resource type="Script" uid="uid://brawdrnhqwxg5" path="res://scenes/vrac_scene/plane.gd" id="1_ngyxx"]
+[ext_resource type="Script" uid="uid://pb33sqbwr1el" path="res://scenes/vrac_scene/camera_3d.gd" id="2_bt7gl"]
+[ext_resource type="Texture2D" uid="uid://c4nje1khpalve" path="res://assets/2d/stars.png" id="2_yrnlo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lodfu"]
+shader = ExtResource("1_6fwm8")
+shader_parameter/day_top_color = Color(0.1, 0.6, 1, 1)
+shader_parameter/day_bottom_color = Color(0.4, 0.8, 1, 1)
+shader_parameter/sunset_top_color = Color(0.7, 0.75, 1, 1)
+shader_parameter/sunset_bottom_color = Color(1, 0.5, 0.7, 1)
+shader_parameter/night_top_color = Color(0.02, 0, 0.04, 1)
+shader_parameter/night_bottom_color = Color(0.1, 0, 0.2, 1)
+shader_parameter/horizon_color = Color(0, 0.7, 0.8, 1)
+shader_parameter/horizon_blur = 0.05
+shader_parameter/sun_color = Color(10, 8, 1, 1)
+shader_parameter/sun_sunset_color = Color(10, 0, 0, 1)
+shader_parameter/sun_size = 0.2
+shader_parameter/sun_blur = 10.0
+shader_parameter/moon_color = Color(1, 0.95, 0.7, 1)
+shader_parameter/moon_size = 0.06
+shader_parameter/moon_blur = 0.1
+shader_parameter/clouds_edge_color = Color(0.8, 0.8, 0.98, 1)
+shader_parameter/clouds_top_color = Color(1, 1, 1, 1)
+shader_parameter/clouds_middle_color = Color(0.92, 0.92, 0.98, 1)
+shader_parameter/clouds_bottom_color = Color(0.83, 0.83, 0.94, 1)
+shader_parameter/clouds_speed = 2.0
+shader_parameter/clouds_direction = 0.2
+shader_parameter/clouds_scale = 1.0
+shader_parameter/clouds_cutoff = 0.3
+shader_parameter/clouds_fuzziness = 0.5
+shader_parameter/clouds_weight = 0.0
+shader_parameter/clouds_blur = 0.25
+shader_parameter/stars_texture = ExtResource("2_yrnlo")
+shader_parameter/stars_speed = 1.0
+shader_parameter/stars_scale = 1.0
+shader_parameter/stars_opacity = 1.0
+shader_parameter/overwritten_time = 2400.0
+
+[sub_resource type="Sky" id="Sky_ow4db"]
+sky_material = SubResource("ShaderMaterial_lodfu")
+
+[sub_resource type="Environment" id="Environment_6fwm8"]
+background_mode = 2
+sky = SubResource("Sky_ow4db")
+ambient_light_source = 3
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ytnha"]
+size = Vector2(200, 200)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bt7gl"]
+data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100, -100, 0, -100, 100, 0, -100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytnha"]
+albedo_color = Color(0.867667, 0.409764, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ngyxx"]
+material = SubResource("StandardMaterial3D_ytnha")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngyxx"]
+albedo_color = Color(0.780443, 0.179215, 0.300873, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bt7gl"]
+material = SubResource("StandardMaterial3D_ngyxx")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ytnha"]
+size = Vector3(2.75613, 1.02373, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bt7gl"]
+albedo_color = Color(0.257622, 0.422872, 0.514876, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ow4db"]
+material = SubResource("StandardMaterial3D_bt7gl")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_energy = 0.0
+shadow_enabled = true
+shadow_opacity = 0.75
+shadow_blur = 5.0
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.996041, 0.0187856, -0.0868867, 0, -0.977416, -0.211325, -0.0888943, 0.210488, -0.973546, 0, 0, 0)
+light_color = Color(1, 1, 0.6, 1)
+light_energy = 0.0
+shadow_enabled = true
+shadow_opacity = 0.25
+shadow_blur = 5.0
+directional_shadow_fade_start = 0.1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6fwm8")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_ytnha")
+
+[node name="sol" type="StaticBody3D" parent="MeshInstance3D10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D10/sol"]
+shape = SubResource("ConcavePolygonShape3D_bt7gl")
+
+[node name="plane" type="CharacterBody3D" parent="." node_paths=PackedStringArray("data", "mesh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_ngyxx")
+data = NodePath("../Control/RichTextLabel")
+mesh = NodePath("MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="plane"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+mesh = SubResource("BoxMesh_ngyxx")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="plane/MeshInstance3D"]
+transform = Transform3D(0.00872656, 0, -2.73684, 0, 0.437966, 0, 0.999962, 0, 0.0238841, 0.075, 0, 0)
+mesh = SubResource("BoxMesh_bt7gl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="plane"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0790863, 0.015749, 0)
+shape = SubResource("BoxShape3D_ytnha")
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99, 3.5)
+fov = 93.5
+script = ExtResource("2_bt7gl")
+target = NodePath("../plane")
+offset = Vector3(0, 0.99, 3.5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.975, 0, 0, 0, 2.975, 0, 0, 0, 2.975, 4.425, 0, -9)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("../Camera3D")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.975, 0, 0, 0, 2.975, 0, 0, 0, 2.975, -8.075, 0, -4.655)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("../Camera3D")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.975, 0, 0, 0, 2.975, 0, 0, 0, 2.975, 4.925, 0, 11.345)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("../Camera3D")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.975, 0, 0, 0, 2.975, 0, 0, 0, 2.975, -4.075, 0, 5.345)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("../Camera3D")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.975, 0, 0, 0, 2.975, 0, 0, 0, 2.975, 6.925, 0, 5.345)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("../Camera3D")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.975, 0, 0, 0, 2.975, 0, 0, 0, 2.975, 6.925, 0, 8.345)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("../Camera3D")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.975, 0, 0, 0, 2.975, 0, 0, 0, 2.975, -8.075, 0, 8.345)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("../Camera3D")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.975, 0, 0, 0, 2.975, 0, 0, 0, 2.975, -12.075, 0, 3.345)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("../Camera3D")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.975, 0, 0, 0, 2.975, 0, 0, 0, 2.975, 7.96, 0, -4.655)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("../Camera3D")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 355.0
+grow_vertical = 2
