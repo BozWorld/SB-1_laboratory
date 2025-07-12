@@ -17,6 +17,8 @@ var time : float = 0
 var engine_power = -100  # Forward acceleration force.
 var dir = Vector2.ZERO
 var velocity_dir = Vector2.ZERO
+@export var helice: Node3D  # tu assignes ton mesh dans l’inspecteur
+@export var helice_rotation_speed: float = 10.0  # multiplicateur de rotation
 
 signal sharp_turn_screen_shake(turn_angle)
 var emit_once:bool = false

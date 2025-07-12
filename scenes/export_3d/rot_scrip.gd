@@ -1,4 +1,4 @@
-extends Node3D
+xtends Node3D
 
 # Vitesse de rotation en degrés par seconde
 @export var rotation_speed = 30.0  # Change la valeur pour ajuster la vitesse

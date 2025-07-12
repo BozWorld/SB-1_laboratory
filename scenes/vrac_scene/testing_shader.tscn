@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ducgjw8wqx26"]
 
-[ext_resource type="Shader" uid="uid://1yfkmctsy6a1" path="res://scenes/vrac_scene/testing_shader.gdshader" id="1_moka3"]
+[ext_resource type="Shader" uid="uid://1yfkmctsy6a1" path="res://assets/testing_shader.gdshader" id="1_moka3"]
 [ext_resource type="Texture2D" uid="uid://bbf3j5g1hjas0" path="res://assets/2d/bg_debug_sky.png" id="2_o7dvv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o7dvv"]
