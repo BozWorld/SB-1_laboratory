@@ -1,3 +1,4 @@
+@tool
 extends Camera3D
 
 @export var target_path : NodePath
@@ -6,6 +7,8 @@ extends Camera3D
 @export var offset = Vector3(0, 1.5, 6)    # position de la cam
 
 var target : Node3D
+
+
 
 func _ready():
 	if target_path:

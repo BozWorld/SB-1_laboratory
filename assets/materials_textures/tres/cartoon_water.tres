@@ -1,0 +1,24 @@
+[gd_resource type="PlaneMesh" load_steps=3 format=3 uid="uid://3xdibgqmb5ev"]
+
+[ext_resource type="Shader" uid="uid://dfvbko1gnb3g6" path="res://scenes/vrac_scene/water_cartoon.gdshader" id="1_gxqlr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q7ll0"]
+render_priority = 0
+shader = ExtResource("1_gxqlr")
+shader_parameter/WATER_COL = Color(0.04, 0.38, 0.88, 1)
+shader_parameter/WATER2_COL = Color(0.04, 0.35, 0.78, 1)
+shader_parameter/FOAM_COL = Color(0.8125, 0.9609, 0.9648, 1)
+shader_parameter/HORIZON_COL = Color(0.3, 0.6, 0.9, 1)
+shader_parameter/distortion_speed = 1.5
+shader_parameter/tile = Vector2(180, 180)
+shader_parameter/height = 10.0
+shader_parameter/wave_size = Vector2(6, 6)
+shader_parameter/wave_speed = 2.0
+shader_parameter/pattern_scale = 1.06
+shader_parameter/pattern_variation = 0.8
+shader_parameter/horizon_distance = 0.9
+
+[resource]
+lightmap_size_hint = Vector2i(10002, 10002)
+material = SubResource("ShaderMaterial_q7ll0")
+size = Vector2(20000, 20000)

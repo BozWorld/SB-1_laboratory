@@ -1,11 +1,15 @@
-[gd_scene load_steps=30 format=3 uid="uid://bvbkyhii58gmu"]
+[gd_scene load_steps=27 format=3 uid="uid://bvbkyhii58gmu"]
 
 [ext_resource type="Shader" uid="uid://bu2shn60caxsn" path="res://assets/materials_textures/shader_script/sky.gdshader" id="1_6fwm8"]
 [ext_resource type="Script" uid="uid://brawdrnhqwxg5" path="res://code/controller/plane.gd" id="1_ngyxx"]
 [ext_resource type="Script" uid="uid://pb33sqbwr1el" path="res://code/camera/camera_3d.gd" id="2_bt7gl"]
 [ext_resource type="Texture2D" uid="uid://c4nje1khpalve" path="res://assets/2d/stars.png" id="2_yrnlo"]
-[ext_resource type="Texture2D" uid="uid://deje025h3yukj" path="res://assets/2d/Vector/texture_01.svg" id="3_yrnlo"]
-[ext_resource type="Script" uid="uid://btbjghboku78y" path="res://code/controller/helice.gd" id="6_lodfu"]
+[ext_resource type="PackedScene" uid="uid://by06fe60o31xy" path="res://scenes/vrac_scene/sol.tscn" id="3_g8jn3"]
+[ext_resource type="PlaneMesh" uid="uid://3xdibgqmb5ev" path="res://assets/materials_textures/tres/cartoon_water.tres" id="4_q7ll0"]
+[ext_resource type="Script" path="res://code/controller/helice.gd" id="6_lodfu"]
+[ext_resource type="PackedScene" uid="uid://snh77fj2kn5w" path="res://scenes/vrac_scene/gpu_particles_3d.tscn" id="7_k6h54"]
+[ext_resource type="Script" uid="uid://472u4bdsvehu" path="res://code/controller/trail.gd" id="8_g8jn3"]
+[ext_resource type="Shader" uid="uid://b1hy61gbvow1g" path="res://pixelart_stylizer.gdshader" id="10_b5jdx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lodfu"]
 shader = ExtResource("1_6fwm8")
@@ -48,17 +52,9 @@ sky_material = SubResource("ShaderMaterial_lodfu")
 background_mode = 2
 sky = SubResource("Sky_ow4db")
 ambient_light_source = 3
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lodfu"]
-albedo_texture = ExtResource("3_yrnlo")
-uv1_triplanar = true
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_ytnha"]
-material = SubResource("StandardMaterial3D_lodfu")
-size = Vector2(200, 200)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bt7gl"]
-data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100, -100, 0, -100, 100, 0, -100)
+ambient_light_color = Color(0.917045, 0.515374, 0.573938, 1)
+ambient_light_sky_contribution = 0.17
+tonemap_mode = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bt7gl"]
 albedo_color = Color(0.257622, 0.422872, 0.514876, 1)
@@ -78,8 +74,10 @@ albedo_color = Color(0.780443, 0.179215, 0.300873, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_bt7gl"]
 material = SubResource("StandardMaterial3D_ngyxx")
 
+[sub_resource type="SphereMesh" id="SphereMesh_lodfu"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ytnha"]
-size = Vector3(2.75613, 1.02373, 1)
+size = Vector3(2.59926, 1.23354, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrnlo"]
 albedo_color = Color(2.74345e-06, 0.620951, 0.303657, 1)
@@ -88,381 +86,31 @@ albedo_color = Color(2.74345e-06, 0.620951, 0.303657, 1)
 material = SubResource("StandardMaterial3D_yrnlo")
 size = Vector3(1, 0.27, 0.28)
 
-[sub_resource type="Gradient" id="Gradient_k6h54"]
-colors = PackedColorArray(0, 0, 0, 1, 1, 0.159634, 0.222881, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6h54"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_g8jn3"]
-gradient = SubResource("Gradient_k6h54")
+[sub_resource type="PlaneMesh" id="PlaneMesh_5l5m1"]
+size = Vector2(10, 10)
 
-[sub_resource type="Curve" id="Curve_k6h54"]
-_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_g8jn3"]
-curve = SubResource("Curve_k6h54")
-
-[sub_resource type="Curve" id="Curve_q7ll0"]
-_limits = [0.0, 3.0, 0.0, 1.0]
-_data = [Vector2(0, 0), 0.0, 3.0, 0, 1, Vector2(1, 3), 3.0, 0.0, 1, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_b5jdx"]
-curve = SubResource("Curve_q7ll0")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q7ll0"]
-lifetime_randomness = 0.2
-direction = Vector3(0, 0, 1)
-spread = 25.0
-initial_velocity_min = 1.0
-initial_velocity_max = 3.0
-gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_g8jn3")
-scale_over_velocity_curve = SubResource("CurveTexture_b5jdx")
-color_ramp = SubResource("GradientTexture1D_g8jn3")
-
-[sub_resource type="SphereMesh" id="SphereMesh_k6h54"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xet8e"]
+render_priority = 0
+shader = ExtResource("10_b5jdx")
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.4
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-visible = false
-light_energy = 0.0
-shadow_enabled = true
-shadow_opacity = 0.75
-shadow_blur = 5.0
+[node name="UI_VISUEL" type="Node3D" parent="."]
 
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.996041, 0.0187856, -0.0868867, 0, -0.977416, -0.211325, -0.0888943, 0.210488, -0.973546, 0, 0, 0)
-visible = false
-light_color = Color(1, 1, 0.6, 1)
-light_energy = 0.0
-shadow_enabled = true
-shadow_opacity = 0.25
-shadow_blur = 5.0
-directional_shadow_fade_start = 0.1
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_6fwm8")
-
-[node name="Node3D" type="Node3D" parent="."]
-
-[node name="Sol" type="MeshInstance3D" parent="Node3D"]
-mesh = SubResource("PlaneMesh_ytnha")
-skeleton = NodePath("../..")
-
-[node name="sol" type="StaticBody3D" parent="Node3D/Sol"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Sol/sol"]
-shape = SubResource("ConcavePolygonShape3D_bt7gl")
-
-[node name="obstacle" type="Node3D" parent="Node3D"]
-transform = Transform3D(2.975, 0, 0, 0, 2.975, 0, 0, 0, 2.975, 4.425, 0, -9)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/obstacle"]
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D/obstacle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 1.4605)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D/obstacle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168067, 0, 6.83866)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D/obstacle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85714, 0, 4.82185)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D/obstacle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 4.82185)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="Node3D/obstacle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 5.83025)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D/obstacle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 5.83025)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="Node3D/obstacle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54622, 0, 4.14958)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D/obstacle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18824, 0, 1.4605)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="Camera3D" type="Camera3D" parent="Node3D/obstacle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.487, 1.021, 4.202)
-fov = 107.0
-script = ExtResource("2_bt7gl")
-target_path = NodePath("../../../plane")
-offset = Vector3(0, 1.021, 4.202)
-
-[node name="obstacle2" type="Node3D" parent="Node3D"]
-transform = Transform3D(2.975, 0, 0, 0, 2.975, 0, 0, 0, 2.975, 4.425, 0, -47)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/obstacle2"]
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D/obstacle2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 1.4605)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D/obstacle2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168067, 0, 6.83866)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D/obstacle2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85714, 0, 4.82185)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D/obstacle2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 4.82185)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="Node3D/obstacle2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 5.83025)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D/obstacle2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 5.83025)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="Node3D/obstacle2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54622, 0, 4.14958)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D/obstacle2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18824, 0, 1.4605)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="Camera3D" type="Camera3D" parent="Node3D/obstacle2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.487, 1.021, 4.202)
-fov = 107.0
-script = ExtResource("2_bt7gl")
-target_path = NodePath("../../../plane")
-offset = Vector3(0, 1.021, 4.202)
-
-[node name="obstacle3" type="Node3D" parent="Node3D"]
-transform = Transform3D(2.975, 0, 0, 0, 2.975, 0, 0, 0, 2.975, 6.425, 0, 35)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/obstacle3"]
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D/obstacle3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 1.4605)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D/obstacle3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168067, 0, 6.83866)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D/obstacle3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85714, 0, 4.82185)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D/obstacle3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 4.82185)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="Node3D/obstacle3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 5.83025)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D/obstacle3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 5.83025)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="Node3D/obstacle3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54622, 0, 4.14958)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D/obstacle3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18824, 0, 1.4605)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="Camera3D" type="Camera3D" parent="Node3D/obstacle3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.487, 1.021, 4.202)
-fov = 107.0
-script = ExtResource("2_bt7gl")
-target_path = NodePath("../../../plane")
-offset = Vector3(0, 1.021, 4.202)
-
-[node name="obstacle4" type="Node3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/obstacle4"]
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../../Camera3D")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D/obstacle4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 1.4605)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../../Camera3D")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D/obstacle4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168067, 0, 6.83866)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../../Camera3D")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D/obstacle4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85714, 0, 4.82185)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../../Camera3D")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D/obstacle4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 4.82185)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../../Camera3D")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="Node3D/obstacle4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 5.83025)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../../Camera3D")
-
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D/obstacle4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 5.83025)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../../Camera3D")
-
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="Node3D/obstacle4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54622, 0, 4.14958)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../../Camera3D")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D/obstacle4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18824, 0, 1.4605)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../../Camera3D")
-
-[node name="Camera3D" type="Camera3D" parent="Node3D"]
-fov = 107.0
-script = ExtResource("2_bt7gl")
-target_path = NodePath("../../plane")
-offset = Vector3(0, 1.021, 4.202)
-
-[node name="obstacle5" type="Node3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/obstacle5"]
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D/obstacle5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 1.4605)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D/obstacle5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168067, 0, 6.83866)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D/obstacle5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85714, 0, 4.82185)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D/obstacle5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 4.82185)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="Node3D/obstacle5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 5.83025)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D/obstacle5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 5.83025)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="Node3D/obstacle5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54622, 0, 4.14958)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D/obstacle5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18824, 0, 1.4605)
-mesh = SubResource("CylinderMesh_ow4db")
-skeleton = NodePath("../Camera3D")
-
-[node name="Camera3D" type="Camera3D" parent="Node3D/obstacle5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.487, 1.021, 4.202)
-fov = 107.0
-script = ExtResource("2_bt7gl")
-target_path = NodePath("../../../plane")
-offset = Vector3(0, 1.021, 4.202)
-
-[node name="plane" type="CharacterBody3D" parent="." node_paths=PackedStringArray("helice", "data", "mesh", "trail_particles")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("1_ngyxx")
-turn_speed = 0.9
-helice = NodePath("helice")
-data = NodePath("../Control/RichTextLabel")
-mesh = NodePath("MeshInstance3D")
-trail_particles = NodePath("GPUParticles3D")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="plane"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-mesh = SubResource("BoxMesh_ngyxx")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="plane/MeshInstance3D"]
-transform = Transform3D(0.00872656, 0, -2.73684, 0, 0.437966, 0, 0.999962, 0, 0.0238841, 0.075, 0, 0)
-mesh = SubResource("BoxMesh_bt7gl")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0790863, 0.015749, 0)
-shape = SubResource("BoxShape3D_ytnha")
-
-[node name="helice" type="MeshInstance3D" parent="plane"]
-transform = Transform3D(-1.7266e-08, -0.395, 0, 0.395, -1.7266e-08, 0, 0, 0, 0.395, 0, 0.117319, 0.630936)
-mesh = SubResource("BoxMesh_lodfu")
-script = ExtResource("6_lodfu")
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="plane"]
-transform = Transform3D(-5.29677, -5.48497, 0, 5.48497, -5.29677, 0, 0, 0, 7.625, 0, 0, 1.32302)
-amount = 150
-amount_ratio = 0.0663
-lifetime = 4.0
-local_coords = true
-trail_enabled = true
-trail_lifetime = 0.7
-process_material = SubResource("ParticleProcessMaterial_q7ll0")
-draw_pass_1 = SubResource("SphereMesh_k6h54")
-
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="UI_VISUEL"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -470,9 +118,339 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+[node name="RichTextLabel" type="RichTextLabel" parent="UI_VISUEL/Control"]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 355.0
 grow_vertical = 2
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="UI_VISUEL"]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_energy = 0.0
+shadow_enabled = true
+shadow_opacity = 0.75
+shadow_blur = 5.0
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="UI_VISUEL"]
+transform = Transform3D(0.996041, 0.0187856, -0.0868867, 0, -0.977416, -0.211325, -0.0888943, 0.210488, -0.973546, 0, 0, 0)
+light_color = Color(1, 1, 0.6, 1)
+light_energy = 0.0
+shadow_enabled = true
+shadow_opacity = 0.25
+shadow_blur = 5.0
+directional_shadow_fade_start = 0.1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="UI_VISUEL"]
+environment = SubResource("Environment_6fwm8")
+
+[node name="environnement" type="Node3D" parent="."]
+
+[node name="Sol" parent="environnement" instance=ExtResource("3_g8jn3")]
+mesh = ExtResource("4_q7ll0")
+
+[node name="obstacle" type="Node3D" parent="environnement"]
+transform = Transform3D(2.975, 0, 0, 0, 2.975, 0, 0, 0, 2.975, 4.425, 0, -9)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="environnement/obstacle"]
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="environnement/obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 1.4605)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="environnement/obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168067, 0, 6.83866)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="environnement/obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85714, 0, 4.82185)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="environnement/obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 4.82185)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="environnement/obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 5.83025)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="environnement/obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 5.83025)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="environnement/obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54622, 0, 4.14958)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="environnement/obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18824, 0, 1.4605)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="obstacle2" type="Node3D" parent="environnement"]
+transform = Transform3D(2.975, 0, 0, 0, 2.975, 0, 0, 0, 2.975, 4.425, 0, -47)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="environnement/obstacle2"]
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="environnement/obstacle2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 1.4605)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="environnement/obstacle2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168067, 0, 6.83866)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="environnement/obstacle2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85714, 0, 4.82185)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="environnement/obstacle2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 4.82185)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="environnement/obstacle2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 5.83025)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="environnement/obstacle2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 5.83025)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="environnement/obstacle2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54622, 0, 4.14958)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="environnement/obstacle2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18824, 0, 1.4605)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="obstacle3" type="Node3D" parent="environnement"]
+transform = Transform3D(2.975, 0, 0, 0, 2.975, 0, 0, 0, 2.975, 6.425, 0, 35)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="environnement/obstacle3"]
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="environnement/obstacle3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 1.4605)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="environnement/obstacle3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168067, 0, 6.83866)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="environnement/obstacle3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85714, 0, 4.82185)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="environnement/obstacle3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 4.82185)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="environnement/obstacle3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 5.83025)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="environnement/obstacle3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 5.83025)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="environnement/obstacle3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54622, 0, 4.14958)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="environnement/obstacle3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18824, 0, 1.4605)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="obstacle4" type="Node3D" parent="environnement"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="environnement/obstacle4"]
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("../../../player/Camera3D")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="environnement/obstacle4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 1.4605)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("../../../player/Camera3D")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="environnement/obstacle4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168067, 0, 6.83866)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("../../../player/Camera3D")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="environnement/obstacle4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85714, 0, 4.82185)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("../../../player/Camera3D")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="environnement/obstacle4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 4.82185)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("../../../player/Camera3D")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="environnement/obstacle4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 5.83025)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("../../../player/Camera3D")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="environnement/obstacle4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 5.83025)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("../../../player/Camera3D")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="environnement/obstacle4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54622, 0, 4.14958)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("../../../player/Camera3D")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="environnement/obstacle4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18824, 0, 1.4605)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("../../../player/Camera3D")
+
+[node name="obstacle5" type="Node3D" parent="environnement"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="environnement/obstacle5"]
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="environnement/obstacle5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 1.4605)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="environnement/obstacle5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168067, 0, 6.83866)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="environnement/obstacle5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85714, 0, 4.82185)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="environnement/obstacle5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 4.82185)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="environnement/obstacle5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840336, 0, 5.83025)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="environnement/obstacle5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20168, 0, 5.83025)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="environnement/obstacle5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54622, 0, 4.14958)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="environnement/obstacle5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18824, 0, 1.4605)
+mesh = SubResource("CylinderMesh_ow4db")
+skeleton = NodePath("")
+
+[node name="player" type="Node3D" parent="."]
+
+[node name="plane" type="CharacterBody3D" parent="player" node_paths=PackedStringArray("helice", "data", "mesh", "trail_node", "engine_particles_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44947, 0)
+script = ExtResource("1_ngyxx")
+max_flight_speed = 25.0
+turn_speed = 0.9
+pitch_speed = 1.0
+level_speed = 3.0
+throttle_delta = 10.0
+acceleration = 1.0
+helice = NodePath("helice")
+data = NodePath("../../UI_VISUEL/Control/RichTextLabel")
+mesh = NodePath("MeshInstance3D")
+trail_node = NodePath("trail3D")
+engine_particles_node = NodePath("Node3D")
+engine_particle_scene = ExtResource("7_k6h54")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player/plane"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+mesh = SubResource("BoxMesh_ngyxx")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="player/plane/MeshInstance3D"]
+transform = Transform3D(0.00872656, 0, -2.73684, 0, 0.437966, 0, 0.999962, 0, 0.0238841, 0.075, 0, 0)
+mesh = SubResource("BoxMesh_bt7gl")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="player/plane/MeshInstance3D"]
+transform = Transform3D(-0.28, 0, 2.44784e-08, 0, 0.28, 0, -2.44784e-08, 0, -0.28, 0.301594, -0.561485, 2.63662e-08)
+mesh = SubResource("SphereMesh_lodfu")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="player/plane/MeshInstance3D"]
+transform = Transform3D(-0.28, 0, 2.44784e-08, 0, 0.28, 0, -2.44784e-08, 0, -0.28, -0.324599, -0.561485, -2.83774e-08)
+mesh = SubResource("SphereMesh_lodfu")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player/plane"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000649571, -0.0891584, 0)
+shape = SubResource("BoxShape3D_ytnha")
+
+[node name="helice" type="MeshInstance3D" parent="player/plane"]
+transform = Transform3D(-1.7266e-08, -0.395, 0, 0.395, -1.7266e-08, 0, 0, 0, 0.395, 0, 0.117319, 0.630936)
+mesh = SubResource("BoxMesh_lodfu")
+script = ExtResource("6_lodfu")
+
+[node name="trail3D" type="MeshInstance3D" parent="player/plane"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0058465, 0.502924)
+material_override = SubResource("StandardMaterial3D_k6h54")
+skeleton = NodePath("../../..")
+script = ExtResource("8_g8jn3")
+_largeur_debut = 0.1
+_largeur_fin = 0.07
+_vitesse_grandissement = 0.68
+_precision_trainee = 0.4
+_duree_de_vie = 0.3
+_couleur_debut = Color(0.701364, 0.420885, 0.434153, 1)
+metadata/_custom_type_script = "uid://472u4bdsvehu"
+
+[node name="Node3D" type="Node3D" parent="player/plane"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.618983)
+
+[node name="Camera3D" type="Camera3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 0.999133, -0.0416308, 0, 0.0416308, 0.999133, 0, 2.94947, 6)
+script = ExtResource("2_bt7gl")
+target_path = NodePath("../plane")
+
+[node name="Postprocess" type="MeshInstance3D" parent="player/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.873369)
+mesh = SubResource("PlaneMesh_5l5m1")
+surface_material_override/0 = SubResource("ShaderMaterial_xet8e")
