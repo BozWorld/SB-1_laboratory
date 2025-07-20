@@ -1,9 +1,9 @@
 extends Node2D
 
-@export var friction_label : Label
-@export var force_label : Label
-@export var velocity_label : Label
-@export var angular_vel : Label
+@export var friction_label : RichTextLabel
+@export var force_label : RichTextLabel
+@export var velocity_label : RichTextLabel
+@export var angular_vel : RichTextLabel
 
 @export var player : CharacterBody2D
 

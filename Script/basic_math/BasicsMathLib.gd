@@ -1,5 +1,5 @@
 @tool
-extends Node2D
+extends Sprite2D
 
 @export var velocity : Vector2
 @export var acceleration: Vector2

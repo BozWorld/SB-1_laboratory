@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7gxbb2n1dig7"]
+[gd_scene load_steps=6 format=3 uid="uid://flh024xh6iku"]
 
-[ext_resource type="Script" path="res://3DObj.gd" id="1_ol4dp"]
+[ext_resource type="Script" uid="uid://dl8gow33kalw3" path="res://Script/actor3D/3DObj.gd" id="1_ol4dp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ddfsq"]
 sky_top_color = Color(0.642672, 0.242907, 0.714199, 1)
@@ -18,9 +18,6 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_34mtr"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_la72t"]
-size = Vector3(10, 10, 10)
 
 [node name="main_test" type="Node3D"]
 
@@ -40,10 +37,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 4)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_34mtr")
 script = ExtResource("1_ol4dp")
-velocity = null
-acceleration = null
-force = null
+force = Vector3(0, -6, -1)
 gravity = Vector3(0, 1, 0)
-coll = SubResource("BoxShape3D_la72t")
-mass = null
-c = null
+collision_shape_type = 2

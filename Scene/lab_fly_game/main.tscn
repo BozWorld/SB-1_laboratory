@@ -1,13 +1,21 @@
-[gd_scene load_steps=12 format=3 uid="uid://ycivofm1ia4x"]
+[gd_scene load_steps=14 format=3 uid="uid://ycivofm1ia4x"]
 
-[ext_resource type="Script" path="res://Script/debug_hud/DebugPhysicsHUD.gd" id="1_in3qo"]
+[ext_resource type="Script" uid="uid://d87ctlr7wx7n" path="res://Script/debug_hud/DebugPhysicsHUD.gd" id="1_in3qo"]
 [ext_resource type="Texture2D" uid="uid://dt3e6qkmw3jfa" path="res://Asset/UI/PNG/Blue/Default/button_square_gradient.png" id="2_3v516"]
+[ext_resource type="Texture2D" uid="uid://cgxejnjoysm8n" path="res://Asset/UI/PNG/Grey/Default/button_rectangle_line.png" id="2_husru"]
 [ext_resource type="FontFile" uid="uid://c4n0rcc8phte5" path="res://Asset/UI/Font/Silver.ttf" id="3_8x4jk"]
 [ext_resource type="PackedScene" uid="uid://dxrum2s6coxra" path="res://Scene/lab_fly_game/player_ship.tscn" id="3_n6i5p"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_fl0p7"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_ll6qa"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_q7j2m"]
+[ext_resource type="Script" uid="uid://bhq4rvuugi4hd" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="4_fl0p7"]
+[ext_resource type="Script" uid="uid://b5le71bqpuvpn" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_ll6qa"]
+[ext_resource type="Script" uid="uid://c1hnh5vthhpcr" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_q7j2m"]
 [ext_resource type="PackedScene" uid="uid://c637rxukqni2f" path="res://Scene/lab_fly_game/tile_map.tscn" id="6_v0bpe"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tiyod"]
+texture = ExtResource("2_husru")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q0s8o"]
 texture = ExtResource("2_3v516")
@@ -22,52 +30,121 @@ ease = 2
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("friction_label", "force_label", "velocity_label", "angular_vel", "player")]
 script = ExtResource("1_in3qo")
-friction_label = NodePath("[UI]/CanvasLayer/VBoxContainer/friction")
-force_label = NodePath("[UI]/CanvasLayer/VBoxContainer/force")
-velocity_label = NodePath("[UI]/CanvasLayer/VBoxContainer/velocity")
-angular_vel = NodePath("[UI]/CanvasLayer/VBoxContainer/Angular Vel")
+friction_label = NodePath("[UI]/CanvasLayer/Control/Panel2/MarginContainer/VBoxContainer/friction")
+force_label = NodePath("[UI]/CanvasLayer/Control/Panel2/MarginContainer/VBoxContainer/force")
+velocity_label = NodePath("[UI]/CanvasLayer/Control/Panel2/MarginContainer/VBoxContainer/velocity")
+angular_vel = NodePath("[UI]/CanvasLayer/Control/Panel2/MarginContainer/VBoxContainer/Angular_Vel")
 player = NodePath("PlayerScene")
 
 [node name="[UI]" type="Node" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="[UI]"]
 
-[node name="Panel" type="Panel" parent="[UI]/CanvasLayer"]
-offset_right = 200.0
-offset_bottom = 156.0
+[node name="Control" type="Control" parent="[UI]/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -942.0
+offset_bottom = -389.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="[UI]/CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 122.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_tiyod")
+
+[node name="MarginContainer" type="MarginContainer" parent="[UI]/CanvasLayer/Control/Panel2"]
+layout_mode = 2
+offset_right = 341.0
+offset_bottom = 225.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="[UI]/CanvasLayer/Control/Panel2/MarginContainer"]
+layout_mode = 2
+
+[node name="velocity" type="RichTextLabel" parent="[UI]/CanvasLayer/Control/Panel2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_8x4jk")
+theme_override_font_sizes/normal_font_size = 40
+text = "Velocity :"
+fit_content = true
+
+[node name="friction" type="RichTextLabel" parent="[UI]/CanvasLayer/Control/Panel2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_8x4jk")
+theme_override_font_sizes/normal_font_size = 40
+text = "friction :"
+fit_content = true
+
+[node name="force" type="RichTextLabel" parent="[UI]/CanvasLayer/Control/Panel2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_8x4jk")
+theme_override_font_sizes/normal_font_size = 40
+text = "Force :"
+fit_content = true
+
+[node name="Angular_Vel" type="RichTextLabel" parent="[UI]/CanvasLayer/Control/Panel2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_8x4jk")
+theme_override_font_sizes/normal_font_size = 40
+text = "Angular_vel :"
+fit_content = true
+
+[node name="Panel" type="Panel" parent="[UI]/CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_q0s8o")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="[UI]/CanvasLayer"]
-offset_left = 49.0
-offset_top = 21.0
-offset_right = 627.0
-offset_bottom = 197.0
+[node name="VBoxContainer" type="VBoxContainer" parent="[UI]/CanvasLayer/Control"]
+visible = false
+offset_left = 13.0
+offset_top = 7.0
+offset_right = 152.0
+offset_bottom = 141.0
 theme = SubResource("Theme_ev5wu")
 
-[node name="MarginContainer" type="MarginContainer" parent="[UI]/CanvasLayer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="[UI]/CanvasLayer/Control/VBoxContainer"]
+visible = false
 layout_mode = 2
-size_flags_horizontal = 4
 
-[node name="velocity" type="Label" parent="[UI]/CanvasLayer/VBoxContainer"]
+[node name="velocity" type="Label" parent="[UI]/CanvasLayer/Control/VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_8x4jk")
 theme_override_font_sizes/font_size = 20
 text = "Velocity : 
 "
 
-[node name="friction" type="Label" parent="[UI]/CanvasLayer/VBoxContainer"]
+[node name="friction" type="Label" parent="[UI]/CanvasLayer/Control/VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_8x4jk")
 theme_override_font_sizes/font_size = 20
 text = "friction :"
 
-[node name="force" type="Label" parent="[UI]/CanvasLayer/VBoxContainer"]
+[node name="force" type="Label" parent="[UI]/CanvasLayer/Control/VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_8x4jk")
 theme_override_font_sizes/font_size = 20
 text = "force :"
 
-[node name="Angular Vel" type="Label" parent="[UI]/CanvasLayer/VBoxContainer"]
+[node name="Angular Vel" type="Label" parent="[UI]/CanvasLayer/Control/VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_8x4jk")
 theme_override_font_sizes/font_size = 20
