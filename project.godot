@@ -18,17 +18,12 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 [autoload]
 
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
-flowerwall_crt="*res://addons/flowerwall_postprocess/scenes/flowerwall_pp.tscn"
 
 [display]
 
 window/size/viewport_width=1167
 window/size/viewport_height=647
 window/stretch/mode="canvas_items"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/flowerwall_postprocess/plugin.cfg")
 
 [file_customization]
 
