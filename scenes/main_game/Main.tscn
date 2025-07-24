@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bv36048gk4o1c"]
+[gd_scene load_steps=12 format=3 uid="uid://bv36048gk4o1c"]
 
 [ext_resource type="PackedScene" uid="uid://cu5bpfol8vxis" path="res://scenes/prefab/player/avion.tscn" id="2_e36wr"]
 [ext_resource type="Script" uid="uid://bm66dal6tgpw" path="res://code/camera/camera_behaviour.gd" id="2_ql1dr"]
 [ext_resource type="Script" uid="uid://brawdrnhqwxg5" path="res://code/controller/plane.gd" id="2_yivym"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_yivym"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w2whs"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -70,6 +71,9 @@ transform = Transform3D(1, 0, 0, 0, 0.962218, 0.27228, 0, -0.27228, 0.962218, 1.
 script = ExtResource("2_ql1dr")
 target_path = NodePath("../player")
 offset = Vector3(0, 4, 8)
+
+[node name="PhantomCameraHost" type="Node" parent="camera"]
+script = ExtResource("4_yivym")
 
 [node name="PlayerCamera" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32346, 0)

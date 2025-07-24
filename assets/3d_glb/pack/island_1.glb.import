@@ -1,0 +1,104 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://c7rixo57y36dk"
+path="res://.godot/imported/island_1.glb-72ab4d620c21767d76b96b6097cb04ab.scn"
+
+[deps]
+
+source_file="res://assets/3d_glb/pack/island_1.glb"
+dest_files=["res://.godot/imported/island_1.glb-72ab4d620c21767d76b96b6097cb04ab.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"bottom_color": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/texture/island_1/bottom_color.tres"
+},
+"cailloux_texture": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/texture/island_1/cailloux_texture.tres"
+},
+"grass_texture": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/texture/island_1/grass_texture.tres"
+},
+"icoflower-mat": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/texture/island_1/icoflower-mat.tres"
+},
+"icoflower-mat.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/texture/island_1/icoflower-mat.001.tres"
+},
+"petal-mat": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/texture/island_1/petal-mat.tres"
+},
+"petal-mat.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/texture/island_1/petal-mat.001.tres"
+},
+"pillar_color2": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/texture/island_1/pillar_color2.tres"
+},
+"pillar_color_1": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/texture/island_1/pillar_color_1.tres"
+},
+"pot_texture": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/texture/island_1/pot_texture.tres"
+},
+"pot_texture_2": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/texture/island_1/pot_texture_2.tres"
+},
+"tig-mat": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/texture/island_1/tig-mat.tres"
+},
+"tig-mat.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/texture/island_1/tig-mat.001.tres"
+},
+"top color_color": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/texture/island_1/top color_color.tres"
+},
+"tree_bush_color": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/texture/island_1/tree_bush_color.tres"
+},
+"tree_trunk": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/texture/island_1/tree_trunk.tres"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

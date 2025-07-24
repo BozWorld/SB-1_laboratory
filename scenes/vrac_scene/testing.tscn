@@ -1,15 +1,15 @@
-[gd_scene load_steps=33 format=4 uid="uid://bvbkyhii58gmu"]
+[gd_scene load_steps=33 format=4 uid="uid://djwtrxlgrbrhg"]
 
 [ext_resource type="Shader" uid="uid://bu2shn60caxsn" path="res://assets/materials_textures/shader_script/sky.gdshader" id="1_6fwm8"]
 [ext_resource type="Script" uid="uid://brawdrnhqwxg5" path="res://code/controller/plane.gd" id="1_ngyxx"]
 [ext_resource type="Script" uid="uid://pb33sqbwr1el" path="res://code/camera/camera_3d.gd" id="2_bt7gl"]
 [ext_resource type="Texture2D" uid="uid://c4nje1khpalve" path="res://assets/2d/stars.png" id="2_yrnlo"]
-[ext_resource type="PackedScene" uid="uid://by06fe60o31xy" path="res://scenes/vrac_scene/sol.tscn" id="3_g8jn3"]
-[ext_resource type="PlaneMesh" uid="uid://3xdibgqmb5ev" path="res://assets/materials_textures/tres/cartoon_water.tres" id="4_q7ll0"]
+[ext_resource type="PackedScene" path="res://scenes/vrac_scene/sol.tscn" id="3_g8jn3"]
+[ext_resource type="PlaneMesh" uid="uid://c648rhhc7veoa" path="res://assets/materials_textures/tres/cartoon_water.tres" id="4_q7ll0"]
 [ext_resource type="Script" path="res://code/controller/helice.gd" id="6_lodfu"]
 [ext_resource type="PackedScene" uid="uid://snh77fj2kn5w" path="res://scenes/vrac_scene/gpu_particles_3d.tscn" id="7_k6h54"]
 [ext_resource type="Script" uid="uid://472u4bdsvehu" path="res://code/controller/trail.gd" id="8_g8jn3"]
-[ext_resource type="Shader" uid="uid://b1hy61gbvow1g" path="res://pixelart_stylizer.gdshader" id="10_b5jdx"]
+[ext_resource type="Shader" uid="uid://cr0wml4rwu18q" path="res://assets/materials_textures/shader_script/pixelart_stylizer.gdshader" id="10_b5jdx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lodfu"]
 shader = ExtResource("1_6fwm8")
@@ -241,27 +241,27 @@ shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [node name="Control" type="Control" parent="UI_VISUEL"]
 layout_mode = 3
+anchor_right = 0.2485
+anchor_bottom = 0.443586
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="UI_VISUEL/Control"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="UI_VISUEL/Control"]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 276.0
-offset_bottom = -361.0
-grow_vertical = 2
 color = Color(0, 0, 0, 0.57)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="UI_VISUEL/Control"]
 layout_mode = 1
-anchors_preset = 9
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 339.0
-offset_bottom = -320.0
+grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/mono_font_size = 2
@@ -293,6 +293,7 @@ mesh = ExtResource("4_q7ll0")
 
 [node name="obstacle" type="Node3D" parent="environnement"]
 transform = Transform3D(2.975, 0, 0, 0, 2.975, 0, 0, 0, 2.975, 4.425, 0, -9)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="environnement/obstacle"]
 mesh = SubResource("CylinderMesh_ow4db")
@@ -340,6 +341,7 @@ skeleton = NodePath("")
 
 [node name="obstacle2" type="Node3D" parent="environnement"]
 transform = Transform3D(2.975, 0, 0, 0, 2.975, 0, 0, 0, 2.975, 4.425, 0, -47)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="environnement/obstacle2"]
 mesh = SubResource("CylinderMesh_ow4db")
@@ -387,6 +389,7 @@ skeleton = NodePath("")
 
 [node name="obstacle3" type="Node3D" parent="environnement"]
 transform = Transform3D(2.975, 0, 0, 0, 2.975, 0, 0, 0, 2.975, 6.425, 0, 35)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="environnement/obstacle3"]
 mesh = SubResource("CylinderMesh_ow4db")
@@ -434,6 +437,7 @@ skeleton = NodePath("")
 
 [node name="obstacle4" type="Node3D" parent="environnement"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 0)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="environnement/obstacle4"]
 mesh = SubResource("CylinderMesh_ow4db")
@@ -481,6 +485,7 @@ skeleton = NodePath("../../../player/Camera3D")
 
 [node name="obstacle5" type="Node3D" parent="environnement"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 0)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="environnement/obstacle5"]
 mesh = SubResource("CylinderMesh_ow4db")
@@ -529,7 +534,7 @@ skeleton = NodePath("")
 [node name="player" type="Node3D" parent="."]
 
 [node name="plane" type="CharacterBody3D" parent="player" node_paths=PackedStringArray("helice", "data", "mesh", "trail_node", "engine_particles_node")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44947, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("1_ngyxx")
 max_flight_speed = 25.0
 turn_speed = 0.9
@@ -568,12 +573,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000649571, 0.00389457, 0.38
 shape = SubResource("BoxShape3D_ytnha")
 
 [node name="helice" type="MeshInstance3D" parent="player/plane"]
-transform = Transform3D(-1.7266e-08, -0.395, 0, 0.395, -1.7266e-08, 0, 0, 0, 0.395, 0, 0.117319, -1.09595)
+transform = Transform3D(-1.7266e-08, -0.395, 0, 0.395, -1.7266e-08, 0, 0, 0, 0.395, 0, 0.117319, -1.04395)
+visible = false
 mesh = SubResource("BoxMesh_lodfu")
 script = ExtResource("6_lodfu")
 
 [node name="trail3D" type="MeshInstance3D" parent="player/plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.138238, 1.73458)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.138238, 1.80143)
+visible = false
 material_override = SubResource("StandardMaterial3D_k6h54")
 skeleton = NodePath("../../..")
 script = ExtResource("8_g8jn3")
@@ -586,7 +593,7 @@ _couleur_debut = Color(0.701364, 0.420885, 0.434153, 1)
 metadata/_custom_type_script = "uid://472u4bdsvehu"
 
 [node name="Node3D" type="Node3D" parent="player/plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0224406, 0.165635, 1.69701)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0224406, 0.113637, 1.80101)
 
 [node name="avion" type="MeshInstance3D" parent="player/plane"]
 transform = Transform3D(-0.445, 0, 6.71931e-08, 0, 0.445, 0, -6.71931e-08, 0, -0.445, 0, 0, 0)
@@ -594,7 +601,7 @@ mesh = SubResource("ArrayMesh_ojn5h")
 skeleton = NodePath("")
 
 [node name="Camera3D" type="Camera3D" parent="player"]
-transform = Transform3D(0.999959, 0.000486929, 0.00908668, 0, 0.998567, -0.0535103, -0.00909972, 0.0535081, 0.998526, 0.0899999, 2.91947, 3.89)
+transform = Transform3D(0.999959, 0.00048693, 0.00908668, 0, 0.998567, -0.0535105, -0.00909972, 0.0535083, 0.998526, 0.0899999, 1.97, 3.89)
 fov = 91.5
 script = ExtResource("2_bt7gl")
 target_path = NodePath("../plane")
@@ -602,5 +609,6 @@ offset = Vector3(0.09, 1.47, 3.89)
 
 [node name="Postprocess" type="MeshInstance3D" parent="player/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.873369)
+visible = false
 mesh = SubResource("PlaneMesh_5l5m1")
 surface_material_override/0 = SubResource("ShaderMaterial_xet8e")

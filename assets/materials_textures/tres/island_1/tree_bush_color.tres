@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cxj8eh2g78m8w"]
+
+[resource]
+resource_name = "tree_bush_color"
+cull_mode = 2
+albedo_color = Color(0.243158, 0.411756, 0.345086, 1)
+roughness = 0.5

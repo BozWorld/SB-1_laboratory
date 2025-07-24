@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://br2sknkfo8yfx"]
+
+[resource]
+resource_name = "petal-mat"
+cull_mode = 2
+albedo_color = Color(0.521745, 0.581482, 0.27956, 1)
+roughness = 0.5
