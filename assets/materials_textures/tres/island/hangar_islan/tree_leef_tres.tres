@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cednmn2liicb5"]
+
+[resource]
+resource_name = "tree_leef_tres"
+cull_mode = 2
+albedo_color = Color(0.658822, 0.870589, 0.290197, 1)
+roughness = 0.5

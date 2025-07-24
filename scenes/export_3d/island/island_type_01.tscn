@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnr3f8ewo435p"]
+
+[ext_resource type="PackedScene" uid="uid://c7rixo57y36dk" path="res://assets/3d_glb/pack/island_1.glb" id="1_g5vnt"]
+
+[node name="island_type_01" instance=ExtResource("1_g5vnt")]

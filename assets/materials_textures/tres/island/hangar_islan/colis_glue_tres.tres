@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dhg2dmon7f1pu"]
+
+[resource]
+resource_name = "colis_glue_tres"
+cull_mode = 2
+albedo_color = Color(0.80392, 0.372549, 0.164706, 1)
+roughness = 0.5

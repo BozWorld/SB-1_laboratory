@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://csvklaglduhus"]
+
+[ext_resource type="ArrayMesh" uid="uid://buhadntmpc5b1" path="res://assets/materials_textures/mesh/pot.tres" id="1_b5mij"]
+
+[node name="pot" type="Node3D"]
+
+[node name="pot_mesh_01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0450576, 0)
+mesh = ExtResource("1_b5mij")
+skeleton = NodePath("")

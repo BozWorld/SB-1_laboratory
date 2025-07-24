@@ -13,8 +13,8 @@ dest_files=["res://.godot/imported/Pot.glb-4ce14991e5103096edaedac891611b91.scn"
 
 [params]
 
-nodes/root_type=""
-nodes/root_name=""
+nodes/root_type="Node3D"
+nodes/root_name="pot"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -32,6 +32,17 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"POT COLOR 2 ": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/props/pot/POT COLOR 2.tres"
+},
+"POT color1": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/props/pot/POT color1.tres"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

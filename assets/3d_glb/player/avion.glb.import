@@ -13,8 +13,8 @@ dest_files=["res://.godot/imported/avion.glb-9e34a6f2c16027cfb428b1595c0dca21.sc
 
 [params]
 
-nodes/root_type=""
-nodes/root_name=""
+nodes/root_type="Node3D"
+nodes/root_name="avion"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -32,6 +32,25 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"aile_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/avion_type_texture/aile_tres.tres"
+},
+"aircraft_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/avion_type_texture/aircraft_tres.tres"
+},
+"roue_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/avion_type_texture/roue_tres.tres"
+},
+"support_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/avion_type_texture/support_tres.tres"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

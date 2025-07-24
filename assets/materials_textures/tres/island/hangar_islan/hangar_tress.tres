@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c7rxrafew23gb"]
+
+[resource]
+resource_name = "hangar_tress"
+cull_mode = 2
+albedo_color = Color(0.541175, 0.247059, 0.32549, 1)
+roughness = 0.5

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5rne6u2vmhkt"]
+
+[ext_resource type="ArrayMesh" uid="uid://cwathsrsai13k" path="res://assets/materials_textures/mesh/terrain_type_mesh_02.tres" id="1_fyafl"]
+
+[node name="terrain_type_02" type="Node3D"]
+
+[node name="terrain_type_mesh_02" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.573867, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = ExtResource("1_fyafl")
+skeleton = NodePath("")

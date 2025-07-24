@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://drfqc5gc4ty31"]
+
+[resource]
+resource_name = "rock_alternative_3_tres"
+cull_mode = 2
+albedo_color = Color(0.411764, 0.333334, 0.270588, 1)
+roughness = 0.5

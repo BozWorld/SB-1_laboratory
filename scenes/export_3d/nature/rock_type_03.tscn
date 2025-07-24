@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2xari0vjktpb"]
+
+[ext_resource type="PackedScene" uid="uid://b7bellujqth83" path="res://assets/3d_glb/Nature/rock_type_03.glb" id="1_818ge"]
+
+[node name="rock_type_03" instance=ExtResource("1_818ge")]

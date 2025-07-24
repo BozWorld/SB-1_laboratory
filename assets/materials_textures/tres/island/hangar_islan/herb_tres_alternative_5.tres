@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c16rtb17nvfwn"]
+
+[resource]
+resource_name = "herb_tres_alternative_5"
+cull_mode = 2
+albedo_color = Color(0.145096, 0.501961, 0.454902, 1)
+roughness = 0.5

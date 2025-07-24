@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://be1mtsvss2qb"]
+
+[resource]
+resource_name = "socle_cloche"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+emission_enabled = true
+emission = Color(1, 0.455571, 0.00361079, 1)

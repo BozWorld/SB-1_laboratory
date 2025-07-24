@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs5ks33c4dsee"]
+
+[ext_resource type="ArrayMesh" uid="uid://c7icnjbkghwnx" path="res://assets/materials_textures/mesh/seagull_mesh.tres" id="1_3743f"]
+
+[node name="seagull" type="Node3D"]
+
+[node name="seagull_mesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_3743f")
+skeleton = NodePath("")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk3lysvouu71b"]
+
+[ext_resource type="ArrayMesh" uid="uid://ddhucgmmhv23k" path="res://assets/materials_textures/mesh/terrain_type_mesh_01.tres" id="1_ddahu"]
+
+[node name="terrain_type_01" type="Node3D"]
+
+[node name="terrain_mesh_type_01" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_ddahu")
+skeleton = NodePath("")

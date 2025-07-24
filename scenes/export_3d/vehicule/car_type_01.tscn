@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6wft2ve6kx0j"]
+
+[ext_resource type="ArrayMesh" uid="uid://glqysvtwi4it" path="res://assets/materials_textures/mesh/car_type_mesh.tres" id="1_sp228"]
+
+[node name="car_type_01" type="Node3D"]
+
+[node name="car_mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.4146, 0, 0, 0, 1, 0, 0, 0, 1, 0.95792, 0, 0)
+mesh = ExtResource("1_sp228")
+skeleton = NodePath("")

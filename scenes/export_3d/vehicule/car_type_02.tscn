@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://e7l0blq3cq7i"]
+
+[ext_resource type="ArrayMesh" uid="uid://yuri0fgyaj3h" path="res://assets/materials_textures/mesh/car_510.tres" id="1_ldlf0"]
+
+[node name="car_type_02" type="Node3D"]
+
+[node name="voiture_merged" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, 0, 0.222446, 0.222446, 4.18448e-05, 0, -4.18448e-05, 0.222446, 0, 0.84668, 0.215597, 0.0266958)
+mesh = ExtResource("1_ldlf0")
+skeleton = NodePath("")

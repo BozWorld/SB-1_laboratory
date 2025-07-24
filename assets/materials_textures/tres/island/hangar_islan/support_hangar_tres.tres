@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bs2bay4odfae4"]
+
+[resource]
+resource_name = "support_hangar_tres"
+cull_mode = 2
+albedo_color = Color(0.835292, 0.960785, 0.858824, 1)
+roughness = 0.5

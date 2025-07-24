@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://o03gu32wclef"]
+
+[resource]
+resource_name = "barrel_tres.001"
+cull_mode = 2
+albedo_color = Color(0.338082, 0.677206, 0.585964, 1)
+roughness = 0.5

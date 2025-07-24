@@ -13,8 +13,8 @@ dest_files=["res://.godot/imported/car_510.glb-88eccd807e311ba6bd9cba90e695120c.
 
 [params]
 
-nodes/root_type=""
-nodes/root_name=""
+nodes/root_type="Node3D"
+nodes/root_name="car_type_01"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -32,6 +32,33 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Avant_voiture": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/car_type_01/Avant_voiture.tres"
+},
+"corps_voiture": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/car_type_01/corps_voiture.tres"
+},
+"fenetre.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/car_type_01/fenetre.001.tres"
+},
+"phare": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/car_type_01/phare.tres"
+},
+"roue_ext": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/car_type_01/roue_ext.tres"
+},
+"roue_inter": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/car_type_01/roue_inter.tres"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

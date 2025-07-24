@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://j2or75pkly13"]
+
+[ext_resource type="PackedScene" uid="uid://dmdynkj5p280n" path="res://assets/3d_glb/pack/hangar_island.glb" id="1_mi70e"]
+
+[node name="hangar_island" instance=ExtResource("1_mi70e")]

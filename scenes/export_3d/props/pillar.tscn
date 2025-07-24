@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cljqvsbfpl08"]
+
+[ext_resource type="ArrayMesh" uid="uid://d2fa7vjpqdl5m" path="res://assets/materials_textures/mesh/pillar.tres" id="1_krvfs"]
+
+[node name="pillar" type="Node3D"]
+
+[node name="pillar_mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.602212, 0)
+mesh = ExtResource("1_krvfs")
+skeleton = NodePath("")

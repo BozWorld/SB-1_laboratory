@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dov67sliseh6q"]
+
+[ext_resource type="PackedScene" uid="uid://b0a0v1kyq7nxf" path="res://assets/3d_glb/props/eglise.glb" id="1_80h2q"]
+
+[node name="eglise" instance=ExtResource("1_80h2q")]

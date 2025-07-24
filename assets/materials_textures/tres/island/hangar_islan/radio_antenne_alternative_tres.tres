@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c7bs67bjkt8r6"]
+
+[resource]
+resource_name = "radio_antenne_alternative_tres"
+cull_mode = 2
+albedo_color = Color(0.662096, 0.838228, 0.859038, 1)
+roughness = 0.5

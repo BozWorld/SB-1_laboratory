@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b5jtbsnxcrb58"]
+
+[resource]
+resource_name = "palette_shadow_tress"
+cull_mode = 2
+albedo_color = Color(0.607842, 0.231373, 0.145098, 1)
+roughness = 0.5

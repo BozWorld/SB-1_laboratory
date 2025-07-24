@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmk1ay8fhibcd"]
+
+[ext_resource type="PackedScene" uid="uid://dk07wimuatepw" path="res://assets/3d_glb/Nature/tree_type_01.glb" id="1_8764d"]
+
+[node name="tree_type_01" instance=ExtResource("1_8764d")]

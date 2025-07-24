@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b7asbstujckcs"]
+
+[resource]
+resource_name = "controlleur"
+cull_mode = 2
+albedo_color = Color(0.200017, 0.352934, 0.474494, 1)
+roughness = 0.5

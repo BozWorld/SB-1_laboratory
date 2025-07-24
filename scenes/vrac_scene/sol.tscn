@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://by06fe60o31xy"]
+[gd_scene load_steps=5 format=3 uid="uid://dgtfu0kromyux"]
 
-[ext_resource type="Shader" uid="uid://dfvbko1gnb3g6" path="res://scenes/vrac_scene/water_cartoon.gdshader" id="1_6bc35"]
+[ext_resource type="Shader" uid="uid://dfvbko1gnb3g6" path="res://assets/materials_textures/shader_script/water_cartoon.gdshader" id="1_6bc35"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q7ll0"]
 render_priority = 0

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://6e1asuucmkw"]
+
+[resource]
+resource_name = "roue_tres"
+cull_mode = 2
+albedo_color = Color(0.215686, 0.164706, 0.223529, 1)
+roughness = 0.5

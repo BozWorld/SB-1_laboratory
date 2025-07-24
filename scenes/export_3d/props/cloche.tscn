@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://2l7n82ihb4h4"]
+
+[ext_resource type="PackedScene" uid="uid://bofd3477f5w2t" path="res://assets/3d_glb/props/cloche.glb" id="1_2loy2"]
+
+[node name="cloche" instance=ExtResource("1_2loy2")]

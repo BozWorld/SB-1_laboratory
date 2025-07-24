@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dguvx634bdafc"]
+
+[resource]
+resource_name = "pied"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+emission_enabled = true
+emission = Color(0.976471, 0.854902, 0.631373, 1)

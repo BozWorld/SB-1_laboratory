@@ -13,8 +13,8 @@ dest_files=["res://.godot/imported/hangar_island.glb-6c1c7604f136b50e8af69a39861
 
 [params]
 
-nodes/root_type=""
-nodes/root_name=""
+nodes/root_type="Node3D"
+nodes/root_name="hangar_island"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -32,6 +32,185 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"aile_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/aile_tres.tres"
+},
+"aircraft_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/aircraft_tres.tres"
+},
+"barrel_top": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/barrel_top.tres"
+},
+"barrel_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/barrel_tres.tres"
+},
+"barrel_tres.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/barrel_tres.001.tres"
+},
+"barrel_tres.002": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/barrel_tres.002.tres"
+},
+"colis_glue_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/colis_glue_tres.tres"
+},
+"colis_glue_tres.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/colis_glue_tres.001.tres"
+},
+"colis_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/colis_tres.tres"
+},
+"colis_tres.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/colis_tres.001.tres"
+},
+"ground_tres.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/ground_tres.001.tres"
+},
+"hangar_roof_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/hangar_roof_tres.tres"
+},
+"hangar_tress": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/hangar_tress.tres"
+},
+"herb_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/herb_tres.tres"
+},
+"herb_tres_alternative_1": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/herb_tres_alternative_1.tres"
+},
+"herb_tres_alternative_2": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/herb_tres_alternative_2.tres"
+},
+"herb_tres_alternative_3": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/herb_tres_alternative_3.tres"
+},
+"herb_tres_alternative_4": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/herb_tres_alternative_4.tres"
+},
+"herb_tres_alternative_5": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/herb_tres_alternative_5.tres"
+},
+"herb_tres_alternative_6": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/herb_tres_alternative_6.tres"
+},
+"palette_shadow_tress": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/palette_shadow_tress.tres"
+},
+"palette_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/palette_tres.tres"
+},
+"poutre_hangar_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/poutre_hangar_tres.tres"
+},
+"radio_antenna_alternative_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/radio_antenna_alternative_tres.tres"
+},
+"radio_antenne_alternative_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/radio_antenne_alternative_tres.tres"
+},
+"radio_antenne_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/radio_antenne_tres.tres"
+},
+"radio_tower_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/radio_tower_tres.tres"
+},
+"radio_twoer_tres_alternative": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/radio_twoer_tres_alternative.tres"
+},
+"rock_alternative": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/rock_alternative.tres"
+},
+"rock_alternative_1": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/rock_alternative_1.tres"
+},
+"rock_alternative_2_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/rock_alternative_2_tres.tres"
+},
+"rock_alternative_3_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/rock_alternative_3_tres.tres"
+},
+"rock_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/rock_tres.tres"
+},
+"roue_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/roue_tres.tres"
+},
+"support_hangar_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/support_hangar_tres.tres"
+},
+"support_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/support_tres.tres"
+},
+"tree_leef_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/tree_leef_tres.tres"
+},
+"tree_leef_tres.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/tree_leef_tres.001.tres"
+},
+"tree_leef_tres.002": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/tree_leef_tres.002.tres"
+},
+"tree_leef_tres.003": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/tree_leef_tres.003.tres"
+},
+"tree_trunc_tres": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/tree_trunc_tres.tres"
+},
+"tree_trunc_tres.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/tree_trunc_tres.001.tres"
+},
+"tree_trunc_tres.002": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/tree_trunc_tres.002.tres"
+},
+"tree_trunc_tres.003": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/hangar_islan/tree_trunc_tres.003.tres"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

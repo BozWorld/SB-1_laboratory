@@ -13,8 +13,8 @@ dest_files=["res://.godot/imported/island_type_02.glb-6e0ac643060f321ea812ae1c2f
 
 [params]
 
-nodes/root_type=""
-nodes/root_name=""
+nodes/root_type="Node3D"
+nodes/root_name="island_type_02"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -32,6 +32,41 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"bottom_color": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/island_type_02/bottom_color.tres"
+},
+"cailloux_texture": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/island_type_02/cailloux_texture.tres"
+},
+"grass_texture": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/island_type_02/grass_texture.tres"
+},
+"pillar_color2": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/island_type_02/pillar_color2.tres"
+},
+"pillar_color_1": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/island_type_02/pillar_color_1.tres"
+},
+"top color_color": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/island_type_02/top color_color.tres"
+},
+"tree_bush_color": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/island_type_02/tree_bush_color.tres"
+},
+"tree_trunk": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/island_type_02/tree_trunk.tres"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://x5epo7gjyww5"]
+
+[resource]
+resource_name = "palette_tres"
+cull_mode = 2
+albedo_color = Color(0.901959, 0.709804, 0.482353, 1)
+roughness = 0.5

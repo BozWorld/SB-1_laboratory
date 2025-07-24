@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://w217v6buuelf"]
+
+[ext_resource type="ArrayMesh" uid="uid://b5psvlhqapn2b" path="res://assets/materials_textures/mesh/flower_mesh.tres" id="1_e54q6"]
+
+[node name="flower" type="Node3D"]
+
+[node name="flower_group" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.220788, 0, 0.129095, 0, 0.25576, 0, -0.129095, 0, 0.220788, 0, 0, 0)
+mesh = ExtResource("1_e54q6")
+skeleton = NodePath("")

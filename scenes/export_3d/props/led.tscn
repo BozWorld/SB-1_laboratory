@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c44npx372p5bd"]
+
+[ext_resource type="ArrayMesh" uid="uid://bvjufdqio2mwi" path="res://assets/materials_textures/mesh/led.tres" id="1_c7ya4"]
+
+[node name="led" type="Node3D"]
+
+[node name="Circle" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_c7ya4")
+skeleton = NodePath("")

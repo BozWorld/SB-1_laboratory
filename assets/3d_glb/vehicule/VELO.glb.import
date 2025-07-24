@@ -4,17 +4,17 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bfh77oy6oa5i"
-path="res://.godot/imported/VELO.glb-75fa35910bae3ad4c446fe423617108b.scn"
+path="res://.godot/imported/velo.glb-f8fb0e8b2fee0abca10d3a8be261de87.scn"
 
 [deps]
 
-source_file="res://assets/3d_glb/vehicule/VELO.glb"
-dest_files=["res://.godot/imported/VELO.glb-75fa35910bae3ad4c446fe423617108b.scn"]
+source_file="res://assets/3d_glb/vehicule/velo.glb"
+dest_files=["res://.godot/imported/velo.glb-f8fb0e8b2fee0abca10d3a8be261de87.scn"]
 
 [params]
 
-nodes/root_type=""
-nodes/root_name=""
+nodes/root_type="Node3D"
+nodes/root_name="velo"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -32,6 +32,13 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Scene_-_Root.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/tank_type_01/Scene_-_Root.001.tres"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

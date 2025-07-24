@@ -13,8 +13,8 @@ dest_files=["res://.godot/imported/grave_type_01.glb-34397b3a6bd428916433e54a48a
 
 [params]
 
-nodes/root_type=""
-nodes/root_name=""
+nodes/root_type="Node3D"
+nodes/root_name="grave_01"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -32,6 +32,17 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Material.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/props/grave/Material.001.tres"
+},
+"Material.002": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/materials_textures/tres/props/grave/Material.002.tres"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

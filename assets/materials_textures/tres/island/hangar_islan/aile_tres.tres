@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://1er8dgjrbg5s"]
+
+[resource]
+resource_name = "aile_tres"
+cull_mode = 2
+albedo_color = Color(0.960782, 0.913726, 0.74902, 1)
+roughness = 0.5
