@@ -1,25 +1,8 @@
-[gd_scene load_steps=500 format=4 uid="uid://cumecpt86pmsv"]
+[gd_scene load_steps=434 format=4 uid="uid://cumecpt86pmsv"]
 
-[ext_resource type="Shader" uid="uid://cr0pnif48osyv" path="res://assets/materials_textures/shader_script/outline.gdshader" id="1_5dlge"]
-[ext_resource type="Material" uid="uid://bf2pc5nx2eotf" path="res://assets/materials_textures/tres/body/character_type_01/Chassure.tres" id="2_mbp8p"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fp1r6"]
-resource_name = "tree_trunc_tres.002"
-cull_mode = 2
-albedo_color = Color(0.658822, 0.376471, 0.364706, 1)
-roughness = 0.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_comml"]
-resource_name = "tree_leef_tres.001"
-cull_mode = 2
-albedo_color = Color(0.376469, 0.682353, 0.482353, 1)
-roughness = 0.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_77qlv"]
-resource_name = "tree_leef_tres.003"
-cull_mode = 2
-albedo_color = Color(0.713723, 0.811765, 0.556863, 1)
-roughness = 0.5
+[ext_resource type="Material" uid="uid://cv4r5lfsmffx0" path="res://scenes/export_3d/testomg/hangar_island_02.tres" id="3_4owu3"]
+[ext_resource type="Script" uid="uid://c3cwyyweby8he" path="res://code/game_objects/camera.gd" id="4_ahm66"]
+[ext_resource type="Shader" uid="uid://b1hy61gbvow1g" path="res://assets/materials_textures/shader_script/pixelart_stylizer.gdshader" id="4_julc3"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_bcw0i"]
 _surfaces = [{
@@ -66,7 +49,6 @@ _surfaces = [{
 "index_count": 198,
 "index_data": PackedByteArray("AwASAAAAEgAMAA8ADAAGAAkABgASAAMAEgAGAAwALgAxABYALgBJADEADgApABAADgAnACkABwAjAAsABwAdACMAAgAZAAQAAgAXABkAEQAvABQAEQAqAC8ACgAmAA0ACgAiACYABQAeAAgABQAbAB4AEwAVAAEAEwAtABUASgBOADIASgBmAE4AKABFACsAKABDAEUAHwA/ACQAHwA5AD8AGAA1ABoAGAAzADUALABLADAALABHAEsAIQBBACUAIQA9AEEAHAA7ACAAHAA3ADsAYwB9AGcAYwB6AH0ARABhAEYARABfAGEAOgBcAEAAOgBWAFwANABSADYANABQAFIASABoAEwASABkAGgAPgBdAEIAPgBZAF0AOABYADwAOABUAFgAewBsAGkAbABzAG8AcwB4AHYAeABsAHsAbAB4AHMAWgB1AF4AWgByAHUAUwBxAFcAUwBuAHEAZQBqAE0AZQB8AGoAYAB5AGIAYAB3AHkAVQB0AFsAVQBwAHQATwBtAFEATwBrAG0A"),
 "lods": [0.485047, PackedByteArray("AAAMAA8AAAAGAAwADAAGAAkAfwCGABAAfwAnAIYAhQCHAIYAhQCLAIcAiwCMAIcACgCEAH8ACgCCAIQABwAjAAoABwCAACMAgABVAIMAVQB1AIMAVQBwAHUAIQB1ACUAEQAqAAEAKgBHAAEAAQAeAAgARwBtAFcARwB6AIkAfgBHAIgAfgCIAIEAiACKAHEAbAB2AG8AbAB4AHYA")],
-"material": SubResource("StandardMaterial3D_fp1r6"),
 "name": "tree_trunc_tres.002",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -78,7 +60,6 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 240,
 "index_data": PackedByteArray("AAA8AEIABgBPAEcAAwBaAD8ABABpAFsAAQBUAGYACQB7AFEACgCEAEgAEQCRAGUAGACfAG8AGwCqAHYACACPAHoADQCXAIkAEwCnAJUAFwCzAJ0AHACAAK0AHwDUALQAIwDhAL4AKQDpAMIALQDqAMYAMwDdAM4A2QA4AOsA2wDtAM0AzADsAC4A7gA6AOQA7wDlAMgAygDnACgA5gA7AOAA6ADiAMAAwQDjACQA3gA5ANYA3wDXALwAugDSAB4A0wA3ANgA1QDaALUAtgDcADIAfwA1ANEAfgDQAKwAqwDPADAAsQAxAMcAsgDJAJwAngDLACoApQAsAMQApgDFAJQAkwDDACcAmAAlAL8AlgC9AIgAhwC7ACIAjQAhALcAjgC4AHgAeQC5ADQAqQAvALAAqACvAHQAcgCuABQAoQArAKQAoACiAHAAcQCjABIAkgAmAJsAkACaAGQAYwCZAA4AhgAgAIsAhQCKAEoATACMAAcAfQA2AIMAfACCAFMAUgCBAB0AVwAZAHUAVQBzAGcAaAB3ABUAagAWAGwAawBtAF0AXwBuABAAXgAPAGIAXABhAEEAQABgAAwAUAAaAFkATgBYAEYARABWAAIAPgALAE0APQBJAEMARQBLAAUA"),
-"material": SubResource("StandardMaterial3D_comml"),
 "name": "tree_leef_tres.001",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -91,7 +72,6 @@ _surfaces = [{
 "index_count": 240,
 "index_data": PackedByteArray("AAA8AEIABwBPAEcAAwBaAD8ABABpAFsAAQBUAGYACQB7AFEACgCEAEgAEQCSAGUAGACfAG4AGgCqAHYACACPAHkADACXAIkAEwCnAJUAFgCzAJ0AHAB/AK0AIADUALQAIwDhAL4AKgDpAMIALQDqAMYAMwDdAM8A2QA4AOsA2wDtAM0AzADsAC8A7gA6AOQA7wDlAMgAygDnACgA5gA7AOAA6ADiAMAAwQDjACUA3gA5ANYA3wDXALwAugDSAB4A0wA3ANgA1QDaALUAtwDcADIAgAA1ANEAfgDQAKwAqwDOADAAsQAxAMcAsgDJAJwAngDLACkApQAsAMQApgDFAJQAkwDDACcAmAAkAL8AlgC9AIgAhwC7ACIAjQAhALYAjgC4AHgAegC5ADQAqQAuALAAqACvAHQAcgCuABQAoQArAKMAoACiAHAAcQCkABIAkQAmAJsAkACaAGQAYgCZAA4AhgAfAIsAhQCKAEoATACMAAYAfQA2AIMAfACCAFMAUgCBAB0AVwAZAHUAVQBzAGcAaAB3ABUAagAXAGwAawBtAF0AXwBvABAAXgAPAGMAXABhAEEAQABgAA0AUAAbAFkATgBYAEYARABWAAIAPgALAE0APQBJAEMARQBLAAUA"),
 "lods": [0.213458, PackedByteArray("AAAAAUIAAAEFAEIABQD+AP0ABQD9AEQA/QD+ABkA/QBWAEQA/QAZAFYARABWAAIAZgAZAPQAVAAZAGYAAQBUAGYAAwBaAAIBWgDxAAIB8QAEAQIBBAEHAQMB5gADAQcB5gA7AAMBKADmAAcBBQEoAAcB9gAoAPMA9gD6APgA8wD4AAYBaQDzAAYBaQAGAVsAWwAGAfIABABpAFsA6gDkACgA6gA6AOQALQDqACgA/wAtAPUA/wD7APkA2QDrAC0A2QA4AOsAMgDZAC0A0wDYADIA0wA3ANgA9wDTADIAAQHSAPcAAQE5ANIAAQH3APAA8AD3APwA8AD8AHgA")],
-"material": SubResource("StandardMaterial3D_77qlv"),
 "name": "tree_leef_tres.003",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -101,44 +81,60 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bcw0i")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ekslu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ahm66"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
+shader = ExtResource("4_julc3")
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.7
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xa4iq"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm14t"]
+next_pass = SubResource("ShaderMaterial_ahm66")
+cull_mode = 2
+albedo_color = Color(0.777915, 0.547195, 5.77569e-07, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8bjf5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_68nck"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
+shader = ExtResource("4_julc3")
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.05
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_68nck"]
+next_pass = SubResource("ShaderMaterial_68nck")
+albedo_color = Color(0.350302, 0.698875, 0.29204, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1e8p8"]
+render_priority = 0
+shader = ExtResource("4_julc3")
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.7
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xor7"]
+next_pass = SubResource("ShaderMaterial_1e8p8")
+albedo_color = Color(0.553164, 0.652621, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_comml"]
+resource_name = "tree_leef_tres.001"
+albedo_color = Color(0.196811, 0.396048, 0.267471, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_726hj"]
 resource_name = "tree_trunc_tres.001"
 cull_mode = 2
-albedo_color = Color(0.658822, 0.376471, 0.364706, 1)
-roughness = 0.5
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.456508, 0.242245, 0.234333, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_c3obr"]
 _surfaces = [{
@@ -290,39 +286,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_4qh58")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_sog8e"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rtfg5"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ad1jh"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdy3p"]
 resource_name = "tree_trunc_tres"
 cull_mode = 2
@@ -386,28 +349,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fm258")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_e0x07"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jjb7v"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f0yo7"]
 resource_name = "tree_trunc_tres.003"
@@ -473,28 +414,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_1sr1l")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rrynj"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rjss2"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_vomug"]
 _surfaces = [{
 "aabb": AABB(-1.8188, 2.8651, -1.36254, 3.5935, 2, 2.68592),
@@ -553,28 +472,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vomug")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gch8i"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4h404"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3raqm"]
 resource_name = "rock_alternative_2_tres"
 cull_mode = 2
@@ -613,17 +510,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lusj4")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2hrg8"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lwh7k"]
 resource_name = "rock_alternative_3_tres"
 cull_mode = 2
@@ -661,17 +547,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_v03vq")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_f8ww5"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0hf3"]
 resource_name = "rock_alternative"
@@ -712,17 +587,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ip43e")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dqf6s"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kno32"]
 resource_name = "rock_alternative_1"
@@ -796,17 +660,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_afqrq")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qsq45"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7o4en"]
 resource_name = "rock_tres"
 cull_mode = 2
@@ -845,17 +698,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_oa8a0")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_w76pw"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_klytm"]
 _surfaces = [{
 "aabb": AABB(-1.98908, -1, -1.00203, 3.30791, 2.93288, 1.99652),
@@ -890,17 +732,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_klytm")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lxikh"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_xfh17"]
 _surfaces = [{
 "aabb": AABB(-0.894425, -1, -1.54981, 2.94266, 2, 3.09962),
@@ -933,17 +764,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xfh17")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_l7j5o"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_cacix"]
 _surfaces = [{
 "aabb": AABB(-0.894425, -1, -1.54981, 2.94266, 2, 3.09962),
@@ -975,17 +795,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cacix")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oy1u7"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_egyyl"]
 _surfaces = [{
@@ -1020,17 +829,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_egyyl")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0by4j"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fov2s"]
 _surfaces = [{
@@ -1099,17 +897,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xij61")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ldpfl"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_e55dw"]
 _surfaces = [{
@@ -3597,17 +3384,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_4bpr5")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_svcdr"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_dui7t"]
 _surfaces = [{
 "aabb": AABB(-21.0787, 2.59515, -8.71793, 29.7966, 18.4665, 23.3957),
@@ -3642,17 +3418,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_dui7t")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ru3qq"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_jeql7"]
 _surfaces = [{
 "aabb": AABB(-12.5, 0, -10.2871, 25, 62.8277, 22.7871),
@@ -3684,17 +3449,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jeql7")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mohr8"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_n62sv"]
 _surfaces = [{
@@ -3730,17 +3484,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_n62sv")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_t5ibg"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_mug81"]
 _surfaces = [{
 "aabb": AABB(-21.0787, 2.59515, -8.71793, 29.7966, 18.4665, 23.3957),
@@ -3775,17 +3518,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_mug81")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ukt7u"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_e8ngd"]
 _surfaces = [{
 "aabb": AABB(-12.5, 0, -10.2871, 25, 62.8277, 22.7871),
@@ -3817,17 +3549,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_e8ngd")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x8sc3"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_f4f5e"]
 _surfaces = [{
@@ -3863,17 +3584,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_f4f5e")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_spp4t"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_gwqkh"]
 _surfaces = [{
 "aabb": AABB(-21.0787, 2.59515, -8.71793, 29.7966, 18.4665, 23.3957),
@@ -3908,17 +3618,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_gwqkh")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_esfa2"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_8xr8g"]
 _surfaces = [{
 "aabb": AABB(-12.5, 0, -10.2871, 25, 62.8277, 22.7871),
@@ -3950,17 +3649,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8xr8g")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pr0mb"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ml2le"]
 _surfaces = [{
@@ -4096,17 +3784,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lw77p")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rc0gb"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_3yb5v"]
 _surfaces = [{
 "aabb": AABB(-21.0787, 2.59515, -8.71793, 29.7966, 18.4665, 23.3957),
@@ -4141,17 +3818,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3yb5v")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3xso0"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_pk4c4"]
 _surfaces = [{
 "aabb": AABB(-12.5, 0, -10.2871, 25, 62.8277, 22.7871),
@@ -4183,17 +3849,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_pk4c4")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_r17j2"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_8v5wq"]
 _surfaces = [{
@@ -4229,17 +3884,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8v5wq")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_11cl2"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_mgxb5"]
 _surfaces = [{
 "aabb": AABB(-21.0787, 2.59515, -8.71793, 29.7966, 18.4665, 23.3957),
@@ -4274,17 +3918,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_mgxb5")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x163b"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_pq6n5"]
 _surfaces = [{
 "aabb": AABB(-12.5, 0, -10.2871, 25, 62.8277, 22.7871),
@@ -4316,17 +3949,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_pq6n5")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6p8g6"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_28es8"]
 _surfaces = [{
@@ -4428,17 +4050,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_t8t05")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uxm0h"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_qnn17"]
 _surfaces = [{
 "aabb": AABB(-12.5, -33.3646, -33.3657, 25, 45.134, 45.8657),
@@ -4538,17 +4149,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7b4l3")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_v16ne"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rv6vp"]
 _surfaces = [{
@@ -5318,17 +4918,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_unkb7")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wx4pl"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8nkdb"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_55e3b"]
@@ -5395,17 +4984,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_mqwd4")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_v061l"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_uwonf"]
 _surfaces = [{
 "aabb": AABB(-21.0787, 2.59515, -8.71793, 29.7966, 18.4665, 23.3957),
@@ -5440,17 +5018,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_uwonf")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bk3oi"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_epygy"]
 _surfaces = [{
 "aabb": AABB(-12.5, 0, -10.2871, 25, 62.8277, 22.7871),
@@ -5482,17 +5049,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_epygy")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_850gd"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_srtve"]
 _surfaces = [{
@@ -5528,17 +5084,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_srtve")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_c1jis"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_i6vlm"]
 _surfaces = [{
 "aabb": AABB(-21.0787, 2.59515, -8.71793, 29.7966, 18.4665, 23.3957),
@@ -5573,17 +5118,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_i6vlm")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4lvg5"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_r1v7e"]
 _surfaces = [{
 "aabb": AABB(-12.5, 0, -10.2871, 25, 62.8277, 22.7871),
@@ -5615,17 +5149,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_r1v7e")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i3xlb"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ehlri"]
 _surfaces = [{
@@ -5661,17 +5184,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ehlri")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wfto2"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_3m8kg"]
 _surfaces = [{
 "aabb": AABB(-21.0787, 2.59515, -8.71793, 29.7966, 18.4665, 23.3957),
@@ -5706,17 +5218,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3m8kg")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xdmur"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_yb85m"]
 _surfaces = [{
 "aabb": AABB(-12.5, 0, -10.2871, 25, 62.8277, 22.7871),
@@ -5748,17 +5249,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yb85m")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mdt71"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_f8osj"]
 _surfaces = [{
@@ -5828,17 +5318,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_55b5n")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_15jci"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_ok3g3"]
 _surfaces = [{
 "aabb": AABB(-12.5, 0, -10.2871, 25, 62.8277, 22.7871),
@@ -5870,17 +5349,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ok3g3")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bpvtn"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w45a6"]
 
@@ -5915,17 +5383,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bbhna")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kcaa2"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_v54sh"]
 _surfaces = [{
@@ -5992,17 +5449,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_od2ju")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ljuf2"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wjur6"]
 _surfaces = [{
@@ -6368,30 +5814,46 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_38glg")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jc7xw"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4owu3"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
+shader = ExtResource("4_julc3")
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 1.0
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_krk8u"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_julc3"]
+next_pass = SubResource("ShaderMaterial_4owu3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7xor7"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
+shader = ExtResource("4_julc3")
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 1.0
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xamlu"]
+next_pass = SubResource("ShaderMaterial_7xor7")
+albedo_color = Color(0.875745, 0, 0.184896, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tcd34"]
+render_priority = 0
+shader = ExtResource("4_julc3")
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 1.0
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a1hwl"]
 resource_name = "radio_antenne_tres"
+next_pass = SubResource("ShaderMaterial_tcd34")
 cull_mode = 2
 albedo_color = Color(0.72019, 0.948992, 0.679045, 1)
 roughness = 0.5
@@ -6430,19 +5892,19 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ves40")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_f5524"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_umkpp"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
+shader = ExtResource("4_julc3")
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 1.0
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2e6oc"]
 resource_name = "radio_antenne_alternative_tres"
+next_pass = SubResource("ShaderMaterial_umkpp")
 cull_mode = 2
 albedo_color = Color(0.662096, 0.838228, 0.859038, 1)
 roughness = 0.5
@@ -6481,19 +5943,19 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bnwvt")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tyite"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_70pbb"]
 render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
+shader = ExtResource("4_julc3")
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 1.0
+shader_parameter/highlight_strength = 0.1
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42jje"]
 resource_name = "radio_antenna_alternative_tres"
+next_pass = SubResource("ShaderMaterial_70pbb")
 cull_mode = 2
 albedo_color = Color(0.9647, 0.720558, 0.60164, 1)
 roughness = 0.5
@@ -6532,17 +5994,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_j3y5s")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ct37q"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_q3ysp"]
 _surfaces = [{
 "aabb": AABB(-1.32684, -0.0718048, -1.32684, 2.65368, 1.38186, 2.65368),
@@ -6577,17 +6028,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_q3ysp")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m654u"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_jgxsj"]
 _surfaces = [{
 "aabb": AABB(-23.4976, -2.38147, -52.016, 46.9951, 2.45783, 4.69002),
@@ -6620,17 +6060,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jgxsj")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fl67b"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_tpoys"]
 _surfaces = [{
 "aabb": AABB(-20.0226, -1.21928, -41.0826, 40.0452, 1.81639, 2.56594),
@@ -6662,17 +6091,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tpoys")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5cvqc"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_clco6"]
 resource_name = "hangar_tress"
@@ -6742,28 +6160,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_y02b0")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_w5cqq"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8affo"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vw670"]
 resource_name = "support_hangar_tres"
 cull_mode = 2
@@ -6801,17 +6197,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ikw8j")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ahl2"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mnjrh"]
 resource_name = "poutre_hangar_tres"
@@ -6851,17 +6236,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fkf84")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_h8o8l"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_fb3xo"]
 _surfaces = [{
 "aabb": AABB(18.4253, 12.8091, -27.9189, 6.20735, 5.71386, 0.545843),
@@ -6894,17 +6268,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fb3xo")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_u51fj"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_oofkp"]
 _surfaces = [{
 "aabb": AABB(-24.6326, 12.8091, -27.9189, 49.2653, 5.71386, 0.545843),
@@ -6936,17 +6299,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_oofkp")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rnjll"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5whr"]
 resource_name = "colis_tres.001"
@@ -7011,28 +6363,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ayqrw")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bs7u"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0um01"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4k7lg"]
 resource_name = "colis_tres"
@@ -7150,28 +6480,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rxxpe")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yt4sl"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lxmdf"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ib6l2"]
 resource_name = "palette_tres"
 cull_mode = 2
@@ -7288,28 +6596,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_spaqq")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ftgdb"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xmycw"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_sdjuh"]
 _surfaces = [{
 "aabb": AABB(-0.25, -0.25, -0.25, 0.5, 0.5, 0.5),
@@ -7362,28 +6648,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sdjuh")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tabi5"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1b8xo"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ldvkf"]
 resource_name = "barrel_tres.001"
 cull_mode = 2
@@ -7423,17 +6687,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6ayix")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x6ru8"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1pwor"]
 resource_name = "barrel_tres"
@@ -7475,17 +6728,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bpvrv")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6e76k"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kc5vc"]
 resource_name = "barrel_tres.002"
 cull_mode = 2
@@ -7525,17 +6767,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_4752x")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_86tm7"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2q16s"]
 resource_name = "barrel_top"
@@ -7633,23 +6864,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3jfmf")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wsg5y"]
-render_priority = 0
-shader = ExtResource("1_5dlge")
-shader_parameter/depth_threshold = 0.05
-shader_parameter/reverse_depth_threshold = 0.25
-shader_parameter/normal_threshold = 0.6
-shader_parameter/darken_amount = 0.3
-shader_parameter/lighten_amount = 1.5
-shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
-shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0scrr"]
-resource_name = "ground_tres.001"
-cull_mode = 2
-albedo_color = Color(0.760782, 0.552941, 0.396079, 1)
-roughness = 0.5
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_8x33c"]
 _surfaces = [{
 "aabb": AABB(-14.4022, -0.973669, -14.4022, 28.8043, 1.05039, 28.8043),
@@ -7666,7 +6880,6 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fvkc4"]
-resource_name = "hangar_island_Plane_146"
 _surfaces = [{
 "aabb": AABB(-14.4022, -0.973669, -14.4022, 28.8043, 1.05039, 28.8043),
 "attribute_data": PackedByteArray("/3//////////f/9/////f/9//4f/f/+P/3//l/9//5//f/+n/3//r/9//7f/f/+//3//x/9//8//f//X/3//3/9//+f/f//v/3//9/+H////j////5f///+f////p////6////+3////v////8f////P////1////9/////n////7/////f///////f////v////5////9/+///X////z/7//8f///+//v//t////6/+//+n////n////5f///+P////h//3/3//7/9//+f/f//f/3//1/9//8//f//H/3//v/9//7f/f/+v/3//p/9//5//f/+X/3//j/9//4f/f/+H//f/j//3/5f/9/+f//f/p//3/6//9/+3//f/v//3/8f/9//P//f/1//3/9//9//n//f/7//3//f/9/+H/+//j//v/5f/7/+f/+//p//v/6//7/+3/+//v//v/8f/7//P/+//1//v/9//7//n/+//7//v//f/7/+H/+f/j//n/5f/5/+f/+f/p//n/6//5/+3/+f/v//n/8f/5//P/+f/1//n/9//5//n/+f/7//n//f/5/+H/9//j//f/5f/3/+f/9//p//f/6//3/+3/9//v//f/8f/3//P/9//1//f/9//3//n/9//7//f//f/3/+H/9f/j//X/5f/1/+f/9f/p//X/6//1/+3/9f/v//X/8f/1//P/9f/1//X/9//1//n/9f/7//X//f/1/+H/8//j//P/5f/z/+f/8//p//P/6//z/+3/8//v//P/8f/z//P/8//1//P/9//z//n/8//7//P//f/z/+H/8f/j//H/5f/x/+f/8f/p//H/6//x/+3/8f/v//H/8f/x//P/8f/1//H/9//x//n/8f/7//H//f/x/+H/7//j/+//5f/v/+f/7//p/+//6//v/+3/7//v/+//8f/v//P/7//1/+//9//v//n/7//7/+///f/v/+H/7f/j/+3/5f/t/+f/7f/p/+3/6//t/+3/7f/v/+3/8f/t//P/7f/1/+3/9//t//n/7f/7/+3//f/t/+H/6//j/+v/5f/r/+f/6//p/+v/6//r/+3/6//v/+v/8f/r//P/6//1/+v/9//r//n/6//7/+v//f/r/+H/6f/j/+n/5f/p/+f/6f/p/+n/6//p/+3/6f/v/+n/8f/p//P/6f/1/+n/9//p//n/6f/7/+n//f/p/+H/5//j/+f/5f/n/+f/5//p/+f/6//n/+3/5//v/+f/8f/n//P/5//1/+f/9//n//n/5//7/+f//f/n/+H/5f/j/+X/5f/l/+f/5f/p/+X/6//l/+3/5f/v/+X/8f/l//P/5f/1/+X/9//l//n/5f/7/+X//f/l/+H/4//j/+P/5f/j/+f/4//p/+P/6//j/+3/4//v/+P/8f/j//P/4//1/+P/9//j//n/4//7/+P//f/j/+H/4f/j/+H/5f/h/+f/4f/p/+H/6//h/+3/4f/v/+H/8f/h//P/4f/1/+H/9//h//n/4f/7/+H//f/hw=="),
@@ -7674,7 +6887,6 @@ _surfaces = [{
 "index_count": 1536,
 "index_data": PackedByteArray("QABQAEEAQABPAFAAQQBRAEIAQQBQAFEAQgBSAEMAQgBRAFIAQwBTAEQAQwBSAFMARABUAEUARABTAFQARQBVAEYARQBUAFUARgBWAEcARgBVAFYARwBXAEgARwBWAFcASABYAEkASABXAFgASQBZAEoASQBYAFkASgBaAEsASgBZAFoASwBbAEwASwBaAFsATABcAE0ATABbAFwATQBdAE4ATQBcAF0ATwBfAFAATwBeAF8AUABgAFEAUABfAGAAUQBhAFIAUQBgAGEAUgBiAFMAUgBhAGIAUwBjAFQAUwBiAGMAVABkAFUAVABjAGQAVQBlAFYAVQBkAGUAVgBmAFcAVgBlAGYAVwBnAFgAVwBmAGcAWABoAFkAWABnAGgAWQBpAFoAWQBoAGkAWgBqAFsAWgBpAGoAWwBrAFwAWwBqAGsAXABsAF0AXABrAGwAXgBuAF8AXgBtAG4AXwBvAGAAXwBuAG8AYABwAGEAYABvAHAAYQBxAGIAYQBwAHEAYgByAGMAYgBxAHIAYwBzAGQAYwByAHMAZAB0AGUAZABzAHQAZQB1AGYAZQB0AHUAZgB2AGcAZgB1AHYAZwB3AGgAZwB2AHcAaAB4AGkAaAB3AHgAaQB5AGoAaQB4AHkAagB6AGsAagB5AHoAawB7AGwAawB6AHsAbQB9AG4AbQB8AH0AbgB+AG8AbgB9AH4AbwB/AHAAbwB+AH8AcACAAHEAcAB/AIAAcQCBAHIAcQCAAIEAcgCCAHMAcgCBAIIAcwCDAHQAcwCCAIMAdACEAHUAdACDAIQAdQCFAHYAdQCEAIUAdgCGAHcAdgCFAIYAdwCHAHgAdwCGAIcAeACIAHkAeACHAIgAeQCJAHoAeQCIAIkAegCKAHsAegCJAIoAfACMAH0AfACLAIwAfQCNAH4AfQCMAI0AfgCOAH8AfgCNAI4AfwCPAIAAfwCOAI8AgACQAIEAgACPAJAAgQCRAIIAgQCQAJEAggCSAIMAggCRAJIAgwCTAIQAgwCSAJMAhACUAIUAhACTAJQAhQCVAIYAhQCUAJUAhgCWAIcAhgCVAJYAhwCXAIgAhwCWAJcAiACYAIkAiACXAJgAiQCZAIoAiQCYAJkAiwCbAIwAiwCaAJsAjACcAI0AjACbAJwAjQCdAI4AjQCcAJ0AjgCeAI8AjgCdAJ4AjwCfAJAAjwCeAJ8AkACgAJEAkACfAKAAkQChAJIAkQCgAKEAkgCiAJMAkgChAKIAkwCjAJQAkwCiAKMAlACkAJUAlACjAKQAlQClAJYAlQCkAKUAlgCmAJcAlgClAKYAlwCnAJgAlwCmAKcAmACoAJkAmACnAKgAmgCqAJsAmgCpAKoAmwCrAJwAmwCqAKsAnACsAJ0AnACrAKwAnQCtAJ4AnQCsAK0AngCuAJ8AngCtAK4AnwCvAKAAnwCuAK8AoACwAKEAoACvALAAoQCxAKIAoQCwALEAogCyAKMAogCxALIAowCzAKQAowCyALMApAC0AKUApACzALQApQC1AKYApQC0ALUApgC2AKcApgC1ALYApwC3AKgApwC2ALcAqQC5AKoAqQC4ALkAqgC6AKsAqgC5ALoAqwC7AKwAqwC6ALsArAC8AK0ArAC7ALwArQC9AK4ArQC8AL0ArgC+AK8ArgC9AL4ArwC/ALAArwC+AL8AsADAALEAsAC/AMAAsQDBALIAsQDAAMEAsgDCALMAsgDBAMIAswDDALQAswDCAMMAtADEALUAtADDAMQAtQDFALYAtQDEAMUAtgDGALcAtgDFAMYAuADIALkAuADHAMgAuQDJALoAuQDIAMkAugDKALsAugDJAMoAuwDLALwAuwDKAMsAvADMAL0AvADLAMwAvQDNAL4AvQDMAM0AvgDOAL8AvgDNAM4AvwDPAMAAvwDOAM8AwADQAMEAwADPANAAwQDRAMIAwQDQANEAwgDSAMMAwgDRANIAwwDTAMQAwwDSANMAxADUAMUAxADTANQAxQDVAMYAxQDUANUAxwDXAMgAxwDWANcAyADYAMkAyADXANgAyQDZAMoAyQDYANkAygDaAMsAygDZANoAywDbAMwAywDaANsAzADcAM0AzADbANwAzQDdAM4AzQDcAN0AzgDeAM8AzgDdAN4AzwDfANAAzwDeAN8A0ADgANEA0ADfAOAA0QDhANIA0QDgAOEA0gDiANMA0gDhAOIA0wDjANQA0wDiAOMA1ADkANUA1ADjAOQA1gDmANcA1gDlAOYA1wDnANgA1wDmAOcA2ADoANkA2ADnAOgA2QDpANoA2QDoAOkA2gDqANsA2gDpAOoA2wDrANwA2wDqAOsA3ADsAN0A3ADrAOwA3QDtAN4A3QDsAO0A3gDuAN8A3gDtAO4A3wDvAOAA3wDuAO8A4ADwAOEA4ADvAPAA4QDxAOIA4QDwAPEA4gDyAOMA4gDxAPIA4wDzAOQA4wDyAPMA5QD1AOYA5QD0APUA5gD2AOcA5gD1APYA5wD3AOgA5wD2APcA6AD4AOkA6AD3APgA6QD5AOoA6QD4APkA6gD6AOsA6gD5APoA6wD7AOwA6wD6APsA7AD8AO0A7AD7APwA7QD9AO4A7QD8AP0A7gD+AO8A7gD9AP4A7wD/APAA7wD+AP8A8AAAAfEA8AD/AAAB8QABAfIA8QAAAQEB8gACAfMA8gABAQIB9AAEAfUA9AADAQQB9QAFAfYA9QAEAQUB9gAGAfcA9gAFAQYB9wAHAfgA9wAGAQcB+AAIAfkA+AAHAQgB+QAJAfoA+QAIAQkB+gAKAfsA+gAJAQoB+wALAfwA+wAKAQsB/AAMAf0A/AALAQwB/QANAf4A/QAMAQ0B/gAOAf8A/gANAQ4B/wAPAQAB/wAOAQ8BAAEQAQEBAAEPARABAQERAQIBAQEQAREBAwETAQQBAwESARMBBAEUAQUBBAETARQBBQEVAQYBBQEUARUBBgEWAQcBBgEVARYBBwEXAQgBBwEWARcBCAEYAQkBCAEXARgBCQEZAQoBCQEYARkBCgEaAQsBCgEZARoBCwEbAQwBCwEaARsBDAEcAQ0BDAEbARwBDQEdAQ4BDQEcAR0BDgEeAQ8BDgEdAR4BDwEfARABDwEeAR8BEAEgAREBEAEfASABAABAABMAAAASAEAAEwBBABQAEwBAAEEAFABCABUAFABBAEIAFQBDABYAFQBCAEMAFgBEABcAFgBDAEQAFwBFABgAFwBEAEUAGABGABkAGABFAEYAGQBHABoAGQBGAEcAGgBIABsAGgBHAEgAGwBJABwAGwBIAEkAHABKAB0AHABJAEoAHQBLAB4AHQBKAEsAHgBMAB8AHgBLAEwAHwBNACAAHwBMAE0AIABOACEAIABNAE4AIQAiAAEAIQBOACIATgAjACIATgBdACMAXQAkACMAXQBsACQAbAAlACQAbAB7ACUAewAmACUAewCKACYAigAnACYAigCZACcAmQAoACcAmQCoACgAqAApACgAqAC3ACkAtwAqACkAtwDGACoAxgArACoAxgDVACsA1QAsACsA1QDkACwA5AAtACwA5ADzAC0A8wAuAC0A8wACAS4AAgEvAC4AAgERAS8AEQEwAC8AEQEgATAAIAEDADAAIAExAAMAHwExACABHwEyADEAHgEyAB8BHgEzADIAHQEzAB4BHQE0ADMAHAE0AB0BHAE1ADQAGwE1ABwBGwE2ADUAGgE2ABsBGgE3ADYAGQE3ABoBGQE4ADcAGAE4ABkBGAE5ADgAFwE5ABgBFwE6ADkAFgE6ABcBFgE7ADoAFQE7ABYBFQE8ADsAFAE8ABUBFAE9ADwAEwE9ABQBEwE+AD0AEgE+ABMBEgE/AD4ABAA/ABIBBAACAD8ABQASAQMBBQAEABIBBgADAfQABgAFAAMBBwD0AOUABwAGAPQACADlANYACAAHAOUACQDWAMcACQAIANYACgDHALgACgAJAMcACwC4AKkACwAKALgADACpAJoADAALAKkADQCaAIsADQAMAJoADgCLAHwADgANAIsADwB8AG0ADwAOAHwAEABtAF4AEAAPAG0AEQBeAE8AEQAQAF4AEgBPAEAAEgARAE8A"),
 "lods": [0.230283, PackedByteArray("QABQAEIAQABeAFAAEwBAAEIAAABAABMAAAASAEAAEgBeAEAAEwBCABQAEgARAF4AFABCABUAEQAQAF4AFQBCAEMAFQBDABYAFgBDABcAEABtAF4AEAAPAG0ADwAOAG0AXgBtAF8AXgBfAFAADgCaAG0ADgANAJoADQAMAJoADAALAJoACwDHAJoACwAKAMcACgAJAMcAbQCaAIwAbQCMAF8AmgDHALkAmgC5AIwACQDWAMcACQAIANYACAAHANYAxwDWANcAxwDXALkABwD0ANYABwAGAPQA1gD1ANcA1gD0APUAuQDXALoABgADAfQABgAFAAMBuQC6AJwAjAC5AJwA1wDYALoA1wD1ANgAugDYANkAnAC6ANkA2AD1AOgA2ADoANkAjACcAH4AXwCMAH4AnADZAJ0A9QAFAegAfgCcAH8AnACdAH8AXwB+AG8AbwB+AH8AXwBvAFEAUABfAFEAQgBQAFEAQgBRAEMAbwB/AHAAUQBvAHAAcAB/AIAAfwCdAIAAUQBwAGEAYQBwAHEAcACAAHEAUQBhAGIAYQBxAGIAUQBiAFQAQwBRAFQAYgBxAGQAVABiAGQAcQCAAHMAZABxAHMAQwBUAEYAFwBDAEYAFwBGABgAGABGABkAGQBGABoAZABzAHYAcwCAAHYAVABkAFcARgBUAFcAGgBGAEkARgBXAEkAGgBJABsAGwBJABwAHABJAEoAHABKAB0AHQBKAB4ASQBZAEoASQBXAFkAHgBKAEwAHgBMAB8ASgBZAFsASgBbAEwAVwBmAFkAVwBkAGYAZAB2AGYAWQBmAGgAWQBoAFsAZgB2AHcAZgB3AGgAdwB2AIcAaAB3AHgAaAB4AFsAdwCHAHgAWwB4AGsATABbAFwAWwBrAFwATABcAE0AHwBMAE0AHwBNACAAIABNACEATQBcAF0ATQBdACEAXABrAF0AIQAiAAEAIQAjACIAIQBdACMAXQAkACMAXQBrACQAawAlACQAawCKACUAigAmACUAigAnACYAigCZACcAmQAoACcAmQApACgAawCJAIoAiQCZAIoAawCIAIkAeACIAGsAeACHAIgAiACmAIkAhwCmAIgAiQCnAJkApgCnAIkAmQDGACkApwDGAJkAxgAqACkAxgArACoAxgAsACsAhwDEAKYApgDEAKcAxgDzACwA8wAtACwApwDUAMYA1ADzAMYAxADUAKcA8wAuAC0AhwDDAMQAdgDDAIcAdgCAAMMA8wACAS4AAgEvAC4A1AABAfMAAQECAfMAAgEwAC8A4gABAdQAxADiANQAAQEQAQIBAgEgATAAEAEgAQIBIAEDADAAIAExAAMAHgExACABEAEeASABHgEyADEAHgEzADIADwEeARABDwEQAQEBHQEzAB4BDwEdAR4BHQE0ADMAHQE1ADQAGgE1AB0BGgE2ADUAGgE3ADYAGgE4ADcAFwE4ABoBFwE5ADgAFwE6ADkADAEaAR0BDAEdAQ8BCQEXARoBCQEaAQwBFgE6ABcBFgE7ADoABwEXAQkBBwEWARcBFgE8ADsA+gAHAQkBFAE8ABYBFAE9ADwABQEWAQcBBQEUARYB+AAHAfoABQEHAfgA+gAJAfwA/AAJAQwB6QD4APoA6QD6APwA6AAFAfgA6AD4AOkA2QDoAOkA/AAMAf4A/gAMAQ8B2QDpANoAnQDZANoAnQDaAIAA2gDpAO0A6QD8AO0AgADaAO0A/gAPAf8A7wD8AP4A7QD8AO8A7wD+AP8AgADtAOAA7QDvAOAAgADgAMMA7wD/APAA8AD/AA8B4ADvAPAAwwDgAOEA4ADwAOEAwwDhAMQA4QDiAMQA4QDwAPEA4QDxAOIA8AAPAfEA4gDxAAEB8QAPAQEB9AAEAfUA9QAEAQUB9AADAQQBBAEUAQUBBAETARQBAwETAQQBEwE9ABQBEwE+AD0APwA+ABMBAwE/ABMBBQA/AAMBBQAEAD8ABAACAD8A"), 0.427025, PackedByteArray("EwBfAFEAEwBRABQAFABRABUAFQBRABYAFgBRABcAAAASABMAEgBfABMAEgARAF8AEQAQAF8AEAAPAF8ADwAOAF8AFwBRAFQAFwBUABgAGABUABkAGQBUABoADgCMAF8ADgANAIwADQAMAIwADAALAIwAGgBUAFkAGgBZABsAGwBZABwAHABZAB0ACwDXAIwACwAKANcACgAJANcACQAIANcAHQBZAFsAHQBbAB4AjADXAJwACAD1ANcACAAHAPUABwAGAPUAjACcAH8AXwCMAH8A1wC6AJwAnAC6AH8A1wDoALoA1wD1AOgAugDoAOkAfwC6AOkAXwB/AHAAUQBfAHAAUQBwAFQAVABwAGQAVABkAFkAcAB/AHIAcAByAGQAZAB3AFkAZAByAHcAWQB3AFsAcgB/ANIAcgDSAHcAfwDpANIAdwCmAFsAdwDSAKYA0gDpAO4AWwCmAIkApgDSAMQApgDEAIkA0gDuAPAA0gDwAMQA6QD8AO4A7gD8APAA6QAHAfwA6AAHAekA/AAHAQwB/AAMAfAAxADwANQAxADUAIkA6AAFAQcB9QAFAegA9QA8AAUBBQE8ADsABQE7AAcB9QA9ADwAOwA6AAcBBwE6ADkABwE5ADgABwE4AAwBBgA9APUADAE4ADcADAE3ADYADAE2ADUABgA/AD0APwA+AD0ABQA/AAYABQAEAD8ABAACAD8ADAE1AA8BDwE1ADQADwE0ADMADwEzADIA8AAMAQ8BDwEyADEADwExADAAMAAxAAMA8AAPAQEBAQEPATAAAQEwAC8AAQEvAC4AAQEuAC0AAQEtACwA8AABAdQA1AABASwA1AAsACsA1AArACoA1AAqACkAiQDUACkAiQApACgAiQAoACcAJgCJACcAawCJACYAWwCJAGsAawAmACUAHgBbAGsAawAlACQAHgBrAB8AHwBrACQAHwAkACEAIAAfACEAIQAkACMAIQAjACIAIQAiAAEA"), 1.00568, PackedByteArray("EwAPABUAEwAVABQAAAASABMAEgAPABMAEgARAA8AEQAQAA8AFgAVABcAFwAVABgAGAAVABkAGQAVABoAGwAaABwAHAAaAB0AHQAaAB4AGgAVAB4ADgANAA8ADQAMAA8ADAALAA8ACgAJAAsACQAIAAsADwALAD0ACAA9AAsADwA9ABUACAAHAD0ABwAGAD0ABgA/AD0ABQA/AAYABQAEAD8ABAACAD8APwA+AD0AFQA9ACkAFQApAB4AKQAoACcAJgApACcAHgApACYAHgAmACUAHgAlACQAHwAeACQAHwAkACEAIAAfACEAIQAkACMAIQAjACIAIQAiAAEAPQA0ACkANAAzADIANAAyADEAMAAxAAMANAAxADAAKQA0AC0ANAAwAC0ALQAqACkALQAwAC8ALQAvAC4ALQArACoALQAsACsAPQA7ADQAPQA8ADsAOwA1ADQAOwA2ADUAOwA3ADYAOwA4ADcAOwA5ADgAOwA6ADkA")],
-"material": SubResource("StandardMaterial3D_0scrr"),
 "name": "ground_tres.001",
 "primitive": 3,
 "uv_scale": Vector4(2, 2, 0, 0),
@@ -7684,17 +6896,31 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8x33c")
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_ahm66"]
+size = Vector2(10, 10)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fm14t"]
+render_priority = 0
+shader = ExtResource("4_julc3")
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.1
+shader_parameter/highlight_strength = 0.3
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+
 [node name="hangar_island" type="Node3D"]
 
 [node name="tree_group" type="Node3D" parent="."]
 
 [node name="tree" type="MeshInstance3D" parent="tree_group"]
 transform = Transform3D(0.518183, -1.16415e-09, 0.258719, -0.002417, 0.999956, 0.00484097, -0.258707, -0.0093422, 0.51816, 7.21724, 0.718499, 10.0374)
+visible = false
 mesh = SubResource("ArrayMesh_qu66i")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_ekslu")
-surface_material_override/1 = SubResource("ShaderMaterial_xa4iq")
-surface_material_override/2 = SubResource("ShaderMaterial_8bjf5")
+surface_material_override/0 = SubResource("StandardMaterial3D_fm14t")
+surface_material_override/1 = SubResource("StandardMaterial3D_68nck")
+surface_material_override/2 = SubResource("StandardMaterial3D_7xor7")
 
 [node name="tree_001" type="MeshInstance3D" parent="tree_group"]
 transform = Transform3D(-0.0251738, 0, 0.578632, 0, 1, 0, -0.578632, 0, -0.0251738, -1.97321, 1.06965, 6.95906)
@@ -7705,30 +6931,21 @@ skeleton = NodePath("")
 transform = Transform3D(-0.233481, 0, 0.530033, 0, 1, 0, -0.530033, 0, -0.233481, -8.71622, 0.911121, -7.55308)
 mesh = SubResource("ArrayMesh_ul5ei")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_sog8e")
-surface_material_override/1 = SubResource("ShaderMaterial_rtfg5")
-surface_material_override/2 = SubResource("ShaderMaterial_ad1jh")
 
 [node name="tree_003" type="MeshInstance3D" parent="tree_group"]
 transform = Transform3D(-0.524384, 0, 0.197072, 0, 0.813179, 0, -0.218573, 0, -0.4728, -10.4753, 0.826572, 0.509221)
 mesh = SubResource("ArrayMesh_m6mal")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_e0x07")
-surface_material_override/1 = SubResource("ShaderMaterial_jjb7v")
 
 [node name="tree_004" type="MeshInstance3D" parent="tree_group"]
 transform = Transform3D(-0.098101, 0, 0.512629, 0, 0.813179, 0, -0.819578, 0, -0.0613601, 11.1674, 0.622599, 3.61402)
 mesh = SubResource("ArrayMesh_yy3kx")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_rrynj")
-surface_material_override/1 = SubResource("ShaderMaterial_rjss2")
 
 [node name="tree_005" type="MeshInstance3D" parent="tree_group"]
 transform = Transform3D(0.826973, -0.10937, 0.551501, 0.0909921, 0.994001, 0.0606818, -0.554829, -1.86265e-09, 0.831964, -8.76795, -0.0935639, 7.74586)
 mesh = SubResource("ArrayMesh_313k0")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_gch8i")
-surface_material_override/1 = SubResource("ShaderMaterial_4h404")
 
 [node name="rock_ground" type="Node3D" parent="."]
 
@@ -7736,19 +6953,16 @@ surface_material_override/1 = SubResource("ShaderMaterial_4h404")
 transform = Transform3D(0.525785, 0, 0, 0, 0.525785, 0, 0, 0, 0.525785, 0, 0.240928, 9.88605)
 mesh = SubResource("ArrayMesh_ooji5")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_2hrg8")
 
 [node name="rock_001" type="MeshInstance3D" parent="rock_ground"]
 transform = Transform3D(0.350444, -1.62837e-09, 0.387036, 0.0817469, 0.325338, -0.0742242, -0.377755, 0.0704038, 0.342992, 1.51269, -0.0690612, 10.0794)
 mesh = SubResource("ArrayMesh_ptp7u")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_f8ww5")
 
 [node name="rock_002" type="MeshInstance3D" parent="rock_ground"]
 transform = Transform3D(0.500291, 0, 0, 0, 0.202779, 0, 0, 0, 0.336694, 0, 0.0693291, 6.47832)
 mesh = SubResource("ArrayMesh_2ka1p")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_dqf6s")
 
 [node name="rock_003" type="MeshInstance3D" parent="rock_ground"]
 transform = Transform3D(-1.00873, 0, 0, 0, 0.560462, 0, 0, 0, 0.661978, -7.81965, -0.127454, 3.13387)
@@ -7759,53 +6973,43 @@ skeleton = NodePath("")
 transform = Transform3D(0.2045, 0, 0.484386, 0, 0.525785, 0, -0.484386, 0, 0.2045, -7.07839, 0.240928, 4.80528)
 mesh = SubResource("ArrayMesh_ius8a")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_qsq45")
 
 [node name="rock_005" type="MeshInstance3D" parent="rock_ground"]
 transform = Transform3D(0.525785, 0, 0, 0, 0.525785, 0, 0, 0, 0.525785, -8.55883, 0.240928, 4.43936)
 mesh = SubResource("ArrayMesh_qln5d")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_w76pw")
 
 [node name="rock_006" type="MeshInstance3D" parent="rock_ground"]
 transform = Transform3D(-0.70469, 0, 0.473658, 0, 0.560462, 0, 0.721763, 0, 0.462453, 7.91228, -0.127454, 4.58498)
 mesh = SubResource("ArrayMesh_436le")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_lxikh")
 
 [node name="rock_007" type="MeshInstance3D" parent="rock_ground"]
 transform = Transform3D(-0.203725, 0, 0.484712, 0, 0.525785, 0, -0.484712, 0, -0.203725, 9.62605, 0.240928, 5.22224)
 mesh = SubResource("ArrayMesh_3v268")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_l7j5o")
 
 [node name="rock_008" type="MeshInstance3D" parent="rock_ground"]
 transform = Transform3D(0.36731, 0, 0.376209, 0, 0.525785, 0, -0.376209, 0, 0.36731, 8.33, 0.240928, 6.02589)
 mesh = SubResource("ArrayMesh_msdpi")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_oy1u7")
 
 [node name="rock_009" type="MeshInstance3D" parent="rock_ground"]
 transform = Transform3D(0.298497, 0, -0.653612, 0, 0.667062, 0, 0.564801, 0, 0.345433, -8.36298, 0.0954836, -2.08329)
 mesh = SubResource("ArrayMesh_6wdn6")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_0by4j")
 
 [node name="large_rock_4" type="MeshInstance3D" parent="rock_ground"]
 transform = Transform3D(0.285113, 0, 0.705924, 0, 0.334535, 0, -0.257358, 0, 0.782055, -1.63027, -0.0385713, 0)
 mesh = SubResource("ArrayMesh_m8h3v")
-skeleton = NodePath("")
 
 [node name="large_rock_3" type="MeshInstance3D" parent="rock_ground"]
 transform = Transform3D(1, 0, 0, 0, 0.789904, 0, 0, 0, 1.86372, 0, 0.240928, 0)
 mesh = SubResource("ArrayMesh_xp6n2")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_ldpfl")
 
 [node name="large_rock_2" type="MeshInstance3D" parent="rock_ground"]
 transform = Transform3D(-0.700928, 0, 0, 0, 0.243585, 0, 0, 0, 0.448444, -1.24944, -0.100284, 1.01879)
 mesh = SubResource("ArrayMesh_c0jih")
-skeleton = NodePath("")
 
 [node name="large_rock" type="MeshInstance3D" parent="rock_ground"]
 transform = Transform3D(1.01078, 0, 0.111102, 0, 0.425762, 0, -0.403559, 0, 0.278274, 2.65614, 0.0925669, -4.1567)
@@ -8163,254 +7367,199 @@ skeleton = NodePath("")
 transform = Transform3D(0.0104312, 0, 0, 0, 0.0104312, 0, 0, 0, 0.0104312, -9.68007, 0.168377, 7.00666)
 mesh = SubResource("ArrayMesh_k3rn4")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_svcdr")
 
 [node name="herbs_004" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.0219149, 0, 0, 0, 0.0296151, 0, 0, 0, 0.0219149, -9.19444, -0.195872, 5.87447)
 mesh = SubResource("ArrayMesh_2hdhb")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_ru3qq")
 
 [node name="herbs_005" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.0132424, 0, 0, 0, 0.0132424, 0, 0, 0, 0.0132424, -9.9853, -0.186285, 7.00209)
 mesh = SubResource("ArrayMesh_d4eeo")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_mohr8")
 
 [node name="herbs_006" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00658474, 0, 0.00809013, 0, 0.0154927, 0, -0.00809013, 0, 0.00658474, -8.53695, -0.0961102, 10.3275)
 mesh = SubResource("ArrayMesh_wdx25")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_t5ibg")
 
 [node name="herbs_007" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.0138339, 0, 0.0169966, 0, 0.0439853, 0, -0.0169966, 0, 0.0138339, -8.2304, -0.637641, 9.95089)
 mesh = SubResource("ArrayMesh_nfpso")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_ukt7u")
 
 [node name="herbs_008" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00835934, 0, 0.0102704, 0, 0.019668, 0, -0.0102704, 0, 0.00835934, -8.73318, -0.387321, 9.86901)
 mesh = SubResource("ArrayMesh_kmxs0")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_x8sc3")
 
 [node name="herbs_009" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00658474, 0, 0.00809013, 0, 0.0154927, 0, -0.00809013, 0, 0.00658474, -9.77922, -0.31306, 9.6944)
 mesh = SubResource("ArrayMesh_xyt4r")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_spp4t")
 
 [node name="herbs_010" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.0138339, 0, 0.0169966, 0, 0.0439853, 0, -0.0169966, 0, 0.0138339, -9.84218, -0.334086, 8.80568)
 mesh = SubResource("ArrayMesh_0fgh3")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_esfa2")
 
 [node name="herbs_011" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00835934, 0, 0.0102704, 0, 0.019668, 0, -0.0102704, 0, 0.00835934, -10.345, -0.861871, 8.96899)
 mesh = SubResource("ArrayMesh_1tfqn")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_pr0mb")
 
 [node name="herbs_012" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00658474, 0, 0.00809013, 0, 0.0154927, 0, -0.00809013, 0, 0.00658474, -6.73431, 0.294157, 6.77313)
 mesh = SubResource("ArrayMesh_fpknt")
-skeleton = NodePath("")
 
 [node name="herbs_013" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.0138339, 0, 0.0169966, 0, 0.0439853, 0, -0.0169966, 0, 0.0138339, -6.42775, -0.334086, 6.39649)
 mesh = SubResource("ArrayMesh_nit5r")
-skeleton = NodePath("")
 
 [node name="herbs_014" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00835934, 0, 0.0102704, 0, 0.019668, 0, -0.0102704, 0, 0.00835934, -6.93053, -0.232596, 7.00698)
 mesh = SubResource("ArrayMesh_03tqx")
-skeleton = NodePath("")
 
 [node name="herbs_015" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00658474, 0, 0.00809013, 0, 0.010377, 0, -0.00809013, 0, 0.00658474, -10.4668, 0.167031, 4.10097)
 mesh = SubResource("ArrayMesh_0ykk5")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_rc0gb")
 
 [node name="herbs_016" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.0138339, 0, 0.0169966, 0, 0.0294614, 0, -0.0169966, 0, 0.0138339, -10.1603, -0.253767, 3.72433)
 mesh = SubResource("ArrayMesh_uwanv")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_3xso0")
 
 [node name="herbs_017" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00835933, 0, 0.0102704, 0, 0.0131736, 0, -0.0102704, 0, 0.00835933, -10.6631, -0.185789, 4.33482)
 mesh = SubResource("ArrayMesh_g5rof")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_r17j2")
 
 [node name="herbs_018" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00658474, 0, 0.00809013, 0, 0.0145726, 0, -0.00809013, 0, 0.00658474, -7.58261, 0.271294, 1.85296)
 mesh = SubResource("ArrayMesh_5o61y")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_11cl2")
 
 [node name="herbs_019" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.0138339, 0, 0.0169966, 0, 0.0413732, 0, -0.0169966, 0, 0.0138339, -7.27605, -0.31964, 1.47632)
 mesh = SubResource("ArrayMesh_tj1ln")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_x163b")
 
 [node name="herbs_020" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00835933, 0, 0.0102704, 0, 0.0185, 0, -0.0102704, 0, 0.00835933, -7.77884, -0.224178, 2.08681)
 mesh = SubResource("ArrayMesh_42bom")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_6p8g6")
 
 [node name="herbs_021" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00822237, 0, 0.00641884, 0, 0.0135713, 0, -0.00641884, 0, 0.00822237, -2.96254, 0.24641, 10.5337)
 mesh = SubResource("ArrayMesh_10p7b")
-skeleton = NodePath("")
 
 [node name="herbs_022" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.0172744, 0, 0.0134854, 0, 0.0385302, 0, -0.0134854, 0, 0.0172744, -2.57974, -0.303919, 10.2349)
 mesh = SubResource("ArrayMesh_2lbt2")
-skeleton = NodePath("")
 
 [node name="herbs_023" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.0104383, 0, 0.00814874, 0, 0.0172287, 0, -0.00814874, 0, 0.0104383, -3.20595, -0.215016, 10.718)
 mesh = SubResource("ArrayMesh_twhoi")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_uxm0h")
 
 [node name="herbs_024" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.000212138, 0, 0.010429, 0, 0.0201564, 0, -0.010429, 0, 0.000212138, -2.72217, 0.410054, 8.98398)
 mesh = SubResource("ArrayMesh_ot1h4")
-skeleton = NodePath("")
 
 [node name="herbs_025" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.000445679, 0, 0.0219103, 0, 0.0572262, 0, -0.0219103, 0, 0.000445679, -2.7123, -0.40731, 8.49845)
 mesh = SubResource("ArrayMesh_jqw6u")
-skeleton = NodePath("")
 
 [node name="herbs_026" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00026931, 0, 0.0132396, 0, 0.0255886, 0, -0.0132396, 0, 0.00026931, -2.73295, -0.275269, 9.28906)
 mesh = SubResource("ArrayMesh_51ghv")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_v16ne")
 
 [node name="herbs_027" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.000212138, 0, 0.010429, 0, 0.0201564, 0, -0.010429, 0, 0.000212138, -4.69737, 0.410054, 9.07308)
 mesh = SubResource("ArrayMesh_gf568")
-skeleton = NodePath("")
 
 [node name="herbs_028" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.000445679, 0, 0.0219103, 0, 0.0572262, 0, -0.0219103, 0, 0.000445679, -4.6875, -0.40731, 8.58755)
 mesh = SubResource("ArrayMesh_6ne7s")
-skeleton = NodePath("")
 
 [node name="herbs_029" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00026931, 0, 0.0132396, 0, 0.0255886, 0, -0.0132396, 0, 0.00026931, -4.70815, -0.275269, 9.37816)
 mesh = SubResource("ArrayMesh_t4bjd")
-skeleton = NodePath("")
 
 [node name="herbs_030" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00146575, 0, 0.0103277, 0, 0.0135713, 0, -0.0103277, 0, 0.00146575, 4.16346, 0.263096, 6.59479)
 mesh = SubResource("ArrayMesh_me6em")
-skeleton = NodePath("")
 
 [node name="herbs_031" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00307941, 0, 0.0216974, 0, 0.0385302, 0, -0.0216974, 0, 0.00307941, 4.37631, -0.0789471, 6.11369)
 mesh = SubResource("ArrayMesh_h8jnp")
-skeleton = NodePath("")
 
 [node name="herbs_032" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00186077, 0, 0.013111, 0, 0.0172287, 0, -0.013111, 0, 0.00186077, 4.26065, -0.215016, 6.89606)
 mesh = SubResource("ArrayMesh_ymphx")
-skeleton = NodePath("")
 
 [node name="herbs_033" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.0070846, 0, 0.0076562, 0, 0.0201564, 0, -0.0076562, 0, -0.0070846, 3.40566, 0.641326, 5.31186)
 mesh = SubResource("ArrayMesh_nj2o1")
-skeleton = NodePath("")
 
 [node name="herbs_034" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.0148841, 0, 0.016085, 0, 0.0572262, 0, -0.016085, 0, -0.0148841, 3.07583, -0.251886, 4.95542)
 mesh = SubResource("ArrayMesh_jg6j0")
-skeleton = NodePath("")
 
 [node name="herbs_035" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.00899391, 0, 0.00971956, 0, 0.0143816, 0, -0.00971956, 0, -0.00899391, 3.60961, -0.0661431, 5.53899)
 mesh = SubResource("ArrayMesh_k0uiv")
-skeleton = NodePath("")
 
 [node name="herbs_036" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.0070846, 0, 0.0076562, 0, 0.0201564, 0, -0.0076562, 0, -0.0070846, 1.70512, 0.410054, 6.89802)
 mesh = SubResource("ArrayMesh_1h4dw")
-skeleton = NodePath("")
 
 [node name="herbs_037" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.0148841, 0, 0.016085, 0, 0.0572262, 0, -0.016085, 0, -0.0148841, 1.7155, -0.40731, 6.39028)
 mesh = SubResource("ArrayMesh_si60v")
-skeleton = NodePath("")
 
 [node name="herbs_038" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.00899391, 0, 0.00971956, 0, 0.0255886, 0, -0.00971956, 0, -0.00899391, 2.24928, -0.275269, 6.97386)
 mesh = SubResource("ArrayMesh_ta7oy")
-skeleton = NodePath("")
 
 [node name="herbs_039" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.00983173, 0, 0.00348511, 0, 0.0135713, 0, -0.00348511, 0, -0.00983173, -2.35087, 0.495083, 3.51455)
 mesh = SubResource("ArrayMesh_fjmhf")
-skeleton = NodePath("")
 
 [node name="herbs_040" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.0206555, 0, 0.00732189, 0, 0.0385302, 0, -0.00732189, 0, -0.0206555, -2.80859, -0.303919, 3.3523)
 mesh = SubResource("ArrayMesh_fl666")
-skeleton = NodePath("")
 
 [node name="herbs_041" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.0124814, 0, 0.00442436, 0, 0.0172287, 0, -0.00442436, 0, -0.0124814, -2.06471, -0.215016, 3.62084)
 mesh = SubResource("ArrayMesh_ii4lr")
-skeleton = NodePath("")
 
 [node name="herbs_042" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.00890931, 0, -0.00542523, 0, 0.0201564, 0, 0.00542523, 0, -0.00890931, -3.78702, 0.410054, 4.14462)
 mesh = SubResource("ArrayMesh_h4qel")
-skeleton = NodePath("")
 
 [node name="herbs_043" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.0187176, 0, -0.0113979, 0, 0.0572262, 0, 0.0113979, 0, -0.0187176, -4.2018, -0.40731, 4.3972)
 mesh = SubResource("ArrayMesh_s54nr")
-skeleton = NodePath("")
 
 [node name="herbs_044" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.0113104, 0, -0.00688735, 0, 0.0255886, 0, 0.00688735, 0, -0.0113104, -3.52395, -0.275269, 3.98977)
 mesh = SubResource("ArrayMesh_0u3po")
-skeleton = NodePath("")
 
 [node name="herbs_045" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.00890931, 0, -0.00542523, 0, 0.0201564, 0, 0.00542523, 0, -0.00890931, -2.55844, 0.433378, 5.87406)
 mesh = SubResource("ArrayMesh_cheiu")
-skeleton = NodePath("")
 
 [node name="herbs_046" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.0187176, 0, -0.0113979, 0, 0.0572262, 0, 0.0113979, 0, -0.0187176, -3.06527, -0.40731, 6.0151)
 mesh = SubResource("ArrayMesh_45c0i")
-skeleton = NodePath("")
 
 [node name="herbs_047" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.0113104, 0, -0.00688735, 0, 0.0255886, 0, 0.00688735, 0, -0.0113104, -2.38741, -0.275269, 5.60768)
 mesh = SubResource("ArrayMesh_662dg")
-skeleton = NodePath("")
 
 [node name="herbs_048" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.00983173, 0, 0.00348511, 0, 0.0135713, 0, -0.00348511, 0, -0.00983173, -9.06945, 0.24641, -2.23695)
 mesh = SubResource("ArrayMesh_nrlcr")
-skeleton = NodePath("")
 
 [node name="herbs_049" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.0206555, 0, 0.00732189, 0, 0.0385302, 0, -0.00732189, 0, -0.0206555, -9.52717, -0.303919, -2.39921)
 mesh = SubResource("ArrayMesh_j3o47")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_wx4pl")
 
 [node name="herbs_050" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.0124814, 0, 0.00442436, 0, 0.0172287, 0, -0.00442436, 0, -0.0124814, -8.78328, -0.215016, -2.13067)
@@ -8421,55 +7570,46 @@ skeleton = NodePath("")
 transform = Transform3D(-0.00890931, 0, -0.00542523, 0, 0.0201564, 0, 0.00542523, 0, -0.00890931, -10.5056, 0.410054, -1.60689)
 mesh = SubResource("ArrayMesh_7o5g4")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_v061l")
 
 [node name="herbs_052" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.0187176, 0, -0.0113979, 0, 0.0572262, 0, 0.0113979, 0, -0.0187176, -10.9204, -0.40731, -1.35431)
 mesh = SubResource("ArrayMesh_hq7o6")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_bk3oi")
 
 [node name="herbs_053" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.0113104, 0, -0.00688735, 0, 0.0255886, 0, 0.00688735, 0, -0.0113104, -10.2425, -0.275269, -1.76174)
 mesh = SubResource("ArrayMesh_sc15l")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_850gd")
 
 [node name="herbs_054" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.00890931, 0, -0.00542523, 0, 0.0201564, 0, 0.00542523, 0, -0.00890931, -9.36906, 0.269311, 0.0110188)
 mesh = SubResource("ArrayMesh_gjc4g")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_c1jis")
 
 [node name="herbs_055" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.0187176, 0, -0.0113979, 0, 0.0572262, 0, 0.0113979, 0, -0.0187176, -9.78384, -0.40731, 0.263595)
 mesh = SubResource("ArrayMesh_vhkoa")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_4lvg5")
 
 [node name="herbs_056" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.0113104, 0, -0.00688735, 0, 0.0255886, 0, 0.00688735, 0, -0.0113104, -9.10599, -0.275269, -0.143829)
 mesh = SubResource("ArrayMesh_e0k0e")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_i3xlb")
 
 [node name="herbs_057" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.00667476, 0, -0.00801602, 0, 0.0208621, 0, 0.00801602, 0, -0.00667476, -10.3966, 0.42759, -8.45254)
 mesh = SubResource("ArrayMesh_66x7w")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_wfto2")
 
 [node name="herbs_058" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.014023, 0, -0.0168409, 0, 0.0592297, 0, 0.0168409, 0, -0.014023, -10.7074, -0.819338, -8.07934)
 mesh = SubResource("ArrayMesh_nd5ol")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_xdmur")
 
 [node name="herbs_059" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.00847362, 0, -0.0101763, 0, 0.0264845, 0, 0.0101763, 0, -0.00847362, -10.1978, -0.593464, -8.68417)
 mesh = SubResource("ArrayMesh_7351a")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_mdt71")
 
 [node name="herbs_060" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00200354, 0, -0.0102369, 0, 0.030985, 0, 0.0102369, 0, 0.00200354, -10.303, 0.679149, -6.88705)
@@ -8480,19 +7620,16 @@ skeleton = NodePath("")
 transform = Transform3D(0.00420924, 0, -0.0215068, 0, 0.0879697, 0, 0.0215068, 0, 0.00420924, -10.2097, -0.577325, -6.41046)
 mesh = SubResource("ArrayMesh_8pqdc")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_15jci")
 
 [node name="herbs_062" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00254349, 0, -0.0129958, 0, 0.0393356, 0, 0.0129958, 0, 0.00254349, -10.3571, -0.374348, -7.18747)
 mesh = SubResource("ArrayMesh_nbqcb")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_bpvtn")
 
 [node name="herbs_063" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00200354, 0, -0.0102369, 0, 0.030985, 0, 0.0102369, 0, 0.00200354, -8.39158, 0.679149, -7.39284)
 mesh = SubResource("ArrayMesh_xg8a5")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_kcaa2")
 
 [node name="herbs_064" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(0.00420924, 0, -0.0215068, 0, 0.0879697, 0, 0.0215068, 0, 0.00420924, -8.29831, -0.577325, -6.91626)
@@ -8503,7 +7640,6 @@ skeleton = NodePath("")
 transform = Transform3D(0.00254349, 0, -0.0129958, 0, 0.0393356, 0, 0.0129958, 0, 0.00254349, -8.44573, -0.374348, -7.69327)
 mesh = SubResource("ArrayMesh_cdgk6")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_ljuf2")
 
 [node name="herbs_066" type="MeshInstance3D" parent="herb_group"]
 transform = Transform3D(-0.00118859, 0, 0.0103632, 0, 0.0145726, 0, -0.0103632, 0, -0.00118859, 7.16137, 0.271294, 3.52055)
@@ -8556,32 +7692,28 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.97866, 0.965417, 0)
 mesh = SubResource("ArrayMesh_6teu5")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_jc7xw")
-surface_material_override/1 = SubResource("ShaderMaterial_krk8u")
+surface_material_override/0 = SubResource("StandardMaterial3D_julc3")
+surface_material_override/1 = SubResource("StandardMaterial3D_xamlu")
 
 [node name="recepteur" type="MeshInstance3D" parent="radio_tower_group"]
 transform = Transform3D(0.488959, 0, 0, 0, 0.0560173, -0.485739, 0, 0.485739, 0.0560173, 8.99785, 9.20526, 0.443767)
 mesh = SubResource("ArrayMesh_c3jye")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_f5524")
 
 [node name="recepteur_001" type="MeshInstance3D" parent="radio_tower_group"]
 transform = Transform3D(0, 0.406841, 0.0469184, 0, 0.0469184, -0.406841, -0.409537, 0, 0, 9.68124, 6.6759, -0.108547)
 mesh = SubResource("ArrayMesh_wrojs")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_tyite")
 
 [node name="recepteur_002" type="MeshInstance3D" parent="radio_tower_group"]
 transform = Transform3D(-0.488959, -1.23624e-07, -1.63098e-07, 1.23624e-07, 0.132131, -0.470767, 1.63098e-07, -0.470767, -0.132131, 8.99785, 8.43035, -0.539395)
 mesh = SubResource("ArrayMesh_lthlr")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_ct37q")
 
 [node name="recepteur_003" type="MeshInstance3D" parent="radio_tower_group"]
 transform = Transform3D(-2.44103e-07, -0.407033, -0.0452227, 0, 0.0452227, -0.407033, 0.409537, -2.4261e-07, -2.69548e-08, 8.24345, 5.02945, -0.108547)
 mesh = SubResource("ArrayMesh_rmwg4")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_m654u")
 
 [node name="hangar_group" type="Node3D" parent="."]
 
@@ -8589,44 +7721,36 @@ surface_material_override/0 = SubResource("ShaderMaterial_m654u")
 transform = Transform3D(0.253229, 0, 0, 0, 0.253229, 0, 0, 0, 0.253229, 0, 0, 0)
 mesh = SubResource("ArrayMesh_vnj1q")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_fl67b")
 
 [node name="support_hanger_2" type="MeshInstance3D" parent="hangar_group"]
 transform = Transform3D(0.29667, 0, 0, 0, 0.29667, 0, 0, 0, 0.29667, 0, 0, 0)
 mesh = SubResource("ArrayMesh_0ewkj")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_5cvqc")
 
 [node name="hangar" type="MeshInstance3D" parent="hangar_group"]
 transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2547, -12.2891)
 mesh = SubResource("ArrayMesh_eocgw")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_w5cqq")
-surface_material_override/1 = SubResource("ShaderMaterial_8affo")
 
 [node name="hangar_support" type="MeshInstance3D" parent="hangar_group"]
 transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2547, -12.2891)
 mesh = SubResource("ArrayMesh_5ebi6")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_5ahl2")
 
 [node name="poutre_hangar_1" type="MeshInstance3D" parent="hangar_group"]
 transform = Transform3D(0.243611, 0, 0, 0, 0.243611, 0, 0, 0, 0.423884, 0, 0.240928, 1)
 mesh = SubResource("ArrayMesh_bduqq")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_h8o8l")
 
 [node name="poutre_hangar_2" type="MeshInstance3D" parent="hangar_group"]
 transform = Transform3D(0.243611, 0, 0, 0, 0.243611, 0, 0, 0, 0.423884, 0, 0.240928, 3)
 mesh = SubResource("ArrayMesh_vnt7m")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_u51fj")
 
 [node name="poutre_hangar_2_001" type="MeshInstance3D" parent="hangar_group"]
 transform = Transform3D(0.243611, 0, 0, 0, 0.243611, 0, 0, 0, 0.423884, 0, 0.240928, 5)
 mesh = SubResource("ArrayMesh_d6l0f")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_rnjll")
 
 [node name="hangar_help" type="Node3D" parent="."]
 
@@ -8634,8 +7758,6 @@ surface_material_override/0 = SubResource("ShaderMaterial_rnjll")
 transform = Transform3D(1.26386, 0, 0, 0, 1, 0, 0, 0, 2.61245, 5.28961, 0.465207, -6.24388)
 mesh = SubResource("ArrayMesh_kgh7d")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_1bs7u")
-surface_material_override/1 = SubResource("ShaderMaterial_0um01")
 
 [node name="colis_003" type="MeshInstance3D" parent="hangar_help"]
 transform = Transform3D(0.581527, 0, 0, 0, 0.501061, 0, 0, 0, 0.523818, 5.28961, 0.834078, -6.65098)
@@ -8646,8 +7768,6 @@ skeleton = NodePath("")
 transform = Transform3D(-1.42584, 0, -0.563959, 0, 0.501061, 0, 0.907753, 0, -0.885832, 5.06179, 0.834078, -5.98106)
 mesh = SubResource("ArrayMesh_0qphn")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_yt4sl")
-surface_material_override/1 = SubResource("ShaderMaterial_lxmdf")
 
 [node name="palette" type="MeshInstance3D" parent="hangar_help"]
 transform = Transform3D(2.44904, 0, 0, 0, 0.540202, 0, 0, 0, 2.65326, -2.95641, 1.52071, -3.89061)
@@ -8658,48 +7778,52 @@ skeleton = NodePath("")
 transform = Transform3D(0.108758, 0, 2.60275, 0, 1, 0, -1.25917, 0, 0.224807, -1.5999, 1.57649, -3.67236)
 mesh = SubResource("ArrayMesh_xevtm")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_ftgdb")
-surface_material_override/1 = SubResource("ShaderMaterial_xmycw")
 
 [node name="colis_006" type="MeshInstance3D" parent="hangar_help"]
 transform = Transform3D(0.108395, 0, 0.851083, 0, 0.661542, 0, -1.25497, 0, 0.0735104, -1.54083, 1.94183, -3.76256)
 mesh = SubResource("ArrayMesh_xnp20")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_tabi5")
-surface_material_override/1 = SubResource("ShaderMaterial_1b8xo")
 
 [node name="barrel" type="MeshInstance3D" parent="hangar_help"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59952, 0.583703, -3.8293)
 mesh = SubResource("ArrayMesh_sxvj1")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_x6ru8")
 
 [node name="barrel_001" type="MeshInstance3D" parent="hangar_help"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.15773, 1.00748, -5.97515)
 mesh = SubResource("ArrayMesh_bq3d2")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_6e76k")
 
 [node name="barrel_002" type="MeshInstance3D" parent="hangar_help"]
 transform = Transform3D(0.685056, 0, 0, 0, 0.685056, 0, 0, 0, 1, -5.15773, 0.655935, -7.02639)
 mesh = SubResource("ArrayMesh_dl1k1")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_86tm7")
 
 [node name="barrel_003" type="MeshInstance3D" parent="hangar_help"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.50272, 0.926863, -3.99493)
 mesh = SubResource("ArrayMesh_0xnjy")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("2_mbp8p")
 
 [node name="barrel_004" type="MeshInstance3D" parent="hangar_help"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.15673, 0.647613, -3.93265)
 mesh = SubResource("ArrayMesh_mj1kt")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_wsg5y")
 
-[node name="Node" type="Node3D" parent="."]
+[node name="ground" type="Node3D" parent="."]
 
-[node name="ground" type="MeshInstance3D" parent="Node"]
+[node name="ground" type="MeshInstance3D" parent="ground"]
 mesh = SubResource("ArrayMesh_fvkc4")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_4owu3")
+
+[node name="Debug_camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.857167, 0.515038, 0, -0.515038, 0.857167, 0.295, 4.15, 17.215)
+visible = false
+current = true
+near = 0.001
+script = ExtResource("4_ahm66")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Debug_camera"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.8)
+mesh = SubResource("PlaneMesh_ahm66")
+surface_material_override/0 = SubResource("ShaderMaterial_fm14t")

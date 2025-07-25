@@ -3,5 +3,11 @@
 [resource]
 resource_name = "controlleur"
 cull_mode = 2
-albedo_color = Color(0.200017, 0.352934, 0.474494, 1)
-roughness = 0.5
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0, 0.549663, 0.836637, 1)
+metallic = 0.5
+roughness = 0.3
+emission_energy_multiplier = 0.15
+subsurf_scatter_strength = 1.0
+backlight = Color(0.327745, 0.790465, 0, 1)

@@ -19,12 +19,6 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
-[display]
-
-window/size/viewport_width=1167
-window/size/viewport_height=647
-window/stretch/mode="canvas_items"
-
 [file_customization]
 
 folder_colors={

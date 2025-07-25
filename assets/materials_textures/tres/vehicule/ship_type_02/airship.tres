@@ -3,5 +3,7 @@
 [resource]
 resource_name = "airship"
 cull_mode = 2
-albedo_color = Color(0.906335, 0.162081, 0.158301, 1)
-roughness = 0.5
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.826805, 0.242585, 0.514586, 1)
+roughness = 0.3
