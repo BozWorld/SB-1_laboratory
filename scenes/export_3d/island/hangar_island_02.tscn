@@ -1,7 +1,6 @@
-[gd_scene load_steps=434 format=4 uid="uid://cumecpt86pmsv"]
+[gd_scene load_steps=431 format=4 uid="uid://cumecpt86pmsv"]
 
 [ext_resource type="Material" uid="uid://cv4r5lfsmffx0" path="res://scenes/export_3d/testomg/hangar_island_02.tres" id="3_4owu3"]
-[ext_resource type="Script" uid="uid://c3cwyyweby8he" path="res://code/game_objects/camera.gd" id="4_ahm66"]
 [ext_resource type="Shader" uid="uid://b1hy61gbvow1g" path="res://assets/materials_textures/shader_script/pixelart_stylizer.gdshader" id="4_julc3"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_bcw0i"]
@@ -6896,19 +6895,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8x33c")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ahm66"]
-size = Vector2(10, 10)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fm14t"]
-render_priority = 0
-shader = ExtResource("4_julc3")
-shader_parameter/shadows_enabled = true
-shader_parameter/highlights_enabled = true
-shader_parameter/shadow_strength = 0.1
-shader_parameter/highlight_strength = 0.3
-shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-
 [node name="hangar_island" type="Node3D"]
 
 [node name="tree_group" type="Node3D" parent="."]
@@ -7815,15 +7801,3 @@ skeleton = NodePath("")
 mesh = SubResource("ArrayMesh_fvkc4")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_4owu3")
-
-[node name="Debug_camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.857167, 0.515038, 0, -0.515038, 0.857167, 0.295, 4.15, 17.215)
-visible = false
-current = true
-near = 0.001
-script = ExtResource("4_ahm66")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Debug_camera"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.8)
-mesh = SubResource("PlaneMesh_ahm66")
-surface_material_override/0 = SubResource("ShaderMaterial_fm14t")

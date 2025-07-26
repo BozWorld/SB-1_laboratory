@@ -132,7 +132,7 @@ func _physics_process(delta):
 	if grounded:
 		mesh.rotation.z = 0
 	else:
-		mesh.rotation.z = lerpf(mesh.rotation.z, -turn_input, level_speed * delta)
+		mesh.rotation.z = lerpf(mesh.rotation.z, turn_input, level_speed * delta)
 	
 	# Accélération/décélération
 	forward_speed = lerpf(forward_speed, target_speed, acceleration * delta)
