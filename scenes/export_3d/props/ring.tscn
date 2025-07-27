@@ -61,9 +61,9 @@ emission_enabled = true
 emission = Color(0.855242, 0.471245, 0, 1)
 emission_energy_multiplier = 2.68
 
-[node name="ring2" type="Node3D"]
+[node name="ring" type="Node3D"]
 
-[node name="ring" type="MeshInstance3D" parent="."]
+[node name="ring_mesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_jcn4o")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_6ne6f")

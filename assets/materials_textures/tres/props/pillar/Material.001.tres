@@ -3,7 +3,6 @@
 [resource]
 resource_name = "Material.001"
 cull_mode = 2
-albedo_color = Color(0, 0, 0, 1)
-metallic = 1.0
-emission_enabled = true
+albedo_color = Color(0.957607, 0.731459, 0.925725, 1)
+metallic_specular = 0.0
 emission = Color(0.678431, 0.254902, 0.8, 1)

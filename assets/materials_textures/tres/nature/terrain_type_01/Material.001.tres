@@ -1,7 +1,20 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://djwtm4ufumlvt"]
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://djwtm4ufumlvt"]
+
+[ext_resource type="Shader" uid="uid://b1hy61gbvow1g" path="res://assets/materials_textures/shader_script/pixelart_stylizer.gdshader" id="1_0ih7i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_at71l"]
+render_priority = 0
+shader = ExtResource("1_0ih7i")
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = false
+shader_parameter/shadow_strength = 0.28
+shader_parameter/highlight_strength = 0.0
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [resource]
 resource_name = "Material.001"
-cull_mode = 2
-albedo_color = Color(0.907237, 0.401653, 0.732019, 1)
-roughness = 0.5
+next_pass = SubResource("ShaderMaterial_at71l")
+diffuse_mode = 3
+albedo_color = Color(0.869031, 0.516345, 0.185482, 1)
+roughness = 0.55
