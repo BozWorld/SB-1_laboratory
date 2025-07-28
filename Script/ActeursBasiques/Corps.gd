@@ -50,12 +50,16 @@ func instantiationCorps():
 		var nouvelle_vertebre = VertebreCharnelle.new()
 		nouvelle_vertebre.post_distance = vertebre
 		vertebres.append(nouvelle_vertebre)
+		nouvelle_vertebre.genere_centre = true
 		if derniere_vertebre :
 			nouvelle_vertebre.vertebre_precedente = derniere_vertebre
 			derniere_vertebre.vertebre_suivante = nouvelle_vertebre
 			nouvelle_vertebre.position.z = derniere_vertebre.position.z - 1.0
 		derniere_vertebre = nouvelle_vertebre
 		add_child(nouvelle_vertebre)
+	
+	vertebres[0].genere_avant = true
+	vertebres[vertebres.size()-1].genere_arriere = true
 
 func detruireCorps():
 	$GenerationLiens.detruireCorps()

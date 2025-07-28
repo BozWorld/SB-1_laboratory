@@ -55,7 +55,6 @@ mod_temps = 2.0
 puissance_temps = 60.0
 
 [node name="GenerationLiens" type="MeshInstance3D" parent="Corps"]
-mesh = SubResource("ArrayMesh_70xrf")
 script = ExtResource("3_70xrf")
 
 [node name="Corps2" type="Node3D" parent="."]
@@ -66,7 +65,6 @@ mod_temps = 2.0
 puissance_temps = 60.0
 
 [node name="GenerationLiens" type="MeshInstance3D" parent="Corps2"]
-mesh = SubResource("ArrayMesh_ce30c")
 script = ExtResource("3_70xrf")
 
 [node name="Corps3" type="Node3D" parent="."]
@@ -77,5 +75,4 @@ mod_temps = 2.0
 puissance_temps = 60.0
 
 [node name="GenerationLiens" type="MeshInstance3D" parent="Corps3"]
-mesh = SubResource("ArrayMesh_attac")
 script = ExtResource("3_70xrf")
