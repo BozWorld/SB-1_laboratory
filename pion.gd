@@ -9,13 +9,13 @@ func appliquerFrottement():
 	
 
 func _processTruc(delta: float) -> void:
-	if Input.is_action_pressed("bougerBas") :
+	if Input.is_action_pressed("arriere") :
 		appliquerForce(Vector2.DOWN * vitesse, "Deplacement")
-	if Input.is_action_pressed("bougerHaut") :
+	if Input.is_action_pressed("avant") :
 		appliquerForce(Vector2.UP * vitesse, "Deplacement")
-	if Input.is_action_pressed("bougerGauche") :
+	if Input.is_action_pressed("gauche") :
 		appliquerForce(Vector2.LEFT * vitesse, "Deplacement")
-	if Input.is_action_pressed("bougerDroite") :
+	if Input.is_action_pressed("droite") :
 		appliquerForce(Vector2.RIGHT * vitesse, "Deplacement")
 	
 	bouger(delta)

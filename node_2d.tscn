@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfrcqpinnbo0c"]
+[gd_scene load_steps=8 format=3 uid="uid://bfrcqpinnbo0c"]
 
 [ext_resource type="Script" uid="uid://dtrnb6cm6m4od" path="res://pion.gd" id="1_epypp"]
 [ext_resource type="Script" uid="uid://lmx8msyluii0" path="res://cercle.gd" id="2_epypp"]
 [ext_resource type="Script" uid="uid://cko82xu5fwomc" path="res://JoyeuxBatonInput.gd" id="3_epypp"]
 [ext_resource type="Script" uid="uid://cseks15cdeki1" path="res://fond.gd" id="4_0hol4"]
+[ext_resource type="Script" uid="uid://y62k8gvr5ccq" path="res://truc_attraction.gd" id="5_q6r6c"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_0hol4"]
 
@@ -20,25 +21,29 @@ texture = SubResource("ImageTexture_0hol4")
 script = ExtResource("4_0hol4")
 bruit = SubResource("FastNoiseLite_q6r6c")
 
-[node name="Truc" type="Node2D" parent="."]
+[node name="Pion" type="Node2D" parent="."]
 script = ExtResource("1_epypp")
 vitesse = 1.2
 masse = 2.0
 
-[node name="Cercle" type="Node2D" parent="Truc"]
+[node name="Cercle" type="Node2D" parent="Pion"]
 script = ExtResource("2_epypp")
 taille = 100.0
 taille_contour = 7.6
 
 [node name="JoyeuxBatonInput" type="Node2D" parent="."]
 script = ExtResource("3_epypp")
-input_haut = &"bougerHaut"
-input_bas = &"bougerBas"
-input_gauche = &"bougerGauche"
-input_droite = &"bougerDroite"
+input_haut = &"avant"
+input_bas = &"arriere"
+input_gauche = &"gauche"
+input_droite = &"droite"
 grande_couleur = Color(0.545098, 0, 0, 1)
 pos_gauche = false
 zone_morte = 0.3
+
+[node name="Truc" type="Node2D" parent="."]
+script = ExtResource("5_q6r6c")
+metadata/_custom_type_script = "uid://sgkgjg2sbtse"
 
 [node name="Cercle3" type="Node2D" parent="."]
 position = Vector2(-10, -257)
