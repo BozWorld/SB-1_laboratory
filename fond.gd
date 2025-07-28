@@ -10,3 +10,7 @@ extends Sprite2D
 var incretif := true
 
 var index_z := 0.0
+
+func _process(delta: float) -> void:
+	index_z += delta * vitesse_z
+	texture.noise.offset.z = index_z

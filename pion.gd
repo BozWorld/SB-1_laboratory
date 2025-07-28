@@ -1,4 +1,5 @@
-extends Truc
+extends TrucGravitationnel
+
 
 @export var vitesse := 2.0
 
