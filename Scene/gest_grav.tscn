@@ -1,0 +1,190 @@
+[gd_scene load_steps=10 format=3 uid="uid://bflyw2di8k3fl"]
+
+[ext_resource type="Script" uid="uid://dxn3oj30plphf" path="res://Script/gest_grav.gd" id="1_mvffx"]
+[ext_resource type="Script" uid="uid://brhbg4v5phvhy" path="res://Script/test_attraction.gd" id="2_duj8k"]
+[ext_resource type="PackedScene" uid="uid://bwtlb6e83t7rx" path="res://Scene/Drone.tscn" id="3_duj8k"]
+[ext_resource type="Script" uid="uid://bv6h0i8c7rl5u" path="res://Script/ObjetsBasiques/ObjetGravitationnel.gd" id="3_e6utr"]
+[ext_resource type="Script" uid="uid://cvrq3psa4j44p" path="res://BoiteOutils/JoyeuxBaton.gd" id="4_ials5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_duj8k"]
+sky_top_color = Color(0.390854, 0.125698, 1, 1)
+sky_horizon_color = Color(0.62273, 0.599152, 0.851653, 1)
+ground_bottom_color = Color(0.185047, 0.355892, 0.491594, 1)
+ground_horizon_color = Color(0.62273, 0.599152, 0.851653, 1)
+
+[sub_resource type="Sky" id="Sky_ials5"]
+sky_material = SubResource("ProceduralSkyMaterial_duj8k")
+
+[sub_resource type="Environment" id="Environment_e6utr"]
+background_mode = 2
+sky = SubResource("Sky_ials5")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_ials5"]
+
+[node name="GestGrav" type="Node3D"]
+script = ExtResource("1_mvffx")
+constante_g = 0.3
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_e6utr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_color = Color(0.502585, 0.841831, 0, 1)
+shadow_enabled = true
+
+[node name="ObjetGravitationnel13" type="Node3D" parent="."]
+script = ExtResource("3_e6utr")
+distance_min = 4.4
+distance_max = 500.0
+masse = 20.0
+metadata/_custom_type_script = "uid://bv6h0i8c7rl5u"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjetGravitationnel13"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("SphereMesh_ials5")
+
+[node name="ObjetGravitationnel" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+script = ExtResource("2_duj8k")
+distance_min = 0.8
+masse = 3.0
+metadata/_custom_type_script = "uid://bv6h0i8c7rl5u"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjetGravitationnel"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("SphereMesh_ials5")
+
+[node name="ObjetGravitationnel3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 0)
+script = ExtResource("2_duj8k")
+distance_min = 0.8
+metadata/_custom_type_script = "uid://bv6h0i8c7rl5u"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjetGravitationnel3"]
+mesh = SubResource("SphereMesh_ials5")
+
+[node name="ObjetGravitationnel4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 5)
+script = ExtResource("2_duj8k")
+distance_min = 0.8
+masse = 0.7
+metadata/_custom_type_script = "uid://bv6h0i8c7rl5u"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjetGravitationnel4"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+mesh = SubResource("SphereMesh_ials5")
+
+[node name="ObjetGravitationnel5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -5)
+script = ExtResource("2_duj8k")
+distance_min = 0.8
+masse = 1.8
+metadata/_custom_type_script = "uid://bv6h0i8c7rl5u"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjetGravitationnel5"]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
+mesh = SubResource("SphereMesh_ials5")
+
+[node name="ObjetGravitationnel6" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, 0)
+script = ExtResource("2_duj8k")
+distance_min = 0.8
+masse = 4.0
+metadata/_custom_type_script = "uid://bv6h0i8c7rl5u"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjetGravitationnel6"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+mesh = SubResource("SphereMesh_ials5")
+
+[node name="ObjetGravitationnel7" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5)
+script = ExtResource("2_duj8k")
+distance_min = 0.8
+masse = 2.4
+metadata/_custom_type_script = "uid://bv6h0i8c7rl5u"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjetGravitationnel7"]
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 0, 0, 0)
+mesh = SubResource("SphereMesh_ials5")
+
+[node name="ObjetGravitationnel8" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5)
+script = ExtResource("2_duj8k")
+distance_min = 0.8
+masse = 1.3
+metadata/_custom_type_script = "uid://bv6h0i8c7rl5u"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjetGravitationnel8"]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
+mesh = SubResource("SphereMesh_ials5")
+
+[node name="ObjetGravitationnel2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
+script = ExtResource("2_duj8k")
+distance_min = 0.8
+masse = 1.2
+metadata/_custom_type_script = "uid://bv6h0i8c7rl5u"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjetGravitationnel2"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+mesh = SubResource("SphereMesh_ials5")
+
+[node name="ObjetGravitationnel9" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -5, 0)
+script = ExtResource("2_duj8k")
+distance_min = 0.8
+masse = 0.9
+metadata/_custom_type_script = "uid://bv6h0i8c7rl5u"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjetGravitationnel9"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+mesh = SubResource("SphereMesh_ials5")
+
+[node name="ObjetGravitationnel10" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -5, 0)
+script = ExtResource("2_duj8k")
+distance_min = 0.8
+masse = 0.5
+metadata/_custom_type_script = "uid://bv6h0i8c7rl5u"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjetGravitationnel10"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("SphereMesh_ials5")
+
+[node name="ObjetGravitationnel11" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, -5)
+script = ExtResource("2_duj8k")
+distance_min = 0.8
+masse = 2.3
+metadata/_custom_type_script = "uid://bv6h0i8c7rl5u"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjetGravitationnel11"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+mesh = SubResource("SphereMesh_ials5")
+
+[node name="ObjetGravitationnel12" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 5)
+script = ExtResource("2_duj8k")
+distance_min = 0.8
+metadata/_custom_type_script = "uid://bv6h0i8c7rl5u"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjetGravitationnel12"]
+mesh = SubResource("SphereMesh_ials5")
+
+[node name="DroneBody" parent="." instance=ExtResource("3_duj8k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.564581, 0, 10.8459)
+
+[node name="JoyGauche" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_ials5")
+petite_couleur = Color(0.745098, 0, 0, 1)
+
+[node name="JoyDroite" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_ials5")
+grande_couleur = Color(0.682353, 0, 0, 1)
+gauche = false
+vertical_deux = false

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://5ini3gdg7eg"]
+
+[ext_resource type="Script" uid="uid://dkpkuyr410y1s" path="res://node_2d.gd" id="1_vtyw1"]
+[ext_resource type="Script" uid="uid://bgfrlpyblkij0" path="res://BoiteOutils/JoyeuxBatonInput.gd" id="2_gj2p5"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_vtyw1")
+
+[node name="JoyeuxBatonInput" type="Node2D" parent="."]
+script = ExtResource("2_gj2p5")
+input_haut = &"avant"
+input_bas = &"arriere"
+input_gauche = &"gauche"
+input_droite = &"droite"
+input_levier_gauche = &"coupDeVent"
+input_levier_droite = &"v_arriere"
+petite_couleur = Color(0.701961, 0, 0, 1)
+vertical_deux = false
+zone_morte = 0.15
+metadata/_custom_type_script = "uid://bgfrlpyblkij0"

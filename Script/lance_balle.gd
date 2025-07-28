@@ -23,7 +23,7 @@ func lancerBalle():
 		inst_balle.velocite = -global_transform.basis.z * (1.0 +(10.0 * charge_masse)) 
 	else :
 		inst_balle.masse = randf_range(0.2,10)
-		inst_balle.velocite = Vector3(randf_range(-100.0,100.0), randf_range(-100.0,100.0), randf_range(-100.0,100.0))
+		inst_balle.velocite = Vector3(randf_range(-10.0,10.0), randf_range(-10.0,10.0), randf_range(-10.0,10.0))
 	
 	charge_masse = 0.0
 	%Boite.add_child(inst_balle)

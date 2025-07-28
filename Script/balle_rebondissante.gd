@@ -8,21 +8,39 @@ func appliquerGravite():
 func _process(delta: float) -> void:
 	appliquerGravite()
 	
-	if abs(position.x) >= boite.mesh.size.x/2.0 - %MeshBallon.mesh.radius :
-		velocite.x = -velocite.x * 0.9
+	if position.x >= boite.mesh.size.x * 0.5 - %MeshBallon.mesh.radius :
+		velocite.x = -velocite.x * 0.8
 		appliquerFriction()
-		position.x = clampf(position.x, -boite.mesh.size.x / 2.0 + %MeshBallon.mesh.radius, boite.mesh.size.x/2.0 - %MeshBallon.mesh.radius)
+		position.x = boite.mesh.size.x * 0.5 - %MeshBallon.mesh.radius
 		
-	if abs(position.y) >= (boite.mesh.size.y - %MeshBallon.mesh.height)/2.0 :
-		velocite.y = -velocite.y * 0.9
+	elif position.x <= -boite.mesh.size.x * 0.5 + %MeshBallon.mesh.radius :
+		velocite.x = -velocite.x * 0.8
 		appliquerFriction()
-		position.y = clampf(position.y, -(boite.mesh.size.y - %MeshBallon.mesh.height)/2.0, (boite.mesh.size.y - %MeshBallon.mesh.height)/2.0)
+		position.x = -boite.mesh.size.x * 0.5 + %MeshBallon.mesh.radius
 		
-	if abs(position.z) >= boite.mesh.size.z / 2.0- %MeshBallon.mesh.radius:
-		velocite.z = -velocite.z * 0.9
+	if position.y >= (boite.mesh.size.y - %MeshBallon.mesh.height) * 0.5 :
+		velocite.y = -velocite.y * 0.8
 		appliquerFriction()
-		position.z = clampf(position.z, -boite.mesh.size.z/2.0 + %MeshBallon.mesh.radius, boite.mesh.size.z/2.0 - %MeshBallon.mesh.radius)
+		position.y = (boite.mesh.size.y - %MeshBallon.mesh.height) * 0.5
+		
+	elif position.y <= (-boite.mesh.size.y + %MeshBallon.mesh.height) * 0.5 :
+		velocite.y = -velocite.y * 0.8
+		appliquerFriction()
+		position.y = (-boite.mesh.size.y + %MeshBallon.mesh.height) * 0.5
+		
+	if position.z >= boite.mesh.size.z * 0.5 - %MeshBallon.mesh.radius:
+		velocite.z = -velocite.z * 0.8
+		appliquerFriction()
+		position.z = boite.mesh.size.z * 0.5 - %MeshBallon.mesh.radius
+		
+	elif position.z <= -boite.mesh.size.z * 0.5 + %MeshBallon.mesh.radius:
+		velocite.z = -velocite.z * 0.8
+		appliquerFriction()
+		position.z = -boite.mesh.size.z * 0.5 + %MeshBallon.mesh.radius
 		
 	
+	print("velocite : " + str(velocite))
+	
+	appliquerForce(%FrottementFluide.calculFrottement())
 	
 	logiqueMouvement(delta)

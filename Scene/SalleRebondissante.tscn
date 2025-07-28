@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://2nu68a3dr5fd"]
+[gd_scene load_steps=15 format=3 uid="uid://2nu68a3dr5fd"]
 
 [ext_resource type="PackedScene" uid="uid://b1kt3pie4cya1" path="res://Scene/balle_rebondissante.tscn" id="1_nkaso"]
 [ext_resource type="Script" uid="uid://bmnev4h82t04x" path="res://Script/lance_balle.gd" id="3_ea2lx"]
 [ext_resource type="PackedScene" uid="uid://bwtlb6e83t7rx" path="res://Scene/Drone.tscn" id="3_jrdh6"]
 [ext_resource type="Script" uid="uid://cvrq3psa4j44p" path="res://BoiteOutils/JoyeuxBaton.gd" id="4_0udpp"]
 [ext_resource type="Script" uid="uid://cygco654e0kre" path="res://Script/BoutonTel.gd" id="5_jrdh6"]
+[ext_resource type="Script" uid="uid://c6cjqy4w486me" path="res://Script/fluide.gd" id="6_jrdh6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nup11"]
 sky_top_color = Color(0.591802, 0.386062, 0.369268, 1)
@@ -28,6 +29,17 @@ albedo_color = Color(1, 1, 1, 0.211765)
 [sub_resource type="BoxMesh" id="BoxMesh_pxgxf"]
 material = SubResource("StandardMaterial3D_nup11")
 size = Vector3(25, 25, 25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0udpp"]
+transparency = 1
+albedo_color = Color(0, 0.709804, 0.858824, 0.65098)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ji67l"]
+material = SubResource("StandardMaterial3D_0udpp")
+size = Vector3(25, 5, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jrdh6"]
+size = Vector3(25, 5, 25)
 
 [node name="Node3D" type="Node3D"]
 
@@ -68,3 +80,15 @@ position = Vector2(615, 247)
 script = ExtResource("5_jrdh6")
 input_bouton = &"coupDeVent"
 metadata/_custom_type_script = "uid://cygco654e0kre"
+
+[node name="Eau" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+collision_layer = 5
+collision_mask = 6
+script = ExtResource("6_jrdh6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Eau"]
+mesh = SubResource("BoxMesh_ji67l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Eau"]
+shape = SubResource("BoxShape3D_jrdh6")
