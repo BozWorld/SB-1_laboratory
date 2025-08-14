@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://da3svi626742x"]
+
+[ext_resource type="Shader" uid="uid://crjflebiqdqjd" path="res://ocean_surface.gdshader" id="1_76nci"]
+[ext_resource type="Texture2D" uid="uid://bvetqx0m03oxc" path="res://assets/2d/texture/clear+sea+water-2048x2048.png" id="2_nr14a"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nr14a"]
+size = Vector2(200, 200)
+subdivide_width = 100
+subdivide_depth = 100
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_k2p1j"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hlyfj"]
+seamless = true
+noise = SubResource("FastNoiseLite_k2p1j")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k2p1j"]
+render_priority = 0
+shader = ExtResource("1_76nci")
+shader_parameter/albedo = Color(0.745132, 0.583381, 0.804146, 1)
+shader_parameter/water_texture1 = ExtResource("2_nr14a")
+shader_parameter/water_texture2 = ExtResource("2_nr14a")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_hlyfj")
+shader_parameter/scroll_speed1 = Vector2(0.015, 0.001)
+shader_parameter/scroll_speed2 = Vector2(-0.015, -0.02)
+shader_parameter/blend_factor = 0.27
+shader_parameter/scale1 = Vector2(3, 3)
+shader_parameter/scale2 = Vector2(3, 3)
+shader_parameter/wave_strength = 0.2
+shader_parameter/wave_scale = 0.02
+shader_parameter/pixelation_level = 256
+shader_parameter/FoamSize = 0.1
+shader_parameter/WaterOpacity = 0.4
+shader_parameter/FoamGlowIntensity = 1.0
+
+[node name="water_low_poly" type="Node3D"]
+
+[node name="OceanSurface" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_nr14a")
+surface_material_override/0 = SubResource("ShaderMaterial_k2p1j")

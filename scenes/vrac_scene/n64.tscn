@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7k48tq6v4u4e"]
+
+[ext_resource type="Shader" uid="uid://dnejphbd45nvn" path="res://n64.gdshader" id="1_56qxn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tfsta"]
+render_priority = 0
+shader = ExtResource("1_56qxn")
+shader_parameter/lock_aspect = false
+shader_parameter/aspect_ratio = 1.33333
+shader_parameter/fov = Vector2(180, 90)
+shader_parameter/tiling = Vector2i(1, 1)
+shader_parameter/offset = Vector2(0, 0)
+
+[sub_resource type="Sky" id="Sky_4ik61"]
+sky_material = SubResource("ShaderMaterial_tfsta")
+
+[sub_resource type="Environment" id="Environment_16hja"]
+background_mode = 2
+sky = SubResource("Sky_4ik61")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_16hja")
