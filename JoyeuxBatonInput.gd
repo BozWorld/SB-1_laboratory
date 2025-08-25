@@ -7,6 +7,9 @@ var actif_deux := false
 var position_stick := Vector2.ZERO
 var position_levier := 0.0
 
+var der_pos_s := Vector2.ZERO
+var der_pos_l := 0.0
+
 var doigt_suivi : float
 
 var affiche1 := false
@@ -30,12 +33,12 @@ var affiche2 := false
 func appelInputAxe(posipi : StringName, negapi : StringName, puissance := 0.0):
 	if puissance > zone_morte :
 		
-		Input.action_press(posipi, puissance)
 		Input.action_release(negapi)
+		Input.action_press(posipi, puissance)
 	
 	elif puissance < -zone_morte :
-		Input.action_press(negapi, puissance)
 		Input.action_release(posipi)
+		Input.action_press(negapi, puissance)
 	
 	else :
 		Input.action_press(posipi, 0.0)
@@ -43,14 +46,17 @@ func appelInputAxe(posipi : StringName, negapi : StringName, puissance := 0.0):
 		Input.action_release(posipi)
 		Input.action_release(negapi)
 		
-	print("==========
-	InputJoystick : 
-		" + str(Input.get_action_strength(posipi)) + str(Input.get_action_strength(negapi)))
+	
 	#print(Input.get_action_strength(negapi))
 
 func appelInputVecteur(h_posipi : StringName, h_negapi : StringName, v_posipi : StringName, v_negapi : StringName, vecteur_puissance := Vector2.ZERO):
 	appelInputAxe(h_posipi, h_negapi, vecteur_puissance.x )
 	appelInputAxe(v_posipi, v_negapi, vecteur_puissance.y )
+	print("==========
+	InputJoystick : 
+		x : " + str(vecteur_puissance.x) + "
+		y : " + str(vecteur_puissance.y)
+			)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch :
@@ -82,29 +88,39 @@ func _unhandled_input(event: InputEvent) -> void:
 					position_levier = event.position.x - position.x
 				position_levier = clampf(position_levier, -200.0, 200.0)
 				
-				var puissance_input = position_levier * 0.005
-				
-				appelInputAxe(input_levier_droite, input_levier_gauche, puissance_input)
-				
 			elif actif_un :
 				
 				position_stick = event.position - position
 				if position_stick.length() > 200.0 :
 					position_stick = position_stick.limit_length(200.0)
 				
-				var puissance_input = position_stick * 0.005
-				appelInputVecteur(input_droite, input_gauche, input_bas, input_haut, puissance_input)
 
 
 func _process(delta: float) -> void:
 	#if actif :
-	if !actif_un and position_stick.length() > zone_morte:
-		position_stick = position_stick.lerp(Vector2.ZERO, 0.2)
-		appelInputVecteur(input_droite, input_gauche, input_bas, input_haut, position_stick)
-		print("eeeee")
-	elif !actif_deux and abs(position_levier) > zone_morte:
-		position_levier = position_levier * 0.8
-		appelInputAxe(input_levier_droite, input_levier_gauche, position_levier)
+	
+	if !actif_un and position_stick.length() != 0.0:
+		if position_stick.length() * 0.005 > zone_morte:
+			position_stick = position_stick.lerp(Vector2.ZERO, 0.2)
+		else:
+			position_stick = Vector2.ZERO
+	
+	if !actif_deux and abs(position_levier) != 0.0 :
+		if abs(position_levier) * 0.005 > zone_morte:
+			position_levier = position_levier * 0.8
+		else :
+			position_levier = 0.0
+	
+	if der_pos_s != position_stick :
+		#print(position_stick * 0.005)
+		appelInputVecteur(input_droite, input_gauche, input_bas, input_haut, position_stick * 0.005)
+	if der_pos_l != position_levier :
+		appelInputAxe(input_levier_droite, input_levier_gauche, position_levier * 0.005)
+	
+	
+	der_pos_s = position_stick
+	der_pos_l = position_levier
+	
 	queue_redraw()
 
 func _draw() -> void:

@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bfrcqpinnbo0c"]
+[gd_scene load_steps=16 format=3 uid="uid://bfrcqpinnbo0c"]
 
 [ext_resource type="Script" uid="uid://dtrnb6cm6m4od" path="res://pion.gd" id="1_epypp"]
 [ext_resource type="Script" uid="uid://lmx8msyluii0" path="res://cercle.gd" id="2_epypp"]
 [ext_resource type="Script" uid="uid://cko82xu5fwomc" path="res://JoyeuxBatonInput.gd" id="3_epypp"]
 [ext_resource type="Script" uid="uid://cseks15cdeki1" path="res://fond.gd" id="4_0hol4"]
+[ext_resource type="Script" uid="uid://cxceu5m5bneah" path="res://collision_truc.gd" id="4_rj586"]
 [ext_resource type="Script" uid="uid://y62k8gvr5ccq" path="res://truc_attraction.gd" id="5_q6r6c"]
 [ext_resource type="Script" uid="uid://cwvc6d8u1xm53" path="res://gest_grav.gd" id="6_kdubu"]
 [ext_resource type="Script" uid="uid://pr7jn1my4s25" path="res://suiveur.gd" id="7_d21ai"]
@@ -28,19 +29,26 @@ radius = 60.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_4d7sh"]
 radius = 30.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ir8iy"]
+radius = 100.0
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-14, 12)
-scale = Vector2(6.40039, 5.98242)
+position = Vector2(21, -37)
+scale = Vector2(9.20215, 9.17285)
 texture = SubResource("NoiseTexture2D_4d7sh")
 script = ExtResource("4_0hol4")
+hauteur = 2000
+largeur = 2000
 
 [node name="Pion" type="Node2D" parent="."]
 position = Vector2(587, 226)
 script = ExtResource("1_epypp")
-vitesse = 8.0
-masse = 50.0
+vitesse = 4.4
+distance_min = 100.0
+distance_max = 1000.0
+masse = 19.0
 
 [node name="Cercle" type="Node2D" parent="Pion"]
 script = ExtResource("2_epypp")
@@ -48,26 +56,20 @@ taille = 50.0
 taille_contour = 7.6
 
 [node name="CollisionTruc" type="Area2D" parent="Pion"]
+script = ExtResource("4_rj586")
+metadata/_custom_type_script = "uid://cxceu5m5bneah"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pion/CollisionTruc"]
 shape = SubResource("CircleShape2D_d21ai")
-
-[node name="JoyeuxBatonInput" type="Node2D" parent="."]
-script = ExtResource("3_epypp")
-input_haut = &"avant"
-input_bas = &"arriere"
-input_gauche = &"gauche"
-input_droite = &"droite"
-grande_couleur = Color(0.545098, 0, 0, 1)
-pos_gauche = false
-zone_morte = 0.3
 
 [node name="Truc" type="Node2D" parent="."]
 position = Vector2(191, 474)
 script = ExtResource("5_q6r6c")
 distance_min = 100.0
+distance_max = 300.0
+velocite_init = Vector2(1, 0)
 masse = 15.0
-metadata/_custom_type_script = "uid://sgkgjg2sbtse"
+metadata/_custom_type_script = "uid://y62k8gvr5ccq"
 
 [node name="Cercle3" type="Node2D" parent="Truc"]
 script = ExtResource("2_epypp")
@@ -76,6 +78,8 @@ taille_contour = 7.6
 couleur_contour = Color(1, 0.631373, 0, 1)
 
 [node name="CollisionTruc" type="Area2D" parent="Truc"]
+script = ExtResource("4_rj586")
+metadata/_custom_type_script = "uid://cxceu5m5bneah"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Truc/CollisionTruc"]
 shape = SubResource("CircleShape2D_rj586")
@@ -83,6 +87,9 @@ shape = SubResource("CircleShape2D_rj586")
 [node name="Truc2" type="Node2D" parent="."]
 position = Vector2(971, 429)
 script = ExtResource("5_q6r6c")
+distance_min = 100.0
+distance_max = 200.0
+velocite_init = Vector2(0, -1)
 masse = 10.0
 metadata/_custom_type_script = "uid://sgkgjg2sbtse"
 
@@ -93,12 +100,36 @@ taille_contour = 7.6
 couleur_contour = Color(0.247059, 0.556863, 0, 1)
 
 [node name="CollisionTruc" type="Area2D" parent="Truc2"]
+script = ExtResource("4_rj586")
+metadata/_custom_type_script = "uid://cxceu5m5bneah"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Truc2/CollisionTruc"]
 shape = SubResource("CircleShape2D_4d7sh")
 
+[node name="Truc3" type="Node2D" parent="."]
+script = ExtResource("5_q6r6c")
+distance_min = 100.0
+coef_attracteur = 10.0
+masse = 100.0
+metadata/_custom_type_script = "uid://y62k8gvr5ccq"
+
+[node name="Cercle" type="Node2D" parent="Truc3"]
+script = ExtResource("2_epypp")
+taille = 100.0
+couleur = Color(0.529412, 0, 0.686275, 1)
+couleur_contour = Color(4.88527e-06, 0.646586, 0.209343, 1)
+metadata/_custom_type_script = "uid://lmx8msyluii0"
+
+[node name="CollisionTruc" type="Area2D" parent="Truc3"]
+script = ExtResource("4_rj586")
+metadata/_custom_type_script = "uid://cxceu5m5bneah"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Truc3/CollisionTruc"]
+shape = SubResource("CircleShape2D_ir8iy")
+
 [node name="Node" type="Node" parent="."]
 script = ExtResource("6_kdubu")
+constante_g = 10.0
 
 [node name="Suiveur" type="Node2D" parent="." node_paths=PackedStringArray("cible")]
 script = ExtResource("7_d21ai")
@@ -106,3 +137,16 @@ cible = NodePath("../Pion")
 vitesse_rattrapage = 3.0
 
 [node name="Camera2D" type="Camera2D" parent="Suiveur"]
+
+[node name="Node2D" type="Node2D" parent="Suiveur/Camera2D"]
+position = Vector2(-849, -437)
+
+[node name="JoyeuxBatonInput" type="Node2D" parent="Suiveur/Camera2D/Node2D"]
+script = ExtResource("3_epypp")
+input_haut = &"avant"
+input_bas = &"arriere"
+input_gauche = &"gauche"
+input_droite = &"droite"
+grande_couleur = Color(0.545098, 0, 0, 1)
+pos_gauche = false
+zone_morte = 0.1

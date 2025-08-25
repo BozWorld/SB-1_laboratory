@@ -1,4 +1,5 @@
 extends Node2D
+class_name Cercle
 
 @export var taille := 20.0
 @export var taille_contour := 5.0

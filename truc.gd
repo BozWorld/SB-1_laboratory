@@ -12,6 +12,7 @@ class_name Truc
 @onready var inv_masse : float = 1.0/masse
 
 
+
 var velocite := Vector2.ZERO
 var acceleration := Vector2.ZERO
 

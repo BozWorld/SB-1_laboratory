@@ -4,7 +4,7 @@ extends TrucGravitationnel
 @export var vitesse := 2.0
 
 func appliquerFrottement():
-	appliquerForce(-(velocite + acceleration) * 0.1, "Frottement")
+	appliquerForce(-(velocite + acceleration) * 0.9, "Frottement")
 	#print(velocite)
 	#print(acceleration)
 	
