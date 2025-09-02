@@ -37,6 +37,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Merde" type="Button" parent="UiAction"]
+layout_mode = 0
 offset_left = 982.0
 offset_top = 285.0
 offset_right = 1115.0
@@ -45,6 +46,7 @@ theme_override_font_sizes/font_size = 40
 text = "Merde"
 
 [node name="Haut" type="Button" parent="UiAction"]
+layout_mode = 0
 offset_left = 566.0
 offset_top = 53.0
 offset_right = 699.0
@@ -53,6 +55,7 @@ theme_override_font_sizes/font_size = 40
 text = "Haut"
 
 [node name="Bas" type="Button" parent="UiAction"]
+layout_mode = 0
 offset_left = 562.0
 offset_top = 522.0
 offset_right = 695.0
@@ -61,6 +64,7 @@ theme_override_font_sizes/font_size = 40
 text = "Bas"
 
 [node name="Gauche" type="Button" parent="UiAction"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 304.0
 offset_right = 194.0
@@ -69,6 +73,7 @@ theme_override_font_sizes/font_size = 40
 text = "Gauche"
 
 [node name="Attaque" type="Button" parent="UiAction"]
+layout_mode = 0
 offset_left = 947.0
 offset_top = 470.0
 offset_right = 1109.0

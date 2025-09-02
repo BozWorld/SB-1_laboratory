@@ -3,9 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c30p6a5i6nimj"
-path.etc2="res://.godot/imported/orque fin rigg_Diffuse Texture.png-6e99a05c2f1fcb9b8da082672b392a3f.etc2.ctex"
+path.s3tc="res://.godot/imported/orque fin rigg_Diffuse Texture.png-6e99a05c2f1fcb9b8da082672b392a3f.s3tc.ctex"
 metadata={
-"imported_formats": ["etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/orque fin rigg_Diffuse Texture.png"
-dest_files=["res://.godot/imported/orque fin rigg_Diffuse Texture.png-6e99a05c2f1fcb9b8da082672b392a3f.etc2.ctex"]
+dest_files=["res://.godot/imported/orque fin rigg_Diffuse Texture.png-6e99a05c2f1fcb9b8da082672b392a3f.s3tc.ctex"]
 
 [params]
 
