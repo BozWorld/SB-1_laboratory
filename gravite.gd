@@ -1,3 +1,3 @@
 extends Node
 
-var constante_g = 0.2
+@export var constante_g = 0.9
