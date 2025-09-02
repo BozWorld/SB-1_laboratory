@@ -86,6 +86,7 @@ unique_name_in_owner = true
 script = ExtResource("2_cjsjn")
 
 [node name="GestPlans" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("3_35hl6")
 
 [node name="Truc" type="Node2D" parent="." groups=["persos"]]
@@ -148,7 +149,6 @@ couleur_contour = Color(0.556863, 0.482353, 0.752941, 0)
 metadata/_custom_type_script = "uid://lmx8msyluii0"
 
 [node name="Truc2" type="Node2D" parent="." groups=["persos"]]
-modulate = Color(1, 1, 1, 0.596078)
 position = Vector2(761, 462)
 script = ExtResource("3_mwtuu")
 plan = 1
@@ -183,7 +183,6 @@ couleur_contour = Color(0.556863, 0.482353, 0.752941, 0)
 metadata/_custom_type_script = "uid://lmx8msyluii0"
 
 [node name="Truc3" type="Node2D" parent="." groups=["persos"]]
-modulate = Color(1, 1, 1, 0.298039)
 position = Vector2(419, 239)
 script = ExtResource("3_mwtuu")
 plan = 2

@@ -7,7 +7,10 @@ var plan_actuel := 0
 var changement_sup := Color(1.0,0.0,0.0,0.3)
 var changement_inf := Color(0.0,0.0,1.0,0.3)
 
-func logiquePlans():
+func logiquePlans(plan := -1):
+	if plan != -1 :
+		plan_actuel = plan
+	
 	if plan_actuel == 0 :
 		for perso in get_tree().get_nodes_in_group("persos") :
 			if perso.plan == plan_actuel :
@@ -32,3 +35,12 @@ func logiquePlans():
 				perso.modulate = Color.WHITE.lerp(changement_sup, 0.8)
 			elif perso.plan == 1 :
 				perso.modulate = Color.WHITE.lerp(changement_inf, 0.8)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("plan_inf"):
+		plan_actuel += 1
+		logiquePlans()
+		
+	if Input.is_action_just_pressed("plan_sup"):
+		plan_actuel += 1
+		logiquePlans()

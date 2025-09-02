@@ -58,15 +58,17 @@ func _on_haut_pressed() -> void:
 
 func _on_button_pressed() -> void:
 	plan += 1
-	if plan == 3 :
+	if plan >= 3 :
 		plan = 0
-		modulate = Color(1.0,1.0,1.0,1.0)
 	
-	if plan == 1 :
-		modulate = Color(1.0,1.0,1.0,0.7)
-	
-	elif plan == 2 :
-		modulate = Color(1.0,1.0,1.0,0.4)
+	%GestPlans.logiquePlans()
+		#modulate = Color(1.0,1.0,1.0,1.0)
+	#
+	#if plan == 1 :
+		#modulate = Color(1.0,1.0,1.0,0.7)
+	#
+	#elif plan == 2 :
+		#modulate = Color(1.0,1.0,1.0,0.4)
 
 
 
