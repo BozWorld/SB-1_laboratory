@@ -26,6 +26,7 @@ enabled=PackedStringArray()
 [global_group]
 
 objets_gravitationnels=""
+persos=""
 
 [input]
 

@@ -11,5 +11,3 @@ func collisionDetectee(area: Area2D) -> void:
 		var force = area.truc.velocite * area.truc.masse
 		truc.appliquerForce(force, "Collision avec " + area.truc.name)
 		
-		
-		
