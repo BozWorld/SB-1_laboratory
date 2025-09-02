@@ -5,7 +5,7 @@ extends Node
 var stop := true
 
 func _physics_process(delta: float) -> void:
-	print(gest_persos.checkPersos()["persos"])
+	#print(gest_persos.checkPersos()["persos"])
 	if !gest_persos.checkPersos()["pause"] :
 		stop = false
 		if %UiAction.visible :
@@ -16,8 +16,9 @@ func _physics_process(delta: float) -> void:
 		stop = true
 		gest_persos.checkPersos()
 		var persos_prets = gest_persos.checkPersos()["persos"]
-		persos_prets[0].tour = true
-		%GestPlans.logiquePlans(persos_prets[0].plan)
+		if persos_prets[0].tour != true :
+			persos_prets[0].tour = true
+			%GestPlans.mettrePlan(persos_prets[0].plan)
 		
 		if !%UiAction.visible :
 			%UiAction.show()

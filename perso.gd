@@ -9,6 +9,7 @@ var cd_restant : int = 0
 
 var atak = false
 
+@onready var visuel = $Cercle
 
 func action(cd : int):
 	pret = false
@@ -25,7 +26,7 @@ func logiqueIllogique():
 		get_child(0).couleur_contour = Color.RED
 		if atak :
 			atak = false
-			%atk.disabled = false
+			%atk.disabled = true
 			$Node2D/Cercle.hide()
 		
 	else :

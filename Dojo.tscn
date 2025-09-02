@@ -1,6 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://c5cidx5skskbf"]
+[gd_scene load_steps=18 format=3 uid="uid://c5cidx5skskbf"]
 
 [ext_resource type="Script" uid="uid://cx8klvuna36tp" path="res://logique_yomi.gd" id="1_ay38r"]
+[ext_resource type="Script" uid="uid://byrl65n5381c5" path="res://fondyomi.gd" id="1_vuk18"]
+[ext_resource type="Texture2D" uid="uid://omhh2icwei67" path="res://Sans titre.png" id="2_0vkca"]
 [ext_resource type="Script" uid="uid://cvkidgomvpgad" path="res://persos.gd" id="2_cjsjn"]
 [ext_resource type="Script" uid="uid://lmx8msyluii0" path="res://cercle.gd" id="2_s2rwp"]
 [ext_resource type="Script" uid="uid://dqac0jbwmvytj" path="res://GestionnairePlans.gd" id="3_35hl6"]
@@ -17,69 +19,24 @@
 radius = 44.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0tr31"]
-radius = 80.0
+radius = 120.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ijand"]
 size = Vector2(5000, 200)
 
 [node name="Dojo" type="Node2D"]
 
+[node name="Fond" type="Node2D" parent="."]
+script = ExtResource("1_vuk18")
+
+[node name="Sprite2D" type="Sprite2D" parent="Fond"]
+position = Vector2(560, 278)
+scale = Vector2(4.55402, 3.20447)
+texture = ExtResource("2_0vkca")
+
 [node name="LogiqueYomi" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_ay38r")
-
-[node name="UiAction" type="Control" parent="."]
-unique_name_in_owner = true
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Merde" type="Button" parent="UiAction"]
-layout_mode = 0
-offset_left = 982.0
-offset_top = 285.0
-offset_right = 1115.0
-offset_bottom = 348.0
-theme_override_font_sizes/font_size = 40
-text = "Merde"
-
-[node name="Haut" type="Button" parent="UiAction"]
-layout_mode = 0
-offset_left = 566.0
-offset_top = 53.0
-offset_right = 699.0
-offset_bottom = 116.0
-theme_override_font_sizes/font_size = 40
-text = "Haut"
-
-[node name="Bas" type="Button" parent="UiAction"]
-layout_mode = 0
-offset_left = 562.0
-offset_top = 522.0
-offset_right = 695.0
-offset_bottom = 585.0
-theme_override_font_sizes/font_size = 40
-text = "Bas"
-
-[node name="Gauche" type="Button" parent="UiAction"]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 304.0
-offset_right = 194.0
-offset_bottom = 367.0
-theme_override_font_sizes/font_size = 40
-text = "Gauche"
-
-[node name="Attaque" type="Button" parent="UiAction"]
-layout_mode = 0
-offset_left = 947.0
-offset_top = 470.0
-offset_right = 1109.0
-offset_bottom = 533.0
-theme_override_font_sizes/font_size = 40
-text = "Attaque"
 
 [node name="GestPersos" type="Node" parent="."]
 unique_name_in_owner = true
@@ -89,16 +46,29 @@ script = ExtResource("2_cjsjn")
 unique_name_in_owner = true
 script = ExtResource("3_35hl6")
 
+[node name="UiPlans" type="RichTextLabel" parent="GestPlans"]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -164.5
+offset_right = 165.5
+offset_bottom = 93.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center][font_size=30]Plan 0"
+
 [node name="Truc" type="Node2D" parent="." groups=["persos"]]
 unique_name_in_owner = true
 position = Vector2(75, 262)
 script = ExtResource("3_mwtuu")
-masse = 10.0
+masse = 30.0
 metadata/_custom_type_script = "uid://b2qrmh3quflo"
 
 [node name="Cercle" type="Node2D" parent="Truc"]
 script = ExtResource("2_s2rwp")
 taille = 44.0
+couleur_contour = Color(1, 1, 1, 1)
 metadata/_custom_type_script = "uid://lmx8msyluii0"
 
 [node name="CollisionTruc" type="Area2D" parent="Truc"]
@@ -137,7 +107,7 @@ disabled = true
 [node name="Cercle" type="Node2D" parent="Truc/Node2D"]
 visible = false
 script = ExtResource("2_s2rwp")
-taille = 80.0
+taille = 120.0
 couleur = Color(0, 0, 0, 0)
 metadata/_custom_type_script = "uid://lmx8msyluii0"
 
@@ -158,6 +128,7 @@ metadata/_custom_type_script = "uid://b2qrmh3quflo"
 [node name="Cercle" type="Node2D" parent="Truc2"]
 script = ExtResource("2_s2rwp")
 taille = 44.0
+couleur_contour = Color(1, 1, 1, 1)
 metadata/_custom_type_script = "uid://lmx8msyluii0"
 
 [node name="CollisionTruc" type="Area2D" parent="Truc2"]
@@ -192,6 +163,7 @@ metadata/_custom_type_script = "uid://b2qrmh3quflo"
 [node name="Cercle" type="Node2D" parent="Truc3"]
 script = ExtResource("2_s2rwp")
 taille = 44.0
+couleur_contour = Color(1, 1, 1, 1)
 metadata/_custom_type_script = "uid://lmx8msyluii0"
 
 [node name="CollisionTruc" type="Area2D" parent="Truc3"]
@@ -252,6 +224,63 @@ script = ExtResource("9_rfggm")
 position = Vector2(-54.3932, -458.5)
 shape = SubResource("RectangleShape2D_ijand")
 
+[node name="UiAction" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -0.00012207
+offset_top = 3.05176e-05
+offset_right = 39.9999
+offset_bottom = 40.0
+
+[node name="Merde" type="Button" parent="UiAction"]
+layout_mode = 0
+offset_left = 982.0
+offset_top = 285.0
+offset_right = 1115.0
+offset_bottom = 348.0
+theme_override_font_sizes/font_size = 40
+text = "Merde"
+
+[node name="Haut" type="Button" parent="UiAction"]
+layout_mode = 0
+offset_left = 566.0
+offset_top = 53.0
+offset_right = 699.0
+offset_bottom = 116.0
+theme_override_font_sizes/font_size = 40
+text = "Haut"
+
+[node name="Bas" type="Button" parent="UiAction"]
+layout_mode = 0
+offset_left = 562.0
+offset_top = 522.0
+offset_right = 695.0
+offset_bottom = 585.0
+theme_override_font_sizes/font_size = 40
+text = "Bas"
+
+[node name="Gauche" type="Button" parent="UiAction"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 304.0
+offset_right = 194.0
+offset_bottom = 367.0
+theme_override_font_sizes/font_size = 40
+text = "Gauche"
+
+[node name="Attaque" type="Button" parent="UiAction"]
+layout_mode = 0
+offset_left = 947.0
+offset_top = 470.0
+offset_right = 1109.0
+offset_bottom = 533.0
+theme_override_font_sizes/font_size = 40
+text = "Attaque"
+
+[connection signal="pressed" from="Truc/Button" to="Truc" method="_on_button_pressed"]
+[connection signal="area_entered" from="Truc/Node2D/Area2D" to="Truc/Node2D/Area2D" method="_on_area_entered"]
 [connection signal="pressed" from="UiAction/Merde" to="Truc" method="_on_merde_pressed"]
 [connection signal="pressed" from="UiAction/Merde" to="Truc2" method="_on_merde_pressed"]
 [connection signal="pressed" from="UiAction/Merde" to="Truc3" method="_on_merde_pressed"]
@@ -265,5 +294,3 @@ shape = SubResource("RectangleShape2D_ijand")
 [connection signal="pressed" from="UiAction/Gauche" to="Truc2" method="_on_gauche_pressed"]
 [connection signal="pressed" from="UiAction/Gauche" to="Truc3" method="_on_gauche_pressed"]
 [connection signal="pressed" from="UiAction/Attaque" to="Truc" method="_on_attaque_pressed"]
-[connection signal="pressed" from="Truc/Button" to="Truc" method="_on_button_pressed"]
-[connection signal="area_entered" from="Truc/Node2D/Area2D" to="Truc/Node2D/Area2D" method="_on_area_entered"]
