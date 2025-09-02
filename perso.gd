@@ -1,15 +1,18 @@
 extends TrucIllogique
 
 var pret := true
+var tour := false
 
-@export var dimension := 0
+@export var plan := 0
 
 var cd_restant : int = 0
 
 var atak = false
 
+
 func action(cd : int):
 	pret = false
+	tour = false
 	cd_restant = cd
 
 func logiqueIllogique():
@@ -23,47 +26,54 @@ func logiqueIllogique():
 		if atak :
 			atak = false
 			%atk.disabled = false
+			$Node2D/Cercle.hide()
 		
 	else :
 		get_child(0).couleur_contour = Color.WHITE
 
 
 func _on_merde_pressed() -> void:
-	appliquerForce(Vector2.RIGHT * 44.0)
-	action(80)
+	if tour :
+		appliquerForce(Vector2.RIGHT * 44.0)
+		action(80)
 
 
 func _on_gauche_pressed() -> void:
-	appliquerForce(Vector2.LEFT * 44.0)
-	action(50)
+	if tour :
+		appliquerForce(Vector2.LEFT * 44.0)
+		action(50)
 
 
 func _on_bas_pressed() -> void:
-	appliquerForce(Vector2.DOWN * 44.0)
-	action(20)
+	if tour :
+		appliquerForce(Vector2.DOWN * 44.0)
+		action(20)
 
 
 func _on_haut_pressed() -> void:
-	appliquerForce(Vector2.UP * 80.0)
-	action(40)
+	if tour :
+		appliquerForce(Vector2.UP * 80.0)
+		action(40)
 
 
 func _on_button_pressed() -> void:
-	dimension += 1
-	if dimension == 3 :
-		dimension = 0
+	plan += 1
+	if plan == 3 :
+		plan = 0
 		modulate = Color(1.0,1.0,1.0,1.0)
 	
-	if dimension == 1 :
+	if plan == 1 :
 		modulate = Color(1.0,1.0,1.0,0.7)
 	
-	elif dimension == 2 :
+	elif plan == 2 :
 		modulate = Color(1.0,1.0,1.0,0.4)
 
 
 
 func _on_attaque_pressed() -> void:
-	atak = true
-	%atk.disabled = false
-	action(20)
+	if tour :
+		atak = true
+		%atk.disabled = false
+		action(20)
+		$Node2D/Cercle.show()
 	

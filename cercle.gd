@@ -9,7 +9,7 @@ class_name Cercle
 @export var couleur_contour := Color.RED
 
 func _draw() -> void:
-	draw_circle(Vector2.ZERO, taille, couleur, true, 0.0)
+	draw_circle(Vector2.ZERO, taille, couleur, true)
 	draw_circle(Vector2.ZERO, taille, couleur_contour, false, taille_contour)
 
 func _process(delta: float) -> void:

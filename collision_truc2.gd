@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func collisionDetectee(area: Area2D) -> void:
 	if area is CollisionTruc2 :
-		if area.truc.dimension == truc.dimension:
+		if area.truc.plan == truc.plan:
 			var force = area.truc.velocite * area.truc.masse
 			truc.appliquerForce(force, "Collision avec " + area.truc.name)
 		

@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dtrnb6cm6m4od" path="res://pion.gd" id="1_epypp"]
 [ext_resource type="Script" uid="uid://lmx8msyluii0" path="res://cercle.gd" id="2_epypp"]
-[ext_resource type="Script" uid="uid://cko82xu5fwomc" path="res://JoyeuxBatonInput.gd" id="3_epypp"]
+[ext_resource type="Script" uid="uid://bynh0q0yfw108" path="res://JoyeuxBatonInput.gd" id="3_epypp"]
 [ext_resource type="Script" uid="uid://cseks15cdeki1" path="res://fond.gd" id="4_0hol4"]
 [ext_resource type="Script" uid="uid://cxceu5m5bneah" path="res://collision_truc.gd" id="4_rj586"]
 [ext_resource type="Script" uid="uid://y62k8gvr5ccq" path="res://truc_attraction.gd" id="5_q6r6c"]
-[ext_resource type="Script" uid="uid://cwvc6d8u1xm53" path="res://gest_grav.gd" id="6_kdubu"]
+[ext_resource type="Script" uid="uid://bgy7g4ciotoex" path="res://gest_grav.gd" id="6_kdubu"]
 [ext_resource type="Script" uid="uid://pr7jn1my4s25" path="res://suiveur.gd" id="7_d21ai"]
 
 [sub_resource type="Gradient" id="Gradient_d21ai"]

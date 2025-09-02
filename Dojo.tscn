@@ -1,14 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5cidx5skskbf"]
+[gd_scene load_steps=16 format=3 uid="uid://c5cidx5skskbf"]
 
 [ext_resource type="Script" uid="uid://cx8klvuna36tp" path="res://logique_yomi.gd" id="1_ay38r"]
 [ext_resource type="Script" uid="uid://cvkidgomvpgad" path="res://persos.gd" id="2_cjsjn"]
 [ext_resource type="Script" uid="uid://lmx8msyluii0" path="res://cercle.gd" id="2_s2rwp"]
+[ext_resource type="Script" uid="uid://dqac0jbwmvytj" path="res://GestionnairePlans.gd" id="3_35hl6"]
 [ext_resource type="Script" uid="uid://d0iywp11rwnwy" path="res://perso.gd" id="3_mwtuu"]
 [ext_resource type="Script" uid="uid://dmf4iab57wd6x" path="res://gravite.gd" id="5_cjsjn"]
 [ext_resource type="Script" uid="uid://dwlnm1bey5lph" path="res://collision_truc2.gd" id="5_xcbw4"]
 [ext_resource type="Script" uid="uid://gq3tasvyh82i" path="res://area_2d.gd" id="6_ijand"]
 [ext_resource type="Script" uid="uid://ctcx8ed30env4" path="res://compteurframes.gd" id="6_m8kdg"]
 [ext_resource type="Script" uid="uid://bdfcbooebwnar" path="res://sol.gd" id="7_m8kdg"]
+[ext_resource type="Script" uid="uid://qxod4rmjwkoa" path="res://cercle_tour.gd" id="8_0tr31"]
 [ext_resource type="Script" uid="uid://b0m5q4xqiqygk" path="res://mur.gd" id="9_rfggm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rfggm"]
@@ -26,129 +28,15 @@ size = Vector2(5000, 200)
 unique_name_in_owner = true
 script = ExtResource("1_ay38r")
 
-[node name="Plan1" type="Node2D" parent="."]
-
-[node name="Truc" type="Node2D" parent="Plan1" groups=["persos"]]
+[node name="UiAction" type="Control" parent="."]
 unique_name_in_owner = true
-position = Vector2(75, 262)
-script = ExtResource("3_mwtuu")
-masse = 10.0
-metadata/_custom_type_script = "uid://b2qrmh3quflo"
-
-[node name="Cercle" type="Node2D" parent="Plan1/Truc"]
-script = ExtResource("2_s2rwp")
-taille = 44.0
-metadata/_custom_type_script = "uid://lmx8msyluii0"
-
-[node name="CollisionTruc" type="Area2D" parent="Plan1/Truc"]
-script = ExtResource("5_xcbw4")
-metadata/_custom_type_script = "uid://dwlnm1bey5lph"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Plan1/Truc/CollisionTruc"]
-shape = SubResource("CircleShape2D_rfggm")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Plan1/Truc"]
-offset_left = -140.0
-offset_top = -129.0
-offset_right = 145.0
-offset_bottom = -49.0
-bbcode_enabled = true
-script = ExtResource("6_m8kdg")
-
-[node name="Button" type="Button" parent="Plan1/Truc"]
-offset_left = -50.0
-offset_top = 64.0
-offset_right = 61.0
-offset_bottom = 127.0
-theme_override_font_sizes/font_size = 40
-text = "Swap"
-
-[node name="Node2D" type="Node2D" parent="Plan1/Truc"]
-
-[node name="Area2D" type="Area2D" parent="Plan1/Truc/Node2D"]
-script = ExtResource("6_ijand")
-
-[node name="atk" type="CollisionShape2D" parent="Plan1/Truc/Node2D/Area2D"]
-unique_name_in_owner = true
-shape = SubResource("CircleShape2D_0tr31")
-
-[node name="Cercle" type="Node2D" parent="Plan1/Truc/Node2D"]
-unique_name_in_owner = true
-script = ExtResource("2_s2rwp")
-taille = 80.0
-couleur = Color(0, 0, 0, 0)
-metadata/_custom_type_script = "uid://lmx8msyluii0"
-
-[node name="Plan2" type="Node2D" parent="."]
-modulate = Color(1, 1, 1, 0.721569)
-
-[node name="Truc" type="Node2D" parent="Plan2" groups=["persos"]]
-position = Vector2(761, 462)
-script = ExtResource("3_mwtuu")
-dimension = 1
-masse = 10.0
-metadata/_custom_type_script = "uid://b2qrmh3quflo"
-
-[node name="Cercle" type="Node2D" parent="Plan2/Truc"]
-script = ExtResource("2_s2rwp")
-taille = 44.0
-metadata/_custom_type_script = "uid://lmx8msyluii0"
-
-[node name="CollisionTruc" type="Area2D" parent="Plan2/Truc"]
-script = ExtResource("5_xcbw4")
-metadata/_custom_type_script = "uid://dwlnm1bey5lph"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Plan2/Truc/CollisionTruc"]
-shape = SubResource("CircleShape2D_rfggm")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Plan2/Truc"]
 visible = false
-offset_left = -140.0
-offset_top = -129.0
-offset_right = 145.0
-offset_bottom = -49.0
-bbcode_enabled = true
-script = ExtResource("6_m8kdg")
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Plan3" type="Node2D" parent="."]
-modulate = Color(1, 1, 1, 0.396078)
-
-[node name="Truc" type="Node2D" parent="Plan3" groups=["persos"]]
-position = Vector2(419, 239)
-script = ExtResource("3_mwtuu")
-dimension = 2
-masse = 10.0
-metadata/_custom_type_script = "uid://b2qrmh3quflo"
-
-[node name="Cercle" type="Node2D" parent="Plan3/Truc"]
-script = ExtResource("2_s2rwp")
-taille = 44.0
-metadata/_custom_type_script = "uid://lmx8msyluii0"
-
-[node name="CollisionTruc" type="Area2D" parent="Plan3/Truc"]
-script = ExtResource("5_xcbw4")
-metadata/_custom_type_script = "uid://dwlnm1bey5lph"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Plan3/Truc/CollisionTruc"]
-shape = SubResource("CircleShape2D_rfggm")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Plan3/Truc"]
-offset_left = -140.0
-offset_top = -129.0
-offset_right = 145.0
-offset_bottom = -49.0
-bbcode_enabled = true
-script = ExtResource("6_m8kdg")
-
-[node name="GestPersos" type="Node2D" parent="."]
-unique_name_in_owner = true
-script = ExtResource("2_cjsjn")
-
-[node name="Gravite" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("5_cjsjn")
-
-[node name="Merde" type="Button" parent="."]
+[node name="Merde" type="Button" parent="UiAction"]
 offset_left = 982.0
 offset_top = 285.0
 offset_right = 1115.0
@@ -156,7 +44,7 @@ offset_bottom = 348.0
 theme_override_font_sizes/font_size = 40
 text = "Merde"
 
-[node name="Haut" type="Button" parent="."]
+[node name="Haut" type="Button" parent="UiAction"]
 offset_left = 566.0
 offset_top = 53.0
 offset_right = 699.0
@@ -164,7 +52,7 @@ offset_bottom = 116.0
 theme_override_font_sizes/font_size = 40
 text = "Haut"
 
-[node name="Bas" type="Button" parent="."]
+[node name="Bas" type="Button" parent="UiAction"]
 offset_left = 562.0
 offset_top = 522.0
 offset_right = 695.0
@@ -172,7 +60,7 @@ offset_bottom = 585.0
 theme_override_font_sizes/font_size = 40
 text = "Bas"
 
-[node name="Gauche" type="Button" parent="."]
+[node name="Gauche" type="Button" parent="UiAction"]
 offset_left = 40.0
 offset_top = 304.0
 offset_right = 194.0
@@ -180,19 +68,160 @@ offset_bottom = 367.0
 theme_override_font_sizes/font_size = 40
 text = "Gauche"
 
-[node name="Attaque" type="Button" parent="."]
+[node name="Attaque" type="Button" parent="UiAction"]
 offset_left = 947.0
 offset_top = 470.0
-offset_right = 1101.0
+offset_right = 1109.0
 offset_bottom = 533.0
 theme_override_font_sizes/font_size = 40
 text = "Attaque"
+
+[node name="GestPersos" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_cjsjn")
+
+[node name="GestPlans" type="Node" parent="."]
+script = ExtResource("3_35hl6")
+
+[node name="Truc" type="Node2D" parent="." groups=["persos"]]
+unique_name_in_owner = true
+position = Vector2(75, 262)
+script = ExtResource("3_mwtuu")
+masse = 10.0
+metadata/_custom_type_script = "uid://b2qrmh3quflo"
+
+[node name="Cercle" type="Node2D" parent="Truc"]
+script = ExtResource("2_s2rwp")
+taille = 44.0
+metadata/_custom_type_script = "uid://lmx8msyluii0"
+
+[node name="CollisionTruc" type="Area2D" parent="Truc"]
+script = ExtResource("5_xcbw4")
+metadata/_custom_type_script = "uid://dwlnm1bey5lph"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Truc/CollisionTruc"]
+shape = SubResource("CircleShape2D_rfggm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Truc"]
+offset_left = -140.0
+offset_top = -129.0
+offset_right = 145.0
+offset_bottom = -49.0
+bbcode_enabled = true
+script = ExtResource("6_m8kdg")
+
+[node name="Button" type="Button" parent="Truc"]
+offset_left = -50.0
+offset_top = 64.0
+offset_right = 61.0
+offset_bottom = 127.0
+theme_override_font_sizes/font_size = 40
+text = "Swap"
+
+[node name="Node2D" type="Node2D" parent="Truc"]
+
+[node name="Area2D" type="Area2D" parent="Truc/Node2D"]
+script = ExtResource("6_ijand")
+
+[node name="atk" type="CollisionShape2D" parent="Truc/Node2D/Area2D"]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_0tr31")
+disabled = true
+
+[node name="Cercle" type="Node2D" parent="Truc/Node2D"]
+visible = false
+script = ExtResource("2_s2rwp")
+taille = 80.0
+couleur = Color(0, 0, 0, 0)
+metadata/_custom_type_script = "uid://lmx8msyluii0"
+
+[node name="CercleTour" type="Node2D" parent="Truc"]
+script = ExtResource("8_0tr31")
+taille = 55.0
+couleur = Color(0, 0, 0, 0)
+couleur_contour = Color(0.556863, 0.482353, 0.752941, 0)
+metadata/_custom_type_script = "uid://lmx8msyluii0"
+
+[node name="Truc2" type="Node2D" parent="." groups=["persos"]]
+modulate = Color(1, 1, 1, 0.596078)
+position = Vector2(761, 462)
+script = ExtResource("3_mwtuu")
+plan = 1
+masse = 10.0
+metadata/_custom_type_script = "uid://b2qrmh3quflo"
+
+[node name="Cercle" type="Node2D" parent="Truc2"]
+script = ExtResource("2_s2rwp")
+taille = 44.0
+metadata/_custom_type_script = "uid://lmx8msyluii0"
+
+[node name="CollisionTruc" type="Area2D" parent="Truc2"]
+script = ExtResource("5_xcbw4")
+metadata/_custom_type_script = "uid://dwlnm1bey5lph"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Truc2/CollisionTruc"]
+shape = SubResource("CircleShape2D_rfggm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Truc2"]
+offset_left = -140.0
+offset_top = -129.0
+offset_right = 145.0
+offset_bottom = -49.0
+bbcode_enabled = true
+script = ExtResource("6_m8kdg")
+
+[node name="CercleTour" type="Node2D" parent="Truc2"]
+script = ExtResource("8_0tr31")
+taille = 55.0
+couleur = Color(0, 0, 0, 0)
+couleur_contour = Color(0.556863, 0.482353, 0.752941, 0)
+metadata/_custom_type_script = "uid://lmx8msyluii0"
+
+[node name="Truc3" type="Node2D" parent="." groups=["persos"]]
+modulate = Color(1, 1, 1, 0.298039)
+position = Vector2(419, 239)
+script = ExtResource("3_mwtuu")
+plan = 2
+masse = 10.0
+metadata/_custom_type_script = "uid://b2qrmh3quflo"
+
+[node name="Cercle" type="Node2D" parent="Truc3"]
+script = ExtResource("2_s2rwp")
+taille = 44.0
+metadata/_custom_type_script = "uid://lmx8msyluii0"
+
+[node name="CollisionTruc" type="Area2D" parent="Truc3"]
+script = ExtResource("5_xcbw4")
+metadata/_custom_type_script = "uid://dwlnm1bey5lph"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Truc3/CollisionTruc"]
+shape = SubResource("CircleShape2D_rfggm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Truc3"]
+offset_left = -140.0
+offset_top = -129.0
+offset_right = 145.0
+offset_bottom = -49.0
+bbcode_enabled = true
+script = ExtResource("6_m8kdg")
+
+[node name="CercleTour" type="Node2D" parent="Truc3"]
+script = ExtResource("8_0tr31")
+taille = 55.0
+couleur = Color(0, 0, 0, 0)
+couleur_contour = Color(0.556863, 0.482353, 0.752941, 0)
+metadata/_custom_type_script = "uid://lmx8msyluii0"
+
+[node name="Gravite" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_cjsjn")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(644, 958)
 script = ExtResource("7_m8kdg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-38, -201)
 shape = SubResource("RectangleShape2D_ijand")
 
 [node name="Area2D3" type="Area2D" parent="."]
@@ -208,30 +237,29 @@ rotation = -1.56122
 script = ExtResource("9_rfggm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-visible = false
 shape = SubResource("RectangleShape2D_ijand")
 
 [node name="Area2D4" type="Area2D" parent="."]
-visible = false
 position = Vector2(1726, 286)
 rotation = -1.56122
 script = ExtResource("9_rfggm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(-54.3932, -458.5)
 shape = SubResource("RectangleShape2D_ijand")
 
-[connection signal="pressed" from="Plan1/Truc/Button" to="Plan1/Truc" method="_on_button_pressed"]
-[connection signal="area_entered" from="Plan1/Truc/Node2D/Area2D" to="Plan1/Truc/Node2D/Area2D" method="_on_area_entered"]
-[connection signal="pressed" from="Merde" to="Plan1/Truc" method="_on_merde_pressed"]
-[connection signal="pressed" from="Merde" to="Plan2/Truc" method="_on_merde_pressed"]
-[connection signal="pressed" from="Merde" to="Plan3/Truc" method="_on_merde_pressed"]
-[connection signal="pressed" from="Haut" to="Plan1/Truc" method="_on_haut_pressed"]
-[connection signal="pressed" from="Haut" to="Plan2/Truc" method="_on_haut_pressed"]
-[connection signal="pressed" from="Haut" to="Plan3/Truc" method="_on_haut_pressed"]
-[connection signal="pressed" from="Bas" to="Plan1/Truc" method="_on_bas_pressed"]
-[connection signal="pressed" from="Bas" to="Plan2/Truc" method="_on_bas_pressed"]
-[connection signal="pressed" from="Bas" to="Plan3/Truc" method="_on_bas_pressed"]
-[connection signal="pressed" from="Gauche" to="Plan1/Truc" method="_on_gauche_pressed"]
-[connection signal="pressed" from="Gauche" to="Plan2/Truc" method="_on_gauche_pressed"]
-[connection signal="pressed" from="Gauche" to="Plan3/Truc" method="_on_gauche_pressed"]
-[connection signal="pressed" from="Attaque" to="Plan1/Truc" method="_on_attaque_pressed"]
+[connection signal="pressed" from="UiAction/Merde" to="Truc" method="_on_merde_pressed"]
+[connection signal="pressed" from="UiAction/Merde" to="Truc2" method="_on_merde_pressed"]
+[connection signal="pressed" from="UiAction/Merde" to="Truc3" method="_on_merde_pressed"]
+[connection signal="pressed" from="UiAction/Haut" to="Truc" method="_on_haut_pressed"]
+[connection signal="pressed" from="UiAction/Haut" to="Truc2" method="_on_haut_pressed"]
+[connection signal="pressed" from="UiAction/Haut" to="Truc3" method="_on_haut_pressed"]
+[connection signal="pressed" from="UiAction/Bas" to="Truc" method="_on_bas_pressed"]
+[connection signal="pressed" from="UiAction/Bas" to="Truc2" method="_on_bas_pressed"]
+[connection signal="pressed" from="UiAction/Bas" to="Truc3" method="_on_bas_pressed"]
+[connection signal="pressed" from="UiAction/Gauche" to="Truc" method="_on_gauche_pressed"]
+[connection signal="pressed" from="UiAction/Gauche" to="Truc2" method="_on_gauche_pressed"]
+[connection signal="pressed" from="UiAction/Gauche" to="Truc3" method="_on_gauche_pressed"]
+[connection signal="pressed" from="UiAction/Attaque" to="Truc" method="_on_attaque_pressed"]
+[connection signal="pressed" from="Truc/Button" to="Truc" method="_on_button_pressed"]
+[connection signal="area_entered" from="Truc/Node2D/Area2D" to="Truc/Node2D/Area2D" method="_on_area_entered"]

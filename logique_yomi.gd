@@ -2,9 +2,22 @@ extends Node
 
 @onready var gest_persos = %GestPersos
 
-var stop := tr
+var stop := true
 
 func _physics_process(delta: float) -> void:
-	if !gest_persos.checkPersos() :
+	print(gest_persos.checkPersos()["persos"])
+	if !gest_persos.checkPersos()["pause"] :
+		stop = false
+		if %UiAction.visible :
+			%UiAction.hide()
+		
 		gest_persos.logiquePersos()
+	else :
+		stop = true
+		gest_persos.checkPersos()
+		var persos_prets = gest_persos.checkPersos()["persos"]
+		persos_prets[0].tour = true
+		
+		if !%UiAction.visible :
+			%UiAction.show()
 	
