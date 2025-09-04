@@ -28,7 +28,7 @@ func logiqueIllogique():
 		if atak :
 			atak = false
 			%atk.disabled = true
-			$Node2D/Cercle.hide()
+			$Attaque/Cercle.hide()
 		
 	else :
 		get_child(0).couleur_contour = Color.WHITE
@@ -95,6 +95,6 @@ func _on_attaque_pressed() -> void:
 	if tour :
 		atak = true
 		%atk.disabled = false
-		action(20)
-		$Node2D/Cercle.show()
+		action(30)
+		$Attaque/Cercle.show()
 	

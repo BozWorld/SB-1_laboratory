@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Action" load_steps=2 format=3 uid="uid://dy8mralguc6ci"]
+
+[ext_resource type="Script" uid="uid://dk2vjkgm74ude" path="res://resAction.gd" id="1_i4spn"]
+
+[resource]
+script = ExtResource("1_i4spn")
+nom = ""
+deplacement_brut = Vector2(0, 0)
+deplacement_physique = Vector2(0, 0)
+flex_deplacement_brut = false
+flex_deplacement_physique = false
+taperboites = false
+orientation_base = 0.0
+flex_orientation = false
+changement_plan = 0
+metadata/_custom_type_script = "uid://dk2vjkgm74ude"

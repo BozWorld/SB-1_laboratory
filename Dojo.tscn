@@ -95,17 +95,18 @@ offset_bottom = -87.0
 theme_override_font_sizes/font_size = 40
 text = "Swap"
 
-[node name="Node2D" type="Node2D" parent="Truc"]
+[node name="Attaque" type="Node2D" parent="Truc"]
+position = Vector2(864, 3)
 
-[node name="Area2D" type="Area2D" parent="Truc/Node2D"]
+[node name="Area2D" type="Area2D" parent="Truc/Attaque"]
 script = ExtResource("6_ijand")
 
-[node name="atk" type="CollisionShape2D" parent="Truc/Node2D/Area2D"]
+[node name="atk" type="CollisionShape2D" parent="Truc/Attaque/Area2D"]
 unique_name_in_owner = true
 shape = SubResource("CircleShape2D_0tr31")
 disabled = true
 
-[node name="Cercle" type="Node2D" parent="Truc/Node2D"]
+[node name="Cercle" type="Node2D" parent="Truc/Attaque"]
 visible = false
 script = ExtResource("2_s2rwp")
 taille = 120.0
@@ -118,6 +119,8 @@ taille = 55.0
 couleur = Color(0, 0, 0, 0)
 couleur_contour = Color(0.556863, 0.482353, 0.752941, 0)
 metadata/_custom_type_script = "uid://lmx8msyluii0"
+
+[node name="Levier" type="Node2D" parent="Truc"]
 
 [node name="Truc2" type="Node2D" parent="." groups=["persos"]]
 position = Vector2(1046, 579)
@@ -280,7 +283,7 @@ theme_override_font_sizes/font_size = 40
 text = "Attaque"
 
 [connection signal="pressed" from="Truc/Button" to="Truc" method="_on_button_pressed"]
-[connection signal="area_entered" from="Truc/Node2D/Area2D" to="Truc/Node2D/Area2D" method="_on_area_entered"]
+[connection signal="area_entered" from="Truc/Attaque/Area2D" to="Truc/Attaque/Area2D" method="_on_area_entered"]
 [connection signal="pressed" from="UiAction/Merde" to="Truc" method="_on_merde_pressed"]
 [connection signal="pressed" from="UiAction/Merde" to="Truc2" method="_on_merde_pressed"]
 [connection signal="pressed" from="UiAction/Merde" to="Truc3" method="_on_merde_pressed"]
