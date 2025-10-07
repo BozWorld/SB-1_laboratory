@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://da3svi626742x"]
 
-[ext_resource type="Shader" uid="uid://crjflebiqdqjd" path="res://ocean_surface.gdshader" id="1_76nci"]
+[ext_resource type="Shader" uid="uid://crjflebiqdqjd" path="res://assets/ocean_surface.gdshader" id="1_76nci"]
 [ext_resource type="Texture2D" uid="uid://bvetqx0m03oxc" path="res://assets/2d/texture/clear+sea+water-2048x2048.png" id="2_nr14a"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_nr14a"]

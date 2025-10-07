@@ -12,11 +12,6 @@ func _ready() -> void:
 	ring_material = original_material.duplicate() if original_material else StandardMaterial3D.new()
 	mesh_instance.set_surface_override_material(0, ring_material)
 
-	if ring_order == 0:
-		set_active(true)
-	else:
-		set_active(false)
-
 	body_entered.connect(_on_body_entered)
 
 func set_active(active: bool) -> void:
@@ -35,7 +30,6 @@ func _on_body_entered(body: Node) -> void:
 	print("Body entered: ", body.name)
 	print("is_active: ", is_active, " - Ring order: ", ring_order)
 	if is_active and body.is_in_group("player"):
-		get_tree().call_group("game_manager", "ring_passed", ring_order)
-		set_active(false)
-		get_tree().call_group("game_manager", "ring_passed", ring_order)
-		set_active(false)
+		var ring_manager = get_tree().get_first_node_in_group("ring_manager")
+		if ring_manager:
+			ring_manager.on_ring_passed(ring_order)

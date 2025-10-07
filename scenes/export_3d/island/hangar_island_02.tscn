@@ -1,6 +1,6 @@
 [gd_scene load_steps=431 format=4 uid="uid://cumecpt86pmsv"]
 
-[ext_resource type="Material" uid="uid://cv4r5lfsmffx0" path="res://scenes/export_3d/testomg/hangar_island_02.tres" id="3_4owu3"]
+[ext_resource type="Material" uid="uid://cv4r5lfsmffx0" path="res://assets/hangar_island_02.tres" id="3_4owu3"]
 [ext_resource type="Shader" uid="uid://b1hy61gbvow1g" path="res://assets/materials_textures/shader_script/pixelart_stylizer.gdshader" id="4_julc3"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_bcw0i"]
