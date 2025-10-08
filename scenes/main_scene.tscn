@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://djwtrxlgrbrhg"]
+[gd_scene load_steps=64 format=4 uid="uid://djwtrxlgrbrhg"]
 
 [ext_resource type="Script" uid="uid://cpyeiihcx4pvy" path="res://code/manager/manager.gd" id="1_iav3h"]
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="2_iav3h"]
@@ -25,13 +25,13 @@
 [ext_resource type="ArrayMesh" uid="uid://ddhucgmmhv23k" path="res://assets/materials_textures/mesh/terrain_type_mesh_01.tres" id="22_j2yw6"]
 [ext_resource type="ArrayMesh" uid="uid://d2fa7vjpqdl5m" path="res://assets/materials_textures/mesh/pillar.tres" id="23_8pjrr"]
 [ext_resource type="PackedScene" uid="uid://w217v6buuelf" path="res://scenes/export_3d/nature/flower.tscn" id="24_0xxsb"]
-[ext_resource type="Script" uid="uid://brawdrnhqwxg5" path="res://code/controller/plane.gd" id="25_wqttf"]
 [ext_resource type="Material" uid="uid://cpjggrjxtkgsx" path="res://assets/materials_textures/tres/vehicule/ship_type_02/airship.tres" id="26_77ff8"]
+[ext_resource type="Script" uid="uid://0tehukp1yylv" path="res://code/controller/PlaneController.gd" id="26_iav3h"]
 [ext_resource type="Material" uid="uid://b7asbstujckcs" path="res://assets/materials_textures/tres/vehicule/ship_type_02/controlleur.tres" id="27_wacd7"]
+[ext_resource type="Script" uid="uid://reijsy2bv6e4" path="res://code/controller/Data/FlightConfiguration.gd" id="27_womr8"]
 [ext_resource type="Material" uid="uid://0eqwcovtfk0x" path="res://assets/materials_textures/tres/vehicule/ship_type_02/Material.003.tres" id="28_c5q2x"]
 [ext_resource type="Material" uid="uid://uo8ounj1duhq" path="res://assets/materials_textures/tres/vehicule/ship_type_02/Material.004.tres" id="29_qw8n7"]
 [ext_resource type="Shader" uid="uid://b1hy61gbvow1g" path="res://assets/materials_textures/shader_script/pixelart_stylizer.gdshader" id="30_taqkn"]
-[ext_resource type="Script" uid="uid://472u4bdsvehu" path="res://code/controller/trail.gd" id="31_qnap4"]
 [ext_resource type="Script" uid="uid://pb33sqbwr1el" path="res://code/camera/camera_3d.gd" id="32_1sx6m"]
 [ext_resource type="Shader" uid="uid://crjflebiqdqjd" path="res://assets/ocean_surface.gdshader" id="33_0uct7"]
 [ext_resource type="Texture2D" uid="uid://bvetqx0m03oxc" path="res://assets/2d/texture/clear+sea+water-2048x2048.png" id="34_1a541"]
@@ -48,6 +48,10 @@ radius = 0.90758
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3t8qc"]
 size = Vector3(1.03058, 0.957762, 0.727669)
+
+[sub_resource type="Resource" id="Resource_xa0eo"]
+script = ExtResource("27_womr8")
+metadata/_custom_type_script = "uid://reijsy2bv6e4"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ytnha"]
 size = Vector3(2.59926, 1.23905, 2.39905)
@@ -5321,6 +5325,7 @@ transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -2.81557, 3.60125, -1136.7
 script = ExtResource("21_cq0lk")
 
 [node name="terrain_mesh_type_01" type="MeshInstance3D" parent="island_type_05"]
+unique_name_in_owner = true
 mesh = ExtResource("22_j2yw6")
 skeleton = NodePath("")
 
@@ -5732,20 +5737,11 @@ shape = SubResource("BoxShape3D_3t8qc")
 [node name="player" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03564, -9.94582)
 
-[node name="plane" type="CharacterBody3D" parent="player" node_paths=PackedStringArray("helice", "data", "mesh", "trail_node") groups=["player"]]
+[node name="plane" type="CharacterBody3D" parent="player" node_paths=PackedStringArray("debug_ui") groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-script = ExtResource("25_wqttf")
-max_flight_speed = 50.0
-turn_speed = 0.9
-pitch_speed = 1.0
-level_speed = 3.0
-throttle_delta = 10.0
-acceleration = 1.0
-helice = NodePath("effect/helice")
-data = NodePath("../../UI_VISUEL/CanvasLayer/data_control/data_plane")
-mesh = NodePath("avion_type_mesh_02")
-trail_node = NodePath("effect/trail")
-min_trail_speed = 10.0
+script = ExtResource("26_iav3h")
+flight_config = SubResource("Resource_xa0eo")
+debug_ui = NodePath("../../UI_VISUEL/CanvasLayer/data_control/data_plane")
 
 [node name="planeCollision" type="CollisionShape3D" parent="player/plane"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000649571, -0.0919139, -0.378846)
@@ -5772,14 +5768,6 @@ script = SubResource("GDScript_gwxm2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0112845, 0.957413)
 material_override = SubResource("StandardMaterial3D_k6h54")
 skeleton = NodePath("../../../..")
-script = ExtResource("31_qnap4")
-_largeur_debut = 0.1
-_largeur_fin = 0.07
-_vitesse_grandissement = 0.68
-_precision_trainee = 0.4
-_duree_de_vie = 0.3
-_couleur_debut = Color(0.701364, 0.420885, 0.434153, 1)
-metadata/_custom_type_script = "uid://472u4bdsvehu"
 
 [node name="spawn_point" type="Node3D" parent="player/plane/effect"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0523208, 0.0388756, 0.930359)
