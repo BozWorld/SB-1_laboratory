@@ -30,7 +30,7 @@ func get_current_time() -> float:
     return _current_time
 
 func format_time(time_seconds: float) -> String:
-    var minutes = int(time_seconds) / 60
+    var minutes = int(time_seconds) / 60.0
     var seconds = int(time_seconds) % 60
     var miliseconds = int((time_seconds - int(time_seconds)) * 100)
     return "%02d:%02d.%02d" % [minutes,seconds,miliseconds]

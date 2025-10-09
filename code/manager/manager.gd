@@ -34,6 +34,7 @@ func _initialize_manager():
 
 	_ring_manager.add_to_group("ring_manager")
 	_ring_manager.setup_rings(rings)
+	ui_manager.set_total_rings(rings.size())
 
 func _connect_signals():
 	_timer_manager.timer_updated.connect(_on_timer_updated)
@@ -82,11 +83,13 @@ func _on_timer_updated(current_time: float):
 
 func _on_ring_passed(ring_index: int):
 	ring_passed.emit(ring_index)
+	ui_manager.update_rings(ring_index + 1)
 	print("Anneau franchi: ", ring_index)
 
 func _on_all_rings_completed():
 	if last_island:
 		last_island.set_landing_available(true)
+	print("atterrissage disponible sur la dernière île !")
 	print("tout les anneaux franchis !")
 
 # === MÉTHODE PUBLIQUE ===
@@ -103,6 +106,9 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_R and event.ctrl_pressed:
 			restart_game()
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_1:
+			ui_manager.data_control.visible = not ui_manager.data_control.visible
 
 func _on_button_pressed() -> void:
 	restart_game()

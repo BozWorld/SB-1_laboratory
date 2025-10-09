@@ -14,6 +14,9 @@ var _ground_detection: GroundDetection
 var _trail_system: UnifiedTrailSystem
 var _plane_animation: PlaneAnimation
 @export var flight_config: FlightConfiguration
+@export var time_label: RichTextLabel
+@export var rings_label: RichTextLabel
+@export var landing_label: RichTextLabel
 
 # === EXPORTS ===
 @export var debug_ui: RichTextLabel
@@ -96,7 +99,8 @@ func _update_debug_info():
 			_flight_physics.get_debug_string() + "\n" +
 			_trail_system.get_debug_string() + "\n" +
 			_ground_detection.get_debug_string() + "\n" +
-			_plane_animation.get_debug_string()
+			_plane_animation.get_debug_string() + "\n"
+			
 		)
 
 func _create_default_config() -> FlightConfiguration:

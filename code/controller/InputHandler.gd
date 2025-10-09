@@ -1,7 +1,7 @@
 extends RefCounted
 class_name InputHandler
 
-func get_input_data(delta: float, current_speed: float, group: bool) -> InputData:
+func get_input_data(delta: float, _current_speed: float, _group: bool) -> InputData:
     var data = InputData.new()
     data.throttle_change = _get_throttle_change(delta)
     data.turn_input = Input.get_axis("roll_right","roll_left")
