@@ -4,11 +4,11 @@
 [ext_resource type="Script" uid="uid://dxlwhj47enyqa" path="res://addons/flowerwall_postprocess/scripts/config ui scripts/fl_pp_presets.gd" id="2_aii1a"]
 [ext_resource type="Script" uid="uid://tog6nmrph15b" path="res://addons/flowerwall_postprocess/scripts/config ui scripts/fl_pp_ui_slider.gd" id="8_orrbg"]
 [ext_resource type="Script" uid="uid://c5emn1tatcw1r" path="res://addons/flowerwall_postprocess/scripts/config ui scripts/fl_pp_ui_toggle.gd" id="9_30wqw"]
-[ext_resource type="Material" uid="uid://cqgfts7a027vc" path="res://addons/flowerwall_postprocess/shaders/dithering_shader.material" id="26_aii1a"]
-[ext_resource type="Material" uid="uid://ht2xdl3sxe3r" path="res://addons/flowerwall_postprocess/shaders/blurx_shader.material" id="27_yx2vx"]
-[ext_resource type="Material" uid="uid://bdxbdsmd31wpi" path="res://addons/flowerwall_postprocess/shaders/crt_shader.material" id="28_aii1a"]
-[ext_resource type="Material" uid="uid://ccgqxx5iwqgj1" path="res://addons/flowerwall_postprocess/shaders/blury_shader.material" id="28_yx2vx"]
-[ext_resource type="Material" uid="uid://ehraid47ps50" path="res://addons/flowerwall_postprocess/shaders/bloom_shader.material" id="29_aii1a"]
+[ext_resource type="Material" uid="uid://dmfdvgwrugsxa" path="res://addons/flowerwall_postprocess/shaders/dithering_shader.material" id="26_aii1a"]
+[ext_resource type="Material" uid="uid://coxt0orb5rrjh" path="res://addons/flowerwall_postprocess/shaders/blurx_shader.material" id="27_yx2vx"]
+[ext_resource type="Material" uid="uid://bou8hv2shyynq" path="res://addons/flowerwall_postprocess/shaders/crt_shader.material" id="28_aii1a"]
+[ext_resource type="Material" uid="uid://dnm7km5cfkyt4" path="res://addons/flowerwall_postprocess/shaders/blury_shader.material" id="28_yx2vx"]
+[ext_resource type="Material" uid="uid://ya7m7d3p46uf" path="res://addons/flowerwall_postprocess/shaders/bloom_shader.material" id="29_aii1a"]
 [ext_resource type="Script" uid="uid://dtpi5lt33t6eg" path="res://addons/flowerwall_postprocess/scripts/config ui scripts/fl_pp_close.gd" id="32_8p6dx"]
 [ext_resource type="Script" uid="uid://ch7evcy0lie0m" path="res://addons/flowerwall_postprocess/scripts/config ui scripts/fl_pp_save.gd" id="32_jahb0"]
 
@@ -456,7 +456,7 @@ size_flags_vertical = 4
 min_value = 0.05
 max_value = 5.0
 step = 0.05
-value = 0.4
+value = 0.39999999999999997
 script = ExtResource("8_orrbg")
 _mat = ExtResource("28_aii1a")
 _var = "shader_parameter/vignette_smoothness"
