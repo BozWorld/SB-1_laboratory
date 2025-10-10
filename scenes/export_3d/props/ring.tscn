@@ -1,6 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://ddxavrfb6njvs"]
-
-[ext_resource type="Shader" uid="uid://b1hy61gbvow1g" path="res://assets/materials_textures/shader_script/pixelart_stylizer.gdshader" id="1_psjhj"]
+[gd_scene load_steps=6 format=4 uid="uid://ddxavrfb6njvs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kuafx"]
 resource_name = "Ring Material"
@@ -45,14 +43,6 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vj3wc")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ly44x"]
-render_priority = 0
-shader = ExtResource("1_psjhj")
-shader_parameter/shadows_enabled = true
-shader_parameter/highlights_enabled = true
-shader_parameter/shadow_strength = 0.8
-shader_parameter/highlight_strength = 0.1
-shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ne6f"]
 next_pass = SubResource("ShaderMaterial_ly44x")

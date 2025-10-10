@@ -1,16 +1,6 @@
-[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cpjggrjxtkgsx"]
-
-[ext_resource type="Shader" uid="uid://b1hy61gbvow1g" path="res://assets/materials_textures/shader_script/pixelart_stylizer.gdshader" id="1_6f5ny"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cpjggrjxtkgsx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gcorn"]
-render_priority = 0
-shader = ExtResource("1_6f5ny")
-shader_parameter/shadows_enabled = true
-shader_parameter/highlights_enabled = true
-shader_parameter/shadow_strength = 1.0
-shader_parameter/highlight_strength = 1.0
-shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [resource]
 resource_name = "airship"
@@ -19,4 +9,3 @@ cull_mode = 2
 shading_mode = 0
 diffuse_mode = 3
 specular_mode = 1
-albedo_color = Color(0.826805, 0.242585, 0.514586, 1)

@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://d1r3cumcru11d"]
+[gd_scene load_steps=15 format=4 uid="uid://d1r3cumcru11d"]
 
 [ext_resource type="Material" uid="uid://cpjggrjxtkgsx" path="res://assets/materials_textures/tres/vehicule/ship_type_02/airship.tres" id="1_f55ta"]
 [ext_resource type="Material" uid="uid://b7asbstujckcs" path="res://assets/materials_textures/tres/vehicule/ship_type_02/controlleur.tres" id="2_puht7"]
 [ext_resource type="Material" uid="uid://0eqwcovtfk0x" path="res://assets/materials_textures/tres/vehicule/ship_type_02/Material.003.tres" id="3_bxjki"]
 [ext_resource type="Material" uid="uid://uo8ounj1duhq" path="res://assets/materials_textures/tres/vehicule/ship_type_02/Material.004.tres" id="4_865qh"]
-[ext_resource type="Shader" uid="uid://b1hy61gbvow1g" path="res://assets/materials_textures/shader_script/pixelart_stylizer.gdshader" id="5_puht7"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6q0j5"]
 _surfaces = [{
@@ -111,56 +110,24 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6q0j5")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bxjki"]
-render_priority = 0
-shader = ExtResource("5_puht7")
-shader_parameter/shadows_enabled = true
-shader_parameter/highlights_enabled = true
-shader_parameter/shadow_strength = 1.0
-shader_parameter/highlight_strength = 0.1
-shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_865qh"]
 next_pass = SubResource("ShaderMaterial_bxjki")
 albedo_color = Color(0.827451, 0.243137, 0.513726, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_06ymw"]
-render_priority = 0
-shader = ExtResource("5_puht7")
-shader_parameter/shadows_enabled = true
-shader_parameter/highlights_enabled = true
-shader_parameter/shadow_strength = 1.0
-shader_parameter/highlight_strength = 0.1
-shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wuxuw"]
 next_pass = SubResource("ShaderMaterial_06ymw")
 albedo_color = Color(0, 0.54902, 0.835294, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gwj18"]
-render_priority = 0
-shader = ExtResource("5_puht7")
-shader_parameter/shadows_enabled = true
-shader_parameter/highlights_enabled = true
-shader_parameter/shadow_strength = 1.0
-shader_parameter/highlight_strength = 0.1
-shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aumtr"]
 next_pass = SubResource("ShaderMaterial_gwj18")
 albedo_color = Color(0.980392, 0.768627, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5hqg5"]
-render_priority = 0
-shader = ExtResource("5_puht7")
-shader_parameter/shadows_enabled = true
-shader_parameter/highlights_enabled = true
-shader_parameter/shadow_strength = 1.0
-shader_parameter/highlight_strength = 0.1
-shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qwcm8"]
 next_pass = SubResource("ShaderMaterial_5hqg5")

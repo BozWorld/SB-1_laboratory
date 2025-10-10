@@ -1,7 +1,6 @@
-[gd_scene load_steps=431 format=4 uid="uid://cumecpt86pmsv"]
+[gd_scene load_steps=430 format=4 uid="uid://cumecpt86pmsv"]
 
 [ext_resource type="Material" uid="uid://cv4r5lfsmffx0" path="res://assets/hangar_island_02.tres" id="3_4owu3"]
-[ext_resource type="Shader" uid="uid://b1hy61gbvow1g" path="res://assets/materials_textures/shader_script/pixelart_stylizer.gdshader" id="4_julc3"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_bcw0i"]
 _surfaces = [{
@@ -81,14 +80,6 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bcw0i")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ahm66"]
-render_priority = 0
-shader = ExtResource("4_julc3")
-shader_parameter/shadows_enabled = true
-shader_parameter/highlights_enabled = true
-shader_parameter/shadow_strength = 0.7
-shader_parameter/highlight_strength = 0.1
-shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm14t"]
 next_pass = SubResource("ShaderMaterial_ahm66")
@@ -96,28 +87,12 @@ cull_mode = 2
 albedo_color = Color(0.777915, 0.547195, 5.77569e-07, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_68nck"]
-render_priority = 0
-shader = ExtResource("4_julc3")
-shader_parameter/shadows_enabled = true
-shader_parameter/highlights_enabled = true
-shader_parameter/shadow_strength = 0.05
-shader_parameter/highlight_strength = 0.1
-shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_68nck"]
 next_pass = SubResource("ShaderMaterial_68nck")
 albedo_color = Color(0.350302, 0.698875, 0.29204, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1e8p8"]
-render_priority = 0
-shader = ExtResource("4_julc3")
-shader_parameter/shadows_enabled = true
-shader_parameter/highlights_enabled = true
-shader_parameter/shadow_strength = 0.7
-shader_parameter/highlight_strength = 0.1
-shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xor7"]
 next_pass = SubResource("ShaderMaterial_1e8p8")
@@ -5814,41 +5789,17 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_38glg")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4owu3"]
-render_priority = 0
-shader = ExtResource("4_julc3")
-shader_parameter/shadows_enabled = true
-shader_parameter/highlights_enabled = true
-shader_parameter/shadow_strength = 1.0
-shader_parameter/highlight_strength = 0.1
-shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_julc3"]
 next_pass = SubResource("ShaderMaterial_4owu3")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7xor7"]
-render_priority = 0
-shader = ExtResource("4_julc3")
-shader_parameter/shadows_enabled = true
-shader_parameter/highlights_enabled = true
-shader_parameter/shadow_strength = 1.0
-shader_parameter/highlight_strength = 0.1
-shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xamlu"]
 next_pass = SubResource("ShaderMaterial_7xor7")
 albedo_color = Color(0.875745, 0, 0.184896, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tcd34"]
-render_priority = 0
-shader = ExtResource("4_julc3")
-shader_parameter/shadows_enabled = true
-shader_parameter/highlights_enabled = true
-shader_parameter/shadow_strength = 1.0
-shader_parameter/highlight_strength = 0.1
-shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a1hwl"]
 resource_name = "radio_antenne_tres"
@@ -5892,14 +5843,6 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ves40")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_umkpp"]
-render_priority = 0
-shader = ExtResource("4_julc3")
-shader_parameter/shadows_enabled = true
-shader_parameter/highlights_enabled = true
-shader_parameter/shadow_strength = 1.0
-shader_parameter/highlight_strength = 0.1
-shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2e6oc"]
 resource_name = "radio_antenne_alternative_tres"
@@ -5943,14 +5886,6 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bnwvt")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_70pbb"]
-render_priority = 0
-shader = ExtResource("4_julc3")
-shader_parameter/shadows_enabled = true
-shader_parameter/highlights_enabled = true
-shader_parameter/shadow_strength = 1.0
-shader_parameter/highlight_strength = 0.1
-shader_parameter/highlight_color = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42jje"]
 resource_name = "radio_antenna_alternative_tres"
