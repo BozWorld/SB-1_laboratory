@@ -87,10 +87,8 @@ func _on_ring_passed(ring_index: int):
 	print("Anneau franchi: ", ring_index)
 
 func _on_all_rings_completed():
-	if last_island:
-		last_island.set_landing_available(true)
-	print("atterrissage disponible sur la dernière île !")
-	print("tout les anneaux franchis !")
+	last_island.set_landing_available(true)
+	ui_manager.set_landing_available(true)
 
 # === MÉTHODE PUBLIQUE ===
 func get_current_time() -> float:

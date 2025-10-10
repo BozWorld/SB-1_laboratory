@@ -8,7 +8,6 @@ class_name UIManager
 
 
 @export var data_control: Control
-@export var time_label: RichTextLabel
 @export var rings_label: RichTextLabel
 @export var landing_label: RichTextLabel
 
@@ -20,9 +19,7 @@ var _landing_avail:= false
 func update_score_display(current_time: float):
     if score_label:
         var formatted_time = _format_time(current_time)
-        score_label.text = "your current score is:" + formatted_time
-    if time_label:
-        time_label.text = "Time: " + _format_time(current_time)
+        score_label.text = "your current score is: " + formatted_time
 
 
 func show_final_score(final_time: float):
@@ -53,9 +50,10 @@ func _refresh_hud():
         rings_label.text = "Rings: %d / %d" % [_passed_rings,_totals_rings]
     if landing_label:
         landing_label.text = "Landing: " + ("Available" if _landing_avail else "Not Available")
+        print("Landing status updated: ", landing_label.text)
 
 func _format_time(time_seconds: float) -> String:
     var minutes = int(time_seconds / 60)
     var seconds = int(time_seconds) % 60
     var milliseconds = int((time_seconds - int(time_seconds)) * 100)
-    return "%02d:%02d.%02d" % [minutes,seconds,milliseconds]
+    return "%02d:%02d.%02d " % [minutes,seconds,milliseconds]

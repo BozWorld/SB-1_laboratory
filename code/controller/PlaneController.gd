@@ -98,7 +98,6 @@ func _update_debug_info():
 		debug_ui.text = ( 
 			_flight_physics.get_debug_string() + "\n" +
 			_trail_system.get_debug_string() + "\n" +
-			_ground_detection.get_debug_string() + "\n" +
 			_plane_animation.get_debug_string() + "\n"
 			
 		)

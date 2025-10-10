@@ -1,5 +1,5 @@
 extends Area3D
-
+class_name LandingZone
 var is_landing_available: bool = false
 var indicator_mesh: MeshInstance3D
 var _materials: Array[StandardMaterial3D] = []

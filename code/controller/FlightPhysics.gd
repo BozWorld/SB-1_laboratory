@@ -57,4 +57,4 @@ func _calculate_takeoff_force(speed: float) -> float:
     return 3.0 * (speed / config.min_flight_speed)
 
 func get_debug_string() -> String:
-    return "Vitesse: %.1f / %.1f\nAccélération: %.2f" % [forward_speed, target_speed, forward_speed - previous_speed]
+    return "Vitesse: %.1f / %.1f" % [forward_speed, target_speed]

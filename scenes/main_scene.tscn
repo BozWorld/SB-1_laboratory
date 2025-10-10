@@ -1,8 +1,8 @@
 [gd_scene load_steps=67 format=4 uid="uid://djwtrxlgrbrhg"]
 
 [ext_resource type="Script" uid="uid://cpyeiihcx4pvy" path="res://code/manager/manager.gd" id="1_iav3h"]
-[ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="2_iav3h"]
 [ext_resource type="Script" uid="uid://bgdh7wd3eb5yf" path="res://code/manager/UIManager.gd" id="2_onjth"]
+[ext_resource type="FontFile" uid="uid://dy35fgkhkqwiv" path="res://assets/2d/Font/Silver.ttf" id="3_iav3h"]
 [ext_resource type="PackedScene" uid="uid://dgtfu0kromyux" path="res://scenes/shader_scene/sol.tscn" id="3_womr8"]
 [ext_resource type="PlaneMesh" uid="uid://c648rhhc7veoa" path="res://assets/materials_textures/tres/nature/cartoon_water.tres" id="4_onjth"]
 [ext_resource type="PackedScene" uid="uid://t4t5f4m35fel" path="res://scenes/vrac_scene/importing_scene.tscn" id="5_xa0eo"]
@@ -37,34 +37,10 @@
 [ext_resource type="Texture2D" uid="uid://bvetqx0m03oxc" path="res://assets/2d/texture/clear+sea+water-2048x2048.png" id="34_1a541"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iav3h"]
-content_margin_left = 12.0
-content_margin_top = 12.0
-content_margin_right = 12.0
-content_margin_bottom = 12.0
-bg_color = Color(0.09985284, 0.09985284, 0.09985284, 0.57000005)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_womr8"]
 content_margin_left = 15.0
 content_margin_top = 15.0
 content_margin_right = 15.0
 content_margin_bottom = 15.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onjth"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
 bg_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -75,7 +51,40 @@ expand_margin_left = 15.0
 expand_margin_top = 15.0
 expand_margin_right = 15.0
 expand_margin_bottom = 15.0
-shadow_color = Color(0.745722, 0.62369007, 1.347661e-06, 0.6)
+shadow_color = Color(0.8361926, 0.07846785, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_womr8"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+shadow_color = Color(0.65686584, 0, 0.15594886, 1)
+shadow_size = 2
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onjth"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+shadow_color = Color(0.7620346, 0, 0.09777484, 1)
 shadow_size = 2
 shadow_offset = Vector2(4, 4)
 
@@ -301,35 +310,35 @@ shader_parameter/highlight_strength = 0.1
 shader_parameter/highlight_color = Color(1, 1, 1, 1)
 shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_3t8qc"]
-size = Vector2(200, 200)
-subdivide_width = 200
-subdivide_depth = 200
+[sub_resource type="PlaneMesh" id="PlaneMesh_iav3h"]
+size = Vector2(5000, 5000)
+subdivide_width = 500
+subdivide_depth = 500
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_h7x8l"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_k2p1j"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_71ste"]
-noise = SubResource("FastNoiseLite_h7x8l")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hlyfj"]
+noise = SubResource("FastNoiseLite_k2p1j")
 seamless = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_u4b1i"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k2p1j"]
 render_priority = 0
 shader = ExtResource("33_0uct7")
 shader_parameter/albedo = Color(0.745132, 0.583381, 0.804146, 1)
 shader_parameter/water_texture1 = ExtResource("34_1a541")
 shader_parameter/water_texture2 = ExtResource("34_1a541")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_71ste")
-shader_parameter/scroll_speed1 = Vector2(0.05, 0)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_hlyfj")
+shader_parameter/scroll_speed1 = Vector2(0.015, 0.001)
 shader_parameter/scroll_speed2 = Vector2(-0.015, -0.02)
-shader_parameter/blend_factor = 0.27
+shader_parameter/blend_factor = 2.3
 shader_parameter/scale1 = Vector2(3, 3)
 shader_parameter/scale2 = Vector2(3, 3)
-shader_parameter/wave_strength = 0.1
-shader_parameter/wave_scale = 0.001
+shader_parameter/wave_strength = 0.315
+shader_parameter/wave_scale = 0.02
 shader_parameter/pixelation_level = 256
-shader_parameter/FoamSize = 0.1
+shader_parameter/FoamSize = 0.5
 shader_parameter/WaterOpacity = 0.4
-shader_parameter/FoamGlowIntensity = 1.0
+shader_parameter/FoamGlowIntensity = 0.5
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("ui_manager", "player", "rings", "last_island") groups=["game_manager"]]
 script = ExtResource("1_iav3h")
@@ -340,20 +349,21 @@ last_island = NodePath("island_type_05")
 
 [node name="UI_VISUEL" type="Node3D" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="UI_VISUEL" node_paths=PackedStringArray("score_label", "score_control", "final_score_label", "final_score_control", "data_control", "time_label", "rings_label", "landing_label")]
+[node name="CanvasLayer" type="CanvasLayer" parent="UI_VISUEL" node_paths=PackedStringArray("score_label", "score_control", "final_score_label", "final_score_control", "data_control", "rings_label", "landing_label")]
 script = ExtResource("2_onjth")
 score_label = NodePath("score_control/score_label")
 score_control = NodePath("score_control")
 final_score_label = NodePath("final score/VBoxContainer/score_final_label")
 final_score_control = NodePath("final score")
 data_control = NodePath("data_panel")
-time_label = NodePath("data_panel/VBoxContainer/time_label")
 rings_label = NodePath("data_panel/VBoxContainer/rings_label")
 landing_label = NodePath("data_panel/VBoxContainer/landing_label")
 
 [node name="data_panel" type="PanelContainer" parent="UI_VISUEL/CanvasLayer"]
-offset_right = 25.0
-offset_bottom = 36.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 46.0
+offset_bottom = 54.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_iav3h")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI_VISUEL/CanvasLayer/data_panel"]
@@ -362,29 +372,24 @@ layout_mode = 2
 [node name="data_plane" type="RichTextLabel" parent="UI_VISUEL/CanvasLayer/data_panel/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/normal_font_size = 20
-theme_override_font_sizes/mono_font_size = 2
+theme_override_fonts/normal_font = ExtResource("3_iav3h")
+theme_override_font_sizes/normal_font_size = 40
 fit_content = true
 autowrap_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="time_label" type="RichTextLabel" parent="UI_VISUEL/CanvasLayer/data_panel/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 20
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
 [node name="rings_label" type="RichTextLabel" parent="UI_VISUEL/CanvasLayer/data_panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 20
+theme_override_fonts/normal_font = ExtResource("3_iav3h")
+theme_override_font_sizes/normal_font_size = 40
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
 [node name="landing_label" type="RichTextLabel" parent="UI_VISUEL/CanvasLayer/data_panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 20
+theme_override_fonts/normal_font = ExtResource("3_iav3h")
+theme_override_font_sizes/normal_font_size = 40
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -393,22 +398,23 @@ autowrap_mode = 0
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -133.0
-offset_bottom = 29.0
+offset_left = -139.0
+offset_top = 1.0
+offset_right = -6.0
+offset_bottom = 31.0
 grow_horizontal = 0
 pivot_offset = Vector2(-16, -16)
 theme_override_styles/panel = SubResource("StyleBoxFlat_womr8")
 
 [node name="score_label" type="RichTextLabel" parent="UI_VISUEL/CanvasLayer/score_control"]
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_iav3h")
 theme_override_font_sizes/normal_font_size = 40
-text = "your score is :"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
 [node name="final score" type="PanelContainer" parent="UI_VISUEL/CanvasLayer"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -428,16 +434,16 @@ layout_mode = 2
 [node name="score_final_label" type="RichTextLabel" parent="UI_VISUEL/CanvasLayer/final score/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("2_iav3h")
-theme_override_font_sizes/normal_font_size = 40
+theme_override_fonts/normal_font = ExtResource("3_iav3h")
+theme_override_font_sizes/normal_font_size = 50
 theme_override_font_sizes/mono_font_size = 2
-text = "YOUR SCORE IS : "
+text = "YOUR SCORE IS :  "
 fit_content = true
 
 [node name="Button" type="Button" parent="UI_VISUEL/CanvasLayer/final score/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_iav3h")
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("3_iav3h")
+theme_override_font_sizes/font_size = 50
 text = "REPLAY"
 metadata/_edit_use_anchors_ = true
 
@@ -445,6 +451,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Sol" parent="environnement" instance=ExtResource("3_womr8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0041895, 0)
+visible = false
 mesh = ExtResource("4_onjth")
 
 [node name="obstacle" type="Node3D" parent="environnement"]
@@ -5807,12 +5814,11 @@ mesh = SubResource("PlaneMesh_5l5m1")
 surface_material_override/0 = SubResource("ShaderMaterial_xet8e")
 
 [node name="water_low_poly" type="Node3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.72262764, 0)
 
 [node name="OceanSurface" type="MeshInstance3D" parent="water_low_poly"]
-mesh = SubResource("PlaneMesh_3t8qc")
-surface_material_override/0 = SubResource("ShaderMaterial_u4b1i")
+mesh = SubResource("PlaneMesh_iav3h")
+surface_material_override/0 = SubResource("ShaderMaterial_k2p1j")
 
 [connection signal="pressed" from="UI_VISUEL/CanvasLayer/final score/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="body_entered" from="environnement/island_type_01/ring" to="." method="_on_static_body_3d_body_entered"]

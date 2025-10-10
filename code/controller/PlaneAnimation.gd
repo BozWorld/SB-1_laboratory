@@ -60,10 +60,7 @@ func _update_stabilization(grounded: bool, delta: float):
 # === MËTHODE UTILITAIRES ===
 func get_debug_string() -> String:
     var bank_degrees = rad_to_deg(current_bank_angle)
-    var helice_status = "ACTIF" if helice_node else "ABSENT"
-    var mesh_status = "ACTIF" if mesh_node else "ABSENT"
-
-    return "Animation - Bank: %.1f° | Hélice: %s, Mesh: %s" % [bank_degrees, helice_status, mesh_status]
+    return "Animation - Bank: %.1f° " % [bank_degrees]
 
 # === CONFIGURATION ===
 func set_helice_speed(speed: float):

@@ -1,13 +1,22 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://b7asbstujckcs"]
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://b7asbstujckcs"]
+
+[ext_resource type="Shader" uid="uid://b1hy61gbvow1g" path="res://assets/materials_textures/shader_script/pixelart_stylizer.gdshader" id="1_qw2sm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b38w5"]
+render_priority = 0
+shader = ExtResource("1_qw2sm")
+shader_parameter/shadows_enabled = true
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 1.0
+shader_parameter/highlight_strength = 1.0
+shader_parameter/highlight_color = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
 
 [resource]
 resource_name = "controlleur"
+next_pass = SubResource("ShaderMaterial_b38w5")
 cull_mode = 2
+shading_mode = 0
 diffuse_mode = 3
 specular_mode = 1
 albedo_color = Color(0, 0.549663, 0.836637, 1)
-metallic = 0.5
-roughness = 0.3
-emission_energy_multiplier = 0.15
-subsurf_scatter_strength = 1.0
-backlight = Color(0.327745, 0.790465, 0, 1)
