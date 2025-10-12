@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://djwtrxlgrbrhg"]
+[gd_scene load_steps=62 format=4 uid="uid://djwtrxlgrbrhg"]
 
 [ext_resource type="Script" uid="uid://cpyeiihcx4pvy" path="res://code/manager/manager.gd" id="1_iav3h"]
 [ext_resource type="Script" uid="uid://bgdh7wd3eb5yf" path="res://code/manager/UIManager.gd" id="2_onjth"]
@@ -89,7 +89,9 @@ shadow_offset = Vector2(4, 4)
 
 [sub_resource type="Resource" id="Resource_xa0eo"]
 script = ExtResource("27_womr8")
-max_flight_speed = 80.0
+max_flight_speed = 50.0
+throttle_delta = 50.0
+notes = ""
 metadata/_custom_type_script = "uid://reijsy2bv6e4"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ytnha"]
@@ -141,6 +143,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AADcUKYSAACgBwVUERUAABsAelIRFQAAaQfTUNkZAABpB9NQSRAAAAAA3FB8FwAAjAcYThEVAAARAHtPERUAALgh+0IOKgAAaBwAAAdSAABKHmFDXycAAD8cX1RSKAAARB7//5o6AAApJGxSdDUAAFBR2DVSQgAAZUeeT7mAAABzUPlGEFsAAB9SFV5mPQAA+UaeOkuDAAAnQLNFu78AAPE/GTsHwQAAxTiWO///AABnOJJCu78AAEw4YD8HwQAANjhrQD/EAAD//9xQphIAAOP/elIRFQAAOPuGXhEVAADt/3tPERUAAJX401DZGQAA///cUHwXAABy+BhOERUAAF74BVQRFQAAlfjTUEkQAABG3vtCDioAALThYUNfJwAAluMAAAdSAAC/419UUigAANXbbFJ0NQAAuuH//5o6AACurtg1UkIAAHi5j0M0kAAABbmeOkuDAACLr/lGEFsAAJm4nk+5gAAA360VXmY9AADXv7NFu78AAA3AGTsHwQAAOceWO///AACXx5JCu78AALLHYD8HwQAAyMdrQD/EAADGBIZeERUAANYDb1AjKgAA1gNvUAAAAABuBGtEERUAAIZGj0M0kAAAtz+cP4zHAAAo/G9QAAAAACj8b1AjKgAAkPtrRBEVAABHwJw/jMcAAA==")
 }]
 blend_shape_mode = 0
+custom_aabb = AABB(3.63, 10.02, 11.635, 13.05, 9.685, 13.1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_8e62d"]
 resource_name = "bird_Icosphere_002"
@@ -240,16 +243,7 @@ blend_mode = 1
 cull_mode = 2
 shading_mode = 0
 vertex_color_use_as_albedo = true
-
-[sub_resource type="Curve" id="Curve_xlhiu"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_a2n78"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.15, 1), 0.0, 0.0, 0, 0, Vector2(0.81, 0.82), 0.0233026, 0.0233026, 0, 0, Vector2(1, 0), -2.30695, 0.0, 0, 0]
-point_count = 4
-metadata/_snap_enabled = true
-metadata/_snap_count = 100
+albedo_color = Color(0.93372595, 0.19180116, 0, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_onjth"]
 flip_faces = true
@@ -260,7 +254,7 @@ shader = ExtResource("30_taqkn")
 shader_parameter/shadows_enabled = true
 shader_parameter/highlights_enabled = true
 shader_parameter/shadow_strength = 0.999999977648
-shader_parameter/highlight_strength = 0.36999999172976
+shader_parameter/highlight_strength = 1.0
 shader_parameter/highlight_color = Color(1, 1, 1, 1)
 shader_parameter/shadow_color = Color(0, 0, 0, 1)
 shader_parameter/is_perspective_camera = true
@@ -453,21 +447,19 @@ skeleton = NodePath("../../../..")
 [node name="spawn_point" type="Node3D" parent="player/plane/effect"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0523208, 0.0388756, 0.930359)
 
-[node name="player_cam" type="Camera3D" parent="player"]
-transform = Transform3D(0.99972224, 0.0030557187, 0.023368692, 0, 0.99155885, -0.12965745, -0.02356763, 0.12962143, 0.9912834, 0.155, 1.6400073, 3.5749903)
+[node name="player_cam" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8e-44, 2.2406373, -5.945813)
 script = ExtResource("32_1sx6m")
-target_path = NodePath("../plane")
-lerp_speed = 1.0
-lookahead = Vector3(0, 2, -3)
-offset = Vector3(0.155, 1.14, 3.575)
-boom_speed_threshold = 40.0
-boom_intensity = 2.0
-boom_shake_intensity = 0.04
-distance_curve = SubResource("Curve_xlhiu")
-boom_curve = SubResource("Curve_a2n78")
+target_path = NodePath("../player/plane")
+offset = Vector3(0, 1.5, 4)
+boom_speed_threshold = 1.0
+boom_duration = 0.3
+boom_shake_intensity = 0.4
+boom_intensity_multiplier = 1
+offset_intensity_multiplier = 1.0
 
-[node name="cam_effect" type="MeshInstance3D" parent="player/player_cam"]
-transform = Transform3D(4, -9.313226e-10, 0, 0, 4.0000005, -1.4901161e-08, 0, -5.9604645e-08, 1, 0.030057251, -0.16531372, -1.2642479)
+[node name="cam_effect" type="MeshInstance3D" parent="player_cam"]
+transform = Transform3D(4, 0, 0, 0, 4.0000005, 1.4901159e-08, 0, -5.9604645e-08, 1, 0.030057251, -0.16531372, -1.2642479)
 mesh = SubResource("QuadMesh_onjth")
 surface_material_override/0 = SubResource("ShaderMaterial_xa0eo")
 script = ExtResource("34_womr8")
