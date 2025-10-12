@@ -38,10 +38,16 @@ shader_parameter/overwritten_time = 0.0
 
 [sub_resource type="Sky" id="Sky_hkp4g"]
 sky_material = SubResource("ShaderMaterial_cpo44")
+process_mode = 1
 
 [sub_resource type="Environment" id="Environment_2kj7u"]
 background_mode = 2
 sky = SubResource("Sky_hkp4g")
+tonemap_mode = 4
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 1.77
+glow_strength = 1.9
 
 [node name="importing_scene" type="Node3D"]
 
@@ -51,9 +57,8 @@ sky = SubResource("Sky_hkp4g")
 environment = SubResource("Environment_2kj7u")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="ambiant"]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-light_color = Color(0.72125, 0.505616, 0.288702, 1)
-light_energy = 3.0
+transform = Transform3D(-0.86602294, -0.433016, 0.2500009, 0, 0.49999806, 0.8660269, -0.50000304, 0.749999, -0.4330104, 0, 0, 0)
+light_color = Color(0.710358, 0.5071794, 0.3302896, 1)
 shadow_enabled = true
 shadow_blur = 3.025
 

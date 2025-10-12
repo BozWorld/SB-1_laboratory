@@ -1,9 +1,8 @@
-[gd_scene load_steps=62 format=4 uid="uid://djwtrxlgrbrhg"]
+[gd_scene load_steps=66 format=4 uid="uid://djwtrxlgrbrhg"]
 
 [ext_resource type="Script" uid="uid://cpyeiihcx4pvy" path="res://code/manager/manager.gd" id="1_iav3h"]
 [ext_resource type="Script" uid="uid://bgdh7wd3eb5yf" path="res://code/manager/UIManager.gd" id="2_onjth"]
 [ext_resource type="FontFile" uid="uid://dy35fgkhkqwiv" path="res://assets/2d/Font/Silver.ttf" id="3_iav3h"]
-[ext_resource type="PackedScene" uid="uid://t4t5f4m35fel" path="res://scenes/vrac_scene/importing_scene.tscn" id="5_xa0eo"]
 [ext_resource type="PackedScene" uid="uid://csvklaglduhus" path="res://scenes/export_3d/props/pot.tscn" id="6_3mjum"]
 [ext_resource type="PackedScene" uid="uid://cljqvsbfpl08" path="res://scenes/export_3d/props/pillar.tscn" id="7_p27gv"]
 [ext_resource type="PackedScene" uid="uid://f0s2b3xuo1ki" path="res://scenes/export_3d/props/grave_type_01.tscn" id="8_cn4eu"]
@@ -12,7 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://bmx73atmvy008" path="res://scenes/export_3d/nature/rock_type_01.tscn" id="11_jix7a"]
 [ext_resource type="PackedScene" uid="uid://dboevf0t7nxpt" path="res://scenes/export_3d/nature/rock_type_02.tscn" id="12_segjr"]
 [ext_resource type="PackedScene" uid="uid://d2je5rgnsmrgv" path="res://scenes/export_3d/nature/grass_type_05.tscn" id="13_beobj"]
+[ext_resource type="Shader" uid="uid://bu2shn60caxsn" path="res://assets/materials_textures/shader_script/sky.gdshader" id="13_iav3h"]
 [ext_resource type="PackedScene" uid="uid://cf6btlbkrcwii" path="res://scenes/export_3d/nature/grass_type_04.tscn" id="14_267kh"]
+[ext_resource type="PackedScene" uid="uid://cumecpt86pmsv" path="res://scenes/export_3d/island/hangar_island_02.tscn" id="14_womr8"]
 [ext_resource type="PackedScene" uid="uid://mxarv8mykasc" path="res://scenes/export_3d/nature/grass_type_03.tscn" id="15_86meh"]
 [ext_resource type="Script" uid="uid://dr552ypgtsps6" path="res://code/object/ring.gd" id="16_duuju"]
 [ext_resource type="PackedScene" uid="uid://ddxavrfb6njvs" path="res://scenes/export_3d/props/ring.tscn" id="17_8dxha"]
@@ -259,6 +260,52 @@ shader_parameter/highlight_color = Color(1, 1, 1, 1)
 shader_parameter/shadow_color = Color(0, 0, 0, 1)
 shader_parameter/is_perspective_camera = true
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_onjth"]
+shader = ExtResource("13_iav3h")
+shader_parameter/day_top_color = Color(0.99999994, 0.25973013, 0.4538291, 1)
+shader_parameter/day_bottom_color = Color(0.9215595, 0.7179958, 0, 1)
+shader_parameter/sunset_top_color = Color(0.98384076, 0, 0.1466344, 1)
+shader_parameter/sunset_bottom_color = Color(1, 0.5, 0.7, 1)
+shader_parameter/night_top_color = Color(0.02, 0, 0.04, 1)
+shader_parameter/night_bottom_color = Color(0.1, 0, 0.2, 1)
+shader_parameter/horizon_color = Color(0.8828014, 0.5302084, 0, 1)
+shader_parameter/horizon_blur = 0.05
+shader_parameter/sun_color = Color(10, 8, 1, 1)
+shader_parameter/sun_sunset_color = Color(4.339074, 6.249251, 8.618343e-05, 1)
+shader_parameter/sun_size = 0.2
+shader_parameter/sun_blur = 10.0
+shader_parameter/moon_color = Color(1, 0.95, 0.7, 1)
+shader_parameter/moon_size = 0.06
+shader_parameter/moon_blur = 0.1
+shader_parameter/clouds_edge_color = Color(1, 0.27550727, 0.42903274, 1)
+shader_parameter/clouds_top_color = Color(1, 1, 1, 1)
+shader_parameter/clouds_middle_color = Color(0.92, 0.92, 0.98, 1)
+shader_parameter/clouds_bottom_color = Color(0.83, 0.83, 0.94, 1)
+shader_parameter/clouds_speed = 5.999999865888
+shader_parameter/clouds_direction = 0.2
+shader_parameter/clouds_scale = 1.0
+shader_parameter/clouds_cutoff = 0.3
+shader_parameter/clouds_fuzziness = 0.5
+shader_parameter/clouds_weight = 0.0
+shader_parameter/clouds_blur = 0.25
+shader_parameter/stars_speed = 4.26999990455696
+shader_parameter/stars_scale = 1.0
+shader_parameter/stars_opacity = 1.0
+shader_parameter/overwritten_time = 0.0
+
+[sub_resource type="Sky" id="Sky_xa0eo"]
+sky_material = SubResource("ShaderMaterial_onjth")
+process_mode = 1
+
+[sub_resource type="Environment" id="Environment_3mjum"]
+background_mode = 2
+sky = SubResource("Sky_xa0eo")
+tonemap_mode = 4
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.67
+glow_strength = 1.9
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_78up8"]
 radius = 0.90758
 
@@ -452,7 +499,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8e-44, 2.2406373, -5.945813
 script = ExtResource("32_1sx6m")
 target_path = NodePath("../player/plane")
 offset = Vector3(0, 1.5, 4)
-boom_speed_threshold = 1.0
 boom_duration = 0.3
 boom_shake_intensity = 0.4
 boom_intensity_multiplier = 1
@@ -468,7 +514,27 @@ padding = 10.0
 
 [node name="environnement" type="Node3D" parent="."]
 
-[node name="importing_scene" parent="environnement" instance=ExtResource("5_xa0eo")]
+[node name="importing_scene" type="Node3D" parent="environnement"]
+
+[node name="ambiant" type="Node3D" parent="environnement/importing_scene"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="environnement/importing_scene/ambiant"]
+environment = SubResource("Environment_3mjum")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="environnement/importing_scene/ambiant"]
+transform = Transform3D(-0.86602294, -0.433016, 0.2500009, 0, 0.49999806, 0.8660269, -0.50000304, 0.749999, -0.4330104, 0, 0, 0)
+light_color = Color(0.77746874, 2.8878452e-07, 0.45882428, 1)
+light_energy = 1.055
+shadow_enabled = true
+shadow_blur = 3.025
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="environnement/importing_scene/ambiant"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+visible = false
+light_energy = 0.25
+shadow_enabled = true
+
+[node name="hangar_island" parent="environnement/importing_scene" instance=ExtResource("14_womr8")]
 
 [node name="island_type_01" type="Node3D" parent="environnement"]
 transform = Transform3D(0.989437, 0.144961, 0, -0.144961, 0.989437, 0, 0, 0, 1, -34.5164, 2.34855, -134.547)
