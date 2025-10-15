@@ -1,7 +1,6 @@
 extends ObjetPhysique
 
-var rotacceleration := Vector3.ZERO
-var rotacite := Vector3.ZERO
+var rota
 
 func _physics_process(delta: float) -> void:
 	pass

@@ -12,7 +12,7 @@ var acceleration := Vector3.ZERO
 var inv_masse := 1.0
 
 var normal = 1.0
-var coef_friction = 0.1 
+@export var coef_friction = 0.1 
 
 func appliquerForce(force : Vector3):
 	acceleration += force * inv_masse
