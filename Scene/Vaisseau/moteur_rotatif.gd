@@ -15,11 +15,11 @@ func effectuerRotation():
     rotacceleration *= 0.0
     rota += rotacite
 
-    parent.transform.basis = Basis()
+    parent.rotate_object_local(Vector3(0,1,0), rotacite.y)
+    parent.rotate_object_local(Vector3(1,0,0), rotacite.x)
+    parent.rotate_object_local(Vector3(0,0,1), rotacite.z)
 
-    parent.rotate_object_local(Vector3(0,1,0), rota.y)
-    parent.rotate_object_local(Vector3(1,0,0), rota.x)
-    parent.rotate_object_local(Vector3(0,0,1), rota.z)
+    parent.transform.orthonormalized()
 
 func appliquerRotation(rotation : Vector3):
     rotacceleration += rotation * pen

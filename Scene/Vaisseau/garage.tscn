@@ -77,6 +77,7 @@ script = ExtResource("2_nlxle")
 [node name="MoteurDeplacements" type="Node" parent="Vaisseau"]
 unique_name_in_owner = true
 script = ExtResource("3_32fvh")
+puissance = 4.0
 metadata/_custom_type_script = "uid://vebxbdhgl2a0"
 
 [node name="Camera3D" type="Camera3D" parent="Vaisseau"]
