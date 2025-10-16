@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://y1gth86jbij5"]
+[gd_scene load_steps=21 format=3 uid="uid://y1gth86jbij5"]
 
 [ext_resource type="Script" uid="uid://b1ttm86gwkx7b" path="res://Scene/Vaisseau/suiveur.gd" id="1_01lyh"]
 [ext_resource type="Script" uid="uid://wfkk2ygbkrtm" path="res://Scene/Vaisseau/vaisseau.gd" id="1_2eq35"]
 [ext_resource type="Script" uid="uid://ciin4w33kjt7" path="res://Scene/Vaisseau/moteur_rotatif.gd" id="2_nlxle"]
 [ext_resource type="Script" uid="uid://c2xsh78oxjkno" path="res://Scene/Vaisseau/Deplacements.gd" id="3_32fvh"]
 [ext_resource type="Script" uid="uid://c0c7kb0x430o7" path="res://Scene/Vaisseau/Trainee.gd" id="3_v2ql8"]
+[ext_resource type="Script" uid="uid://bmp007gcbbmtc" path="res://Scene/Vaisseau/Trail.gd" id="5_0w8bn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yccnb"]
 sky_top_color = Color(0.390854, 0.125698, 1, 1)
@@ -47,9 +48,9 @@ blend_mode = 1
 shading_mode = 0
 albedo_texture = SubResource("GradientTexture1D_0w8bn")
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_0w8bn"]
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_v2ql8"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_0w8bn"]
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_fklk0"]
 
@@ -112,31 +113,31 @@ script = ExtResource("3_32fvh")
 puissance = 4.0
 metadata/_custom_type_script = "uid://vebxbdhgl2a0"
 
-[node name="Trail3D" type="MeshInstance3D" parent="Vaisseau"]
+[node name="Trail3D" type="Node" parent="Vaisseau"]
+script = ExtResource("5_0w8bn")
 transform = Transform3D(0.65072644, 0, -0.46535483, 0, 0.8, 0, 0.46535483, 0, 0.65072644, 0.19999999, 3.496912e-08, 0.8)
-material_override = SubResource("StandardMaterial3D_v2ql8")
-mesh = SubResource("ImmediateMesh_0w8bn")
-skeleton = NodePath("../MeshInstance3D/MeshInstance3D2/MeshInstance3D2")
-script = ExtResource("3_v2ql8")
-fromWidth = 0.12
-motionDelta = 0.01
-lifespan = 0.3
-startColor = Color(1, 0.40455934, 0.28864685, 1)
-endColor = Color(0.85665905, 0.5758484, 0.41215858, 0)
-metadata/_custom_type_script = "uid://c0c7kb0x430o7"
-
-[node name="Trail3D2" type="MeshInstance3D" parent="Vaisseau"]
-transform = Transform3D(-2.8444154e-08, -0.65072644, -0.46535483, 0.8, -3.4969112e-08, 0, -2.0341306e-08, -0.46535483, 0.65072644, 0.19999999, 3.496912e-08, 0.8)
 material_override = SubResource("StandardMaterial3D_v2ql8")
 mesh = SubResource("ImmediateMesh_v2ql8")
 skeleton = NodePath("../MeshInstance3D/MeshInstance3D2/MeshInstance3D2")
-script = ExtResource("3_v2ql8")
 fromWidth = 0.12
 motionDelta = 0.01
 lifespan = 0.3
 startColor = Color(1, 0.40455934, 0.28864685, 1)
 endColor = Color(0.85665905, 0.5758484, 0.41215858, 0)
-metadata/_custom_type_script = "uid://c0c7kb0x430o7"
+metadata/_custom_type_script = "uid://bmp007gcbbmtc"
+
+[node name="Trail3D2" type="Node" parent="Vaisseau"]
+script = ExtResource("5_0w8bn")
+transform = Transform3D(-2.8444154e-08, -0.65072644, -0.46535483, 0.8, -3.4969112e-08, 0, -2.0341306e-08, -0.46535483, 0.65072644, 0.19999999, 3.496912e-08, 0.8)
+material_override = SubResource("StandardMaterial3D_v2ql8")
+mesh = SubResource("ImmediateMesh_0w8bn")
+skeleton = NodePath("../MeshInstance3D/MeshInstance3D2/MeshInstance3D2")
+fromWidth = 0.12
+motionDelta = 0.01
+lifespan = 0.3
+startColor = Color(1, 0.40455934, 0.28864685, 1)
+endColor = Color(0.85665905, 0.5758484, 0.41215858, 0)
+metadata/_custom_type_script = "uid://bmp007gcbbmtc"
 
 [node name="Trail3D3" type="MeshInstance3D" parent="Vaisseau"]
 transform = Transform3D(-2.2755325e-08, -0.5205811, -0.37228385, 0.64000005, -2.7975288e-08, -4.440892e-16, -1.6273045e-08, -0.37228385, 0.5205811, -0.18898228, -5.9604645e-08, 0.90435237)
