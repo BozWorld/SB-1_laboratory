@@ -21,8 +21,8 @@ var _directions: Array[Vector3] = []
 var _last_position: Vector3
 
 # === COULEURS ===
-var color_start: Color = Color(0.9,0.9,1.0,0.8)
-var color_end: Color = Color(0.5, 0.5, 0.8, 0.0)
+@export var color_start: Color = Color(0.9,0.9,1.0,0.8)
+@export var color_end: Color = Color(0.5, 0.5, 0.8, 0.0)
 
 func setup():
 	mesh = ImmediateMesh.new()
