@@ -8,7 +8,6 @@ var rota := Vector3.ZERO
 
 @export var frottements := 0.1
 
-@export var pen := 1.0
 
 func effectuerRotation():
     rotacite += rotacceleration
@@ -22,7 +21,7 @@ func effectuerRotation():
     parent.transform.orthonormalized()
 
 func appliquerRotation(rotation : Vector3):
-    rotacceleration += rotation * pen
+    rotacceleration += rotation
 
 func prendreInput() -> Vector3:
     var prise_input := Vector3()
