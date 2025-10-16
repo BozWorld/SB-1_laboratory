@@ -1,5 +1,6 @@
 @tool
-class_name Trainee3D extends MeshInstance3D
+
+extends MeshInstance3D
 
 enum InterpolationMode {
 	LINEAR,

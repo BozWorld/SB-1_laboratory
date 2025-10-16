@@ -1,5 +1,3 @@
-@tool
-
 extends MeshInstance3D
 
 class_name Trail
@@ -32,12 +30,13 @@ var inv_cylindre : float
 func _ready() -> void:
 	setup()
 
-
+func _physics_process(delta: float) -> void:
+	update_trail(8.5, false, delta)
 
 func setup():
 	mesh = ImmediateMesh.new()
 	_last_position = global_position
-	inv_cylindre = 1.0 / resolution_cylindre
+	inv_cylindre = 2.0 / resolution_cylindre
 
 func update_trail(speed: float, grounded: bool, delta: float):
 	if !trail_enabled:
@@ -59,7 +58,7 @@ func _update_points_lifetime(delta: float):
 		_lifetimes[i] += delta
 		if _lifetimes[i] >= trail_lifetime:
 			_points.remove_at(i)
-            _basis.remove_at(i)
+			_basis.remove_at(i)
 			_lifetimes.remove_at(i)
 			_directions.remove_at(i)
 		else:
@@ -75,9 +74,9 @@ func _add_point():
 	var direction = Vector3.FORWARD
 	if _points.size() > 0:
 		direction = (global_position - _points[-1]).normalized()
-	
+		
 	_points.append(global_position)
-    _basis.append(global_basis)
+	_basis.append(global_basis)
 	_directions.append(direction)
 	_lifetimes.append(0.0)
 
@@ -157,13 +156,14 @@ func _create_quad_segment(index: int, width1: float, width2: float, color1: Colo
 
 		for i in range(resolution_cylindre) :
 			var rota = i * inv_cylindre
+			print(rota)
 
 			var nouveau_point1 = basis1.x * width1 * 0.5
-			nouveau_point1 = nouveau_point.rotated(basis1.y, rota)
+			nouveau_point1 = nouveau_point1.rotated(basis1.y, rota * PI)
 			points_cylindre1.append(nouveau_point1)
 			
 			var nouveau_point2 = basis2.x * width2 * 0.5
-			nouveau_point2 = nouveau_point.rotated(basis2.y, rota)
+			nouveau_point2 = nouveau_point2.rotated(basis2.y, rota * PI)
 			points_cylindre2.append(nouveau_point2)
 
 		for i in range(resolution_cylindre):
