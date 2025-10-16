@@ -453,10 +453,10 @@ metadata/_edit_use_anchors_ = true
 [node name="player" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03564, -9.94582)
 
-[node name="plane" type="CharacterBody3D" parent="player" node_paths=PackedStringArray("_trails", "rings_label", "landing_label", "debug_ui") groups=["player"]]
+[node name="plane" type="CharacterBody3D" parent="player" node_paths=PackedStringArray("trails", "rings_label", "landing_label", "debug_ui") groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("26_iav3h")
-_trails = [NodePath("effect/trail_l"), NodePath("effect/trail_r")]
+trails = [NodePath("effect/trail_l"), NodePath("effect/trail_r")]
 flight_config = SubResource("Resource_xa0eo")
 rings_label = NodePath("../../UI_VISUEL/CanvasLayer/data_panel/VBoxContainer/rings_label")
 landing_label = NodePath("../../UI_VISUEL/CanvasLayer/data_panel/VBoxContainer/landing_label")

@@ -12,6 +12,7 @@ signal boom_effect_triggered(intensity: float)
 var _flight_physics: FlightPhysics
 var _input_handler: InputHandler
 var _ground_detection: GroundDetection
+@export var _trails : Array[Trail]
 var _trail_system: UnifiedTrailSystem
 var _plane_animation: PlaneAnimation
 @export var flight_config: FlightConfiguration
@@ -37,12 +38,12 @@ func _initialize_systems():
 	_flight_physics = FlightPhysics.new()
 	_input_handler = InputHandler.new()
 	_ground_detection = GroundDetection.new()
-	_trail_system = UnifiedTrailSystem.new()
 	_plane_animation = PlaneAnimation.new()
 
 	_flight_physics.setup(flight_config if flight_config else _create_default_config())
 	_ground_detection.setup(self)
-	_trail_system.setup(get_node_or_null("effect/trail"))
+	for trail in _trails :
+		trail.setup()
 	_plane_animation.setup(get_node_or_null("plane_mesh"),  get_node_or_null("effect/helice"))
 
 func _connect_signals():
@@ -65,7 +66,8 @@ func _physics_process(delta: float) -> void:
 
 	_plane_animation.update_animations(physics_result, is_grounded, delta)
 
-	_trail_system.update_trail(current_speed, is_grounded, delta)
+	for trail in _trails :
+		trail.update_trail(current_speed, is_grounded, delta)
 
 	_update_debug_info()
 
@@ -102,9 +104,12 @@ func _on_boom_triggered(intensity: float):
 # === MÉTHODE UTILITAIRES ===
 func _update_debug_info():
 	if debug_ui:
+		var texte_trails : String
+		for trail in _trails :
+			texte_trails += trail.get_debug_string()
 		debug_ui.text = ( 
 			_flight_physics.get_debug_string() + "\n" +
-			_trail_system.get_debug_string() + "\n" +
+			texte_trails + "\n" +
 			_plane_animation.get_debug_string() + "\n"
 			
 		)
