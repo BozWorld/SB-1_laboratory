@@ -3,16 +3,43 @@ extends AttributPhysique
 @export var frottements := 0.05
 @export var puissance := 1.0
 
+@export var max_boost := 2.0
+@export var puissance_boost := 1.0
+
+@export var trails : Array[Trail]
+
+var boost_appuyé := false
+var index_boost := 0.0
+
 func prendreInput() -> float:
-    var prise_input = Input.get_axis("avancer", "freiner")
-    return prise_input
+	var prise_input = Input.get_axis("avancer", "freiner")
+	return prise_input
 
-func logiqueMoteur():
-    var poussee = parent.transform.basis.z * (prendreInput()  * puissance)
-    print(poussee)
+func prendreBoost(delta : float):
+	if Input.is_action_pressed("boost"):
+		if boost_appuyé :
+			index_boost += delta
+		else :
+			boost_appuyé = true
+			for trainee in trails :
+				trainee.genere_trail = true
+	elif boost_appuyé :
+		boost_appuyé = false
+		index_boost = 0.0
+		for trainee in trails :
+			trainee.genere_trail = false
+		
+	return boost_appuyé
 
-    if poussee :
-        parent.appliquerForce(poussee)
-    
-    if parent.velocite :
-        parent.appliquerFriction()
+func logiqueMoteur(delta : float):
+	var poussee = parent.transform.basis.z * (prendreInput()  * puissance)
+	print(poussee)
+
+	if prendreBoost(delta):
+		poussee *= clampf(index_boost + index_boost * puissance_boost, 1.0, max_boost)
+
+	if poussee :
+		parent.appliquerForce(poussee)
+	
+	if parent.velocite :
+		parent.appliquerFriction()

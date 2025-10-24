@@ -2,6 +2,8 @@ extends MeshInstance3D
 
 class_name Trail
 
+@export var cible = Node3D
+
 var min_trail_speed: float = 8.0
 
 @export var resolution_cylindre := 5
@@ -12,6 +14,8 @@ var min_trail_speed: float = 8.0
 @export var trail_lifetime: float = 1.5
 @export var trail_precision: float = 0.15
 @export var trail_segments: int = 6
+
+var genere_trail := false
 
 # === DONNÉES INTERNES ===
 var _points: Array[Vector3] = []
@@ -35,7 +39,7 @@ func _physics_process(delta: float) -> void:
 
 func setup():
 	mesh = ImmediateMesh.new()
-	_last_position = global_position
+	_last_position = cible.global_position
 	inv_cylindre = 2.0 / resolution_cylindre
 
 func update_trail(speed: float, grounded: bool, delta: float):
@@ -65,18 +69,19 @@ func _update_points_lifetime(delta: float):
 			i += 1
 
 func _try_add_point():
-	var current_pos = global_position
-	if (_last_position - current_pos).length() > trail_precision:
-		_add_point()
-		_last_position = current_pos
+	if genere_trail :
+		var current_pos = cible.global_position
+		if (_last_position - current_pos).length() > trail_precision:
+			_add_point()
+			_last_position = current_pos
 
 func _add_point():
 	var direction = Vector3.FORWARD
 	if _points.size() > 0:
-		direction = (global_position - _points[-1]).normalized()
+		direction = (cible.global_position - _points[-1]).normalized()
 		
-	_points.append(global_position)
-	_basis.append(global_basis)
+	_points.append(cible.global_position)
+	_basis.append(cible.global_basis)
 	_directions.append(direction)
 	_lifetimes.append(0.0)
 
@@ -104,12 +109,92 @@ func _rebuild_mesh():
 		var color_current = color_start.lerp(color_end, 1.0 - t_current)
 		var color_next = color_start.lerp(color_end, 1.0 - t_next)
 
-		var width_current = lerp(trail_width_start, trail_width_end, t_current)
-		var width_next = lerp(trail_width_start, trail_width_end, t_next)
+		var width_current = lerp(trail_width_end, trail_width_start, t_current)
+		var width_next = lerp(trail_width_end, trail_width_start, t_next)
 
 		_create_quad_segment(i, width_current, width_next, color_current, color_next)
+		
+		if i == _points.size() - 1:
+			_boucher_mesh(i, width_next, color_next)
+				
 	
 	mesh.surface_end()
+
+
+func _boucher_mesh(index: int, width: float, color: Color):
+	var pos = to_local(_points[index])
+
+	#var direction = _basis[index].z
+	#var up = Vector3.UP
+	#var right = direction.cross(up).normalized()
+#
+	#if right.length() < 0.1:
+		#right = Vector3.RIGHT
+	
+
+
+	var nouveau_basis = _basis[index]
+
+	var points_cylindre1 : Array[Vector3] = []
+	
+	
+	var bout = -nouveau_basis.z.normalized() * trail_precision
+		
+		
+	for i in range(resolution_cylindre) :
+		var rota = i * inv_cylindre
+		print(rota)
+
+		var nouveau_point1 = nouveau_basis.x * width * 0.5
+		nouveau_point1 = nouveau_point1.rotated(nouveau_basis.y.normalized(), rota * PI)
+		points_cylindre1.append(nouveau_point1)
+		
+		
+
+	for i in range(resolution_cylindre):
+
+		if i != 0 :
+			# Left et right dans le referentiel de l'axe du point du cylindre
+			var left = pos + points_cylindre1[i]
+			var right = pos + points_cylindre1[i-1]
+			var point_bout  = pos + bout
+
+			mesh.surface_set_color(color)
+			mesh.surface_add_vertex(left)
+			mesh.surface_set_color(color)
+			mesh.surface_add_vertex(point_bout)
+			mesh.surface_set_color(color)
+			mesh.surface_add_vertex(right)
+
+			mesh.surface_set_color(color)
+			mesh.surface_add_vertex(right)
+			mesh.surface_set_color(color)
+			mesh.surface_add_vertex(point_bout)
+			mesh.surface_set_color(color)
+			mesh.surface_add_vertex(point_bout)
+		
+		
+		else :
+			
+			# Left et right dans le referentiel de l'axe du point du cylindre
+			var left = pos + points_cylindre1[i]
+			var right = pos + points_cylindre1[resolution_cylindre - 1]
+			var point_bout = pos + bout
+
+			mesh.surface_set_color(color)
+			mesh.surface_add_vertex(left)
+			mesh.surface_set_color(color)
+			mesh.surface_add_vertex(point_bout)
+			mesh.surface_set_color(color)
+			mesh.surface_add_vertex(right)
+
+			mesh.surface_set_color(color)
+			mesh.surface_add_vertex(right)
+			mesh.surface_set_color(color)
+			mesh.surface_add_vertex(point_bout)
+			mesh.surface_set_color(color)
+			mesh.surface_add_vertex(point_bout)
+		
 
 func _create_quad_segment(index: int, width1: float, width2: float, color1: Color, color2: Color):
 	var pos1 = to_local(_points[index])
@@ -131,12 +216,14 @@ func _create_quad_segment(index: int, width1: float, width2: float, color1: Colo
 		var p2_left = pos2 - right * width2 * 0.5
 		var p2_right = pos2 + right * width2 * 0.5
 
+
 		mesh.surface_set_color(color1)
 		mesh.surface_add_vertex(p1_left)
 		mesh.surface_set_color(color2)
 		mesh.surface_add_vertex(p2_left)
 		mesh.surface_set_color(color1)
 		mesh.surface_add_vertex(p1_right)
+
 
 		mesh.surface_set_color(color1)
 		mesh.surface_add_vertex(p1_right)
@@ -159,12 +246,13 @@ func _create_quad_segment(index: int, width1: float, width2: float, color1: Colo
 			print(rota)
 
 			var nouveau_point1 = basis1.x * width1 * 0.5
-			nouveau_point1 = nouveau_point1.rotated(basis1.y, rota * PI)
+			nouveau_point1 = nouveau_point1.rotated(basis1.y.normalized(), rota * PI)
 			points_cylindre1.append(nouveau_point1)
 			
 			var nouveau_point2 = basis2.x * width2 * 0.5
-			nouveau_point2 = nouveau_point2.rotated(basis2.y, rota * PI)
+			nouveau_point2 = nouveau_point2.rotated(basis2.y.normalized(), rota * PI)
 			points_cylindre2.append(nouveau_point2)
+			
 
 		for i in range(resolution_cylindre):
 
@@ -175,19 +263,20 @@ func _create_quad_segment(index: int, width1: float, width2: float, color1: Colo
 				var p2_left = pos2 + points_cylindre2[i]
 				var p2_right = pos2 + points_cylindre2[i-1]
 
-				mesh.surface_set_color(color1)
-				mesh.surface_add_vertex(p1_left)
 				mesh.surface_set_color(color2)
 				mesh.surface_add_vertex(p2_left)
+				mesh.surface_set_color(color1)
+				mesh.surface_add_vertex(p1_left)
 				mesh.surface_set_color(color1)
 				mesh.surface_add_vertex(p1_right)
 
+				mesh.surface_set_color(color2)
+				mesh.surface_add_vertex(p2_left)
 				mesh.surface_set_color(color1)
 				mesh.surface_add_vertex(p1_right)
 				mesh.surface_set_color(color2)
-				mesh.surface_add_vertex(p2_left)
-				mesh.surface_set_color(color2)
 				mesh.surface_add_vertex(p2_right)
+			
 			else :
 				
 				# Left et right dans le referentiel de l'axe du point du cylindre
@@ -196,21 +285,22 @@ func _create_quad_segment(index: int, width1: float, width2: float, color1: Colo
 				var p2_left = pos2 + points_cylindre2[i]
 				var p2_right = pos2 + points_cylindre2[resolution_cylindre - 1]
 
+				mesh.surface_set_color(color2)
+				mesh.surface_add_vertex(p2_left)
 				mesh.surface_set_color(color1)
 				mesh.surface_add_vertex(p1_left)
-				mesh.surface_set_color(color2)
-				mesh.surface_add_vertex(p2_left)
 				mesh.surface_set_color(color1)
 				mesh.surface_add_vertex(p1_right)
 
-				mesh.surface_set_color(color1)
-				mesh.surface_add_vertex(p1_right)
 				mesh.surface_set_color(color2)
 				mesh.surface_add_vertex(p2_left)
+				mesh.surface_set_color(color1)
+				mesh.surface_add_vertex(p1_right)
 				mesh.surface_set_color(color2)
 				mesh.surface_add_vertex(p2_right)
-
-
+		
+		
+		
 
 
 
