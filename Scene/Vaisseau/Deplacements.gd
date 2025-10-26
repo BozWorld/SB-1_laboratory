@@ -33,7 +33,7 @@ func prendreBoost(delta : float):
 
 func logiqueMoteur(delta : float):
 	var poussee = parent.transform.basis.z * (prendreInput()  * puissance)
-	print(poussee)
+	
 
 	if prendreBoost(delta):
 		poussee *= clampf(index_boost + index_boost * puissance_boost, 1.0, max_boost)

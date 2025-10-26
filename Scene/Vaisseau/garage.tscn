@@ -1,10 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://y1gth86jbij5"]
+[gd_scene load_steps=19 format=3 uid="uid://y1gth86jbij5"]
 
 [ext_resource type="Script" uid="uid://b1ttm86gwkx7b" path="res://Scene/Vaisseau/suiveur.gd" id="1_01lyh"]
-[ext_resource type="Script" uid="uid://wfkk2ygbkrtm" path="res://Scene/Vaisseau/vaisseau.gd" id="1_2eq35"]
-[ext_resource type="Script" uid="uid://ciin4w33kjt7" path="res://Scene/Vaisseau/moteur_rotatif.gd" id="2_nlxle"]
-[ext_resource type="Script" uid="uid://c2xsh78oxjkno" path="res://Scene/Vaisseau/Deplacements.gd" id="3_32fvh"]
+[ext_resource type="Script" uid="uid://e2w8elf22va4" path="res://Scene/Vaisseau/Camera.gd" id="2_fklk0"]
+[ext_resource type="PackedScene" uid="uid://dlkbde2jt311v" path="res://Scene/Vaisseau/vaisseau.tscn" id="3_us6ar"]
 [ext_resource type="Script" uid="uid://bmp007gcbbmtc" path="res://Scene/Vaisseau/Trail.gd" id="5_v2ql8"]
+[ext_resource type="Script" uid="uid://byccywto5al0n" path="res://Scene/Vaisseau/terrain.gd" id="8_us6ar"]
+[ext_resource type="Script" uid="uid://bvobm6ilg73wy" path="res://Scene/Vaisseau/BruitPese.gd" id="9_i6nv2"]
+[ext_resource type="Script" uid="uid://ynxu0n04gnug" path="res://Scene/Vaisseau/MultiBruit.gd" id="10_b04f3"]
+[ext_resource type="Material" uid="uid://dd7d0g163vg5d" path="res://Scene/Vaisseau/terrain.tres" id="11_b04f3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yccnb"]
 sky_top_color = Color(0.390854, 0.125698, 1, 1)
@@ -23,41 +26,32 @@ glow_enabled = true
 glow_normalized = true
 glow_blend_mode = 0
 
-[sub_resource type="PrismMesh" id="PrismMesh_nlxle"]
-size = Vector3(0.8, 1.5, 0.4)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_r4p0r"]
-top_radius = 0.1
-bottom_radius = 0.1
-height = 0.3
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_6sp76"]
-top_radius = 0.15
-bottom_radius = 0.12
-height = 0.1
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_v2ql8"]
-data = PackedVector3Array(0, 0.75, 0.19999999, 0.39999998, -0.75, 0.19999999, -0.39999998, -0.75, 0.19999999, 0, 0.75, -0.19999999, -0.39999998, -0.75, -0.19999999, 0.39999998, -0.75, -0.19999999, 0, 0.75, 0.19999999, 0, 0.75, -0.19999999, 0.39999998, -0.75, 0.19999999, 0, 0.75, -0.19999999, 0.39999998, -0.75, -0.19999999, 0.39999998, -0.75, 0.19999999, 0, 0.75, -0.19999999, 0, 0.75, 0.19999999, -0.39999998, -0.75, -0.19999999, 0, 0.75, 0.19999999, -0.39999998, -0.75, 0.19999999, -0.39999998, -0.75, -0.19999999, -0.39999998, -0.75, 0.19999999, 0.39999998, -0.75, 0.19999999, -0.39999998, -0.75, -0.19999999, 0.39999998, -0.75, 0.19999999, 0.39999998, -0.75, -0.19999999, -0.39999998, -0.75, -0.19999999)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fklk0"]
 transparency = 1
-albedo_color = Color(0.29803923, 0.79607844, 0.29411766, 0.47058824)
+albedo_color = Color(0.9999525, 0.4586519, 0.41856322, 0.5529412)
 emission_enabled = true
-emission = Color(0.23217133, 0.63728946, 0.22898144, 1)
-emission_energy_multiplier = 20.0
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 15.0
 grow_amount = 2.545
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_v2ql8"]
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_0w8bn"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_v2ql8"]
-material = SubResource("StandardMaterial3D_fklk0")
-top_radius = 0.1
-bottom_radius = 0.1
-
 [sub_resource type="BoxMesh" id="BoxMesh_01lyh"]
 size = Vector3(15, 200, 20)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_63mvr"]
+
+[sub_resource type="Resource" id="Resource_t0pwv"]
+script = ExtResource("9_i6nv2")
+bruit = SubResource("FastNoiseLite_63mvr")
+metadata/_custom_type_script = "uid://bvobm6ilg73wy"
+
+[sub_resource type="Resource" id="Resource_7uywy"]
+script = ExtResource("10_b04f3")
+liste_bruits = Array[ExtResource("9_i6nv2")]([SubResource("Resource_t0pwv")])
+metadata/_custom_type_script = "uid://ynxu0n04gnug"
 
 [node name="Garage" type="Node3D"]
 
@@ -71,61 +65,35 @@ shadow_enabled = true
 directional_shadow_max_distance = 1.0
 
 [node name="Suiveur" type="Node3D" parent="." node_paths=PackedStringArray("cible")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -473.609, 98.58429, -52.48181)
 script = ExtResource("1_01lyh")
 cible = NodePath("../Vaisseau")
 vitesse_deplacement = 28.0
 
 [node name="Camera3D" type="Camera3D" parent="Suiveur"]
 transform = Transform3D(1, 0, 0, 0, 0.99167794, 0.1287437, 0, -0.1287437, 0.99167794, 0, 1.360683, 4.108955)
+script = ExtResource("2_fklk0")
+mod_fov = 5.0
 
-[node name="Vaisseau" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68563104, -1.1920929e-07, 0.040923953)
-script = ExtResource("1_2eq35")
+[node name="Vaisseau" parent="." instance=ExtResource("3_us6ar")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -473.609, 98.58429, -52.48181)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Vaisseau"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("PrismMesh_nlxle")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Vaisseau/MeshInstance3D"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.2, -0.8, 0)
-mesh = SubResource("CylinderMesh_r4p0r")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Vaisseau/MeshInstance3D/MeshInstance3D"]
-mesh = SubResource("CylinderMesh_6sp76")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Vaisseau/MeshInstance3D"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.2, -0.8, 0)
-mesh = SubResource("CylinderMesh_r4p0r")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Vaisseau/MeshInstance3D/MeshInstance3D2"]
-mesh = SubResource("CylinderMesh_6sp76")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Vaisseau"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-shape = SubResource("ConcavePolygonShape3D_v2ql8")
-
-[node name="MoteurRotatif" type="Node" parent="Vaisseau"]
-unique_name_in_owner = true
-script = ExtResource("2_nlxle")
-puissance = 0.25
-
-[node name="MoteurDeplacements" type="Node" parent="Vaisseau" node_paths=PackedStringArray("trails")]
-unique_name_in_owner = true
-script = ExtResource("3_32fvh")
-puissance = 4.0
-max_boost = 5.0
-puissance_boost = 1.5
+[node name="MoteurDeplacements" parent="Vaisseau" index="2" node_paths=PackedStringArray("trails")]
 trails = [NodePath("../../Trail"), NodePath("../../Trail2")]
-metadata/_custom_type_script = "uid://vebxbdhgl2a0"
+
+[node name="MarkerT" type="Marker3D" parent="Vaisseau"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24196625, 0, 0.84246826)
+
+[node name="MarkerT2" type="Marker3D" parent="Vaisseau"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20521927, 0, 0.8248291)
 
 [node name="Trail" type="MeshInstance3D" parent="." node_paths=PackedStringArray("cible")]
 material_override = SubResource("StandardMaterial3D_fklk0")
 mesh = SubResource("ImmediateMesh_v2ql8")
 skeleton = NodePath("../Vaisseau")
 script = ExtResource("5_v2ql8")
-cible = NodePath("../Vaisseau/MeshInstance3D/MeshInstance3D2")
+cible = NodePath("../Vaisseau/MarkerT")
 trail_width_start = 0.2
 trail_width_end = 0.01
 trail_lifetime = 0.15
@@ -136,16 +104,11 @@ material_override = SubResource("StandardMaterial3D_fklk0")
 mesh = SubResource("ImmediateMesh_0w8bn")
 skeleton = NodePath("../Vaisseau")
 script = ExtResource("5_v2ql8")
-cible = NodePath("../Vaisseau/MeshInstance3D/MeshInstance3D")
+cible = NodePath("../Vaisseau/MarkerT2")
 trail_width_start = 0.2
 trail_width_end = 0.01
 trail_lifetime = 0.15
 metadata/_custom_type_script = "uid://bmp007gcbbmtc"
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.107397, 0, 1.4993978)
-mesh = SubResource("CylinderMesh_v2ql8")
-skeleton = NodePath("../Trail")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.020737, 0, -40.368004)
@@ -161,3 +124,76 @@ skeleton = NodePath("../Vaisseau/MoteurRotatif")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.49103, 0, -4.378662)
 mesh = SubResource("BoxMesh_01lyh")
 skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.48215, 0, -242.37207)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 189.50125, 0, -111.516014)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 308.9939, 0, -206.38272)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -317.91785, 0, -254.9733)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -305.89874, 0, -124.11724)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -186.4061, 0, -218.98395)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189.70164, 0, 170.72702)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -177.68254, 0, 301.58307)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.18988, 0, 206.71637)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.36766, 0, 160.53864)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.386765, 0, 291.39468)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195.87943, 0, 196.52798)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="Terrain" type="Node3D" parent="." node_paths=PackedStringArray("cible_generation")]
+script = ExtResource("8_us6ar")
+distance_rafraichir = 2
+genere_continue = true
+resolution = 16
+multi_bruit = SubResource("Resource_7uywy")
+cible_generation = NodePath("../Vaisseau")
+material_terrain = ExtResource("11_b04f3")
+
+[node name="BoiteMissiles" type="Node3D" parent="." groups=["BoiteMissiles"]]
+
+[editable path="Vaisseau"]

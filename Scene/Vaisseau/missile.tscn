@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmstuhrf36lfh"]
+
+[ext_resource type="Script" uid="uid://s567i5qokh0i" path="res://Scene/Vaisseau/missile.gd" id="1_0ap67"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t0pwv"]
+transparency = 1
+albedo_color = Color(0, 1, 0, 0.47058824)
+emission_enabled = true
+emission = Color(0, 0.86044586, 0, 1)
+emission_energy_multiplier = 20.0
+grow_amount = 2.545
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_v2ql8"]
+material = SubResource("StandardMaterial3D_t0pwv")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 1.0
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_0ap67")
+
+[node name="Missile" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_v2ql8")
+skeleton = NodePath("../../../Trail")

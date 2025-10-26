@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://dlkbde2jt311v"]
+
+[ext_resource type="Script" uid="uid://wfkk2ygbkrtm" path="res://Scene/Vaisseau/vaisseau.gd" id="1_ktd8m"]
+[ext_resource type="Script" uid="uid://ciin4w33kjt7" path="res://Scene/Vaisseau/moteur_rotatif.gd" id="2_u6daw"]
+[ext_resource type="Script" uid="uid://c2xsh78oxjkno" path="res://Scene/Vaisseau/Deplacements.gd" id="3_bqxt1"]
+[ext_resource type="Script" uid="uid://bkgv78aeqs1ph" path="res://Scene/Vaisseau/collision.gd" id="4_m676f"]
+[ext_resource type="Script" uid="uid://dqinjwhwql2vb" path="res://Scene/Vaisseau/LanceMissile.gd" id="5_blghn"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_nlxle"]
+size = Vector3(0.8, 1.5, 0.4)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_r4p0r"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.3
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6sp76"]
+top_radius = 0.15
+bottom_radius = 0.12
+height = 0.1
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_v2ql8"]
+data = PackedVector3Array(0, 0.75, 0.19999999, 0.39999998, -0.75, 0.19999999, -0.39999998, -0.75, 0.19999999, 0, 0.75, -0.19999999, -0.39999998, -0.75, -0.19999999, 0.39999998, -0.75, -0.19999999, 0, 0.75, 0.19999999, 0, 0.75, -0.19999999, 0.39999998, -0.75, 0.19999999, 0, 0.75, -0.19999999, 0.39999998, -0.75, -0.19999999, 0.39999998, -0.75, 0.19999999, 0, 0.75, -0.19999999, 0, 0.75, 0.19999999, -0.39999998, -0.75, -0.19999999, 0, 0.75, 0.19999999, -0.39999998, -0.75, 0.19999999, -0.39999998, -0.75, -0.19999999, -0.39999998, -0.75, 0.19999999, 0.39999998, -0.75, 0.19999999, -0.39999998, -0.75, -0.19999999, 0.39999998, -0.75, 0.19999999, 0.39999998, -0.75, -0.19999999, -0.39999998, -0.75, -0.19999999)
+
+[node name="Vaisseau" type="Node3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+script = ExtResource("1_ktd8m")
+metadata/_custom_type_script = "uid://dl1eiegc8btxy"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PrismMesh_nlxle")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.2, -0.8, 0)
+mesh = SubResource("CylinderMesh_r4p0r")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D"]
+mesh = SubResource("CylinderMesh_6sp76")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.2, -0.8, 0)
+mesh = SubResource("CylinderMesh_r4p0r")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D2"]
+mesh = SubResource("CylinderMesh_6sp76")
+skeleton = NodePath("../..")
+
+[node name="MoteurRotatif" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_u6daw")
+puissance = 0.25
+
+[node name="MoteurDeplacements" type="Node" parent="." node_paths=PackedStringArray("trails")]
+unique_name_in_owner = true
+script = ExtResource("3_bqxt1")
+puissance = 4.0
+max_boost = 5.0
+puissance_boost = 1.5
+trails = [null, null]
+metadata/_custom_type_script = "uid://vebxbdhgl2a0"
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("4_m676f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_v2ql8")
+
+[node name="LanceMissile" type="Node3D" parent="." groups=["LancesMissiles"]]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, -0.35, 0, 0)
+script = ExtResource("5_blghn")
+frequence_tir = 0.1
+
+[node name="LanceMissile2" type="Node3D" parent="." groups=["LancesMissiles"]]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, 0.35, 0, 0)
+script = ExtResource("5_blghn")
+frequence_tir = 0.1
+
+[connection signal="area_entered" from="Area3D" to="Area3D" method="collision"]

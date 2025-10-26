@@ -10,36 +10,36 @@ var rota := Vector3.ZERO
 
 
 func effectuerRotation():
-    rotacite += rotacceleration
-    rotacceleration *= 0.0
-    rota += rotacite
+	rotacite += rotacceleration
+	rotacceleration *= 0.0
+	rota += rotacite
 
-    parent.rotate_object_local(Vector3(0,1,0), rotacite.y)
-    parent.rotate_object_local(Vector3(1,0,0), rotacite.x)
-    parent.rotate_object_local(Vector3(0,0,1), rotacite.z)
+	parent.rotate_object_local(Vector3(0,1,0), rotacite.y)
+	parent.rotate_object_local(Vector3(1,0,0), rotacite.x)
+	parent.rotate_object_local(Vector3(0,0,1), rotacite.z)
 
-    parent.transform.orthonormalized()
+	parent.transform.orthonormalized()
 
 func appliquerRotation(rotation : Vector3):
-    rotacceleration += rotation
+	rotacceleration += rotation
 
 func prendreInput() -> Vector3:
-    var prise_input := Vector3()
-    prise_input.x = Input.get_axis("rota_bas","rota_haut")
-    prise_input.y = Input.get_axis("rota_merde","rota_gauche")
-    prise_input.z = Input.get_axis("rota_tmerde","rota_tgauche")
+	var prise_input := Vector3()
+	prise_input.x = Input.get_axis("rota_bas","rota_haut")
+	prise_input.y = Input.get_axis("rota_merde","rota_gauche")
+	prise_input.z = Input.get_axis("rota_tmerde","rota_tgauche")
 
-    return prise_input
+	return prise_input
 
 func appliquerFrottements():
-    rotacite *= 1.0 - frottements
+	rotacite *= 1.0 - frottements
 
 
 func logiqueMoteur(delta : float):
-    var pivot = prendreInput() * delta * puissance
+	var pivot = prendreInput() * delta * puissance
 
-    if pivot :
-        appliquerRotation(pivot)
-    
-    effectuerRotation()
-    appliquerFrottements()
+	if pivot :
+		appliquerRotation(pivot)
+	
+	effectuerRotation()
+	appliquerFrottements()

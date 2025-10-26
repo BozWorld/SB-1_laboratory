@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://dd7d0g163vg5d"]
+
+[ext_resource type="Shader" uid="uid://v3q0e3bl3kop" path="res://Scene/Vaisseau/Terrain.gdshader" id="1_yfdp7"]
+
+[sub_resource type="Gradient" id="Gradient_ydj4n"]
+offsets = PackedFloat32Array(0, 0.09495549, 0.31454006, 0.4866469, 0.6379822, 0.8367953, 1)
+colors = PackedColorArray(0.29274306, 0.0010447261, 0.6144959, 1, 0.35976478, 0.10863637, 0.5037097, 1, 0.63204056, 0.54572743, 0.053640738, 1, 0, 0.65882355, 0.2901961, 1, 0.01755059, 0.37746292, 0.17077258, 1, 0.21491322, 0.13764867, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mad5s"]
+gradient = SubResource("Gradient_ydj4n")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_63mvr"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ntwqa"]
+noise = SubResource("FastNoiseLite_63mvr")
+as_normal_map = true
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_yfdp7")
+shader_parameter/hauteur = 64.0
+shader_parameter/color_gradient = SubResource("GradientTexture1D_mad5s")
+shader_parameter/normal_map = SubResource("NoiseTexture2D_ntwqa")
