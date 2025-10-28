@@ -1,8 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://y1gth86jbij5"]
+[gd_scene load_steps=36 format=3 uid="uid://y1gth86jbij5"]
 
 [ext_resource type="Script" uid="uid://b1ttm86gwkx7b" path="res://Scene/Vaisseau/suiveur.gd" id="1_01lyh"]
 [ext_resource type="Script" uid="uid://e2w8elf22va4" path="res://Scene/Vaisseau/Camera.gd" id="2_fklk0"]
 [ext_resource type="PackedScene" uid="uid://dlkbde2jt311v" path="res://Scene/Vaisseau/vaisseau.tscn" id="3_us6ar"]
+[ext_resource type="Material" uid="uid://bbkfq1x33pl4c" path="res://Scene/Vaisseau/trainee.tres" id="4_of3fv"]
+[ext_resource type="Script" uid="uid://bmp007gcbbmtc" path="res://Scene/Vaisseau/Trail.gd" id="5_v2ql8"]
 [ext_resource type="Script" uid="uid://byccywto5al0n" path="res://Scene/Vaisseau/terrain.gd" id="8_us6ar"]
 [ext_resource type="Script" uid="uid://bvobm6ilg73wy" path="res://Scene/Vaisseau/BruitPese.gd" id="9_i6nv2"]
 [ext_resource type="Script" uid="uid://ynxu0n04gnug" path="res://Scene/Vaisseau/MultiBruit.gd" id="10_b04f3"]
@@ -24,6 +26,10 @@ tonemap_mode = 2
 glow_enabled = true
 glow_normalized = true
 glow_blend_mode = 0
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_v2ql8"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_0w8bn"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_63mvr"]
 frequency = 0.0004
@@ -125,14 +131,41 @@ mod_fov = 3.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.34032, 98.58429, 496.6005)
 coef_friction = 0.04
 
-[node name="MoteurDeplacements" parent="Vaisseau" index="2"]
+[node name="MoteurDeplacements" parent="Vaisseau" index="2" node_paths=PackedStringArray("trails")]
 min_vitesse_trails = 250.0
+trails = [NodePath("../../Trail"), NodePath("../../Trail2")]
+
+[node name="MoteurTrails" parent="Vaisseau/MoteurDeplacements" index="0" node_paths=PackedStringArray("origine_trails")]
+origine_trails = []
 
 [node name="MarkerT" type="Marker3D" parent="Vaisseau"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24196625, 0, 0.84246826)
 
 [node name="MarkerT2" type="Marker3D" parent="Vaisseau"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20521927, 0, 0.8248291)
+
+[node name="Trail" type="MeshInstance3D" parent="." node_paths=PackedStringArray("cible")]
+visible = false
+material_override = ExtResource("4_of3fv")
+mesh = SubResource("ImmediateMesh_v2ql8")
+skeleton = NodePath("../Vaisseau")
+script = ExtResource("5_v2ql8")
+cible = NodePath("../Vaisseau/MarkerT")
+trail_width_start = 0.2
+trail_width_end = 0.01
+metadata/_custom_type_script = "uid://bmp007gcbbmtc"
+
+[node name="Trail2" type="MeshInstance3D" parent="." node_paths=PackedStringArray("cible")]
+visible = false
+material_override = ExtResource("4_of3fv")
+mesh = SubResource("ImmediateMesh_0w8bn")
+skeleton = NodePath("../Vaisseau")
+script = ExtResource("5_v2ql8")
+cible = NodePath("../Vaisseau/MarkerT2")
+trail_width_start = 0.2
+trail_width_end = 0.01
+trail_lifetime = 5.0
+metadata/_custom_type_script = "uid://bmp007gcbbmtc"
 
 [node name="Terrain" type="Node3D" parent="." node_paths=PackedStringArray("cible_generation")]
 script = ExtResource("8_us6ar")

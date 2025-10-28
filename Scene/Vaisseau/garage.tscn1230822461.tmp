@@ -1,0 +1,202 @@
+[gd_scene load_steps=19 format=3 uid="uid://y1gth86jbij5"]
+
+[ext_resource type="Script" uid="uid://b1ttm86gwkx7b" path="res://Scene/Vaisseau/suiveur.gd" id="1_01lyh"]
+[ext_resource type="Script" uid="uid://e2w8elf22va4" path="res://Scene/Vaisseau/Camera.gd" id="2_fklk0"]
+[ext_resource type="PackedScene" uid="uid://dlkbde2jt311v" path="res://Scene/Vaisseau/vaisseau.tscn" id="3_us6ar"]
+[ext_resource type="Script" uid="uid://bmp007gcbbmtc" path="res://Scene/Vaisseau/Trail.gd" id="5_v2ql8"]
+[ext_resource type="Script" uid="uid://byccywto5al0n" path="res://Scene/Vaisseau/terrain.gd" id="8_us6ar"]
+[ext_resource type="Script" uid="uid://bvobm6ilg73wy" path="res://Scene/Vaisseau/BruitPese.gd" id="9_i6nv2"]
+[ext_resource type="Script" uid="uid://ynxu0n04gnug" path="res://Scene/Vaisseau/MultiBruit.gd" id="10_b04f3"]
+[ext_resource type="Material" uid="uid://dd7d0g163vg5d" path="res://Scene/Vaisseau/terrain.tres" id="11_b04f3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yccnb"]
+sky_top_color = Color(0.390854, 0.125698, 1, 1)
+sky_horizon_color = Color(0.62272966, 0.5991519, 0.8516529, 1)
+ground_bottom_color = Color(0.185047, 0.355892, 0.491594, 1)
+ground_horizon_color = Color(0.62272966, 0.5991519, 0.8516529, 1)
+
+[sub_resource type="Sky" id="Sky_32fvh"]
+sky_material = SubResource("ProceduralSkyMaterial_yccnb")
+
+[sub_resource type="Environment" id="Environment_01lyh"]
+background_mode = 2
+sky = SubResource("Sky_32fvh")
+tonemap_mode = 2
+glow_enabled = true
+glow_normalized = true
+glow_blend_mode = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fklk0"]
+transparency = 1
+albedo_color = Color(0.9999525, 0.4586519, 0.41856322, 0.5529412)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 15.0
+grow_amount = 2.545
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_v2ql8"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_0w8bn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_01lyh"]
+size = Vector3(15, 200, 20)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_63mvr"]
+
+[sub_resource type="Resource" id="Resource_t0pwv"]
+script = ExtResource("9_i6nv2")
+bruit = SubResource("FastNoiseLite_63mvr")
+metadata/_custom_type_script = "uid://bvobm6ilg73wy"
+
+[sub_resource type="Resource" id="Resource_7uywy"]
+script = ExtResource("10_b04f3")
+liste_bruits = Array[ExtResource("9_i6nv2")]([SubResource("Resource_t0pwv")])
+metadata/_custom_type_script = "uid://ynxu0n04gnug"
+
+[node name="Garage" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_01lyh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.502585, 0.841831, 0, 1)
+shadow_enabled = true
+directional_shadow_max_distance = 1.0
+
+[node name="Suiveur" type="Node3D" parent="." node_paths=PackedStringArray("cible")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.34032, 98.58429, 496.6005)
+script = ExtResource("1_01lyh")
+cible = NodePath("../Vaisseau")
+vitesse_deplacement = 44.0
+vitesse_rotation = 0.1
+
+[node name="Camera3D" type="Camera3D" parent="Suiveur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7763443, 2.2488823)
+script = ExtResource("2_fklk0")
+mod_fov = 3.0
+
+[node name="Vaisseau" parent="." instance=ExtResource("3_us6ar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.34032, 98.58429, 496.6005)
+coef_friction = 0.04
+
+[node name="MoteurDeplacements" parent="Vaisseau" index="2" node_paths=PackedStringArray("trails")]
+frottements = null
+trails = [NodePath("../../Trail"), NodePath("../../Trail2")]
+
+[node name="MarkerT" type="Marker3D" parent="Vaisseau"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24196625, 0, 0.84246826)
+
+[node name="MarkerT2" type="Marker3D" parent="Vaisseau"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20521927, 0, 0.8248291)
+
+[node name="Trail" type="MeshInstance3D" parent="." node_paths=PackedStringArray("cible")]
+material_override = SubResource("StandardMaterial3D_fklk0")
+mesh = SubResource("ImmediateMesh_v2ql8")
+skeleton = NodePath("../Vaisseau")
+script = ExtResource("5_v2ql8")
+cible = NodePath("../Vaisseau/MarkerT")
+trail_width_start = 0.2
+trail_width_end = 0.01
+trail_lifetime = 0.15
+metadata/_custom_type_script = "uid://bmp007gcbbmtc"
+
+[node name="Trail2" type="MeshInstance3D" parent="." node_paths=PackedStringArray("cible")]
+material_override = SubResource("StandardMaterial3D_fklk0")
+mesh = SubResource("ImmediateMesh_0w8bn")
+skeleton = NodePath("../Vaisseau")
+script = ExtResource("5_v2ql8")
+cible = NodePath("../Vaisseau/MarkerT2")
+trail_width_start = 0.2
+trail_width_end = 0.01
+trail_lifetime = 0.15
+metadata/_custom_type_script = "uid://bmp007gcbbmtc"
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.020737, 0, -40.368004)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.001633, 0, 90.488045)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.49103, 0, -4.378662)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.48215, 0, -242.37207)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 189.50125, 0, -111.516014)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 308.9939, 0, -206.38272)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -317.91785, 0, -254.9733)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -305.89874, 0, -124.11724)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -186.4061, 0, -218.98395)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189.70164, 0, 170.72702)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -177.68254, 0, 301.58307)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.18988, 0, 206.71637)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.36766, 0, 160.53864)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.386765, 0, 291.39468)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195.87943, 0, 196.52798)
+mesh = SubResource("BoxMesh_01lyh")
+skeleton = NodePath("../Vaisseau/MoteurRotatif")
+
+[node name="Terrain" type="Node3D" parent="." node_paths=PackedStringArray("cible_generation")]
+script = ExtResource("8_us6ar")
+distance_rafraichir = 2
+genere_continue = true
+resolution = 16
+multi_bruit = SubResource("Resource_7uywy")
+cible_generation = NodePath("../Vaisseau")
+material_terrain = ExtResource("11_b04f3")
+
+[node name="BoiteMissiles" type="Node3D" parent="." groups=["BoiteMissiles"]]
+
+[editable path="Vaisseau"]

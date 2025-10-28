@@ -1,18 +1,19 @@
 extends MeshInstance3D
 
-class_name Trail
+class_name TempTrail
 
-@export var cible = Node3D
+var cible = Node3D
 
 var min_trail_speed: float = 0.0
 
-@export var resolution_cylindre := 5
+var resolution_cylindre := 5
 # === PARAMÈTRE DE TRAIL
-@export var trail_enabled: bool = true
-@export var trail_width_start: float = 0.3
-@export var trail_width_end: float = 0.05
-@export var trail_lifetime: float = 1.5
-@export var trail_precision: float = 0.15
+var trail_enabled: bool = true
+var trail_width_start: float = 0.3
+var trail_width_end: float = 0.05
+var trail_lifetime: float = 1.5
+var trail_precision: float = 0.15
+var trail_segments: int = 6
 
 var genere_trail := false
 
@@ -63,6 +64,9 @@ func _update_points_lifetime(delta: float):
 			_basis.remove_at(i)
 			_lifetimes.remove_at(i)
 			_directions.remove_at(i)
+
+			if _points.is_empty() :
+				queue_free()
 		else:
 			i += 1
 

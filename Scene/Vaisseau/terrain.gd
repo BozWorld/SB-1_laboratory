@@ -44,7 +44,7 @@ var liste_chunk =  {}
 @export_range(4.0, 128.0, 4.0) var hauteur := 32.0:
 	set(nouvelle_hauteur):
 		hauteur = nouvelle_hauteur
-		material_terrain.set_shader_parameter("hauteur",  hauteur * 2.0)
+		# material_terrain.set_shader_parameter("hauteur", hauteur * 2.0)
 		rechargementGenEditeur()
 
 ## En cas de regen dynamique, est le centre de base horizontalement de la génération

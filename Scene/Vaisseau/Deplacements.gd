@@ -6,7 +6,11 @@ extends AttributPhysique
 @export var max_boost := 2.0
 @export var puissance_boost := 1.0
 
+@export var min_vitesse_trails := 15.0
+
 @export var trails : Array[Trail]
+
+@onready var moteur_trails = %MoteurTrails
 
 var boost_appuyé := false
 var index_boost := 0.0
@@ -21,25 +25,27 @@ func prendreBoost(delta : float):
 			index_boost += delta
 		else :
 			boost_appuyé = true
-			for trainee in trails :
-				trainee.genere_trail = true
+
+				
 	elif boost_appuyé :
 		boost_appuyé = false
 		index_boost = 0.0
-		for trainee in trails :
-			trainee.genere_trail = false
 		
 	return boost_appuyé
 
 func logiqueMoteur(delta : float):
 	var poussee = parent.transform.basis.z * (prendreInput()  * puissance)
 	
+	var boost = prendreBoost(delta)
 
-	if prendreBoost(delta):
+	if boost:
 		poussee *= clampf(index_boost + index_boost * puissance_boost, 1.0, max_boost)
 
 	if poussee :
 		parent.appliquerForce(poussee)
+
 	
 	if parent.velocite :
 		parent.appliquerFriction()
+	
+	moteur_trails.logiqueTrails(parent.velocite.length(), boost)
