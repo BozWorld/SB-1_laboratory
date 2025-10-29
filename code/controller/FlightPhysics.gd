@@ -15,6 +15,10 @@ var boom_speed_threshold: float = 30.0
 var last_boom_time: float = 0.0
 var boom_cooldown: float = 2.0
 
+var boost := false
+var post_boost := false
+var post_boost_index := 0.0
+
 func setup(flight_config: FlightConfiguration):
 	config = flight_config
 
@@ -49,11 +53,22 @@ func _check_boom_effect():
 			print("BOOM déclenché! Vitesse: %.1f, Intensité: %.2f" % [forward_speed, intensity])
 
 func _update_target_speed(throttle_change: float, delta: float, grounded: bool):
-	if throttle_change != 0.0:
+	#if throttle_change != 0.0:
 		target_speed += throttle_change * config.throttle_delta * delta
 		var max_limit = config.max_flight_speed 
 		if grounded:
 			max_limit = max(config.min_flight_speed * 1.5, 0.0)
+		elif boost :
+			post_boost = true
+			boost = false
+			max_limit += config.boost_add_maxs
+			target_speed += config.boost_strength
+		elif post_boost :
+			max_limit += lerpf(config.boost_add_maxs, config.max_flight_speed, post_boost_index)
+			post_boost_index += delta * config.boost_density
+			if post_boost_index >= 1.0 :
+				post_boost_index = 0.0
+				post_boost = false
 		target_speed = clamp(target_speed, 0.0, max_limit)
 
 func _calculate_turn_input(raw_input: float, speed: float) -> float:

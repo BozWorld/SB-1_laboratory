@@ -10,11 +10,11 @@ var takeoff_force: float = 0.0
 
 
 func _init(spd: float = 0.0, turn: float = 0.0, pitch: float = 0.0, takeoff: bool = false, takeoff_f: float = 0.0):
-    speed = spd
-    turn_input = turn
-    pitch_input = pitch
-    should_takeoff = takeoff
-    takeoff_force = takeoff_f
+	speed = spd
+	turn_input = turn
+	pitch_input = pitch
+	should_takeoff = takeoff
+	takeoff_force = takeoff_f
 
 func _to_string() -> String:
-    return "PhysicsResult(speed: %.1f, turn:%.2f, pitch: %.2f, takeoff: %s)" % [speed, turn_input, pitch_input, should_takeoff]
+	return "PhysicsResult(speed: %.1f, turn:%.2f, pitch: %.2f, takeoff: %s)" % [speed, turn_input, pitch_input, should_takeoff]

@@ -57,7 +57,13 @@ func _setup_initial_state():
 # === BOUCLE PRINCIPALE ===
 func _physics_process(delta: float) -> void:
 	var input_data = _input_handler.get_input_data(delta, current_speed, is_grounded)
-
+	var input_boost =_input_handler.get_input_boost(delta)
+	
+	if input_boost == 1.0 :
+		_flight_physics.boost = true
+	
+	%boost_visual.actualise_mesh(input_boost)
+	
 	var physics_result = _flight_physics.update_physics(input_data, delta, is_grounded)
 	current_speed = physics_result.speed
 
