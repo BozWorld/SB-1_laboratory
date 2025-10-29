@@ -245,15 +245,15 @@ script/source = "extends MeshInstance3D
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l3atc"]
 transparency = 1
-albedo_color = Color(0.9098039, 0.29803923, 0, 0)
+albedo_color = Color(0.9098039, 0.29803923, 0, 1)
 emission_enabled = true
-emission = Color(0.82006425, 0.22588584, 0.11211968, 1)
-emission_energy_multiplier = 5.48
+emission = Color(0.7191977, 0.18949842, 0.08694249, 1)
+emission_energy_multiplier = 0.94
 
 [sub_resource type="SphereMesh" id="SphereMesh_ungtf"]
 material = SubResource("StandardMaterial3D_l3atc")
-radius = 0.15
-height = 0.15
+radius = 0.3
+height = 0.3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6h54"]
 transparency = 1
@@ -320,8 +320,8 @@ sky = SubResource("Sky_xa0eo")
 tonemap_mode = 4
 glow_enabled = true
 glow_normalized = true
-glow_intensity = 0.67
-glow_strength = 1.9
+glow_intensity = 8.0
+glow_strength = 1.56
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_78up8"]
 radius = 0.90758
@@ -510,10 +510,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0523208, 0.0388756, 0.93035
 
 [node name="boost_visual" type="MeshInstance3D" parent="player/plane" node_paths=PackedStringArray("boite_trails")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8567524)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.69654846)
 mesh = SubResource("SphereMesh_ungtf")
 script = ExtResource("11_ungtf")
 boite_trails = NodePath("../../BoiteTrails")
+trail_width_start = 0.5
+trail_width_end = 0.1
+trail_duration = 0.44
 
 [node name="BoiteTrails" type="Node3D" parent="player"]
 
@@ -538,6 +541,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8e-44, 2.2406373, -5.945813
 script = ExtResource("11_m66ib")
 target_path = NodePath("../player/plane")
 offset = Vector3(0, 1.5, 4)
+max_distance_factor = 0.9
+speed_for_max_distance = 45.0
 boom_duration = 0.3
 boom_shake_intensity = 0.4
 boom_intensity_multiplier = 1
