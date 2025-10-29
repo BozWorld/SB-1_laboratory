@@ -67,7 +67,7 @@ func _physics_process(delta: float) -> void:
 	_plane_animation.update_animations(physics_result, is_grounded, delta)
 
 	for trail in _trails :
-		trail.update_trail(current_speed, is_grounded, delta)
+		trail.update_trail(delta)
 
 	_update_debug_info()
 
