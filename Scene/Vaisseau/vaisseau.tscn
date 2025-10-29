@@ -53,7 +53,7 @@ mat_trail = ExtResource("7_m676f")
 largeur_fin = 0.5
 boost = NodePath("../BoostL")
 resolution_cylindre = 6
-trail_precision = 0.1
+trail_precision = 0.01
 
 [node name="BoostL" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09, 0)
@@ -75,7 +75,7 @@ mat_trail = ExtResource("7_m676f")
 largeur_fin = 0.5
 boost = NodePath("../BoostR")
 resolution_cylindre = 6
-trail_precision = 0.1
+trail_precision = 0.01
 
 [node name="BoostR" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09, 0)

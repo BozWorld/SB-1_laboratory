@@ -113,13 +113,13 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.34032, 98.58429, 496.6005)
 script = ExtResource("1_01lyh")
 cible = NodePath("../Vaisseau")
-vitesse_deplacement = 100.0
+vitesse_deplacement = 0.98
 vitesse_rotation = 0.1
 
 [node name="Camera3D" type="Camera3D" parent="Suiveur"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7763443, 2.2488823)
 script = ExtResource("2_fklk0")
-mod_fov = 3.0
+mod_fov = 4.4
 
 [node name="Vaisseau" parent="." instance=ExtResource("3_us6ar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.34032, 98.58429, 496.6005)
