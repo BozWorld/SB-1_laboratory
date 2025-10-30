@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://diunnrwv4shpi"]
+[gd_scene load_steps=70 format=4 uid="uid://diunnrwv4shpi"]
 
 [ext_resource type="Script" uid="uid://cpyeiihcx4pvy" path="res://code/manager/manager.gd" id="1_l3atc"]
 [ext_resource type="Script" uid="uid://bgdh7wd3eb5yf" path="res://code/manager/UIManager.gd" id="2_ungtf"]
@@ -11,6 +11,7 @@
 [ext_resource type="Material" uid="uid://uo8ounj1duhq" path="res://assets/materials_textures/tres/vehicule/ship_type_02/Material.004.tres" id="9_7khs1"]
 [ext_resource type="Script" uid="uid://d00llo3pdd351" path="res://code/effect/Trail.gd" id="10_g5sac"]
 [ext_resource type="Script" uid="uid://pb33sqbwr1el" path="res://code/camera/camera_3d.gd" id="11_m66ib"]
+[ext_resource type="Script" uid="uid://b0j81p1k558ck" path="res://code/effect/boost_visual.gd" id="11_ungtf"]
 [ext_resource type="Shader" uid="uid://b1hy61gbvow1g" path="res://assets/materials_textures/shader_script/pixelart_stylizer.gdshader" id="12_xu1vk"]
 [ext_resource type="Script" uid="uid://bn67w01xd1l5c" path="res://scenes/vrac_scene/effect.gd" id="13_2uv6e"]
 [ext_resource type="Shader" uid="uid://bu2shn60caxsn" path="res://assets/materials_textures/shader_script/sky.gdshader" id="14_hsamv"]
@@ -89,17 +90,12 @@ shadow_color = Color(0.7620346, 0, 0.09777484, 1)
 shadow_size = 2
 shadow_offset = Vector2(4, 4)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6h54"]
-transparency = 1
-blend_mode = 1
-cull_mode = 2
-shading_mode = 0
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.93372595, 0.19180116, 0, 1)
-
 [sub_resource type="Resource" id="Resource_xa0eo"]
 script = ExtResource("5_8i7sl")
 max_flight_speed = 50.0
+boost_strength = 150.0
+boost_add_maxs = 200.0
+boost_density = 2.0
 throttle_delta = 50.0
 notes = ""
 metadata/_custom_type_script = "uid://reijsy2bv6e4"
@@ -241,11 +237,31 @@ albedo_color = Color(2.74345e-06, 0.620951, 0.303657, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_lodfu"]
 material = SubResource("StandardMaterial3D_yrnlo")
-size = Vector3(1, 0.27, 0.28)
+size = Vector3(4.4, 0.27, 0.28)
 
 [sub_resource type="GDScript" id="GDScript_gwxm2"]
 script/source = "extends MeshInstance3D
 "
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l3atc"]
+transparency = 1
+albedo_color = Color(0.9098039, 0.29803923, 0, 1)
+emission_enabled = true
+emission = Color(0.7191977, 0.18949842, 0.08694249, 1)
+emission_energy_multiplier = 0.94
+
+[sub_resource type="SphereMesh" id="SphereMesh_ungtf"]
+material = SubResource("StandardMaterial3D_l3atc")
+radius = 0.3
+height = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6h54"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.93372595, 0.19180116, 0, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_onjth"]
 flip_faces = true
@@ -304,8 +320,8 @@ sky = SubResource("Sky_xa0eo")
 tonemap_mode = 4
 glow_enabled = true
 glow_normalized = true
-glow_intensity = 0.67
-glow_strength = 1.9
+glow_intensity = 8.0
+glow_strength = 1.56
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_78up8"]
 radius = 0.90758
@@ -453,22 +469,10 @@ metadata/_edit_use_anchors_ = true
 [node name="player" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03564, -9.94582)
 
-[node name="trail_l" type="MeshInstance3D" parent="player" node_paths=PackedStringArray("cible")]
-material_override = SubResource("StandardMaterial3D_k6h54")
-skeleton = NodePath("../..")
-script = ExtResource("10_g5sac")
-cible = NodePath("../plane/plane_mesh/marker_trail_l")
-
-[node name="trail_r" type="MeshInstance3D" parent="player" node_paths=PackedStringArray("cible")]
-material_override = SubResource("StandardMaterial3D_k6h54")
-skeleton = NodePath("../..")
-script = ExtResource("10_g5sac")
-cible = NodePath("../plane/plane_mesh/marker_trail_r")
-
 [node name="plane" type="CharacterBody3D" parent="player" node_paths=PackedStringArray("_trails", "rings_label", "landing_label", "debug_ui") groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("4_yxnjo")
-_trails = [NodePath("../trail_l"), NodePath("../trail_r")]
+_trails = [NodePath("../BoiteTrails/trail_l"), NodePath("../BoiteTrails/trail_r")]
 flight_config = SubResource("Resource_xa0eo")
 rings_label = NodePath("../../UI_VISUEL/CanvasLayer/data_panel/VBoxContainer/rings_label")
 landing_label = NodePath("../../UI_VISUEL/CanvasLayer/data_panel/VBoxContainer/landing_label")
@@ -488,15 +492,15 @@ surface_material_override/2 = SubResource("StandardMaterial3D_aumtr")
 surface_material_override/3 = SubResource("StandardMaterial3D_qwcm8")
 
 [node name="marker_trail_l" type="Marker3D" parent="player/plane/plane_mesh"]
-transform = Transform3D(2.3364487, 0, 0, 0, 1.618123, 0, 0, 0, 1, -2.9735432, -0.055234432, 0.9574127)
+transform = Transform3D(2.3364487, 0, 0, 0, 1.618123, 0, 0, 0, 1, -4.5271134, 2.2282622, 0)
 
 [node name="marker_trail_r" type="Marker3D" parent="player/plane/plane_mesh"]
-transform = Transform3D(2.3364487, 0, 0, 0, 1.618123, 0, 0, 0, 1, 2.9311416, -0.047151566, 0.87480164)
+transform = Transform3D(2.3364487, 0, 0, 0, 1.618123, 0, 0, 0, 1, 4.803977, 2.3023627, 0)
 
 [node name="effect" type="Node3D" parent="player/plane"]
 
 [node name="helice" type="MeshInstance3D" parent="player/plane/effect"]
-transform = Transform3D(-1.7266e-08, -0.395, 0, 0.395, -1.7266e-08, 0, 0, 0, 0.395, 0, 0.0466462, 1.0107)
+transform = Transform3D(0.395, 0, 0, 0, 0.395, 0, 0, 0, 0.395, 0, 0.046646237, -1.667326)
 mesh = SubResource("BoxMesh_lodfu")
 skeleton = NodePath("../..")
 script = SubResource("GDScript_gwxm2")
@@ -504,11 +508,41 @@ script = SubResource("GDScript_gwxm2")
 [node name="spawn_point" type="Node3D" parent="player/plane/effect"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0523208, 0.0388756, 0.930359)
 
+[node name="boost_visual" type="MeshInstance3D" parent="player/plane" node_paths=PackedStringArray("boite_trails")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.69654846)
+mesh = SubResource("SphereMesh_ungtf")
+script = ExtResource("11_ungtf")
+boite_trails = NodePath("../../BoiteTrails")
+trail_width_start = 0.5
+trail_width_end = 0.1
+trail_duration = 0.44
+
+[node name="BoiteTrails" type="Node3D" parent="player"]
+
+[node name="trail_l" type="MeshInstance3D" parent="player/BoiteTrails" node_paths=PackedStringArray("cible")]
+material_override = SubResource("StandardMaterial3D_k6h54")
+skeleton = NodePath("../../..")
+script = ExtResource("10_g5sac")
+cible = NodePath("../../plane/plane_mesh/marker_trail_l")
+trail_width_start = 0.05
+trail_width_end = 0.3
+
+[node name="trail_r" type="MeshInstance3D" parent="player/BoiteTrails" node_paths=PackedStringArray("cible")]
+material_override = SubResource("StandardMaterial3D_k6h54")
+skeleton = NodePath("../../..")
+script = ExtResource("10_g5sac")
+cible = NodePath("../../plane/plane_mesh/marker_trail_r")
+trail_width_start = 0.05
+trail_width_end = 0.3
+
 [node name="player_cam" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8e-44, 2.2406373, -5.945813)
 script = ExtResource("11_m66ib")
 target_path = NodePath("../player/plane")
 offset = Vector3(0, 1.5, 4)
+max_distance_factor = 0.9
+speed_for_max_distance = 45.0
 boom_duration = 0.3
 boom_shake_intensity = 0.4
 boom_intensity_multiplier = 1
