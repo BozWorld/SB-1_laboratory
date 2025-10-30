@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="LDList" load_steps=2 format=3 uid="uid://b1crj8512ll6"]
+
+[ext_resource type="Script" uid="uid://b3w6sf0ng3h7s" path="res://code/outils_ld/liste_ld.gd" id="1_7roa6"]
+
+[resource]
+script = ExtResource("1_7roa6")
+metadata/_custom_type_script = "uid://b3w6sf0ng3h7s"
