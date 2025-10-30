@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://diunnrwv4shpi"]
+[gd_scene load_steps=73 format=4 uid="uid://bae4oat6wnxd6"]
 
 [ext_resource type="Script" uid="uid://cpyeiihcx4pvy" path="res://code/manager/manager.gd" id="1_l3atc"]
 [ext_resource type="Script" uid="uid://bgdh7wd3eb5yf" path="res://code/manager/UIManager.gd" id="2_ungtf"]
@@ -101,7 +101,7 @@ notes = ""
 metadata/_custom_type_script = "uid://reijsy2bv6e4"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ytnha"]
-size = Vector3(2.59926, 1.23905, 2.39905)
+size = Vector3(2.0046735, 0.86457205, 1.9646617)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6q0j5"]
 _surfaces = [{
@@ -488,7 +488,7 @@ landing_label = NodePath("../../UI_VISUEL/CanvasLayer/data_panel/VBoxContainer/l
 debug_ui = NodePath("../../UI_VISUEL/CanvasLayer/data_panel/VBoxContainer/data_plane")
 
 [node name="plane_coll" type="CollisionShape3D" parent="player/plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000649571, -0.0919139, -0.378846)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015681505, -0.054647446, -0.16165161)
 shape = SubResource("BoxShape3D_ytnha")
 
 [node name="plane_mesh" type="MeshInstance3D" parent="player/plane"]

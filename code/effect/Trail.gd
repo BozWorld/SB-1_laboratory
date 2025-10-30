@@ -68,10 +68,11 @@ func _update_points_lifetime(delta: float):
 			i += 1
 
 func _try_add_point():
-	var current_pos = cible.global_position
-	if (_last_position - current_pos).length() > trail_precision:
-		_add_point()
-		_last_position = current_pos
+	if cible :
+		var current_pos = cible.global_position
+		if (_last_position - current_pos).length() > trail_precision:
+			_add_point()
+			_last_position = current_pos
 
 func _add_point():
 	if genere_trail :

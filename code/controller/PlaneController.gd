@@ -23,6 +23,7 @@ var _plane_animation: PlaneAnimation
 # === EXPORTS ===
 @export var debug_ui: RichTextLabel
 
+@export var seuil_explosion := 10.0
 
 # === VARIABLE D'ËTAT ==
 var current_speed: float = 0.0
@@ -80,7 +81,15 @@ func _physics_process(delta: float) -> void:
 	
 	if !is_grounded :
 		velocity.y -= delta * 44.4
-	move_and_slide()
+	
+	var collided := move_and_slide()
+	if collided:
+		var collision := get_last_slide_collision()
+		if (collision.get_travel() - collision.get_remainder()).length() >= 0.49:
+			queue_free()
+		
+
+
 
 func _apply_movement(physics_result: PhysicsResult, delta: float):
 	# Appliquer les rotations
