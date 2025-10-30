@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dlkbde2jt311v"]
+[gd_scene load_steps=16 format=3 uid="uid://dlkbde2jt311v"]
 
 [ext_resource type="Script" uid="uid://wfkk2ygbkrtm" path="res://Scene/Vaisseau/vaisseau.gd" id="1_ktd8m"]
 [ext_resource type="Script" uid="uid://ciin4w33kjt7" path="res://Scene/Vaisseau/moteur_rotatif.gd" id="2_u6daw"]
@@ -8,6 +8,12 @@
 [ext_resource type="Script" uid="uid://buovqbwn1yc2w" path="res://Scene/Vaisseau/MoteurTrails.gd" id="5_u6daw"]
 [ext_resource type="Script" uid="uid://8kwv8xxmb5ee" path="res://Scene/Vaisseau/OrigineTrail.gd" id="6_bqxt1"]
 [ext_resource type="Material" uid="uid://bbkfq1x33pl4c" path="res://Scene/Vaisseau/trainee.tres" id="7_m676f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m676f"]
+size = Vector3(0.7930908, 0.4048462, 0.8057251)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_blghn"]
+size = Vector3(0.12440491, 0.4048462, 0.6743469)
 
 [sub_resource type="PrismMesh" id="PrismMesh_nlxle"]
 size = Vector3(0.8, 1.5, 0.4)
@@ -31,9 +37,16 @@ height = 0.1
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_v2ql8"]
 data = PackedVector3Array(0, 0.75, 0.19999999, 0.39999998, -0.75, 0.19999999, -0.39999998, -0.75, 0.19999999, 0, 0.75, -0.19999999, -0.39999998, -0.75, -0.19999999, 0.39999998, -0.75, -0.19999999, 0, 0.75, 0.19999999, 0, 0.75, -0.19999999, 0.39999998, -0.75, 0.19999999, 0, 0.75, -0.19999999, 0.39999998, -0.75, -0.19999999, 0.39999998, -0.75, 0.19999999, 0, 0.75, -0.19999999, 0, 0.75, 0.19999999, -0.39999998, -0.75, -0.19999999, 0, 0.75, 0.19999999, -0.39999998, -0.75, 0.19999999, -0.39999998, -0.75, -0.19999999, -0.39999998, -0.75, 0.19999999, 0.39999998, -0.75, 0.19999999, -0.39999998, -0.75, -0.19999999, 0.39999998, -0.75, 0.19999999, 0.39999998, -0.75, -0.19999999, -0.39999998, -0.75, -0.19999999)
 
-[node name="Vaisseau" type="Node3D"]
+[node name="Vaisseau" type="RigidBody3D"]
 script = ExtResource("1_ktd8m")
-metadata/_custom_type_script = "uid://dl1eiegc8btxy"
+
+[node name="CollisionArriere" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00018310547, 0.0008239746, 0.34921265)
+shape = SubResource("BoxShape3D_m676f")
+
+[node name="CollisionAvant" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, -0.413)
+shape = SubResource("BoxShape3D_blghn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)

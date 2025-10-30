@@ -5,6 +5,7 @@ extends ObjetPhysique
 
 var lances_missiles : Array[Node]
 
+
 func _ready():
 	lances_missiles = get_tree().get_nodes_in_group("LancesMissiles")
 

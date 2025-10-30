@@ -1,11 +1,8 @@
-extends RigidBody3D
-class_name ObjetPhysique
+extends Area3D
+class_name ObjetImmateriel
 
 var velocite := Vector3.ZERO
 var acceleration := Vector3.ZERO
-
-
-var _pid := Pid3D.new(1.0, 0.1, 1.0)
 
 @export var masse := 1.0 :
 	set(value):
@@ -23,14 +20,7 @@ func appliquerForce(force : Vector3):
 func logiqueMouvement(delta : float) :
 	velocite += acceleration
 	acceleration = Vector3.ZERO
-	linear_velocity = velocite
-	
-	
-	var diff_velocite = velocite - linear_velocity
-	var impulsion_correction = _pid.actualiser(diff_velocite, delta)
-	#apply_central_impulse(impulsion_correction)
-	var collision = move_and_collide(impulsion_correction)
-	if collision : print("collision")
+	position += velocite * delta
 
 func appliquerFriction():
 	var friction = -velocite * coef_friction * normal

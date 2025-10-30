@@ -1,4 +1,4 @@
-extends ObjetPhysique
+extends ObjetImmateriel
 
 var vitesse := 10.0
 

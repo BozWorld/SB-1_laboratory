@@ -123,9 +123,10 @@ mod_fov = 4.4
 
 [node name="Vaisseau" parent="." instance=ExtResource("3_us6ar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.34032, 98.58429, 496.6005)
+gravity_scale = 0.0
 coef_friction = 0.04
 
-[node name="MoteurDeplacements" parent="Vaisseau" index="2"]
+[node name="MoteurDeplacements" parent="Vaisseau" index="4"]
 min_vitesse_trails = 250.0
 
 [node name="MarkerT" type="Marker3D" parent="Vaisseau"]
@@ -155,8 +156,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.020737, 0, -40.368004)
 mesh = SubResource("BoxMesh_01lyh")
 skeleton = NodePath("../../Vaisseau/MoteurRotatif")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tours"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Tours"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.020737, 0, -40.368004)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tours/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_us6ar")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Tours"]
@@ -164,8 +167,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.001633, 0, 90.488045)
 mesh = SubResource("BoxMesh_01lyh")
 skeleton = NodePath("../../Vaisseau/MoteurRotatif")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Tours"]
+[node name="StaticBody3D2" type="StaticBody3D" parent="Tours"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.001633, 0, 90.488045)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Tours/StaticBody3D2"]
 shape = SubResource("ConcavePolygonShape3D_of3fv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Tours"]
@@ -173,8 +178,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.49103, 0, -4.378662)
 mesh = SubResource("BoxMesh_01lyh")
 skeleton = NodePath("../../Vaisseau/MoteurRotatif")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Tours"]
+[node name="StaticBody3D3" type="StaticBody3D" parent="Tours"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.49103, 0, -4.378662)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Tours/StaticBody3D3"]
 shape = SubResource("ConcavePolygonShape3D_i6nv2")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="Tours"]
@@ -182,8 +189,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.48215, 0, -242.37207)
 mesh = SubResource("BoxMesh_01lyh")
 skeleton = NodePath("../../Vaisseau/MoteurRotatif")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Tours"]
+[node name="StaticBody3D4" type="StaticBody3D" parent="Tours"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.48215, 0, -242.37207)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Tours/StaticBody3D4"]
 shape = SubResource("ConcavePolygonShape3D_b04f3")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Tours"]
@@ -191,8 +200,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 189.50125, 0, -111.516014)
 mesh = SubResource("BoxMesh_01lyh")
 skeleton = NodePath("../../Vaisseau/MoteurRotatif")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="Tours"]
+[node name="StaticBody3D5" type="StaticBody3D" parent="Tours"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 189.50125, 0, -111.516014)
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Tours/StaticBody3D5"]
 shape = SubResource("ConcavePolygonShape3D_63mvr")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="Tours"]
@@ -200,8 +211,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 308.9939, 0, -206.38272)
 mesh = SubResource("BoxMesh_01lyh")
 skeleton = NodePath("../../Vaisseau/MoteurRotatif")
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="Tours"]
+[node name="StaticBody3D6" type="StaticBody3D" parent="Tours"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 308.9939, 0, -206.38272)
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Tours/StaticBody3D6"]
 shape = SubResource("ConcavePolygonShape3D_t0pwv")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="Tours"]
@@ -209,8 +222,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -317.91785, 0, -254.9733)
 mesh = SubResource("BoxMesh_01lyh")
 skeleton = NodePath("../../Vaisseau/MoteurRotatif")
 
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="Tours"]
+[node name="StaticBody3D7" type="StaticBody3D" parent="Tours"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -317.91785, 0, -254.9733)
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Tours/StaticBody3D7"]
 shape = SubResource("ConcavePolygonShape3D_v0kgl")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="Tours"]
@@ -218,8 +233,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -305.89874, 0, -124.11724)
 mesh = SubResource("BoxMesh_01lyh")
 skeleton = NodePath("../../Vaisseau/MoteurRotatif")
 
-[node name="CollisionShape3D8" type="CollisionShape3D" parent="Tours"]
+[node name="StaticBody3D8" type="StaticBody3D" parent="Tours"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -305.89874, 0, -124.11724)
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Tours/StaticBody3D8"]
 shape = SubResource("ConcavePolygonShape3D_7uywy")
 
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="Tours"]
@@ -227,8 +244,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -186.4061, 0, -218.98395)
 mesh = SubResource("BoxMesh_01lyh")
 skeleton = NodePath("../../Vaisseau/MoteurRotatif")
 
-[node name="CollisionShape3D9" type="CollisionShape3D" parent="Tours"]
+[node name="StaticBody3D9" type="StaticBody3D" parent="Tours"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -186.4061, 0, -218.98395)
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="Tours/StaticBody3D9"]
 shape = SubResource("ConcavePolygonShape3D_hggkx")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="Tours"]
@@ -236,8 +255,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189.70164, 0, 170.72702)
 mesh = SubResource("BoxMesh_01lyh")
 skeleton = NodePath("../../Vaisseau/MoteurRotatif")
 
-[node name="CollisionShape3D10" type="CollisionShape3D" parent="Tours"]
+[node name="StaticBody3D10" type="StaticBody3D" parent="Tours"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189.70164, 0, 170.72702)
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="Tours/StaticBody3D10"]
 shape = SubResource("ConcavePolygonShape3D_rx548")
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="Tours"]
@@ -245,8 +266,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -177.68254, 0, 301.58307)
 mesh = SubResource("BoxMesh_01lyh")
 skeleton = NodePath("../../Vaisseau/MoteurRotatif")
 
-[node name="CollisionShape3D11" type="CollisionShape3D" parent="Tours"]
+[node name="StaticBody3D11" type="StaticBody3D" parent="Tours"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -177.68254, 0, 301.58307)
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="Tours/StaticBody3D11"]
 shape = SubResource("ConcavePolygonShape3D_nlh06")
 
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="Tours"]
@@ -254,8 +277,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.18988, 0, 206.71637)
 mesh = SubResource("BoxMesh_01lyh")
 skeleton = NodePath("../../Vaisseau/MoteurRotatif")
 
-[node name="CollisionShape3D12" type="CollisionShape3D" parent="Tours"]
+[node name="StaticBody3D12" type="StaticBody3D" parent="Tours"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.18988, 0, 206.71637)
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="Tours/StaticBody3D12"]
 shape = SubResource("ConcavePolygonShape3D_tm36u")
 
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="Tours"]
@@ -263,8 +288,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.36766, 0, 160.53864)
 mesh = SubResource("BoxMesh_01lyh")
 skeleton = NodePath("../../Vaisseau/MoteurRotatif")
 
-[node name="CollisionShape3D13" type="CollisionShape3D" parent="Tours"]
+[node name="StaticBody3D13" type="StaticBody3D" parent="Tours"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.36766, 0, 160.53864)
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="Tours/StaticBody3D13"]
 shape = SubResource("ConcavePolygonShape3D_cmiuu")
 
 [node name="MeshInstance3D15" type="MeshInstance3D" parent="Tours"]
@@ -272,8 +299,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.386765, 0, 291.39468)
 mesh = SubResource("BoxMesh_01lyh")
 skeleton = NodePath("../../Vaisseau/MoteurRotatif")
 
-[node name="CollisionShape3D14" type="CollisionShape3D" parent="Tours"]
+[node name="StaticBody3D14" type="StaticBody3D" parent="Tours"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.386765, 0, 291.39468)
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="Tours/StaticBody3D14"]
 shape = SubResource("ConcavePolygonShape3D_a6t0s")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Tours"]
@@ -281,8 +310,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195.87943, 0, 196.52798)
 mesh = SubResource("BoxMesh_01lyh")
 skeleton = NodePath("../../Vaisseau/MoteurRotatif")
 
-[node name="CollisionShape3D15" type="CollisionShape3D" parent="Tours"]
+[node name="StaticBody3D15" type="StaticBody3D" parent="Tours"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195.87943, 0, 196.52798)
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="Tours/StaticBody3D15"]
 shape = SubResource("ConcavePolygonShape3D_mlitn")
 
 [editable path="Vaisseau"]
