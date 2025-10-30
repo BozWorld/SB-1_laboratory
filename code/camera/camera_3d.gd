@@ -3,7 +3,8 @@ extends Camera3D
 @export_category("Cible")
 @export var target_path : NodePath
 @export var offset = Vector3(0, 1.5, 6)
-@export var lookahead = Vector3(0, 2, -6)
+#@export var lookahead = Vector3(0, 2, -6)
+@export var angular_speed := 0.2
 @export var lerp_speed = 3.0
 
 @export_category("Ajustement dynamique")
@@ -115,8 +116,16 @@ func _physics_process(delta):
 	var desired_position = target.global_transform.origin + target.global_transform.basis * current_offset
 	global_transform.origin = global_transform.origin.lerp(desired_position, effective_lerp_speed * delta)
 
-	var look_target = target.global_transform.origin + target.global_transform.basis * lookahead
-	look_at(look_target, Vector3.UP)
+	#var look_target = target.global_transform.origin + target.global_transform.basis * lookahead
+	#look_at(look_target, Vector3.UP)
+
+	if target.transform.basis != transform.basis :
+		var rota = Quaternion(transform.basis.orthonormalized())
+		var rota_target = Quaternion(target.transform.basis.orthonormalized())
+
+		var new_rota = rota.slerp(rota_target, angular_speed)
+		transform.basis = Basis(new_rota)
+
 
 	# Appliquer l'effet de shake PLUS INTENSE
 	if boom_active and boom_rotation != Vector3.ZERO:

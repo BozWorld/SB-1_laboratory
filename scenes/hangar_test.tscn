@@ -541,6 +541,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8e-44, 2.2406373, -5.945813
 script = ExtResource("11_m66ib")
 target_path = NodePath("../player/plane")
 offset = Vector3(0, 1.5, 4)
+angular_speed = 0.8
 max_distance_factor = 0.9
 speed_for_max_distance = 45.0
 boom_duration = 0.3
