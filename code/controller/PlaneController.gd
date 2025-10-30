@@ -62,7 +62,8 @@ func _physics_process(delta: float) -> void:
 	if input_boost == 1.0 :
 		_flight_physics.boost = true
 	
-	%boost_visual.actualise_mesh(delta, input_boost)
+	if %boost_visual:
+		%boost_visual.actualise_mesh(delta, input_boost)
 	
 	var physics_result = _flight_physics.update_physics(input_data, delta, is_grounded)
 	current_speed = physics_result.speed
