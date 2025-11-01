@@ -12,6 +12,7 @@ signal boom_effect_triggered(intensity: float)
 var _flight_physics: FlightPhysics
 var _input_handler: InputHandler
 var _ground_detection: GroundDetection
+var _gravity_handler: GravityHandler
 @export var _trails : Array[Trail]
 var _trail_system: UnifiedTrailSystem
 var _plane_animation: PlaneAnimation
@@ -29,6 +30,8 @@ var _plane_animation: PlaneAnimation
 var current_speed: float = 0.0
 var is_grounded: bool = false
 
+
+
 # === INITIALISATION ===
 func _ready():
 	_initialize_systems()
@@ -40,13 +43,15 @@ func _initialize_systems():
 	_input_handler = InputHandler.new()
 	_ground_detection = GroundDetection.new()
 	_plane_animation = PlaneAnimation.new()
+	_gravity_handler = GravityHandler.new()
 
 	_flight_physics.setup(flight_config if flight_config else _create_default_config())
 	_ground_detection.setup(self)
 	for trail in _trails :
 		trail.setup()
 	_plane_animation.setup(get_node_or_null("plane_mesh"),  get_node_or_null("effect/helice"))
-
+	_gravity_handler.setup()
+	
 func _connect_signals():
 	_ground_detection.landing_state_changed.connect(_on_landing_state_changed)
 	_flight_physics.speed_updated.connect(_on_speed_updated)
@@ -79,8 +84,7 @@ func _physics_process(delta: float) -> void:
 
 	_update_debug_info()
 	
-	if !is_grounded :
-		velocity.y -= delta * 44.4
+
 	
 	var collided := move_and_slide()
 	if collided:
@@ -98,10 +102,18 @@ func _apply_movement(physics_result: PhysicsResult, delta: float):
 	
 	transform.basis = transform.basis.rotated(Vector3.UP, physics_result.turn_input * delta)
 	
+	#if !is_grounded:
+		#transform.basis = transform.basis.rotated(Vector3.LEFT, _gravity_handler._get_angular_force(-basis.z) * delta)
+	
 	velocity = -transform.basis.z * current_speed
 	
 	if physics_result.should_takeoff:
 		velocity.y += physics_result.takeoff_force * delta
+	
+	if !is_grounded :
+		velocity += _gravity_handler._get_linear_force(-basis.z) * delta
+	else :
+		_gravity_handler.set_gravity_magnitude(0.0)
 
 # === GESTIONNAIRE D'EVËNEMENTS ===
 func _on_landing_state_changed(grounded: bool) -> void:
@@ -121,16 +133,17 @@ func _on_boom_triggered(intensity: float):
 
 # === MÉTHODE UTILITAIRES ===
 func _update_debug_info():
-	if debug_ui:
-		var texte_trails : String
-		for trail in _trails :
-			texte_trails += trail.get_debug_string()
-		debug_ui.text = ( 
-			_flight_physics.get_debug_string() + "\n" +
-			texte_trails + "\n" +
-			_plane_animation.get_debug_string() + "\n"
-			
-		)
+	pass
+	#if debug_ui:
+		#var texte_trails : String
+		#for trail in _trails :
+			#texte_trails += trail.get_debug_string()
+		#debug_ui.text = ( 
+			#_flight_physics.get_debug_string() + "\n" +
+			#texte_trails + "\n" +
+			#_plane_animation.get_debug_string() + "\n"
+			#
+		#)
 
 func _create_default_config() -> FlightConfiguration:
 	var config = FlightConfiguration.new()

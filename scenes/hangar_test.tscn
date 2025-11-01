@@ -38,7 +38,7 @@
 [ext_resource type="Shader" uid="uid://crjflebiqdqjd" path="res://assets/ocean_surface.gdshader" id="35_8xmk4"]
 [ext_resource type="Texture2D" uid="uid://bvetqx0m03oxc" path="res://assets/2d/texture/clear+sea+water-2048x2048.png" id="36_3i6o6"]
 [ext_resource type="Script" uid="uid://cf5rul04g27vk" path="res://code/outils_ld/ld_tool.gd" id="38_nulpo"]
-[ext_resource type="Resource" uid="uid://b1crj8512ll6" path="res://code/outils_ld/liste1.tres" id="39_yxnjo"]
+[ext_resource type="Resource" path="res://code/outils_ld/liste1.tres" id="39_yxnjo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iav3h"]
 content_margin_left = 15.0
