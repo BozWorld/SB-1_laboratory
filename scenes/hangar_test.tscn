@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://bae4oat6wnxd6"]
+[gd_scene load_steps=80 format=4 uid="uid://bae4oat6wnxd6"]
 
 [ext_resource type="Script" uid="uid://cpyeiihcx4pvy" path="res://code/manager/manager.gd" id="1_l3atc"]
 [ext_resource type="Script" uid="uid://bgdh7wd3eb5yf" path="res://code/manager/UIManager.gd" id="2_ungtf"]
@@ -273,8 +273,19 @@ emission_energy_multiplier = 0.94
 
 [sub_resource type="SphereMesh" id="SphereMesh_ungtf"]
 material = SubResource("StandardMaterial3D_l3atc")
-radius = 0.3
-height = 0.3
+radius = 0.1
+height = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yxnjo"]
+albedo_color = Color(0.47843137, 0, 1, 1)
+emission_enabled = true
+emission = Color(0.47843137, 0, 1, 1)
+emission_energy_multiplier = 15.42
+
+[sub_resource type="TorusMesh" id="TorusMesh_8i7sl"]
+material = SubResource("StandardMaterial3D_yxnjo")
+inner_radius = 0.02
+outer_radius = 0.05
 
 [sub_resource type="QuadMesh" id="QuadMesh_onjth"]
 flip_faces = true
@@ -551,13 +562,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0523208, 0.0388756, 0.93035
 
 [node name="boost_visual" type="MeshInstance3D" parent="player/plane" node_paths=PackedStringArray("boite_trails")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.69654846)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8983221)
 mesh = SubResource("SphereMesh_ungtf")
 script = ExtResource("11_ungtf")
 boite_trails = NodePath("../../BoiteTrails")
 trail_width_start = 0.5
 trail_width_end = 0.1
 trail_duration = 0.44
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player/plane/boost_visual"]
+transform = Transform3D(0.9612617, -0.27563736, 1.2048492e-08, 0, -4.371139e-08, -1, 0.27563736, 0.9612617, -4.2018083e-08, -1.292211, -0.07170153, 0.33932877)
+mesh = SubResource("TorusMesh_8i7sl")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="player/plane/boost_visual"]
+transform = Transform3D(0.9612617, 0.27563736, -1.2048492e-08, 0, -4.371139e-08, -1, -0.27563736, 0.9612617, -4.2018083e-08, 1.292, -0.07200003, 0.3392992)
+mesh = SubResource("TorusMesh_8i7sl")
 
 [node name="follower" type="Node3D" parent="." node_paths=PackedStringArray("target", "camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4295595, -11.919877)
