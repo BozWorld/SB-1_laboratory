@@ -2,14 +2,14 @@ extends Camera3D
 
 @export_category("Cible")
 @export var target_path : NodePath
-@export var offset = Vector3(0, 1.5, 6)
+#@export var offset = Vector3(0, 1.5, 6)
 #@export var lookahead = Vector3(0, 2, -6)
 @export var angular_speed := 0.2
-@export var lerp_speed = 3.0
+#@export var lerp_speed = 3.0
 
-@export_category("Ajustement dynamique")
-@export var max_distance_factor = 1.3
-@export var speed_for_max_distance = 35.0
+#@export_category("Ajustement dynamique")
+#@export var max_distance_factor = 1.3
+#@export var speed_for_max_distance = 35.0
 
 @export_category("Effet de Boom")
 @export var boom_enabled = true
@@ -27,8 +27,8 @@ var boom_timer = 0.0
 var prev_speed = 0.0
 
 func _ready():
-	current = true
-	current_offset = offset
+	#current = true
+	#current_offset = offset
 
 	print("Camera _ready() - target_path: ", target_path)
 	if target_path != NodePath(""):
@@ -53,12 +53,12 @@ func _physics_process(delta):
 	if not target:
 		return
 
-	var speed := _get_speed()
+	#var speed := _get_speed()
 	
 	# Ajuster l'offset basé sur la vitesse avec plafond
-	var speed_factor = clampf(speed / speed_for_max_distance, 0.0, 1.0)
-	var distance_multiplier = lerpf(1.0, max_distance_factor, speed_factor)
-	var target_offset = offset * distance_multiplier
+	#var speed_factor = clampf(speed / speed_for_max_distance, 0.0, 1.0)
+	#var distance_multiplier = lerpf(1.0, max_distance_factor, speed_factor)
+	#var target_offset = offset * distance_multiplier
 
 	var boom_offset = Vector3.ZERO
 	var boom_rotation = Vector3.ZERO
@@ -101,24 +101,26 @@ func _physics_process(delta):
 				shake * 0.12   # Augmenté de 0.03 à 0.12
 			)
 
-	var final_offset = target_offset + boom_offset
+	#var final_offset = target_offset + boom_offset
 
 	# Augmenter la limite pour permettre plus de mouvement
-	var max_allowed = offset.length() * 4.0  # Augmenté de 2.5 à 4.0
-	if final_offset.length() > max_allowed:
-		final_offset = final_offset.normalized() * max_allowed
-	
-	# Lerp plus rapide pour le boom
-	var effective_lerp_speed = lerp_speed * (3.0 if boom_active else 1.0)
-	current_offset = current_offset.lerp(final_offset, effective_lerp_speed * delta)
+	#var max_allowed = offset.length() * 4.0  # Augmenté de 2.5 à 4.0
+	#if final_offset.length() > max_allowed:
+		#final_offset = final_offset.normalized() * max_allowed
+	#
+	## Lerp plus rapide pour le boom
+	#var effective_lerp_speed = lerp_speed * (3.0 if boom_active else 1.0)
+	#current_offset = current_offset.lerp(final_offset, effective_lerp_speed * delta)
 
 	# Appliquer position et rotation
-	var desired_position = target.global_transform.origin + target.global_transform.basis * current_offset
-	global_transform.origin = global_transform.origin.lerp(desired_position, effective_lerp_speed * delta)
+	#var desired_position = target.global_transform.origin + target.global_transform.basis * current_offset
+	#global_transform.origin = global_transform.origin.lerp(desired_position, effective_lerp_speed * delta)
 
 	#var look_target = target.global_transform.origin + target.global_transform.basis * lookahead
 	#look_at(look_target, Vector3.UP)
-
+	
+	if 
+	
 	if target.transform.basis != transform.basis :
 		var rota = Quaternion(transform.basis.orthonormalized())
 		var rota_target = Quaternion(target.transform.basis.orthonormalized())
@@ -133,13 +135,13 @@ func _physics_process(delta):
 		rotate_object_local(Vector3.UP, boom_rotation.y)
 		rotate_object_local(Vector3.FORWARD, boom_rotation.z)
 
-func _get_speed() -> float:
-	if not target:
-		return 0.0
-	if target.has_method("get_current_speed"):
-		return target.get_current_speed()
-	elif "current_speed" in target:
-		return target.current_speed
-	elif "forward_speed" in target:
-		return target.forward_speed
-	return 0.0
+#func _get_speed() -> float:
+	#if not target:
+		#return 0.0
+	#if target.has_method("get_current_speed"):
+		#return target.get_current_speed()
+	#elif "current_speed" in target:
+		#return target.current_speed
+	#elif "forward_speed" in target:
+		#return target.forward_speed
+	#return 0.0

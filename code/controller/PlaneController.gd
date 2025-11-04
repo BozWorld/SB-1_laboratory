@@ -99,11 +99,13 @@ func _apply_movement(physics_result: PhysicsResult, delta: float):
 	# Appliquer les rotations
 	if not is_grounded or abs(physics_result.pitch_input) > 0:
 		transform.basis = transform.basis.rotated(transform.basis.x, physics_result.pitch_input *  delta)
+		#if !is_grounded:
+			#transform.basis = transform.basis.rotated(Vector3.LEFT, _gravity_handler._get_angular_force(-basis.z) * delta)
 	
 	transform.basis = transform.basis.rotated(Vector3.UP, physics_result.turn_input * delta)
 	
-	#if !is_grounded:
-		#transform.basis = transform.basis.rotated(Vector3.LEFT, _gravity_handler._get_angular_force(-basis.z) * delta)
+	
+	basis = basis.orthonormalized()
 	
 	velocity = -transform.basis.z * current_speed
 	
@@ -111,10 +113,11 @@ func _apply_movement(physics_result: PhysicsResult, delta: float):
 		velocity.y += physics_result.takeoff_force * delta
 	
 	if !is_grounded :
-		velocity += _gravity_handler._get_linear_force(-basis.z) * delta
+		velocity += _gravity_handler._get_linear_force(-basis.z, velocity.length()) * delta
 	else :
 		_gravity_handler.set_gravity_magnitude(0.0)
-
+	print(velocity.length())
+	
 # === GESTIONNAIRE D'EVËNEMENTS ===
 func _on_landing_state_changed(grounded: bool) -> void:
 	if grounded != is_grounded:
