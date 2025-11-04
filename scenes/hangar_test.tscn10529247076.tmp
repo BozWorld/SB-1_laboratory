@@ -507,6 +507,7 @@ flight_config = SubResource("Resource_xa0eo")
 rings_label = NodePath("../../UI_VISUEL/CanvasLayer/data_panel/VBoxContainer/rings_label")
 landing_label = NodePath("../../UI_VISUEL/CanvasLayer/data_panel/VBoxContainer/landing_label")
 debug_ui = NodePath("../../UI_VISUEL/CanvasLayer/data_panel/VBoxContainer/data_plane")
+seuil_explosion = null
 
 [node name="plane_coll" type="CollisionShape3D" parent="player/plane"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015681505, -0.054647446, -0.16165161)

@@ -89,9 +89,10 @@ func _physics_process(delta: float) -> void:
 	var collided := move_and_slide()
 	if collided:
 		var collision := get_last_slide_collision()
-		if (collision.get_travel() - collision.get_remainder()).length() >= 0.49:
-			queue_free()
-		
+		if current_speed >= 30.0:
+			if (to_local(collision.get_position()).normalized() + basis.z).length() <= 0.6:
+				print("COLLISION")
+				queue_free()
 
 
 
@@ -116,7 +117,6 @@ func _apply_movement(physics_result: PhysicsResult, delta: float):
 		velocity += _gravity_handler._get_linear_force(-basis.z, velocity.length()) * delta
 	else :
 		_gravity_handler.set_gravity_magnitude(0.0)
-	print(velocity.length())
 	
 # === GESTIONNAIRE D'EVËNEMENTS ===
 func _on_landing_state_changed(grounded: bool) -> void:

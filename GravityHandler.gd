@@ -63,7 +63,7 @@ func _get_linear_force(forward_vector: Vector3, speed_mag: float) -> Vector3:
 	gravity = gravity_mag * gravity_dir
 	
 	
-	print("Gravite : " + str(gravity))
+	#print("Gravite : " + str(gravity))
 	
 	return gravity
 	
