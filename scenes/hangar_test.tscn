@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=4 uid="uid://bae4oat6wnxd6"]
+[gd_scene load_steps=78 format=4 uid="uid://bae4oat6wnxd6"]
 
 [ext_resource type="Script" uid="uid://cpyeiihcx4pvy" path="res://code/manager/manager.gd" id="1_l3atc"]
 [ext_resource type="Script" uid="uid://bgdh7wd3eb5yf" path="res://code/manager/UIManager.gd" id="2_ungtf"]
@@ -100,13 +100,24 @@ shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.93372595, 0.19180116, 0, 1)
 
+[sub_resource type="Curve" id="Curve_yxnjo"]
+_limits = [0.0, 1.0, 0.0, 10.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.47393358, 0.4470588), 0.0, 0.0, 0, 0, Vector2(1.3270142, 0.5), 0.0, 0.0, 0, 0, Vector2(2.7725117, 0.82352936), 0.0, 0.0, 0, 0, Vector2(10, 1), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Curve" id="Curve_8i7sl"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.049763035, 0.5705883), 0.0, 0.0, 0, 0, Vector2(0.49526072, 0.4235295), 0.0, 0.0, 0, 0, Vector2(0.56398106, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.582353), 0.0, 0.0, 0, 0]
+point_count = 5
+
 [sub_resource type="Resource" id="Resource_xa0eo"]
 script = ExtResource("5_8i7sl")
+min_flight_speed = 15.0
 max_flight_speed = 50.0
-boost_strength = 150.0
-boost_add_maxs = 200.0
-boost_density = 2.0
 throttle_delta = 50.0
+boost_grow = SubResource("Curve_8i7sl")
+boost_max_duration = 4.4
+boost_charge = SubResource("Curve_yxnjo")
+boost_momentum = 8.8
 notes = ""
 metadata/_custom_type_script = "uid://reijsy2bv6e4"
 
@@ -555,6 +566,10 @@ target = NodePath("../player/plane")
 camera = NodePath("player_cam")
 linear_speed = 4.4
 angular_speed = 2.0
+boom_duration = 0.3
+boom_shake_intensity = 0.4
+boom_intensity_multiplier = 1
+offset_intensity_multiplier = 1.0
 
 [node name="player_cam" type="Camera3D" parent="follower"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8e-44, 0.7049973, 5.8148923)
@@ -1239,9 +1254,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.72262764, 0)
 mesh = SubResource("PlaneMesh_iav3h")
 surface_material_override/0 = SubResource("ShaderMaterial_k2p1j")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Eau" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Eau"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057373047, -2.1045065, 1.0101318)
 shape = SubResource("BoxShape3D_ungtf")
 

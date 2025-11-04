@@ -15,6 +15,7 @@ func get_input_data(delta: float, _current_speed: float, _group: bool) -> InputD
 	data.throttle_change = _get_throttle_change(delta)
 	data.turn_input = Input.get_axis("roll_right","roll_left")
 	data.pitch_input = Input.get_axis("pitch_down","pitch_up")
+	data.boost = Input.is_action_pressed("boost")
 	return data
 
 func get_input_boost(delta: float):

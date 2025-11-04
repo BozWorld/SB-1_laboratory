@@ -16,11 +16,11 @@ var gravity_dir:= Vector3.ZERO
 
 
 
-func setup(_energy_loss:= 0.01, _linear_strength:= 44.4, _angular_strength:= 0.1, _speed_to_glide:= 30.0):
-	energy_loss = _energy_loss
-	linear_strength = _linear_strength
-	angular_strength = _angular_strength
-	speed_to_glide = _speed_to_glide
+func setup(config : FlightConfiguration):
+	energy_loss = config.energy_loss
+	linear_strength = config.linear_strength
+	angular_strength = config.angular_strength
+	speed_to_glide = config.speed_to_glide
 	inv_stg = 1.0/speed_to_glide
 	
 	gravity = Vector3.ZERO

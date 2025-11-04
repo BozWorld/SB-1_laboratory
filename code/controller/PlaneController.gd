@@ -21,6 +21,8 @@ var _plane_animation: PlaneAnimation
 @export var rings_label: RichTextLabel
 @export var landing_label: RichTextLabel
 
+var hydravion := false
+
 # === EXPORTS ===
 @export var debug_ui: RichTextLabel
 
@@ -50,7 +52,7 @@ func _initialize_systems():
 	for trail in _trails :
 		trail.setup()
 	_plane_animation.setup(get_node_or_null("plane_mesh"),  get_node_or_null("effect/helice"))
-	_gravity_handler.setup()
+	_gravity_handler.setup(flight_config if flight_config else _create_default_config())
 	
 func _connect_signals():
 	_ground_detection.landing_state_changed.connect(_on_landing_state_changed)
@@ -63,15 +65,13 @@ func _setup_initial_state():
 # === BOUCLE PRINCIPALE ===
 func _physics_process(delta: float) -> void:
 	var input_data = _input_handler.get_input_data(delta, current_speed, is_grounded)
-	var input_boost =_input_handler.get_input_boost(delta)
 	
-	if input_boost == 1.0 :
-		_flight_physics.boost = true
+
 	
-	if %boost_visual:
-		%boost_visual.actualise_mesh(delta, input_boost)
+	#if %boost_visual:
+		#%boost_visual.actualise_mesh(delta, input_data.)
 	
-	var physics_result = _flight_physics.update_physics(input_data, delta, is_grounded)
+	var physics_result = _flight_physics.update_physics(input_data, delta, is_grounded, -basis.z, hydravion)
 	current_speed = physics_result.speed
 
 	_apply_movement(physics_result, delta)
@@ -88,6 +88,10 @@ func _physics_process(delta: float) -> void:
 	var collided := move_and_slide()
 	if collided:
 		var collision := get_last_slide_collision()
+		if collision.get_collider().name == "Eau":
+			hydravion = true
+		else :
+			hydravion = false
 		if current_speed >= 30.0:
 			if (to_local(collision.get_position()).normalized() + basis.z).length() <= 0.6:
 				print("COLLISION")
