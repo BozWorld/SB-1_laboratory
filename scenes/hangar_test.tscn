@@ -553,7 +553,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4295595, -11.919877)
 script = ExtResource("12_8i7sl")
 target = NodePath("../player/plane")
 camera = NodePath("player_cam")
-linear_speed = 3.0
+linear_speed = 4.4
 angular_speed = 2.0
 
 [node name="player_cam" type="Camera3D" parent="follower"]

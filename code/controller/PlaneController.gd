@@ -84,7 +84,6 @@ func _physics_process(delta: float) -> void:
 
 	_update_debug_info()
 	
-
 	
 	var collided := move_and_slide()
 	if collided:
@@ -100,8 +99,8 @@ func _apply_movement(physics_result: PhysicsResult, delta: float):
 	# Appliquer les rotations
 	if not is_grounded or abs(physics_result.pitch_input) > 0:
 		transform.basis = transform.basis.rotated(transform.basis.x, physics_result.pitch_input *  delta)
-		#if !is_grounded:
-			#transform.basis = transform.basis.rotated(Vector3.LEFT, _gravity_handler._get_angular_force(-basis.z) * delta)
+		if !is_grounded:
+			transform.basis = basis.rotated(transform.basis.x, -_gravity_handler._get_angular_force(-basis.z) * delta)
 	
 	transform.basis = transform.basis.rotated(Vector3.UP, physics_result.turn_input * delta)
 	

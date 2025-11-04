@@ -16,7 +16,7 @@ var gravity_dir:= Vector3.ZERO
 
 
 
-func setup(_energy_loss:= 0.01, _linear_strength:= 24.0, _angular_strength:= 0.01, _speed_to_glide:= 30.0):
+func setup(_energy_loss:= 0.01, _linear_strength:= 44.4, _angular_strength:= 0.1, _speed_to_glide:= 30.0):
 	energy_loss = _energy_loss
 	linear_strength = _linear_strength
 	angular_strength = _angular_strength
