@@ -44,6 +44,8 @@ func update_physics(input_data: InputData, delta: float, grounded: bool, forward
 	result.pitch_input = _calculate_pitch_input(input_data.pitch_input, forward_speed, grounded, hydravion)
 	result.should_takeoff = _should_takeoff(forward_speed, grounded, forward_vector)
 	result.takeoff_force = _calculate_takeoff_force(forward_speed)
+	result.brake = brake_charge
+	result.boost = boost
 	
 	speed_updated.emit(forward_speed)
 	return result
@@ -114,12 +116,10 @@ func _update_target_speed(throttle_change: float, delta: float, grounded: bool):
 		elif post_boost :
 			max_limit += lerpf(config.boost_peak, 0.0, post_boost_index)
 			post_boost_index += delta * config.inv_boost_momentum
-			print(post_boost_index)
 			if post_boost_index >= 1.0 :
 				post_boost_index = 0.0
 				post_boost = false
 		target_speed = clamp(target_speed, 0.0, max_limit)
-		print(target_speed)
 
 func _calculate_turn_input(raw_input: float, speed: float) -> float:
 	if speed < 2.0:

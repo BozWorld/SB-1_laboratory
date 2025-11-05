@@ -29,5 +29,7 @@ var inv_boost_momentum := 1.0
 @export_range(0.0,100.0,0.1,"or_greater") var linear_strength:= 44.4
 @export_range(0.0,1.0,0.01) var angular_strength:= 0.1
 @export_range(0.0,100.0,0.5) var speed_to_glide := 30.0
+@export_category("Effets")
+@export var trail_min_speed:= 15.0
 @export_category("Notes")
 @export_multiline var notes: String = "throttle_delta est la variation de target_speed en m/s\nacceleration est la vitesse de suivi de forward_speed vers target_speed"

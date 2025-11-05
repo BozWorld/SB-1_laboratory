@@ -4,7 +4,6 @@ class_name Trail
 
 @export var cible = Node3D
 
-var min_trail_speed: float = 0.0
 
 @export var resolution_cylindre := 5
 # === PARAMÈTRE DE TRAIL
@@ -33,19 +32,17 @@ var inv_cylindre : float
 func _ready() -> void:
 	setup()
 
-func _physics_process(delta: float) -> void:
-	update_trail(delta)
-
 func setup():
 	mesh = ImmediateMesh.new()
 	_last_position = cible.global_position
 	inv_cylindre = 2.0 / resolution_cylindre
-	genere_trail = true
+	genere_trail = false
 
 func update_trail(delta: float):
 	if !trail_enabled:
 		return
-
+	
+	
 	_update_points_lifetime(delta)
 
 	if trail_enabled:

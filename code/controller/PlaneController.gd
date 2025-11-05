@@ -21,6 +21,8 @@ var _plane_animation: PlaneAnimation
 @export var rings_label: RichTextLabel
 @export var landing_label: RichTextLabel
 
+@export var boost_visuals: Array[BoostVisual]
+
 var hydravion := false
 
 # === EXPORTS ===
@@ -80,8 +82,19 @@ func _physics_process(delta: float) -> void:
 	_plane_animation.update_animations(physics_result, is_grounded, delta)
 
 	for trail in _trails :
+		if velocity.length() >= flight_config.trail_min_speed:
+			if !trail.genere_trail:
+				trail.genere_trail = true
+		else :
+			if trail.genere_trail:
+				trail.genere_trail = false
+				
 		trail.update_trail(delta)
-
+	
+	if physics_result.brake:
+		for boost in boost_visuals:
+			boost.update_boost_vfx(delta, physics_result.brake, physics_result.boost)
+	
 	_update_debug_info()
 	
 	
