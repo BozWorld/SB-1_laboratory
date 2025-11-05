@@ -34,7 +34,7 @@ var hydravion := false
 var current_speed: float = 0.0
 var is_grounded: bool = false
 
-
+@onready var cam_follow:= %follower
 
 # === INITIALISATION ===
 func _ready():
@@ -81,20 +81,12 @@ func _physics_process(delta: float) -> void:
 
 	_plane_animation.update_animations(physics_result, is_grounded, delta)
 
-	for trail in _trails :
-		if velocity.length() >= flight_config.trail_min_speed:
-			if !trail.genere_trail:
-				trail.genere_trail = true
-		else :
-			if trail.genere_trail:
-				trail.genere_trail = false
-				
-		trail.update_trail(delta)
-	
-	if physics_result.brake:
-		for boost in boost_visuals:
-			boost.update_boost_vfx(delta, physics_result.brake, physics_result.boost)
-	
+	if physics_result.brake and !physics_result.boost:
+		cam_follow._update_cam(delta, true)
+	else:
+		cam_follow._update_cam(delta, false)
+		
+
 	_update_debug_info()
 	
 	
@@ -109,7 +101,21 @@ func _physics_process(delta: float) -> void:
 			if (to_local(collision.get_position()).normalized() + basis.z).length() <= 0.6:
 				print("COLLISION")
 				queue_free()
-
+	
+	
+	for trail in _trails :
+		if velocity.length() >= flight_config.trail_min_speed:
+			if !trail.genere_trail:
+				trail.genere_trail = true
+		else :
+			if trail.genere_trail:
+				trail.genere_trail = false
+				
+		trail.update_trail(delta)
+	
+	for boost in boost_visuals:
+		boost.update_boost_vfx(delta, physics_result.brake, physics_result.boost)
+	
 
 
 func _apply_movement(physics_result: PhysicsResult, delta: float):
@@ -117,7 +123,7 @@ func _apply_movement(physics_result: PhysicsResult, delta: float):
 	if not is_grounded or abs(physics_result.pitch_input) > 0:
 		transform.basis = transform.basis.rotated(transform.basis.x, physics_result.pitch_input *  delta)
 		if !is_grounded:
-			transform.basis = basis.rotated(transform.basis.x, -_gravity_handler._get_angular_force(-basis.z) * delta)
+			transform.basis = basis.rotated(transform.basis.x, -_gravity_handler._get_angular_force(-basis.z, physics_result.brake) * delta)
 	
 	transform.basis = transform.basis.rotated(Vector3.UP, physics_result.turn_input * delta)
 	

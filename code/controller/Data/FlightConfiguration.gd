@@ -24,6 +24,7 @@ var inv_boost_momentum := 1.0
 @export_category("Contrôle")
 @export var turn_speed: float = 1.2
 @export var pitch_speed: float = 2.0
+@export var brake_rotation_mod:= 2.0
 @export_category("Gravité")
 @export var energy_loss:= 0.01
 @export_range(0.0,100.0,0.1,"or_greater") var linear_strength:= 44.4

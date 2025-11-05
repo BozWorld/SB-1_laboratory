@@ -25,43 +25,37 @@ var do_trail := false
 
 var trail_active : TempTrail
 
+func _create_trail():
+	trail_active = TempTrail.new()
+	trail_active.cible = self
+	trail_active.trail_width_start = trail_width_start
+	trail_active.trail_width_end = trail_width_end
+	trail_active.trail_precision = trail_precision
+	trail_active.resolution_cylindre = resolution_cylindre
+	trail_active.trail_lifetime = trail_lifetime
+	trail_active.genere_trail = true
+	boite_trails.add_child(trail_active)
+	trail_active.material_override = mesh.surface_get_material(0).duplicate()
+		
 
 func update_boost_vfx(delta: float, brake: float, boost: bool):
-	if brake or boost:
-		show()
-		var couleur: Color = mesh.surface_get_material(0).albedo_color
-		couleur.a = clampf(clampf(brake-brake_min,0.0,1.0) * inv_brake_max, 0.0, 1.0)
-		mesh.surface_get_material(0).albedo_color = couleur
-		
-	
-	
-		if do_trail:
-			if !boost:
-				index_trail += delta
-			if index_trail >= trail_latency :
-				do_trail = false
-				index_trail = 0.0
-				trail_active.genere_trail = false
-		
-		
-		elif boost and brake > brake_min:
-			index_trail = 0.0
-			print("TRAIL ACTIVEE")
-			do_trail = true
-			trail_active = TempTrail.new()
-			trail_active.cible = self
-			trail_active.trail_width_start = trail_width_start
-			trail_active.trail_width_end = trail_width_end
-			trail_active.trail_precision = trail_precision
-			trail_active.resolution_cylindre = resolution_cylindre
-			trail_active.trail_lifetime = trail_lifetime
-			trail_active.genere_trail = true
-			boite_trails.add_child(trail_active)
-			trail_active.material_override = mesh.surface_get_material(0).duplicate()
-		
-	else:
-		hide()
+	var couleur: Color = mesh.surface_get_material(0).albedo_color
+	couleur.a = clampf(clampf(brake-brake_min,0.0,1.0) * inv_brake_max, 0.0, 1.0)
+	mesh.surface_get_material(0).albedo_color = couleur
 	
 	if trail_active:
-		print(boost)
 		trail_active.update_trail(delta)
+	
+	if do_trail:
+		if !boost:
+			index_trail += delta
+		if index_trail >= trail_latency :
+			do_trail = false
+			index_trail = 0.0
+			trail_active.genere_trail = false
+	
+	elif boost and brake > brake_min:
+		do_trail = true
+		index_trail = 0.0
+		_create_trail()
+		print("TRAIL ACTIVEE")

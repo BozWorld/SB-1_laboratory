@@ -36,9 +36,12 @@ func set_gravity_direction(dir: Vector3):
 	gravity_dir = dir.normalized()
 	gravity = gravity_dir * gravity_mag
 
-func _get_angular_force(forward_vector: Vector3) -> float:
-	var _upward = 1.0-abs(forward_vector.y)
+func _get_angular_force(forward_vector: Vector3, brake: float) -> float:
+	var _upward := 1.0-absf(forward_vector.y)
+	if brake > 0.0 :
+		_upward =  1.0 + forward_vector.y
 	var angular_force := 0.0
+	print(_upward)
 	if _upward >= 0.05:
 		angular_force = angular_strength * _upward
 	return angular_force

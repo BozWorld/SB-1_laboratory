@@ -21,6 +21,7 @@ var boost_index := 0.0
 var post_boost := false
 var post_boost_index := 0.0
 
+var brake:= false
 var brake_charge:= 0.0
 var bcharge_index:= 0.000
 
@@ -55,14 +56,17 @@ func _update_boost(delta: float, input_data: InputData):
 		
 		if brake_charge:
 			if !boost:
+				brake = false
 				boost = true
 				boost_index = 0.0
+				boost_strength = 0.0
 				
 			boost_strength = config.boost_grow.sample(boost_index) * config.boost_peak
 			boost_index += delta * config.inv_boost_max_duration
 			
 			if boost_index > brake_charge:
 				brake_charge = 0.0
+				bcharge_index = 0.0
 				boost_index = 0.0
 				boost_strength = 0.0
 				boost = false	
@@ -75,13 +79,19 @@ func _update_boost(delta: float, input_data: InputData):
 		boost = false
 		boost_strength = 0.0
 		boost_index = 0.0
+		
 		if input_data.throttle_change < 0:
-			brake_charge = config.boost_charge.sample_baked(bcharge_index)
+			brake = true
+			brake_charge = config.boost_charge.sample_baked(clampf(bcharge_index, 0.0, config.boost_charge.max_domain))
 			bcharge_index += delta
-		elif brake_charge >= 0.0:
+			
+		elif brake_charge > 0.0:
+			brake = false
 			brake_charge -= delta * config.boost_charge_loss
 			bcharge_index -= delta
-		elif input_data.throttle_change == 0:
+			
+		else:
+			brake = false
 			brake_charge = 0.0
 			bcharge_index = 0.0
 		
@@ -127,6 +137,8 @@ func _calculate_turn_input(raw_input: float, speed: float) -> float:
 	return raw_input * config.turn_speed
 
 func _calculate_pitch_input(raw_input: float, speed: float, grounded: bool, hydravion: bool) -> float:
+	if brake:
+		raw_input *= config.brake_rotation_mod
 	if grounded:
 		if hydravion and raw_input > 0.0:
 			if speed < 3.0:
