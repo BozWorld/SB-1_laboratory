@@ -14,6 +14,8 @@ var gravity_mag:= 0.0
 var gravity_dir:= Vector3.ZERO
 #var last_forward := Vector3.FORWARD
 
+var linear_force:= Vector3.ZERO
+var angular_force:= 0.0
 
 
 func setup(config : FlightConfiguration):
@@ -36,60 +38,63 @@ func set_gravity_direction(dir: Vector3):
 	gravity_dir = dir.normalized()
 	gravity = gravity_dir * gravity_mag
 
-func _get_angular_force(forward_vector: Vector3, brake: float) -> float:
-	var _upward := 1.0-absf(forward_vector.y)
-	if brake > 0.0 :
-		_upward =  1.0 + forward_vector.y
-	var angular_force := 0.0
-	print(_upward)
-	if _upward >= 0.05:
-		angular_force = angular_strength * _upward
+func _get_angular_force(forward_vector: Vector3, horizontal_speed: float, x_rota: float) -> float:
+	var upward := 1.0 + forward_vector.y
+	
+	if horizontal_speed > 1.0:
+		angular_force = angular_strength * (0.5 * upward + 1.0/horizontal_speed)
+	else: angular_force = angular_strength * (0.5 * upward + 1.0)
+	
+	print(abs(x_rota))
+	if abs(x_rota) > PI*0.5:
+		angular_force = -angular_force
+	
+	#var _upward := 1.0-absf(forward_vector.y)
+	#print(speed_to_glide)
+	#print(speed)
+	#if speed < speed_to_glide * 2.0 :
+		#_upward =  (1.0 + forward_vector.y) * (speed_to_glide * 2.0 - speed) 
+	#angular_force = 0.0
+	#print(_upward)
+	#if _upward >= 0.05:
+		#angular_force = angular_strength * _upward
 	return angular_force
 
-func _get_linear_force(forward_vector: Vector3, speed_mag: float) -> Vector3:
+func _get_linear_force(delta: float, forward_vector: Vector3, speed_mag: float, up_speed: float) -> Vector3:
+	# Comme la gravité est pas encore incrémentée dans le process, on ajoute la dernière pour simuler
+	speed_mag += linear_strength
+	up_speed += gravity.y
+	
 	gravity_mag -= gravity_mag * energy_loss
+
 	
-	
-	speed_mag = clampf(speed_mag, 0.0, speed_to_glide)
-	gravity_dir = Vector3.DOWN.slerp(forward_vector, speed_mag * inv_stg)
+	if speed_mag < speed_to_glide:
+		gravity_dir = Vector3.DOWN.slerp(forward_vector, speed_mag * inv_stg)
+	else:
+		gravity_dir = forward_vector
 	
 	var planar_factor := absf(forward_vector.y)
-	var motor_factor := 1.0 - speed_mag * inv_stg
 	
 	# Plus l'avion est horizontal, plus ses ailes négligent l'acceleration de la gravité
-	gravity_mag += linear_strength * (planar_factor + motor_factor)
+	gravity_mag += linear_strength * planar_factor
 	
-	# Si le moteur de l'avion le pousse vers le haut il néglige petit à petit la force de gravité
-	if forward_vector.y > 0.0:
-		gravity_mag *= clampf(1.0-planar_factor + motor_factor, 0.0, 1.0)
+	
+	# Si le moteur de l'avion le pousse vers le haut il néglige la velocité de gravité
+	if up_speed > 0.0:
+		gravity_mag -= clampf(up_speed * up_speed * 0.0001, 0.0, gravity_mag)
+	
+	#print(gravity_mag)
 	
 	gravity = gravity_mag * gravity_dir
 	
 	
 	#print("Gravite : " + str(gravity))
 	
-	return gravity
-	
-	
-	
-	
-	
-	
-	
-	
-	#if last_forward != forward_vector:
-		#var difference = forward_vector - last_forward
-		#set_gravity_direction(gravity_dir + difference * planar_factor)
-	#last_forward = forward_vector
-	#
-	#var _v_inclinaison = abs(forward_vector.y)
-	#print("Downward : " + str(_v_inclinaison))
-	#print("Forward : " + str(forward_vector))
-	#if _v_inclinaison >= 0.01:
-		#gravity -= Vector3(0,linear_strength * _v_inclinaison, 0)
-		#print("Gravity force added : " + str(linear_strength * _v_inclinaison))
-	#
-	#gravity_dir = gravity.normalized()
-	#gravity_mag = gravity.length()
-	#print("Gravity force applied : " + str(gravity))
-	#return gravity
+	linear_force = gravity * delta
+	return linear_force
+
+func get_debug_string() -> String:
+	var debug_text:= ""
+	debug_text += "Gravité Linéaire: %.1v" % linear_force + "\n"
+	debug_text += "Gravité Angulaire: %.3f" % angular_force
+	return debug_text

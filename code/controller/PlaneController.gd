@@ -14,10 +14,8 @@ var _input_handler: InputHandler
 var _ground_detection: GroundDetection
 var _gravity_handler: GravityHandler
 @export var _trails : Array[Trail]
-var _trail_system: UnifiedTrailSystem
 var _plane_animation: PlaneAnimation
 @export var flight_config: FlightConfiguration
-@export var time_label: RichTextLabel
 @export var rings_label: RichTextLabel
 @export var landing_label: RichTextLabel
 
@@ -68,12 +66,7 @@ func _setup_initial_state():
 func _physics_process(delta: float) -> void:
 	var input_data = _input_handler.get_input_data(delta, current_speed, is_grounded)
 	
-
-	
-	#if %boost_visual:
-		#%boost_visual.actualise_mesh(delta, input_data.)
-	
-	var physics_result = _flight_physics.update_physics(input_data, delta, is_grounded, -basis.z, hydravion)
+	var physics_result = _flight_physics.update_physics(input_data, delta, is_grounded, -basis.z, hydravion, rotation.x)
 	current_speed = physics_result.speed
 
 	_apply_movement(physics_result, delta)
@@ -123,9 +116,12 @@ func _apply_movement(physics_result: PhysicsResult, delta: float):
 	if not is_grounded or abs(physics_result.pitch_input) > 0:
 		transform.basis = transform.basis.rotated(transform.basis.x, physics_result.pitch_input *  delta)
 		if !is_grounded:
-			transform.basis = basis.rotated(transform.basis.x, -_gravity_handler._get_angular_force(-basis.z, physics_result.brake) * delta)
+			transform.basis = basis.rotated(transform.basis.x, -_gravity_handler._get_angular_force(-basis.z, abs(velocity.x) + abs(velocity.z), rotation.x) * delta)
 	
-	transform.basis = transform.basis.rotated(Vector3.UP, physics_result.turn_input * delta)
+	if abs(rotation.x) > 0.5 * PI:
+		transform.basis = transform.basis.rotated(Vector3.UP, -physics_result.turn_input * delta)
+	else :
+		transform.basis = transform.basis.rotated(Vector3.UP, physics_result.turn_input * delta)
 	
 	
 	basis = basis.orthonormalized()
@@ -136,7 +132,7 @@ func _apply_movement(physics_result: PhysicsResult, delta: float):
 		velocity.y += physics_result.takeoff_force * delta
 	
 	if !is_grounded :
-		velocity += _gravity_handler._get_linear_force(-basis.z, velocity.length()) * delta
+		velocity += _gravity_handler._get_linear_force(delta, -basis.z, velocity.length(), velocity.y)
 	else :
 		_gravity_handler.set_gravity_magnitude(0.0)
 	
@@ -158,17 +154,18 @@ func _on_boom_triggered(intensity: float):
 
 # === MÉTHODE UTILITAIRES ===
 func _update_debug_info():
-	pass
-	#if debug_ui:
-		#var texte_trails : String
-		#for trail in _trails :
-			#texte_trails += trail.get_debug_string()
-		#debug_ui.text = ( 
-			#_flight_physics.get_debug_string() + "\n" +
-			#texte_trails + "\n" +
-			#_plane_animation.get_debug_string() + "\n"
-			#
-		#)
+	if debug_ui:
+		var texte_trails:= ""
+		for trail in _trails :
+			texte_trails += trail.get_debug_string() + "
+"
+		debug_ui.text = ( 
+			_flight_physics.get_debug_string() + "\n" +
+			texte_trails + "\n" +
+			_gravity_handler.get_debug_string() + "\n" +
+			_plane_animation.get_debug_string() + "\n" +
+			"Velocite totale: %f.1" % velocity.length()
+		)
 
 func _create_default_config() -> FlightConfiguration:
 	var config = FlightConfiguration.new()

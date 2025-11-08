@@ -307,4 +307,4 @@ func set_trail_enabled(enabled: bool):
 
 func get_debug_string() -> String:
 	var points_count = _points.size()
-	return "Trail System: (%d points)" % [points_count]
+	return "Trail " + name + ": (%d points)" % [points_count]

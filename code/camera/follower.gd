@@ -53,11 +53,9 @@ func _update_cam(delta: float, brake: bool):
 
 func update_speed(brake: bool):
 	if brake:
-		print("camerapide")
 		angular_speed = aspeed_brake
 		linear_speed = lspeed_brake
 	else:
-		print("camelent")
 		angular_speed = aspeed_motion
 		linear_speed = lspeed_motion
 

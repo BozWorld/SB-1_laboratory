@@ -1,29 +1,32 @@
 extends Area3D
+class_name Ring
 
 @export var ring_order := 0
 var is_active := false
-@export var mesh: Node3D
+@onready var mesh:= get_child(0)
+@export var base_material: Material = preload("res://assets/materials_textures/ring/basse.tres")
+@export var next_material: Material = preload("res://assets/materials_textures/ring/next.tres")
+@export var active_material: Material = preload("res://assets/materials_textures/ring/active.tres")
+@export var passed_material: Material = preload("res://assets/materials_textures/ring/passed.tres")
 var ring_material: StandardMaterial3D  # Stocker le matériau dupliqué
+var mesh_instance : Node3D
 
 func _ready() -> void:
 	# Créer une copie du matériau une seule fois
-	var mesh_instance = mesh.get_child(0)
-	var original_material = mesh_instance.get_surface_override_material(0)
-	ring_material = original_material.duplicate() if original_material else StandardMaterial3D.new()
-	mesh_instance.set_surface_override_material(0, ring_material)
-
+	mesh_instance = mesh.get_child(0)
+	mesh_instance.set_surface_override_material(0, base_material)
 	body_entered.connect(_on_body_entered)
 
-func set_active(active: bool) -> void:
+func set_active(active: bool, is_next:= false) -> void:
 	is_active = active
 	
 	if is_active:
-		ring_material.albedo_color = Color.GREEN
-		ring_material.emission = Color.YELLOW * 0.9
+		mesh_instance.set_surface_override_material(0, base_material)
 		print("Ring activated: ", ring_order)
+	elif is_next:
+		mesh_instance.set_surface_override_material(0, next_material)
 	else:
-		ring_material.albedo_color = Color.GRAY
-		ring_material.emission = Color.GRAY * 0.3
+		mesh_instance.set_surface_override_material(0, passed_material)
 
 
 func _on_body_entered(body: Node) -> void:

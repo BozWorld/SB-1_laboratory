@@ -9,7 +9,7 @@ signal ring_passed(ring_index: int)
 # === EXPORT ===
 @export var ui_manager: UIManager
 @export var player: Node3D
-@export var rings: Array[Node3D] = []
+@export var rings: Array[Ring] = []
 @export var last_island: Node3D
 
 # === VARIABLES PRIVÉES ===

@@ -43,8 +43,6 @@ func update_boost_vfx(delta: float, brake: float, boost: bool):
 	couleur.a = clampf(clampf(brake-brake_min,0.0,1.0) * inv_brake_max, 0.0, 1.0)
 	mesh.surface_get_material(0).albedo_color = couleur
 	
-	if trail_active:
-		trail_active.update_trail(delta)
 	
 	if do_trail:
 		if !boost:

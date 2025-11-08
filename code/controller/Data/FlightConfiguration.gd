@@ -28,7 +28,7 @@ var inv_boost_momentum := 1.0
 @export_category("Gravité")
 @export var energy_loss:= 0.01
 @export_range(0.0,100.0,0.1,"or_greater") var linear_strength:= 44.4
-@export_range(0.0,1.0,0.01) var angular_strength:= 0.1
+@export_range(0.0,1.0,0.01,"or_greater") var angular_strength:= 0.1
 @export_range(0.0,100.0,0.5) var speed_to_glide := 30.0
 @export_category("Effets")
 @export var trail_min_speed:= 15.0
