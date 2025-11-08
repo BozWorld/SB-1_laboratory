@@ -2,8 +2,8 @@
 extends Node
 class_name RingManager
 
-@export_tool_button("Nouvel Anneau", "Node3D") var create_ring = add_ordered_ring
-@export_tool_button("Nouvel Anneau Bonus", "2DNodes") var create_bonus_ring = add_bonus_ring
+@export_tool_button("Nouvel Anneau", "Node3D") var create_ring := Callable(self, "add_ordered_ring")
+@export_tool_button("Nouvel Anneau Bonus", "2DNodes") var create_bonus_ring := Callable(self, "add_bonus_ring")
 
 signal ordered_ring_passed(ring_index: int)
 signal all_ordered_rings_completed
@@ -20,13 +20,29 @@ var bonus_ring_scene : PackedScene = preload("res://scenes/rings/bonus_ring.tscn
 
 var _current_ring_index: int = 0
 
+func _ready() -> void:
+	clear_arrays()
+
 func actualise_order_count():
 	var i=0
 	for ring in ordered_rings:
 		ring.ring_order = i
 		i += 1
 
-func add_bonus_ring():
+func clear_arrays():
+	var i = 0
+	for ring in bonus_rings:
+		if !ring:
+			bonus_rings.remove_at(i)
+		i += 1
+	i = 0
+	for ring in ordered_rings:
+		if !ring:
+			ordered_rings.remove_at(i)
+		i += 1
+
+func add_bonus_ring(_transform: Transform3D = Transform3D.IDENTITY):
+	clear_arrays()
 	var ringbox : Node
 	if find_child("BonusRingsBox"):
 		ringbox = find_child("BonusRingsBox")
@@ -37,13 +53,16 @@ func add_bonus_ring():
 		ringbox.owner = get_tree().edited_scene_root
 	var new_ring := bonus_ring_scene.instantiate()
 	ringbox.add_child(new_ring)
-	new_ring.global_transform = ordered_rings.back().global_transform
+	if _transform != Transform3D.IDENTITY :
+		new_ring.global_transform = _transform
+	else :
+		new_ring.transform = ordered_rings.back().transform
+	new_ring._setup(self)
 	new_ring.name = "bonus_ring" + str(bonus_rings.size())
 	new_ring.owner = get_tree().edited_scene_root
-	bonus_rings.append(new_ring)
 
-
-func add_ordered_ring():
+func add_ordered_ring(_transform: Transform3D = Transform3D.IDENTITY):
+	clear_arrays()
 	var ringbox : Node
 	if find_child("OrderedRingsBox"):
 		ringbox = find_child("OrderedRingsBox")
@@ -54,10 +73,13 @@ func add_ordered_ring():
 		ringbox.owner = get_tree().edited_scene_root
 	var new_ring := ordered_ring_scene.instantiate()
 	ringbox.add_child(new_ring)
-	new_ring.global_transform = ordered_rings.back().global_transform
+	if _transform != Transform3D.IDENTITY :
+		new_ring.global_transform = _transform
+	else:
+		new_ring.transform = ordered_rings.back().transform
+	new_ring._setup(self)
 	new_ring.name = "ring" + str(ordered_rings.size())
 	new_ring.owner = get_tree().edited_scene_root
-	ordered_rings.append(new_ring)
 	actualise_order_count()
 
 func setup_ordered_rings():
@@ -68,6 +90,7 @@ func setup_ordered_rings():
 		print("Ring path: ", ordered_rings[i])
 		var ring = ordered_rings[i]
 		print("Ring node: ", ring)
+		ring._setup(self)
 		ring.ring_order = i 
 		ring.ring_passed_ordoredly.connect(on_ring_passed)
 		if i == 0:
@@ -76,6 +99,12 @@ func setup_ordered_rings():
 			ring.set_active(false, true)
 		else:
 			ring.set_active(false)
+	
+	setup_bonus_rings()
+
+func setup_bonus_rings():
+	for ring in bonus_rings:
+		ring._setup(self)
 
 func on_ring_passed(ring_order: int):
 	if ring_order == _current_ring_index:

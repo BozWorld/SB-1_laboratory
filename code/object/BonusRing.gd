@@ -6,7 +6,7 @@ signal bonus_ring_passed()
 
 var passed := false
 
-func _ring_ready() -> void:
+func _ring_setup() -> void:
 	if Engine.is_editor_hint():
 		if manager.bonus_rings.find(self) == -1 :
 			manager.bonus_rings.append(self)

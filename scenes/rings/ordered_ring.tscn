@@ -7,21 +7,27 @@
 [ext_resource type="Material" uid="uid://bbfbsjbx2jrwh" path="res://assets/materials_textures/ring/ordered_ring_base.tres" id="4_51rhp"]
 [ext_resource type="Material" uid="uid://bfua6ymxv5lsa" path="res://assets/materials_textures/ring/ordered_ring_passed.tres" id="5_qq0mt"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_78up8"]
-radius = 0.90758
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vw636"]
+radius = 7.538574
 
-[node name="ring" type="Area3D"]
-transform = Transform3D(10.000003, -7.1054274e-15, -1.3113022e-06, -1.3113022e-06, -4.371139e-07, -10.000003, 0, 10, -4.37114e-07, 0, 0, 0)
+[node name="ring" type="Area3D" node_paths=PackedStringArray("mesh_instance", "mesh")]
 script = ExtResource("1_20y5a")
 next_material = ExtResource("2_vw636")
 active_material = ExtResource("4_51rhp")
+mesh_instance = NodePath("mesh/ring_mesh")
+mesh = NodePath("mesh")
 base_material = ExtResource("3_0o3e4")
 passed_material = ExtResource("5_qq0mt")
 metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring2" parent="." instance=ExtResource("2_g8nf0")]
+[node name="mesh" parent="." instance=ExtResource("2_g8nf0")]
 transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, 3.55271e-15, 1, 0, 0, 0)
 
+[node name="ring_mesh" parent="mesh" index="0"]
+surface_material_override/0 = ExtResource("3_0o3e4")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, 3.55271e-15, 1, 0, 0, 0)
-shape = SubResource("SphereShape3D_78up8")
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_vw636")
+
+[editable path="mesh"]

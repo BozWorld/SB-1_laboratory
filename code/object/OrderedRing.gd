@@ -6,9 +6,6 @@ signal ring_passed_ordoredly(_ring_order: int)
 
 @export var ring_order : int:
 	set(value):
-		if %RingManager:
-			if !manager:
-				manager = %RingManager
 		if manager:
 			ring_order = value
 			if manager.ordered_rings.find(self) > -1:
@@ -23,10 +20,11 @@ var is_active := false
 
 var passed:= false
 
-func _ring_ready() -> void:
+func _ring_setup() -> void:
 	if Engine.is_editor_hint():
-		if manager.ordered_rings.find(self) == -1 :
-			manager.ordered_rings.append(self)
+		if manager:
+			if manager.ordered_rings.find(self) == -1 :
+				manager.ordered_rings.append(self)
 
 func set_active(active: bool, is_next:= false) -> void:
 	is_active = active

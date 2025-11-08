@@ -5,24 +5,25 @@ class_name Ring
 
 
 
-@onready var manager: RingManager = %RingManager
+var manager: RingManager
 
 
-
-@onready var mesh:= get_child(0)
+@export var mesh_instance: MeshInstance3D
+@export var mesh : Node3D
 @export var base_material: Material
 @export var passed_material: Material
 var ring_material: StandardMaterial3D  # Stocker le matériau dupliqué
-var mesh_instance : Node3D
 
-func _ready() -> void:
+func _setup(_manager: RingManager):
 	# Créer une copie du matériau une seule fois
-	mesh_instance = mesh.get_child(0)
 	mesh_instance.set_surface_override_material(0, base_material)
 	body_entered.connect(_on_body_entered)
-	_ring_ready()
+	manager = _manager
+	_ring_setup()
 
-func _ring_ready():
+
+
+func _ring_setup():
 	pass
 
 @abstract
