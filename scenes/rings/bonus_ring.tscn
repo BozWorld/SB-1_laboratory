@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://ded0va1psydo6"]
+
+[ext_resource type="Script" uid="uid://bqqgryuwmbloh" path="res://code/object/BonusRing.gd" id="1_35avw"]
+[ext_resource type="Material" uid="uid://bmxf7tenqh0t7" path="res://assets/materials_textures/ring/bonus_base.tres" id="2_fjet8"]
+[ext_resource type="PackedScene" uid="uid://ddxavrfb6njvs" path="res://scenes/export_3d/props/ring.tscn" id="2_nkacm"]
+[ext_resource type="Material" uid="uid://c8e2qm2redm78" path="res://assets/materials_textures/ring/bonus_passed.tres" id="3_6bavy"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_78up8"]
+radius = 0.90758
+
+[node name="ring3" type="Area3D"]
+transform = Transform3D(10.000003, -7.1054274e-15, -1.3113022e-06, -1.3113022e-06, -4.371139e-07, -10.000003, 0, 10, -4.37114e-07, 0, 0, 0)
+script = ExtResource("1_35avw")
+base_material = ExtResource("2_fjet8")
+passed_material = ExtResource("3_6bavy")
+metadata/_custom_type_script = "uid://bqqgryuwmbloh"
+
+[node name="ring2" parent="." instance=ExtResource("2_nkacm")]
+transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, 3.55271e-15, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, 3.55271e-15, 1, 0, 0, 0)
+shape = SubResource("SphereShape3D_78up8")

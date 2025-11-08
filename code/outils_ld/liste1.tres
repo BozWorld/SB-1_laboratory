@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="LDList" load_steps=2 format=3 uid="uid://cgpsasqyq7w45"]
+[gd_resource type="Resource" script_class="LDList" load_steps=2 format=3 uid="uid://ccjqnwbmogf2i"]
 
 [ext_resource type="Script" uid="uid://b3w6sf0ng3h7s" path="res://code/outils_ld/liste_ld.gd" id="1_7roa6"]
 
 [resource]
 script = ExtResource("1_7roa6")
-array_points = Array[Vector3]([Vector3(0, 73.63732, -390.415), Vector3(0, 71.030014, -337.59436), Vector3(-41.12075, 113.170654, -458.28848)])
 metadata/_custom_type_script = "uid://b3w6sf0ng3h7s"

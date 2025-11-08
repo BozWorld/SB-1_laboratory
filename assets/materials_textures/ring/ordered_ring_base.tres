@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bbfbsjbx2jrwh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fe6i5"]
+
+[resource]
+next_pass = SubResource("ShaderMaterial_fe6i5")
+albedo_color = Color(0.9999997, 0.31774437, 0.11509881, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 2.68

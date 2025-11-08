@@ -45,7 +45,6 @@ func _get_angular_force(forward_vector: Vector3, horizontal_speed: float, x_rota
 		angular_force = angular_strength * (0.5 * upward + 1.0/horizontal_speed)
 	else: angular_force = angular_strength * (0.5 * upward + 1.0)
 	
-	print(abs(x_rota))
 	if abs(x_rota) > PI*0.5:
 		angular_force = -angular_force
 	
