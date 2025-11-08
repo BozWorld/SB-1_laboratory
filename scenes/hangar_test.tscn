@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=4 uid="uid://bae4oat6wnxd6"]
+[gd_scene load_steps=86 format=4 uid="uid://bae4oat6wnxd6"]
 
 [ext_resource type="Script" uid="uid://cpyeiihcx4pvy" path="res://code/manager/manager.gd" id="1_l3atc"]
 [ext_resource type="Script" uid="uid://bgdh7wd3eb5yf" path="res://code/manager/UIManager.gd" id="2_ungtf"]
@@ -22,17 +22,12 @@
 [ext_resource type="Resource" uid="uid://by7r17u2k0xux" path="res://code/outils_ld/memoire_fantome1.tres" id="17_xu1vk"]
 [ext_resource type="PackedScene" uid="uid://f0s2b3xuo1ki" path="res://scenes/export_3d/props/grave_type_01.tscn" id="18_pwlua"]
 [ext_resource type="Script" uid="uid://egt1165a7pw6" path="res://code/outils_ld/ld_visualiser.gd" id="19_2uv6e"]
-[ext_resource type="Script" uid="uid://dvosftuwkd0ih" path="res://code/object/OrderedRing.gd" id="19_g5sac"]
 [ext_resource type="PackedScene" uid="uid://btxnrej5bbbb0" path="res://scenes/export_3d/props/grave_type_02.tscn" id="19_ldxvg"]
 [ext_resource type="Script" uid="uid://di7fb447lef8j" path="res://code/outils_ld/road_creator.gd" id="20_7khs1"]
 [ext_resource type="PackedScene" uid="uid://crejq8wi2xifp" path="res://scenes/export_3d/props/drapeau.tscn" id="20_dsqad"]
-[ext_resource type="Material" uid="uid://bttd5yrsvuila" path="res://assets/materials_textures/ring/ordered_ring_next.tres" id="20_m66ib"]
 [ext_resource type="PackedScene" uid="uid://bmx73atmvy008" path="res://scenes/export_3d/nature/rock_type_01.tscn" id="21_w76k4"]
-[ext_resource type="Material" uid="uid://bbfbsjbx2jrwh" path="res://assets/materials_textures/ring/ordered_ring_base.tres" id="21_xu1vk"]
-[ext_resource type="Material" uid="uid://de2bs6dq6s238" path="res://assets/materials_textures/ring/ordered_ring_active.tres" id="22_2uv6e"]
 [ext_resource type="PackedScene" uid="uid://dboevf0t7nxpt" path="res://scenes/export_3d/nature/rock_type_02.tscn" id="22_nkqle"]
 [ext_resource type="PackedScene" uid="uid://d2je5rgnsmrgv" path="res://scenes/export_3d/nature/grass_type_05.tscn" id="23_0xxts"]
-[ext_resource type="Material" uid="uid://bfua6ymxv5lsa" path="res://assets/materials_textures/ring/ordered_ring_passed.tres" id="23_hsamv"]
 [ext_resource type="PackedScene" uid="uid://cf6btlbkrcwii" path="res://scenes/export_3d/nature/grass_type_04.tscn" id="24_erhdg"]
 [ext_resource type="PackedScene" uid="uid://mxarv8mykasc" path="res://scenes/export_3d/nature/grass_type_03.tscn" id="25_bgt6m"]
 [ext_resource type="PackedScene" uid="uid://b2e1w6co4djnh" path="res://scenes/export_3d/nature/sol_type_01.tscn" id="28_wlfp3"]
@@ -643,7 +638,7 @@ padding = 10.0
 [node name="RingManager" type="Node" parent="." node_paths=PackedStringArray("ordered_rings", "bonus_rings")]
 unique_name_in_owner = true
 script = ExtResource("40_8i7sl")
-ordered_rings = [NodePath("OrderedRingsBox/ring1"), NodePath("OrderedRingsBox/ring2"), NodePath("OrderedRingsBox/ring3"), NodePath("OrderedRingsBox/ring4"), NodePath("OrderedRingsBox/ring5"), NodePath("OrderedRingsBox/ring6")]
+ordered_rings = [NodePath("OrderedRingsBox/ring1"), NodePath("OrderedRingsBox/ring2"), NodePath("OrderedRingsBox/ring3"), NodePath("OrderedRingsBox/ring4"), NodePath("OrderedRingsBox/ring5"), NodePath("OrderedRingsBox/ring6"), NodePath("OrderedRingsBox/ring7")]
 bonus_rings = [NodePath("BonusRingsBox/bonus_ring1")]
 metadata/_custom_type_script = "uid://cdonvlaijai24"
 
@@ -661,29 +656,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 159.12642, -310.23828)
 [node name="ring4" parent="RingManager/OrderedRingsBox" instance=ExtResource("39_m5pil")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5776367e-05, 67.21616, -634.5816)
 
-[node name="ring5" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("mesh_instance", "mesh") instance=ExtResource("39_m5pil")]
+[node name="ring5" parent="RingManager/OrderedRingsBox" instance=ExtResource("39_m5pil")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5776367e-05, 67.21616, -775.31836)
-script = ExtResource("19_g5sac")
-ring_order = 4
-next_material = ExtResource("20_m66ib")
-active_material = ExtResource("21_xu1vk")
-mesh_instance = NodePath("mesh/ring_mesh")
-mesh = NodePath("mesh")
-base_material = ExtResource("22_2uv6e")
-passed_material = ExtResource("23_hsamv")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring6" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("mesh_instance", "mesh") instance=ExtResource("39_m5pil")]
+[node name="ring6" parent="RingManager/OrderedRingsBox" instance=ExtResource("39_m5pil")]
 transform = Transform3D(1, 0, 0, 0, 0.9969498, -0.07799543, 0, 0.07799543, 0.9969498, 0, 66.37786, -839.05426)
-script = ExtResource("19_g5sac")
-ring_order = 5
-next_material = ExtResource("20_m66ib")
-active_material = ExtResource("21_xu1vk")
-mesh_instance = NodePath("mesh/ring_mesh")
-mesh = NodePath("mesh")
-base_material = ExtResource("22_2uv6e")
-passed_material = ExtResource("23_hsamv")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
+
+[node name="ring7" parent="RingManager/OrderedRingsBox" instance=ExtResource("39_m5pil")]
+transform = Transform3D(1, 0, 0, 0, 0.9785977, 0.20576335, 0, -0.20576335, 0.9785977, 0, 21.525953, -417.70328)
 
 [node name="BonusRingsBox" type="Node" parent="RingManager"]
 
