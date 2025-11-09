@@ -1,12 +1,18 @@
 extends Node3D
 
+## Reference à l'avion
 @export var target : Node3D
+## Reference à la camera
 @export var camera : Camera3D
 
+## Vitesse de déplacement de la camera
 @export var lspeed_motion:= 4.4
+## Vitesse de rotation de la camera
 @export var aspeed_motion:= 2.0
 
+## Vitesse de déplacement de la camera en freinant
 @export var lspeed_brake:= 8.0
+## Vitesse de rotation de la camera en freinant
 @export var aspeed_brake:= 8.0
 
 var linear_speed:= lspeed_motion

@@ -32,4 +32,4 @@ func add_point_from_target():
 	curve.add_point(target.position, target.basis.z, -target.basis.z)
 	memoire.curve = curve
 	memoire.duration = duration
-	ResourceSaver.save(memoire, "res://code/outils_ld/" + nom_memoire + ".tres")
+	ResourceSaver.save(memoire, "res://code/outils_ld/data/" + nom_memoire + ".tres")
