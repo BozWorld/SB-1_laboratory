@@ -1,4 +1,4 @@
-[gd_scene load_steps=430 format=4 uid="uid://cumecpt86pmsv"]
+[gd_scene load_steps=431 format=4 uid="uid://cumecpt86pmsv"]
 
 [ext_resource type="Material" uid="uid://cv4r5lfsmffx0" path="res://assets/hangar_island_02.tres" id="3_4owu3"]
 
@@ -6830,6 +6830,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8x33c")
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mkpjl"]
+height = 1.0793457
+radius = 14.564941
+
 [node name="hangar_island" type="Node3D"]
 
 [node name="tree_group" type="Node3D" parent="."]
@@ -7736,3 +7740,9 @@ skeleton = NodePath("")
 mesh = SubResource("ArrayMesh_fvkc4")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_4owu3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4552002, 0)
+shape = SubResource("CylinderShape3D_mkpjl")

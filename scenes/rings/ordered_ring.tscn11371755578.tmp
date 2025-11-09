@@ -1,0 +1,27 @@
+[gd_scene load_steps=8 format=3 uid="uid://bge6p6f06ngi3"]
+
+[ext_resource type="Script" uid="uid://dvosftuwkd0ih" path="res://code/object/OrderedRing.gd" id="1_20y5a"]
+[ext_resource type="PackedScene" uid="uid://ddxavrfb6njvs" path="res://scenes/export_3d/props/ring.tscn" id="2_g8nf0"]
+[ext_resource type="Material" uid="uid://bttd5yrsvuila" path="res://assets/materials_textures/ring/ordered_ring_next.tres" id="2_vw636"]
+[ext_resource type="Material" uid="uid://de2bs6dq6s238" path="res://assets/materials_textures/ring/ordered_ring_active.tres" id="3_0o3e4"]
+[ext_resource type="Material" uid="uid://bbfbsjbx2jrwh" path="res://assets/materials_textures/ring/ordered_ring_base.tres" id="4_51rhp"]
+[ext_resource type="Material" uid="uid://bfua6ymxv5lsa" path="res://assets/materials_textures/ring/ordered_ring_passed.tres" id="5_qq0mt"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_78up8"]
+radius = 0.90758
+
+[node name="ring" type="Area3D"]
+transform = Transform3D(10.000003, -7.1054274e-15, -1.3113022e-06, -1.3113022e-06, -4.371139e-07, -10.000003, 0, 10, -4.37114e-07, 0, 0, 0)
+script = ExtResource("1_20y5a")
+next_material = ExtResource("2_vw636")
+active_material = ExtResource("3_0o3e4")
+base_material = ExtResource("4_51rhp")
+passed_material = ExtResource("5_qq0mt")
+metadata/_custom_type_script = "uid://dvosftuwkd0ih"
+
+[node name="ring2" parent="." instance=ExtResource("2_g8nf0")]
+transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, 3.55271e-15, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, 3.55271e-15, 1, 0, 0, 0)
+shape = SubResource("SphereShape3D_78up8")

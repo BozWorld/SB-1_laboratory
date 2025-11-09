@@ -93,24 +93,24 @@ func _update_banking_animation(turn_input: float, grounded: bool, delta: float):
 		print("ERREUR: mesh_node est null!")
 		return
 	
-	print("=== BANKING DEBUG ===")
-	print("Turn input: %.3f" % turn_input)
-	print("Grounded: %s" % grounded)
+	#print("=== BANKING DEBUG ===")
+	#print("Turn input: %.3f" % turn_input)
+	#print("Grounded: %s" % grounded)
 	
 	if grounded:
 		target_bank_angle = 0.0
 	else:
 		target_bank_angle = turn_input * deg_to_rad(45.0)
 	
-	print("Target bank: %.2f°" % rad_to_deg(target_bank_angle))
+	#print("Target bank: %.2f°" % rad_to_deg(target_bank_angle))
 	
 	current_bank_angle = lerpf(current_bank_angle, target_bank_angle, banking_speed * delta)
-	print("Current bank: %.2f°" % rad_to_deg(current_bank_angle))
+	#print("Current bank: %.2f°" % rad_to_deg(current_bank_angle))
 	
 	# Teste les 3 axes
 	mesh_node.rotation.z = current_bank_angle  # Banking normal
-	print("Applied rotation.z: %.2f°" % rad_to_deg(mesh_node.rotation.z))
-	print("===================")
+	#print("Applied rotation.z: %.2f°" % rad_to_deg(mesh_node.rotation.z))
+	#print("===================")
 
 # === STABILISATION AU SOL ===
 func _update_stabilization(grounded: bool, delta: float):

@@ -54,6 +54,10 @@ emission_energy_multiplier = 2.68
 [node name="ring" type="Node3D"]
 
 [node name="ring_mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, 0, 0, 0)
 mesh = SubResource("ArrayMesh_jcn4o")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_6ne6f")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+gizmo_extents = 5.0

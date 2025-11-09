@@ -4,17 +4,17 @@ class_name GameManager
 # === SIGNAUX === 
 signal game_started
 signal game_completed(final_time: float)
-signal ring_passed(ring_index: int)
+signal ordered_ring_passed(ring_index: int)
 
 # === EXPORT ===
 @export var ui_manager: UIManager
 @export var player: Node3D
-@export var rings: Array[Node3D] = []
+var ordered_rings: Array[OrderedRing] = []
 @export var last_island: Node3D
+@export var ring_manager: RingManager
 
 # === VARIABLES PRIVÉES ===
 var _timer_manager: TimerManager
-var _ring_manager: RingManager
 var _game_state: GameState = GameState.WAITING
 
 enum GameState { WAITING, PLAYING, COMPLETED, PAUSED }
@@ -27,19 +27,19 @@ func _ready():
 
 func _initialize_manager():
 	_timer_manager = TimerManager.new()
-	_ring_manager = RingManager.new()
-
 	add_child(_timer_manager)
-	add_child(_ring_manager)
+	
+	
 
-	_ring_manager.add_to_group("ring_manager")
-	_ring_manager.setup_rings(rings)
-	ui_manager.set_total_rings(rings.size())
+	ring_manager.add_to_group("ring_manager")
+	ring_manager.setup_ordered_rings()
+	ordered_rings = ring_manager.ordered_rings
+	ui_manager.set_total_rings(ordered_rings.size())
 
 func _connect_signals():
 	_timer_manager.timer_updated.connect(_on_timer_updated)
-	_ring_manager.ring_passed.connect(_on_ring_passed)
-	_ring_manager.all_rings_completed.connect(_on_all_rings_completed)
+	ring_manager.ordered_ring_passed.connect(_on_ordered_ring_passed)
+	ring_manager.all_ordered_rings_completed.connect(_on_all_ordered_rings_completed)
 
 func _setup_initial_state():
 	ui_manager.hide_final_score()
@@ -81,12 +81,12 @@ func _on_timer_updated(current_time: float):
 	if ui_manager:
 		ui_manager.update_score_display(current_time)
 
-func _on_ring_passed(ring_index: int):
-	ring_passed.emit(ring_index)
+func _on_ordered_ring_passed(ring_index: int):
+	ordered_ring_passed.emit(ring_index)
 	ui_manager.update_rings(ring_index + 1)
 	print("Anneau franchi: ", ring_index)
 
-func _on_all_rings_completed():
+func _on_all_ordered_rings_completed():
 	last_island.set_landing_available(true)
 	ui_manager.set_landing_available(true)
 

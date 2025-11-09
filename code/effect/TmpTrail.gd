@@ -1,6 +1,13 @@
 extends Trail
 class_name TempTrail
 
+func setup():
+	super()
+	genere_trail = true
+
+func _physics_process(delta: float) -> void:
+	update_trail(delta)
+ 
 func _update_points_lifetime(delta: float):
 	var i = 0
 	while i < _points.size():

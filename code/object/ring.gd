@@ -1,35 +1,36 @@
+@tool
+@abstract
 extends Area3D
+class_name Ring
 
-@export var ring_order := 0
-var is_active := false
-@export var mesh: Node3D
+
+
+@export var manager: RingManager
+
+
+@export var mesh_instance: MeshInstance3D
+@export var mesh : Node3D
+@export var base_material: Material
+@export var passed_material: Material
 var ring_material: StandardMaterial3D  # Stocker le matériau dupliqué
 
-func _ready() -> void:
+func _setup(_manager: RingManager):
 	# Créer une copie du matériau une seule fois
-	var mesh_instance = mesh.get_child(0)
-	var original_material = mesh_instance.get_surface_override_material(0)
-	ring_material = original_material.duplicate() if original_material else StandardMaterial3D.new()
-	mesh_instance.set_surface_override_material(0, ring_material)
-
+	mesh_instance.set_surface_override_material(0, base_material)
 	body_entered.connect(_on_body_entered)
+	manager = _manager
+	_ring_setup()
 
-func set_active(active: bool) -> void:
-	is_active = active
-	
-	if is_active:
-		ring_material.albedo_color = Color.GREEN
-		ring_material.emission = Color.YELLOW * 0.9
-		print("Ring activated: ", ring_order)
-	else:
-		ring_material.albedo_color = Color.GRAY
-		ring_material.emission = Color.GRAY * 0.3
+
+
+func _ring_setup():
+	pass
+
+@abstract
+func ring_passed(score: float) -> void
 
 
 func _on_body_entered(body: Node) -> void:
-	print("Body entered: ", body.name)
-	print("is_active: ", is_active, " - Ring order: ", ring_order)
-	if is_active and body.is_in_group("player"):
-		var ring_manager = get_tree().get_first_node_in_group("ring_manager")
-		if ring_manager:
-			ring_manager.on_ring_passed(ring_order)
+	if body.is_in_group("player"):
+		var score : float = 2.0 - (basis.z - body.basis.z).length()
+		ring_passed(score)
