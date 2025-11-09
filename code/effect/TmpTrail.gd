@@ -1,6 +1,8 @@
 extends Trail
 class_name TempTrail
 
+
+
 func setup():
 	super()
 	genere_trail = true

@@ -54,6 +54,9 @@ func _initialize_systems():
 	_plane_animation.setup(get_node_or_null("plane_mesh"),  get_node_or_null("effect/helice"))
 	_gravity_handler.setup(flight_config if flight_config else _create_default_config())
 	
+	for boost_visual in boost_visuals:
+		boost_visual.config = flight_config
+	
 func _connect_signals():
 	_ground_detection.landing_state_changed.connect(_on_landing_state_changed)
 	_flight_physics.speed_updated.connect(_on_speed_updated)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=4 uid="uid://ccy3x0ljrruby"]
+[gd_scene load_steps=89 format=4 uid="uid://ccy3x0ljrruby"]
 
 [ext_resource type="Script" uid="uid://cpyeiihcx4pvy" path="res://code/manager/manager.gd" id="1_vmr22"]
 [ext_resource type="Script" uid="uid://bgdh7wd3eb5yf" path="res://code/manager/UIManager.gd" id="2_y30ld"]
@@ -274,6 +274,14 @@ material = SubResource("StandardMaterial3D_yxnjo")
 inner_radius = 0.05
 outer_radius = 0.1
 
+[sub_resource type="Curve" id="Curve_vmr22"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.47500002, 0), -0.010998585, -0.010998585, 0, 0, Vector2(0.56398106, 1), -0.03455916, -0.03455916, 0, 0, Vector2(1, 0.11790192), -6.077278, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_y30ld"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.47500002, 0), -0.010998585, -0.010998585, 0, 0, Vector2(0.56398106, 1), -0.03455916, -0.03455916, 0, 0, Vector2(1, 0.11790192), -6.077278, 0.0, 0, 0]
+point_count = 4
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l3atc"]
 transparency = 1
 albedo_color = Color(1, 0, 0, 0)
@@ -285,6 +293,10 @@ emission_energy_multiplier = 5.0
 material = SubResource("StandardMaterial3D_l3atc")
 radius = 0.1
 height = 0.4
+
+[sub_resource type="Curve" id="Curve_ndgy6"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.050000004, 1), -0.46021196, -0.46021196, 0, 0, Vector2(0.49750006, 0.155438), -0.06951096, -0.06951096, 0, 0, Vector2(0.59000003, 0.67468727), 0.0, 0.0, 0, 0, Vector2(0.99250007, 0.08662188), -0.14164583, 0.0, 0, 0]
+point_count = 5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrnlo"]
 albedo_color = Color(2.74345e-06, 0.620951, 0.303657, 1)
@@ -415,7 +427,7 @@ shader_parameter/FoamGlowIntensity = 0.5
 [sub_resource type="BoxShape3D" id="BoxShape3D_ungtf"]
 size = Vector3(5000.686, 3.3780518, 4993.4805)
 
-[node name="Node3D" type="Node3D" node_paths=PackedStringArray("ui_manager", "player", "last_island", "ring_manager") groups=["game_manager"]]
+[node name="Node3D2" type="Node3D" node_paths=PackedStringArray("ui_manager", "player", "last_island", "ring_manager") groups=["game_manager"]]
 script = ExtResource("1_vmr22")
 ui_manager = NodePath("UI_VISUEL/CanvasLayer")
 player = NodePath("player/plane")
@@ -579,6 +591,9 @@ script = ExtResource("11_jjph3")
 boite_trails = NodePath("../../../BoiteTrails")
 brake_min = 0.5
 brake_max = 1.0
+width_mod_over_time = SubResource("Curve_vmr22")
+trail_width_start = 0.6
+trail_width_end = 0.2
 trail_latency = 1.0
 
 [node name="lextra_boost_visual" type="MeshInstance3D" parent="player/plane/plane_mesh" node_paths=PackedStringArray("boite_trails")]
@@ -589,6 +604,9 @@ script = ExtResource("11_jjph3")
 boite_trails = NodePath("../../../BoiteTrails")
 brake_min = 0.5
 brake_max = 1.0
+width_mod_over_time = SubResource("Curve_y30ld")
+trail_width_start = 0.6
+trail_width_end = 0.2
 trail_latency = 1.0
 
 [node name="boost_visual" type="MeshInstance3D" parent="player/plane/plane_mesh" node_paths=PackedStringArray("boite_trails")]
@@ -597,8 +615,9 @@ mesh = SubResource("SphereMesh_ungtf")
 skeleton = NodePath("../..")
 script = ExtResource("11_jjph3")
 boite_trails = NodePath("../../../BoiteTrails")
-trail_width_start = 0.5
-trail_width_end = 0.1
+width_mod_over_time = SubResource("Curve_ndgy6")
+trail_width_start = 1.0
+trail_width_end = 0.3
 
 [node name="effect" type="Node3D" parent="player/plane"]
 
@@ -686,7 +705,7 @@ memoire = ExtResource("21_y30ld")
 nom_memoire = "memoire_fantome_lukas"
 
 [node name="visualiser_ld" type="Node3D" parent="tracker_ld"]
-transform = Transform3D(1, 0, 0, 0, 0.999838, 0.018001413, 0, -0.018001411, 0.999838, 0, 0.61755675, -14.2594595)
+transform = Transform3D(1, 0, 0, 0, 0.99999917, 0.0013132099, 0, -0.0013132099, 0.99999917, 0, 0.5980828, -14.264262)
 script = ExtResource("22_15m7o")
 play = true
 
@@ -706,7 +725,7 @@ skeleton = NodePath("")
 script = SubResource("GDScript_gwxm2")
 
 [node name="road_creator" type="PathFollow3D" parent="tracker_ld"]
-transform = Transform3D(1, 0, 0, 0, 0.99626195, 0.08630632, 0, -0.08630632, 0.99626195, 0, 0.7790181, -14.149123)
+transform = Transform3D(1, 0, 0, 0, 0.9962617, 0.086306304, 0, -0.086306304, 0.9962617, 0, 0.7790181, -14.149123)
 script = ExtResource("23_rr46g")
 
 [node name="environnement" type="Node3D" parent="."]

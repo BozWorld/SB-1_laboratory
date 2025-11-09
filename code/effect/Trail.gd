@@ -23,6 +23,7 @@ var _directions: Array[Vector3] = []
 var _last_position: Vector3
 var inv_cylindre : float
 
+var width_mod := 1.0
 
 # === COULEURS ===
 @export var color_start: Color = Color(0.9,0.9,1.0,0.8)
@@ -106,8 +107,8 @@ func _rebuild_mesh():
 		var color_current = color_start.lerp(color_end, 1.0 - t_current)
 		var color_next = color_start.lerp(color_end, 1.0 - t_next)
 
-		var width_current = lerp(trail_width_end, trail_width_start, t_current)
-		var width_next = lerp(trail_width_end, trail_width_start, t_next)
+		var width_current = lerp(trail_width_end, trail_width_start, t_current) * width_mod
+		var width_next = lerp(trail_width_end, trail_width_start, t_next) * width_mod
 
 		_create_quad_segment(i, width_current, width_next, color_current, color_next)
 		
