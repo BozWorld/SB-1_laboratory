@@ -32,7 +32,7 @@ func _initialize_manager():
 	
 
 	ring_manager.add_to_group("ring_manager")
-	ring_manager.setup_ordered_rings()
+	ring_manager.setup_rings()
 	ordered_rings = ring_manager.ordered_rings
 	ui_manager.set_total_rings(ordered_rings.size())
 
