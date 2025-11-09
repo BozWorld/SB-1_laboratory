@@ -1,16 +1,24 @@
 @tool
 extends Node3D
 
+## Efface les marques du niveau
 @export_tool_button("Clear Level", "Eraser") var cleaning := _clear_list
 
+## Le nom qui sera donné au fichier qui retient les données des marques, il vaut mieux le changer
 @export var nom_fichier:= "Liste"
 
+## Resource utilisée pour mémoriser les marques, autant sélectionner celle qui sera désignée par le nom
 @export var ld_list : LDList
 
+## Mesh affichés sur les points marqués
 @export var mesh : Mesh
+
+## Reference au player
 @export var player : CharacterBody3D
 
+# Array des mesh instances des marques
 var ld_blocs : Array[MeshInstance3D]
+
 
 func _ready() -> void:
 	_setup()
@@ -41,7 +49,7 @@ func _new_bloc(_transform: Transform3D):
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_released("LD_marquer"):
 		ld_list._add_point(player.global_transform)
-		ResourceSaver.save(ld_list, "res://code/outils_ld/" + nom_fichier + ".tres")
+		ResourceSaver.save(ld_list, "res://code/outils_ld/data/" + nom_fichier + ".tres")
 
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
