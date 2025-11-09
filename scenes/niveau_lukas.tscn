@@ -1,49 +1,49 @@
-[gd_scene load_steps=86 format=4 uid="uid://cy15ssbhnmu5k"]
+[gd_scene load_steps=86 format=4 uid="uid://ccy3x0ljrruby"]
 
-[ext_resource type="Script" uid="uid://cpyeiihcx4pvy" path="res://code/manager/manager.gd" id="1_jqr6l"]
-[ext_resource type="Script" uid="uid://bgdh7wd3eb5yf" path="res://code/manager/UIManager.gd" id="2_n46h0"]
-[ext_resource type="FontFile" uid="uid://dy35fgkhkqwiv" path="res://assets/2d/Font/Silver.ttf" id="3_s8tfq"]
-[ext_resource type="Script" uid="uid://d00llo3pdd351" path="res://code/effect/Trail.gd" id="4_btlq2"]
-[ext_resource type="Script" uid="uid://0tehukp1yylv" path="res://code/controller/PlaneController.gd" id="5_sgonh"]
-[ext_resource type="Script" uid="uid://reijsy2bv6e4" path="res://code/controller/Data/FlightConfiguration.gd" id="6_crrkn"]
-[ext_resource type="Material" uid="uid://cpjggrjxtkgsx" path="res://assets/materials_textures/tres/vehicule/ship_type_02/airship.tres" id="7_jp4v3"]
-[ext_resource type="Material" uid="uid://b7asbstujckcs" path="res://assets/materials_textures/tres/vehicule/ship_type_02/controlleur.tres" id="8_ov27o"]
-[ext_resource type="Material" uid="uid://0eqwcovtfk0x" path="res://assets/materials_textures/tres/vehicule/ship_type_02/Material.003.tres" id="9_xga57"]
-[ext_resource type="Material" uid="uid://uo8ounj1duhq" path="res://assets/materials_textures/tres/vehicule/ship_type_02/Material.004.tres" id="10_jm0n6"]
-[ext_resource type="Script" uid="uid://b0j81p1k558ck" path="res://code/effect/boost_visual.gd" id="11_7vaxf"]
-[ext_resource type="Script" uid="uid://cyw6rxkotr6fj" path="res://code/camera/follower.gd" id="12_8i56y"]
-[ext_resource type="Shader" uid="uid://b1hy61gbvow1g" path="res://assets/materials_textures/shader_script/pixelart_stylizer.gdshader" id="13_gg6ry"]
-[ext_resource type="Script" uid="uid://bn67w01xd1l5c" path="res://scenes/vrac_scene/effect.gd" id="14_aj8jl"]
-[ext_resource type="Script" uid="uid://cdonvlaijai24" path="res://code/manager/RingManager.gd" id="15_iey1i"]
-[ext_resource type="PackedScene" uid="uid://bge6p6f06ngi3" path="res://scenes/rings/ordered_ring.tscn" id="16_1p53a"]
-[ext_resource type="PackedScene" uid="uid://ded0va1psydo6" path="res://scenes/rings/bonus_ring.tscn" id="17_s7xmg"]
-[ext_resource type="Script" uid="uid://cf5rul04g27vk" path="res://code/outils_ld/ld_marker.gd" id="18_u22d8"]
-[ext_resource type="Resource" uid="uid://os8morcjukgv" path="res://code/outils_ld/data/listebase.tres" id="19_jqr6l"]
-[ext_resource type="Script" uid="uid://bxvtseyxgbmss" path="res://code/outils_ld/ld_tracker.gd" id="20_rglm5"]
-[ext_resource type="Resource" uid="uid://crm6ihab47kcr" path="res://code/outils_ld/data/memoire_fantomebase.tres" id="21_n46h0"]
-[ext_resource type="Script" uid="uid://egt1165a7pw6" path="res://code/outils_ld/ld_visualiser.gd" id="22_ymgo5"]
-[ext_resource type="Script" uid="uid://di7fb447lef8j" path="res://code/outils_ld/road_creator.gd" id="23_apseg"]
-[ext_resource type="PackedScene" uid="uid://csvklaglduhus" path="res://scenes/export_3d/props/pot.tscn" id="24_3e2p4"]
-[ext_resource type="PackedScene" uid="uid://cljqvsbfpl08" path="res://scenes/export_3d/props/pillar.tscn" id="25_px8rp"]
-[ext_resource type="PackedScene" uid="uid://f0s2b3xuo1ki" path="res://scenes/export_3d/props/grave_type_01.tscn" id="26_ycbrv"]
-[ext_resource type="PackedScene" uid="uid://btxnrej5bbbb0" path="res://scenes/export_3d/props/grave_type_02.tscn" id="27_2x5p4"]
-[ext_resource type="PackedScene" uid="uid://crejq8wi2xifp" path="res://scenes/export_3d/props/drapeau.tscn" id="28_0fxj6"]
-[ext_resource type="PackedScene" uid="uid://bmx73atmvy008" path="res://scenes/export_3d/nature/rock_type_01.tscn" id="29_lttwm"]
-[ext_resource type="PackedScene" uid="uid://dboevf0t7nxpt" path="res://scenes/export_3d/nature/rock_type_02.tscn" id="30_ndbyc"]
-[ext_resource type="PackedScene" uid="uid://d2je5rgnsmrgv" path="res://scenes/export_3d/nature/grass_type_05.tscn" id="31_gjrqy"]
-[ext_resource type="PackedScene" uid="uid://cf6btlbkrcwii" path="res://scenes/export_3d/nature/grass_type_04.tscn" id="32_jclja"]
-[ext_resource type="PackedScene" uid="uid://mxarv8mykasc" path="res://scenes/export_3d/nature/grass_type_03.tscn" id="33_m1csa"]
-[ext_resource type="PackedScene" uid="uid://b2e1w6co4djnh" path="res://scenes/export_3d/nature/sol_type_01.tscn" id="34_ffvxp"]
-[ext_resource type="Shader" uid="uid://bu2shn60caxsn" path="res://assets/materials_textures/shader_script/sky.gdshader" id="35_l6ukp"]
-[ext_resource type="PackedScene" uid="uid://cumecpt86pmsv" path="res://scenes/export_3d/island/hangar_island_02.tscn" id="36_4vufj"]
-[ext_resource type="PackedScene" uid="uid://c7rixo57y36dk" path="res://assets/3d_glb/pack/island_1.glb" id="37_6kxv1"]
-[ext_resource type="PackedScene" uid="uid://byy4mj1reun1p" path="res://scenes/export_3d/island/island_type_02.tscn" id="38_r7qmt"]
-[ext_resource type="Script" uid="uid://cb2mmnlj0tf2i" path="res://code/game_objects/LandingZone.gd" id="39_ue6hg"]
-[ext_resource type="ArrayMesh" uid="uid://ddhucgmmhv23k" path="res://assets/materials_textures/mesh/terrain_type_mesh_01.tres" id="40_wpigw"]
-[ext_resource type="ArrayMesh" uid="uid://d2fa7vjpqdl5m" path="res://assets/materials_textures/mesh/pillar.tres" id="41_oevch"]
-[ext_resource type="PackedScene" uid="uid://w217v6buuelf" path="res://scenes/export_3d/nature/flower.tscn" id="42_q7x2p"]
-[ext_resource type="Shader" uid="uid://crjflebiqdqjd" path="res://assets/ocean_surface.gdshader" id="43_j705o"]
-[ext_resource type="Texture2D" uid="uid://bvetqx0m03oxc" path="res://assets/2d/texture/clear+sea+water-2048x2048.png" id="44_r3x7a"]
+[ext_resource type="Script" uid="uid://cpyeiihcx4pvy" path="res://code/manager/manager.gd" id="1_vmr22"]
+[ext_resource type="Script" uid="uid://bgdh7wd3eb5yf" path="res://code/manager/UIManager.gd" id="2_y30ld"]
+[ext_resource type="FontFile" uid="uid://dy35fgkhkqwiv" path="res://assets/2d/Font/Silver.ttf" id="3_ndgy6"]
+[ext_resource type="Script" uid="uid://d00llo3pdd351" path="res://code/effect/Trail.gd" id="4_ujnp6"]
+[ext_resource type="Script" uid="uid://0tehukp1yylv" path="res://code/controller/PlaneController.gd" id="5_lxvhi"]
+[ext_resource type="Script" uid="uid://reijsy2bv6e4" path="res://code/controller/Data/FlightConfiguration.gd" id="6_7bnyp"]
+[ext_resource type="Material" uid="uid://cpjggrjxtkgsx" path="res://assets/materials_textures/tres/vehicule/ship_type_02/airship.tres" id="7_6k8f1"]
+[ext_resource type="Material" uid="uid://b7asbstujckcs" path="res://assets/materials_textures/tres/vehicule/ship_type_02/controlleur.tres" id="8_6co73"]
+[ext_resource type="Material" uid="uid://0eqwcovtfk0x" path="res://assets/materials_textures/tres/vehicule/ship_type_02/Material.003.tres" id="9_54xj6"]
+[ext_resource type="Material" uid="uid://uo8ounj1duhq" path="res://assets/materials_textures/tres/vehicule/ship_type_02/Material.004.tres" id="10_uy34n"]
+[ext_resource type="Script" uid="uid://b0j81p1k558ck" path="res://code/effect/boost_visual.gd" id="11_jjph3"]
+[ext_resource type="Script" uid="uid://cyw6rxkotr6fj" path="res://code/camera/follower.gd" id="12_rouqn"]
+[ext_resource type="Shader" uid="uid://b1hy61gbvow1g" path="res://assets/materials_textures/shader_script/pixelart_stylizer.gdshader" id="13_nd05m"]
+[ext_resource type="Script" uid="uid://bn67w01xd1l5c" path="res://scenes/vrac_scene/effect.gd" id="14_mecol"]
+[ext_resource type="Script" uid="uid://cdonvlaijai24" path="res://code/manager/RingManager.gd" id="15_3q6qb"]
+[ext_resource type="PackedScene" uid="uid://bge6p6f06ngi3" path="res://scenes/rings/ordered_ring.tscn" id="16_rlpw2"]
+[ext_resource type="PackedScene" uid="uid://ded0va1psydo6" path="res://scenes/rings/bonus_ring.tscn" id="17_aj0ll"]
+[ext_resource type="Script" uid="uid://cf5rul04g27vk" path="res://code/outils_ld/ld_marker.gd" id="18_kv56o"]
+[ext_resource type="Resource" uid="uid://dnw2lavam0of8" path="res://code/outils_ld/data/liste_lukas.tres" id="19_vmr22"]
+[ext_resource type="Script" uid="uid://bxvtseyxgbmss" path="res://code/outils_ld/ld_tracker.gd" id="20_t84fa"]
+[ext_resource type="Resource" uid="uid://qvi48dj2yg7b" path="res://code/outils_ld/data/memoire_fantome_lukas.tres" id="21_y30ld"]
+[ext_resource type="Script" uid="uid://egt1165a7pw6" path="res://code/outils_ld/ld_visualiser.gd" id="22_15m7o"]
+[ext_resource type="Script" uid="uid://di7fb447lef8j" path="res://code/outils_ld/road_creator.gd" id="23_rr46g"]
+[ext_resource type="Shader" uid="uid://bu2shn60caxsn" path="res://assets/materials_textures/shader_script/sky.gdshader" id="24_p63xe"]
+[ext_resource type="PackedScene" uid="uid://cumecpt86pmsv" path="res://scenes/export_3d/island/hangar_island_02.tscn" id="25_hae6h"]
+[ext_resource type="PackedScene" uid="uid://csvklaglduhus" path="res://scenes/export_3d/props/pot.tscn" id="26_owics"]
+[ext_resource type="PackedScene" uid="uid://cljqvsbfpl08" path="res://scenes/export_3d/props/pillar.tscn" id="27_j1uwg"]
+[ext_resource type="PackedScene" uid="uid://f0s2b3xuo1ki" path="res://scenes/export_3d/props/grave_type_01.tscn" id="28_62555"]
+[ext_resource type="PackedScene" uid="uid://btxnrej5bbbb0" path="res://scenes/export_3d/props/grave_type_02.tscn" id="29_bam2t"]
+[ext_resource type="PackedScene" uid="uid://crejq8wi2xifp" path="res://scenes/export_3d/props/drapeau.tscn" id="30_4peye"]
+[ext_resource type="PackedScene" uid="uid://bmx73atmvy008" path="res://scenes/export_3d/nature/rock_type_01.tscn" id="31_14f5o"]
+[ext_resource type="PackedScene" uid="uid://dboevf0t7nxpt" path="res://scenes/export_3d/nature/rock_type_02.tscn" id="32_nkxhy"]
+[ext_resource type="PackedScene" uid="uid://d2je5rgnsmrgv" path="res://scenes/export_3d/nature/grass_type_05.tscn" id="33_7bxi0"]
+[ext_resource type="PackedScene" uid="uid://cf6btlbkrcwii" path="res://scenes/export_3d/nature/grass_type_04.tscn" id="34_kxwgx"]
+[ext_resource type="PackedScene" uid="uid://mxarv8mykasc" path="res://scenes/export_3d/nature/grass_type_03.tscn" id="35_51b5r"]
+[ext_resource type="PackedScene" uid="uid://b2e1w6co4djnh" path="res://scenes/export_3d/nature/sol_type_01.tscn" id="36_ubmtj"]
+[ext_resource type="PackedScene" uid="uid://c7rixo57y36dk" path="res://assets/3d_glb/pack/island_1.glb" id="37_1xtk8"]
+[ext_resource type="PackedScene" uid="uid://byy4mj1reun1p" path="res://scenes/export_3d/island/island_type_02.tscn" id="38_fsfsr"]
+[ext_resource type="Script" uid="uid://cb2mmnlj0tf2i" path="res://code/game_objects/LandingZone.gd" id="39_24myw"]
+[ext_resource type="ArrayMesh" uid="uid://ddhucgmmhv23k" path="res://assets/materials_textures/mesh/terrain_type_mesh_01.tres" id="40_42geo"]
+[ext_resource type="ArrayMesh" uid="uid://d2fa7vjpqdl5m" path="res://assets/materials_textures/mesh/pillar.tres" id="41_h0f4k"]
+[ext_resource type="PackedScene" uid="uid://w217v6buuelf" path="res://scenes/export_3d/nature/flower.tscn" id="42_nakst"]
+[ext_resource type="Shader" uid="uid://crjflebiqdqjd" path="res://assets/ocean_surface.gdshader" id="43_bjk77"]
+[ext_resource type="Texture2D" uid="uid://bvetqx0m03oxc" path="res://assets/2d/texture/clear+sea+water-2048x2048.png" id="44_7se8v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iav3h"]
 content_margin_left = 15.0
@@ -115,7 +115,7 @@ _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.04028436, 0.56470597), 1.26650
 point_count = 5
 
 [sub_resource type="Resource" id="Resource_xa0eo"]
-script = ExtResource("6_crrkn")
+script = ExtResource("6_7bnyp")
 min_flight_speed = 15.0
 max_flight_speed = 50.0
 throttle_delta = 50.0
@@ -190,7 +190,7 @@ _surfaces = [{
 "index_count": 474,
 "index_data": PackedByteArray("OgA7ADwAPQA+AD8AQABBACYAQgBDAEQAQgBFAEMARgBHAEgASQBKAEsATAAYAE0ATgAnAE8AUABRAFIAUwAMAFQAVQBWAFcAWABZAFoAWABbAFkAWAA2AFsAWABcADYAXQBeAF8AYABhAGIAYwBkAAQAZQBmAGcAJABoAGkAagBrAGwAbQAoAG4AbwBwAHEAcgBzAHQAdQB2AHcAeAB5AAMAJQB6AHsAAQB8AH0AfgB/AIAAgQCCAIMAhACFAAAAhgCHAIgAFwCJAIoAFwCKAIsAGgAZADkAjACNAI4AjwAbAJAAkQCQABsAkgCTAJQAkgCVAJMAkgCUAJYAkgCWAJcAmACZACkAMwApAJkAmgCbAJwAnQCcAJsAKgCeAJ8AKgCgAJ4AKgChAKAAKgCiAKEAowCkACsAowArAKUApgCnAKgAqQCoAKcAqgCrAKwAqgCtAKsAqgCuAK0AqgCvAK4AsACxAC0AsAAtALIAswC0ALUAswC2ALQAIwC3ALgAIwC5ALcAIwC4ALoAIwC6ADUAFgC7ALwAvQC+AL8AvQDAAL4AvQC/AMEAvQDBAA4AwgDDABIAwgDEAMMAEwDFABUAEwDGAMUAEQDHAMgAEQDJAMcAygDLAMwAygDNAMsAzgDPAAIAzgDQAM8AEADRABQAEADSANEA0wDUANUA0wAiANQA1gDXANgA1gDZANcAHAAdAB4A2gDbANwA2gDdANsA3gA3AN8A3gDgADcA4QDfADcA4QA3AOIA4wDkAOUA4wDmAOQA5wDoAOkA5wDqAOgAOADrAA8AOADsAOsA7QDuAO8A8AAvAPEA8gDzAPQA9QD2APcA9QD4APYA+QD6APsA/AD9AP4A/wAAAQEBAgEDAQQBBQExAAYBBwEIAQkBCgE0AAsBDAENAQ4BDwEQAREBEgETARQBLAAVARYBFwEYARkBGgEbATIAHAEdAR4BHwEgASEBIgEjASQBMAAlASYBJwEoASkBKgErASwBLQEuAS8BMAEJADEBMgEzATQBNQE2ATcBOAE5AS4AOgE7ATwBPQE+AT8BQAFBAUIBCwBDAUQBCwAIAEMBCgBFAUYBCgBHAUUBSAFJAUoBSAFLAUkBTAFNAU4BTAEHAE0BTwFQAVEBTwFSAVABUwFUAVUBUwFWAVQBVwFYAVkBVwEFAFgBBgBaAVsBBgBcAVoBHwAgACEAXQFeAV8BXQFgAV4BYQFiAWMBYQFkAWIBZQFmAWcBZQENAGYBaAFpAWoBaAFrAWkB"),
 "lods": [0.232488, PackedByteArray("AAABACIAAQAQACIAAAAjAAEAAQAkABAAIwAkAAEAJAAlABAAJQAVABAAEAAVABMAFQAlABIAEAATABQAIgAQABQAFAATACYAIgAUAAIAFAAmAAIAAgAmACIAIgAmAAAAEwARACYAEQASAAwAEQAMACYAAAAmAAMAGAAMABIAJQAYABIAGAAnAAwAKAAYACUAKQAYACgAJgAMAAQAJgAEAAMAKgAEAAwADAApACoAAwAEACsAKgArAAQALAADACsALAArACoAAwAtAAAALgADACwAAwAuAC0AAAAtAC8ALwAtAC4AAAAvACMABgAvAC4ACQAGAC4ALwAGAAkAMAAuACwACQAuADAAMAAsADEAMQAsACoABwAJADAACAAHADAACAAwADEABwAKAAkACwAIADEACgALADIACgAyAAkACwAxADIALwAJAAUABQAJADIAIwAvAAUAMwAxACoAMwAqACkAMgAxADQANAAxADMADQAFADIADQAyADQAIwAFADUANQAFAA0ANgA0ADMAKQA2ADMADQA0ADYAKQA3ADYAKQAoADcANgA3ABsAGwANADYAGQAbADcANwAoABkAGQAoACUADQAOADUADwA1AA4ADQAPAA4ADwAjADUAFwAWAA0ADQAWAA8ADwAkACMAOAAlACQAOAAkAA8AGQAlADgAOQAPABYAOQA4AA8AGQA4ADkAFgAaADkAGgAZADkAHAAdAB4AHwAgACEA"), 0.560462, PackedByteArray("AAABAAIAAAACAAMAAwAEAAAAAgAEAAMAAAAFAAEAAAAEAAYABQAAAAYABwAGAAQABwAEAAgACQAGAAcABQAGAAkABwAKAAkACgALAAkABQAJAAsACAAEAAwAAgAMAAQADQALAAgADQAFAAsADAANAAgAAQAFAA4ADgAFAA0ADwABAA4ADQAPAA4AAQAPABAAAQAQAAIAEQAMAAIAEQASAAwAEwARAAIAFAATAAIAAgAQABQAEAATABQAEAAVABMADwAWABAAFgAVABAAFQAWABIADQAWAA8AFwAWAA0AFgAYABIAGAAMABIADAAYAA0AGQAYABYADQAYABkAGgAZABYAGQAbAA0AHAAdAB4AHwAgACEA")],
-"material": ExtResource("7_jp4v3"),
+"material": ExtResource("7_6k8f1"),
 "name": "airship",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -203,7 +203,7 @@ _surfaces = [{
 "index_count": 468,
 "index_data": PackedByteArray("AAABAAIAAAADAAEAuwC8AL0AuwC+ALwABwAIAAkABwAGAAgAvwAEAAUAvwDAAAQACgDBAAwACgANAMEADwDCABEADwDDAMIAxADFAMYAxADHAMUAHQAeAB8AyAAUABUAyADJABQAIADKACIAIADLAMoAzAA2AM0AzAA4ADYAJAAlACYAzgDPANAAzgDRAM8A0gAjANMA0gAhACMA1AALANUA1AAOAAsA1gBMANcA1gBJAEwAJwAoACkAKgArACwALQAuAC8AMAAxADIAMwA0ADUAMwDYADQANwDYADMANwDZANgAOQDZADcAOQDaANkAOwDaADkAOwDbANoAQgBDAEQARQBGAEcASADcAEoASABLANwA3QDeAFEA3QDfAN4A4ADhAOIA4ADjAOEATQBOAE8ATQDkAE4AVQBWAFcAWABZAFoAQAA6AD8AQABBADoAWwBcAF0AWwBeAFwAPQA8AD4APQDlADwAUgDmAOcAUgBQAOYA6ADpAOoA6ADrAOkA7ABTAFQA7ADtAFMAEAAWAO4AEAAXABYA7wATAPAA7wASABMAGwDxAPIAGwDzAPEA9AD1ABwA9AD2APUAGQD3APgAGQAaAPcA+QD6APsA+QAYAPoAXwD8AGEAXwD9APwA/gBlAP8A/gBmAGUAAAFnAAEBAAFoAGcAYgBjAGAAYgBkAGMAaQACAQMBaQBtAAIBbgAEAQUBbgAGAQQBawAHAQgBawAJAQcBcwB0AHUACgELAQwBCgFvAAsBdgANAQ4BdgB3AA0BDwGLAI4ADwEQAYsAegB7AHwAEQESARMBEQEUARIBFQF5AHgAFQEWAXkAFwFqAGwAFwEYAWoAGQGhAJ4AGQEaAaEAfQB+AH8AgACBAIIAgwCEAIUAhgCHAIgAiQCKABsBiQCMAIoAjQCJABsBjQAbARwBjwCNABwBjwAcAR0BkQCPAB0BkQAdAZIAlwCYAJkAmgCbAJwAnQAeAZ8AnQAfAR4BpAClAKMApACmAKUAoAAgASEBoACiACABIgEjASQBIgElASMBqgCrAKwArQCuAK8AlQAmAZYAlQAnASYBsACxALIAsACzALEAKAEpASoBKAGUACkBpwArASwBpwAtASsBkwAuAZAAkwAvAS4BMAGoADEBMAGpAKgAMgG5ADMBMgE0AbkANQFyAHAANQFxAHIAtAA2AbYAtAA3ATYBOAE5AToBOAG4ADkBOwG1ALcAOwE8AbUAPQG6AD4BPQE/AboA"),
 "lods": [0.213761, PackedByteArray("AAABAAIAAAADAAEAAgABAAQAAgAEAAUABQAEAAYABQAGAAcABwAGAAgABwAIAAkACgALAAwACgANAAsADQAOAAsADwAQABEAEQASABMAEQATABQAEQAUABUAEAAWABEAEAAXABYAEAAYABcAGQAYABAAGQAaABgAGwAZABAAGwAQABwAHQAeAB8AIAAhACIAIQAjACIAJAAlACYAJwAoACkAKgArACwALQAuAC8AMAAxADIAMwA0ADUAMwA2ADQANwA2ADMANwA4ADYAOQA4ADcAOQA6ADgAOwA6ADkAOwA8ADoAPQA6ADwAPQA8AD4APwA6AD0AQAA6AD8AQABBADoAQgBDAEQARQBGAEcASABJAEoASABLAEkASgBJAEwASgBMAE0ATQBMAE4ATQBOAE8ATwBOAFAATwBQAFEAUgBQAE4AUgBOAFMAUgBTAFQAVQBWAFcAWABZAFoAWwBcAF0AWwBeAFwAXwBgAGEAXwBiAGAAYgBjAGAAYgBkAGMAZABlAGMAZABmAGUAZgBnAGUAZgBoAGcAaQBqAGsAawBqAGwAaQBtAGoAbgBvAHAAbwBxAHAAcABxAHIAcwB0AHUAdgB3AHgAeAB3AHkAegB7AHwAfQB+AH8AgACBAIIAgwCEAIUAhgCHAIgAiQCKAIsAiQCMAIoAjQCJAIsAjQCLAI4AjwCNAI4AjwCOAJAAkQCPAJAAkQCQAJIAkwCSAJAAkwCUAJIAlQCTAJAAlQCQAJYAlwCYAJkAmgCbAJwAnQCeAJ8AnQCgAJ4AoAChAJ4AoACiAKEAogCjAKEAogCkAKMApAClAKMApACmAKUApwCjAKUApwCoAKMApwCpAKgAqgCrAKwArQCuAK8AsACxALIAsACzALEAtAC1ALYAtgC1ALcAtAC4ALUAuAC5ALUAtQC5ALoA")],
-"material": ExtResource("8_ov27o"),
+"material": ExtResource("8_6co73"),
 "name": "controlleur",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -215,7 +215,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 48,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0A"),
-"material": ExtResource("9_xga57"),
+"material": ExtResource("9_54xj6"),
 "name": "Material.003",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -228,7 +228,7 @@ _surfaces = [{
 "index_count": 192,
 "index_data": PackedByteArray("AABPAAIAAABQAE8AUQABAFIAUQADAAEABgBTAAUABgBUAFMAVQBWAFcAVQAEAFYABwBYAAkABwBZAFgAWgAIAFsAWgAKAAgACwBcAA0ACwBdAFwAXgAMAF8AXgAOAAwADwAQABEAEgATABQAFQBgAGEAFQAZAGAAFwAWABgAFwBiABYAYwAcABoAHQBkAGUAZgBnAGgAZgBpAGcAagBrAGwAagBtAGsAIwAkACUAHwAeACAAGwBuAG8AIQAiAHAAJgBxAHIAJgAnAHEAcwApAHQAcwAoACkALAB1AHYALAAtAHUAdwAqACsAdwB4ACoALgB5AHoALgAxAHkAewAvADAAewB8AC8AMgB9AH4AMgA2AH0ANAAzADUANAB/ADMANwA4ADkAOgA7ADwAPQCAAIEAPQBAAIAAggCDAIQAggBFAIMAhQCGAIcAiABHAIkAPwCKAEIAPwA+AIoAiwBBAIwAiwBEAEEATABNAE4AjQBKAEsAjgCPAEMASQBGAEgA"),
 "lods": [0.115939, PackedByteArray("AAABAAIAAAADAAEABAADAAUABgAEAAUABwAIAAkABwAKAAgACwAMAA0ACwAOAAwADwAQABEAEgATABQAFQAWABcAFwAWABgAFQAZABYAGQAaABYAGQAbABoAGwAcABoAHQAeAB8AHwAeACAAIQAiAB0AIwAkACUAJgAnACgAKAApACoAKwAoACoALAAoACsALAAtACgALgAvADAALgAxAC8AMgAzADQANAAzADUAMgA2ADMANwA4ADkAOgA7ADwAPQA+AD8APQBAAD4APwA+AEEAPwBBAEIAQgBBAEMAPgBEAEEAQABEAD4AQABFAEQARgBHAEgASQBGAEgARwBKAEsATABNAE4A")],
-"material": ExtResource("10_jm0n6"),
+"material": ExtResource("10_uy34n"),
 "name": "Material.004",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -302,7 +302,7 @@ flip_faces = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xa0eo"]
 render_priority = 0
-shader = ExtResource("13_gg6ry")
+shader = ExtResource("13_nd05m")
 shader_parameter/shadows_enabled = true
 shader_parameter/highlights_enabled = true
 shader_parameter/shadow_strength = 0.999999977648
@@ -329,7 +329,7 @@ _data = {
 point_count = 110
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_onjth"]
-shader = ExtResource("35_l6ukp")
+shader = ExtResource("24_p63xe")
 shader_parameter/day_top_color = Color(0.99999994, 0.25973013, 0.4538291, 1)
 shader_parameter/day_bottom_color = Color(0.9215595, 0.7179958, 0, 1)
 shader_parameter/sunset_top_color = Color(0.98384076, 0, 0.1466344, 1)
@@ -395,10 +395,10 @@ seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k2p1j"]
 render_priority = 0
-shader = ExtResource("43_j705o")
+shader = ExtResource("43_bjk77")
 shader_parameter/albedo = Color(0.745132, 0.583381, 0.804146, 1)
-shader_parameter/water_texture1 = ExtResource("44_r3x7a")
-shader_parameter/water_texture2 = ExtResource("44_r3x7a")
+shader_parameter/water_texture1 = ExtResource("44_7se8v")
+shader_parameter/water_texture2 = ExtResource("44_7se8v")
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_hlyfj")
 shader_parameter/scroll_speed1 = Vector2(0.015, 0.001)
 shader_parameter/scroll_speed2 = Vector2(-0.015, -0.02)
@@ -416,7 +416,7 @@ shader_parameter/FoamGlowIntensity = 0.5
 size = Vector3(5000.686, 3.3780518, 4993.4805)
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("ui_manager", "player", "last_island", "ring_manager") groups=["game_manager"]]
-script = ExtResource("1_jqr6l")
+script = ExtResource("1_vmr22")
 ui_manager = NodePath("UI_VISUEL/CanvasLayer")
 player = NodePath("player/plane")
 last_island = NodePath("environnement/landing_zone")
@@ -425,7 +425,7 @@ ring_manager = NodePath("RingManager")
 [node name="UI_VISUEL" type="Node3D" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="UI_VISUEL" node_paths=PackedStringArray("score_label", "score_control", "final_score_label", "final_score_control", "data_control", "rings_label", "landing_label")]
-script = ExtResource("2_n46h0")
+script = ExtResource("2_y30ld")
 score_label = NodePath("score_control/score_label")
 score_control = NodePath("score_control")
 final_score_label = NodePath("final score/VBoxContainer/score_final_label")
@@ -447,7 +447,7 @@ layout_mode = 2
 [node name="data_plane" type="RichTextLabel" parent="UI_VISUEL/CanvasLayer/data_panel/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("3_s8tfq")
+theme_override_fonts/normal_font = ExtResource("3_ndgy6")
 theme_override_font_sizes/normal_font_size = 30
 fit_content = true
 autowrap_mode = 0
@@ -455,7 +455,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="rings_label" type="RichTextLabel" parent="UI_VISUEL/CanvasLayer/data_panel/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("3_s8tfq")
+theme_override_fonts/normal_font = ExtResource("3_ndgy6")
 theme_override_font_sizes/normal_font_size = 30
 fit_content = true
 scroll_active = false
@@ -463,7 +463,7 @@ autowrap_mode = 0
 
 [node name="landing_label" type="RichTextLabel" parent="UI_VISUEL/CanvasLayer/data_panel/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("3_s8tfq")
+theme_override_fonts/normal_font = ExtResource("3_ndgy6")
 theme_override_font_sizes/normal_font_size = 30
 fit_content = true
 scroll_active = false
@@ -483,7 +483,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_womr8")
 
 [node name="score_label" type="RichTextLabel" parent="UI_VISUEL/CanvasLayer/score_control"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("3_s8tfq")
+theme_override_fonts/normal_font = ExtResource("3_ndgy6")
 theme_override_font_sizes/normal_font_size = 30
 fit_content = true
 scroll_active = false
@@ -509,7 +509,7 @@ layout_mode = 2
 [node name="score_final_label" type="RichTextLabel" parent="UI_VISUEL/CanvasLayer/final score/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("3_s8tfq")
+theme_override_fonts/normal_font = ExtResource("3_ndgy6")
 theme_override_font_sizes/normal_font_size = 50
 theme_override_font_sizes/mono_font_size = 2
 text = "YOUR SCORE IS :  "
@@ -517,7 +517,7 @@ fit_content = true
 
 [node name="Button" type="Button" parent="UI_VISUEL/CanvasLayer/final score/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_s8tfq")
+theme_override_fonts/font = ExtResource("3_ndgy6")
 theme_override_font_sizes/font_size = 50
 text = "REPLAY"
 metadata/_edit_use_anchors_ = true
@@ -529,7 +529,7 @@ metadata/_edit_use_anchors_ = true
 [node name="trail_l" type="MeshInstance3D" parent="player/BoiteTrails" node_paths=PackedStringArray("cible")]
 material_override = SubResource("StandardMaterial3D_k6h54")
 skeleton = NodePath("../../..")
-script = ExtResource("4_btlq2")
+script = ExtResource("4_ujnp6")
 cible = NodePath("../../plane/plane_mesh/marker_trail_l")
 trail_width_start = 0.05
 trail_width_end = 0.3
@@ -537,14 +537,14 @@ trail_width_end = 0.3
 [node name="trail_r" type="MeshInstance3D" parent="player/BoiteTrails" node_paths=PackedStringArray("cible")]
 material_override = SubResource("StandardMaterial3D_k6h54")
 skeleton = NodePath("../../..")
-script = ExtResource("4_btlq2")
+script = ExtResource("4_ujnp6")
 cible = NodePath("../../plane/plane_mesh/marker_trail_r")
 trail_width_start = 0.05
 trail_width_end = 0.3
 
 [node name="plane" type="CharacterBody3D" parent="player" node_paths=PackedStringArray("_trails", "rings_label", "landing_label", "boost_visuals", "debug_ui") groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78033495, -14.129764)
-script = ExtResource("5_sgonh")
+script = ExtResource("5_lxvhi")
 _trails = [NodePath("../BoiteTrails/trail_l"), NodePath("../BoiteTrails/trail_r")]
 flight_config = SubResource("Resource_xa0eo")
 rings_label = NodePath("../../UI_VISUEL/CanvasLayer/data_panel/VBoxContainer/rings_label")
@@ -575,7 +575,7 @@ transform = Transform3D(2.3364487, 0, 0, 0, 1.618123, 0, 0, 0, 1, 4.149, 2.516, 
 transform = Transform3D(2.2459385, 0.6440125, -2.8150684e-08, 0, -7.073041e-08, -1.618123, -0.27563736, 0.9612617, -4.2018083e-08, 3.0186918, -0.11650491, 1.2376213)
 mesh = SubResource("TorusMesh_8i7sl")
 skeleton = NodePath("../boost_visual")
-script = ExtResource("11_7vaxf")
+script = ExtResource("11_jjph3")
 boite_trails = NodePath("../../../BoiteTrails")
 brake_min = 0.5
 brake_max = 1.0
@@ -585,7 +585,7 @@ trail_latency = 1.0
 transform = Transform3D(2.2459385, -0.6440125, 2.8150684e-08, 0, -7.073041e-08, -1.618123, 0.27563736, 0.9612617, -4.2018083e-08, -3.0191848, -0.11602187, 1.2376509)
 mesh = SubResource("TorusMesh_8i7sl")
 skeleton = NodePath("../boost_visual")
-script = ExtResource("11_7vaxf")
+script = ExtResource("11_jjph3")
 boite_trails = NodePath("../../../BoiteTrails")
 brake_min = 0.5
 brake_max = 1.0
@@ -595,7 +595,7 @@ trail_latency = 1.0
 transform = Transform3D(2.3364487, 0, 0, 0, 1.618123, 0, 0, 0, 1, 0, 0, 0.8983221)
 mesh = SubResource("SphereMesh_ungtf")
 skeleton = NodePath("../..")
-script = ExtResource("11_7vaxf")
+script = ExtResource("11_jjph3")
 boite_trails = NodePath("../../../BoiteTrails")
 trail_width_start = 0.5
 trail_width_end = 0.1
@@ -614,7 +614,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0523208, 0.0388756, 0.93035
 [node name="follower" type="Node3D" parent="." node_paths=PackedStringArray("target", "camera")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4295595, -14.954967)
-script = ExtResource("12_8i56y")
+script = ExtResource("12_rouqn")
 target = NodePath("../player/plane")
 camera = NodePath("player_cam")
 lspeed_brake = 18.0
@@ -631,48 +631,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8e-44, 0.7049973, 5.8148923
 transform = Transform3D(4, 0, 0, 0, 4.0000005, 1.4901159e-08, 0, -5.9604645e-08, 1, 0.030057251, -0.16531372, -1.2642479)
 mesh = SubResource("QuadMesh_onjth")
 surface_material_override/0 = SubResource("ShaderMaterial_xa0eo")
-script = ExtResource("14_aj8jl")
+script = ExtResource("14_mecol")
 camera_path = NodePath("..")
 padding = 10.0
 
 [node name="RingManager" type="Node" parent="." node_paths=PackedStringArray("ordered_rings", "bonus_rings")]
 unique_name_in_owner = true
-script = ExtResource("15_iey1i")
+script = ExtResource("15_3q6qb")
 ordered_rings = [NodePath("OrderedRingsBox/ring1"), NodePath("OrderedRingsBox/ring2"), NodePath("OrderedRingsBox/ring3"), NodePath("OrderedRingsBox/ring4")]
 bonus_rings = [NodePath("BonusRingsBox/bonus_ring1")]
 metadata/_custom_type_script = "uid://cdonvlaijai24"
 
 [node name="OrderedRingsBox" type="Node" parent="RingManager"]
 
-[node name="ring1" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_1p53a")]
+[node name="ring1" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_rlpw2")]
 transform = Transform3D(1, 0, 0, 0, 0.98682183, -0.1618105, 0, 0.1618105, 0.98682183, 0, 26.571186, -120.04259)
 manager = NodePath("../..")
 
-[node name="ring2" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_1p53a")]
+[node name="ring2" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_rlpw2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.27099, 40.266968, -293.91077)
 ring_order = 1
 manager = NodePath("../..")
 
-[node name="ring3" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_1p53a")]
+[node name="ring3" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_rlpw2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.88998, 90.55665, -310.23828)
 ring_order = 2
 manager = NodePath("../..")
 
-[node name="ring4" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_1p53a")]
+[node name="ring4" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_rlpw2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5776367e-05, 67.21616, -634.5816)
 ring_order = 3
 manager = NodePath("../..")
 
 [node name="BonusRingsBox" type="Node" parent="RingManager"]
 
-[node name="bonus_ring1" parent="RingManager/BonusRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("17_s7xmg")]
+[node name="bonus_ring1" parent="RingManager/BonusRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("17_aj0ll")]
 transform = Transform3D(1, 0, 0, 0, 0.25881907, 0.9659258, 0, -0.9659258, 0.25881907, -4.5776367e-05, 55.54779, -367.58014)
 manager = NodePath("../..")
 
 [node name="marker_ld" type="Node3D" parent="." node_paths=PackedStringArray("player")]
-script = ExtResource("18_u22d8")
-nom_fichier = "listebase"
-ld_list = ExtResource("19_jqr6l")
+script = ExtResource("18_kv56o")
+nom_fichier = "liste_lukas"
+ld_list = ExtResource("19_vmr22")
 mesh = SubResource("BoxMesh_yxnjo")
 player = NodePath("../player/plane")
 
@@ -680,14 +680,14 @@ player = NodePath("../player/plane")
 unique_name_in_owner = true
 curve = SubResource("Curve3D_s7exe")
 debug_custom_color = Color(0.18246871, 5.7756904e-07, 0.9218229, 1)
-script = ExtResource("20_rglm5")
+script = ExtResource("20_t84fa")
 target = NodePath("../player/plane")
-memoire = ExtResource("21_n46h0")
-nom_memoire = "memoire_fantomebase"
+memoire = ExtResource("21_y30ld")
+nom_memoire = "memoire_fantome_lukas"
 
 [node name="visualiser_ld" type="Node3D" parent="tracker_ld"]
-transform = Transform3D(1, 0, 0, 0, 0.9999472, 0.010280115, 0, -0.010280115, 0.9999472, 0, 0.60859203, -14.265222)
-script = ExtResource("22_ymgo5")
+transform = Transform3D(1, 0, 0, 0, 0.999838, 0.018001413, 0, -0.018001411, 0.999838, 0, 0.61755675, -14.2594595)
+script = ExtResource("22_15m7o")
 play = true
 
 [node name="plane_mesh" type="MeshInstance3D" parent="tracker_ld/visualiser_ld"]
@@ -706,8 +706,8 @@ skeleton = NodePath("")
 script = SubResource("GDScript_gwxm2")
 
 [node name="road_creator" type="PathFollow3D" parent="tracker_ld"]
-transform = Transform3D(1, 0, 0, 0, 0.99626166, 0.0863063, 0, -0.0863063, 0.99626166, 0, 0.7790181, -14.149123)
-script = ExtResource("23_apseg")
+transform = Transform3D(1, 0, 0, 0, 0.99626195, 0.08630632, 0, -0.08630632, 0.99626195, 0, 0.7790181, -14.149123)
+script = ExtResource("23_rr46g")
 
 [node name="environnement" type="Node3D" parent="."]
 
@@ -732,113 +732,113 @@ visible = false
 light_energy = 0.25
 shadow_enabled = true
 
-[node name="hangar_island" parent="environnement/importing_scene" instance=ExtResource("36_4vufj")]
+[node name="hangar_island" parent="environnement/importing_scene" instance=ExtResource("25_hae6h")]
 
 [node name="island_type_01" type="Node3D" parent="environnement"]
 transform = Transform3D(0.989437, 0.144961, 0, -0.144961, 0.989437, 0, 0, 0, 1, 8.6857605, 0.9413521, -116.78671)
 
-[node name="pot" parent="environnement/island_type_01" instance=ExtResource("24_3e2p4")]
+[node name="pot" parent="environnement/island_type_01" instance=ExtResource("26_owics")]
 
-[node name="pot2" parent="environnement/island_type_01" instance=ExtResource("24_3e2p4")]
+[node name="pot2" parent="environnement/island_type_01" instance=ExtResource("26_owics")]
 transform = Transform3D(0.91244, -0.0128282, 0.409008, -0.0128282, 0.998121, 0.0599231, -0.409008, -0.0599231, 0.910561, -17.8099, -2.60929, 0)
 
-[node name="pillar" parent="environnement/island_type_01" instance=ExtResource("25_px8rp")]
+[node name="pillar" parent="environnement/island_type_01" instance=ExtResource("27_j1uwg")]
 transform = Transform3D(0.989437, -0.144961, 0, 0.144961, 0.989437, 0, 0, 0, 1, -15.999, -2.08046, -1.81573)
 
-[node name="pillar2" parent="environnement/island_type_01" instance=ExtResource("25_px8rp")]
+[node name="pillar2" parent="environnement/island_type_01" instance=ExtResource("27_j1uwg")]
 transform = Transform3D(0.853368, -0.144961, -0.500748, 0.125025, 0.989437, -0.0733637, 0.506094, 0, 0.862478, 0.821468, 0.383873, -1.81573)
 
-[node name="pillar3" parent="environnement/island_type_01" instance=ExtResource("25_px8rp")]
+[node name="pillar3" parent="environnement/island_type_01" instance=ExtResource("27_j1uwg")]
 transform = Transform3D(0.853368, -0.144961, -0.500748, 0.125025, 0.989437, -0.0733637, 0.506094, 0, 0.862478, 0.813562, 0.437833, 6.04074)
 
-[node name="grave_type_01" parent="environnement/island_type_01" instance=ExtResource("26_ycbrv")]
+[node name="grave_type_01" parent="environnement/island_type_01" instance=ExtResource("28_62555")]
 transform = Transform3D(0.699638, -0.144961, 0.699638, 0.102503, 0.989437, 0.102503, -0.707107, 0, 0.707107, -15.6462, -2.05924, 10.2291)
 
-[node name="grave_type_02" parent="environnement/island_type_01" instance=ExtResource("27_2x5p4")]
+[node name="grave_type_02" parent="environnement/island_type_01" instance=ExtResource("29_bam2t")]
 transform = Transform3D(0.989437, -0.144961, 0, 0.144961, 0.989437, 0, 0, 0, 1, 3.11123, 2.48235, -8.82199)
 
-[node name="drapeau" parent="environnement/island_type_01" instance=ExtResource("28_0fxj6")]
+[node name="drapeau" parent="environnement/island_type_01" instance=ExtResource("30_4peye")]
 transform = Transform3D(0.989293, -0.144961, 0.0169227, 0.144939, 0.989437, 0.00247932, -0.0171034, 0, 0.999854, -9.04822, -1.7676, 8.32919)
 
-[node name="rock_type_01" parent="environnement/island_type_01" instance=ExtResource("29_lttwm")]
+[node name="rock_type_01" parent="environnement/island_type_01" instance=ExtResource("31_14f5o")]
 transform = Transform3D(0.405063, -3.46641, 0, 3.46641, 0.405063, 0, 0, 0, 3.49, 6.53197, 1.67039, -4.70856)
 
-[node name="rock_type_02" parent="environnement/island_type_01" instance=ExtResource("30_ndbyc")]
+[node name="rock_type_02" parent="environnement/island_type_01" instance=ExtResource("32_nkxhy")]
 transform = Transform3D(5.1055, -0.747997, 0, 0.747997, 5.1055, 0, 0, 0, 5.16, -15.9976, -1.12775, -6.35193)
 
-[node name="rock_type_03" parent="environnement/island_type_01" instance=ExtResource("30_ndbyc")]
+[node name="rock_type_03" parent="environnement/island_type_01" instance=ExtResource("32_nkxhy")]
 transform = Transform3D(2.58294, -0.747997, 4.40392, 0.378422, 5.10549, 0.64521, -4.45093, 2.98023e-08, 2.61051, -14.6333, -0.927871, -6.35193)
 
-[node name="grass_type_05" parent="environnement/island_type_01" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_05" parent="environnement/island_type_01" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(11.522, -1.68807, 0, 1.68807, 11.522, 0, 0, 0, 11.645, -10.8569, -0.452641, -0.626404)
 
-[node name="grass_type_06" parent="environnement/island_type_01" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_06" parent="environnement/island_type_01" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(10.0114, -1.68807, 5.70343, 1.46675, 11.522, 0.835599, -5.76432, -2.38419e-07, 10.1182, 2.99523, 1.57681, -0.626404)
 
-[node name="grass_type_07" parent="environnement/island_type_01" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_07" parent="environnement/island_type_01" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(10.0114, -1.68807, 5.70343, 1.46674, 11.522, 0.835599, -5.76432, -2.38419e-07, 10.1182, 5.72228, 1.97634, -0.626404)
 
-[node name="grass_type_08" parent="environnement/island_type_01" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_08" parent="environnement/island_type_01" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(10.0114, -1.68807, 5.70343, 1.46674, 11.522, 0.835599, -5.76432, -2.38419e-07, 10.1182, 5.72228, 1.97634, 4.83777)
 
-[node name="grass_type_09" parent="environnement/island_type_01" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_09" parent="environnement/island_type_01" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(10.0114, -1.68807, 5.70343, 1.46674, 11.522, 0.835599, -5.76432, -2.38419e-07, 10.1182, 2.75396, 1.54146, 4.83777)
 
-[node name="grass_type_10" parent="environnement/island_type_01" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_10" parent="environnement/island_type_01" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(10.0114, -1.68807, 5.70343, 1.46674, 11.522, 0.835599, -5.76432, -2.38419e-07, 10.1182, -14.0665, -0.922871, 4.83777)
 
-[node name="grass_type_11" parent="environnement/island_type_01" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_11" parent="environnement/island_type_01" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(10.0114, -1.68807, 5.70343, 1.46674, 11.522, 0.835599, -5.76432, -2.38419e-07, 10.1182, -19.0137, -1.64767, 4.83777)
 
-[node name="grass_type_12" parent="environnement/island_type_01" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_12" parent="environnement/island_type_01" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(10.0114, -1.68807, 5.70343, 1.46674, 11.522, 0.835599, -5.76432, -2.38419e-07, 10.1182, -19.0137, -1.64767, -0.162231)
 
-[node name="grass_type_13" parent="environnement/island_type_01" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_13" parent="environnement/island_type_01" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(10.0114, -1.68807, 5.70343, 1.46674, 11.522, 0.835599, -5.76432, -2.38419e-07, 10.1182, -19.0137, -1.64767, -6.16223)
 
-[node name="grass_type_14" parent="environnement/island_type_01" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_14" parent="environnement/island_type_01" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(10.0114, -1.68807, 5.70343, 1.46674, 11.522, 0.835599, -5.76432, -2.38419e-07, 10.1182, -11.0982, -0.487989, -6.16223)
 
-[node name="grass_type_15" parent="environnement/island_type_01" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_15" parent="environnement/island_type_01" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(10.0114, -1.68807, 5.70343, 1.46674, 11.522, 0.835599, -5.76432, -1.45187e-07, 10.1182, -11.0982, -0.487989, -6.16223)
 
-[node name="grass_type_04" parent="environnement/island_type_01" instance=ExtResource("32_jclja")]
+[node name="grass_type_04" parent="environnement/island_type_01" instance=ExtResource("34_kxwgx")]
 transform = Transform3D(9.92406, -1.45395, 0, 1.45395, 9.92406, 0, 0, 0, 10.03, -0.432405, 0.555418, -11.4832)
 
-[node name="grass_type_16" parent="environnement/island_type_01" instance=ExtResource("32_jclja")]
+[node name="grass_type_16" parent="environnement/island_type_01" instance=ExtResource("34_kxwgx")]
 transform = Transform3D(9.92405, -1.45395, 0, 1.45395, 9.92405, 0, 0, 0, 10.03, -0.432405, 0.555418, 7.51685)
 
-[node name="grass_type_17" parent="environnement/island_type_01" instance=ExtResource("32_jclja")]
+[node name="grass_type_17" parent="environnement/island_type_01" instance=ExtResource("34_kxwgx")]
 transform = Transform3D(9.92405, -1.45395, 0, 1.45395, 9.92405, 0, 0, 0, 10.03, -9.33734, -0.749228, 7.51685)
 
-[node name="grass_type_18" parent="environnement/island_type_01" instance=ExtResource("32_jclja")]
+[node name="grass_type_18" parent="environnement/island_type_01" instance=ExtResource("34_kxwgx")]
 transform = Transform3D(9.92405, -1.45395, 0, 1.45395, 9.92405, 0, 0, 0, 10.03, -15.274, -1.61899, 7.51685)
 
-[node name="grass_type_19" parent="environnement/island_type_01" instance=ExtResource("32_jclja")]
+[node name="grass_type_19" parent="environnement/island_type_01" instance=ExtResource("34_kxwgx")]
 transform = Transform3D(7.01736, -1.45395, 7.01737, 1.0281, 9.92405, 1.0281, -7.09228, 1.19209e-07, 7.09228, -15.274, -1.61899, 7.51685)
 
-[node name="grass_type_20" parent="environnement/island_type_01" instance=ExtResource("32_jclja")]
+[node name="grass_type_20" parent="environnement/island_type_01" instance=ExtResource("34_kxwgx")]
 transform = Transform3D(7.01736, -1.45395, -7.01737, 1.0281, 9.92405, -1.0281, 7.09228, -1.82437e-15, 7.09228, -15.274, -1.61899, -8.48315)
 
-[node name="grass_type_21" parent="environnement/island_type_01" instance=ExtResource("32_jclja")]
+[node name="grass_type_21" parent="environnement/island_type_01" instance=ExtResource("34_kxwgx")]
 transform = Transform3D(7.01736, -1.45395, -7.01737, 1.0281, 9.92405, -1.0281, 7.09228, -1.82437e-15, 7.09228, -15.274, -1.61899, -8.48315)
 
-[node name="grass_type_22" parent="environnement/island_type_01" instance=ExtResource("32_jclja")]
+[node name="grass_type_22" parent="environnement/island_type_01" instance=ExtResource("34_kxwgx")]
 transform = Transform3D(7.01736, -1.45395, -7.01737, 1.0281, 9.92405, -1.0281, 7.09228, -8.66624e-08, 7.09228, -5.37959, -0.169386, -0.483154)
 
-[node name="grass_type_03" parent="environnement/island_type_01" instance=ExtResource("33_m1csa")]
+[node name="grass_type_03" parent="environnement/island_type_01" instance=ExtResource("35_51b5r")]
 transform = Transform3D(9.89437, -1.44961, 0, 1.44961, 9.89437, 0, 0, 0, 10, 3.78673, -1.79784, -8.32626)
 
-[node name="grass_type_23" parent="environnement/island_type_01" instance=ExtResource("33_m1csa")]
+[node name="grass_type_23" parent="environnement/island_type_01" instance=ExtResource("35_51b5r")]
 transform = Transform3D(4.40681, -1.44961, -8.85882, 0.645634, 9.89437, -1.29789, 8.95339, -3.57628e-07, 4.45385, -3.13933, -2.81256, -8.32626)
 
-[node name="grass_type_24" parent="environnement/island_type_01" instance=ExtResource("33_m1csa")]
+[node name="grass_type_24" parent="environnement/island_type_01" instance=ExtResource("35_51b5r")]
 transform = Transform3D(4.40681, -1.44961, -8.85882, 0.645634, 9.89437, -1.29789, 8.95339, -3.57628e-07, 4.45385, -3.13933, -2.81257, -15.5927)
 
-[node name="grass_type_25" parent="environnement/island_type_01" instance=ExtResource("33_m1csa")]
+[node name="grass_type_25" parent="environnement/island_type_01" instance=ExtResource("35_51b5r")]
 transform = Transform3D(1.96382, -1.44961, -9.69753, 0.287716, 9.89437, -1.42077, 9.80105, -3.45442e-07, 1.98479, -14.0231, -4.40713, -15.5927)
 
-[node name="sol_type_01" parent="environnement/island_type_01" instance=ExtResource("34_ffvxp")]
+[node name="sol_type_01" parent="environnement/island_type_01" instance=ExtResource("36_ubmtj")]
 transform = Transform3D(9.91911, -1.45324, 0, 1.45324, 9.91911, 0, 0, 0, 10.025, -8.84527, -0.579925, -2.116)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="environnement/island_type_01/sol_type_01"]
@@ -848,7 +848,7 @@ transform = Transform3D(0.0997506, -3.5527137e-15, 0, 3.5527137e-15, 0.0997506, 
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_ungtf")
 
-[node name="island_type_02" parent="environnement" instance=ExtResource("37_6kxv1")]
+[node name="island_type_02" parent="environnement" instance=ExtResource("37_1xtk8")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -68.30133, 5.093498, -291.07642)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="environnement/island_type_02"]
@@ -858,7 +858,7 @@ transform = Transform3D(0.0997506, -3.5527137e-15, 0, 3.5527137e-15, 0.0997506, 
 transform = Transform3D(36.05961, 4.965002e-13, 34.63674, 4.9649987e-13, 49.999992, -1.2336212e-12, -34.636738, 1.233621e-12, 36.05961, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_ungtf")
 
-[node name="island_type_03" parent="environnement" instance=ExtResource("37_6kxv1")]
+[node name="island_type_03" parent="environnement" instance=ExtResource("37_1xtk8")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 66.54001, 53.59916, -314.46637)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="environnement/island_type_03"]
@@ -868,7 +868,7 @@ transform = Transform3D(0.0997506, -3.5527137e-15, 0, 3.5527137e-15, 0.0997506, 
 transform = Transform3D(36.05961, 4.965002e-13, 34.63674, 4.9649987e-13, 49.999992, -1.2336212e-12, -34.636738, 1.233621e-12, 36.05961, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_ungtf")
 
-[node name="island_type_04" parent="environnement" instance=ExtResource("37_6kxv1")]
+[node name="island_type_04" parent="environnement" instance=ExtResource("37_1xtk8")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.5834513, 43.51877, -629.95734)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="environnement/island_type_04"]
@@ -878,7 +878,7 @@ transform = Transform3D(0.0997506, -3.5527137e-15, 0, 3.5527137e-15, 0.0997506, 
 transform = Transform3D(36.05961, 4.965002e-13, 34.63674, 4.9649987e-13, 49.999992, -1.2336212e-12, -34.636738, 1.233621e-12, 36.05961, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_ungtf")
 
-[node name="island_type_06" parent="environnement" instance=ExtResource("38_r7qmt")]
+[node name="island_type_06" parent="environnement" instance=ExtResource("38_fsfsr")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 384.91788, 72.5677, -882.48114)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="environnement/island_type_06"]
@@ -890,7 +890,7 @@ shape = SubResource("ConcavePolygonShape3D_ungtf")
 
 [node name="landing_zone" type="Area3D" parent="environnement" groups=["landing_zone"]]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -2.81557, 3.60125, -1136.79)
-script = ExtResource("39_ue6hg")
+script = ExtResource("39_24myw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="environnement/landing_zone"]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
@@ -900,7 +900,7 @@ shape = SubResource("ConcavePolygonShape3D_nulpo")
 
 [node name="terrain_mesh_type_01" type="MeshInstance3D" parent="environnement/landing_zone"]
 unique_name_in_owner = true
-mesh = ExtResource("40_wpigw")
+mesh = ExtResource("40_42geo")
 skeleton = NodePath("")
 
 [node name="pillar" type="Node3D" parent="environnement/landing_zone"]
@@ -908,25 +908,25 @@ transform = Transform3D(0.095, 0, 0, 0, 0.095, 0, 0, 0, 0.095, -0.565295, 0, 0)
 
 [node name="pillar_mesh" type="MeshInstance3D" parent="environnement/landing_zone/pillar"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.602212, 0)
-mesh = ExtResource("41_oevch")
+mesh = ExtResource("41_h0f4k")
 skeleton = NodePath("")
 
-[node name="pot3" parent="environnement/landing_zone/pillar" instance=ExtResource("24_3e2p4")]
+[node name="pot3" parent="environnement/landing_zone/pillar" instance=ExtResource("26_owics")]
 transform = Transform3D(0.122537, 0.124228, -0.531068, 0.255659, 0.467719, 0.168399, 0.481772, -0.279798, 0.0457114, -0.898907, 0, 0.977859)
 
-[node name="pot4" parent="environnement/landing_zone/pillar" instance=ExtResource("24_3e2p4")]
+[node name="pot4" parent="environnement/landing_zone/pillar" instance=ExtResource("26_owics")]
 transform = Transform3D(0.645412, -0.243058, -0.304765, 0.344842, 0.630877, 0.227143, 0.181778, -0.333816, 0.651184, 1.1498, -0.207325, -0.115036)
 
-[node name="pillar2" parent="environnement/landing_zone" instance=ExtResource("25_px8rp")]
+[node name="pillar2" parent="environnement/landing_zone" instance=ExtResource("27_j1uwg")]
 transform = Transform3D(0.095, 0, 0, 0, 0.095, 0, 0, 0, 0.095, 0.575095, 0, 0)
 
-[node name="pot" parent="environnement/landing_zone/pillar2" instance=ExtResource("24_3e2p4")]
+[node name="pot" parent="environnement/landing_zone/pillar2" instance=ExtResource("26_owics")]
 transform = Transform3D(0.578111, -0.223638, 0.289686, 0.19994, 0.64663, 0.100188, -0.306522, 0, 0.61171, 1.42456, 0, 0)
 
-[node name="pot2" parent="environnement/landing_zone/pillar2" instance=ExtResource("24_3e2p4")]
+[node name="pot2" parent="environnement/landing_zone/pillar2" instance=ExtResource("26_owics")]
 transform = Transform3D(0.103835, 0.105268, -0.450015, 0.21664, 0.396335, 0.142698, 0.408243, -0.237095, 0.0387345, -1.0363, 0, 0.977859)
 
-[node name="drapeau" parent="environnement/landing_zone" instance=ExtResource("28_0fxj6")]
+[node name="drapeau" parent="environnement/landing_zone" instance=ExtResource("30_4peye")]
 transform = Transform3D(0.057, 0, 0, 0, 0.085, 0, 0, 0, 0.057, 0, 0, -0.482027)
 
 [node name="herbs" type="Node3D" parent="environnement/landing_zone"]
@@ -935,337 +935,337 @@ transform = Transform3D(0.965926, 0, -0.258818, 0, 0.999999, 0, 0.258819, 0, 0.9
 [node name="herb_group_1" type="Node3D" parent="environnement/landing_zone/herbs"]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.25882, 0, 0.965929, 0, 0, 0)
 
-[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_1" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_1" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.166944, 0, 0.391798)
 
-[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_1" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_1" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.397536, 0, 0.391798)
 
-[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_1" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_1" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.295051, 0, 0.495705)
 
-[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_1" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_1" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.628128, 0, 0.495705)
 
-[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_1" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_1" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.4744, 0, 0.578833)
 
-[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_1" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_1" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
-[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_1" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_1" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
 [node name="herb_group_2" type="Node3D" parent="environnement/landing_zone/herbs"]
 transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.500002, 0, 0.866028, -0.915687, 0, 0.245358)
 
-[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_2" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_2" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.166944, 0, 0.391798)
 
-[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_2" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_2" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.397536, 0, 0.391798)
 
-[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_2" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_2" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.295051, 0, 0.495705)
 
-[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_2" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_2" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.628128, 0, 0.495705)
 
-[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_2" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_2" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.4744, 0, 0.578833)
 
-[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_2" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_2" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
-[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_2" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_2" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
 [node name="herb_group_3" type="Node3D" parent="environnement/landing_zone/herbs"]
 transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965929, 0, 0.258819, -0.602571, 0, 0.226006)
 
-[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_3" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_3" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.166944, 0, 0.391798)
 
-[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_3" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_3" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.397536, 0, 0.391798)
 
-[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_3" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_3" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.295051, 0, 0.495705)
 
-[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_3" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_3" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.628128, 0, 0.495705)
 
-[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_3" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_3" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.4744, 0, 0.578833)
 
-[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_3" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_3" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
-[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_3" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_3" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
 [node name="herb_group_4" type="Node3D" parent="environnement/landing_zone/herbs"]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965927, -1.15238, 0, -0.143021)
 
-[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_4" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_4" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.166944, 0, 0.391798)
 
-[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_4" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_4" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.397536, 0, 0.391798)
 
-[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_4" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_4" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.295051, 0, 0.495705)
 
-[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_4" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_4" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.628128, 0, 0.495705)
 
-[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_4" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_4" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.4744, 0, 0.578833)
 
-[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_4" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_4" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
-[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_4" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_4" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
 [node name="herb_group_5" type="Node3D" parent="environnement/landing_zone/herbs"]
 transform = Transform3D(1, 0, 3.27826e-07, 0, 1, 0, 3.27826e-07, 0, 1, -0.975872, 0, -0.771206)
 
-[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_5" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_5" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.166944, 0, 0.391798)
 
-[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_5" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_5" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.397536, 0, 0.391798)
 
-[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_5" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_5" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.295051, 0, 0.495705)
 
-[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_5" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_5" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.628128, 0, 0.495705)
 
-[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_5" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_5" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.4744, 0, 0.578833)
 
-[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_5" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_5" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
-[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_5" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_5" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
 [node name="herb_group_6" type="Node3D" parent="environnement/landing_zone/herbs"]
 transform = Transform3D(1, 0, 2.98023e-07, 0, 1, 0, 2.98023e-07, 0, 1, -0.717698, 0, 0.192316)
 
-[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_6" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_6" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.166944, 0, 0.391798)
 
-[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_6" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_6" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.397536, 0, 0.391798)
 
-[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_6" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_6" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.295051, 0, 0.495705)
 
-[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_6" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_6" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.628128, 0, 0.495705)
 
-[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_6" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_6" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.4744, 0, 0.578833)
 
-[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_6" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_6" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
-[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_6" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_6" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
 [node name="herb_group_7" type="Node3D" parent="environnement/landing_zone/herbs"]
 transform = Transform3D(1, 0, 2.5332e-07, 0, 1, 0, 2.68221e-07, 0, 1, 0.123744, 0, -0.0331497)
 
-[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_7" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_7" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.166944, 0, 0.391798)
 
-[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_7" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_7" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.397536, 0, 0.391798)
 
-[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_7" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_7" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.295051, 0, 0.495705)
 
-[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_7" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_7" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.628128, 0, 0.495705)
 
-[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_7" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_7" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.4744, 0, 0.578833)
 
-[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_7" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_7" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
-[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_7" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_7" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
 [node name="herb_group_8" type="Node3D" parent="environnement/landing_zone/herbs"]
 transform = Transform3D(1, 0, 2.38419e-07, 0, 1, 0, 2.38419e-07, 0, 1, -0.0914006, 0, -0.836084)
 
-[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_8" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_8" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.166944, 0, 0.391798)
 
-[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_8" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_8" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.397536, 0, 0.391798)
 
-[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_8" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_8" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.295051, 0, 0.495705)
 
-[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_8" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_8" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.628128, 0, 0.495705)
 
-[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_8" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_8" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.4744, 0, 0.578833)
 
-[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_8" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_8" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
-[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_8" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_8" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
 [node name="herb_group_9" type="Node3D" parent="environnement/landing_zone/herbs"]
 transform = Transform3D(1, 0, 1.04308e-07, 0, 1, 0, 8.9407e-08, 0, 1, 0.131334, 0, -0.895765)
 
-[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_9" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_9" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.166944, 0, 0.391798)
 
-[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_9" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_9" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.397536, 0, 0.391798)
 
-[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_9" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_9" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.295051, 0, 0.495705)
 
-[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_9" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_9" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.628128, 0, 0.495705)
 
-[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_9" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_9" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.4744, 0, 0.578833)
 
-[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_9" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_9" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
-[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_9" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_9" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
 [node name="herb_group_10" type="Node3D" parent="environnement/landing_zone/herbs"]
 transform = Transform3D(1, 0, 4.47035e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.248469, 0, -1.22429)
 
-[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_10" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_10" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.166944, 0, 0.391798)
 
-[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_10" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_10" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.397536, 0, 0.391798)
 
-[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_10" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_10" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.295051, 0, 0.495705)
 
-[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_10" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_10" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.628128, 0, 0.495705)
 
-[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_10" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_10" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.4744, 0, 0.578833)
 
-[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_10" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_10" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
-[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_10" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_10" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
 [node name="herb_group_11" type="Node3D" parent="environnement/landing_zone/herbs"]
 transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, 0, 0, 1, -0.743435, 0, -1.09166)
 
-[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_11" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_11" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.166944, 0, 0.391798)
 
-[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_11" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_11" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.397536, 0, 0.391798)
 
-[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_11" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_11" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.295051, 0, 0.495705)
 
-[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_11" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_11" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.628128, 0, 0.495705)
 
-[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_11" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_11" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.4744, 0, 0.578833)
 
-[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_11" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_11" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
-[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_11" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_11" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
 [node name="herb_group_12" type="Node3D" parent="environnement/landing_zone/herbs"]
 transform = Transform3D(0.965926, 0, -0.258818, 0, 1, 0, 0.25882, 0, 0.965926, -0.489518, 0, -0.836979)
 
-[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_12" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_12" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.166944, 0, 0.391798)
 
-[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_12" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_12" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.397536, 0, 0.391798)
 
-[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_12" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_12" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.295051, 0, 0.495705)
 
-[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_12" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_12" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.628128, 0, 0.495705)
 
-[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_12" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_12" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.4744, 0, 0.578833)
 
-[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_12" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_12" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
-[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_12" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_12" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
 [node name="herb_group_13" type="Node3D" parent="environnement/landing_zone/herbs"]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965925, 0.413234, 0, -0.734638)
 
-[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_13" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_13" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.166944, 0, 0.391798)
 
-[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_13" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_13" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.397536, 0, 0.391798)
 
-[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_13" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_13" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.295051, 0, 0.495705)
 
-[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_13" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_13" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.628128, 0, 0.495705)
 
-[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_13" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_13" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.4744, 0, 0.578833)
 
-[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_13" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_13" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
-[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_13" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_13" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
 [node name="herb_group_14" type="Node3D" parent="environnement/landing_zone/herbs"]
 transform = Transform3D(0.707107, 0, -0.707105, 0, 1, 0, 0.707108, 0, 0.707106, 0.544499, 0, -0.640722)
 
-[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_14" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_05" parent="environnement/landing_zone/herbs/herb_group_14" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.166944, 0, 0.391798)
 
-[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_14" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_06" parent="environnement/landing_zone/herbs/herb_group_14" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.397536, 0, 0.391798)
 
-[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_14" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_07" parent="environnement/landing_zone/herbs/herb_group_14" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.433013, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.433012, 0.295051, 0, 0.495705)
 
-[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_14" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_08" parent="environnement/landing_zone/herbs/herb_group_14" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.628128, 0, 0.495705)
 
-[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_14" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_09" parent="environnement/landing_zone/herbs/herb_group_14" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.482963, 0, -0.129409, 0, 0.5, 0, 0.129409, 0, 0.482962, 0.4744, 0, 0.578833)
 
-[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_14" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_10" parent="environnement/landing_zone/herbs/herb_group_14" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
-[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_14" instance=ExtResource("31_gjrqy")]
+[node name="grass_type_11" parent="environnement/landing_zone/herbs/herb_group_14" instance=ExtResource("33_7bxi0")]
 transform = Transform3D(0.25, 0, -0.433012, 0, 0.5, 0, 0.433012, 0, 0.249999, 0.346294, 0, 0.620398)
 
 [node name="flower" type="Node3D" parent="environnement/landing_zone"]
@@ -1274,34 +1274,34 @@ transform = Transform3D(0.965926, 0, -0.258818, 0, 0.999999, 0, 0.258819, 0, 0.9
 [node name="flower_group" type="Node3D" parent="environnement/landing_zone/flower"]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.25882, 0, 0.965929, -0.371071, 0, 0.0994282)
 
-[node name="flower" parent="environnement/landing_zone/flower/flower_group" instance=ExtResource("42_q7x2p")]
+[node name="flower" parent="environnement/landing_zone/flower/flower_group" instance=ExtResource("42_nakst")]
 transform = Transform3D(0.0866025, 0, 0.05, 0, 0.1, 0, -0.05, 0, 0.0866025, 0, 0, 0)
 
-[node name="flower2" parent="environnement/landing_zone/flower/flower_group" instance=ExtResource("42_q7x2p")]
+[node name="flower2" parent="environnement/landing_zone/flower/flower_group" instance=ExtResource("42_nakst")]
 transform = Transform3D(0.0866025, 0, 0.05, 0, 0.1, 0, -0.05, 0, 0.0866025, -0.00339803, 0, 0.187033)
 
 [node name="flower_group2" type="Node3D" parent="environnement/landing_zone/flower"]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.25882, 0, 0.965929, -0.371071, 0, 0.0994282)
 
-[node name="flower3" parent="environnement/landing_zone/flower/flower_group2" instance=ExtResource("42_q7x2p")]
+[node name="flower3" parent="environnement/landing_zone/flower/flower_group2" instance=ExtResource("42_nakst")]
 transform = Transform3D(0, 0, 0.1, 0, 0.1, 0, -0.1, 0, -9.90933e-09, 1.04315, 0, 0.187033)
 
-[node name="flower5" parent="environnement/landing_zone/flower/flower_group2" instance=ExtResource("42_q7x2p")]
+[node name="flower5" parent="environnement/landing_zone/flower/flower_group2" instance=ExtResource("42_nakst")]
 transform = Transform3D(-0.0707107, 0, 0.0707106, 0, 0.1, 0, -0.0707107, 0, -0.0707106, 1.04315, 0, -0.207813)
 
-[node name="flower4" parent="environnement/landing_zone/flower/flower_group2" instance=ExtResource("42_q7x2p")]
+[node name="flower4" parent="environnement/landing_zone/flower/flower_group2" instance=ExtResource("42_nakst")]
 transform = Transform3D(0.0707107, 0, 0.0707107, 0, 0.1, 0, -0.0707106, 0, 0.0707106, 0.897393, 0, 0.156246)
 
 [node name="flower_group3" type="Node3D" parent="environnement/landing_zone/flower"]
 transform = Transform3D(0.710566, 0, -0.703631, 0, 1, 0, 0.703633, 0, 0.710568, 0.307789, 0, -0.0824718)
 
-[node name="flower5" parent="environnement/landing_zone/flower/flower_group3" instance=ExtResource("42_q7x2p")]
+[node name="flower5" parent="environnement/landing_zone/flower/flower_group3" instance=ExtResource("42_nakst")]
 transform = Transform3D(0.1, 0, 2.13801e-08, 0, 0.1, 0, 9.90933e-09, 0, 0.0999999, 0.0643452, 0, 0.0566978)
 
-[node name="flower6" parent="environnement/landing_zone/flower/flower_group3" instance=ExtResource("42_q7x2p")]
+[node name="flower6" parent="environnement/landing_zone/flower/flower_group3" instance=ExtResource("42_nakst")]
 transform = Transform3D(0.05, 0, 0.0866025, 0, 0.1, 0, -0.0866025, 0, 0.0499999, 0.290529, 0, 0.188769)
 
-[node name="flower7" parent="environnement/landing_zone/flower/flower_group3" instance=ExtResource("42_q7x2p")]
+[node name="flower7" parent="environnement/landing_zone/flower/flower_group3" instance=ExtResource("42_nakst")]
 transform = Transform3D(0.0866025, 0, 0.05, 0, 0.1, 0, -0.05, 0, 0.0866024, 0.478588, 0, 0.0315542)
 
 [node name="landing_coll" type="CollisionShape3D" parent="environnement/landing_zone"]
