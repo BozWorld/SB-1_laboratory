@@ -4,14 +4,17 @@ class_name OrderedRing
 
 signal ring_passed_ordoredly(_ring_order: int)
 
+
+
 @export var ring_order : int:
 	set(value):
-		if manager:
-			ring_order = value
+		ring_order = value
+		if manager :
 			if manager.ordered_rings.find(self) > -1:
 				manager.change_ring_order(manager.ordered_rings.find(self), value)
 			else :
 				manager.ordered_rings.insert(value, self)
+		
 
 var is_active := false
 
@@ -39,8 +42,9 @@ func set_active(active: bool, is_next:= false) -> void:
 	else:
 		mesh_instance.set_surface_override_material(0, base_material)
 
-func ring_passed():
+func ring_passed(score: float):
 	print("is_active: ", is_active, " - Ring order: ", ring_order)
 	if is_active:
+		print("Score: " + str(score))
 		passed = true
 		ring_passed_ordoredly.emit(ring_order)

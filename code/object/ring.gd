@@ -5,7 +5,7 @@ class_name Ring
 
 
 
-var manager: RingManager
+@export var manager: RingManager
 
 
 @export var mesh_instance: MeshInstance3D
@@ -27,9 +27,10 @@ func _ring_setup():
 	pass
 
 @abstract
-func ring_passed() -> void
+func ring_passed(score: float) -> void
 
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
-		ring_passed()
+		var score : float = 2.0 - (basis.z - body.basis.z).length()
+		ring_passed(score)

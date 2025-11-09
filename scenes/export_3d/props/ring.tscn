@@ -60,4 +60,4 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_6ne6f")
 
 [node name="Marker3D" type="Marker3D" parent="."]
-gizmo_extents = 3.09
+gizmo_extents = 5.0

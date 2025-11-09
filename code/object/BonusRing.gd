@@ -15,8 +15,9 @@ func done() -> void:
 	passed = true
 	mesh_instance.set_surface_override_material(0, passed_material)
 
-func ring_passed():
+func ring_passed(score: float):
 	print("Bonus ring passed !")
 	if !passed:
+		print("Score: " + str(score))
 		bonus_ring_passed.emit()
 		done()
