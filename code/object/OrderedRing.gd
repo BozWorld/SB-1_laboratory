@@ -3,7 +3,7 @@ extends Ring
 class_name OrderedRing
 
 # Signal émis lorsque l'avion a passé l'anneau dans le bon ordre de la suite
-signal ring_passed_ordoredly(_ring_order: int)
+signal ring_passed_ordoredly(_ring_order: int, _score: float)
 
 ## Index de l'anneau dans la suite d'anneaux, qui commence à 0 avec le premier.
 @export var ring_order : int:
@@ -54,4 +54,4 @@ func ring_passed(score: float):
 	if is_active:
 		print("Score: " + str(score))
 		passed = true
-		ring_passed_ordoredly.emit(ring_order)
+		ring_passed_ordoredly.emit(ring_order, score)

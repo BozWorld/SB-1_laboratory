@@ -7,8 +7,9 @@ class_name RingManager
 ## Crée un anneau bonus.
 @export_tool_button("Nouvel Anneau Bonus", "2DNodes") var create_bonus_ring := Callable(self, "add_bonus_ring")
 
+signal bonus_ring_passed(score: float)
 # Signal émis lorsqu'un anneau de base est passé, reçu par le Manager
-signal ordered_ring_passed(ring_index: int)
+signal ordered_ring_passed(ring_index: int, score: float)
 # Signal émis quand tous les anneaux basiques ont été passés.
 signal all_ordered_rings_completed
 
@@ -125,6 +126,15 @@ func setup_rings():
 	setup_ordered_rings()
 	setup_bonus_rings()
 
+func get_bonus_passed_count():
+	print(bonus_rings.size())
+	var count := 0
+	for ring in bonus_rings:
+		if ring.passed:
+			count += 1
+	return count
+		
+
 # Setup des anneaux normaux.
 func setup_ordered_rings():
 	_current_ring_index = 0
@@ -136,7 +146,7 @@ func setup_ordered_rings():
 		print("Ring node: ", ring)
 		ring._setup(self)
 		ring.ring_order = i 
-		ring.ring_passed_ordoredly.connect(on_ring_passed)
+		ring.ring_passed_ordoredly.connect(on_ordered_ring_passed)
 		if i == 0:
 			ring.set_active(true)
 		elif i == 1:
@@ -148,13 +158,18 @@ func setup_ordered_rings():
 func setup_bonus_rings():
 	for ring in bonus_rings:
 		ring._setup(self)
+		ring.bonus_ring_passed.connect(on_bonus_ring_passed)
+
+func on_bonus_ring_passed(score: float):
+	bonus_ring_passed.emit(score)
+	
 
 # Quand un anneau est passé on previent les prochains pour qu'ils se préparent
-func on_ring_passed(ring_order: int):
+func on_ordered_ring_passed(ring_order: int, score: float):
 	if ring_order == _current_ring_index:
 		ordered_rings[_current_ring_index].set_active(false)
 		_current_ring_index += 1
-		ordered_ring_passed.emit(ring_order)
+		ordered_ring_passed.emit(ring_order, score)
 		
 		if _current_ring_index < ordered_rings.size():
 			ordered_rings[_current_ring_index].set_active(true)

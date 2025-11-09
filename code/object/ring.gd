@@ -31,4 +31,6 @@ func ring_passed(score: float) -> void
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		var score : float = 2.0 - (basis.z - body.basis.z).length()
+		if body.brake > 0.0:
+			score *= 1.0 + body.brake
 		ring_passed(score)

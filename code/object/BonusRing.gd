@@ -3,7 +3,7 @@ extends Ring
 class_name BonusRing
 
 # Signal émis lorsque l'avion passe pour la première fois dans l'anneau
-signal bonus_ring_passed()
+signal bonus_ring_passed(_score: float)
 
 # Bool qui dit si l'avion est passé par l'anneau ou non.
 var passed := false
@@ -23,6 +23,6 @@ func done() -> void:
 func ring_passed(score: float):
 	print("Bonus ring passed !")
 	if !passed:
-		print("Score: " + str(score))
-		bonus_ring_passed.emit()
 		done()
+		print("Score: " + str(score))
+		bonus_ring_passed.emit(score)

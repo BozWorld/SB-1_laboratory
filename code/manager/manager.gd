@@ -16,6 +16,7 @@ var ordered_rings: Array[OrderedRing] = []
 # === VARIABLES PRIVÉES ===
 var _timer_manager: TimerManager
 var _game_state: GameState = GameState.WAITING
+var _score_manager: ScoreManager
 
 enum GameState { WAITING, PLAYING, COMPLETED, PAUSED }
 
@@ -27,6 +28,7 @@ func _ready():
 
 func _initialize_manager():
 	_timer_manager = TimerManager.new()
+	_score_manager = ScoreManager.new()
 	add_child(_timer_manager)
 	
 	
@@ -34,16 +36,17 @@ func _initialize_manager():
 	ring_manager.add_to_group("ring_manager")
 	ring_manager.setup_rings()
 	ordered_rings = ring_manager.ordered_rings
-	ui_manager.set_total_rings(ordered_rings.size())
+	ui_manager.set_total_rings(ordered_rings.size(), ring_manager.bonus_rings.size())
 
 func _connect_signals():
 	_timer_manager.timer_updated.connect(_on_timer_updated)
 	ring_manager.ordered_ring_passed.connect(_on_ordered_ring_passed)
+	ring_manager.bonus_ring_passed.connect(_on_bonus_ring_passed)
 	ring_manager.all_ordered_rings_completed.connect(_on_all_ordered_rings_completed)
 
 func _setup_initial_state():
 	ui_manager.hide_final_score()
-	ui_manager.update_score_display(0.0)
+	ui_manager.update_score_display(0.0, 0.0)
 	_game_state = GameState.WAITING
 
 # === GESTION DU JEU ===
@@ -79,9 +82,14 @@ func _disable_player():
 # === GESTIONNAIRE D'ÉVÉNEMENTS ===
 func _on_timer_updated(current_time: float):
 	if ui_manager:
-		ui_manager.update_score_display(current_time)
+		ui_manager.update_score_display(current_time, _score_manager.total_score)
 
-func _on_ordered_ring_passed(ring_index: int):
+func _on_bonus_ring_passed(score: float):
+	_score_manager.add_score(score)
+	ui_manager.update_bonus_rings(ring_manager.get_bonus_passed_count())
+
+func _on_ordered_ring_passed(ring_index: int, score: float):
+	_score_manager.add_score(score)
 	ordered_ring_passed.emit(ring_index)
 	ui_manager.update_rings(ring_index + 1)
 	print("Anneau franchi: ", ring_index)
@@ -97,6 +105,19 @@ func get_current_time() -> float:
 func restart_game():
 	get_tree().reload_current_scene()
 
+#func _update_debug_info():
+	#if debug_ui:
+		#var texte_trails:= ""
+		#for trail in _trails :
+			#texte_trails += trail.get_debug_string() + "
+#"
+		#debug_ui.text = ( 
+			#_flight_physics.get_debug_string() + "\n" +
+			#texte_trails + "\n" +
+			#_gravity_handler.get_debug_string() + "\n" +
+			#_plane_animation.get_debug_string() + "\n" +
+			#"Velocite totale: %f.1" % velocity.length()
+		#)
 
 
 # === INPUT ===

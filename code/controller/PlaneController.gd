@@ -23,6 +23,8 @@ var _plane_animation: PlaneAnimation
 
 var hydravion := false
 
+var brake := 0.0
+
 # === EXPORTS ===
 @export var debug_ui: RichTextLabel
 
@@ -76,7 +78,10 @@ func _physics_process(delta: float) -> void:
 	is_grounded = _ground_detection.update_grounded_state(velocity, delta)
 
 	_plane_animation.update_animations(physics_result, is_grounded, delta)
-
+	
+	if brake != physics_result.brake:
+		brake = physics_result.brake
+	
 	if physics_result.brake and !physics_result.boost:
 		cam_follow._update_cam(delta, true)
 	else:

@@ -24,3 +24,4 @@ mono_crash.*.json
 .vscode/extensions.json
 .vscode/launch.json
 .vscode/settings.json
+code/outils_ld/data/memoire_fantome1.tres
