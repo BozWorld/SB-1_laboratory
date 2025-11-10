@@ -139,6 +139,8 @@ func _update_target_speed(throttle_change: float, delta: float, grounded: bool):
 func _calculate_turn_input(raw_input: float, speed: float, x_rota: float) -> float:
 	#if abs(x_rota) > PI*0.5:
 		#raw_input = -raw_input
+	if brake:
+		raw_input *= config.brake_rotation_mod
 	if speed < 2.0:
 		return raw_input * 0.3
 
