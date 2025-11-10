@@ -156,9 +156,14 @@ func setup_ordered_rings():
 
 # Setup des anneaux bonus
 func setup_bonus_rings():
+	var i = 0
 	for ring in bonus_rings:
-		ring._setup(self)
-		ring.bonus_ring_passed.connect(on_bonus_ring_passed)
+		if !ring :
+			bonus_rings.erase(i)
+		else:
+			ring._setup(self)
+			ring.bonus_ring_passed.connect(on_bonus_ring_passed)
+		i += 1
 
 func on_bonus_ring_passed(score: float):
 	bonus_ring_passed.emit(score)

@@ -20,7 +20,11 @@ var inv_brake_max:= 2.0
 @export var trail_precision := 0.1
 @export var resolution_cylindre := 5
 @export var trail_lifetime := 1.3
-@export var trail_latency := 0.5
+@export var trail_latency := 0.5:
+	set(value):
+		trail_latency = value
+		inv_trail_latency = 1.0/value
+var inv_trail_latency:= 2.0
 var index_trail := 0.0
 var do_trail := false
 
@@ -29,6 +33,8 @@ var config: FlightConfiguration
 var index_curve:= 0.0
 
 var trail_active : TempTrail
+
+var width_mod:= 1.0
 
 func _create_trail():
 	trail_active = TempTrail.new()
@@ -52,13 +58,14 @@ func update_boost_vfx(delta: float, brake: float, boost: bool):
 	if do_trail:
 		if !boost:
 			index_trail += delta
+			width_mod *= (trail_latency - index_trail) * inv_trail_latency
 		if index_trail >= trail_latency :
 			do_trail = false
 			index_trail = 0.0
 			trail_active.genere_trail = false
 		else:
 			index_curve += delta
-			var width_mod = width_mod_over_time.sample(index_curve * config.inv_boost_max_duration)
+			width_mod = width_mod_over_time.sample(index_curve * config.inv_boost_max_duration)
 			trail_active.width_mod = width_mod
 	
 	elif boost and brake > brake_min:
