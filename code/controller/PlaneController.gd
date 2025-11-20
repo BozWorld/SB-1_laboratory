@@ -98,7 +98,7 @@ func _physics_process(delta: float) -> void:
 			hydravion = true
 		else :
 			hydravion = false
-		if current_speed >= 30.0:
+		if current_speed >= 200.0:
 			if (to_local(collision.get_position()).normalized() + basis.z).length() <= 0.6:
 				print("COLLISION")
 				queue_free()
@@ -121,7 +121,7 @@ func _physics_process(delta: float) -> void:
 
 func _apply_movement(physics_result: PhysicsResult, delta: float):
 	# Appliquer les rotations
-	if not is_grounded or abs(physics_result.pitch_input) > 0:
+	if !is_grounded or abs(physics_result.pitch_input) > 0:
 		transform.basis = transform.basis.rotated(transform.basis.x, physics_result.pitch_input *  delta)
 		if !is_grounded:
 			transform.basis = basis.rotated(transform.basis.x, -_gravity_handler._get_angular_force(-basis.z, abs(velocity.x) + abs(velocity.z), basis.y) * delta)
@@ -137,6 +137,7 @@ func _apply_movement(physics_result: PhysicsResult, delta: float):
 	velocity = -transform.basis.z * current_speed
 	
 	if physics_result.should_takeoff:
+		print("prout")
 		velocity.y += physics_result.takeoff_force * delta
 	
 	if !is_grounded :

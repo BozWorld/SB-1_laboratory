@@ -29,7 +29,7 @@ var bcharge_index:= 0.000
 func setup(flight_config: FlightConfiguration):
 	config = flight_config
 
-func update_physics(input_data: InputData, delta: float, grounded: bool, forward_vector: Vector3, hydravion: bool, up: Vector3) -> PhysicsResult:
+func update_physics(input_data: InputData, delta: float, grounded: bool, _forward_vector: Vector3, hydravion: bool, up: Vector3) -> PhysicsResult:
 	previous_speed = forward_speed
 	
 	_update_boost(delta, input_data)
@@ -45,7 +45,7 @@ func update_physics(input_data: InputData, delta: float, grounded: bool, forward
 	result.speed = forward_speed + boost_speed
 	result.turn_input = _calculate_turn_input(input_data.turn_input, forward_speed, up)
 	result.pitch_input = _calculate_pitch_input(input_data.pitch_input, forward_speed, grounded, hydravion)
-	result.should_takeoff = _should_takeoff(forward_speed, grounded, forward_vector)
+	result.should_takeoff = _should_takeoff(forward_speed, grounded, result.pitch_input)
 	result.takeoff_force = _calculate_takeoff_force(forward_speed)
 	result.brake = brake_charge
 	result.boost = boost
@@ -137,7 +137,6 @@ func _update_target_speed(throttle_change: float, delta: float, grounded: bool):
 		target_speed = clamp(target_speed, 0.0, max_limit)
 
 func _calculate_turn_input(raw_input: float, speed: float, up: Vector3) -> float:
-	print(up.y)
 	if up.y < 0.0:
 		raw_input = -raw_input
 	if brake:
@@ -161,8 +160,8 @@ func _calculate_pitch_input(raw_input: float, speed: float, grounded: bool, hydr
 		return raw_input * config.pitch_speed * 0.5
 	return raw_input * config.pitch_speed
 
-func _should_takeoff(speed: float, grounded: bool, forward_vector: Vector3) -> bool:
-	return grounded and speed > config.min_flight_speed * 1.1 and forward_vector.y > 0.1
+func _should_takeoff(speed: float, grounded: bool, pitch_input: float) -> bool:
+	return grounded and speed > config.min_flight_speed and pitch_input > 0.1
 
 func _calculate_takeoff_force(speed: float) -> float:
 	return 3.0 * (speed / config.min_flight_speed)
