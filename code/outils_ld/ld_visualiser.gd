@@ -4,14 +4,22 @@ extends Node3D
 @onready var tracker = %tracker_ld
 var memoire : Memoire
 
+@export_tool_button("Recommencer la course", "Reload") var recharger = restart_course
+
 @export var play := false
 
 var vitesse := 50.0
+
+
 
 var index:= 0
 var index_inter := 0.0
 
 var periode := 0.0
+
+func restart_course():
+	index = 0
+	index_inter = 0.0
 
 func _process(delta: float) -> void:
 	#if Engine.is_editor_hint():

@@ -71,7 +71,7 @@ func _setup_initial_state():
 func _physics_process(delta: float) -> void:
 	var input_data = _input_handler.get_input_data(delta, current_speed, is_grounded)
 	
-	var physics_result = _flight_physics.update_physics(input_data, delta, is_grounded, -basis.z, hydravion, rotation.x)
+	var physics_result = _flight_physics.update_physics(input_data, delta, is_grounded, -basis.z, hydravion, basis.y)
 	current_speed = physics_result.speed
 
 	_apply_movement(physics_result, delta)
@@ -124,7 +124,7 @@ func _apply_movement(physics_result: PhysicsResult, delta: float):
 	if not is_grounded or abs(physics_result.pitch_input) > 0:
 		transform.basis = transform.basis.rotated(transform.basis.x, physics_result.pitch_input *  delta)
 		if !is_grounded:
-			transform.basis = basis.rotated(transform.basis.x, -_gravity_handler._get_angular_force(-basis.z, abs(velocity.x) + abs(velocity.z), rotation.x) * delta)
+			transform.basis = basis.rotated(transform.basis.x, -_gravity_handler._get_angular_force(-basis.z, abs(velocity.x) + abs(velocity.z), basis.y) * delta)
 	
 	if abs(rotation.x) > 0.5 * PI:
 		transform.basis = transform.basis.rotated(Vector3.UP, -physics_result.turn_input * delta)
