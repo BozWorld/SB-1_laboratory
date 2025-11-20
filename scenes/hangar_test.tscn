@@ -123,10 +123,6 @@ boost_charge = SubResource("Curve_yxnjo")
 boost_grow = SubResource("Curve_8i7sl")
 boost_max_duration = 4.0
 boost_momentum = 8.0
-brake_rotation_mod = 1.3
-linear_strength = 68.0
-angular_strength = 0.3
-speed_to_glide = 15.0
 notes = ""
 metadata/_custom_type_script = "uid://reijsy2bv6e4"
 
@@ -902,7 +898,7 @@ memoire = ExtResource("21_g5sac")
 nom_memoire = "memoire_fantome1"
 
 [node name="visualiser_ld" type="Node3D" parent="tracker_ld"]
-transform = Transform3D(1, 0, 0, 0, 0.85969865, -0.5108015, 0, 0.5108015, 0.85969865, 0, 8.593794, -32.154446)
+transform = Transform3D(1, 0, 0, 0, 0.99716103, -0.07529889, 0, 0.07529889, 0.99716103, 0, 174.10324, -362.31387)
 script = ExtResource("19_2uv6e")
 play = true
 
@@ -922,7 +918,7 @@ skeleton = NodePath("")
 script = SubResource("GDScript_gwxm2")
 
 [node name="road_creator" type="PathFollow3D" parent="tracker_ld"]
-transform = Transform3D(0.9999908, 0, 0, 0, 0.99477327, 0.1017874, 0, -0.10178742, 0.99477315, 0, 216.84055, -525.86926)
+transform = Transform3D(0.9999908, 0, 0, 0, 0.99477303, 0.10178738, 0, -0.101787396, 0.9947729, 0, 216.84055, -525.86926)
 progress = 1340.0
 script = ExtResource("20_7khs1")
 from = 1200.0

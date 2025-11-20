@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=4 uid="uid://bausscgj8s6xc"]
+[gd_scene load_steps=87 format=4 uid="uid://bausscgj8s6xc"]
 
 [ext_resource type="Script" uid="uid://cpyeiihcx4pvy" path="res://code/manager/manager.gd" id="1_vnryu"]
 [ext_resource type="Script" uid="uid://bgdh7wd3eb5yf" path="res://code/manager/UIManager.gd" id="2_pabgk"]
@@ -18,20 +18,12 @@
 [ext_resource type="Script" uid="uid://cdonvlaijai24" path="res://code/manager/RingManager.gd" id="15_wgcea"]
 [ext_resource type="PackedScene" uid="uid://bge6p6f06ngi3" path="res://scenes/rings/ordered_ring.tscn" id="16_8jaw1"]
 [ext_resource type="PackedScene" uid="uid://ded0va1psydo6" path="res://scenes/rings/bonus_ring.tscn" id="17_oxpwl"]
-[ext_resource type="Script" uid="uid://dvosftuwkd0ih" path="res://code/object/OrderedRing.gd" id="17_vnryu"]
 [ext_resource type="Script" uid="uid://cf5rul04g27vk" path="res://code/outils_ld/ld_marker.gd" id="18_k5mfd"]
-[ext_resource type="Material" uid="uid://bttd5yrsvuila" path="res://assets/materials_textures/ring/ordered_ring_next.tres" id="18_pabgk"]
-[ext_resource type="Resource" uid="uid://dihs1ohkhq8ch" path="res://code/outils_ld/data/listebase.tres" id="19_7crj0"]
-[ext_resource type="Material" uid="uid://bbfbsjbx2jrwh" path="res://assets/materials_textures/ring/ordered_ring_base.tres" id="19_qnk4f"]
-[ext_resource type="Material" uid="uid://de2bs6dq6s238" path="res://assets/materials_textures/ring/ordered_ring_active.tres" id="20_anuig"]
+[ext_resource type="Resource" uid="uid://os8morcjukgv" path="res://code/outils_ld/data/listebase.tres" id="19_7crj0"]
 [ext_resource type="Script" uid="uid://bxvtseyxgbmss" path="res://code/outils_ld/ld_tracker.gd" id="20_gfr5j"]
-[ext_resource type="Material" uid="uid://bfua6ymxv5lsa" path="res://assets/materials_textures/ring/ordered_ring_passed.tres" id="21_m3auo"]
 [ext_resource type="Script" uid="uid://egt1165a7pw6" path="res://code/outils_ld/ld_visualiser.gd" id="22_bg7b3"]
-[ext_resource type="Script" uid="uid://bqqgryuwmbloh" path="res://code/object/BonusRing.gd" id="23_1p1iv"]
 [ext_resource type="Script" uid="uid://di7fb447lef8j" path="res://code/outils_ld/road_creator.gd" id="23_m2tby"]
-[ext_resource type="Material" uid="uid://bmxf7tenqh0t7" path="res://assets/materials_textures/ring/bonus_base.tres" id="24_rilei"]
 [ext_resource type="Shader" uid="uid://bu2shn60caxsn" path="res://assets/materials_textures/shader_script/sky.gdshader" id="24_s4qcd"]
-[ext_resource type="Material" uid="uid://c8e2qm2redm78" path="res://assets/materials_textures/ring/bonus_passed.tres" id="25_ru34c"]
 [ext_resource type="PackedScene" uid="uid://cumecpt86pmsv" path="res://scenes/export_3d/island/hangar_island_02.tscn" id="25_wuy62"]
 [ext_resource type="PackedScene" uid="uid://csvklaglduhus" path="res://scenes/export_3d/props/pot.tscn" id="26_xpjjh"]
 [ext_resource type="PackedScene" uid="uid://cljqvsbfpl08" path="res://scenes/export_3d/props/pillar.tscn" id="27_f2oin"]
@@ -107,28 +99,24 @@ shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.93372595, 0.19180116, 0, 1)
 
-[sub_resource type="Curve" id="Curve_yxnjo"]
+[sub_resource type="Curve" id="Curve_e4stv"]
 _limits = [0.0, 1.0, 0.0, 10.0]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.47393358, 0.4470588), 0.0, 0.0, 0, 0, Vector2(2.2440944, 0.4916805), 0.0, 0.0, 0, 0, Vector2(3.7007875, 0.91347754), 0.0, 0.0, 0, 0, Vector2(10, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.47393358, 0.4470588), 0.0, 0.0, 0, 0, Vector2(2.2440944, 0.4916805), 0.0, 0.0, 0, 0, Vector2(2.7295918, 0.73103446), 0.0, 0.0, 0, 0, Vector2(10, 1), 0.0, 0.0, 0, 0]
 point_count = 5
 
-[sub_resource type="Curve" id="Curve_8i7sl"]
+[sub_resource type="Curve" id="Curve_15824"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.04028436, 0.56470597), 1.2665067, 1.2665067, 0, 0, Vector2(0.5, 0.44705892), -0.39194995, -0.87612504, 0, 0, Vector2(0.56398106, 1), 0.9653597, 0.9653597, 0, 0, Vector2(0.9928911, 0.74705887), 0.0, 0.0, 0, 0]
 point_count = 5
 
-[sub_resource type="Resource" id="Resource_xa0eo"]
+[sub_resource type="Resource" id="Resource_p8gmp"]
 script = ExtResource("6_1p1iv")
 min_flight_speed = 15.0
 max_flight_speed = 50.0
 throttle_delta = 50.0
-boost_charge = SubResource("Curve_yxnjo")
-boost_grow = SubResource("Curve_8i7sl")
-boost_max_duration = 4.4
-boost_momentum = 8.8
-brake_rotation_mod = 1.3
-linear_strength = 68.0
-angular_strength = 0.5
-speed_to_glide = 15.0
+boost_charge = SubResource("Curve_e4stv")
+boost_grow = SubResource("Curve_15824")
+boost_max_duration = 4.0
+boost_momentum = 8.0
 notes = ""
 metadata/_custom_type_script = "uid://reijsy2bv6e4"
 
@@ -586,7 +574,7 @@ trail_width_end = 0.3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78033495, -14.129764)
 script = ExtResource("5_m3auo")
 _trails = [NodePath("../BoiteTrails/trail_l"), NodePath("../BoiteTrails/trail_r")]
-flight_config = SubResource("Resource_xa0eo")
+flight_config = SubResource("Resource_p8gmp")
 rings_label = NodePath("../../UI_VISUEL/CanvasLayer/data_panel/VBoxContainer/rings_label")
 landing_label = NodePath("../../UI_VISUEL/CanvasLayer/data_panel/VBoxContainer/landing_label")
 boost_visuals = [NodePath("plane_mesh/boost_visual"), NodePath("plane_mesh/lextra_boost_visual"), NodePath("plane_mesh/rextra_boost_visual")]
@@ -719,353 +707,150 @@ transform = Transform3D(0.9487768, 0.19239764, 0.25061068, 0, 0.79320455, -0.608
 ring_order = 3
 manager = NodePath("../..")
 
-[node name="ring5" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring5" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(0.8974594, 0.43605363, -0.06651309, -0.30911726, 0.72930926, 0.61037254, 0.3146637, -0.5272241, 0.78931725, 44.674152, 455.86914, -965.53503)
-script = ExtResource("17_vnryu")
 ring_order = 4
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring6" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring6" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(0.949956, 0.3118786, 0.017762162, -0.28370833, 0.88515544, -0.3687948, -0.13074148, 0.34529936, 0.9293413, 77.113434, 266.9621, -1270.2084)
-script = ExtResource("17_vnryu")
 ring_order = 5
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring7" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring7" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(0.8073914, 0.42799425, 0.4061279, -0.2837083, 0.88515544, -0.36879477, -0.5173283, 0.18253973, 0.83609253, 51.797295, 379.87714, -1486.9677)
-script = ExtResource("17_vnryu")
 ring_order = 6
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring8" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring8" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(0.8073914, 0.42799422, 0.40612787, 0.069187075, 0.6149065, -0.7855593, -0.5859455, 0.66235256, 0.46685857, -29.055748, 516.95245, -1585.3379)
-script = ExtResource("17_vnryu")
 ring_order = 7
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring9" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring9" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(0.7036333, 0.45471433, 0.5460173, 0.65337676, -0.1120144, -0.74869996, -0.27928278, 0.88356525, -0.37591693, -112.32265, 660.23627, -1585.3379)
-script = ExtResource("17_vnryu")
 ring_order = 8
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring10" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring10" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(-0.59578633, 0.656084, 0.4632416, 0.7676959, 0.29574972, 0.56848526, 0.23597057, 0.69432425, -0.6798764, -275.88745, 639.4676, -1408.5348)
-script = ExtResource("17_vnryu")
 ring_order = 9
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring11" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring11" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(-0.59578633, 0.656084, 0.4632416, 0.7676959, 0.29574972, 0.56848526, 0.23597057, 0.69432425, -0.6798764, -320.86218, 451.38947, -1259.8301)
-script = ExtResource("17_vnryu")
 ring_order = 10
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring12" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring12" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(-0.44360283, -0.50465053, 0.7406379, 0.8862322, -0.37005648, 0.2786594, 0.13345215, 0.7799912, 0.61139536, -388.75284, 273.89398, -1246.0547)
-script = ExtResource("17_vnryu")
 ring_order = 11
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring13" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring13" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(-0.39967605, -0.91493994, 0.05607682, 0.6002836, -0.30747563, -0.73832166, 0.6927621, -0.26142746, 0.67211336, -362.43182, 306.85672, -1600.176)
-script = ExtResource("17_vnryu")
 ring_order = 12
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring14" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring14" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(-0.72634494, -0.59601164, -0.34233546, 0.6002836, -0.30747566, -0.73832166, 0.33478832, -0.74177456, 0.58110875, -321.74057, 571.81396, -1783.1184)
-script = ExtResource("17_vnryu")
 ring_order = 13
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring15" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring15" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(-0.09572052, 0.093259014, -0.99102986, 0.8669271, -0.48144233, -0.12903947, -0.4891579, -0.87150246, -0.03476474, -166.2391, 700.62415, -1890.1987)
-script = ExtResource("17_vnryu")
 ring_order = 14
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring16" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring16" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(0.438604, -0.21133648, -0.87347806, 0.7538909, -0.44251654, 0.48562065, -0.48915792, -0.87150246, -0.034764744, -84.19732, 677.0715, -1872.3342)
-script = ExtResource("17_vnryu")
 ring_order = 15
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring17" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring17" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(0.18925367, -0.8509095, -0.49003774, 0.59622824, -0.29694232, 0.74587995, -0.78018934, -0.43333483, 0.45113885, 56.416946, 322.85342, -1982.7894)
-script = ExtResource("17_vnryu")
 ring_order = 16
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring18" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring18" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(0.10937825, -0.94645965, -0.3037292, 0.99230886, 0.121789366, -0.02216354, 0.057967514, -0.2989688, 0.95250064, 239.87646, 206.48447, -2223.3716)
-script = ExtResource("17_vnryu")
 ring_order = 17
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring19" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring19" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(0.15879989, -0.82112026, 0.5482194, 0.9527948, -0.018083666, -0.30307707, 0.2587762, 0.57046944, 0.779487, 289.5878, 191.98041, -2455.967)
-script = ExtResource("17_vnryu")
 ring_order = 18
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring20" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring20" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(-0.34658074, -0.6558102, 0.67066765, -0.25636548, -0.6215371, -0.74024904, 0.90230775, -0.42849204, 0.04728523, 234.97191, 267.67767, -2544.0188)
-script = ExtResource("17_vnryu")
 ring_order = 19
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring21" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring21" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(0.83641803, -0.546476, -0.04206641, 0.41165137, 0.57567585, 0.7064989, -0.36186847, -0.6082449, 0.70646244, 124.949615, 430.57285, -2481.5159)
-script = ExtResource("17_vnryu")
 ring_order = 20
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring22" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring22" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(0.09538784, -0.95615655, -0.27688658, 0.9014075, -0.03504396, 0.4315515, -0.42233446, -0.29075217, 0.8585433, 74.28862, 506.95822, -2327.3467)
-script = ExtResource("17_vnryu")
 ring_order = 21
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring23" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring23" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(-0.16860208, 0.03298201, -0.9851319, 0.98537076, -0.019576522, -0.16929847, -0.024869392, -0.99926436, -0.029199166, -162.23642, 580.07965, -2160.5825)
-script = ExtResource("17_vnryu")
 ring_order = 22
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring24" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring24" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(0.14385825, 0.7744001, -0.6161239, 0.9681274, 0.018857727, 0.2497484, 0.20502421, -0.6324151, -0.747005, -360.84717, 532.45233, -2201.0962)
-script = ExtResource("17_vnryu")
 ring_order = 23
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring25" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring25" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(-0.043629706, 0.99461323, 0.09402719, 0.96812737, 0.01885773, 0.24974838, 0.24663045, 0.10192631, -0.96373445, -421.48834, 565.6259, -2344.8958)
-script = ExtResource("17_vnryu")
 ring_order = 24
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring26" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring26" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(-0.21092983, 0.5990687, 0.77241546, 0.9681273, 0.018857727, 0.24974836, 0.13505085, 0.80047554, -0.5839518, -341.88397, 603.8124, -2518.5222)
-script = ExtResource("17_vnryu")
 ring_order = 25
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring27" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring27" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(-0.22064637, 0.53605336, 0.8148387, 0.96812725, 0.018857725, 0.24974835, 0.118512824, 0.84397334, -0.52312815, -173.42233, 647.77136, -2544.471)
-script = ExtResource("17_vnryu")
 ring_order = 26
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring28" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring28" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(0.025114745, 0.9848263, -0.17171496, 0.96708363, 0.019574154, 0.2537046, 0.2532167, -0.17243487, -0.9519175, -51.01948, 671.549, -2754.4224)
-script = ExtResource("17_vnryu")
 ring_order = 27
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring29" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring29" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(-0.0030943789, 0.99786794, -0.06519252, 0.96708375, 0.01957416, 0.25370467, 0.25444034, -0.06226194, -0.965082, -144.78362, 680.64355, -2947.3599)
-script = ExtResource("17_vnryu")
 ring_order = 28
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring30" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring30" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(-0.003094377, 0.99786794, -0.06519252, 0.986813, 0.013597845, 0.16129243, 0.16183552, -0.063834116, -0.9847507, -165.00224, 786.06805, -3198.3135)
-script = ExtResource("17_vnryu")
 ring_order = 29
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring31" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring31" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(-0.0030943777, 0.99786794, -0.06519253, 0.99779624, -0.0012400551, -0.06634337, -0.06628238, -0.06525457, -0.9956645, -165.00224, 820.2063, -3462.1934)
-script = ExtResource("17_vnryu")
 ring_order = 30
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring32" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring32" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(-0.0030943777, 0.99786794, -0.065192536, 0.775795, -0.03874008, -0.6297949, -0.6309777, -0.05252526, -0.77402055, -215.5689, 568.35785, -3869.9182)
-script = ExtResource("17_vnryu")
 ring_order = 31
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
-[node name="ring33" type="Area3D" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("16_8jaw1")]
+[node name="ring33" parent="RingManager/OrderedRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("16_8jaw1")]
 transform = Transform3D(-0.0030943777, 0.99786794, -0.065192536, 0.775795, -0.03874008, -0.6297949, -0.6309777, -0.05252526, -0.77402055, -84.98509, 365.85373, -4222.737)
-script = ExtResource("17_vnryu")
 ring_order = 32
-next_material = ExtResource("18_pabgk")
-active_material = ExtResource("19_qnk4f")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("20_anuig")
-passed_material = ExtResource("21_m3auo")
-metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
 [node name="BonusRingsBox" type="Node" parent="RingManager"]
 
@@ -1073,32 +858,17 @@ metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 transform = Transform3D(1, 0, 0, 0, 0.9978726, 0.065194115, 0, -0.065194115, 0.9978726, -167.10063, 738.3885, -3673.6228)
 manager = NodePath("../..")
 
-[node name="bonus_ring2" type="Area3D" parent="RingManager/BonusRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("17_oxpwl")]
+[node name="bonus_ring2" parent="RingManager/BonusRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("17_oxpwl")]
 transform = Transform3D(0.97805417, 0.20822197, -0.0073345755, -0.024673343, 0.15070666, 0.9882705, 0.20688498, -0.9664011, 0.15253693, 56.717514, 358.28903, -1012.40485)
-script = ExtResource("23_1p1iv")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("24_rilei")
-passed_material = ExtResource("25_ru34c")
-metadata/_custom_type_script = "uid://bqqgryuwmbloh"
 
-[node name="bonus_ring3" type="Area3D" parent="RingManager/BonusRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("17_oxpwl")]
+[node name="bonus_ring3" parent="RingManager/BonusRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("17_oxpwl")]
 transform = Transform3D(-0.42579848, -0.8876573, 0.17538601, 0.9044144, -0.42332697, 0.053191304, 0.027029857, 0.18127045, 0.98306173, -470.44675, 230.24649, -1422.8832)
-script = ExtResource("23_1p1iv")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("24_rilei")
-passed_material = ExtResource("25_ru34c")
-metadata/_custom_type_script = "uid://bqqgryuwmbloh"
 
-[node name="bonus_ring4" type="Area3D" parent="RingManager/BonusRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("17_oxpwl")]
+[node name="bonus_ring4" parent="RingManager/BonusRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("17_oxpwl")]
 transform = Transform3D(0.8705483, -0.48539764, -0.08083895, 0.053576093, -0.069807224, 0.99612063, -0.4891579, -0.8715024, -0.034764726, -4.6805916, 513.8518, -1895.0317)
-script = ExtResource("23_1p1iv")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("24_rilei")
-passed_material = ExtResource("25_ru34c")
-metadata/_custom_type_script = "uid://bqqgryuwmbloh"
 
 [node name="marker_ld" type="Node3D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("18_k5mfd")
@@ -1117,7 +887,7 @@ memoire = SubResource("Resource_pabgk")
 nom_memoire = "memoire_fantomebase"
 
 [node name="visualiser_ld" type="Node3D" parent="tracker_ld"]
-transform = Transform3D(0.9951171, 0.029126935, 0.09430566, 0.04374436, 0.7263509, -0.6859306, -0.08847805, 0.68670666, 0.7215301, 30.583673, 418.70538, -829.59247)
+transform = Transform3D(0.96761954, 0.042613555, -0.2487901, -0.102439694, 0.9671224, -0.23276702, 0.23069143, 0.2507159, 0.9401718, 4.735819, 36.715588, -145.10854)
 script = ExtResource("22_bg7b3")
 play = true
 
