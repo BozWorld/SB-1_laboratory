@@ -45,7 +45,7 @@ func update_physics(input_data: InputData, delta: float, grounded: bool, _forwar
 	result.speed = forward_speed + boost_speed
 	result.turn_input = _calculate_turn_input(input_data.turn_input, forward_speed, up)
 	result.pitch_input = _calculate_pitch_input(input_data.pitch_input, forward_speed, grounded, hydravion)
-	result.should_takeoff = _should_takeoff(forward_speed, grounded, result.pitch_input)
+	result.should_takeoff = _should_takeoff(forward_speed, grounded, input_data.pitch_input)
 	result.takeoff_force = _calculate_takeoff_force(forward_speed)
 	result.brake = brake_charge
 	result.boost = boost
@@ -160,8 +160,8 @@ func _calculate_pitch_input(raw_input: float, speed: float, grounded: bool, hydr
 		return raw_input * config.pitch_speed * 0.5
 	return raw_input * config.pitch_speed
 
-func _should_takeoff(speed: float, grounded: bool, pitch_input: float) -> bool:
-	return grounded and speed > config.min_flight_speed and pitch_input > 0.1
+func _should_takeoff(speed: float, grounded: bool, raw_pitch: float) -> bool:
+	return grounded and speed > config.min_flight_speed and raw_pitch > 0.1
 
 func _calculate_takeoff_force(speed: float) -> float:
 	return 3.0 * (speed / config.min_flight_speed)
