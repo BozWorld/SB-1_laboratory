@@ -5,8 +5,9 @@ const heauteur:= 1.0
 const vaisseauteur:= 1.0
 
 var frottements_survol:= 0.1
+var frottements_sous_marin:= 0.1
 var archimede:= 3.0
-var archimed_angle:= 0.6
+var archimed_angle:= 0.9
 
 var linear_force:= 0.0
 
