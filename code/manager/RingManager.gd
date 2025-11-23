@@ -38,8 +38,9 @@ func _ready() -> void:
 func actualise_order_count():
 	var i=0
 	for ring in ordered_rings:
-		ring.ring_order = i
-		i += 1
+		if ring :
+			ring.ring_order = i
+			i += 1
 
 # Si il y a des entrées vides dans les array, ou des doublons on nettoie tout ça
 func clear_arrays():

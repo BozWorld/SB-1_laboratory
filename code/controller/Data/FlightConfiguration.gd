@@ -31,16 +31,16 @@ var inv_boost_momentum := 1.0
 @export var turn_speed: float = 1.2
 @export var pitch_speed: float = 2.0
 ## Modificateur (multiplication) de la vitesse de rotation en freinant
-@export var brake_rotation_mod:= 2.0
+@export var brake_rotation_mod:= 1.3
 @export_category("Gravité")
 ## Perte d'energie par frame de la gravité accumulée
 @export var energy_loss:= 0.01
 ## Puissance de mouvement de la gravité
-@export_range(0.0,100.0,0.1,"or_greater") var linear_strength:= 44.4
+@export_range(0.0,100.0,0.1,"or_greater") var linear_strength:= 68.0
 ## Puissance de rotation de la gravité
-@export_range(0.0,1.0,0.01,"or_greater") var angular_strength:= 0.1
+@export_range(0.0,1.0,0.01,"or_greater") var angular_strength:= 0.3
 ## Vitesse à atteindre pour planer sans chute
-@export_range(0.0,100.0,0.5) var speed_to_glide := 30.0
+@export_range(0.0,100.0,0.5) var speed_to_glide := 15.0
 @export_category("Effets")
 ## Vitesse à atteindre pour que les trails apparaissent
 @export var trail_min_speed:= 15.0
