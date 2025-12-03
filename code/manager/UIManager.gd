@@ -10,12 +10,12 @@ class_name UIManager
 @export var array_time: Array[float]
 @export var array_score: Array[float]
 @export var array_bonus: Array[int]
-var notes := ["[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0][shake rate=20.0 level=5 connected=1][wave amp=50.0 freq=5.0 connected=1]F[/wave][/shake][/rainbow]",
- "[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]S[/rainbow]",
- "[shake rate=20.0 level=5 connected=1]A[/shake]",
- "[tornado radius=10.0 freq=1.0 connected=1]B[/tornado]",
+var notes := ["[pulse freq=1.0 color=#ffffff40 ease=-2.0]D[/pulse]",
  "[wave amp=50.0 freq=5.0 connected=1]C[/wave]",
- "[pulse freq=1.0 color=#ffffff40 ease=-2.0]D[/pulse]"]
+ "[tornado radius=10.0 freq=1.0 connected=1]B[/tornado]",
+ "[shake rate=20.0 level=5 connected=1]A[/shake]",
+ "[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]S[/rainbow]",
+ "[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0][shake rate=20.0 level=5 connected=1][wave amp=50.0 freq=5.0 connected=1]F[/wave][/shake][/rainbow]"]
 
 @export var data_control: Control
 @export var rings_label: RichTextLabel
@@ -47,18 +47,18 @@ You've got %d bonus rings !!" % _passed_bonus_rings + "
 And your final score is: %.1f !!!" % last_score
 
 	if final_score_control and note_label:
-		var time_note : String = notes[array_time.size()]
-		for note in range(notes.size()-1):
-			if final_time <= array_time[note]:
-				time_note = notes[note]
-		var score_note : String = notes[array_score.size()]
-		for note in range(notes.size()-1):
-			if last_score >= array_score[note]:
-				score_note = notes[note]
-		var bonus_note : String = notes[array_bonus.size()]
-		for note in range(notes.size()-1):
-			if _passed_bonus_rings >= array_bonus[note]:
-				bonus_note = notes[note]
+		var time_note : String = notes[0]
+		for inote in range(notes.size()-1):
+			if final_time <= array_time[inote]:
+				time_note = notes[inote]
+		var score_note : String = notes[0]
+		for jnote in range(notes.size()-1):
+			if last_score >= array_score[jnote]:
+				score_note = notes[jnote]
+		var bonus_note : String = notes[0]
+		for knote in range(notes.size()-1):
+			if _passed_bonus_rings >= array_bonus[knote]:
+				bonus_note = notes[knote]
 		
 		note_label.text = time_note + "
 " + bonus_note + "

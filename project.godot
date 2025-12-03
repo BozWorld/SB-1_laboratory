@@ -12,7 +12,7 @@ config_version=5
 
 config/name="S.B.E-Laboratory"
 config/description="https://bozotron.notion.site/SB-1-LABO-HUB-0f48613e54444e57a1b224d90cee3371?pvs=4"
-run/main_scene="uid://d2r6ech7waw38"
+run/main_scene="uid://blkd6tbw18g1u"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]
