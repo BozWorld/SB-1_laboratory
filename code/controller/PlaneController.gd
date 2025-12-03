@@ -10,6 +10,7 @@ signal boom_effect_triggered(intensity: float)
 
 # === Manager ===
 var _flight_physics: FlightPhysics
+var _water_handler: WaterHandler
 var _input_handler: InputHandler
 var _ground_detection: GroundDetection
 var _gravity_handler: GravityHandler
@@ -44,6 +45,7 @@ func _ready():
 
 func _initialize_systems():
 	_flight_physics = FlightPhysics.new()
+	_water_handler = WaterHandler.new()
 	_input_handler = InputHandler.new()
 	_ground_detection = GroundDetection.new()
 	_plane_animation = PlaneAnimation.new()
@@ -120,30 +122,68 @@ func _physics_process(delta: float) -> void:
 
 
 func _apply_movement(physics_result: PhysicsResult, delta: float):
+	var water_state:= _water_handler.get_water_state(position.y)
 	# Appliquer les rotations
-	if !is_grounded or abs(physics_result.pitch_input) > 0:
-		transform.basis = transform.basis.rotated(transform.basis.x, physics_result.pitch_input *  delta)
-		if !is_grounded:
-			transform.basis = basis.rotated(transform.basis.x, -_gravity_handler._get_angular_force(-basis.z, abs(velocity.x) + abs(velocity.z), basis.y) * delta)
 	
-	if abs(rotation.x) > 0.5 * PI:
-		transform.basis = transform.basis.rotated(Vector3.UP, -physics_result.turn_input * delta)
-	else :
-		transform.basis = transform.basis.rotated(Vector3.UP, physics_result.turn_input * delta)
-	
-	
-	basis = basis.orthonormalized()
-	
-	velocity = -transform.basis.z * current_speed
-	
-	if physics_result.should_takeoff:
-		print("prout")
-		velocity.y += physics_result.takeoff_force * delta
-	
-	if !is_grounded :
-		velocity += _gravity_handler._get_linear_force(delta, -basis.z, velocity.length(), velocity.y)
-	else :
+	if water_state == "none":
+		# Rotation verticale
+		if !is_grounded or abs(physics_result.pitch_input) > 0:
+			# Input rotation
+			transform.basis = transform.basis.rotated(transform.basis.x, physics_result.pitch_input *  delta)
+			# Gravity rotation
+			if !is_grounded:
+				transform.basis = basis.rotated(transform.basis.x, -_gravity_handler._get_angular_force(-basis.z, abs(velocity.x) + abs(velocity.z), basis.y) * delta)
+		
+		# Rotation horizontale, inversée quand l'avion est à l'envers
+		if abs(rotation.x) > 0.5 * PI:
+			transform.basis = transform.basis.rotated(Vector3.UP, -physics_result.turn_input * delta)
+		else :
+			transform.basis = transform.basis.rotated(Vector3.UP, physics_result.turn_input * delta)
+		
+		# On détermine la vélocité du moteur selon l'orientation de l'avion et la puissance du moteur
+		basis = basis.orthonormalized()
+		velocity = -transform.basis.z * current_speed
+		
+		# Si l'avion essaye et peut décoller, il s'élance en l'air
+		if physics_result.should_takeoff:
+			velocity.y += physics_result.takeoff_force * delta
+		
+		# Si il est en l'air la gravité s'applique
+		if !is_grounded :
+			velocity += _gravity_handler._get_linear_force(delta, -basis.z, velocity.length(), velocity.y)
+		# Sinon elle se reset
+		else :
+			_gravity_handler.set_gravity_magnitude(0.0)
+			
+	elif water_state == "on_water":
+		# Rotation verticale
+		if !is_grounded or abs(physics_result.pitch_input) > 0:
+			# Input rotation
+			transform.basis = transform.basis.rotated(transform.basis.x, physics_result.pitch_input *  delta)
+			
+		# Rotation horizontale, inversée quand l'avion est à l'envers
+		if abs(rotation.x) > 0.5 * PI:
+			transform.basis = transform.basis.rotated(Vector3.UP, -physics_result.turn_input * delta)
+		else :
+			transform.basis = transform.basis.rotated(Vector3.UP, physics_result.turn_input * delta)
+		
+		# On détermine la vélocité du moteur selon l'orientation de l'avion et la puissance du moteur
+		basis = basis.orthonormalized()
+		velocity = -transform.basis.z * current_speed
+		velocity -= velocity * _water_handler.frottements_survol
+		
+		# Si l'avion essaye et peut décoller, il s'élance en l'air
+		if physics_result.should_takeoff:
+			velocity.y += physics_result.takeoff_force * delta
+		
+		# On annule la gravité
 		_gravity_handler.set_gravity_magnitude(0.0)
+		
+	elif water_state == "underwater":
+		transform.basis = basis.rotated(transform.basis.x, _water_handler.get_angular_force(delta, -basis.z))
+		velocity -= velocity * _water_handler.frottements_sous_marin
+		velocity.y += _water_handler.get_linear_force(delta)
+
 	
 # === GESTIONNAIRE D'EVËNEMENTS ===
 func _on_landing_state_changed(grounded: bool) -> void:
