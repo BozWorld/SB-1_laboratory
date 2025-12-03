@@ -55,3 +55,4 @@ func ring_passed(score: float):
 		print("Score: " + str(score))
 		passed = true
 		ring_passed_ordoredly.emit(ring_order, score)
+		%Ding.play()

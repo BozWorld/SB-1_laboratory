@@ -22,9 +22,14 @@ var _plane_animation: PlaneAnimation
 
 @export var boost_visuals: Array[BoostVisual]
 
+@export var son_avion: AudioStream
+@export var son_moteur : AudioStream
 var hydravion := false
 
 var brake := 0.0
+
+var bruit_vent: AudioStreamPlayer
+var bruit_moteur : AudioStreamPlayer
 
 # === EXPORTS ===
 @export var debug_ui: RichTextLabel
@@ -50,7 +55,21 @@ func _initialize_systems():
 	_ground_detection = GroundDetection.new()
 	_plane_animation = PlaneAnimation.new()
 	_gravity_handler = GravityHandler.new()
+	bruit_vent = AudioStreamPlayer.new()
+	add_child(bruit_vent)
+	bruit_vent.stream = son_avion
+	bruit_vent.finished.connect(Callable(bruit_vent, "play"))
+	bruit_vent.play()
+	bruit_vent.volume_db = -40.0
+	bruit_moteur = AudioStreamPlayer.new()
+	add_child(bruit_moteur)
+	bruit_moteur.stream = son_moteur
+	bruit_moteur.finished.connect(Callable(bruit_moteur, "play"))
+	bruit_moteur.play()
+	bruit_moteur.volume_db = -40.0
 
+	
+	
 	_flight_physics.setup(flight_config if flight_config else _create_default_config())
 	_ground_detection.setup(self)
 	for trail in _trails :
@@ -119,7 +138,10 @@ func _physics_process(delta: float) -> void:
 	for boost in boost_visuals:
 		boost.update_boost_vfx(delta, physics_result.brake, physics_result.boost)
 	
-
+	bruit_vent.volume_db = clampf(-40.0 + velocity.length(), -40.0, 0.0)
+	bruit_vent.pitch_scale = clampf(velocity.length(), 1.0, 3.0)
+	bruit_moteur.volume_db = clampf(-40.0 + velocity.length(), -40.0, -10.0)
+	bruit_moteur.pitch_scale = clampf(velocity.length(), 1.0, 2.0)
 
 func _apply_movement(physics_result: PhysicsResult, delta: float):
 	var water_state:= _water_handler.get_water_state(position.y)

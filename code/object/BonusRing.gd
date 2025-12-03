@@ -26,3 +26,4 @@ func ring_passed(score: float):
 		done()
 		print("Score: " + str(score))
 		bonus_ring_passed.emit(score)
+		%Ding.play()
