@@ -53,6 +53,7 @@ func _process(delta: float) -> void:
 				var accurate_offset:= memoire.curve.get_closest_offset(approx_point)
 				var accurate_point:= memoire.curve.sample_baked_with_rotation(accurate_offset)
 				transform = accurate_point
-	
-	else :
+
+func _ready() -> void:
+	if !Engine.is_editor_hint():
 		hide()

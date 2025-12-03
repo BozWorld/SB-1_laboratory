@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="LDList" load_steps=2 format=3 uid="uid://sen05xq0qw81"]
+[gd_resource type="Resource" script_class="LDList" load_steps=2 format=3 uid="uid://ctkgyc4j2joyh"]
 
 [ext_resource type="Script" uid="uid://b3w6sf0ng3h7s" path="res://code/outils_ld/liste_ld.gd" id="1_7roa6"]
 
 [resource]
 script = ExtResource("1_7roa6")
+array_points = Array[Transform3D]([Transform3D(0.99949133, 0.011613712, -0.02970358, 1.200533e-09, 0.9313431, 0.36414298, 0.031893276, -0.36395776, 0.9308693, 424.30417, 0.7447015, -2120.3828)])
 metadata/_custom_type_script = "uid://b3w6sf0ng3h7s"

@@ -10,12 +10,11 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vw636"]
 radius = 7.538574
 
-[node name="ring" type="Area3D" node_paths=PackedStringArray("mesh_instance", "mesh")]
+[node name="ring" type="Area3D" node_paths=PackedStringArray("mesh_instance")]
 script = ExtResource("1_20y5a")
 next_material = ExtResource("2_vw636")
 active_material = ExtResource("4_51rhp")
 mesh_instance = NodePath("mesh/ring_mesh")
-mesh = NodePath("mesh")
 base_material = ExtResource("3_0o3e4")
 passed_material = ExtResource("5_qq0mt")
 metadata/_custom_type_script = "uid://dvosftuwkd0ih"
