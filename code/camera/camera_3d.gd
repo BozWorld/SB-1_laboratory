@@ -119,7 +119,7 @@ func _physics_process(delta):
 	#var look_target = target.global_transform.origin + target.global_transform.basis * lookahead
 	#look_at(look_target, Vector3.UP)
 	
-	if 
+	#if 
 	
 	if target.transform.basis != transform.basis :
 		var rota = Quaternion(transform.basis.orthonormalized())

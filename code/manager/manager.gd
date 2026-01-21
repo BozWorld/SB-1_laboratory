@@ -122,12 +122,12 @@ func restart_game():
 
 # === INPUT ===
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_R and event.ctrl_pressed:
-			restart_game()
-	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_1:
-			ui_manager.data_control.visible = not ui_manager.data_control.visible
-
+	if Input.is_action_just_pressed("restart"):
+		restart_game()
+	elif Input.is_action_just_pressed("hide_ui"):
+		ui_manager.data_control.visible = not ui_manager.data_control.visible
+	elif Input.is_action_just_pressed("inv_axe1") or Input.is_action_just_pressed("inv_axe2"):
+		if Input.is_action_pressed("inv_axe1") and Input.is_action_pressed("inv_axe2"):
+			player.inv_pitch = true
 func _on_button_pressed() -> void:
 	restart_game()

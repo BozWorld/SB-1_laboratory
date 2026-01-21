@@ -28,6 +28,8 @@ var hydravion := false
 
 var brake := 0.0
 
+var inv_pitch:= false
+
 var bruit_vent: AudioStreamPlayer
 var bruit_moteur : AudioStreamPlayer
 
@@ -91,6 +93,9 @@ func _setup_initial_state():
 # === BOUCLE PRINCIPALE ===
 func _physics_process(delta: float) -> void:
 	var input_data = _input_handler.get_input_data(delta, current_speed, is_grounded)
+	
+	if inv_pitch:
+		input_data.pitch_input = -input_data.pitch_input
 	
 	var physics_result = _flight_physics.update_physics(input_data, delta, is_grounded, -basis.z, hydravion, basis.y)
 	current_speed = physics_result.speed
