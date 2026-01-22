@@ -28,7 +28,6 @@ shape = SubResource("CylinderShape3D_fjet8")
 [node name="Ding" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("5_6bavy")
-volume_db = 16.41
-pitch_scale = 1.89
+pitch_scale = 1.3
 
 [editable path="mesh"]

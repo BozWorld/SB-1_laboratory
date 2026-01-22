@@ -9,6 +9,7 @@ var should_takeoff: bool = false
 var takeoff_force: float = 0.0
 var brake:= 0.0
 var boost
+var boost_index:= 0.0
 
 func _init(spd: float = 0.0, turn: float = 0.0, pitch: float = 0.0, takeoff: bool = false, takeoff_f: float = 0.0, _brake:= 0.0, _boost := false):
 	speed = spd
