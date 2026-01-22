@@ -49,6 +49,7 @@ func update_physics(input_data: InputData, delta: float, grounded: bool, _forwar
 	result.takeoff_force = _calculate_takeoff_force(forward_speed)
 	result.brake = brake_charge
 	result.boost = boost
+	result.boost_index = boost_index
 	
 	speed_updated.emit(forward_speed + boost_speed)
 	return result

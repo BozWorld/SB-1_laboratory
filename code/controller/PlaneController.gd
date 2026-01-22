@@ -99,7 +99,10 @@ func _physics_process(delta: float) -> void:
 	
 	var physics_result = _flight_physics.update_physics(input_data, delta, is_grounded, -basis.z, hydravion, basis.y)
 	current_speed = physics_result.speed
-
+	
+	%UI_Boost.actualiser_ui_boost(physics_result.brake, physics_result.boost_index)
+		
+	
 	_apply_movement(physics_result, delta)
 	is_grounded = _ground_detection.update_grounded_state(velocity, delta)
 
