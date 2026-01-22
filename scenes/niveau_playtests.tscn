@@ -1,9 +1,10 @@
-[gd_scene load_steps=82 format=4 uid="uid://drpdcquo1iib8"]
+[gd_scene load_steps=80 format=4 uid="uid://drpdcquo1iib8"]
 
 [ext_resource type="Script" uid="uid://cpyeiihcx4pvy" path="res://code/manager/manager.gd" id="1_flncc"]
 [ext_resource type="Script" uid="uid://bgdh7wd3eb5yf" path="res://code/manager/UIManager.gd" id="2_stf83"]
 [ext_resource type="FontFile" uid="uid://dy35fgkhkqwiv" path="res://assets/2d/Font/Silver.ttf" id="3_eaqjm"]
 [ext_resource type="Script" uid="uid://d00llo3pdd351" path="res://code/effect/Trail.gd" id="4_go4pb"]
+[ext_resource type="Script" uid="uid://bhckcg751iacy" path="res://scenes/ui_boost.gd" id="4_stf83"]
 [ext_resource type="Script" uid="uid://0tehukp1yylv" path="res://code/controller/PlaneController.gd" id="5_gfhgr"]
 [ext_resource type="Script" uid="uid://reijsy2bv6e4" path="res://code/controller/Data/FlightConfiguration.gd" id="6_wtt64"]
 [ext_resource type="Material" uid="uid://cpjggrjxtkgsx" path="res://assets/materials_textures/tres/vehicule/ship_type_02/airship.tres" id="7_k4g5u"]
@@ -17,9 +18,6 @@
 [ext_resource type="Script" uid="uid://cdonvlaijai24" path="res://code/manager/RingManager.gd" id="15_2d5vv"]
 [ext_resource type="PackedScene" uid="uid://bge6p6f06ngi3" path="res://scenes/rings/ordered_ring.tscn" id="16_shw62"]
 [ext_resource type="PackedScene" uid="uid://ded0va1psydo6" path="res://scenes/rings/bonus_ring.tscn" id="17_ftmws"]
-[ext_resource type="Script" uid="uid://bqqgryuwmbloh" path="res://code/object/BonusRing.gd" id="18_vcufm"]
-[ext_resource type="Material" uid="uid://bmxf7tenqh0t7" path="res://assets/materials_textures/ring/bonus_base.tres" id="19_fxcyo"]
-[ext_resource type="Material" uid="uid://c8e2qm2redm78" path="res://assets/materials_textures/ring/bonus_passed.tres" id="20_k6uru"]
 [ext_resource type="Shader" uid="uid://bu2shn60caxsn" path="res://assets/materials_textures/shader_script/sky.gdshader" id="21_dorci"]
 [ext_resource type="PackedScene" uid="uid://cumecpt86pmsv" path="res://scenes/export_3d/island/hangar_island_02.tscn" id="22_5v0e8"]
 [ext_resource type="PackedScene" uid="uid://csvklaglduhus" path="res://scenes/export_3d/props/pot.tscn" id="23_wmrmx"]
@@ -416,8 +414,8 @@ score_control = NodePath("score_control")
 final_score_label = NodePath("final score/VBoxContainer/HBoxContainer/score_final_label")
 final_score_control = NodePath("final score")
 note_label = NodePath("final score/VBoxContainer/HBoxContainer/note_label")
-array_time = Array[float]([90.0, 42.0, 30.0, 28.8, 28.5, 26.0])
-array_score = Array[float]([6.0, 8.0, 13.0, 15.0, 16.0, 20.0])
+array_time = Array[float]([90.0, 42.0, 30.0, 28.8, 28.5, 25.0])
+array_score = Array[float]([6.0, 8.0, 13.0, 15.0, 17.0, 21.0])
 array_bonus = Array[int]([0, 1, 2, 3, 4, 5])
 data_control = NodePath("data_panel")
 rings_label = NodePath("data_panel/VBoxContainer/rings_label")
@@ -530,6 +528,12 @@ theme_override_fonts/font = ExtResource("3_eaqjm")
 theme_override_font_sizes/font_size = 50
 text = "REPLAY"
 metadata/_edit_use_anchors_ = true
+
+[node name="UI_Boost" type="Node2D" parent="UI_VISUEL"]
+unique_name_in_owner = true
+top_level = true
+position = Vector2(1061, 555)
+script = ExtResource("4_stf83")
 
 [node name="player" type="Node3D" parent="."]
 
@@ -697,14 +701,9 @@ manager = NodePath("../..")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 114.07715, 176.4133, -486.18344)
 manager = NodePath("../..")
 
-[node name="bonus_ring5" type="Area3D" parent="RingManager/BonusRingsBox" node_paths=PackedStringArray("manager", "mesh_instance") instance=ExtResource("17_ftmws")]
+[node name="bonus_ring5" parent="RingManager/BonusRingsBox" node_paths=PackedStringArray("manager") instance=ExtResource("17_ftmws")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.5776367e-05, 124.01064, -929.65546)
-script = ExtResource("18_vcufm")
 manager = NodePath("../..")
-mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("19_fxcyo")
-passed_material = ExtResource("20_k6uru")
-metadata/_custom_type_script = "uid://bqqgryuwmbloh"
 
 [node name="environnement" type="Node3D" parent="."]
 
