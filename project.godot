@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="S.B.E-Laboratory"
+config/name="PlaytestsMissionBMH"
 config/description="https://bozotron.notion.site/SB-1-LABO-HUB-0f48613e54444e57a1b224d90cee3371?pvs=4"
-run/main_scene="uid://blkd6tbw18g1u"
+run/main_scene="uid://drpdcquo1iib8"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]

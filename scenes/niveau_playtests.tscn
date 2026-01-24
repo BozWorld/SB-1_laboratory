@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=4 uid="uid://drpdcquo1iib8"]
+[gd_scene load_steps=83 format=4 uid="uid://drpdcquo1iib8"]
 
 [ext_resource type="Script" uid="uid://cpyeiihcx4pvy" path="res://code/manager/manager.gd" id="1_flncc"]
 [ext_resource type="Script" uid="uid://bgdh7wd3eb5yf" path="res://code/manager/UIManager.gd" id="2_stf83"]
@@ -7,7 +7,9 @@
 [ext_resource type="Script" uid="uid://d00llo3pdd351" path="res://code/effect/Trail.gd" id="4_go4pb"]
 [ext_resource type="Script" uid="uid://bhckcg751iacy" path="res://scenes/ui_boost.gd" id="4_stf83"]
 [ext_resource type="Script" uid="uid://0tehukp1yylv" path="res://code/controller/PlaneController.gd" id="5_gfhgr"]
+[ext_resource type="Texture2D" uid="uid://dodr44lpkiksb" path="res://assets/resources/aide input2.png" id="6_stf83"]
 [ext_resource type="Script" uid="uid://reijsy2bv6e4" path="res://code/controller/Data/FlightConfiguration.gd" id="6_wtt64"]
+[ext_resource type="Texture2D" uid="uid://bw4ag22ftl102" path="res://assets/resources/aide input1.png" id="7_eaqjm"]
 [ext_resource type="Material" uid="uid://cpjggrjxtkgsx" path="res://assets/materials_textures/tres/vehicule/ship_type_02/airship.tres" id="7_k4g5u"]
 [ext_resource type="Material" uid="uid://b7asbstujckcs" path="res://assets/materials_textures/tres/vehicule/ship_type_02/controlleur.tres" id="8_c0ofk"]
 [ext_resource type="Material" uid="uid://0eqwcovtfk0x" path="res://assets/materials_textures/tres/vehicule/ship_type_02/Material.003.tres" id="9_n7bm1"]
@@ -569,6 +571,55 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_stf83")
+
+[node name="AideInput" type="Control" parent="UI_VISUEL"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -227.0
+offset_top = -111.0
+offset_bottom = 116.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI_VISUEL/AideInput"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_stf83")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AideDatas" type="Control" parent="UI_VISUEL"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -113.5
+offset_right = 227.0
+offset_bottom = 113.5
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI_VISUEL/AideDatas"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_eaqjm")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="player" type="Node3D" parent="."]
 

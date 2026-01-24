@@ -125,15 +125,19 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("restart"):
 		restart_game()
 	elif Input.is_action_just_pressed("hide_ui"):
+		if %AideDatas:
+			%AideDatas.queue_free()
 		ui_manager.data_control.visible = not ui_manager.data_control.visible
 	elif Input.is_action_just_pressed("inv_axe1") or Input.is_action_just_pressed("inv_axe2"):
 		if Input.is_action_pressed("inv_axe1") and Input.is_action_pressed("inv_axe2"):
-			player.inv_pitch = true
+			player.inv_pitch = !player.inv_pitch
 	elif Input.is_action_just_pressed("input_map"):
 		if %InputMap.visible:
 			%InputMap.hide()
 			%score_control.show()
 		else:
+			if %AideInput:
+				%AideInput.queue_free()
 			%InputMap.show()
 			%score_control.hide()
 
