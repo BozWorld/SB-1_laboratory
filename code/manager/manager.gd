@@ -129,5 +129,14 @@ func _input(event: InputEvent) -> void:
 	elif Input.is_action_just_pressed("inv_axe1") or Input.is_action_just_pressed("inv_axe2"):
 		if Input.is_action_pressed("inv_axe1") and Input.is_action_pressed("inv_axe2"):
 			player.inv_pitch = true
+	elif Input.is_action_just_pressed("input_map"):
+		if %InputMap.visible:
+			%InputMap.hide()
+			%score_control.show()
+		else:
+			%InputMap.show()
+			%score_control.hide()
+
+
 func _on_button_pressed() -> void:
 	restart_game()
