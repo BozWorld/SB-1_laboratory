@@ -1,22 +1,30 @@
-[gd_scene load_steps=9 format=3 uid="uid://bge6p6f06ngi3"]
+[gd_scene load_steps=10 format=3 uid="uid://bge6p6f06ngi3"]
 
 [ext_resource type="Script" uid="uid://dvosftuwkd0ih" path="res://code/object/OrderedRing.gd" id="1_20y5a"]
 [ext_resource type="PackedScene" uid="uid://ddxavrfb6njvs" path="res://scenes/export_3d/props/ring.tscn" id="2_g8nf0"]
-[ext_resource type="Material" uid="uid://bttd5yrsvuila" path="res://assets/materials_textures/ring/ordered_ring_next.tres" id="2_vw636"]
 [ext_resource type="Material" uid="uid://de2bs6dq6s238" path="res://assets/materials_textures/ring/ordered_ring_active.tres" id="3_0o3e4"]
 [ext_resource type="Material" uid="uid://bbfbsjbx2jrwh" path="res://assets/materials_textures/ring/ordered_ring_base.tres" id="4_51rhp"]
 [ext_resource type="Material" uid="uid://bfua6ymxv5lsa" path="res://assets/materials_textures/ring/ordered_ring_passed.tres" id="5_qq0mt"]
 [ext_resource type="AudioStream" uid="uid://qnb6ngwe8wlr" path="res://assets/son/ding_chime.ogg" id="7_0o3e4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vw636"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0o3e4"]
+next_pass = SubResource("ShaderMaterial_vw636")
+albedo_color = Color(1, 0.81960785, 0.11372549, 1)
+emission_enabled = true
+emission = Color(1, 0.78431374, 0, 1)
+emission_energy_multiplier = 2.68
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vw636"]
 radius = 7.538574
 
 [node name="ring" type="Area3D" node_paths=PackedStringArray("mesh_instance")]
 script = ExtResource("1_20y5a")
-next_material = ExtResource("2_vw636")
+next_material = SubResource("StandardMaterial3D_0o3e4")
 active_material = ExtResource("4_51rhp")
 mesh_instance = NodePath("mesh/ring_mesh")
-base_material = ExtResource("3_0o3e4")
+base_material = ExtResource("5_qq0mt")
 passed_material = ExtResource("5_qq0mt")
 metadata/_custom_type_script = "uid://dvosftuwkd0ih"
 
@@ -32,8 +40,8 @@ shape = SubResource("CylinderShape3D_vw636")
 [node name="Ding" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("7_0o3e4")
-volume_db = 72.479
+volume_db = -15.0
 max_db = 6.0
-pitch_scale = 1.5
+pitch_scale = 0.77
 
 [editable path="mesh"]

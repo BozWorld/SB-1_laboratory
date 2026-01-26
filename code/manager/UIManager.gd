@@ -10,12 +10,13 @@ class_name UIManager
 @export var array_time: Array[float]
 @export var array_score: Array[float]
 @export var array_bonus: Array[int]
-var notes := ["[pulse freq=1.0 color=#ffffff40 ease=-2.0]D[/pulse]",
+var notes := ["Z",
+ "[pulse freq=1.0 color=#ffffff40 ease=-2.0]D[/pulse]",
  "[wave amp=50.0 freq=5.0 connected=1]C[/wave]",
  "[tornado radius=10.0 freq=1.0 connected=1]B[/tornado]",
  "[shake rate=20.0 level=5 connected=1]A[/shake]",
  "[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]S[/rainbow]",
- "[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0][shake rate=20.0 level=5 connected=1][wave amp=50.0 freq=5.0 connected=1]F[/wave][/shake][/rainbow]"]
+ "[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0][shake rate=20.0 level=5 connected=1][wave amp=50.0 freq=5.0 connected=1]P[/wave][/shake][/rainbow]"]
 
 @export var data_control: Control
 @export var rings_label: RichTextLabel
@@ -50,17 +51,17 @@ And your final score is: %.1f !!!" % last_score
 		var time_note : String = notes[0]
 		for inote in range(notes.size()-1):
 			if final_time <= array_time[inote]:
-				time_note = notes[inote]
+				time_note = notes[inote+1]
 		var score_note : String = notes[0]
 		for jnote in range(notes.size()-1):
 			if last_score >= array_score[jnote]:
-				score_note = notes[jnote]
+				score_note = notes[jnote+1]
 		var bonus_note : String = notes[0]
 		for knote in range(notes.size()-1):
 			if _passed_bonus_rings >= array_bonus[knote]:
-				bonus_note = notes[knote]
+				bonus_note = notes[knote+1]
 		
-		note_label.text = time_note + "
+		note_label.text = "[center]" + time_note + "
 " + bonus_note + "
 " + score_note
 
