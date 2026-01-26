@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=4 uid="uid://drpdcquo1iib8"]
+[gd_scene load_steps=84 format=4 uid="uid://drpdcquo1iib8"]
 
 [ext_resource type="Script" uid="uid://cpyeiihcx4pvy" path="res://code/manager/manager.gd" id="1_flncc"]
 [ext_resource type="Script" uid="uid://bgdh7wd3eb5yf" path="res://code/manager/UIManager.gd" id="2_stf83"]
@@ -42,6 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://w217v6buuelf" path="res://scenes/export_3d/nature/flower.tscn" id="39_id3a8"]
 [ext_resource type="Shader" uid="uid://crjflebiqdqjd" path="res://assets/ocean_surface.gdshader" id="40_dgdnx"]
 [ext_resource type="Texture2D" uid="uid://bvetqx0m03oxc" path="res://assets/2d/texture/clear+sea+water-2048x2048.png" id="41_6oty7"]
+[ext_resource type="AudioStream" uid="uid://dyehtcvpar86p" path="res://assets/son/BrouillonAvion3.ogg" id="43_eaqjm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iav3h"]
 content_margin_left = 15.0
@@ -2056,5 +2057,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.72262764, 0)
 [node name="water_mesh" type="MeshInstance3D" parent="environnement/water_plane"]
 mesh = SubResource("PlaneMesh_iav3h")
 surface_material_override/0 = SubResource("ShaderMaterial_k2p1j")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("43_eaqjm")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="UI_VISUEL/CanvasLayer/final score/VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bodxvfnbxcg83"
+path="res://.godot/imported/BrouillonAvion2 (1).ogg-89a11fb1dbf860bc12a2cd6d7d587230.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/son/BrouillonAvion2 (1).ogg"
+dest_files=["res://.godot/imported/BrouillonAvion2 (1).ogg-89a11fb1dbf860bc12a2cd6d7d587230.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
