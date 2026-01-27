@@ -85,7 +85,7 @@ git merge upstream/main
 
 ### Project Configuration
 
-- **Viewport Size**: 1920x1080
+- **Window Size**: 1920x1080
 - **Godot Version**: 4.4
 - **Rendering Method**: Forward Plus
 
