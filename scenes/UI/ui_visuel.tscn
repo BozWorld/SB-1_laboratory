@@ -1,0 +1,210 @@
+[gd_scene load_steps=7 format=3 uid="uid://ih5wgyl7555"]
+
+[ext_resource type="Script" uid="uid://bgdh7wd3eb5yf" path="res://code/manager/UIManager.gd" id="1_01mw1"]
+[ext_resource type="FontFile" uid="uid://dy35fgkhkqwiv" path="res://assets/2d/Font/Silver.ttf" id="2_d4fot"]
+[ext_resource type="Script" uid="uid://bhckcg751iacy" path="res://scenes/ui_boost.gd" id="4_sh668"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iav3h"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+shadow_color = Color(0.8361926, 0.07846785, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_womr8"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+shadow_color = Color(0.65686584, 0, 0.15594886, 1)
+shadow_size = 2
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onjth"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+shadow_color = Color(0.7620346, 0, 0.09777484, 1)
+shadow_size = 2
+shadow_offset = Vector2(4, 4)
+
+[node name="UI_VISUEL" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("score_label", "score_control", "final_score_label", "final_score_control", "note_label", "data_control", "rings_label", "landing_label")]
+script = ExtResource("1_01mw1")
+score_label = NodePath("score_control/score_label")
+score_control = NodePath("score_control")
+final_score_label = NodePath("final score/VBoxContainer/HBoxContainer/score_final_label")
+final_score_control = NodePath("final score")
+note_label = NodePath("final score/VBoxContainer/HBoxContainer/note_label")
+array_time = Array[float]([90.0, 42.0, 30.0, 28.8, 28.5, 25.0])
+array_score = Array[float]([6.0, 8.0, 13.0, 15.0, 17.0, 21.0])
+array_bonus = Array[int]([0, 1, 2, 3, 4, 5])
+data_control = NodePath("data_panel")
+rings_label = NodePath("data_panel/VBoxContainer/rings_label")
+landing_label = NodePath("data_panel/VBoxContainer/landing_label")
+
+[node name="data_panel" type="PanelContainer" parent="CanvasLayer"]
+visible = false
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 46.0
+offset_bottom = 54.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_iav3h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/data_panel"]
+layout_mode = 2
+
+[node name="data_plane" type="RichTextLabel" parent="CanvasLayer/data_panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_d4fot")
+theme_override_font_sizes/normal_font_size = 30
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="rings_label" type="RichTextLabel" parent="CanvasLayer/data_panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_d4fot")
+theme_override_font_sizes/normal_font_size = 30
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="landing_label" type="RichTextLabel" parent="CanvasLayer/data_panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_d4fot")
+theme_override_font_sizes/normal_font_size = 30
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="score_control" type="PanelContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -139.0
+offset_top = 1.0
+offset_right = -6.0
+offset_bottom = 31.0
+grow_horizontal = 0
+pivot_offset = Vector2(-16, -16)
+theme_override_styles/panel = SubResource("StyleBoxFlat_womr8")
+
+[node name="score_label" type="RichTextLabel" parent="CanvasLayer/score_control"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_d4fot")
+theme_override_font_sizes/normal_font_size = 30
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="final score" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.0
+offset_top = -62.0
+offset_right = 263.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_onjth")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/final score"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/final score/VBoxContainer"]
+layout_mode = 2
+
+[node name="score_final_label" type="RichTextLabel" parent="CanvasLayer/final score/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_d4fot")
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/mono_font_size = 2
+text = "YOUR TIME IS :  
+YOUR SCORE IS :
+AND YOU'VE GOT BONUS RINGS"
+fit_content = true
+
+[node name="note_label" type="RichTextLabel" parent="CanvasLayer/final score/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_d4fot")
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/mono_font_size = 2
+bbcode_enabled = true
+text = "S
+S
+S"
+scroll_active = false
+
+[node name="Button" type="Button" parent="CanvasLayer/final score/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_d4fot")
+theme_override_font_sizes/font_size = 50
+text = "REPLAY"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.25537
+offset_top = -318.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="UI_Boost" type="Control" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_sh668")

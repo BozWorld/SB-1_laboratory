@@ -1,5 +1,6 @@
 @tool
 extends Path3D
+class_name LDTracker
 
 @export var target: CharacterBody3D
 

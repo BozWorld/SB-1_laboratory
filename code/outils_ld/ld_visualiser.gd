@@ -1,7 +1,8 @@
 @tool
 extends Node3D
+class_name LDVisualiser
 
-@onready var tracker = %tracker_ld
+@onready var tracker = get_parent()
 var memoire : Memoire
 
 @export_tool_button("Recommencer la course", "Reload") var recharger = restart_course

@@ -42,7 +42,9 @@ var bruit_moteur : AudioStreamPlayer
 var current_speed: float = 0.0
 var is_grounded: bool = false
 
-@onready var cam_follow:= %follower
+@export var cam_follow:Node3D
+
+@export var ui_boost : Control
 
 # === INITIALISATION ===
 func _ready():
@@ -100,7 +102,7 @@ func _physics_process(delta: float) -> void:
 	var physics_result = _flight_physics.update_physics(input_data, delta, is_grounded, -basis.z, hydravion, basis.y)
 	current_speed = physics_result.speed
 	
-	%UI_Boost.actualiser_ui_boost(physics_result.brake, physics_result.boost_index)
+	ui_boost.actualiser_ui_boost(physics_result.brake, physics_result.boost_index)
 		
 	
 	_apply_movement(physics_result, delta)

@@ -6,6 +6,8 @@ signal game_started
 signal game_completed(final_time: float)
 signal ordered_ring_passed(ring_index: int)
 
+
+@export var score_control : Control
 # === EXPORT ===
 @export var ui_manager: UIManager
 @export var player: Node3D
