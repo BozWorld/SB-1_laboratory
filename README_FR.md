@@ -73,7 +73,7 @@ git merge upstream/main
 2. Ouvrez Godot Engine
 3. Cliquez sur **Importer** et naviguez vers le dossier du dépôt cloné
 4. Sélectionnez le fichier `project.godot`
-5. Cliquez sur **Importer et éditer**
+5. Cliquez sur **Importer & Éditer**
 
 ## Développement
 
