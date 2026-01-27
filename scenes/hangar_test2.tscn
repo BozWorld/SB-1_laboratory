@@ -1095,7 +1095,7 @@ cible = NodePath("../../plane/plane_mesh/marker_trail_r")
 trail_width_start = 0.05
 trail_width_end = 0.3
 
-[node name="plane" type="CharacterBody3D" parent="player" node_paths=PackedStringArray("_trails", "rings_label", "landing_label", "boost_visuals", "debug_ui") groups=["player"]]
+[node name="plane" type="CharacterBody3D" parent="player" node_paths=PackedStringArray("_trails", "rings_label", "landing_label", "boost_visuals", "debug_ui", "cam_follow", "ui_boost") groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78033495, -14.129764)
 axis_lock_angular_z = true
 script = ExtResource("5_1e6dk")
@@ -1107,6 +1107,8 @@ boost_visuals = [NodePath("plane_mesh/boost_visual"), NodePath("plane_mesh/lextr
 son_avion = ExtResource("7_xbiev")
 son_moteur = ExtResource("8_usbs7")
 debug_ui = NodePath("../../UI_VISUEL/CanvasLayer/data_panel/VBoxContainer/data_plane")
+cam_follow = NodePath("../../follower")
+ui_boost = NodePath("../../UI_VISUEL/Control/UI_Boost")
 
 [node name="plane_coll" type="CollisionShape3D" parent="player/plane"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015681505, -0.054647446, -0.16165161)

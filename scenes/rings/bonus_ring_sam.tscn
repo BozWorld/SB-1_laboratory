@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvniyxo1msq6b"]
+
+[ext_resource type="Script" uid="uid://bqqgryuwmbloh" path="res://code/object/BonusRing.gd" id="1_b2aty"]
+[ext_resource type="Material" uid="uid://bmxf7tenqh0t7" path="res://assets/materials_textures/ring/bonus_base.tres" id="2_jv15f"]
+[ext_resource type="PackedScene" uid="uid://ddxavrfb6njvs" path="res://scenes/export_3d/props/ring.tscn" id="4_2ekom"]
+[ext_resource type="AudioStream" uid="uid://qnb6ngwe8wlr" path="res://assets/son/ding_chime.ogg" id="5_w3ktb"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fjet8"]
+radius = 7.538574
+
+[node name="ring3" type="Area3D" node_paths=PackedStringArray("mesh_instance")]
+script = ExtResource("1_b2aty")
+mesh_instance = NodePath("mesh/ring_mesh")
+metadata/_custom_type_script = "uid://bqqgryuwmbloh"
+
+[node name="mesh" parent="." instance=ExtResource("4_2ekom")]
+
+[node name="ring_mesh" parent="mesh" index="0"]
+surface_material_override/0 = ExtResource("2_jv15f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_fjet8")
+
+[node name="Ding" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_w3ktb")
+pitch_scale = 1.3
+
+[editable path="mesh"]

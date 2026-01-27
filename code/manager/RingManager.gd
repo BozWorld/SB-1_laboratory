@@ -14,8 +14,8 @@ signal ordered_ring_passed(ring_index: int, score: float)
 signal all_ordered_rings_completed
 
 # Ref aux scenes des différents types d'anneaux.
-var ordered_ring_scene : PackedScene = preload("res://scenes/rings/ordered_ring.tscn")
-var bonus_ring_scene : PackedScene = preload("res://scenes/rings/bonus_ring.tscn")
+@export var ordered_ring_scene : PackedScene = preload("res://scenes/rings/ordered_ring.tscn")
+@export var bonus_ring_scene : PackedScene = preload("res://scenes/rings/bonus_ring.tscn")
 
 ## Liste des anneaux basiques, peut être réarrangée pour changer l'ordre dans la suite.
 @export var ordered_rings: Array[OrderedRing] = []:
@@ -128,11 +128,11 @@ func setup_rings():
 	setup_bonus_rings()
 
 func get_bonus_passed_count():
-	print(bonus_rings.size())
 	var count := 0
 	for ring in bonus_rings:
-		if ring.passed:
-			count += 1
+		if ring:
+			if ring.passed:
+				count += 1
 	return count
 		
 
