@@ -130,9 +130,9 @@ func _input(event: InputEvent) -> void:
 		if %AideDatas:
 			%AideDatas.queue_free()
 		ui_manager.data_control.visible = not ui_manager.data_control.visible
-	elif Input.is_action_just_pressed("inv_axe1") or Input.is_action_just_pressed("inv_axe2"):
-		if Input.is_action_pressed("inv_axe1") and Input.is_action_pressed("inv_axe2"):
-			player.inv_pitch = !player.inv_pitch
+	#elif Input.is_action_just_pressed("inv_axe1") or Input.is_action_just_pressed("inv_axe2"):
+		#if Input.is_action_pressed("inv_axe1") and Input.is_action_pressed("inv_axe2"):
+			#player.input_data.inv_pitch = !player.input_data.inv_pitch
 	elif Input.is_action_just_pressed("input_map"):
 		if %InputMap.visible:
 			%InputMap.hide()

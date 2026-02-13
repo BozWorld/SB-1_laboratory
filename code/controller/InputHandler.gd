@@ -6,6 +6,8 @@ var seuil_boost := 0.44
 var cd := 2.0
 var index_cd := 0.0
 
+var inv_pitch:= false
+
 var inv_seuil = 1.0/seuil_boost
 
 var seuil_max_boost := 2.5
@@ -16,6 +18,8 @@ func get_input_data(delta: float, _current_speed: float, _group: bool) -> InputD
 	data.turn_input = Input.get_axis("roll_right","roll_left")
 	data.pitch_input = Input.get_axis("pitch_down","pitch_up")
 	data.boost = Input.is_action_pressed("boost")
+	if inv_pitch:
+		data.pitch_input = -data.pitch_input
 	return data
 
 func get_input_boost(delta: float):
