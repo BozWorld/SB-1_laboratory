@@ -8,17 +8,21 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="MISSION : BE MY HORIZON"
 config/description="https://bozotron.notion.site/SB-1-LABO-HUB-0f48613e54444e57a1b224d90cee3371?pvs=4"
 run/main_scene="uid://drpdcquo1iib8"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
 
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
-flowerwall_crt="*res://addons/flowerwall_postprocess/scenes/flowerwall_pp.tscn"
+flowerwall_crt="*uid://cc1fomjf362h5"
 
 [display]
 
